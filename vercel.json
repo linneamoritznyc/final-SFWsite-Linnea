@@ -242,6 +242,11 @@
       "source": "/practice/:path*",
       "destination": "/case-studies/",
       "permanent": true
+    },
+    {
+      "source": "/directory-member/alex-kellett",
+      "destination": "/directory-member/norman-higgins/",
+      "permanent": true
     }
   ],
   "headers": [

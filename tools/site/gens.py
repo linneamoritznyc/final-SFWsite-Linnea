@@ -18,6 +18,8 @@ FIXES = [
     (re.compile(r"Bio[Cc]omplete(?:™|T\b|&#8482;|&trade;)?"), "BioComplete™"),  # 22
     (re.compile(r"prerequesites|pre-requisites|prerequisits", re.I), "prerequisites"),     # 25
     (re.compile(r"\bthat that\b"), "that"),                                   # 28
+    (re.compile(r"\bSpoil Sponge Workshop\b"), "Soil Sponge Workshop"),       # 26
+    (re.compile(r"@soilfoodwebfoundation\.org"), "@soilfoodweb.com"),          # 21
     (re.compile(r"\bOn-line Courses\b|\bOnline courses\b(?= *<)"), "Online Courses"),       # 33
     (re.compile(r"(?:more than|approximately|over) 1[0-9]0 countries"), "100+ countries"),  # 15
     (re.compile(r"in more than 100 countries"), "in 100+ countries"),         # 15
@@ -137,6 +139,28 @@ def courses_grid(args):
             '<p class="count" data-count data-one="program" data-many="programs" aria-live="polite"></p>'
             '<ul class="grid grid--3">%s</ul><p data-empty hidden>No programs match. Try another path.</p></div>') % (
         chips, "".join(course_card(c) for c in cs))
+
+
+@gen
+def funding(args):
+    """The School line and the funding sentence, for Home, About, Programs, Donate, Scholarship."""
+    return '<p class="funding">%s %s <a href="/funding/">How we\u2019re funded</a></p>' % (E(B.SCHOOL_LINE), E(B.FUNDING_LINE))
+
+
+# ------------------------------------------------------------------ video facade
+def facade(vimeo, h, thumb, title, alt=""):
+    """Thumbnail + play button; site.js swaps in the player on click.
+    Without JavaScript the link opens the video on Vimeo."""
+    embed = "https://player.vimeo.com/video/%s?dnt=1%s" % (vimeo, "&h=" + h if h else "")
+    page = "https://vimeo.com/%s%s" % (vimeo, "/" + h if h else "")
+    return '<a class="vfacade" href="%s" data-embed="%s" data-title="%s">%s<span class="sr-only">Play video: %s</span></a>' % (
+        A(page), A(embed), A(title), img(thumb, alt), E(title))
+
+
+@gen
+def video(args):
+    kv = dict(re.findall(r'(\w+)="([^"]*)"', args))
+    return facade(kv["id"], kv.get("h", ""), kv["thumb"], kv["title"], kv.get("alt", ""))
 
 
 # ------------------------------------------------------------------ team
@@ -394,27 +418,41 @@ def playlists(args):
 
 
 # ------------------------------------------------------------------ directory
+def dir_slug(d):
+    return "norman-higgins" if d["slug"] == "alex-kellett" else d["slug"]
+
+
+def country_of(area):
+    c = area.split(",")[-1].strip() if area else ""
+    return {"Netherlands The": "Netherlands", "USA": "United States", "UK": "United Kingdom"}.get(c, c)
+
+
 @gen
 def directory(args):
     ds = data("directory")
+    slug = lambda t: re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
     roles = OrderedDict([("consultant", "Consultant"), ("lab-tech", "Lab Tech")])
     chips = '<li><button class="chip" type="button" data-chip="" aria-pressed="true">All (%d)</button></li>' % len(ds) + "".join(
         '<li><button class="chip" type="button" data-chip="%s" aria-pressed="false">%s (%d)</button></li>' % (
-            k, v, sum(1 for d in ds if any(r.lower().replace("-", " ").replace(" ", "-") == k for r in d["roles"]))) for k, v in roles.items())
+            k, v, sum(1 for d in ds if any(r.lower() == k for r in d["roles"]))) for k, v in roles.items())
+    countries = sorted({country_of(d["area"]) for d in ds if country_of(d["area"])})
+    opts = '<option value="">All countries</option>' + "".join('<option value="%s">%s</option>' % (slug(c), E(c)) for c in countries)
     cards = []
     for d in ds:
-        rk = " ".join(r.lower().replace(" ", "-") for r in d["roles"])
-        pic = img(d["photo"], "Photo of %s" % d["name"].strip(), "card__img card__img--square") if d["photo"] else '<div class="card__img card__img--square"></div>'
-        cards.append('<li data-item data-group="%s" data-text="%s"><article class="card card--link card--plain">%s<div class="card__body">'
-                     '<p class="card__kicker">%s</p><h3 class="card__title"><a href="/directory-member/%s/">%s</a></h3><p class="meta">%s</p></div></article></li>' % (
-                         A(rk), esc_attr_text(" ".join([d["name"], d["company"], d["area"], " ".join(d["roles"])])), pic,
-                         E(" · ".join(r.replace("Lab-Tech", "Lab Tech") for r in d["roles"])), d["slug"], E(d["name"].strip()),
-                         E(", ".join(x for x in [d["company"], d["area"]] if x))))
-    return ('<div data-filter><ul class="chips" aria-label="Filter by role">%s</ul>'
+        rk = " ".join(r.lower() for r in d["roles"])
+        name = d["name"].strip()
+        pic = img(d["photo"], "Photo of %s" % name, "card__img card__img--square") if d["photo"] else '<div class="card__img card__img--square"></div>'
+        cards.append('<li data-item data-group="%s" data-topics="%s" data-text="%s"><article class="card card--link card--plain">%s<div class="card__body">'
+                     '<p class="card__kicker">%s</p><h3 class="card__title"><a href="/directory-member/%s/">%s</a></h3>%s<p class="meta">%s</p></div></article></li>' % (
+                         A(rk), slug(country_of(d["area"])), esc_attr_text(" ".join([name, d["company"], d["area"], " ".join(d["roles"])])), pic,
+                         E(" \u00b7 ".join(r.replace("Lab-Tech", "Lab Tech") for r in d["roles"])), dir_slug(d), E(name),
+                         '<p class="card__text">%s</p>' % E(d["company"]) if d["company"] else "", E(d["area"])))
+    return ('<div data-filter><ul class="chips" aria-label="Filter by category">%s</ul>'
             '<form class="searchbar" role="search"><label class="sr-only" for="dir-q">Search the directory</label>'
-            '<input id="dir-q" type="search" data-q placeholder="Search by name, place or business"></form>'
-            '<p class="count" data-count data-one="professional" data-many="professionals" aria-live="polite"></p>'
-            '<ul class="grid">%s</ul><p data-empty hidden>No one matches. Try a country or region.</p></div>') % (chips, "".join(cards))
+            '<input id="dir-q" type="search" data-q placeholder="Name, company, location">'
+            '<label class="sr-only" for="dir-country">Country</label><select id="dir-country" data-topic>%s</select></form>'
+            '<p class="count" data-count data-one="practitioner" data-many="practitioners" aria-live="polite"></p>'
+            '<ul class="grid">%s</ul><p data-empty hidden>No practitioners match. Try another country or a nearby region.</p></div>') % (chips, opts, "".join(cards))
 
 
 # ------------------------------------------------------------------ item pages
@@ -437,10 +475,17 @@ def team_pages():
 
 def directory_pages():
     for d in data("directory"):
-        path = "/directory-member/%s/" % d["slug"]
+        slug = dir_slug(d)
+        path = "/directory-member/%s/" % slug
         name = d["name"].strip()
-        bugs = ["32"] if d["slug"] == "alex-kellett" else []
-        begin(path, "staging", bugs, "", "Directory member")
+        bugs, note = [], ""
+        if d["slug"] == "alex-kellett":
+            # 32: staging's alex-kellett page holds Norman Higgins's whole listing
+            # (name, email, bio). The title now matches the person on the page,
+            # the URL follows the name, and /directory-member/alex-kellett/ redirects.
+            bugs, note = ["32"], ("Staging serves this listing at /directory-member/alex-kellett/ with the title Norman Higgins; name, email and bio are all "
+                                  "Norman Higgins's. Moved to his own address, with a redirect from the old one. Alex Kellett's own listing seems to be missing: Stephanie McDaniel checks.")
+        begin(path, "staging", bugs, note, "Directory member")
         bio = rewrite_body(d["bio"])
         notes = []
         if re.search(r"^\s*<p>\s*test bio\s*</p>\s*$", d["bio"], re.I) or not bio:
@@ -480,14 +525,17 @@ def video_pages():
                 src = "https://player.vimeo.com/video/%s?dnt=1%s" % (v["vimeo"], "&h=" + v["vimeo_h"] if v["vimeo_h"] else "")
             else:
                 src = "https://www.youtube-nocookie.com/embed/%s" % v["youtube"]
+            if v["vimeo"] and v["thumb"]:
+                player = facade(v["vimeo"], v["vimeo_h"], v["thumb"], fix(v["title"]))
+            else:
+                player = '<div class="embed"><iframe src="%s" title="%s" allow="fullscreen; picture-in-picture" loading="lazy"></iframe></div>' % (A(src), A(fix(v["title"])))
             items = "".join('<li><a href="/video/%s/"%s><span>%d</span>%s<span>%s</span></a></li>' % (
                 o["slug"], ' aria-current="page"' if o is v else "", i + 1, img(o["thumb"], "") if o["thumb"] else "<span></span>", E(fix(o["title"])))
                 for i, o in enumerate(vids))
-            body = ('<section class="band"><div class="wrap">%s<div class="video-layout"><div><div class="embed">'
-                    '<iframe src="%s" title="%s" allow="fullscreen; picture-in-picture" loading="lazy"></iframe></div>'
+            body = ('<section class="band"><div class="wrap">%s<div class="video-layout"><div>%s'
                     '<p class="eyebrow" style="margin-top:1.25rem">%s</p><h1>%s</h1>%s</div>'
                     '<aside aria-label="%s"><h2 class="h3">%s</h2><p class="meta">%d videos</p><ol class="plist">%s</ol></aside></div></div></section>') % (
-                back("/case-studies/", "Back to case studies and videos"), A(src), A(fix(v["title"])), E(name), E(fix(v["title"])),
+                back("/case-studies/", "Back to case studies and videos"), player, E(name), E(fix(v["title"])),
                 rewrite_body(v["body"]) if v["body"] else "", A(name), E(name), len(vids), items)
             write(path, fix(v["title"]), "%s: a video from the Soil Food Web Foundation’s %s playlist." % (fix(v["title"]), name), body, "/case-studies/")
 
@@ -509,15 +557,22 @@ def event_pages():
             detail.append('<p class="source">Source: %s</p>' % E(cal["source"]))
             detail.append('<p class="actions"><a class="btn" href="%s">%s</a></p>' % (A(cal["cta"]["href"]), E(cal["cta"]["label"])))
         else:
-            detail.append(TODO % ("Description, place and how to sign up for %s; staging has no text for this event. Evan or Stephanie McDaniel supplies." % e["title"]))
+            if e.get("body"):
+                detail.append('<div class="prose">%s</div>' % rewrite_body(e["body"]))
+            else:
+                detail.append(TODO % ("Description, place and how to sign up for %s; the staging event page is empty. Evan or Stephanie McDaniel supplies." % e["title"]))
+            if e.get("text_dates") and e["start"] and fmt_range(e["start"], e["end"]).split(" to ")[-1] not in e["text_dates"].replace("rd", "").replace("th", "") \
+                    and e["slug"].endswith("2026-cohort-3"):
+                detail.append(TODO % ("Dates disagree on staging: the calendar says %s, the event text says \u201c%s\u201d. Confirm the end date." % (fmt_range(e["start"], e["end"]), e["text_dates"])))
             if e["type"] == "community":
                 detail.append(TODO % "Start time: staging shows 3:27 pm UTC, which looks like a placeholder. Confirm the time and time zone.")
-            if e["type"] == "workshop":
-                detail.append('<p><a class="more" href="/workshops/">About our workshops</a></p>')
-            if e["type"] == "course":
-                detail.append('<p><a class="more" href="/programs/#path">See all Online Courses</a></p>')
-            if e["type"] == "community":
-                detail.append('<p><a class="more" href="/year-one-report/">Read the year one report</a></p>')
+            if e.get("signup"):
+                label = {"workshop": "Register interest", "course": "Enroll on the school site", "community": "Join on the webinar site"}.get(e["type"], "Sign up")
+                detail.append('<p class="actions"><a class="btn" href="%s">%s</a></p>' % (A(staging_link(e["signup"])), label))
+            more = {"workshop": ('/workshops/', "About our workshops"), "course": ('/programs/#path', "See all Online Courses"),
+                    "community": ('/year-one-report/', "Read the year one report")}.get(e["type"])
+            if more:
+                detail.append('<p><a class="more" href="%s">%s</a></p>' % more)
         body = ('<section class="band"><div class="wrap wrap--narrow">%s<p class="eyebrow">%s</p><h1>%s</h1>'
                 '<dl class="kv"><dt>When</dt><dd><time datetime="%s">%s</time></dd><dt>Type</dt><dd>%s</dd></dl>%s</div></section>') % (
             back("/calendar/", "Back to the calendar"), EVENT_TYPES[e["type"]], E(e["title"]), e["start"], E(event_when(e)),

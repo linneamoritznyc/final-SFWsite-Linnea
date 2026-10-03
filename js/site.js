@@ -180,3 +180,23 @@
     });
   });
 })();
+
+/* 10. Video facade: swap the thumbnail for the player on click ------------------ */
+(function () {
+  "use strict";
+  Array.prototype.forEach.call(document.querySelectorAll("[data-embed]"), function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var f = document.createElement("iframe");
+      f.src = a.getAttribute("data-embed") + (a.getAttribute("data-embed").indexOf("?") > -1 ? "&" : "?") + "autoplay=1";
+      f.title = a.getAttribute("data-title") || "Video";
+      f.allow = "autoplay; fullscreen; picture-in-picture";
+      f.setAttribute("allowfullscreen", "");
+      var wrap = document.createElement("div");
+      wrap.className = "embed";
+      wrap.appendChild(f);
+      a.parentNode.replaceChild(wrap, a);
+      f.focus();
+    });
+  });
+})();

@@ -44,6 +44,12 @@ def inner(n):
     """Body HTML with theme attributes stripped: p, h2-h4, ul/ol/li, a, strong, em, blockquote, img."""
     if not n:
         return ""
+    # Cloudflare email obfuscation: put the real address back.
+    for sp in n.select("[data-cfemail]"):
+        sp.replace_with(cf_email(sp["data-cfemail"]))
+    for a in n.select('a[href*="/cdn-cgi/l/email-protection"]'):
+        h = a["href"].split("#", 1)
+        a["href"] = "mailto:" + (cf_email(h[1]) if len(h) == 2 and h[1] else a.get_text(strip=True))
     for x in n.select("script,style,svg"):
         x.decompose()
     for t in n.find_all(True):
@@ -202,26 +208,40 @@ def videos():
 
 # ---------------------------------------------------------------- events
 def events():
-    """The calendar's timeline bars carry each event's data in attributes."""
-    s = page("calendar")
-    out, seen = [], set()
-    for a in s.select("a.sfw-blog-calendar__bar"):
-        href = a.get("href", "")
-        if href in seen:
-            continue
-        seen.add(href)
-        out.append({
-            "slug": href.rstrip("/").split("/")[-1],
-            "title": a.get("data-title", ""),
-            "start": a.get("data-start", ""),
-            "end": a.get("data-end", ""),
-            "staging_type": a.get("data-type", ""),
-            "excerpt": a.get("data-excerpt", ""),
-            "external": a.get("data-external", "0"),
-            "href": href,
-            "when": next((txt(li.select_one("time")) for li in s.select("li.sfw-blog-calendar__entry")
-                          if li.select_one("a") and li.select_one("a")["href"] == href), ""),
-        })
+    """All ten sfw_calendar_event posts. Dates come from the calendar's timeline
+    bars (data attributes); the two 2027 PDC cohorts sit outside its twelve-month
+    window, so their dates are read from the event text ("Runs April 19- July 3rd").
+    Body text and the sign-up link come from each event page."""
+    import datetime
+    cal = page("calendar")
+    bars = {}
+    for a in cal.select("a.sfw-blog-calendar__bar"):
+        slug = a.get("href", "").rstrip("/").split("/")[-1]
+        when = next((txt(li.select_one("time")) for li in cal.select("li.sfw-blog-calendar__entry")
+                     if li.select_one("a") and li.select_one("a")["href"] == a.get("href")), "")
+        bars.setdefault(slug, {"start": a.get("data-start", ""), "end": a.get("data-end", ""),
+                               "staging_type": a.get("data-type", ""), "when": when})
+    out = []
+    for r in rest("sfw_calendar_event"):
+        slug = r["slug"]
+        s = page("calendar-event__" + slug)
+        m = (s.select_one(".post-content .content-inner") or s.select_one(".post-content")) if s else None
+        body = inner(m) if m else ""
+        text = txt(m) if m else ""
+        b = bars.get(slug, {})
+        e = {"slug": slug, "title": H.unescape(r["title"]["rendered"]), "start": b.get("start", ""), "end": b.get("end", ""),
+             "staging_type": b.get("staging_type", ""), "when": b.get("when", ""), "body": body, "text_dates": ""}
+        mm = re.search(r"Runs ([A-Z][a-z]+ \d{1,2})(?:st|nd|rd|th)?\s*-\s*([A-Z][a-z]+ \d{1,2})(?:st|nd|rd|th)?", text)
+        if mm:
+            e["text_dates"] = mm.group(0)
+            if not e["start"]:
+                year = re.search(r"(20\d\d)", e["title"]).group(1)
+                d = lambda t: datetime.datetime.strptime(t + " " + year, "%B %d %Y").date().isoformat()
+                e["start"], e["end"] = d(mm.group(1)), d(mm.group(2))
+        links = [x["href"] for x in m.select("a[href]")] if m else []
+        e["signup"] = next((l for l in links if "school.soilfoodweb.com" in l or "webinar.soilfoodweb.com" in l), "")
+        out.append(e)
+    out.sort(key=lambda e: e["start"])
     save("events", out)
 
 

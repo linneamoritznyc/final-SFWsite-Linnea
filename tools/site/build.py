@@ -130,6 +130,10 @@ FOOTER = [
 ]
 
 SCHOOL_LINE = "The Soil Food Web School is a program of the Soil Food Web Foundation."
+# The funding sentence from docs/copy-deck-v2.md (section 5), shown site-wide
+# so a reviewer landing on any page sees how course fees serve the mission.
+FUNDING_LINE = ("Course fees are program revenue; after the cost of delivering the courses "
+                "they fund scholarships, open research and field projects.")
 LEGAL = ("Soil Food Web Foundation is a 501(c)(3) nonprofit organization, EIN 39-4439236, "
          "Oregon DOJ registration #71264. Registered office: 5441 S Macadam Ave Ste N, Portland, Oregon 97239.")
 
@@ -186,10 +190,10 @@ def footer(path):
 <small>One email a month. Unsubscribe with one click.</small></div>
 <div class="footer-cols">%s</div>
 </div>
-<div class="footer-legal"><p>%s Our Form 990 (once filed) and financial statements are on the <a href="/governance/">governance page</a> and available on request.</p></div>
+<div class="footer-legal"><p>%s Our Form 990 (once filed) and financial statements are on the <a href="/governance/">governance page</a> and available on request.</p><p>%s %s <a href="/funding/">How we\u2019re funded</a></p></div>
 <div class="footer-bottom"><p>&copy; 2026 Soil Food Web Foundation, a 501(c)(3) nonprofit organization. %s</p>
 <ul><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
-</div></footer>""" % (cols, E(LEGAL), E(SCHOOL_LINE))
+</div></footer>""" % (cols, E(LEGAL), E(SCHOOL_LINE), E(FUNDING_LINE), E(SCHOOL_LINE))
 
 
 def shell(path, title, desc, body, active=None):

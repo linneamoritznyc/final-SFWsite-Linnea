@@ -17,7 +17,7 @@ output file, its size, where it came from and any review flags.
 Alt text comes from image-descriptions.csv (the sweet-babbage inventory) when
 it has the file, else from content/alt.json, else the page must supply it.
 """
-import csv, io, json, os, re, subprocess, urllib.request
+import csv, io, json, os, re, subprocess, urllib.parse, urllib.request
 from PIL import Image, ImageOps
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -113,6 +113,8 @@ def fetch(url):
     os.makedirs(CACHE, exist_ok=True)
     fn = os.path.join(CACHE, re.sub(r"[^A-Za-z0-9._-]+", "_", url)[-180:])
     if not os.path.exists(fn):
+        parts = urllib.parse.urlsplit(url)
+        url = urllib.parse.urlunsplit(parts._replace(path=urllib.parse.quote(urllib.parse.unquote(parts.path))))
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (preview build)"})
         with urllib.request.urlopen(req, timeout=60) as r, open(fn, "wb") as f:
             f.write(r.read())

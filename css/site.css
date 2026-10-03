@@ -91,7 +91,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 .band--cream { background: var(--cream); }
 .band--tight { padding-block: calc(var(--band-y) * .6); }
 .band--rule { border-top: 1px solid var(--rule); }
-.band + .band:not(.band--cream):not(.band--photo):not(.band--rule) { padding-top: 0; }
+.band:not(.band--cream):not(.band--photo) + .band:not(.band--cream):not(.band--photo):not(.band--rule) { padding-top: 0; }
 .band--cream + .band--cream { padding-top: 0; }
 .split { display: grid; gap: 2rem 3.5rem; align-items: center; }
 @media (min-width: 56em) {
@@ -461,3 +461,14 @@ span.todo { display: inline; padding: .1rem .4rem; }
   .utility__name { display: none; }
   .utility .wrap { justify-content: flex-end; }
 }
+
+/* 27. Video facade: thumbnail and play button until clicked (staging lightbox, inline) */
+.vfacade { position: relative; display: block; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: var(--moss); }
+.vfacade img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur) var(--ease); }
+.vfacade::after { content: ""; position: absolute; left: 50%; top: 50%; width: 4.5rem; height: 4.5rem; margin: -2.25rem 0 0 -2.25rem; border-radius: 50%; background: rgba(21, 104, 38, .92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l8 5-8 5z' fill='%23fff'/%3E%3C/svg%3E") center / 60% no-repeat; box-shadow: 0 4px 18px rgba(0,0,0,.25); transition: transform var(--dur) var(--ease); }
+.vfacade:hover img { transform: scale(1.03); }
+.vfacade:hover::after { transform: scale(1.08); }
+.vfacade .sr-only { position: absolute; }
+.profile h2 { font-size: 1.2rem; margin: 2rem 0 .6rem; }
+.profile h1 + .profile__role { margin-bottom: 0; }
+.funding { font-size: .9375rem; color: var(--ink-soft); max-width: 46rem; border-left: 3px solid var(--green-light); padding-left: 1rem; margin-top: 1.5rem; }
