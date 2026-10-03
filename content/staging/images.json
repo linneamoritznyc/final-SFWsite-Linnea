@@ -3752,6 +3752,116 @@
   "source_size": "2000x2000",
   "w": 1600
  },
+ "img/uploads/mar-group-photo-2.jpg": {
+  "alt": "Large group posing around a compost pile under a shed.",
+  "bytes": 287588,
+  "file": "img/mar-group-photo-2.webp",
+  "flags": [],
+  "h": 1200,
+  "shows": "About thirty-five people in casual clothes pose for a group photo on a concrete floor under a green metal shed, around a large square compost pile. Blue barrels and trees are in the background.",
+  "source": "repo",
+  "source_path": "img/uploads/mar-group-photo-2.jpg",
+  "source_size": "1600x1200",
+  "w": 1600
+ },
+ "img/uploads/mar25-group-photo.jpg": {
+  "alt": "",
+  "bytes": 267220,
+  "file": "img/mar25-group-photo.webp",
+  "flags": [],
+  "h": 1200,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/uploads/mar25-group-photo.jpg",
+  "source_size": "1600x1200",
+  "w": 1600
+ },
+ "img/wild-ken-hill/IMG_1492.jpg": {
+  "alt": "",
+  "bytes": 295216,
+  "file": "img/img-1492.webp",
+  "flags": [],
+  "h": 1600,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/wild-ken-hill/IMG_1492.jpg",
+  "source_size": "1600x1200",
+  "w": 1200
+ },
+ "img/wild-ken-hill/IMG_1493.jpg": {
+  "alt": "",
+  "bytes": 293312,
+  "file": "img/img-1493.webp",
+  "flags": [],
+  "h": 1600,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/wild-ken-hill/IMG_1493.jpg",
+  "source_size": "1600x1200",
+  "w": 1200
+ },
+ "img/wild-ken-hill/IMG_1494.jpg": {
+  "alt": "",
+  "bytes": 303426,
+  "file": "img/img-1494.webp",
+  "flags": [],
+  "h": 1541,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/wild-ken-hill/IMG_1494.jpg",
+  "source_size": "1600x2133",
+  "w": 1156
+ },
+ "img/wild-ken-hill/IMG_1495.jpg": {
+  "alt": "",
+  "bytes": 284620,
+  "file": "img/img-1495.webp",
+  "flags": [],
+  "h": 1600,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/wild-ken-hill/IMG_1495.jpg",
+  "source_size": "1600x1200",
+  "w": 1200
+ },
+ "img/wild-ken-hill/IMG_1497.jpg": {
+  "alt": "",
+  "bytes": 295000,
+  "file": "img/img-1497.webp",
+  "flags": [],
+  "h": 1600,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/wild-ken-hill/IMG_1497.jpg",
+  "source_size": "1600x1200",
+  "w": 1200
+ },
+ "img/wild-ken-hill/IMG_1502.jpg": {
+  "alt": "",
+  "bytes": 296442,
+  "file": "img/img-1502.webp",
+  "flags": [],
+  "h": 1600,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/wild-ken-hill/IMG_1502.jpg",
+  "source_size": "1600x1200",
+  "w": 1200
+ },
+ "img/wild-ken-hill/wkh-2026-reel-poster.jpg": {
+  "alt": "",
+  "bytes": 72714,
+  "file": "img/wkh-2026-reel-poster.webp",
+  "flags": [
+   "low resolution (406x720 source)"
+  ],
+  "h": 720,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/wild-ken-hill/wkh-2026-reel-poster.jpg",
+  "source_size": "406x720",
+  "w": 406
+ },
  "img/workshop-group-around-compost-pile.jpg": {
   "alt": "",
   "bytes": 287588,

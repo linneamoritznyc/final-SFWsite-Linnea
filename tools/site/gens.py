@@ -664,8 +664,8 @@ def post_pages():
             note.append("%d image(s) are broken on staging and on the old site; left out." % broken)
         begin(path, p.get("source", "staging"), bugs, " ".join(note), "Blog post")
         cats = " &middot; ".join('<a href="/category/%s/">%s</a>' % (c["slug"], E(c["name"])) for c in p["categories"])
-        hero = img(p["featured"], "", "article-hero", eager=True) if p.get("featured") else ""
-        body_html = p["body"] if p.get("source") == "repo" else rewrite_body(p["body"])
+        hero = img(p["featured"], p.get("featured_alt", ""), "article-hero", eager=True) if p.get("featured") else ""
+        body_html = B.render(p["body"]) if p.get("source") == "repo" else rewrite_body(p["body"])
         by = ""
         for a in p.get("authors", []):
             photo = AUTHOR_PHOTOS.get(a["name"])
