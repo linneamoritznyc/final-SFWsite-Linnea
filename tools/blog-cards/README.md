@@ -10,16 +10,20 @@ the Canva "Blogs Updated" folder:
 | tablet-header | 1024 x 768 |
 | mobile-header | 750 x 1000 |
 
-The layout is Linnea's PDC card (colour field, cream card, category word,
-headline, READ POST with the cursor, web address) with the post's photograph
-whole beside or above the card. Every piece is its own layer: the text is live
-text, the photo is one image, the colour field and card are shapes. (The cut
-"planes" version is still in build.py; Linnea turned it down.)
+The chosen design (`STYLE=brand`): the website's white page with the post's
+photograph whole, and a cream panel with the site's 12px radius and soft
+shadow. The type is Linnea's, off her PDC card: the category as a big bold
+Montserrat word, the headline in Source Sans 3, the black READ POST box in EB
+Garamond with the cursor, and www.soilfoodweb.com. Posts about Dr. Elaine
+take the category in Legacy Purple. Every piece is its own layer.
+
+The other styles in build.py (rect, lens, window, print) were tried and
+turned down; they are kept only for reference.
 
 ```
 pip install python-pptx pillow
-python3 tools/blog-cards/build.py <output folder>            # all four
-python3 tools/blog-cards/build.py <output folder> tablet-header-1024x768
+STYLE=brand python3 tools/blog-cards/build.py <output folder>   # all four
+STYLE=brand python3 tools/blog-cards/build.py <output folder> tablet-header-1024x768
 ./tools/blog-cards/preview.sh <deck.pptx> <sheet.png>        # needs LibreOffice Impress
 ```
 
