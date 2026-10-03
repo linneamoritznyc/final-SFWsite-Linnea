@@ -38,6 +38,7 @@ TODAY = datetime.date(2026, 10, 3)
 
 PAGES = OrderedDict()      # path -> review record
 MISSING_ALT = []
+EXTRA_FLAG = None           # set by a generator to flag every image it places (e.g. partner photos)
 _current = None            # review record of the page being built
 
 
@@ -57,7 +58,14 @@ def img(src, alt=None, cls="", eager=False, sizes=None, name=None):
         MISSING_ALT.append((_current["path"] if _current else "?", src))
         a = ""
     if _current is not None:
-        _current["images"].append({"src": src, "file": rec["file"], "from": rec["source"], "flags": rec["flags"]})
+        flags = list(rec["flags"])
+        # A small portrait or thumbnail is fine at low resolution; flag only large slots.
+        small = (a or "").startswith(("Portrait of", "Photo of")) or "card__img" in cls or (not cls and not a)
+        if small:
+            flags = [f for f in flags if not f.startswith("low resolution")]
+        if EXTRA_FLAG:
+            flags.append(EXTRA_FLAG)
+        _current["images"].append({"src": src, "file": rec["file"], "from": rec["source"], "flags": flags})
     attrs = ['src="/%s"' % rec["file"], 'width="%d"' % rec["w"], 'height="%d"' % rec["h"], 'alt="%s"' % A(a)]
     if cls:
         attrs.append('class="%s"' % cls)

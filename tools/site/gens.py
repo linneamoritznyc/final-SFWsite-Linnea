@@ -52,6 +52,12 @@ def staging_link(href):
         if h.startswith(a):
             h = b + h[len(a):]
             break
+    if h.startswith("/resources/animations-videos/"):
+        h = "/how-it-works/"
+    elif h.startswith(("/certified-listing-directory/", "/consultants/", "/laboratory-technicians/")):
+        h = "/find-a-professional/"
+    elif h.startswith(("/soil-sponge-regeneration-workshop/", "/product/regenerating-the-soil-sponge/")):
+        h = "/workshops/"
     h = h.replace("courses/foundation-couse-1", "courses/foundation-course-1")
     if "localhost" in h:
         h = "https://school.soilfoodweb.com/courses/permaculture-design-certification"
@@ -67,7 +73,12 @@ def rewrite_body(body, page_imgs=True):
 
     def a_sub(m):
         return 'href="%s"' % A(staging_link(H.unescape(m.group(1))))
+    # WordPress tag lists have no launch address: drop them.
+    body = re.sub(r"<h4>\s*Tags:\s*</h4>(\s*<a href=\"[^\"]*/tag/[^\"]*\"[^>]*>.*?</a>\s*,?)*", "", body, flags=re.S)
     body = re.sub(r'href="([^"]*)"', a_sub, body)
+    # Links with no launch target keep their text and lose the link.
+    body = re.sub(r'<a href="(?:/tag/[^"]*|/beneath-the-surface[^"]*|#brave_[^"]*)"[^>]*>(.*?)</a>', r"\1", body, flags=re.S)
+    body = body.replace('href="/october-2025-newsletter/#gettingthewordout"', 'href="/october-2025-newsletter/"')
 
     def img_sub(m):
         tag = m.group(0)
@@ -444,7 +455,11 @@ def playlists(args):
 
 # ------------------------------------------------------------------ directory
 def dir_slug(d):
-    return "norman-higgins" if d["slug"] == "alex-kellett" else d["slug"]
+    """Launch slug: plain letters, digits and hyphens (staging has one with an encoded broken bar)."""
+    if d["slug"] == "alex-kellett":
+        return "norman-higgins"
+    from urllib.parse import unquote
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9-]+", "-", unquote(d["slug"]).lower())).strip("-")
 
 
 def country_of(area):
@@ -665,6 +680,7 @@ def post_pages():
         if p["slug"] == "obituary-for-dr-elaine-ingham":
             note.append("Bug 30: the repeated paragraph reported on 2 October was already gone from staging on 3 October; the build still drops any repeated paragraph.")
         begin(path, p.get("source", "staging"), bugs, " ".join(note), "Blog post")
+        B.EXTRA_FLAG = PARTNER_POSTS.get(p["slug"])
         cats = " &middot; ".join('<a href="/category/%s/">%s</a>' % (c["slug"], E(c["name"])) for c in p["categories"])
         hero = img(p["featured"], p.get("featured_alt", ""), "article-hero", eager=True) if p.get("featured") else ""
         body_html = B.render(p["body"]) if p.get("source") == "repo" else rewrite_body(p["body"])
@@ -678,7 +694,19 @@ def post_pages():
                 '<p class="eyebrow">%s</p><h1>%s</h1><p class="meta"><time datetime="%s">%s</time></p></header>%s'
                 '<div class="prose">%s</div>%s</div></article>') % (
             cats, E(fix(p["title"])), p["date"], fmt_date(p["date"]), hero, body_html, by)
+        B.EXTRA_FLAG = None
         write(path, fix(p["title"]), (fix(p.get("excerpt", "")) or fix(p["title"]))[:200], body, "/community/")
+
+
+# Posts whose pictures come from partners or guest authors: no permission on file.
+PARTNER_POSTS = {
+    "unconditional-freedom-at-home-and-in-the-world": "partner photo (Unconditional Freedom), no permission on file",
+    "a-blueprint-to-return-to-the-garden-of-eden": "guest author photo (Philip Barton), no permission on file",
+    "sadhguru-and-the-soil-food-web": "partner photo (Isha / Save Soil), no permission on file",
+    "soil-health-week-2025-wild-soils-uk-and-trashit-bring-the-soil-food-web-approach-to-pakistan": "partner photo (Wild Soils UK, TrashIt), no permission on file",
+    "october-2025-newsletter": "event photos (Groundswell and partners), no permission on file",
+    "exploring-soil-food-web-innovations-in-west-africa": "partner photo, no permission on file",
+}
 
 
 AUTHOR_PHOTOS = {

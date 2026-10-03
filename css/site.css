@@ -475,3 +475,6 @@ span.todo { display: inline; padding: .1rem .4rem; }
 .pagehead + .band:not(.band--cream) { padding-top: clamp(1rem, .5rem + 2vw, 2rem); }
 .reach { align-self: start; }
 .stat__n--tbc { font-size: clamp(1.75rem, 1.3rem + 2vw, 2.75rem); color: var(--ink-soft); padding-top: .6em; }
+/* Long words (chemical names) and pasted URLs wrap instead of widening the page. */
+main { overflow-wrap: break-word; }
+h1, .prose a, .entry__title, .kv dd, .card__title { overflow-wrap: anywhere; }
