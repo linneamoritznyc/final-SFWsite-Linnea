@@ -21,6 +21,7 @@ IDS = re.compile(r'\sid="([^"]+)"')
 
 def pages():
     out = sorted(glob.glob(os.path.join(ROOT, "*.html")))
+    out += sorted(glob.glob(os.path.join(ROOT, "news", "*.html")))
     out += sorted(glob.glob(os.path.join(ROOT, "projects", "*.html")))
     return [p for p in out if not any(s in p for s in SKIP_DIRS)]
 
@@ -55,12 +56,20 @@ def main():
             path, _, frag = href.partition("#")
             if not path:
                 continue
-            target = os.path.normpath(os.path.join(os.path.dirname(rel), path))
-            if target.endswith("/"):
-                target += "index.html"
-            if not os.path.exists(os.path.join(ROOT, target)):
+            if path == "/":
+                target = "index.html"
+            else:
+                target = os.path.normpath(os.path.join(os.path.dirname(rel), path))
+                if target.endswith("/"):
+                    target += "index.html"
+            resolved = None
+            for candidate in (target, target + ".html", os.path.join(target, "index.html")):
+                if os.path.isfile(os.path.join(ROOT, candidate)):
+                    resolved = candidate
+                    break
+            if resolved is None:
                 bad.append((rel, href, label, "no such file: " + target))
-            elif frag and frag not in ids.get(target, set()):
+            elif frag and frag not in ids.get(resolved, set()):
                 bad.append((rel, href, label, "no such anchor: #%s on %s" % (frag, target)))
 
     print("%d pages, %d links, %d external URLs"

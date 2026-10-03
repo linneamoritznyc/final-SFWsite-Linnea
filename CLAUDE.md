@@ -1,3 +1,7 @@
+<!-- This file is project configuration for Claude Code (claude.ai/code).
+     It tells the AI assistant what rules to follow when working on this repo.
+     It does not affect the website build or deployment. -->
+
 # Soil Food Web Foundation website rebuild
 
 Read before doing anything: docs/copy-deck-v2.md (every word on the site, decisions at the top),

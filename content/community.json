@@ -53,7 +53,7 @@
           "alt": "Fields and hedgerows at Wild Ken Hill, Norfolk"
         }
       ],
-      "href": "news/wild-ken-hill-2026.html",
+      "href": "news/wild-ken-hill-2026",
       "link": "Read the story",
       "src": "https://soilfoodweb.com/jun2026-aw/",
       "note": "The mockup carried 39 photographs and clips from these ten days as Google Drive links, still in HEIC and MOV. They belong on the story page instead, converted, at public/assets/community/. Linnea supplies the files; the story page holds the slots.",
@@ -187,8 +187,8 @@
   "comingUp": {
     "h3": "Coming up",
     "items": [
-      { "when": "16 September to 20 December 2026", "label": "Permaculture Design Certification cohort", "href": "calendar.html" },
-      { "when": "19 to 30 October 2026", "label": "Accelerator Workshop India 2026, Coimbatore", "href": "calendar.html#workshops" }
+      { "when": "16 September to 20 December 2026", "label": "Permaculture Design Certification cohort", "href": "calendar" },
+      { "when": "19 to 30 October 2026", "label": "Accelerator Workshop India 2026, Coimbatore", "href": "calendar#workshops" }
     ]
   },
   "regions": {
@@ -216,7 +216,7 @@
   "work": {
     "h2": "Work with one of us",
     "body": "Every consultant and lab-tech in our directory trained with us and earned their title. Consultants finished our full professional program. Lab-techs finished our microscopy training. Search by region or specialty.",
-    "cta": { "label": "Find a professional", "href": "directory.html" },
+    "cta": { "label": "Find a professional", "href": "directory" },
     "note": "The directory prototype's dataset is fictional (src/lib/data.ts declares it). Real practitioner records required before this ships.",
     "noteStatus": "placeholder"
   },
@@ -224,8 +224,8 @@
     "h2": "Join us",
     "body": "Every one of us started with one course, one webinar, or one afternoon at a microscope.",
     "ctas": [
-      { "label": "See every program and price", "href": "learn.html" },
-      { "label": "Start with a free webinar", "href": "learn-webinars.html" }
+      { "label": "Explore our programs", "href": "learn" },
+      { "label": "Start with a free webinar", "href": "learn-webinars" }
     ]
   }
 }

@@ -2,15 +2,16 @@
   "_source": "SFWF Website Copy Deck v1.0, section 1. Copy verbatim.",
   "hero": {
     "eyebrow": "SOIL FOOD WEB FOUNDATION",
-    "h1": "Healing soil. Feeding humanity. Restoring the living world.",
-    "subhead": "The ground beneath our farms and forests is alive. Join a global community of Soil Regenerators learning, restoring, and demonstrating the power of the soil food web on every continent.",
+    "h1": "Join a global community of Soil Regenerators",
+    "subhead": "Healing soil. Feeding humanity. Restoring the living world.",
+    "body": "The ground beneath our farms and forests is alive. Learn, restore, and demonstrate the power of the soil food web on every continent.",
     "primaryCta": {
       "label": "Join the community",
-      "href": "community.html#join"
+      "href": "community#join"
     },
     "secondaryCta": {
-      "label": "See every program and price",
-      "href": "learn.html"
+      "label": "Programs",
+      "href": "learn"
     },
     "image": {
       "status": "placeholder",
@@ -41,12 +42,12 @@
     ],
     "link": {
       "label": "Read our mission and story →",
-      "href": "about.html"
+      "href": "about"
     }
   },
   "howItWorks": {
     "eyebrow": "THE SOIL FOOD WEB APPROACH",
-    "h2": "Work with the life in your soil",
+    "h2": "The Soil Food Web Approach",
     "note": "reframed Sep 8 (Evan): drop tech metaphor + step count; Approach is now FOUR steps",
     "steps": [
       {
@@ -72,7 +73,7 @@
     ],
     "link": {
       "label": "See case studies from the field →",
-      "href": "practice.html#case-studies"
+      "href": "practice#case-studies"
     }
   },
   "learnWithUs": {
@@ -85,7 +86,7 @@
         "body": "The complete introduction to the science of the soil food web. The starting point for everyone.",
         "cta": {
           "label": "See the Foundation Courses and price",
-          "href": "learn.html#foundation-courses"
+          "href": "learn#foundation-courses"
         }
       },
       {
@@ -94,7 +95,7 @@
         "body": "Hands-on Soil Microscopy, BioComplete™ Compost Production, Biological Liquid Amendments, and Field Trials.",
         "cta": {
           "label": "See the Soil Food Web Consultant path",
-          "href": "learn.html#complete-practicum"
+          "href": "learn#complete-practicum"
         }
       },
       {
@@ -103,7 +104,7 @@
         "body": "Whole-system design: water, plants, structures, community, rooted in living soil.",
         "cta": {
           "label": "See the Permaculture Design Certification",
-          "href": "learn.html#permaculture"
+          "href": "learn#permaculture"
         }
       },
       {
@@ -112,7 +113,7 @@
         "body": "Learn ecological principles and practical restoration techniques.",
         "cta": {
           "label": "See Introduction to Ecosystem Restoration",
-          "href": "learn.html#restoration"
+          "href": "learn#restoration"
         },
         "status": "verify",
         "note": "VERIFY sales page URL"
@@ -123,7 +124,7 @@
         "body": "Learn on real sites, meet the community, and accelerate your training.",
         "cta": {
           "label": "See the calendar of workshops",
-          "href": "calendar.html"
+          "href": "calendar"
         }
       }
     ],
@@ -135,11 +136,11 @@
     "links": [
       {
         "label": "All events →",
-        "href": "calendar.html"
+        "href": "calendar"
       },
       {
         "label": "All news and stories →",
-        "href": "news.html"
+        "href": "news"
       }
     ],
     "note": "Dynamic feed: upcoming workshop > upcoming webinar > latest impact story > latest blog post. Sample items in mockup are illustrative.",
@@ -150,7 +151,7 @@
         "datetime": "2026-09-16",
         "dated": "16 September to 20 December 2026",
         "label": "Permaculture Design Certification cohort begins",
-        "href": "learn.html#permaculture",
+        "href": "learn#permaculture",
         "kind": "Course, cohort"
       },
       {
@@ -176,7 +177,7 @@
     "line": "We’re grateful to the organizations that make this work possible, and always looking for aligned partners.",
     "cta": {
       "label": "Start a partnership conversation",
-      "href": "practice.html#work-with-us"
+      "href": "practice#work-with-us"
     },
     "note": "One partner named so far. Every other partner name and logo file still to come. Evan.",
     "status": "placeholder",
@@ -194,16 +195,16 @@
     "ctas": [
       {
         "label": "Join the community",
-        "href": "community.html#join"
+        "href": "community#join"
       },
       {
-        "label": "Subscribe to the newsletter",
-        "href": "news.html#subscribe",
+        "label": "Subscribe",
+        "href": "news#subscribe",
         "type": "email"
       },
       {
         "label": "Donate",
-        "href": "donate.html"
+        "href": "donate"
       }
     ]
   },
@@ -215,7 +216,7 @@
       {
         "title": "Farm with biology",
         "body": "Cut back on synthetic inputs and build your natural soil fertility. We’ll connect you with our team and trained practitioners to plan, implement, and monitor the transition on your operation.",
-        "href": "directory.html",
+        "href": "directory",
         "cta": "Find a trained professional near you",
         "img": "img/harringtons-organic-land-care-york-farms-1-768x1024.jpg",
         "alt": "A gloved hand holding back a thick mat of crop residue to show dark crumb soil underneath"
@@ -223,7 +224,7 @@
       {
         "title": "Restore your land",
         "body": "Bring biodiversity back to degraded sites and put biology to work on remediation, from gardens and smallholdings to large landholdings and public lands.",
-        "href": "practice.html#work-with-us",
+        "href": "practice#work-with-us",
         "cta": "See restoration work and start a conversation",
         "img": "img/erc-panchamana-treeplanting-2-fb-img-1666270988322.jpg",
         "alt": "People spread across a clearing planting seedlings among standing trees"
@@ -231,8 +232,8 @@
       {
         "title": "Bring it to your classroom",
         "body": "Incorporate the soil food web methodology into your curriculum: for school systems, universities, and training programs.",
-        "href": "learn.html",
-        "cta": "See every program and price",
+        "href": "learn",
+        "cta": "Explore our programs",
         "img": "img/ctpfw-student-squeezing-compost-1.jpg",
         "alt": "A student in gloves squeezing a handful of compost to test it while a group watches"
       }

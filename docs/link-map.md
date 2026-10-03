@@ -116,7 +116,7 @@ Reconciled against the footer on new.soilfoodweb.com, which is the newest decisi
 | | Case studies | `practice.html#case-studies` | Not on the staging footer |
 | | Media and press | `contact.html#media` | Not on the staging footer |
 | Get involved | Donate | `donate.html` | |
-| | Volunteer with us | `donate.html#volunteer` | |
+| | Volunteer with us | `volunteer.html` | |
 | | Invite us to speak | `contact.html#speak` | Was missing from the footer |
 | | Find a professional | `directory.html` | Not on the staging footer |
 | | Logo and name use | `contact.html#logo` | Staging says "Logo & Brand Use" |
@@ -219,7 +219,7 @@ The six mechanism animations are embedded here from Vimeo, lazy-loaded, one per 
 | **Restore your land** — See how we partner on land and trials | `research.html#work-with-us` | |
 | **Bring it to your classroom** — See every program and price | `learn.html` | |
 | Partner on research | `research.html#work-with-us` | |
-| Volunteer with us | `donate.html#volunteer` | |
+| Volunteer with us | `volunteer.html` | |
 
 ### community.html
 
@@ -312,4 +312,4 @@ No link on this site points at the WordPress shop or at `/foundation-courses-2/`
 
 Every anchor a link points at exists on the page it names. `tools/linkcheck.py` proves it and exits non-zero if that stops being true. Anchors in use:
 
-`#main` · `about.html#mission` · `contact.html#speak` · `calendar.html#workshops` · `community.html#community-map` · `community.html#join` · `contact.html#media` · `contact.html#logo` · `donate.html#volunteer` · `learn.html#foundation-courses` · `learn.html#complete-practicum` · `learn.html#permaculture` · `learn.html#restoration` · `news.html#subscribe` · `news.html#foundation` · `practice.html#case-studies` · `research.html#work-with-us` · the six `about-team.html` group anchors · the sixteen `motion.html` study anchors.
+`#main` · `about.html#mission` · `contact.html#speak` · `calendar.html#workshops` · `community.html#community-map` · `community.html#join` · `contact.html#media` · `contact.html#logo` · `volunteer.html` · `learn.html#foundation-courses` · `learn.html#complete-practicum` · `learn.html#permaculture` · `learn.html#restoration` · `news.html#subscribe` · `news.html#foundation` · `practice.html#case-studies` · `research.html#work-with-us` · the six `about-team.html` group anchors · the sixteen `motion.html` study anchors.

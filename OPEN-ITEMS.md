@@ -2,7 +2,7 @@
 
 Everything the site still shows as a visible placeholder, with the person who supplies it.
 
-Last updated 11 September 2026 (Community rebuild and the Wild Ken Hill story added the same day). Placeholders render as dashed `.todo` blocks; add `?notes=1` to any page URL to reveal every one of them at once.
+Last updated 14 September 2026 (the Soil Food Web School app page added under Community; the day before: hero photograph, volunteer quotes cut, community photo slots, Salient brief). Placeholders render as dashed `.todo` blocks; add `?notes=1` to any page URL to reveal every one of them at once.
 
 A placeholder leaves this list only when the real thing is in the repository. "Confirmed in a document" is not the same as "on the page".
 
@@ -23,6 +23,9 @@ A placeholder leaves this list only when the real thing is in the repository. "C
 | **Decision 9, public documents** | about-governance.html | IRS determination letter, financial statements, conflict-of-interest / whistleblower / document-retention policies, and the split showing where donations go. The Form 990 and annual report lines now read "will be posted here"; confirm the first filing date. |
 | **Decision 10, the rest of the board** | about-team.html | Four Executive Committee members are named. Still needed: officer titles (chair, secretary, treasurer), Jenna Noel's own title, any members beyond the Executive Committee, and board portraits. |
 | **Decision 13, Soil Sponge Workshop** | calendar.html | Next cohort dates, or take registration down. |
+| **The app, offline and background play** | app.html | Whether lectures download for offline viewing, and whether audio keeps playing when the phone is locked. Neither store listing says, and both matter to anyone studying on a commute or out on land without signal. |
+| **The app, minimum OS versions** | app.html | Minimum iOS and Android, off the two listings, for the facts list. Neither store page is reachable from the build environment. |
+| **The App Store subtitle says "SFW"** | not the site, the listings | The subtitle reads "A SFW Foundation Program". The acronym is out of public text by the copy deck's own rule, and to a general reader it reads as something else entirely. Change both listings to "A program of the Soil Food Web Foundation". |
 | **Decision 14, newsletter tool** | footer, every page | Which service receives the footer email field. Needed for the form action; the form currently posts nowhere. |
 | **Decision 15, directory counts** | learn.html, directory.html | Confirm roughly 100 consultants and 250 lab technicians in 45 countries. These print on every program row once confirmed. |
 | **Decision 16, logo artwork** | every page | The mark was shown in chat but the file never reached the repository, and a hand-traced copy of a brand mark is not the brand mark. **The slot is built and waiting:** put the artwork at `img/logo.svg` (SVG preferred; a transparent PNG at 3x works) and set `LOGO = "img/logo.svg"` at the top of `tools/build.py`. Header, overlay menu and footer all pick it up, sized and positioned, and the type-set wordmark becomes the accessible name. |
@@ -47,6 +50,7 @@ A placeholder leaves this list only when the real thing is in the repository. "C
 | :-- | :-- | :-- |
 | A restoration-segment case study | practice.html | Three agricultural and practitioner films are in. The restoration case is missing, and the section claims all three segments. |
 | The written detail behind each case study | practice.html | Where each grower started, what they practiced, what was measured. The films carry the story; the page carries no numbers. |
+| App screenshots | app.html | Three at phone size. The App Store listing already carries the right three, so this is the source files into img/, not a new shoot. |
 
 ## Waiting on Evan, the volunteer page
 
@@ -58,13 +62,13 @@ video are in `docs/volunteer-visuals.md`.
 | :-- | :-- | :-- |
 | **"More than half of our students live in the United States"** | volunteer.html, the statement | The headline sentence of the page and the reason the page exists. Not verified against enrolment records. Confirm the figure or change the sentence before publishing. |
 | **The three "Open right now" openings** | volunteer.html, Open right now | Dates, places and hours all come from the mockup and are invented. Replace with real openings, or take the section down. This list wants feeding from the same dated index the calendar uses. |
-| **The three volunteer quotes, names and portraits** | volunteer.html, From the people doing it | Nobody said these words. Three real quotes gathered with permission, with a name, a region and a portrait each, or cut the section. |
+| **Volunteer quotes** | volunteer.html | The three mockup quotes were cut on 13 September 2026 because nobody said them. If the Foundation gathers real quotes with permission, with a name, a region and a portrait each, the section can come back. |
 | **The five FAQ answers** | volunteer.html, Questions people ask first | Drafts. The last one promises a starter guide and direct contact with staff; confirm both exist. |
 | **Volunteer form routing** | volunteer.html, Join the volunteer network | Posts to info@soilfoodweb.com like the contact form, which opens the visitor's mail client rather than really submitting. Confirm the recipient, who owns the replies, and whether a form service is wanted. Same open question as the contact form. |
 | **"We confirm your hours when your employer asks"** | volunteer.html, Volunteer as a team | A commitment to US employers' giving portals. Confirm the Foundation will do it, and who. The tax note beside it is general and is not tax advice; legal review. |
 | **Team day link** | volunteer.html, Plan a team day | The mockup pointed at `/contact?topic=team-volunteering`. The contact form has no topic parameter, so the button goes to the contact page. Add the parameter or leave it. |
 | **Which animation "Watch the animation" means** | volunteer.html, Start in the next ten minutes | The mockup linked to nothing. It points at the science page, which carries the animations. Confirm, or give the exact URL. |
-| **Every photograph and caption on the page** | volunteer.html, 20 slots | The hero holds five stand-ins from the Foundation's own library, labelled as stand-ins; none of them shows a volunteer volunteering. Everything else is an empty labelled slot. Briefs and formats: `docs/volunteer-visuals.md`. |
+| **Every photograph and caption on the page** | volunteer.html, 17 slots | The hero holds five stand-ins from the Foundation's own library, labelled as stand-ins; none of them shows a volunteer volunteering. Everything else is an empty labelled slot. Briefs and formats: `docs/volunteer-visuals.md`. |
 | **Instagram wall permissions** | volunteer.html, On Instagram | Six squares, waiting on written permission from each poster. A feed widget was deliberately not used: it is a third-party script on every page load and it cannot ask permission. |
 | **Openly licensed stand-ins were not fetched** | `img/pd/` does not exist | This build environment's egress proxy refuses commons.wikimedia.org, nrcs.usda.gov and archive.org, all with 403. `tools/pd-assets.py --fetch` does the work and records source, author and licence for every file; run it from a machine with normal internet access. |
 
@@ -74,6 +78,7 @@ video are in `docs/volunteer-visuals.md`.
 
 | What | Where | Note |
 | :-- | :-- | :-- |
+| **Homepage hero caption** | index.html | Evan asked for a group photograph over the Elaine microscope portrait. The page now uses `MAR Group Photo 2.jpg` from the uploads folder (about thirty people around a compost pile under a shed). Which workshop, where and when, and confirmation that everyone in it agreed to be published. |
 | Photo captions | 14 pages, every `.shot` and `.ledger` | Place, people, date. The Image and Video Log sheet in the redesign folder is the lookup table once it is filled. Nothing here is invented: a caption naming a real place and real people is a claim. |
 | Staff portraits | about-team.html | Four exist on the Thinkific CDN, listed below. Everyone else still needs one. Until then the cards show initials. |
 | Scholarship recipient stories | learn-scholarships.html | Two or three: photo, name, country, one paragraph. None were ever published on the old site, so the honest "the program is growing" framing stays until they arrive. |
@@ -108,8 +113,8 @@ These four are on the Thinkific CDN. They could not be downloaded from the build
 
 | What | Where | Note |
 | :-- | :-- | :-- |
-| **The Wild Ken Hill photographs and clips** | `news/wild-ken-hill-2026.html` | Six photographs and four clips, at the filenames listed in `public/assets/community/README.md`. The clips are masked into circles, so the subject has to be centred and the corners are cut away. Every clip needs a poster with the same base name. The 39 files in the SFW Drive are still HEIC and MOV and need converting first. `python3 tools/imagecheck.py` lists what is still missing. |
-| **The five community log photographs** | `community.html` | `living-legacy-webinar`, `soil-health-week-karachi-university`, `soil-health-week-pakistan`, `costa-rica-liquid-amendments`, `costa-rica-microscopes`. The mockup hot-linked these from soilfoodweb.com/wp-content/uploads; they are referenced from `public/assets/community/img/` so the new site does not depend on the old one staying up. Copy the originals across. |
+| **The Wild Ken Hill photographs and clips** | `news/wild-ken-hill-2026.html` | In. Eleven photographs in `img/wild-ken-hill/`, three circle clips and the highlight reel in `video/wild-ken-hill/`. The reel went on the page on 13 September 2026 as a 3 MB web copy of the 13.8 MB original, with a poster frame; it has no sound track, and the caption says so. `python3 tools/imagecheck.py` confirms every referenced file exists. |
+| **The five community log photographs** | `community.html` | `living-legacy-webinar`, `soil-health-week-karachi-university`, `soil-health-week-pakistan`, `costa-rica-liquid-amendments`, `costa-rica-microscopes`. The mockup hot-linked these from soilfoodweb.com/wp-content/uploads; they are referenced from `public/assets/community/img/` so the new site does not depend on the old one staying up. Since 13 September 2026 the five positions are toned `.slot` blocks naming the file each one wants (visible with `?notes=1`), instead of image tags pointing at files that do not exist. Copy the originals across and put the image tags back. |
 | **Alt text and captions on the story** | `news/wild-ken-hill-2026.html` | Written from the story rather than from the footage, because the footage was not available when the page was built. Read every alt attribute against the picture it now describes once the files land. Captions are marked caption-needed and print nothing until written. |
 
 ## Decisions on the Community rebuild
@@ -175,3 +180,9 @@ Not bugs in this build, but they will matter at cutover.
 - **The six science animations are unverified.** They are embedded from Vimeo by id (372925873, 372474782, 372476056, 372479571, 372480255, 372478833). If any is unlisted rather than public it needs its `h` privacy hash appended, or it will show "video not available". Open `/science` in a real browser and check all six.
 - **The production hostname is a guess.** `tools/build.py` sets `SITE = "https://soilfoodweb.org"` for the `og:url` and `og:image` tags. Confirm the real hostname at cutover; a wrong one means every shared link unfurls without its picture.
 - The external links in `docs/link-map.md` have never been fetched. This build environment has no outbound access to soilfoodweb.com, school.soilfoodweb.com, vimeo.com or doi.org. They need one pass from a machine with normal internet access before launch.
+
+---
+
+## A note on the build script
+
+`tools/build.py` renders ten pages from `content/*.json` and re-stamps the header and footer into the rest. It has not been kept up with the audit edits made straight to the HTML (the header dropdowns, the homepage hero, the stats row, the pathway grid on Learn). **Running it today would overwrite those pages with the older templates.** The copy strings in `content/` were brought into line on 13 September 2026, but the templates were not. Until the builders are reconciled with the pages, treat the HTML as the source of truth and do not run the build.

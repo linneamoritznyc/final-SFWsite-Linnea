@@ -34,6 +34,10 @@
     {
       "source": "/community/directory",
       "destination": "/directory.html"
+    },
+    {
+      "source": "/community/app",
+      "destination": "/app.html"
     }
   ],
   "redirects": [

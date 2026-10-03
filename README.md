@@ -12,7 +12,7 @@ no dependencies. Open any `.html` file in a browser.
 ## Quick start
 
 1. Clone the repo.
-2. Open `index.html` in a browser. That's it.
+2. Run `python3 -m http.server 8000` and open `http://localhost:8000`.
 3. For the design system reference, open `_dev/design-system.html`.
 
 ---

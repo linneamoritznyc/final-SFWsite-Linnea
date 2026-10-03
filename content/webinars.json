@@ -25,13 +25,13 @@
       {
         "title": "Educational videos",
         "body": "Short explainers on the organisms and the approach. The six animations sit beside the mechanism each one explains.",
-        "href": "science.html",
+        "href": "science",
         "cta": "Watch the six animations"
       },
       {
         "title": "Short guides",
         "body": "Reading your soil, making your first compost, choosing a microscope.",
-        "href": "learn.html",
+        "href": "learn",
         "cta": "See the programs these come from",
         "status": "placeholder",
         "note": "The three guides do not exist yet as downloadable pages. This card points at the Learn page until they do. Who writes them, and where do they live? Evan and Stephanie."
@@ -39,7 +39,7 @@
       {
         "title": "Case studies",
         "body": "Documented results from real farms and restoration sites, told by the practitioners themselves.",
-        "href": "practice.html#case-studies",
+        "href": "practice#case-studies",
         "cta": "Watch the films from the field"
       }
     ]
@@ -96,15 +96,15 @@
         "body": "Six mechanisms, each with the Foundation’s own animation beside it. Free, and no sign-up.",
         "cta": {
           "label": "Watch the six animations",
-          "href": "science.html"
+          "href": "science"
         }
       },
       {
-        "title": "See every program and price",
+        "title": "Explore our programs",
         "body": "Every program in the order you would take it, with the full cost of the Consultant path stated up front.",
         "cta": {
-          "label": "See every program and price",
-          "href": "learn.html"
+          "label": "Explore our programs",
+          "href": "learn"
         }
       },
       {
@@ -112,7 +112,7 @@
         "body": "Soil Food Web Consultants and Lab Technicians, searchable by region and specialty.",
         "cta": {
           "label": "Find a professional",
-          "href": "directory.html"
+          "href": "directory"
         }
       },
       {
@@ -120,7 +120,7 @@
         "body": "Priority for applicants in under-resourced regions, where restored soil changes lives fastest.",
         "cta": {
           "label": "See how scholarships work",
-          "href": "learn-scholarships.html"
+          "href": "learn-scholarships"
         }
       }
     ]

@@ -1,19 +1,19 @@
 {
   "_source": "Copy deck v2, sections 1.1 to 1.3, reconciled with the staging menu (About us, Learn, Science, Practice, Community) and the Site Map of 7 September 2026. Labels are sentence case and say where they go; 'and' is spelled out.",
   "utilityBar": {
-    "tagline": "Join a global community of Soil Regenerators",
+    "tagline": "The Soil Food Web Foundation 501(c)(3)",
     "actions": [
       {
         "label": "Student login",
-        "href": "login.html"
+        "href": "login"
       },
       {
-        "label": "Subscribe to the newsletter",
-        "href": "news.html#subscribe"
+        "label": "Subscribe",
+        "href": "news#subscribe"
       },
       {
         "label": "Donate",
-        "href": "donate.html"
+        "href": "donate"
       }
     ]
   },
@@ -21,47 +21,47 @@
     "items": [
       {
         "label": "Home",
-        "href": "index.html"
+        "href": "/"
       },
       {
         "label": "About us",
-        "href": "about.html",
+        "href": "about",
         "pillar": null,
         "children": [
           {
             "label": "Mission, vision and story",
-            "href": "about.html#mission"
+            "href": "about#mission"
           },
           {
             "label": "Our team and board",
-            "href": "about-team.html"
+            "href": "about-team"
           },
           {
             "label": "Governance and financials",
-            "href": "about-governance.html"
+            "href": "about-governance"
           },
           {
             "label": "Dr. Elaine Ingham",
-            "href": "about-elaine.html"
+            "href": "about-elaine"
           },
           {
             "label": "Foundation news",
-            "href": "news.html#foundation"
+            "href": "news#foundation"
           },
           {
             "label": "Contact us",
-            "href": "contact.html"
+            "href": "contact"
           }
         ]
       },
       {
         "label": "Learn",
-        "href": "learn.html",
+        "href": "learn",
         "pillar": "Teach It",
         "children": [
           {
-            "label": "Every program and what it costs",
-            "href": "learn.html"
+            "label": "Explore our programs",
+            "href": "learn"
           },
           {
             "label": "Courses on school.soilfoodweb.com",
@@ -69,89 +69,93 @@
           },
           {
             "label": "In-person workshops",
-            "href": "calendar.html#workshops"
+            "href": "calendar#workshops"
           },
           {
-            "label": "Calendar of events",
-            "href": "calendar.html"
+            "label": "Calendar",
+            "href": "calendar"
           },
           {
             "label": "Free webinars",
-            "href": "learn-webinars.html"
+            "href": "learn-webinars"
           },
           {
             "label": "Scholarships",
-            "href": "learn-scholarships.html"
+            "href": "learn-scholarships"
           },
           {
             "label": "Student login",
-            "href": "login.html"
+            "href": "login"
           }
         ]
       },
       {
         "label": "Science",
-        "href": "science.html",
+        "href": "science",
         "pillar": "Prove It",
         "children": [
           {
             "label": "How the soil food web works",
-            "href": "science.html"
+            "href": "science"
           },
           {
             "label": "Research and publications",
-            "href": "research.html"
+            "href": "research"
           },
           {
             "label": "Partner on research",
-            "href": "research.html#work-with-us"
+            "href": "research#work-with-us"
           }
         ]
       },
       {
         "label": "Practice",
-        "href": "practice.html",
+        "href": "practice",
         "pillar": "Practice It",
         "children": [
           {
             "label": "Case studies",
-            "href": "practice.html#case-studies"
+            "href": "practice#case-studies"
           },
           {
             "label": "Find a professional",
-            "href": "directory.html"
+            "href": "directory"
           },
           {
             "label": "Work with us",
-            "href": "practice.html#work-with-us"
+            "href": "practice#work-with-us"
           }
         ],
         "note": "Projects removed Sep 8 (Evan), returns when the projects database has real entries. Our Impact removed Sep 7, returns with the annual report."
       },
       {
         "label": "Community",
-        "href": "community.html",
+        "href": "community",
         "pillar": "Grow It",
         "children": [
           {
             "label": "Community map",
-            "href": "community.html#community-map"
+            "href": "community#community-map"
           },
           {
             "label": "News and stories",
-            "href": "news.html"
+            "href": "news"
           },
           {
-            "label": "Calendar of events",
-            "href": "calendar.html"
+            "label": "Calendar",
+            "href": "calendar"
           },
           {
             "label": "Join the community",
-            "href": "community.html#join"
+            "href": "community#join"
+          },
+          {
+            "label": "The mobile app",
+            "href": "app"
           },
           {
             "label": "Volunteer with us",
-            "href": "volunteer.html"
+            "href": "volunteer"
           }
         ],
         "note": "Find a Professional removed Sep 7, reached from Practice only; directory content still lives on the Community page."
@@ -165,18 +169,18 @@
         "datetime": "2026-09-16",
         "dated": "16 September to 20 December 2026",
         "label": "Permaculture Design Certification cohort",
-        "href": "learn.html#permaculture"
+        "href": "learn#permaculture"
       },
       {
         "datetime": "2026-10-19",
         "dated": "19 to 30 October 2026",
         "label": "Accelerator Workshop India 2026, Coimbatore",
-        "href": "calendar.html#workshops"
+        "href": "calendar#workshops"
       }
     ],
     "more": {
       "label": "Everything that is happening",
-      "href": "calendar.html"
+      "href": "calendar"
     },
     "note": "Two items only until the events database has more dated entries. Copy deck 1.2 asks for the three most recent."
   },
@@ -188,23 +192,23 @@
         "links": [
           {
             "label": "About us",
-            "href": "about.html"
+            "href": "about"
           },
           {
             "label": "Our team and board",
-            "href": "about-team.html"
+            "href": "about-team"
           },
           {
             "label": "Dr. Elaine's research",
-            "href": "about-elaine.html"
+            "href": "about-elaine"
           },
           {
             "label": "Governance and financials",
-            "href": "about-governance.html"
+            "href": "about-governance"
           },
           {
             "label": "Contact us",
-            "href": "contact.html"
+            "href": "contact"
           }
         ]
       },
@@ -212,8 +216,8 @@
         "head": "Learn",
         "links": [
           {
-            "label": "Every program and what it costs",
-            "href": "learn.html"
+            "label": "Explore our programs",
+            "href": "learn"
           },
           {
             "label": "Courses on school.soilfoodweb.com",
@@ -221,19 +225,19 @@
           },
           {
             "label": "Workshops and events",
-            "href": "calendar.html#workshops"
+            "href": "calendar#workshops"
           },
           {
-            "label": "Calendar of events",
-            "href": "calendar.html"
+            "label": "Calendar",
+            "href": "calendar"
           },
           {
             "label": "Free webinars",
-            "href": "learn-webinars.html"
+            "href": "learn-webinars"
           },
           {
             "label": "Scholarships",
-            "href": "learn-scholarships.html"
+            "href": "learn-scholarships"
           }
         ]
       },
@@ -242,19 +246,19 @@
         "links": [
           {
             "label": "How the soil food web works",
-            "href": "science.html"
+            "href": "science"
           },
           {
             "label": "Research and publications",
-            "href": "research.html"
+            "href": "research"
           },
           {
             "label": "Case studies",
-            "href": "practice.html#case-studies"
+            "href": "practice#case-studies"
           },
           {
             "label": "Media and press",
-            "href": "contact.html#media"
+            "href": "contact#media"
           },
           {
             "label": "sMApp on soilmapp.com",
@@ -267,23 +271,23 @@
         "links": [
           {
             "label": "Donate",
-            "href": "donate.html"
+            "href": "donate"
           },
           {
             "label": "Volunteer with us",
-            "href": "volunteer.html"
+            "href": "volunteer"
           },
           {
             "label": "Invite us to speak",
-            "href": "contact.html#speak"
+            "href": "contact#speak"
           },
           {
             "label": "Find a professional",
-            "href": "directory.html"
+            "href": "directory"
           },
           {
             "label": "Logo and name use",
-            "href": "contact.html#logo"
+            "href": "contact#logo"
           }
         ]
       }

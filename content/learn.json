@@ -22,7 +22,7 @@
       },
       {
         "label": "I’m just getting curious",
-        "href": "learn-webinars.html"
+        "href": "learn-webinars"
       }
     ],
     "_note": "Each chip jumps to the program that serves that person. 'I grow food' lands on the Foundation Courses, the starting point for everyone, until Decision 1 settles what a grower who does not want the Consultant title buys instead."
@@ -77,7 +77,7 @@
       "body": "Gain a year’s worth of hands-on experience in one immersive 10-day workshop. Build community with instructors and fellow students on real sites.",
       "cta": {
         "label": "See upcoming workshops",
-        "href": "calendar.html#workshops"
+        "href": "calendar#workshops"
       }
     },
     {
@@ -87,7 +87,7 @@
       "body": "Live sessions with our instructors, open to everyone. The easiest first step.",
       "cta": {
         "label": "Register for the next webinar",
-        "href": "learn-webinars.html"
+        "href": "learn-webinars"
       }
     }
   ],
@@ -114,7 +114,7 @@
     "awaiting": "We are collecting these from graduates now, and will publish them with a name, a country and what changed. Until then, the films on the Practice page are practitioners telling their own story.",
     "link": {
       "label": "Watch the films from the field",
-      "href": "practice.html#case-studies"
+      "href": "practice#case-studies"
     }
   },
   "faq": {

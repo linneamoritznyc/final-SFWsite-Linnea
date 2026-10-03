@@ -27,3 +27,4 @@ npm-debug.log*
 
 # Crawl output (generated, large)
 docs/crawl/
+package*

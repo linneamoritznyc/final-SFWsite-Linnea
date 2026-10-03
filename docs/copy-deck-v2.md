@@ -464,6 +464,39 @@ Seed: **Tomato growers, South Africa.** [PLACEHOLDER: this is the one claim Evan
 
 ---
 
+## 17a. The Soil Food Web School app, `/community/app`
+
+Added 14 September 2026, after section 17 was written. The app is published by the Soil Food Web Foundation under the name **Soil Food Web School**, free, on both stores.
+
+- Apple App Store: https://apps.apple.com/us/app/soil-food-web-school/id6777266606
+- Google Play: https://play.google.com/store/apps/details?id=com.soilfoodwebthnc.app
+
+**H1:** The Soil Food Web School app
+
+**Lede:** Your courses and the community, on your phone. Free, on the Apple App Store and on Google Play.
+
+[SOURCE: the two store listings, read 14 September 2026]
+
+**Get the app.** Two buttons, iPhone and iPad, and Android. Facts list underneath: published by the Soil Food Web Foundation, free, Education, rated 4 and over, English, 83.5 MB on iPhone. [PLACEHOLDER: minimum iOS and Android versions, off the two listings. Evan or Alex.] Then the browser alternative, because nothing in the app is app-only.
+
+**What it carries.** Two halves.
+
+> **Your courses.** Your library, the curriculum of each course chapter by chapter, and the lectures themselves. It keeps your place, so a lecture you stopped halfway through on a laptop opens where you left it, and it counts lessons completed against the chapter.
+
+> **The community.** The community, events and direct messages sit alongside the courses, one tap apart. On a phone this is the part people reach for most, because it is the part that moves every day.
+
+[SOURCE: the screenshots and description on the two store listings, read 14 September 2026]
+
+[PLACEHOLDER: whether lectures download for offline viewing, and whether audio keeps playing when the phone is locked. Neither listing says, and both matter to anyone studying on a commute or out on land without signal. Evan.]
+
+**Questions people ask.** One answer: no, this is not sMApp. sMApp is the microscopy tool and runs in a browser at soilmapp.com.
+
+**What it looks like.** [PLACEHOLDER: the three screenshots already on the App Store listing, source files into img/. Stephanie.]
+
+**A fix for the listings, not the site.** The App Store subtitle reads "A SFW Foundation Program". SFW is an acronym, which these rules put out of public text, and to a general reader it reads as something else entirely. Change it on both listings to "A program of the Soil Food Web Foundation".
+
+---
+
 ## 18. Find a professional, `/community/directory`
 
 **H1:** Find a professional

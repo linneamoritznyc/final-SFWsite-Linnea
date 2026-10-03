@@ -32,7 +32,7 @@
     "body": "Prefer to give another way or have questions about our work?",
     "link": {
       "label": "Contact us →",
-      "href": "contact.html"
+      "href": "contact"
     }
   },
   "volunteer": {
@@ -41,7 +41,7 @@
     "lede": "Give your time instead of, or as well as, your money. There are roles that take one afternoon and roles that take a few hours a month.",
     "link": {
       "label": "See the ways to help and sign up",
-      "href": "volunteer.html"
+      "href": "volunteer"
     },
     "note": "Form moved to volunteer.html on 11 September 2026. This block is now one line and a link, so there is one volunteer form on the site rather than two."
   }

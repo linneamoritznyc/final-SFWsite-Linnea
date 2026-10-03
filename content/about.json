@@ -38,7 +38,7 @@
           "source": "verified September 2026",
           "sourceLink": {
             "label": "Publications",
-            "href": "research.html"
+            "href": "research"
           },
           "status": "verify",
           "note": "Copy deck v2 section 3.2 dates the Oregon State University post 1986 to 2002; this entry runs 1985 to 2002 because it also covers the Georgia postdoc. Confirm the start year against Dr. Ingham's CV before publish."
@@ -89,7 +89,7 @@
     ],
     "link": {
       "label": "Read her published research →",
-      "href": "research.html"
+      "href": "research"
     }
   },
   "contactLegal": {
