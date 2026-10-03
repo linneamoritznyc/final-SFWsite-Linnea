@@ -265,7 +265,20 @@ def all_events():
     evs.append({"slug": "accelerator-workshop-india-2026", "title": "Accelerator Workshop: India", "start": "2026-10-19",
                 "end": "2026-10-30", "type": "workshop", "when": cal["dated"], "repo": True,
                 "href": "https://school.soilfoodweb.com/courses/india-workshop-2026"})
+    evs.append({"slug": "soil-health-week-pakistan-2026", "title": "Soil Health Week Pakistan 2026", "start": "2026-12-01",
+                "end": "2026-12-07", "type": "community", "when": "1 to 7 December 2026", "repo": "pakistan",
+                "href": "/soil-health-week-2025-wild-soils-uk-and-trashit-bring-the-soil-food-web-approach-to-pakistan/"})
     return sorted(evs, key=lambda e: e["start"])
+
+
+REPO_EVENT_TEXT = {
+    # From this repo's calendar page (_dev/legacy-pages/calendar.html).
+    "pakistan": ("The second year of Soil Health Week in Pakistan. Co-led by Wild Soils UK (Nick Padwick) and TrashIt, a woman- and youth-led "
+                 "compost enterprise in Pakistan. The Soil Food Web Foundation is a supporting partner. Last year's event reached more than 600 "
+                 "participants across 60 districts.",
+                 [("Read about last year's Soil Health Week", "/soil-health-week-2025-wild-soils-uk-and-trashit-bring-the-soil-food-web-approach-to-pakistan/"),
+                  ("TrashIt", "https://www.trashit.pk")]),
+}
 
 
 def event_when(e):
@@ -577,7 +590,13 @@ def event_pages():
         bugs = ["24"] if e["type"] in ("community", "course") or ":" in e.get("when", "") else []
         begin(path, "repo" if e.get("repo") else "staging", bugs, "", "Calendar event")
         detail = []
-        if e.get("repo"):
+        if e.get("repo") == "pakistan":
+            text, links = REPO_EVENT_TEXT["pakistan"]
+            detail.append("<p>%s</p>" % E(text))
+            detail.append('<p class="source">Source: this repo\u2019s calendar page. The 600 participants and 60 districts come from last year\u2019s event report.</p>')
+            detail.append("<p>%s</p>" % " &middot; ".join('<a href="%s">%s</a>' % (A(h), E(l)) for l, h in links))
+            detail.append(TODO % "Confirm the 2026 dates and the Foundation's role with Nick Padwick before publishing.")
+        elif e.get("repo"):
             cal = repo("calendar")["featured"]
             detail.append("<p>%s</p>" % E(fix(cal["body"])))
             detail.append('<p class="source">Source: %s</p>' % E(cal["source"]))

@@ -3691,5 +3691,17 @@
   "source_path": "img/ctpfw-student-squeezing-compost-1.jpg",
   "source_size": "2000x1125",
   "w": 1600
+ },
+ "img/workshop-group-around-compost-pile.jpg": {
+  "alt": "",
+  "bytes": 287588,
+  "file": "img/workshop-group-around-compost-pile.webp",
+  "flags": [],
+  "h": 1200,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/workshop-group-around-compost-pile.jpg",
+  "source_size": "1600x1200",
+  "w": 1600
  }
 }
