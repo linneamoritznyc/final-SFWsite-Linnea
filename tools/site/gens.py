@@ -472,8 +472,22 @@ def back(href, label):
     return '<a class="back" href="%s">%s</a>' % (href, E(label))
 
 
+# Ad Grant checklist: past tense for Dr. Elaine; no relative dates that age.
+TEAM_EDITS = {
+    "dr-elaine-ingham": [
+        ("In addition to starting Soil Foodweb Inc. 26 years ago,", "In addition to starting Soil Foodweb Inc. in 1996,"),
+        ("Dr. Ingham\u2019s research is global, and her scientific papers date as far back as 1982",
+         "Dr. Ingham\u2019s research was global, and her scientific papers date as far back as 1982"),
+        ("Dr. Ingham has written 6 book chapters for published books, participated in research teams publishing 17 technical reports, and has been a speaker",
+         "Dr. Ingham wrote 6 book chapters for published books, took part in research teams publishing 17 technical reports, and was a speaker"),
+    ],
+}
+
+
 def team_pages():
     for t in data("team"):
+        for a, b in TEAM_EDITS.get(t["slug"], []):
+            t = dict(t, bio=t["bio"].replace(a, b))
         path = "/team-member/%s/" % t["slug"]
         begin(path, "staging", [], "", "Team member")
         role = fix(t["role"])
