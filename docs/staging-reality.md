@@ -54,7 +54,7 @@ Cross-checked against `OPEN-ITEMS.md`. 'Staging has it' means it is on the WordP
 
 ### 3.1 Staff portraits (OPEN-ITEMS: 'everyone else still needs one')
 
-Staging has a portrait for every team member except where noted. Full-size files are PNGs in `/wp-content/uploads/2026/06/`; several are over 900 KB and three are literally screenshots.
+Staging has a portrait for every team member except where noted. Full-size files are PNGs in `/wp-content/uploads/2026/06/`; several are over 900 KB and Loida Vasquez's is a screenshot file.
 
 | Name | Role on staging | Portrait on staging |
 |---|---|---|
