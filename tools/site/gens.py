@@ -662,6 +662,8 @@ def post_pages():
             note.append("%d image(s) were empty on staging and are restored from the same post on soilfoodweb.com." % len(p["restored_images"]))
         if broken:
             note.append("%d image(s) are broken on staging and on the old site; left out." % broken)
+        if p["slug"] == "obituary-for-dr-elaine-ingham":
+            note.append("Bug 30: the repeated paragraph reported on 2 October was already gone from staging on 3 October; the build still drops any repeated paragraph.")
         begin(path, p.get("source", "staging"), bugs, " ".join(note), "Blog post")
         cats = " &middot; ".join('<a href="/category/%s/">%s</a>' % (c["slug"], E(c["name"])) for c in p["categories"])
         hero = img(p["featured"], p.get("featured_alt", ""), "article-hero", eager=True) if p.get("featured") else ""

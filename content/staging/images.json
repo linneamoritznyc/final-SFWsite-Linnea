@@ -3752,6 +3752,18 @@
   "source_size": "2000x2000",
   "w": 1600
  },
+ "img/uploads/Loida Teaching 3.JPG": {
+  "alt": "",
+  "bytes": 281122,
+  "file": "img/loida-teaching-3.webp",
+  "flags": [],
+  "h": 1066,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/uploads/Loida Teaching 3.JPG",
+  "source_size": "1600x1066",
+  "w": 1600
+ },
  "img/uploads/mar-group-photo-2.jpg": {
   "alt": "Large group posing around a compost pile under a shed.",
   "bytes": 287588,
