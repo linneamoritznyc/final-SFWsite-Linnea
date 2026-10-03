@@ -3385,6 +3385,18 @@
   "source_size": "1920x1080",
   "w": 1600
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/soil-sample-shovel-and-bag-1.jpg": {
+  "alt": "Gloved hands scoop soil into a sample bag",
+  "bytes": 172004,
+  "file": "img/soil-sample-shovel-and-bag.webp",
+  "flags": [],
+  "h": 1600,
+  "shows": "Two hands in light blue nitrile gloves use a small trowel to put brown soil or compost into a clear sample bag, in front of a large brown pile.",
+  "source": "repo (name and picture match)",
+  "source_path": "img/soil-sample-shovel-and-bag.jpg",
+  "source_size": "2000x2000",
+  "w": 1600
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/09/test-tubes-with-sample-1024x742.jpg": {
   "alt": "Sample tubes in a rack, one with amber liquid, microscope behind.",
   "bytes": 62792,
@@ -3702,6 +3714,42 @@
   "source": "repo",
   "source_path": "img/ctpfw-student-squeezing-compost-1.jpg",
   "source_size": "2000x1125",
+  "w": 1600
+ },
+ "img/erc-rancho-cacachilas-aerial-2.jpg": {
+  "alt": "",
+  "bytes": 287178,
+  "file": "img/erc-rancho-cacachilas-aerial-2.webp",
+  "flags": [],
+  "h": 1028,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/erc-rancho-cacachilas-aerial-2.jpg",
+  "source_size": "1758x1130",
+  "w": 1600
+ },
+ "img/erc-rancho-cacachilas-agro.jpg": {
+  "alt": "Rows of green crops leading to white hoop houses",
+  "bytes": 293602,
+  "file": "img/erc-rancho-cacachilas-agro-2.webp",
+  "flags": [],
+  "h": 1000,
+  "shows": "Long rows of green leafy crops on brown soil lead toward three white dome-shaped hoop houses, with trees and hills under a partly cloudy blue sky.",
+  "source": "repo",
+  "source_path": "img/erc-rancho-cacachilas-agro.jpg",
+  "source_size": "1500x1000",
+  "w": 1500
+ },
+ "img/red-soil-hand.jpg": {
+  "alt": "Open hand holding a clump of red crumbly soil.",
+  "bytes": 246506,
+  "file": "img/red-soil-hand.webp",
+  "flags": [],
+  "h": 1600,
+  "shows": "A hand with a ring holds a clump of reddish brown crumbly soil over a field of the same red soil with bits of straw.",
+  "source": "repo",
+  "source_path": "img/red-soil-hand.jpg",
+  "source_size": "2000x2000",
   "w": 1600
  },
  "img/workshop-group-around-compost-pile.jpg": {

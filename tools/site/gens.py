@@ -575,7 +575,8 @@ def video_pages():
                     '<p class="eyebrow" style="margin-top:1.25rem">%s</p><h1>%s</h1>%s</div>'
                     '<aside aria-label="%s"><h2 class="h3">%s</h2><p class="meta">%d videos</p><ol class="plist">%s</ol></aside></div></div></section>') % (
                 back("/case-studies/", "Back to case studies and videos"), player, E(name), E(fix(v["title"])),
-                rewrite_body(v["body"]) if v["body"] else "", A(name), E(name), len(vids), items)
+                rewrite_body(v["body"]) if v["body"] else TODO % ("150 to 300 words about this film, written from its Vimeo transcript: who, where, what they did and what changed. Stephanie McDaniel."),
+                A(name), E(name), len(vids), items)
             write(path, fix(v["title"]), "%s: a video from the Soil Food Web Foundation’s %s playlist." % (fix(v["title"]), name), body, "/case-studies/")
 
 

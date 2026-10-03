@@ -97,7 +97,7 @@ NAV = [
     ("Science", "/how-it-works/", [
         ("How the Soil Food Web Works", "/how-it-works/"),
         ("Research Database", "/publications/"),
-        ("Partner on Research", "/work-with-us/"),
+        ("Partner on Research", "/work-with-us/#research"),
     ]),
     ("Practice", "/case-studies/", [
         ("Case Studies", "/case-studies/"),
@@ -191,9 +191,9 @@ def footer(path):
 <div class="footer-cols">%s</div>
 </div>
 <div class="footer-legal"><p>%s Our Form 990 (once filed) and financial statements are on the <a href="/governance/">governance page</a> and available on request.</p><p>%s %s <a href="/funding/">How we\u2019re funded</a></p></div>
-<div class="footer-bottom"><p>&copy; 2026 Soil Food Web Foundation, a 501(c)(3) nonprofit organization. %s</p>
+<div class="footer-bottom"><p>&copy; 2026 Soil Food Web Foundation, a 501(c)(3) nonprofit organization.</p>
 <ul><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
-</div></footer>""" % (cols, E(LEGAL), E(SCHOOL_LINE), E(FUNDING_LINE), E(SCHOOL_LINE))
+</div></footer>""" % (cols, E(LEGAL), E(SCHOOL_LINE), E(FUNDING_LINE))
 
 
 def shell(path, title, desc, body, active=None):
