@@ -611,6 +611,18 @@
   "source_size": "512x521",
   "w": 512
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/06/eric-768x792.jpg": {
+  "alt": "Smiling bearded man in a cap in dry desert country",
+  "bytes": 47374,
+  "file": "img/eric-2.webp",
+  "flags": [],
+  "h": 827,
+  "shows": "Head-and-shoulders photo of a smiling bearded man in a worn cap and maroon T-shirt. Behind him is dry, flat desert land with low pale cliffs and blue sky.",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/06/eric-768x792.jpg",
+  "source_size": "802x827",
+  "w": 802
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/06/eric.jpg": {
   "alt": "Smiling bearded man in a cap in dry desert country",
   "bytes": 47374,
