@@ -247,6 +247,16 @@
       "source": "/directory-member/alex-kellett",
       "destination": "/directory-member/norman-higgins/",
       "permanent": true
+    },
+    {
+      "source": "/testimonial/:slug*",
+      "destination": "/scholarship/",
+      "permanent": true
+    },
+    {
+      "source": "/donate-get-involved",
+      "destination": "/donations/",
+      "permanent": true
     }
   ],
   "headers": [
