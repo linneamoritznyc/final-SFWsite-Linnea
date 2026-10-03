@@ -1,214 +1,246 @@
 {
   "outputDirectory": ".",
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/about/team",
-      "destination": "/about-team.html"
-    },
-    {
-      "source": "/about/governance",
-      "destination": "/about-governance.html"
-    },
-    {
-      "source": "/about/elaine",
-      "destination": "/about-elaine.html"
-    },
-    {
-      "source": "/learn/scholarships",
-      "destination": "/learn-scholarships.html"
-    },
-    {
-      "source": "/learn/webinars",
-      "destination": "/learn-webinars.html"
-    },
-    {
-      "source": "/calendar/workshops",
-      "destination": "/calendar.html"
-    },
-    {
-      "source": "/news/foundation",
-      "destination": "/news.html"
-    },
-    {
-      "source": "/community/directory",
-      "destination": "/directory.html"
-    },
-    {
-      "source": "/community/app",
-      "destination": "/app.html"
-    }
-  ],
+  "cleanUrls": false,
+  "trailingSlash": true,
   "redirects": [
     {
-      "source": "/publications",
-      "destination": "/research",
+      "source": "/about.html",
+      "destination": "/about/",
       "permanent": true
     },
     {
-      "source": "/publications/:slug*",
-      "destination": "/research",
+      "source": "/about-team",
+      "destination": "/about/#team",
       "permanent": true
     },
     {
-      "source": "/how-it-works",
-      "destination": "/science",
+      "source": "/about-team.html",
+      "destination": "/about/#team",
       "permanent": true
     },
     {
-      "source": "/now",
-      "destination": "/calendar",
+      "source": "/about-governance",
+      "destination": "/governance/",
       "permanent": true
     },
     {
-      "source": "/projects",
-      "destination": "/practice",
+      "source": "/about-governance.html",
+      "destination": "/governance/",
       "permanent": true
     },
     {
-      "source": "/learn/workshops",
-      "destination": "/calendar",
+      "source": "/about-elaine",
+      "destination": "/about/#dr-elaine",
       "permanent": true
     },
     {
-      "source": "/our-work",
-      "destination": "/practice",
+      "source": "/about-elaine.html",
+      "destination": "/about/#dr-elaine",
       "permanent": true
     },
     {
-      "source": "/our-impact",
-      "destination": "/practice",
+      "source": "/accessibility",
+      "destination": "/about/#contact-legal",
       "permanent": true
     },
     {
-      "source": "/events",
-      "destination": "/calendar",
+      "source": "/accessibility.html",
+      "destination": "/about/#contact-legal",
       "permanent": true
     },
     {
-      "source": "/blog",
-      "destination": "/news",
+      "source": "/app",
+      "destination": "/community/",
       "permanent": true
     },
     {
-      "source": "/blog/:slug*",
-      "destination": "/news",
+      "source": "/app.html",
+      "destination": "/community/",
       "permanent": true
     },
     {
-      "source": "/case-studies",
-      "destination": "/practice#case-studies",
+      "source": "/calendar.html",
+      "destination": "/calendar/",
       "permanent": true
     },
     {
-      "source": "/resources/case-studies-videos",
-      "destination": "/practice#case-studies",
+      "source": "/community.html",
+      "destination": "/community/",
       "permanent": true
     },
     {
-      "source": "/resources/farmer-case-studies-soil-food-web",
-      "destination": "/practice#case-studies",
+      "source": "/contact.html",
+      "destination": "/contact/",
       "permanent": true
     },
     {
-      "source": "/resources/animations-videos",
-      "destination": "/science",
+      "source": "/directory",
+      "destination": "/find-a-professional/",
       "permanent": true
     },
     {
-      "source": "/resources/soil-food-web-approach-videos",
-      "destination": "/science",
+      "source": "/directory.html",
+      "destination": "/find-a-professional/",
       "permanent": true
     },
     {
-      "source": "/resources/meet-the-soil-food-web-family-videos",
-      "destination": "/community",
+      "source": "/donate",
+      "destination": "/donations/",
       "permanent": true
     },
     {
-      "source": "/educational-webinars",
-      "destination": "/learn/webinars",
+      "source": "/donate.html",
+      "destination": "/donations/",
       "permanent": true
     },
     {
-      "source": "/contact-us",
-      "destination": "/contact",
+      "source": "/learn",
+      "destination": "/programs/",
       "permanent": true
     },
     {
-      "source": "/donations",
-      "destination": "/donate",
+      "source": "/learn.html",
+      "destination": "/programs/",
       "permanent": true
     },
     {
-      "source": "/scholarship-opportunities",
-      "destination": "/learn/scholarships",
+      "source": "/learn-scholarships",
+      "destination": "/scholarship/",
       "permanent": true
     },
     {
-      "source": "/login-page",
-      "destination": "/login",
+      "source": "/learn-scholarships.html",
+      "destination": "/scholarship/",
       "permanent": true
     },
     {
-      "source": "/certified-listing-directory",
-      "destination": "/community/directory",
+      "source": "/learn-webinars",
+      "destination": "https://webinar.soilfoodweb.com",
       "permanent": true
     },
     {
-      "source": "/consultants",
-      "destination": "/community/directory",
+      "source": "/learn-webinars.html",
+      "destination": "https://webinar.soilfoodweb.com",
       "permanent": true
     },
     {
-      "source": "/laboratory-technicians",
-      "destination": "/community/directory",
+      "source": "/login.html",
+      "destination": "/login/",
       "permanent": true
     },
     {
-      "source": "/sfw-courses-overview",
-      "destination": "/learn",
+      "source": "/news.html",
+      "destination": "/news/",
       "permanent": true
     },
     {
-      "source": "/foundation-courses-2",
-      "destination": "/learn",
+      "source": "/practice",
+      "destination": "/case-studies/",
       "permanent": true
     },
     {
-      "source": "/product/foundation-courses",
-      "destination": "/learn",
+      "source": "/practice.html",
+      "destination": "/case-studies/",
       "permanent": true
     },
     {
-      "source": "/course/:slug*",
-      "destination": "/learn",
+      "source": "/privacy.html",
+      "destination": "/privacy/",
       "permanent": true
     },
     {
-      "source": "/membership/:slug*",
-      "destination": "/learn",
+      "source": "/research",
+      "destination": "/publications/",
       "permanent": true
     },
     {
-      "source": "/soil-sponge-regeneration-workshop",
-      "destination": "/calendar#workshops",
+      "source": "/research.html",
+      "destination": "/publications/",
       "permanent": true
     },
     {
-      "source": "/product/regenerating-the-soil-sponge",
-      "destination": "/calendar#workshops",
+      "source": "/science",
+      "destination": "/how-it-works/",
       "permanent": true
     },
     {
-      "source": "/privacy-policy",
-      "destination": "/privacy",
+      "source": "/science.html",
+      "destination": "/how-it-works/",
       "permanent": true
     },
     {
-      "source": "/opt-out-preferences",
-      "destination": "/privacy",
+      "source": "/terms.html",
+      "destination": "/terms/",
+      "permanent": true
+    },
+    {
+      "source": "/volunteer.html",
+      "destination": "/volunteer/",
+      "permanent": true
+    },
+    {
+      "source": "/news/wild-ken-hill-2026",
+      "destination": "/wild-ken-hill-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/news/wild-ken-hill-2026.html",
+      "destination": "/wild-ken-hill-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/market-garden-sweden",
+      "destination": "/case-studies/#market-garden-sweden",
+      "permanent": true
+    },
+    {
+      "source": "/projects/market-garden-sweden.html",
+      "destination": "/case-studies/#market-garden-sweden",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/programs-overview",
+      "destination": "/programs/",
+      "permanent": true
+    },
+    {
+      "source": "/foundation-legal",
+      "destination": "/governance/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-info",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/sfw-directory",
+      "destination": "/find-a-professional/",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/about/#team",
+      "permanent": true
+    },
+    {
+      "source": "/donate",
+      "destination": "/donations/",
+      "permanent": true
+    },
+    {
+      "source": "/practice/:path*",
+      "destination": "/case-studies/",
       "permanent": true
     }
   ],
@@ -244,6 +276,10 @@
       "source": "/(.*)",
       "headers": [
         {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
         },
@@ -256,16 +292,12 @@
           "value": "SAMEORIGIN"
         },
         {
-          "key": "Strict-Transport-Security",
-          "value": "max-age=63072000; includeSubDomains; preload"
-        },
-        {
           "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://player.vimeo.com; frame-src https://player.vimeo.com https://vimeo.com; img-src 'self' https://i.vimeocdn.com https://soilfoodweb.com data:; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://fresnel.vimeocdn.com; media-src 'self'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'self'"
+          "value": "default-src 'self'; script-src 'self'; frame-src https://player.vimeo.com https://www.youtube-nocookie.com https://www.google.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; media-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
         }
       ]
     }

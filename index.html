@@ -1,630 +1,145 @@
 <!doctype html>
-<!-- share: img/hand-soil-roots-fungi.jpg -->
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Soil Food Web Foundation, a nonprofit teaching the science of living soil</title>
-  <meta property="og:site_name" content="Soil Food Web Foundation">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Soil Food Web Foundation, a nonprofit teaching the science of living soil">
-  <meta property="og:description" content="The ground beneath our farms and forests is alive. Join a global community of Soil Regenerators learning, restoring, and demonstrating the power of the soil food web on every continent.">
-  <meta property="og:url" content="https://soilfoodweb.org/">
-  <meta property="og:image" content="https://soilfoodweb.org/img/w/hand-soil-roots-fungi.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Soil Food Web Foundation, a nonprofit teaching the science of living soil">
-  <meta name="twitter:description" content="The ground beneath our farms and forests is alive. Join a global community of Soil Regenerators learning, restoring, and demonstrating the power of the soil food web on every continent.">
-  <meta name="twitter:image" content="https://soilfoodweb.org/img/w/hand-soil-roots-fungi.jpg">
-  <meta name="description" content="The ground beneath our farms and forests is alive. Join a global community of Soil Regenerators learning, restoring, and demonstrating the power of the soil food web on every continent.">
-  <link rel="preload" href="fonts/montserrat-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/site.css">
-  <link rel="canonical" href="https://soilfoodweb.org/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Soil Food Web Foundation</title>
+<meta name="description" content="The Soil Food Web Foundation carries forward Dr. Elaine Ingham&#x27;s work, teaching farmers, land stewards and soil enthusiasts in 100+ countries how to restore living soil.">
+<link rel="icon" href="/img/favicon.png" type="image/png">
+<link rel="preload" href="/fonts/montserrat-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css">
+<script src="/js/site.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-
-<!-- Icon sprite, inlined so the page works over file:// -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
-  <symbol id="i-web" viewBox="0 0 24 24"><circle cx="5" cy="6" r="1.4"/><circle cx="18" cy="5" r="1.4"/><circle cx="12" cy="12" r="1.6"/><circle cx="5" cy="18" r="1.4"/><circle cx="19" cy="17" r="1.4"/><path d="M6.3 6.7 10.8 10.9M16.7 5.8 13.2 10.6M6.2 17.2 10.7 13.2M17.7 16.2 13.4 13.1M5 7.4v9.2M18 6.4l1 9.2"/></symbol>
-  <symbol id="i-cycle" viewBox="0 0 24 24"><path d="M12 2v9c0 3-2 5-4 7M12 11c0 3 2 5 4 7M12 6c-2 0-3 1-4 3M12 8c2 0 3 1 4 2.5"/><path d="M4 14c-1.5 2.5-1 5.5 1.2 7.3M20 14c1.5 2.5 1 5.5-1.2 7.3M5.2 21.3H3.4M5.2 21.3v-1.8M18.8 21.3h1.8M18.8 21.3v-1.8"/></symbol>
-  <symbol id="i-aggregate" viewBox="0 0 24 24"><path d="M7 5.5 10.5 4 13 7 11 10 7.5 9.5zM14 8.5 18 8l2 3.5-2.5 3-3-1zM5 12 8.5 12.5 9.5 16 6.5 18.5 3.5 16zM11 15l3.5-1 2.5 3-1.5 3.5-3.5-.5z"/><path d="M9.5 9.5 12 13.5M13.5 11.5l.5 2.5M9.5 13.5l1.5 1.5"/></symbol>
-  <symbol id="i-weed" viewBox="0 0 24 24"><path d="M12 21V9M12 13c-3 0-5-2-6-5 3 0 5 1.5 6 5zM12 11c3 0 5-2 6-5-3 0-5 1.5-6 5z"/><path d="M4 16.5h16M6 19.5h12"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 21c-4-2-7-5-7-10V6l7-3 7 3v5c0 5-3 8-7 10z"/><path d="M12 21V11M12 11c-2.5 0-4-1.5-4.5-4 2.5 0 4 1.5 4.5 4zM12 13.5c2.5 0 4-1.5 4.5-4-2.5 0-4 1.5-4.5 4z"/></symbol>
-  <symbol id="i-carbon" viewBox="0 0 24 24"><path d="M12 2v10M9 9l3 3 3-3"/><path d="M3 15h18M3 18.5h18M3 22h18"/></symbol>
-  <symbol id="i-microscope" viewBox="0 0 24 24"><path d="M9 3l5 2-4 9-5-2zM8 13l-1 2M13 5l1.5 1M6 21h13M9 21c-1.5-1-2-2.5-2-4M19 21c0-4-3-7-7-7"/></symbol>
-  <symbol id="i-compost" viewBox="0 0 24 24"><path d="M3 20c2-6 6-10 9-10s7 4 9 10z"/><path d="M9 7c0-1.5 1-2 1-3.5M12 6c0-1.5 1-2 1-3.5M15 7c0-1.5 1-2 1-3.5"/><path d="M8 16h8M10 18.5h4"/></symbol>
-  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9c-.7 1.2.2 2.7 1.6 2.7h10.8c1.4 0 2.3-1.5 1.6-2.7l-5-9V3"/><path d="M7 16h10M12.5 12.5v.01M10 14.5v.01"/></symbol>
-  <symbol id="i-field" viewBox="0 0 24 24"><path d="M3 8h18v13H3zM3 14.5h18M12 8v13"/><path d="M7.5 21v-4M7.5 18c-1.5 0-2.5-1-3-2.5 1.5 0 2.5.8 3 2.5zM16.5 12v-3M16.5 10.5c1.5 0 2.5-1 3-2.5-1.5 0-2.5.8-3 2.5z"/></symbol>
-  <symbol id="i-practicum" viewBox="0 0 24 24"><path d="M3 3h7.5v7.5H3zM13.5 3H21v7.5h-7.5zM3 13.5h7.5V21H3zM13.5 13.5H21V21h-7.5z"/></symbol>
-  <symbol id="i-webinar" viewBox="0 0 24 24"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/><path d="M9 12l3-4 3 4"/></symbol>
-  <symbol id="i-workshop" viewBox="0 0 24 24"><path d="M12 22c-4-5-7-8.5-7-12.5a7 7 0 0 1 14 0C19 13.5 16 17 12 22z"/><path d="M9 9.5c0-1.5 1.5-3 3-3s3 1.5 3 3M12 6.5V4"/></symbol>
-  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M3 5h18v16H3zM3 9.5h18M8 3v4M16 3v4"/><path d="M7 13h2M11 13h2M15 13h2M7 17h2M11 17h2"/></symbol>
-  <symbol id="i-document" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 15.5h7M9 19h5"/></symbol>
-  <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></symbol>
-  <symbol id="i-scholarship" viewBox="0 0 24 24"><path d="M2 9l10-4 10 4-10 4z"/><path d="M6 11v5c2 2 10 2 12 0v-5M22 9v6"/></symbol>
-  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6.5h18M3 12h18M3 17.5h18"/></symbol>
-  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
-  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M14 7l5 5-5 5"/></symbol>
-  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13M7 11l5 5 5-5M4 21h16"/></symbol>
-  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 13v7H4V6h7"/></symbol>
-  <symbol id="i-translate" viewBox="0 0 24 24"><path d="M3 6h7.5M6.75 4v2M4.6 6c.5 3.6 2.4 6.2 5.4 7.8M8.9 6c-.5 3.2-2.2 5.8-4.9 7.4"/><path d="M12.6 20.5 16.6 11l4 9.5M14 18h5.2"/></symbol>
-  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 8.5h4l1.6-2.5h6.8L17 8.5h4v11H3z"/><circle cx="12" cy="13.8" r="3.6"/><path d="M18.4 10.6h.01"/></symbol>
-  <symbol id="i-table" viewBox="0 0 24 24"><path d="M2.5 10.5h19v2.6h-19zM5.2 13.1V20M18.8 13.1V20"/><path d="M8.4 10.5V8.2h3.4v2.3M14 10.5c0-1.4.8-2.2.8-3.4"/></symbol>
-  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.6c-3.4-2.2-7.4-5.2-7.4-9.4A3.9 3.9 0 0 1 12 9.1a3.9 3.9 0 0 1 7.4 2.1c0 4.2-4 7.2-7.4 9.4z"/><path d="M12 9.1V5.4M12 5.4c-1.4 0-2.2-.7-2.6-2 1.7 0 2.4.7 2.6 2zM12 6.6c1.4 0 2.2-.7 2.6-2-1.7 0-2.4.7-2.6 2z"/></symbol>
-  <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.6a2.6 2.6 0 0 1 5.1.7c0 1.7-2.5 2.2-2.5 3.9M12 17.3v.4"/></symbol>
-  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="10" cy="14" r="6.6"/><path d="M3.4 14h13.2"/><path d="M10 7.4c2 1.9 3 4.1 3 6.6s-1 4.7-3 6.6c-2-1.9-3-4.1-3-6.6s1-4.7 3-6.6z"/><path d="M14.6 9.4c0-3.4 2.7-6.2 6.2-6.2 0 3.4-2.7 6.2-6.2 6.2z"/></symbol>
-  <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M6.8 3.4h10.4M6.8 20.6h10.4"/><path d="M8 3.4v3.3c0 2 1.6 3.7 4 5.3 2.4-1.6 4-3.3 4-5.3V3.4"/><path d="M8 20.6v-3.3c0-2 1.6-3.7 4-5.3 2.4 1.6 4 3.3 4 5.3v3.3"/></symbol>
-  <symbol id="i-dig" viewBox="0 0 24 24"><path d="M2.6 19.6h18.8"/><path d="M7.6 19.6c.6-2.6 2.4-4 5.2-4"/><path d="M3.9 7.9a2.9 2.9 0 0 1 0-4.1 2.9 2.9 0 0 1 4.1 0l2.1 2.1"/><path d="M5.6 8.9 4.2 7.5"/><path d="M9.3 9.1l2.4-2.4"/><path d="M8.1 10.3 6 8.2"/><path d="M11.2 8l5.6 5.6c.9.9.9 2.3 0 3.2l-1.3 1.3-7.5-7.5 1.3-1.3c.9-.9 2.3-.9 3.2 0z"/></symbol>
-</svg>
-
-<!-- ============ UTILITY BAR + HEADER (every page) ============ -->
-<div class="utility">
-  <div class="wrap">
-    <p class="utility__tagline">The Soil Food Web Foundation 501(c)(3)</p>
-    <ul class="utility__links"><li><a href="login">Student login</a></li><li><a href="news#subscribe">Subscribe</a></li><li><a href="donate">Donate</a></li></ul>
-  </div>
-</div>
-<header class="site-header">
-  <div class="wrap wrap--logo">
-    <a class="wordmark wordmark--image" href="/"><img class="wordmark__logo" src="img/sfwlogo-240.png" alt="Soil Food Web Foundation" decoding="async"><span class="wordmark__name">Soil Food Web Foundation</span><span class="wordmark__status">A 501(c)(3) nonprofit</span></a>
-    <ul class="site-header__links">
-      <li class="has-drop"><a href="about">About us</a>
-        <ul class="drop">
-          <li><a href="about#mission">Mission, vision and story</a></li>
-          <li><a href="about-team">Our team and board</a></li>
-          <li><a href="about-governance">Governance and financials</a></li>
-          <li><a href="about-elaine">Dr. Elaine Ingham</a></li>
-          <li><a href="news#foundation">Foundation news</a></li>
-          <li><a href="contact">Contact us</a></li>
-        </ul>
-      </li>
-      <li class="has-drop"><a href="learn">Learn</a>
-        <ul class="drop">
-          <li><a href="learn">Explore our programs</a></li>
-          <li><a href="https://school.soilfoodweb.com">Courses on school.soilfoodweb.com</a></li>
-          <li><a href="calendar#workshops">In-person workshops</a></li>
-          <li><a href="calendar">Calendar</a></li>
-          <li><a href="learn-webinars">Free webinars</a></li>
-          <li><a href="learn-scholarships">Scholarships</a></li>
-          <li><a href="login">Student login</a></li>
-        </ul>
-      </li>
-      <li class="has-drop"><a href="science">Science</a>
-        <ul class="drop">
-          <li><a href="science">How the soil food web works</a></li>
-          <li><a href="research">Research and publications</a></li>
-          <li><a href="research#work-with-us">Partner on research</a></li>
-        </ul>
-      </li>
-      <li class="has-drop"><a href="practice">Practice</a>
-        <ul class="drop">
-          <li><a href="practice#case-studies">Case studies</a></li>
-          <li><a href="directory">Find a professional</a></li>
-          <li><a href="practice#work-with-us">Work with us</a></li>
-        </ul>
-      </li>
-      <li class="has-drop"><a href="community">Community</a>
-        <ul class="drop">
-          <li><a href="community#community-map">Community map</a></li>
-          <li><a href="news">News and stories</a></li>
-          <li><a href="calendar">Calendar</a></li>
-          <li><a href="community#join">Join the community</a></li>
-          <li><a href="app">The mobile app</a></li>
-          <li><a href="volunteer">Volunteer with us</a></li>
-        </ul>
-      </li>
-    </ul>
-    <a class="btn btn--donate" href="donate">Donate</a>
-    <button class="menu-btn" type="button" data-menu-open aria-controls="overlay" aria-expanded="false">
-      <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg><span class="menu-btn__label">Menu</span>
-    </button>
-  </div>
-</header>
-
-<div class="overlay" id="overlay" data-open="false" role="dialog" aria-modal="true" aria-label="Site menu">
-  <div class="wrap">
-    <div class="overlay__top">
-      <span class="wordmark wordmark--image"><img class="wordmark__logo" src="img/sfwlogo-240.png" alt="Soil Food Web Foundation" decoding="async"><span class="wordmark__name">Soil Food Web Foundation</span><span class="wordmark__status">A 501(c)(3) nonprofit</span></span>
-      <button class="menu-btn" type="button" data-menu-close>
-        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>Close
-      </button>
-    </div>
-    <div class="overlay__body">
-      <nav class="overlay__nav" aria-label="Sections">
-        <ul class="acc" data-accordion>
-          <li class="acc__item" data-acc-item data-open="false">
-            <button class="acc__btn" type="button" data-acc-btn aria-controls="acc-about-us">
-              <span class="acc__name">About us</span><span class="acc__desc">Who we are and how we are governed</span>
-            </button>
-            <div class="acc__panel" id="acc-about-us" data-acc-panel><div>
-              <ul class="acc__links">
-                <li><a href="about#mission">Mission, vision and story</a></li>
-                <li><a href="about-team">Our team and board</a></li>
-                <li><a href="about-governance">Governance and financials</a></li>
-                <li><a href="about-elaine">Dr. Elaine Ingham</a></li>
-                <li><a href="news#foundation">Foundation news</a></li>
-                <li><a href="contact">Contact us</a></li>
-              </ul>
-            </div></div>
-          </li>
-          <li class="acc__item" data-acc-item data-open="false">
-            <button class="acc__btn" type="button" data-acc-btn aria-controls="acc-learn">
-              <span class="acc__name">Learn</span><span class="acc__desc">Teach It</span>
-            </button>
-            <div class="acc__panel" id="acc-learn" data-acc-panel><div>
-              <ul class="acc__links">
-                <li><a href="learn">Explore our programs</a></li>
-                <li><a href="https://school.soilfoodweb.com">Courses on school.soilfoodweb.com</a></li>
-                <li><a href="calendar#workshops">In-person workshops</a></li>
-                <li><a href="calendar">Calendar</a></li>
-                <li><a href="learn-webinars">Free webinars</a></li>
-                <li><a href="learn-scholarships">Scholarships</a></li>
-                <li><a href="login">Student login</a></li>
-              </ul>
-            </div></div>
-          </li>
-          <li class="acc__item" data-acc-item data-open="false">
-            <button class="acc__btn" type="button" data-acc-btn aria-controls="acc-science">
-              <span class="acc__name">Science</span><span class="acc__desc">Prove It</span>
-            </button>
-            <div class="acc__panel" id="acc-science" data-acc-panel><div>
-              <ul class="acc__links">
-                <li><a href="science">How the soil food web works</a></li>
-                <li><a href="research">Research and publications</a></li>
-                <li><a href="research#work-with-us">Partner on research</a></li>
-              </ul>
-            </div></div>
-          </li>
-          <li class="acc__item" data-acc-item data-open="false">
-            <button class="acc__btn" type="button" data-acc-btn aria-controls="acc-practice">
-              <span class="acc__name">Practice</span><span class="acc__desc">Practice It</span>
-            </button>
-            <div class="acc__panel" id="acc-practice" data-acc-panel><div>
-              <ul class="acc__links">
-                <li><a href="practice#case-studies">Case studies</a></li>
-                <li><a href="directory">Find a professional</a></li>
-                <li><a href="practice#work-with-us">Work with us</a></li>
-              </ul>
-            </div></div>
-          </li>
-          <li class="acc__item" data-acc-item data-open="false">
-            <button class="acc__btn" type="button" data-acc-btn aria-controls="acc-community">
-              <span class="acc__name">Community</span><span class="acc__desc">Grow It</span>
-            </button>
-            <div class="acc__panel" id="acc-community" data-acc-panel><div>
-              <ul class="acc__links">
-                <li><a href="community#community-map">Community map</a></li>
-                <li><a href="news">News and stories</a></li>
-                <li><a href="calendar">Calendar</a></li>
-                <li><a href="community#join">Join the community</a></li>
-                <li><a href="app">The mobile app</a></li>
-                <li><a href="volunteer">Volunteer with us</a></li>
-              </ul>
-            </div></div>
-          </li>
-        </ul>
-        <ul class="overlay__utility"><li><a href="login">Student login</a></li><li><a href="news#subscribe">Subscribe</a></li><li><a href="donate">Donate</a></li></ul>
-      </nav>
-      <aside class="overlay__now" aria-labelledby="now-h">
-        <h2 id="now-h">Happening now</h2>
-        <ul class="now-list">
-          <li><span class="dated"><time datetime="2026-09-16">16 September to 20 December 2026</time></span><a href="learn#permaculture">Permaculture Design Certification cohort</a></li>
-          <li><span class="dated"><time datetime="2026-10-19">19 to 30 October 2026</time></span><a href="calendar#workshops">Accelerator Workshop India 2026, Coimbatore</a></li>
-        </ul>
-        <a class="more" href="calendar">Everything that is happening</a>
-      </aside>
-    </div>
-  </div>
-</div>
+<p class="preview-flag">Review preview of the launch site, not public. <a href="/review/">What changed on each page</a></p>
+<div class="utility"><div class="wrap"><span class="utility__name">The Soil Food Web Foundation 501(c)(3)</span><nav aria-label="Account"><a href="/login/">Student login</a><a href="#newsletter">Subscribe</a></nav></div></div>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="/"><img src="/img/sfwlogo-240.webp" width="80" height="69" alt="Soil Food Web Foundation, home"></a>
+<nav class="nav" aria-label="Main"><ul><li><a href="/" aria-current="page">Home</a></li><li><button class="nav__top" type="button" aria-expanded="false" aria-controls="sub-1">About Us</button><ul class="sub" id="sub-1"><li><a href="/about/">About Us</a></li><li><a href="/about/#mission">Mission, Vision &amp; Story</a></li><li><a href="/about/#team">Our Team</a></li><li><a href="/about/#dr-elaine">Dr. Elaine’s Research</a></li><li><a href="/funding/">How we’re funded</a></li><li><a href="/governance/">Governance and financials</a></li><li><a href="/year-one-report/">Year one report</a></li><li><a href="/category/foundation-update/">Foundation News</a></li><li><a href="/about/#contact-legal">Contact &amp; Legal</a></li></ul></li><li><button class="nav__top" type="button" aria-expanded="false" aria-controls="sub-2">Learn</button><ul class="sub" id="sub-2"><li><a href="/programs/">Learn</a></li><li><a href="/programs/">Programs Overview</a></li><li><a href="/programs/#path">Online Courses</a></li><li><a href="/workshops/">Workshops</a></li><li><a href="https://webinar.soilfoodweb.com">Free Webinars</a></li><li><a href="/scholarship/">Scholarship</a></li><li><a href="/login/">Student Login</a></li></ul></li><li><button class="nav__top" type="button" aria-expanded="false" aria-controls="sub-3">Science</button><ul class="sub" id="sub-3"><li><a href="/how-it-works/">Science</a></li><li><a href="/how-it-works/">How the Soil Food Web Works</a></li><li><a href="/publications/">Research Database</a></li><li><a href="/work-with-us/">Partner on Research</a></li></ul></li><li><button class="nav__top" type="button" aria-expanded="false" aria-controls="sub-4">Practice</button><ul class="sub" id="sub-4"><li><a href="/case-studies/">Practice</a></li><li><a href="/case-studies/">Case Studies</a></li><li><a href="/find-a-professional/">Find a Professional</a></li><li><a href="/work-with-us/">Work With Us</a></li></ul></li><li><button class="nav__top" type="button" aria-expanded="false" aria-controls="sub-5">Community</button><ul class="sub" id="sub-5"><li><a href="/community/">Community</a></li><li><a href="/community/#community-map">Community Map</a></li><li><a href="/news/">News &amp; Blog</a></li><li><a href="/calendar/">Calendar</a></li><li><a href="https://school.soilfoodweb.com/products/communities/SFW-public-community">Join the Community</a></li></ul></li><li><a class="btn btn--donate" href="/donations/">Donate</a></li></ul></nav>
+<button class="menu-btn" type="button" data-menu-open aria-expanded="false" aria-controls="ocm"><span aria-hidden="true"></span>Menu</button>
+</div></header>
+<div class="ocm" id="ocm" hidden><div class="ocm__scrim"></div><div class="ocm__panel" role="dialog" aria-modal="true" aria-label="Menu">
+<div class="ocm__top"><p class="ocm__name">Soil Food Web Foundation<small>A 501(c)(3) nonprofit</small></p><button class="ocm__close" type="button" data-menu-close>&times; Close</button></div>
+<nav aria-label="Main"><ul><li><a href="/" aria-current="page">Home</a></li><li><details><summary>About Us</summary><ul><li><a href="/about/">About Us</a></li><li><a href="/about/#mission">Mission, Vision &amp; Story</a></li><li><a href="/about/#team">Our Team</a></li><li><a href="/about/#dr-elaine">Dr. Elaine’s Research</a></li><li><a href="/funding/">How we’re funded</a></li><li><a href="/governance/">Governance and financials</a></li><li><a href="/year-one-report/">Year one report</a></li><li><a href="/category/foundation-update/">Foundation News</a></li><li><a href="/about/#contact-legal">Contact &amp; Legal</a></li></ul></details></li><li><details><summary>Learn</summary><ul><li><a href="/programs/">Learn</a></li><li><a href="/programs/">Programs Overview</a></li><li><a href="/programs/#path">Online Courses</a></li><li><a href="/workshops/">Workshops</a></li><li><a href="https://webinar.soilfoodweb.com">Free Webinars</a></li><li><a href="/scholarship/">Scholarship</a></li><li><a href="/login/">Student Login</a></li></ul></details></li><li><details><summary>Science</summary><ul><li><a href="/how-it-works/">Science</a></li><li><a href="/how-it-works/">How the Soil Food Web Works</a></li><li><a href="/publications/">Research Database</a></li><li><a href="/work-with-us/">Partner on Research</a></li></ul></details></li><li><details><summary>Practice</summary><ul><li><a href="/case-studies/">Practice</a></li><li><a href="/case-studies/">Case Studies</a></li><li><a href="/find-a-professional/">Find a Professional</a></li><li><a href="/work-with-us/">Work With Us</a></li></ul></details></li><li><details><summary>Community</summary><ul><li><a href="/community/">Community</a></li><li><a href="/community/#community-map">Community Map</a></li><li><a href="/news/">News &amp; Blog</a></li><li><a href="/calendar/">Calendar</a></li><li><a href="https://school.soilfoodweb.com/products/communities/SFW-public-community">Join the Community</a></li></ul></details></li></ul></nav><a class="btn btn--donate" href="/donations/">Donate</a></div></div>
 
 <main id="main">
-
-  <section class="stratum" style="border-top:0">
-    <div class="wrap">
-      <div class="grid" style="align-items:center">
-        <div class="span-5">
-          <p class="eyebrow">SOIL FOOD WEB FOUNDATION</p>
-          <h1>Join a global community of Soil Regenerators</h1>
-          <p class="lede">Healing soil. Feeding humanity. Restoring the living world.</p>
-          <p>The ground beneath our farms and forests is alive. Learn, restore, and demonstrate the power of the soil food web on every continent.</p>
-          <p style="margin-top:var(--s4);display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center"><a class="btn" href="community#join">Join the community</a> <a class="btn btn--ghost" href="learn">Programs</a></p>
-        </div>
-        <div class="span-7">
-          <figure class="shot">
-            <img src="img/w/workshop-group-around-compost-pile.jpg" srcset="img/w/workshop-group-around-compost-pile-800.jpg 800w, img/w/workshop-group-around-compost-pile.jpg 1600w" sizes="(min-width:80rem) 58rem, 100vw" alt="A workshop group of about thirty people gathered around a freshly built compost pile under an open-sided shed" decoding="async" style="border-radius:.5rem">
-            <figcaption class="cap--todo">the workshop, the place and the date. Foundation to supply.</figcaption>
-          </figure>
-        </div>
+<section class="hero">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Soil Food Web Foundation</p>
+      <h1>Join a global community of Soil Regenerators</h1>
+      <p class="subhead">Healing soil. Feeding humanity. Restoring the living world.</p>
+      <p>The Soil Food Web Foundation is a nonprofit that carries forward Dr. Elaine Ingham's life's work to support farmers, land stewards and soil enthusiasts by teaching the fundamentals of the Soil Food Web Approach to land management. Our approach includes accessible methods of assessing soil life and growing and applying beneficial soil biology to restore living soil in every bioregion. Through our online and in-person programs, we educate and support the global community of soil regenerators.</p>
+      <div class="actions">
+        <a class="btn" href="/community/">Join the community</a>
+        <a class="btn btn--ghost" href="/programs/#path">Programs</a>
       </div>
     </div>
-  </section>
+    <div class="hero__media"><img src="/img/screenshot-2026-09-29-161820.webp" width="1589" height="940" alt="Group of about thirty people posing around a compost bale in a farm shed." loading="eager" fetchpriority="high" decoding="async"></div>
+  </div>
+</section>
 
-  <section class="stratum" aria-label="The community at work">
-    <div class="bleed">
-      <ul class="filmstrip">
-        <li><img src="img/w/carla-nicks-son-nick-eri-wild-soils-event-11-2024.jpg" srcset="img/w/carla-nicks-son-nick-eri-wild-soils-event-11-2024-800.jpg 800w, img/w/carla-nicks-son-nick-eri-wild-soils-event-11-2024.jpg 1600w" sizes="(max-width: 60em) 60vw, 20vw" alt="A group of people laughing as they work together outdoors with brushes and rakes" loading="lazy" decoding="async"></li>
-        <li><img src="img/w/ctpfw-student-moving-compost-1.jpg" srcset="img/w/ctpfw-student-moving-compost-1-800.jpg 800w, img/w/ctpfw-student-moving-compost-1.jpg 1600w" sizes="(max-width: 60em) 60vw, 20vw" alt="A student lifting an armful of finished compost while others watch and a hose is played over the pile" loading="lazy" decoding="async"></li>
-        <li><img src="img/w/erc-panchamana-treeplanting-3-fb-img-1666271008784.jpg" srcset="img/w/erc-panchamana-treeplanting-3-fb-img-1666271008784-800.jpg 800w, img/w/erc-panchamana-treeplanting-3-fb-img-1666271008784.jpg 1600w" sizes="(max-width: 60em) 60vw, 20vw" alt="A young man crouching to plant a seedling, with others planting along the same row behind him" loading="lazy" decoding="async"></li>
-        <li><img src="img/w/hvdb-inplanten-002.jpg" srcset="img/w/hvdb-inplanten-002-800.jpg 800w, img/w/hvdb-inplanten-002.jpg 1600w" sizes="(max-width: 60em) 60vw, 20vw" alt="A group planting young trees across an open field on a grey day" loading="lazy" decoding="async"></li>
-        <li><img src="img/w/el-nino-2017-tractor-in-mud-w-crew.jpg" srcset="img/w/el-nino-2017-tractor-in-mud-w-crew-800.jpg 800w, img/w/el-nino-2017-tractor-in-mud-w-crew.jpg 1600w" sizes="(max-width: 60em) 60vw, 20vw" alt="A crew digging a tractor out of deep mud under a wide sky" loading="lazy" decoding="async"></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="stratum" aria-labelledby="stats-h">
-    <div class="wrap">
-      <h2 id="stats-h" class="visually-hidden">The Foundation in figures</h2>
-      <div class="grid">
-        <div class="span-4">
-          <p class="stat">100+</p>
-          <p class="stat__label">Countries in our student &amp; practitioner community</p>
-          <p class="source small">enrollment records, confirmed August 2026</p>
-        </div>
-        <div class="span-4">
-          <p class="stat">10,000+</p>
-          <p class="stat__label">Individuals enrolled in our programs</p>
-          <p class="source small">enrollment records, confirmed August 2026</p>
-        </div>
-        <div class="span-4">
-          <p class="stat">40</p>
-          <p class="stat__label">Year legacy of pioneering soil biology research &amp; regenerative practice</p>
-          <p class="source small">Dr. Ingham's first soil biology publications, 1986</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="stratum" aria-labelledby="doors-h" id="doors">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">CHOOSE YOUR PATH</p>
-        <h2 id="doors-h">Choose your path</h2>
-      </div>
-      <ul class="doors">
-        <li>
-          <a class="door" href="directory">
-            <img src="img/w/harringtons-organic-land-care-york-farms-1-768x1024.jpg" srcset="img/w/harringtons-organic-land-care-york-farms-1-768x1024-800.jpg 800w, img/w/harringtons-organic-land-care-york-farms-1-768x1024.jpg 1600w" sizes="(max-width: 52em) 100vw, 32vw" alt="A gloved hand holding back a thick mat of crop residue to show dark crumb soil underneath" loading="lazy" decoding="async">
-            <h3>Farm with biology</h3>
-            <p>Cut back on synthetic inputs and build your natural soil fertility. We’ll connect you with our team and trained practitioners to plan, implement, and monitor the transition on your operation.</p>
-            <span class="door__go">Find a trained professional near you &rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a class="door" href="practice#work-with-us">
-            <img src="img/w/erc-panchamana-treeplanting-2-fb-img-1666270988322.jpg" srcset="img/w/erc-panchamana-treeplanting-2-fb-img-1666270988322-800.jpg 800w, img/w/erc-panchamana-treeplanting-2-fb-img-1666270988322.jpg 1600w" sizes="(max-width: 52em) 100vw, 32vw" alt="People spread across a clearing planting seedlings among standing trees" loading="lazy" decoding="async">
-            <h3>Restore your land</h3>
-            <p>Bring biodiversity back to degraded sites and put biology to work on remediation, from gardens and smallholdings to large landholdings and public lands.</p>
-            <span class="door__go">See restoration work and start a conversation &rarr;</span>
-          </a>
-        </li>
-        <li>
-          <a class="door" href="learn">
-            <img src="img/w/ctpfw-student-squeezing-compost-1.jpg" srcset="img/w/ctpfw-student-squeezing-compost-1-800.jpg 800w, img/w/ctpfw-student-squeezing-compost-1.jpg 1600w" sizes="(max-width: 52em) 100vw, 32vw" alt="A student in gloves squeezing a handful of compost to test it while a group watches" loading="lazy" decoding="async">
-            <h3>Bring it to your classroom</h3>
-            <p>Incorporate the soil food web methodology into your curriculum: for school systems, universities, and training programs.</p>
-            <span class="door__go">Explore our programs &rarr;</span>
-          </a>
-        </li>
-      </ul>
-
-    </div>
-  </section>
-
-  <section class="stratum" aria-labelledby="slide-h">
-    <div class="wrap">
-      <h2 id="slide-h" class="visually-hidden">One drop of soil water, under the microscope</h2>
-      <ul class="slides">
-        <li>
-          <a class="slide" href="science">
-            <span class="slide__disc">
-              <video data-loop data-start="0.0" muted loop playsinline preload="none"
-                     style="transform:scale(2.2) translate(4.6%, 0.8%)"
-                     poster="img/w/sfw-amoeba-still-square.jpg"
-                     aria-hidden="true" tabindex="-1"
-                     data-src="video/sfw-amoeba-loop-square.webm,video/sfw-amoeba-loop-square.mp4"></video>
-            </span>
-            <span class="slide__n">How the soil food web works <span class="slide__go" aria-hidden="true">&rarr;</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="slide" href="learn">
-            <span class="slide__disc">
-              <video data-loop data-start="0.0" muted loop playsinline preload="none"
-                     style="transform:scale(1.0)"
-                     poster="img/w/sfw-teas-still-square.jpg"
-                     aria-hidden="true" tabindex="-1"
-                     data-src="video/sfw-teas-square.webm,video/sfw-teas-square.mp4"></video>
-            </span>
-            <span class="slide__n">Programs <span class="slide__go" aria-hidden="true">&rarr;</span></span>
-          </a>
-        </li>
-        <li>
-          <a class="slide" href="research">
-            <span class="slide__disc">
-              <video data-loop data-start="6.6" muted loop playsinline preload="none"
-                     style="transform:scale(2.4) translate(26%, 23%)"
-                     poster="img/w/sfw-amoeba-still-square.jpg"
-                     aria-hidden="true" tabindex="-1"
-                     data-src="video/sfw-amoeba-loop-hero.webm,video/sfw-amoeba-loop-hero.mp4"></video>
-            </span>
-            <span class="slide__n">Research and publications <span class="slide__go" aria-hidden="true">&rarr;</span></span>
-          </a>
-        </li>
-      </ul>
-      <p class="source small" style="margin-top:var(--s4)">First and third discs: brightfield microscopy, Soil Food Web Foundation archive</p>
-      <p class="todo">The Programs disc now shows compost tea being made, not microscopy. Needs the place, the people and the date, and a source line of its own. Linnea supplies.</p>
-
-    </div>
-  </section>
-
-  <section class="stratum" aria-labelledby="who-h">
-    <div class="wrap">
-      <div class="grid" style="align-items:center;row-gap:var(--s5)">
-        <div class="span-7">
-          <p class="eyebrow">WHO WE ARE</p>
-          <h2 id="who-h">About the Foundation</h2>
-          <p>For four decades, Dr. Elaine Ingham showed the world what farmers and foresters have always sensed: soil is not dirt. It is a living web of bacteria, fungi, protozoa, nematodes, and micro-arthropods that feeds plants, stores carbon, holds water, and sustains every terrestrial ecosystem on Earth.</p>
-          <p>The Soil Food Web Foundation was created to carry that work forward. We teach the science through the Soil Food Web School, pursue and share new knowledge, incubate regenerative practice in ecoregions around the world, and build the community that makes it all last.</p>
-          <p><a href="about">Read our mission and story →</a></p>
-        </div>
-        <div class="span-5">
-          <figure class="shot shot--wide">
-        <img src="img/w/elaine-smile-talking.jpg" srcset="img/w/elaine-smile-talking-800.jpg 800w, img/w/elaine-smile-talking.jpg 1600w" sizes="(max-width: 48em) 100vw, 40vw" alt="Dr. Elaine Ingham smiling while talking with someone at an outdoor event" loading="lazy" decoding="async">
-      </figure>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-
-  <section class="stratum" aria-labelledby="approach-h">
-    <div class="wrap">
-      <div class="head">
-        <h2 id="approach-h">The Soil Food Web Approach</h2>
-      </div>
-      <div class="case">
-        <div class="grid" style="row-gap:var(--s5)">
-        <div class="span-3">
-          <div class="step">
-            <figure class="shot shot--wide">
-        <img src="img/w/soil-sample-close-up-test-tube.jpg" srcset="img/w/soil-sample-close-up-test-tube-800.jpg 800w, img/w/soil-sample-close-up-test-tube.jpg 1600w" sizes="(max-width: 48em) 100vw, 50vw" alt="A gloved hand holding a sample tube and a probe over dark soil" loading="lazy" decoding="async">
-      </figure>
-            <span class="fig-n">Fig. 01</span>
-            <h3>Observe and assess</h3>
-            <p>Put your soil under the microscope. Identify which organisms are present, which are missing, and what that means for your plants, so every decision starts with what’s actually alive in your soil.</p>
-          </div>
-        </div>
-        <div class="span-3">
-          <div class="step">
-            <figure class="shot shot--wide">
-        <img src="img/w/hand-of-compost.jpg" srcset="img/w/hand-of-compost-800.jpg 800w, img/w/hand-of-compost.jpg 1600w" sizes="(max-width: 48em) 100vw, 50vw" alt="A hand lifting a fistful of dark finished compost above the pile it came from" loading="lazy" decoding="async">
-      </figure>
-            <span class="fig-n">Fig. 02</span>
-            <h3>Incubate the biology</h3>
-            <p>Grow the beneficial organisms your soil needs by making BioComplete™ compost: not just organic matter, but a living culture, built deliberately.</p>
-          </div>
-        </div>
-        <div class="span-3">
-          <div class="step">
-            <figure class="shot shot--wide">
-        <img src="img/w/hand-scooping-planter-bed-soil.jpg" srcset="img/w/hand-scooping-planter-bed-soil-800.jpg 800w, img/w/hand-scooping-planter-bed-soil.jpg 1600w" sizes="(max-width: 48em) 100vw, 50vw" alt="A hand lifting a scoop of dark crumbly soil from a planting bed" loading="lazy" decoding="async">
-      </figure>
-            <span class="fig-n">Fig. 03</span>
-            <h3>Multiply and apply</h3>
-            <p>A small amount of biologically rich compost goes a long way. Compost extracts and teas multiply that life and carry it across whole fields and gardens, to the soil and to the plants themselves.</p>
-          </div>
-        </div>
-        <div class="span-3">
-          <div class="step">
-            <figure class="shot shot--wide">
-        <img src="img/w/handling-loose-soil.jpg" srcset="img/w/handling-loose-soil-800.jpg 800w, img/w/handling-loose-soil.jpg 1600w" sizes="(max-width: 48em) 100vw, 50vw" alt="Hands letting dry crumbs of soil fall back to the ground in low sunlight" loading="lazy" decoding="async">
-      </figure>
-            <span class="fig-n">Fig. 04</span>
-            <h3>Manage and monitor holistically</h3>
-            <p>Keep observing as the life rebuilds structure, cycles nutrients, and protects your plants, and adjust your practices so the benefits compound, season after season.</p>
-          </div>
-        </div>
-        </div>
-      </div>
-      <p style="margin-top:var(--s5)"><a href="practice#case-studies">See case studies from the field →</a></p>
-      <p class="todo" data-status="">reframed Sep 8 (Evan): drop tech metaphor + step count; Approach is now FOUR steps</p>
-    </div>
-  </section>
-
-  <section class="stratum" aria-labelledby="learn-h">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">LEARN WITH US</p>
-        <h2 id="learn-h">Programs</h2>
-      </div>
-      <ul class="cards">
-        <li class="card">
-          <div class="card__media"><img src="img/w/2-dirty-hands.jpg" srcset="img/w/2-dirty-hands-800.jpg 800w, img/w/2-dirty-hands.jpg 1600w" sizes="(max-width: 48em) 100vw, 30vw" alt="Two open palms held out, thickly covered in wet soil" loading="lazy" decoding="async"></div>
-          <div class="card__kind"><span>Start here</span></div>
-          <h3 class="card__title"><a href="learn#foundation-courses">Foundation Courses</a></h3>
-          <p class="card__line">The complete introduction to the science of the soil food web. The starting point for everyone.</p>
-          <p class="card__line"><a href="learn#foundation-courses">See the Foundation Courses and price &rarr;</a></p>
-        </li>
-        <li class="card">
-          <div class="card__media"><img src="img/w/test-tubes-with-sample.jpg" srcset="img/w/test-tubes-with-sample-800.jpg 800w, img/w/test-tubes-with-sample.jpg 1600w" sizes="(max-width: 48em) 100vw, 30vw" alt="Sample tubes racked in front of a microscope, shallow focus" loading="lazy" decoding="async"></div>
-          <div class="card__kind"><span>Hone your skills</span></div>
-          <h3 class="card__title"><a href="learn#complete-practicum">Advanced Programs</a></h3>
-          <p class="card__line">Hands-on Soil Microscopy, BioComplete™ Compost Production, Biological Liquid Amendments, and Field Trials.</p>
-          <p class="card__line"><a href="learn#complete-practicum">See the Soil Food Web Consultant path &rarr;</a></p>
-        </li>
-        <li class="card">
-          <div class="card__media"><img src="img/w/erc-rancho-cacachilas-agro8.jpg" srcset="img/w/erc-rancho-cacachilas-agro8-800.jpg 800w, img/w/erc-rancho-cacachilas-agro8.jpg 1600w" sizes="(max-width: 48em) 100vw, 30vw" alt="Rows of flowering crops and low tunnels seen from directly above" loading="lazy" decoding="async"></div>
-          <div class="card__kind"><span>Design systems</span></div>
-          <h3 class="card__title"><a href="learn#permaculture">Permaculture Design Certification</a></h3>
-          <p class="card__line">Whole-system design: water, plants, structures, community, rooted in living soil.</p>
-          <p class="card__line"><a href="learn#permaculture">See the Permaculture Design Certification &rarr;</a></p>
-        </li>
-        <li class="card">
-          <div class="card__media"><img src="img/w/erc-panchamana-treeplanting-2-fb-img-1666270988322.jpg" srcset="img/w/erc-panchamana-treeplanting-2-fb-img-1666270988322-800.jpg 800w, img/w/erc-panchamana-treeplanting-2-fb-img-1666270988322.jpg 1600w" sizes="(max-width: 48em) 100vw, 30vw" alt="People spread across a clearing planting seedlings among standing trees" loading="lazy" decoding="async"></div>
-          <div class="card__kind"><span>Ecosystem Restoration</span></div>
-          <h3 class="card__title"><a href="learn#restoration">Ecosystem Restoration Courses</a></h3>
-          <p class="card__line">Learn ecological principles and practical restoration techniques.</p>
-          <p class="card__line"><a href="learn#restoration">See Introduction to Ecosystem Restoration &rarr;</a></p>
-          <p class="todo" data-status="verify">VERIFY sales page URL</p>
-        </li>
-        <li class="card">
-          <div class="card__media"><img src="img/w/ctpfw-student-squeezing-compost-1.jpg" srcset="img/w/ctpfw-student-squeezing-compost-1-800.jpg 800w, img/w/ctpfw-student-squeezing-compost-1.jpg 1600w" sizes="(max-width: 48em) 100vw, 30vw" alt="A student in gloves squeezing a handful of compost to test it, with a group watching" loading="lazy" decoding="async"></div>
-          <div class="card__kind"><span>In person</span></div>
-          <h3 class="card__title"><a href="calendar">Workshops</a></h3>
-          <p class="card__line">Learn on real sites, meet the community, and accelerate your training.</p>
-          <p class="card__line"><a href="calendar">See the calendar of workshops &rarr;</a></p>
-        </li>
-      </ul>
-      <p class="todo">Five cards render as a horizontally scrolling wrap-around carousel (scroll-snap; loop in production build).</p>
-    </div>
-  </section>
-
-  <section class="stratum" aria-labelledby="new-h">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">WHAT’S NEW</p>
-        <h2 id="new-h">Happening across the community</h2>
-      </div>
-      <ul class="rule-list rule-list--thumb">
-        <li class="entry entry--thumb">
-          <span class="entry__thumb"><img src="img/w/erc-rancho-cacachilas-agro2-800.jpg" alt="A broad tree standing over dense green undergrowth" loading="lazy" decoding="async"></span>
-          <span class="dated"><time datetime="2026-09-16">16 September to 20 December 2026</time></span>
-          <h3 class="entry__t"><a href="learn#permaculture">Permaculture Design Certification cohort begins</a></h3>
-          <span class="entry__kind">Course, cohort</span>
-        </li>
-        <li class="entry entry--thumb">
-          <span class="entry__thumb"><img src="img/w/2-hands-planting-shrub-800.jpg" alt="Two hands firming red soil around the base of a newly planted shrub" loading="lazy" decoding="async"></span>
-          <span class="dated"><time datetime="2026-10-19">19 to 30 October 2026</time></span>
-          <h3 class="entry__t"><a href="https://school.soilfoodweb.com/courses/india-workshop-2026">Accelerator Workshop India 2026, Coimbatore</a></h3>
-          <span class="entry__kind">Workshop</span>
-        </li>
-      </ul>
-      <p style="margin-top:var(--s4)"><a href="calendar">All events →</a> &middot; <a href="news">All news and stories →</a></p>
-      <p class="todo" data-status="">Dynamic feed: upcoming workshop &gt; upcoming webinar &gt; latest impact story &gt; latest blog post. Sample items in mockup are illustrative.</p>
-    </div>
-  </section>
-
-  <section class="stratum" aria-labelledby="say-h">
-    <div class="wrap">
-      <h2 id="say-h" class="visually-hidden">What people say</h2>
-      <figure class="testimonial">
-        <blockquote><p>Restoring the Soil Food Web to agricultural soils restores productivity and profitability to agriculture and results in substantial levels of carbon sequestration.</p></blockquote>
-        <figcaption>Dr. David Johnson, Research Scientist and Molecular Biologist, New Mexico State University</figcaption>
-      </figure>
-      <p class="source small">soilfoodweb.com homepage testimonial. Retained at Evan's request, August 2026.</p>
-      <p class="todo" data-status="verified">The original continues into a claim about returning atmospheric carbon to IPCC safe levels. That sentence is cut: it is a global outcome claim under the claims rule. Restore it only as a clearly attributed third-party statement if Evan wants it.</p>
-    </div>
-  </section>
-
-  <section class="stratum" aria-labelledby="eco-h">
-    <div class="wrap">
-      <h2 id="eco-h" class="visually-hidden">Our ecosystem</h2>
-      <p class="eyebrow">OUR ECOSYSTEM</p>
-      <p class="lede" style="max-width:44ch;margin-top:var(--s2)">We’re grateful to the organizations that make this work possible, and always looking for aligned partners.</p>
-      <ul class="partners">
-        <li>
-          <a href="https://school.soilfoodweb.com/courses/india-workshop-2026"><b>Isha Outreach</b></a>
-          <span>Conscious Planet: Save Soil. Partner on the Accelerator Workshop India 2026.</span>
-        </li>
-      </ul>
-      <p style="margin-top:var(--s4)"><a class="btn btn--ghost" href="practice#work-with-us">Start a partnership conversation</a></p>
-      <p class="todo" data-status="placeholder">One partner named so far. Every other partner name and logo file still to come. Evan.</p>
-    </div>
-  </section>
-
-  <section class="banner bleed" aria-labelledby="join-h">
-    <img src="img/w/erc-rancho-cacachilas-agro.jpg" srcset="img/w/erc-rancho-cacachilas-agro-800.jpg 800w, img/w/erc-rancho-cacachilas-agro.jpg 1600w" sizes="100vw" alt="Long rows of crops running to a line of trees under a wide clouded sky" loading="lazy" decoding="async">
-    <div class="banner__in">
-      <div class="wrap">
-          <h2 id="join-h">Get involved</h2>
-          <p class="lede">Wherever you are, whether a farm, a garden, a lab or a classroom, there’s living soil beneath you and a global community beside you.</p>
-          <p style="margin-top:var(--s4);display:flex;flex-wrap:wrap;gap:var(--s2)"><a class="btn" href="community#join">Join the community</a> <a class="btn btn--ghost" href="donate">Donate</a></p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============ FOOTER (every page) ============ -->
-<footer class="site-footer">
+<section class="band band--tight band--rule" aria-label="The Foundation in numbers">
   <div class="wrap">
-    <div class="grid">
-      <div class="span-4">
-        <span class="wordmark wordmark--image"><img class="wordmark__logo" src="img/sfwlogo-240.png" alt="Soil Food Web Foundation" decoding="async"><span class="wordmark__name">Soil Food Web Foundation</span><span class="wordmark__status">A 501(c)(3) nonprofit</span></span>
-        <p class="footer__tag">Healing soil. Feeding humanity. Restoring the living world.</p>
-        <form class="footer__news" action="#" method="post" aria-label="Newsletter" data-newsletter>
-          <label for="footer-email" class="visually-hidden">Email address</label>
-          <input class="input" id="footer-email" type="email" name="email" placeholder="Email for the newsletter" required>
-          <button class="btn" type="submit">Subscribe</button>
-        </form>
-        <p class="caption" style="color:rgba(255,255,255,.75)">One email a month. Unsubscribe with one click.</p>
-      </div>
-      <nav class="span-2 start-5" aria-labelledby="f-0">
-        <h2 id="f-0">Foundation</h2>
-        <ul>
-          <li><a href="about">About us</a></li>
-          <li><a href="about-team">Our team and board</a></li>
-          <li><a href="about-elaine">Dr. Elaine's research</a></li>
-          <li><a href="about-governance">Governance and financials</a></li>
-          <li><a href="contact">Contact us</a></li>
-        </ul>
-      </nav>
-      <nav class="span-2" aria-labelledby="f-1">
-        <h2 id="f-1">Learn</h2>
-        <ul>
-          <li><a href="learn">Explore our programs</a></li>
-          <li><a href="https://school.soilfoodweb.com">Courses on school.soilfoodweb.com</a></li>
-          <li><a href="calendar#workshops">Workshops and events</a></li>
-          <li><a href="calendar">Calendar</a></li>
-          <li><a href="learn-webinars">Free webinars</a></li>
-          <li><a href="learn-scholarships">Scholarships</a></li>
-        </ul>
-      </nav>
-      <nav class="span-2" aria-labelledby="f-2">
-        <h2 id="f-2">Resources</h2>
-        <ul>
-          <li><a href="science">How the soil food web works</a></li>
-          <li><a href="research">Research and publications</a></li>
-          <li><a href="practice#case-studies">Case studies</a></li>
-          <li><a href="contact#media">Media and press</a></li>
-          <li><a href="https://www.soilmapp.com/">sMApp on soilmapp.com</a></li>
-        </ul>
-      </nav>
-      <nav class="span-2" aria-labelledby="f-3">
-        <h2 id="f-3">Get involved</h2>
-        <ul>
-          <li><a href="donate">Donate</a></li>
-          <li><a href="volunteer">Volunteer with us</a></li>
-          <li><a href="contact#speak">Invite us to speak</a></li>
-          <li><a href="directory">Find a professional</a></li>
-          <li><a href="contact#logo">Logo and name use</a></li>
-        </ul>
-      </nav>
+    <ul class="stats">
+      <li><span class="stat__n">100<sup>+</sup></span><span class="stat__l">Countries in our student &amp; practitioner community</span></li>
+      <li><span class="stat__n">10,000<sup>+</sup></span><span class="stat__l">Individuals enrolled in our programs</span></li>
+      <li><span class="stat__n">40<sup>+</sup></span><span class="stat__l">Year legacy of pioneering soil biology research &amp; regenerative practice</span></li>
+    </ul>
+    <p class="todo" style="max-width:40rem;margin:1.5rem auto 0">Verify the student number. The site uses 10,000+ everywhere (home, About timeline). Stephanie McDaniel confirms the current enrollment count from the school platform.</p>
+  </div>
+</section>
+
+<section class="band band--cream">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Who we are</p>
+      <h2>A foundation built on living soil</h2>
+      <p>For over four decades, Dr. Elaine Ingham showed the world what farmers and foresters have always sensed: soil is not dirt. It is a living web of bacteria, fungi, protozoa, nematodes, and microarthropods that feeds plants, stores carbon, holds water, and sustains every terrestrial ecosystem on Earth.</p>
+      <p>The Soil Food Web Foundation was created to carry that work forward. We teach the science through the Soil Food Web School, pursue and share new knowledge, incubate regenerative practice in ecoregions around the world, and build the community that makes it all last.</p>
+      <p><a class="more" href="/about/">Our mission and story</a></p>
     </div>
-    <div class="footer__legal">
-      <p>EIN 39-4439236. Registered office: 5441 S Macadam Ave Ste N, Portland, Oregon 97239. Our Form 990 and financial statements are available on the <a href="about-governance">governance page</a> and on request.</p>
-      <p class="todo" data-status="placeholder">The staging footer carries four social icons: X, Facebook, Google and Instagram. The account addresses were not supplied and could not be read from staging, so no icons print here rather than four links to nowhere. Evan.</p>
-      <ul>
-        <li>© 2026 Soil Food Web Foundation, a 501(c)(3) nonprofit organization. Soil Food Web School is a program of the Soil Food Web Foundation.</li>
-        <li><a href="privacy">Privacy</a></li>
-        <li><a href="terms">Terms</a></li>
-        <li><a href="accessibility">Accessibility</a></li>
-      </ul>
+    <div class="split__media"><img src="/img/elaine-smile-talking.webp" width="940" height="788" alt="Dr. Elaine Ingham smiling as she talks at an outdoor table" loading="lazy" decoding="async"></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The Soil Food Web Approach</p>
+      <h2>Partner with nature's intelligence</h2>
+    </div>
+    <ul class="tiles">
+      <li><div class="tile" tabindex="0"><img src="/img/handling-loose-soil.webp" width="1600" height="1600" alt="" loading="lazy" decoding="async"><div class="tile__in"><h3>Observe and assess</h3><p>Put your soil under the microscope. Identify which organisms are present, which are missing, and what that means for your plants, so every decision starts with what's actually alive in your soil.</p></div></div></li>
+      <li><div class="tile" tabindex="0"><img src="/img/image001.webp" width="510" height="422" alt="" loading="lazy" decoding="async"><div class="tile__in"><h3>Incubate the biology</h3><p>Grow the beneficial organisms your soil needs by making BioComplete&trade; compost, not just organic matter, but a living culture, built deliberately.</p></div></div></li>
+      <li><div class="tile" tabindex="0"><img src="/img/grass-soil.webp" width="600" height="600" alt="" loading="lazy" decoding="async"><div class="tile__in"><h3>Multiply and apply</h3><p>A small amount of biologically rich compost goes a long way. Compost extracts and teas multiply that life and carry it across whole fields and gardens: to the soil and to the plants themselves.</p></div></div></li>
+      <li><div class="tile" tabindex="0"><img src="/img/hero.webp" width="1600" height="1296" alt="" loading="lazy" decoding="async"><div class="tile__in"><h3>Manage and monitor holistically</h3><p>Keep observing as the life rebuilds structure, cycles nutrients, and protects your plants, and adjust your practices so the benefits compound, season after season.</p></div></div></li>
+    </ul>
+    <p style="margin-top:1.5rem"><a href="/how-it-works/">See how it works</a> &middot; <a class="more" href="/case-studies/">case studies &amp; videos</a></p>
+  </div>
+</section>
+
+<section class="band band--cream">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Learn with us</p>
+      <h2>Customize your learning path according to your needs and goals</h2>
+    </div>
+    <div data-scroller><div class="scroller-head"><h3 class="sr-only">Programs</h3><div class="scroller-nav"><button type="button" data-scroll="-1" aria-label="Previous programs">&lsaquo;</button><button type="button" data-scroll="1" aria-label="Next programs">&rsaquo;</button></div></div><ul class="scroller"><li><article class="card card--link"><img src="/img/2-dirty-hands.webp" width="1600" height="1600" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Start here</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/foundation-course-1">Foundation Course 1: Introduction to the Soil Food Web</a></h3><p class="card__text">Before compost, before teas, before microscopy, you must understand how the soil ecosystem actually functions. This course teaches the biological relationships that drive nutrient cycling, plant health, and long-term soil fertility.</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/1181504-custom-site-themes-id-bziue4jrky3pihzujoi7-6.webp" width="597" height="479" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Start here</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/foundation-course-2">Foundation Course 2: BioComplete™ Compost</a></h3><p class="card__text">Foundation Course 2 teaches you how to create biologically complete compost that rebuilds soil life. Learn proper materials, pile management, and application methods to support nutrient cycling, soil structure, and long-term plant health.</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/2-dirty-hands.webp" width="1600" height="1600" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Start here</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/foundation-course-3-biocomplete-liquid-amendments">Foundation Course 3: BioComplete™ Liquid Amendments</a></h3><p class="card__text">Foundation Course 3 teaches you how to prepare and apply biologically correct compost extracts and teas. Learn brewing principles, equipment use, and application strategies to deliver living microorganisms effectively and support soil health, plant</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/2-dirty-hands.webp" width="1600" height="1600" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Start here</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/foundation-course-4-microscopy">Foundation Course 4: Microscopy</a></h3><p class="card__text">Microscopy teaches you how to use a compound microscope to identify and quantify soil microorganisms. Learn to assess bacteria, fungi, protozoa, and nematodes, interpret biological data, and make informed decisions to improve soil health.</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/test-tubes-with-sample.webp" width="1600" height="1160" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Hone your skills</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/soil-microscopy">Soil Microscopy</a></h3><p class="card__text">Seeing is believing, and when it comes to the regeneration of living soil, a microscope is your most powerful ally: Become a Soil Food Web Lab Tech, See what your soil really needs before spending time and money to improve it, Measure the real impact of your efforts near instantly, No more sending samples across the country for assessment | Complete on-site assessments yourself</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/1181504-custom-site-themes-id-o0qkyprbtyujgfmi9m6p-thinkific-images-5.webp" width="597" height="479" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Hone your skills</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/biocomplete-compost-production">BioComplete™ Compost Production</a></h3><p class="card__text">Learn to produce biologically complete compost that restores soil life, suppresses disease, and transforms what’s possible on your land. Discover how to redirect organic waste into a biologically rich amendment, grow the right microbes to support healthy soil and plants while minimizing the risk of human pathogens and weed seeds, and replace expensive, harmful chemical inputs with the power of biology and organic matter.</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/actively-aerated-compost-tea-brew-vessels.webp" width="960" height="540" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Hone your skills</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/biological-liquid-amendments">Learn the Art and Science of Biological Liquid Amendments</a></h3><p class="card__text">Build on your Soil Food Web Microscopy and BioComplete™ Compost Production skills by learning to purposefully breed, multiply, and extract key microbes for various real world field application needs</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/isadora.webp" width="720" height="669" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Hone your skills</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/field-trial">Advanced Field Trial</a></h3><p class="card__text">You've learned to see life in a microscope slide. You've built biologically complete compost from the ground up. You've brewed and applied biological liquid amendments. You understand, at a cellular level, what healthy soil looks like and why it matters. Now it's time to prove it in the field.</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/erc-rancho-cacachilas-agro8.webp" width="1000" height="666" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Design systems</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/permaculture-design-certification">Permaculture Design Certification</a></h3><p class="card__text">Whole-system design: water, plants, structures, community, rooted in living soil.</p><p class="card__foot"><span class="more">See the Permaculture Design Certification</span></p></div></article></li><li><article class="card card--link"><img src="/img/erc-panchamana-treeplanting-2-fb-img-1666270988322.webp" width="1080" height="720" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Understanding Ecosystem Health</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/introduction-to-ecosystem-restoration-module-1">Introduction to Ecosystem Restoration: Module 1</a></h3><p class="card__text">Build a strong foundation in ecosystem restoration and learn how healthy ecosystems function. Explore the key factors that shape ecosystems, including soil, biodiversity, climate, water, and species interactions, while gaining the knowledge to recognize ecosystem degradation and support the restoration of healthy, resilient land.</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/forests.webp" width="700" height="685" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Ecological Processes &amp; Ecosystem Restoration</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/introduction-to-ecosystem-restoration-module-2">Introduction to Ecosystem Restoration: Module 2</a></h3><p class="card__text">Explore how species, ecological cycles, and natural processes work together to shape healthy ecosystems. Learn about invasive and keystone species, food webs, nutrient cycles, ecosystem services, ecological succession, marine ecosystems, and nature-based solutions for restoring and protecting our environment.</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/erc-panchamana-treeplanting-2-fb-img-1666270988322.webp" width="1080" height="720" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Practical Ecosystem Restoration</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/introduction-to-ecosystem-restoration-module-3">Introduction to Ecosystem Restoration: Module 3</a></h3><p class="card__text">Move from ecological theory into practical restoration principles. Explore ecosystem restoration strategies, site assessment, abiotic and biotic factors, aquatic impacts, population ecology, and real-world case studies to understand how damaged ecosystems can be assessed and restored.</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/erc-panchamana-treeplanting-2-fb-img-1666270988322.webp" width="1080" height="720" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Practical Restoration &amp; Recovery</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/introduction-to-ecosystem-restoration-module-4">Introduction to Ecosystem Restoration: Module 4</a></h3><p class="card__text">Take ecosystem restoration from theory to practice. Learn about restoration standards, natural recovery, seed collection and propagation, planting strategies, species-level restoration, population ecology, and real-world restoration projects.</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/2025-year-in-review-elaine-scaled.webp" width="1600" height="1243" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">This Is Where It All Began</p><h3 class="card__title"><a href="https://school.soilfoodweb.com/courses/intro-foundation-course">Mini Foundation Course</a></h3><p class="card__text">Learn directly from the source with this Intro to the Foundations Mini Course. A 10-lesson mini course into the world of Living Soil and all the ways it can help regenerate the world's living systems. Walk away with a broad view of just how impactful this work can be when applied consistently by educated land stewards and practitioners.</p><p class="card__foot"><span class="more">Learn more</span></p></div></article></li><li><article class="card card--link"><img src="/img/ctpfw-student-squeezing-compost.webp" width="1600" height="900" alt="" class="card__img" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">In person</p><h3 class="card__title"><a href="/workshops/">Workshops</a></h3><p class="card__text">Build BioComplete™ Compost, create biological liquid amendments, and practice microscopy alongside Dr. Elaine's team of experienced mentors and an international community.</p><p class="card__foot"><span class="more">See the calendar of workshops</span></p></div></article></li></ul></div>
+    <div class="notice notice--white" style="margin-top:1.5rem">
+      <p><strong>Financial barriers shouldn't keep anyone from caring for the Earth.</strong> Scholarships and payment options are growing.</p>
+      <a class="btn" href="/programs/#path">Explore our programs</a>
     </div>
   </div>
-</footer>
+</section>
 
-<aside class="nudge" id="nudge" data-visible="false" aria-label="Newsletter signup">
-  <button class="nudge__close" type="button" aria-label="Close">&times;</button>
-  <p class="nudge__copy">Get soil science in your inbox</p>
-  <form class="nudge__form" action="#" method="post" data-newsletter>
-    <label for="nudge-email" class="visually-hidden">Email address</label>
-    <input class="input" id="nudge-email" type="email" name="email" placeholder="Email address" required>
-    <button class="btn" type="submit">Subscribe</button>
-  </form>
-</aside>
-<script src="js/site.js"></script>
+<section class="band">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Testimonial</p>
+      <h2>Hear from our students</h2>
+      <p><a class="more" href="/case-studies/#testimonials">More student and practitioner stories</a></p>
+    </div>
+    <div class="embed"><iframe src="https://player.vimeo.com/video/439617042?h=5314d77a00&amp;dnt=1" title="Hear from our students" allow="fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+  </div>
+</section>
+
+<section class="band band--cream">
+  <div class="wrap">
+    <div class="scroller-head section-head" style="max-width:none">
+      <div><p class="eyebrow">What's new</p><h2 class="mt-0">Happening across the community</h2></div>
+      <a class="more" href="/news/">View all posts</a>
+    </div>
+    <ul class="grid"><li><article class="card card--link card--plain"><img src="/img/how-a-rare-microscope-sighting-1400x1400.webp" width="1600" height="1600" alt="" class="card__img card__img--square" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Microscopy &middot; <time datetime="2026-05-01">1 May 2026</time></p><h3 class="card__title"><a href="/ciliates-soil-health-microscope-watermelon-crop/">How A Rare Microscope Sighting Helps Deduce The Problem With Unhealthy Soil: Ciliates, Cysts, and the Clues Hiding in a Struggling Watermelon Crop</a></h3></div></article></li><li><article class="card card--link card--plain"><img src="/img/pd-cohort-1-launches.webp" width="1080" height="1080" alt="" class="card__img card__img--square" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Blog &middot; <time datetime="2026-04-13">13 April 2026</time></p><h3 class="card__title"><a href="/soil-food-web-school-first-permaculture-design-certificate-course/">The Soil Food Web School Launches Its First-Ever Permaculture Design Certificate Course, A Milestone Moment for Regenerative Education</a></h3></div></article></li><li><article class="card card--link card--plain"><img src="/img/sfw-foundation-header.webp" width="1600" height="900" alt="" class="card__img card__img--square" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">School Updates &middot; <time datetime="2026-02-23">23 February 2026</time></p><h3 class="card__title"><a href="/soil-food-web-advanced-programs-reopen-2026/">Soil Food Web School Advanced Programs Are Reopening!</a></h3></div></article></li><li><article class="card card--link card--plain"><img src="/img/elaine-ceremonial-compost-group-photo-scaled.webp" width="1360" height="765" alt="" class="card__img card__img--square" loading="lazy" decoding="async"><div class="card__body"><p class="card__kicker">Foundation Update &middot; <time datetime="2026-02-18">18 February 2026</time></p><h3 class="card__title"><a href="/obituary-for-dr-elaine-ingham/">Obituary for Dr. Elaine Ingham</a></h3></div></article></li></ul>
+  </div>
+</section>
+
+<section class="band band--photo">
+  <img src="/img/erc-rancho-cacachilas-agro.webp" width="1500" height="1000" alt="" loading="lazy" decoding="async">
+  <div class="wrap">
+    <h2>Be part of the soil-ution</h2>
+    <p>Wherever you are, a farm, a garden, a lab, a classroom, there's living soil beneath you and a global community beside you.</p>
+    <div class="actions">
+      <a class="btn btn--white" href="/community/">Join the community</a>
+      <a class="btn" href="/programs/#path">Programs</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo"><div class="wrap">
+<div class="footer-top">
+<div class="footer-brand"><p class="footer-brand__name">Soil Food Web Foundation</p><p class="footer-brand__status">A 501(c)(3) nonprofit</p>
+<p class="footer-brand__line">Healing soil. Feeding humanity. Restoring the living world.</p>
+<form class="newsletter" id="newsletter" data-newsletter action="#" method="post"><label class="sr-only" for="newsletter-email">Email for the newsletter</label>
+<input id="newsletter-email" type="email" name="email" placeholder="Email for the newsletter" autocomplete="email"><button class="btn" type="submit">Subscribe</button></form>
+<small>One email a month. Unsubscribe with one click.</small></div>
+<div class="footer-cols"><div class="footer-col"><h2>Foundation</h2><ul><li><a href="/about/">About us</a></li><li><a href="/about/#team">Our team and board</a></li><li><a href="/publications/">Dr. Elaine’s research</a></li><li><a href="/governance/">Governance and financials</a></li><li><a href="/contact/">Contact us</a></li></ul></div><div class="footer-col"><h2>Learn</h2><ul><li><a href="/programs/">Explore our programs</a></li><li><a href="/programs/#path">Online Courses</a></li><li><a href="/workshops/">Workshops and events</a></li><li><a href="/calendar/">Calendar</a></li><li><a href="https://webinar.soilfoodweb.com">Free webinars</a></li><li><a href="/scholarship/">Scholarships</a></li></ul></div><div class="footer-col"><h2>Resources</h2><ul><li><a href="/how-it-works/">How the soil food web works</a></li><li><a href="/publications/">Research and publications</a></li><li><a href="/case-studies/">Case studies</a></li><li><a href="/invite-us-to-speak/#press">Media and press</a></li><li><a href="https://www.soilmapp.com/">sMApp on soilmapp.com</a></li></ul></div><div class="footer-col"><h2>Get involved</h2><ul><li><a href="/donations/">Donate</a></li><li><a href="/volunteer/">Volunteer with us</a></li><li><a href="/invite-us-to-speak/">Invite us to speak</a></li><li><a href="/find-a-professional/">Find a professional</a></li><li><a href="/logo-brand-use/">Logo and name use</a></li></ul></div></div>
+</div>
+<div class="footer-legal"><p>Soil Food Web Foundation is a 501(c)(3) nonprofit organization, EIN 39-4439236, Oregon DOJ registration #71264. Registered office: 5441 S Macadam Ave Ste N, Portland, Oregon 97239. Our Form 990 (once filed) and financial statements are on the <a href="/governance/">governance page</a> and available on request.</p></div>
+<div class="footer-bottom"><p>&copy; 2026 Soil Food Web Foundation, a 501(c)(3) nonprofit organization. The Soil Food Web School is a program of the Soil Food Web Foundation.</p>
+<ul><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+</div></footer>
 </body>
 </html>

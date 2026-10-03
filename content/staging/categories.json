@@ -1,0 +1,62 @@
+[
+ {
+  "id": 10,
+  "slug": "blogposts",
+  "name": "Blog"
+ },
+ {
+  "id": 22,
+  "slug": "events",
+  "name": "Events"
+ },
+ {
+  "id": 21,
+  "slug": "features",
+  "name": "Features"
+ },
+ {
+  "id": 18,
+  "slug": "foundation-update",
+  "name": "Foundation Update"
+ },
+ {
+  "id": 8,
+  "slug": "microscopy",
+  "name": "Microscopy"
+ },
+ {
+  "id": 23,
+  "slug": "newsletter",
+  "name": "Newsletter"
+ },
+ {
+  "id": 2,
+  "slug": "school-update",
+  "name": "School Update"
+ },
+ {
+  "id": 11,
+  "slug": "school-updates",
+  "name": "School Updates"
+ },
+ {
+  "id": 9,
+  "slug": "science-education",
+  "name": "Science & Education"
+ },
+ {
+  "id": 3,
+  "slug": "spanish",
+  "name": "Spanish"
+ },
+ {
+  "id": 1,
+  "slug": "uncategorized",
+  "name": "Uncategorized"
+ },
+ {
+  "id": 37,
+  "slug": "webinars",
+  "name": "Webinars"
+ }
+]

@@ -1,0 +1,659 @@
+"""Generators for tools/site/build.py: data-driven sections, item pages, /review/.
+
+Every piece of staging text passes through fix() first, which applies the
+site-wide corrections from the brief (bug numbers in comments).
+"""
+import json, os, re, html as H, datetime
+from collections import OrderedDict
+import build as B
+from build import gen, img, E, A, data, repo, begin, write, fmt_date, fmt_range
+
+TODO = '<p class="todo">%s</p>'
+STAGING = "https://new.soilfoodweb.com"
+
+
+# ------------------------------------------------------------------ text fixes
+FIXES = [
+    (re.compile(r"​|‌|‍|﻿"), ""),                       # 29 zero-width spaces
+    (re.compile(r"Bio[Cc]omplete(?:™|T\b|&#8482;|&trade;)?"), "BioComplete™"),  # 22
+    (re.compile(r"prerequesites|pre-requisites|prerequisits", re.I), "prerequisites"),     # 25
+    (re.compile(r"\bthat that\b"), "that"),                                   # 28
+    (re.compile(r"\bOn-line Courses\b|\bOnline courses\b(?= *<)"), "Online Courses"),       # 33
+    (re.compile(r"(?:more than|approximately|over) 1[0-9]0 countries"), "100+ countries"),  # 15
+    (re.compile(r"in more than 100 countries"), "in 100+ countries"),         # 15
+    (re.compile(r"\s+—\s+|\s*—\s*"), ", "),                          # no em dashes
+    (re.compile(r"\s+–\s+"), ", "),
+    (re.compile(r",\s*,"), ","),
+]
+
+
+def fix(t):
+    if not t:
+        return t
+    for rx, rep in FIXES:
+        t = rx.sub(rep, t)
+    return t
+
+
+def staging_link(href):
+    """Staging URLs -> launch URLs (and the link fixes from section 2)."""
+    if not href:
+        return href
+    h = href.replace(STAGING, "").replace("https://www.soilfoodweb.com", "").replace("https://soilfoodweb.com", "") if ("soilfoodweb.com/" in href and "school." not in href and "webinar." not in href and "archive." not in href and "/wp-content/" not in href) else href
+    table = [
+        ("/about-us/", "/about/"), ("/programs-overview/", "/programs/"), ("/practice/#CASE-STUDIES", "/case-studies/"),
+        ("/practice/#work-with-us", "/work-with-us/"), ("/practice/", "/case-studies/"), ("/donate/", "/donations/"),
+        ("/contact-info/", "/contact/"), ("/foundation-legal/", "/governance/"), ("/sfw-directory/", "/find-a-professional/"),
+        ("/team/", "/about/#team"), ("/accessibility/", "/about/#contact-legal"),
+    ]
+    for a, b in table:
+        if h.startswith(a):
+            h = b + h[len(a):]
+            break
+    h = h.replace("courses/foundation-couse-1", "courses/foundation-course-1")
+    if "localhost" in h:
+        h = "https://school.soilfoodweb.com/courses/permaculture-design-certification"
+    if h.startswith("https://webinar.soilfoodweb.com"):
+        h = "https://webinar.soilfoodweb.com"
+    return h or "/"
+
+
+# ------------------------------------------------------------------ html helpers
+def rewrite_body(body, page_imgs=True):
+    """Staging body HTML -> launch HTML: fixed text, launch links, local images."""
+    body = fix(body)
+
+    def a_sub(m):
+        return 'href="%s"' % A(staging_link(H.unescape(m.group(1))))
+    body = re.sub(r'href="([^"]*)"', a_sub, body)
+
+    def img_sub(m):
+        tag = m.group(0)
+        src = re.search(r'src="([^"]*)"', tag)
+        alt = re.search(r'alt="([^"]*)"', tag)
+        if not src or not src.group(1).startswith("http") or re.match(r"https?://\d+$", src.group(1)):
+            return ""  # empty or numeric src (bug 1): the picture does not exist
+        try:
+            return img(H.unescape(src.group(1)), H.unescape(alt.group(1)) if alt and alt.group(1) else None)
+        except Exception as e:
+            print("image failed", src.group(1), e)
+            return ""
+    if page_imgs:
+        body = re.sub(r"<img[^>]*>", img_sub, body)
+    # 30: a paragraph repeated later in the same page is shown once.
+    seen, out = set(), []
+    for part in re.split(r"(<p>.*?</p>)", body, flags=re.S):
+        if part.startswith("<p>"):
+            key = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", part)).strip()
+            if len(key) > 40 and key in seen:
+                continue
+            seen.add(key)
+        out.append(part)
+    body = "".join(out)
+    body = re.sub(r"<p>\s*</p>", "", body)
+    body = re.sub(r"<(/?)h1\b", r"<\1h2", body)  # 5: the page title is the only h1
+    return body
+
+
+def esc_attr_text(t):
+    return A(re.sub(r"\s+", " ", t.lower()))
+
+
+# ------------------------------------------------------------------ courses
+def course_card(c, scroller=False):
+    title = fix(c["title"]).replace(" : ", ": ")
+    href = staging_link(c["href"])
+    cta = fix(c["cta"]).replace(" →", "").replace("→", "").strip() or "Learn more"
+    paths = " ".join(c["pathways"])
+    text = esc_attr_text(" ".join([title, c["kicker"], c["line"], paths]))
+    attrs = '' if scroller else ' data-item data-group="all %s" data-text="%s"' % (A(paths), text)
+    return ('<li%s><article class="card card--link">%s<div class="card__body"><p class="card__kicker">%s</p>'
+            '<h3 class="card__title"><a href="%s">%s</a></h3><p class="card__text">%s</p>'
+            '<p class="card__foot"><span class="more">%s</span></p></div></article></li>') % (
+        attrs, img(c["image"], "", "card__img"), E(fix(c["kicker"])), A(href), E(title), E(fix(c["line"])), E(cta))
+
+
+@gen
+def courses(args):
+    cs = data("courses")
+    return ('<div data-scroller><div class="scroller-head"><h3 class="sr-only">Programs</h3>'
+            '<div class="scroller-nav"><button type="button" data-scroll="-1" aria-label="Previous programs">&lsaquo;</button>'
+            '<button type="button" data-scroll="1" aria-label="Next programs">&rsaquo;</button></div></div>'
+            '<ul class="scroller">%s</ul></div>') % "".join(course_card(c, True) for c in cs)
+
+
+PATHS = [("all", "All"), ("composter", "Composter"), ("consultant", "Consultant"), ("designer", "Designer"),
+         ("ecosystem-restorationist", "Ecosystem Restorationist"), ("farmer", "Farmer"), ("gardener", "Gardener"),
+         ("lab-tech", "Lab Tech"), ("scientist", "Scientist")]
+
+
+@gen
+def courses_grid(args):
+    cs = data("courses")
+    chips = "".join('<li><button class="chip" type="button" data-chip="%s" aria-pressed="%s">%s</button></li>' % (k, "true" if k == "all" else "false", E(v)) for k, v in PATHS)
+    return ('<div data-filter><ul class="chips" aria-label="Filter by path">%s</ul>'
+            '<form class="searchbar" role="search"><label class="sr-only" for="prog-q">Search programs</label>'
+            '<input id="prog-q" type="search" data-q placeholder="Search programs"></form>'
+            '<p class="count" data-count data-one="program" data-many="programs" aria-live="polite"></p>'
+            '<ul class="grid grid--3">%s</ul><p data-empty hidden>No programs match. Try another path.</p></div>') % (
+        chips, "".join(course_card(c) for c in cs))
+
+
+# ------------------------------------------------------------------ team
+def team_photo(t, cls=""):
+    return img(t["photo"], "Portrait of %s" % t["name"], cls) if t["photo"] else '<span class="person__ph">%s</span>' % E(t["name"][:1])
+
+
+@gen
+def team(args):
+    out = []
+    for t in data("team"):
+        role = fix(t["role"])
+        out.append('<li><a class="person" href="/team-member/%s/">%s<p class="person__name">%s</p>%s</a></li>' % (
+            t["slug"], team_photo(t), E(t["name"]), '<p class="person__role">%s</p>' % E(role) if role else ""))
+    return '<ul class="people">%s</ul>' % "".join(out)
+
+
+# ------------------------------------------------------------------ news
+def post_card(p):
+    cat = p["categories"][0]["name"] if p["categories"] else ""
+    pic = img(p["featured"], "", "card__img card__img--square") if p.get("featured") else '<div class="card__img card__img--square"></div>'
+    return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker">%s &middot; '
+            '<time datetime="%s">%s</time></p><h3 class="card__title"><a href="/%s/">%s</a></h3></div></article></li>') % (
+        pic, E(cat), p["date"], fmt_date(p["date"]), p["slug"], E(fix(p["title"])))
+
+
+def all_posts():
+    ps = data("posts")
+    extra = os.path.join(B.ROOT, "content", "repo-posts.json")
+    if os.path.exists(extra):
+        ps = ps + json.load(open(extra, encoding="utf-8"))
+    return sorted(ps, key=lambda p: p["date"], reverse=True)
+
+
+@gen
+def news(args):
+    n = int(args or 4)
+    return '<ul class="grid">%s</ul>' % "".join(post_card(p) for p in all_posts()[:n])
+
+
+@gen
+def news_all(args):
+    ps = all_posts()
+    cats = OrderedDict()
+    for p in ps:
+        for c in p["categories"]:
+            cats[c["slug"]] = c["name"]
+    chips = '<li><button class="chip" type="button" data-chip="" aria-pressed="true">All</button></li>' + "".join(
+        '<li><button class="chip" type="button" data-chip="%s" aria-pressed="false">%s</button></li>' % (k, E(v)) for k, v in cats.items())
+    items = []
+    for p in ps:
+        card = post_card(p).replace("<li>", '<li data-item data-group="%s" data-text="%s">' % (
+            " ".join(c["slug"] for c in p["categories"]), esc_attr_text(p["title"] + " " + p.get("excerpt", ""))), 1)
+        items.append(card)
+    return ('<div data-filter><ul class="chips" aria-label="Filter by category">%s</ul>'
+            '<form class="searchbar" role="search"><label class="sr-only" for="news-q">Search news</label>'
+            '<input id="news-q" type="search" data-q placeholder="Search posts"></form>'
+            '<p class="count" data-count data-one="post" data-many="posts" aria-live="polite"></p>'
+            '<ul class="grid">%s</ul><p data-empty hidden>No posts match.</p></div>') % (chips, "".join(items))
+
+
+# ------------------------------------------------------------------ events (bug 24)
+EVENT_TYPES = OrderedDict([("workshop", "Workshop"), ("course", "Courses and intensives"),
+                           ("community", "Community event"), ("webinar", "Webinar")])
+
+
+def event_type(e):
+    t = e["title"].lower()
+    if t.startswith("community event"):
+        return "community"
+    if "workshop" in t:
+        return "workshop"
+    if "intensive" in t or "cohort" in t or "certificate" in t or "course" in t:
+        return "course"
+    if "webinar" in t:
+        return "webinar"
+    return "workshop"
+
+
+def all_events():
+    evs = []
+    for e in data("events"):
+        e = dict(e)
+        e["type"] = event_type(e)
+        e["title"] = fix(e["title"]).replace(" | ", ": ")
+        if e["type"] == "community":
+            e["title"] = e["title"].replace("Community Event: ", "")
+        evs.append(e)
+    cal = repo("calendar")["indiaWorkshop"]
+    evs.append({"slug": "accelerator-workshop-india-2026", "title": "Accelerator Workshop: India", "start": "2026-10-19",
+                "end": "2026-10-30", "type": "workshop", "when": cal["dated"], "repo": True,
+                "href": "https://school.soilfoodweb.com/courses/india-workshop-2026"})
+    return sorted(evs, key=lambda e: e["start"])
+
+
+def event_when(e):
+    w = fmt_range(e["start"], e["end"])
+    m = re.search(r"(\d{1,2}):(\d{2}) ([ap])\.m\. UTC", e.get("when", ""))
+    if m:
+        w += ", %d:%s %sm UTC" % (int(m.group(1)), m.group(2), m.group(3))
+    return w
+
+
+@gen
+def events(args):
+    evs = all_events()
+    chips = '<li><button class="chip" type="button" data-chip="" aria-pressed="true">All</button></li>' + "".join(
+        '<li><button class="chip" type="button" data-chip="%s" aria-pressed="false">%s</button></li>' % (k, v)
+        for k, v in EVENT_TYPES.items() if any(e["type"] == k for e in evs))
+    rows = []
+    for e in evs:
+        rows.append('<li class="event" data-item data-group="%s"><p class="event__date"><time datetime="%s">%s</time></p>'
+                    '<h3 class="event__title"><a href="/calendar-event/%s/">%s</a></h3><span class="event__type">%s</span></li>' % (
+                        e["type"], e["start"], E(event_when(e)), e["slug"], E(e["title"]), EVENT_TYPES[e["type"]]))
+    return ('<div data-filter><ul class="chips" aria-label="Filter by type">%s</ul>'
+            '<ul class="events">%s</ul><p data-empty hidden>No events of this type in the next twelve months.</p></div>') % (chips, "".join(rows))
+
+
+@gen
+def workshop_events(args):
+    evs = [e for e in all_events() if e["type"] == "workshop"]
+    return '<ul class="events">%s</ul>' % "".join(
+        '<li class="event"><p class="event__date"><time datetime="%s">%s</time></p><h3 class="event__title"><a href="/calendar-event/%s/">%s</a></h3>'
+        '<span class="event__type">Workshop</span></li>' % (e["start"], E(event_when(e)), e["slug"], E(e["title"])) for e in evs)
+
+
+# ------------------------------------------------------------------ publications
+START_HERE = [
+    ("The Soil Biology Primer, chapters 1 to 5", "1999", "USDA NRCS, 1999", 1064,
+     "Dr. Ingham’s free, plain-language introduction to soil bacteria, fungi, protozoa and nematodes, written for the US Department of Agriculture. The best first read for anyone new to soil biology."),
+    ("Interactions of bacteria, fungi and their nematode grazers", "1985", "Ecological Monographs, 1985", 1017,
+     "Shows that nematodes grazing on bacteria and fungi release nitrogen that plants then take up. This is the core idea behind the soil food web approach."),
+    ("The detrital food web in a short grass prairie", "1987", "Biology and Fertility of Soils, 1987", 1024,
+     "One of the first studies to map and measure a whole soil food web, organism group by organism group. Later soil food web models build on it."),
+    ("Review of the effects of twelve selected biocides on target and non-target soil organisms", "1985", "Crop Protection, 1985", 1018,
+     "Reviews what common pesticides do to the soil life they were never meant to hit. Useful for anyone weighing chemical inputs."),
+    ("The Compost Tea Brewing Manual", "2000", "2000", 1066,
+     "Dr. Ingham’s practical guide to making aerobic compost tea, the method taught in the Soil Food Web School courses."),
+    ("Fungal-bacterial diversity and microbiome complexity predict ecosystem functioning", "2019", "Nature Communications, 2019, Wagg et al.", 1135,
+     "A recent large study from outside our network. Soils with more diverse and better-connected fungi and bacteria performed more ecosystem functions."),
+]
+
+
+def pubs():
+    ps = data("publications")
+    blurbs = {}
+    bf = os.path.join(B.STG, "publication-blurbs.json")
+    if os.path.exists(bf):
+        blurbs = {b["id"]: b for b in json.load(open(bf, encoding="utf-8"))}
+    for p in ps:
+        p["title"] = fix(p["title"])
+        if p["id"] == 1064:  # 27 and section 7: one USDA label, typed as a government publication
+            p["kind"] = "Government publication"
+        p["hide_citation"] = p["citation"] == "Journal citation not verified"  # 11
+        b = blurbs.get(p["id"])
+        p["blurb"] = fix(b["blurb"]) if b else ""
+        p["blurb_source"] = b["source"] if b else ""
+    return ps
+
+
+def pub_links(p):
+    """Dr. Elaine's own papers: Google Scholar first, DOI second (section 7)."""
+    href = p["href"]
+    own = p["collection"].startswith("Dr. Elaine")
+    doi = href if "doi.org/" in href else ""
+    if not doi and "doi.org/" in p.get("blurb_source", ""):
+        doi = p["blurb_source"]
+    links = []
+    if own:
+        scholar = href if "scholar.google" in href else "https://scholar.google.com/scholar?q=" + H.escape(re.sub(r"\s+", "+", '"%s"' % p["title"]), quote=True)
+        links.append(("Google Scholar", scholar))
+        if doi:
+            links.append(("DOI", doi))
+        elif href and "scholar.google" not in href and "soilfoodweb.com" not in href:
+            links.append(("Publisher", href))
+    else:
+        if href and "soilfoodweb.com" not in href:
+            links.append(("DOI" if doi else "Read it", href))
+    return links
+
+
+@gen
+def start_here(args):
+    by = {p["id"]: p for p in pubs()}
+    cards = []
+    for title, year, cite, pid, blurb in START_HERE:
+        p = by.get(pid)
+        href = "/publication/%s/" % p["slug"] if p else "#"
+        cards.append('<li><article class="card card--link"><div class="card__body"><p class="card__kicker">%s</p>'
+                     '<h3 class="card__title"><a href="%s">%s</a></h3><p class="meta">%s</p><p class="card__text draft">%s</p></div></article></li>' % (
+                         year, href, E(title), E(cite), E(blurb)))
+    return '<ul class="grid grid--3">%s</ul>' % "".join(cards)
+
+
+@gen
+def publications(args):
+    ps = pubs()
+    colls = OrderedDict()
+    for p in ps:
+        colls.setdefault(p["collection"], []).append(p)
+    topics = sorted({t for p in ps for t in p["topics"]})
+    slug = lambda s: re.sub(r"[^a-z0-9]+", "-", s.lower().replace("’", "")).strip("-")
+    chips = '<li><button class="chip" type="button" data-chip="" aria-pressed="true">All (%d)</button></li>' % len(ps) + "".join(
+        '<li><button class="chip" type="button" data-chip="%s" aria-pressed="false">%s (%d)</button></li>' % (slug(c), E(c), len(v)) for c, v in colls.items())
+    opts = '<option value="">Topic: any</option>' + "".join('<option value="%s">%s</option>' % (A(t.replace(" ", "-")), E(t)) for t in topics)
+    groups = []
+    for c, items in colls.items():
+        rows = []
+        for p in items:
+            line = p["authors"] + ("" if p["hide_citation"] or not p["citation"] else " · " + p["citation"])
+            links = " ".join('<a href="%s" rel="noopener">%s</a>' % (A(h), l) for l, h in pub_links(p))
+            why = ('<p class="entry__why"><b>Why read it:</b> <span class="draft">%s</span></p>' % E(p["blurb"])) if p["blurb"] else \
+                '<p class="entry__why"><b>Why read it:</b> <span class="todo">one-sentence summary from the abstract; Carla Portugal checks</span></p>'
+            rows.append('<li class="entry" data-item data-group="%s" data-topics="%s" data-text="%s"><span class="entry__year">%s</span>'
+                        '<div><p class="entry__title"><a href="/publication/%s/">%s</a></p><p class="entry__line">%s</p>%s%s</div>'
+                        '<span class="entry__kind">%s</span></li>' % (
+                            slug(c), A(" ".join(t.replace(" ", "-") for t in p["topics"])),
+                            esc_attr_text(" ".join([p["title"], p["authors"], p["citation"], p["year"], " ".join(p["topics"])])),
+                            E(p["year"]), p["slug"], E(p["title"]), E(line), why,
+                            '<p class="entry__links">%s</p>' % links if links else "", E(p["kind"])))
+        groups.append('<section data-group-block><h3>%s</h3><ul class="entries">%s</ul></section>' % (E(c), "".join(rows)))
+    return ('<div data-filter id="all"><ul class="chips" aria-label="Collections">%s</ul>'
+            '<form class="searchbar" role="search"><label class="sr-only" for="pub-q">Search publications</label>'
+            '<input id="pub-q" type="search" data-q placeholder="Search by title, author, topic, or year">'
+            '<label class="sr-only" for="pub-topic">Topic</label><select id="pub-topic" data-topic>%s</select></form>'
+            '<p class="count" data-count data-one="publication" data-many="publications" aria-live="polite"></p>%s'
+            '<p data-empty hidden>No publications match. Try a different word or topic.</p></div>') % (chips, opts, "".join(groups))
+
+
+# ------------------------------------------------------------------ videos
+def playlists_data():
+    pl = OrderedDict()
+    for v in data("videos"):
+        pl.setdefault(v["playlist"], []).append(v)
+    return pl
+
+
+def vcard(v):
+    thumb = img(v["thumb"], "", "") if v["thumb"] else ""
+    return '<li><a class="vcard" href="/video/%s/"><span class="vcard__thumb">%s</span><p class="vcard__title">%s</p></a></li>' % (
+        v["slug"], thumb, E(fix(v["title"])))
+
+
+@gen
+def playlists(args):
+    order = [x.strip() for x in args.split("|")] if args else list(playlists_data())
+    pl = playlists_data()
+    out = []
+    for name in order:
+        if name not in pl:
+            continue
+        vid = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+        out.append('<section class="playlist" id="%s"><h3>%s</h3><ul class="grid">%s</ul></section>' % (vid, E(name), "".join(vcard(v) for v in pl[name])))
+    return "".join(out)
+
+
+# ------------------------------------------------------------------ directory
+@gen
+def directory(args):
+    ds = data("directory")
+    roles = OrderedDict([("consultant", "Consultant"), ("lab-tech", "Lab Tech")])
+    chips = '<li><button class="chip" type="button" data-chip="" aria-pressed="true">All (%d)</button></li>' % len(ds) + "".join(
+        '<li><button class="chip" type="button" data-chip="%s" aria-pressed="false">%s (%d)</button></li>' % (
+            k, v, sum(1 for d in ds if any(r.lower().replace("-", " ").replace(" ", "-") == k for r in d["roles"]))) for k, v in roles.items())
+    cards = []
+    for d in ds:
+        rk = " ".join(r.lower().replace(" ", "-") for r in d["roles"])
+        pic = img(d["photo"], "Photo of %s" % d["name"].strip(), "card__img card__img--square") if d["photo"] else '<div class="card__img card__img--square"></div>'
+        cards.append('<li data-item data-group="%s" data-text="%s"><article class="card card--link card--plain">%s<div class="card__body">'
+                     '<p class="card__kicker">%s</p><h3 class="card__title"><a href="/directory-member/%s/">%s</a></h3><p class="meta">%s</p></div></article></li>' % (
+                         A(rk), esc_attr_text(" ".join([d["name"], d["company"], d["area"], " ".join(d["roles"])])), pic,
+                         E(" · ".join(r.replace("Lab-Tech", "Lab Tech") for r in d["roles"])), d["slug"], E(d["name"].strip()),
+                         E(", ".join(x for x in [d["company"], d["area"]] if x))))
+    return ('<div data-filter><ul class="chips" aria-label="Filter by role">%s</ul>'
+            '<form class="searchbar" role="search"><label class="sr-only" for="dir-q">Search the directory</label>'
+            '<input id="dir-q" type="search" data-q placeholder="Search by name, place or business"></form>'
+            '<p class="count" data-count data-one="professional" data-many="professionals" aria-live="polite"></p>'
+            '<ul class="grid">%s</ul><p data-empty hidden>No one matches. Try a country or region.</p></div>') % (chips, "".join(cards))
+
+
+# ------------------------------------------------------------------ item pages
+def back(href, label):
+    return '<a class="back" href="%s">%s</a>' % (href, E(label))
+
+
+def team_pages():
+    for t in data("team"):
+        path = "/team-member/%s/" % t["slug"]
+        begin(path, "staging", [], "", "Team member")
+        role = fix(t["role"])
+        bio = rewrite_body(t["bio"]) or TODO % ("Bio for %s; supplied by %s." % (t["name"], t["name"]))
+        body = ('<section class="band"><div class="wrap">%s<div class="profile"><div class="profile__photo">%s</div><div>'
+                '<h1>%s</h1>%s<div class="prose">%s</div></div></div></div></section>') % (
+            back("/about/#team", "Back to the team"), team_photo(t), E(t["name"]),
+            '<p class="profile__role">%s</p>' % E(role) if role else TODO % "Role or title for %s; Stephanie McDaniel supplies." % t["name"], bio)
+        write(path, t["name"], "%s, %s at the Soil Food Web Foundation." % (t["name"], role or "team member"), body, "/about/")
+
+
+def directory_pages():
+    for d in data("directory"):
+        path = "/directory-member/%s/" % d["slug"]
+        name = d["name"].strip()
+        bugs = ["32"] if d["slug"] == "alex-kellett" else []
+        begin(path, "staging", bugs, "", "Directory member")
+        bio = rewrite_body(d["bio"])
+        notes = []
+        if re.search(r"^\s*<p>\s*test bio\s*</p>\s*$", d["bio"], re.I) or not bio:
+            bio = TODO % ("Bio for %s; the member supplies it through the directory portal." % name)
+        links = []
+        for l in d["links"]:
+            v = l["value"]
+            if l["label"] == "Phone" and re.fullmatch(r"\d{2,4}0{6,}", v):
+                links.append("<dt>Phone</dt><dd>%s</dd>" % (TODO % "phone number looks like a placeholder; member confirms"))
+                continue
+            links.append('<dt>%s</dt><dd><a href="%s">%s</a></dd>' % (E(l["label"]), A(l["href"]), E(v.rstrip("/"))))
+        own = [s for s in d["social"] if "facebook.com/soilfoodweb" in s["href"]]
+        social = [s for s in d["social"] if s not in own]
+        if social:
+            links.append("<dt>Social</dt><dd>%s</dd>" % " &middot; ".join('<a href="%s" rel="noopener">%s</a>' % (A(s["href"]), E(s["label"])) for s in social))
+        if own:
+            links.append("<dt>Social</dt><dd>%s</dd>" % (TODO % "social links on staging point to the Foundation's own Facebook page; member supplies their own"))
+        pic = img(d["photo"], "Photo of %s" % name) if d["photo"] else ""
+        body = ('<section class="band"><div class="wrap">%s<div class="profile"><div class="profile__photo">%s</div><div>'
+                '<ul class="pills">%s</ul><h1>%s</h1>%s<h2>About</h2><div class="prose">%s</div>'
+                '<h2>Location</h2><p>%s</p><h2>Contact</h2><dl class="kv">%s</dl></div></div></div></section>') % (
+            back("/find-a-professional/", "Back to the directory"), pic,
+            "".join("<li>%s</li>" % E(r.replace("Lab-Tech", "Lab Tech")) for r in d["roles"]), E(name),
+            '<p class="profile__role">%s</p>' % E(d["company"]) if d["company"] else "", bio,
+            E(d["area"]) or TODO % "Area; member supplies", "".join(links) or "<dt>Contact</dt><dd>Through the Foundation</dd>")
+        role = " and ".join(r.replace("Lab-Tech", "Lab Tech") for r in d["roles"])
+        write(path, name, "%s, Soil Food Web %s%s." % (name, role, (", " + d["area"]) if d["area"] else ""), body, "/case-studies/")
+
+
+def video_pages():
+    pl = playlists_data()
+    for name, vids in pl.items():
+        for v in vids:
+            path = "/video/%s/" % v["slug"]
+            begin(path, "staging", [], "", "Video")
+            if v["vimeo"]:
+                src = "https://player.vimeo.com/video/%s?dnt=1%s" % (v["vimeo"], "&h=" + v["vimeo_h"] if v["vimeo_h"] else "")
+            else:
+                src = "https://www.youtube-nocookie.com/embed/%s" % v["youtube"]
+            items = "".join('<li><a href="/video/%s/"%s><span>%d</span>%s<span>%s</span></a></li>' % (
+                o["slug"], ' aria-current="page"' if o is v else "", i + 1, img(o["thumb"], "") if o["thumb"] else "<span></span>", E(fix(o["title"])))
+                for i, o in enumerate(vids))
+            body = ('<section class="band"><div class="wrap">%s<div class="video-layout"><div><div class="embed">'
+                    '<iframe src="%s" title="%s" allow="fullscreen; picture-in-picture" loading="lazy"></iframe></div>'
+                    '<p class="eyebrow" style="margin-top:1.25rem">%s</p><h1>%s</h1>%s</div>'
+                    '<aside aria-label="%s"><h2 class="h3">%s</h2><p class="meta">%d videos</p><ol class="plist">%s</ol></aside></div></div></section>') % (
+                back("/case-studies/", "Back to case studies and videos"), A(src), A(fix(v["title"])), E(name), E(fix(v["title"])),
+                rewrite_body(v["body"]) if v["body"] else "", A(name), E(name), len(vids), items)
+            write(path, fix(v["title"]), "%s: a video from the Soil Food Web Foundation’s %s playlist." % (fix(v["title"]), name), body, "/case-studies/")
+
+
+EVENT_TEXT = {
+    "community": "A celebration of the Foundation’s first year.",
+}
+
+
+def event_pages():
+    for e in all_events():
+        path = "/calendar-event/%s/" % e["slug"]
+        bugs = ["24"] if e["type"] in ("community", "course") or ":" in e.get("when", "") else []
+        begin(path, "repo" if e.get("repo") else "staging", bugs, "", "Calendar event")
+        detail = []
+        if e.get("repo"):
+            cal = repo("calendar")["featured"]
+            detail.append("<p>%s</p>" % E(fix(cal["body"])))
+            detail.append('<p class="source">Source: %s</p>' % E(cal["source"]))
+            detail.append('<p class="actions"><a class="btn" href="%s">%s</a></p>' % (A(cal["cta"]["href"]), E(cal["cta"]["label"])))
+        else:
+            detail.append(TODO % ("Description, place and how to sign up for %s; staging has no text for this event. Evan or Stephanie McDaniel supplies." % e["title"]))
+            if e["type"] == "community":
+                detail.append(TODO % "Start time: staging shows 3:27 pm UTC, which looks like a placeholder. Confirm the time and time zone.")
+            if e["type"] == "workshop":
+                detail.append('<p><a class="more" href="/workshops/">About our workshops</a></p>')
+            if e["type"] == "course":
+                detail.append('<p><a class="more" href="/programs/#path">See all Online Courses</a></p>')
+            if e["type"] == "community":
+                detail.append('<p><a class="more" href="/year-one-report/">Read the year one report</a></p>')
+        body = ('<section class="band"><div class="wrap wrap--narrow">%s<p class="eyebrow">%s</p><h1>%s</h1>'
+                '<dl class="kv"><dt>When</dt><dd><time datetime="%s">%s</time></dd><dt>Type</dt><dd>%s</dd></dl>%s</div></section>') % (
+            back("/calendar/", "Back to the calendar"), EVENT_TYPES[e["type"]], E(e["title"]), e["start"], E(event_when(e)),
+            EVENT_TYPES[e["type"]], "".join(detail))
+        write(path, e["title"], "%s, %s." % (e["title"], event_when(e)), body, "/community/")
+
+
+def publication_pages():
+    for p in pubs():
+        path = "/publication/%s/" % p["slug"]
+        bugs = ["11"] if p["hide_citation"] else (["27"] if p["id"] == 1064 else [])
+        begin(path, "staging", bugs, "", "Publication")
+        links = " ".join('<a class="btn btn--ghost btn--small" href="%s" rel="noopener">%s</a>' % (A(h), l) for l, h in pub_links(p))
+        rows = [("Year", p["year"]), ("Type", p["kind"]), ("Authors", p["authors"])]
+        if p["citation"] and not p["hide_citation"]:
+            rows.append(("Published in", p["citation"]))
+        rows.append(("Collection", p["collection"]))
+        if p["topics"]:
+            rows.append(("Topics", ", ".join(p["topics"])))
+        why = '<p class="lead"><b>Why read it:</b> <span class="draft">%s</span></p>' % E(p["blurb"]) if p["blurb"] else TODO % "Why read it: one sentence from the abstract; Carla Portugal checks."
+        extra = TODO % "Journal citation for this entry; Carla Portugal verifies it." if p["hide_citation"] else ""
+        body = ('<section class="band"><div class="wrap wrap--narrow">%s<p class="eyebrow">%s</p><h1>%s</h1>%s'
+                '<dl class="kv">%s</dl>%s%s</div></section>') % (
+            back("/publications/", "Back to publications"), E(p["kind"]), E(p["title"]), why,
+            "".join("<dt>%s</dt><dd>%s</dd>" % (E(k), E(v)) for k, v in rows), extra,
+            '<p class="actions">%s</p>' % links if links else "")
+        write(path, p["title"], "%s (%s). %s" % (p["title"], p["year"], p["authors"]), body, "/how-it-works/")
+
+
+def post_pages():
+    for p in all_posts():
+        path = "/%s/" % p["slug"]
+        bugs = []
+        if p["slug"] in ("unconditional-freedom-at-home-and-in-the-world", "a-blueprint-to-return-to-the-garden-of-eden"):
+            bugs.append("1")
+        if p["slug"] == "obituary-for-dr-elaine-ingham":
+            bugs.append("30")
+        broken = len([1 for t in re.findall(r"<img[^>]*>", p["body"]) if not re.search(r'src="https?://(?!\d+")', t)])
+        note = []
+        if p.get("restored_images"):
+            note.append("%d image(s) were empty on staging and are restored from the same post on soilfoodweb.com." % len(p["restored_images"]))
+        if broken:
+            note.append("%d image(s) are broken on staging and on the old site; left out." % broken)
+        begin(path, p.get("source", "staging"), bugs, " ".join(note), "Blog post")
+        cats = " &middot; ".join('<a href="/category/%s/">%s</a>' % (c["slug"], E(c["name"])) for c in p["categories"])
+        hero = img(p["featured"], "", "article-hero", eager=True) if p.get("featured") else ""
+        body_html = p["body"] if p.get("source") == "repo" else rewrite_body(p["body"])
+        by = ""
+        for a in p.get("authors", []):
+            photo = AUTHOR_PHOTOS.get(a["name"])
+            pic = img(photo, "Portrait of %s" % a["name"]) if photo else ""
+            missing = "" if photo else TODO % ("Photo of %s; the old site’s image is broken and no copy exists. Ask %s." % (a["name"], a["name"]))
+            by += '<div class="byline">%s<p><strong>%s</strong><br>%s</p></div>%s' % (pic, E(a["name"]), E(fix(a["role"])), missing)
+        body = ('<article class="band"><div class="wrap"><header class="article-head"><a class="back" href="/news/">All news</a>'
+                '<p class="eyebrow">%s</p><h1>%s</h1><p class="meta"><time datetime="%s">%s</time></p></header>%s'
+                '<div class="prose">%s</div>%s</div></article>') % (
+            cats, E(fix(p["title"])), p["date"], fmt_date(p["date"]), hero, body_html, by)
+        write(path, fix(p["title"]), (fix(p.get("excerpt", "")) or fix(p["title"]))[:200], body, "/community/")
+
+
+AUTHOR_PHOTOS = {
+    # bug 1: the Garden of Eden post's author photo, from the live soilfoodweb.com post
+    "Philip Barton": "https://soilfoodweb.com/wp-content/uploads/2024/02/Webinar-picture--150x150.jpg",
+}
+
+
+def category_pages():
+    ps = all_posts()
+    cats = OrderedDict()
+    for p in ps:
+        for c in p["categories"]:
+            cats.setdefault(c["slug"], (c["name"], []))[1].append(p)
+    for slug, (name, items) in cats.items():
+        path = "/category/%s/" % slug
+        begin(path, "staging", [], "", "Category")
+        body = ('<section class="pagehead"><div class="wrap"><a class="back" href="/news/">All news</a><p class="eyebrow">News &amp; blog</p>'
+                '<h1>%s</h1><p>%d post%s.</p></div></section><section class="band"><div class="wrap"><ul class="grid">%s</ul></div></section>') % (
+            E(name), len(items), "" if len(items) == 1 else "s", "".join(post_card(p) for p in items))
+        write(path, name, "Posts filed under %s." % name, body, "/community/")
+
+
+def item_pages():
+    team_pages()
+    directory_pages()
+    video_pages()
+    event_pages()
+    publication_pages()
+    post_pages()
+    category_pages()
+
+
+# ------------------------------------------------------------------ /review/
+SOURCE_LABEL = {"staging": "staging copy with fixes", "repo": "this repo's version", "new": "new page", "": "generated"}
+
+
+def review_page():
+    begin("/review/", "new", [], "", "Review")
+    main, items = [], OrderedDict()
+    for path, r in B.PAGES.items():
+        if path == "/review/":
+            continue
+        if r["kind"] == "page":
+            main.append((path, r))
+        else:
+            items.setdefault(r["kind"], []).append((path, r))
+
+    def flags(r):
+        out = []
+        for i in r["images"]:
+            if i["flags"]:
+                out.append("<li>%s: %s</li>" % (E(os.path.basename(i["src"].split("?")[0])), E("; ".join(i["flags"]))))
+        return "<ul>%s</ul>" % "".join(sorted(set(out))) if out else ""
+
+    def img_sources(r):
+        n_repo = sum(1 for i in r["images"] if i["from"].startswith("repo") or i["from"] == "replacement")
+        n_stg = sum(1 for i in r["images"] if i["from"] == "staging download")
+        return "%d from repo, %d from staging" % (n_repo, n_stg) if r["images"] else ""
+
+    def row(path, r):
+        todos = "<ul>%s</ul>" % "".join("<li>%s</li>" % E(t) for t in r["todos"]) if r["todos"] else ""
+        notes = '<p>%s</p>' % E(r["notes"]) if r["notes"] else ""
+        return "<tr><td><a href=\"%s\">%s</a></td><td>%s</td><td>%s</td><td>%s</td><td>%s%s</td><td>%s</td></tr>" % (
+            path, path, SOURCE_LABEL.get(r["source"], r["source"]), ", ".join(r["bugs"]), img_sources(r), flags(r), "", todos + notes)
+
+    table = ('<div class="table-wrap"><table class="table"><thead><tr><th>Launch URL</th><th>Source</th><th>Bugs fixed</th>'
+             '<th>Images</th><th>Flagged images</th><th>Placeholders left and notes</th></tr></thead><tbody>%s</tbody></table></div>')
+    item_tables = []
+    for kind, rows in items.items():
+        n_todo = sum(len(r["todos"]) for _, r in rows)
+        bugrows = [(p, r) for p, r in rows if r["bugs"] or r["todos"] or flags(r)]
+        item_tables.append('<details class="faq"><summary>%s pages: %d (%d with placeholders, bug fixes or flags; %d placeholders)</summary><div>%s</div></details>' % (
+            kind, len(rows), len(bugrows), n_todo, table % "".join(row(p, r) for p, r in bugrows) if bugrows else "<p>Nothing to flag.</p>"))
+    notes = open(os.path.join(B.ROOT, "src", "review-notes.html"), encoding="utf-8").read() if os.path.exists(os.path.join(B.ROOT, "src", "review-notes.html")) else ""
+    body = ('<section class="pagehead"><div class="wrap"><p class="eyebrow">Review</p><h1>What changed on each page</h1>'
+            '<p>This preview rebuilds new.soilfoodweb.com at its launch addresses with the fixes from the 3 October 2026 brief. '
+            'Yellow boxes on any page are placeholders that still need a fact from someone. Add <code>?review</code> to any address to highlight draft text.</p></div></section>'
+            '<section class="band"><div class="wrap"><h2>Main pages</h2>%s<h2 style="margin-top:3rem">Item pages</h2>%s%s</div></section>') % (
+        table % "".join(row(p, r) for p, r in main), "".join(item_tables), notes)
+    write("/review/", "Review", "What changed on each page of the launch preview.", body)

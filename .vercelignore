@@ -1,1 +1,22 @@
+# Only the site is deployed. Working files, print jobs and data stay in git.
 _dev/
+docs/
+content/
+tools/
+src/
+incoming/
+thumbs/
+exports/
+editable-pptx/
+trifold-farmers/
+SEND-TO-PRINTER/
+Trifold Design/
+Color Pairings/
+cal/
+*.md
+*.csv
+img/uploads/
+img/pd/
+img/w/
+img/video/
+img/wild-ken-hill/
