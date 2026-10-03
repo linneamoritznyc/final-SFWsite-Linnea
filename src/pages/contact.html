@@ -1,0 +1,70 @@
+---
+path: /contact/
+title: Contact us | Soil Food Web Foundation
+description: Questions about courses, research, partnerships, press or donations? Send the Soil Food Web Foundation a message and it reaches the right person.
+source: new
+bugs: 3, 5, 17, 21
+notes: New page, copy as given in the brief. On staging /contact/ redirects to an empty /contact-info/ page. The form is a mockup: it checks the required fields and shows the thank-you message; nothing is sent.
+nav: /about/
+---
+<section class="pagehead">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h1>Get in touch</h1>
+    <p class="lead">Questions about courses, research, partnerships, press or donations? Send us a message, and it reaches the right person on our team.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap contact-grid">
+    <div>
+      <form data-contact-form novalidate aria-label="Contact form">
+        <div class="field"><label for="c-name">Name <span class="req">(required)</span></label><input id="c-name" name="name" type="text" required autocomplete="name"><p class="field__error" hidden>Please enter your name.</p></div>
+        <div class="field"><label for="c-email">Email <span class="req">(required)</span></label><input id="c-email" name="email" type="email" required autocomplete="email"><p class="field__error" hidden>Please enter an email address we can reply to.</p></div>
+        <div class="field"><label for="c-who">I am a</label>
+          <select id="c-who" name="i-am-a">
+            <option>Student or former student</option>
+            <option>Farmer, rancher or grower</option>
+            <option>Consultant or lab technician</option>
+            <option>Researcher or partner organization</option>
+            <option>Donor</option>
+            <option>Press</option>
+            <option>Other</option>
+          </select></div>
+        <div class="field"><label for="c-msg">Message <span class="req">(required)</span></label><textarea id="c-msg" name="message" required></textarea><p class="field__error" hidden>Please write a message.</p></div>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+      <p class="form-done" data-contact-done tabindex="-1" hidden>Thank you. Your message is on its way. We reply within five working days.</p>
+      <p class="todo" style="margin-top:1.25rem">Alex: build with Stephanie's form tool, send to info@soilfoodweb.com, fire a GA4 event on submit. Stephanie: confirm reply time.</p>
+    </div>
+    <aside class="reach" aria-labelledby="reach-h">
+      <h2 id="reach-h">Other ways to reach us</h2>
+      <h3>Email</h3>
+      <p class="copy-row"><a href="mailto:info@soilfoodweb.com">info@soilfoodweb.com</a> <button class="btn btn--ghost btn--small" type="button" data-copy="info@soilfoodweb.com">Copy email</button></p>
+      <h3>Post</h3>
+      <p>Soil Food Web Foundation<br>5441 S Macadam Ave Ste N<br>Portland, Oregon 97239<br>USA</p>
+      <h3>Students</h3>
+      <p>Log in to your courses on the <a href="/login/">Login page</a>. For help with a course, use the form and choose "Student or former student".</p>
+    </aside>
+  </div>
+</section>
+
+<section class="band band--cream">
+  <div class="wrap">
+    <div class="section-head"><h2>Looking for something specific?</h2></div>
+    <ul class="grid grid--3">
+      <li><article class="card card--link card--plain"><div class="card__body"><h3 class="card__title"><a href="/invite-us-to-speak/">Invite us to speak</a></h3></div></article></li>
+      <li><article class="card card--link card--plain"><div class="card__body"><h3 class="card__title"><a href="/invite-us-to-speak/#press">Media and press</a></h3></div></article></li>
+      <li><article class="card card--link card--plain"><div class="card__body"><h3 class="card__title"><a href="/work-with-us/">Partner on research or work with us</a></h3></div></article></li>
+      <li><article class="card card--link card--plain"><div class="card__body"><h3 class="card__title"><a href="/find-a-professional/">Find a soil consultant or lab near you</a></h3></div></article></li>
+      <li><article class="card card--link card--plain"><div class="card__body"><h3 class="card__title"><a href="/scholarship/">Apply for a scholarship</a></h3></div></article></li>
+      <li><article class="card card--link card--plain"><div class="card__body"><h3 class="card__title"><a href="/volunteer/">Volunteer with us</a></h3></div></article></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band band--tight">
+  <div class="wrap">
+    <p class="smallprint">Soil Food Web Foundation is a 501(c)(3) nonprofit organization, EIN 39-4439236, Oregon DOJ registration #71264, registered at 5441 S Macadam Ave Ste N, Portland, Oregon 97239. The Soil Food Web School is a program of the Soil Food Web Foundation.</p>
+  </div>
+</section>

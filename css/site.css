@@ -472,3 +472,5 @@ span.todo { display: inline; padding: .1rem .4rem; }
 .profile h2 { font-size: 1.2rem; margin: 2rem 0 .6rem; }
 .profile h1 + .profile__role { margin-bottom: 0; }
 .funding { font-size: .9375rem; color: var(--ink-soft); max-width: 46rem; border-left: 3px solid var(--green-light); padding-left: 1rem; margin-top: 1.5rem; }
+.pagehead + .band:not(.band--cream) { padding-top: clamp(1rem, .5rem + 2vw, 2rem); }
+.reach { align-self: start; }
