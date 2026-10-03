@@ -1,0 +1,68 @@
+---
+path: /donations/
+title: Donate
+description: Give to the Soil Food Web Foundation, a 501(c)(3) nonprofit (EIN 39-4439236). Gifts fund scholarships, open research and field projects, and are tax-deductible to the extent allowed by law.
+source: repo
+bugs: 3, 4, 5, 7, 18, 21
+notes: Staging's page has 240 words, so this is this repo's donate page, restyled, with staging's "more ways" cards (their four buttons were empty on staging; here they link). A plain link to givebutter.com/sfwf-donate sits beside the form. "[IMPACT LINES ... VERIFY ...]" is a placeholder now. The tax wording matches the new Terms section 4. Was /donate/ in the staging footer (a 404); /donate redirects here.
+nav: /donations/
+---
+<section class="hero">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Donate &amp; get involved</p>
+      <h1 class="plain">Donate</h1>
+      <p class="lead">The Soil Food Web Foundation is a 501(c)(3) nonprofit. Gifts are tax-deductible to the extent allowed by law. Every gift amplifies our impact by funding scholarships, supporting research initiatives, and increasing our capacity to take direct action on behalf of the living world.</p>
+    </div>
+    <div class="hero__media">{{img src="img/2-hands-planting-shrub.jpg" alt="Two hands firming red soil around the base of a newly planted shrub" eager}}</div>
+  </div>
+</section>
+
+<section class="band band--cream" id="give">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Make a gift</h2>
+      <div class="notice notice--white" style="display:block">
+        <p class="todo">The Givebutter donation form (monthly or one-time, preset amounts) embeds here on the live site. It cannot run in this static preview.</p>
+        <p style="margin-top:1rem">Prefer a plain link? <a href="https://givebutter.com/sfwf-donate">Donate on Givebutter</a> (givebutter.com/sfwf-donate).</p>
+        <div class="actions"><a class="btn btn--donate" href="https://givebutter.com/sfwf-donate">Donate on Givebutter</a></div>
+      </div>
+      <p class="todo" style="margin-top:1rem">Impact lines for the preset amounts, only once program costs are confirmed (for example what a monthly gift funds). Do not invent amounts. Operations confirms; Evan.</p>
+      <p class="todo">Before launch: make a $1 test donation and check the thank-you page and the emailed receipt with the EIN; set the Givebutter tip to 0% or off; name the campaign goal and what the money raised goes to. Stephanie McDaniel.</p>
+    </div>
+    <aside class="reach">
+      <h2>For your records</h2>
+      <p>Soil Food Web Foundation is a 501(c)(3) nonprofit organization. EIN 39-4439236. Oregon DOJ registration #71264.</p>
+      <p>Online donations are processed by our payment partner, Givebutter, and a receipt is sent by email for every gift.</p>
+      <p>Where a gift comes with something in return, such as a ticket, a place at an event, or merchandise, only the amount above the fair market value of that benefit is deductible. We state the deductible amount on the receipt for any such gift.</p>
+      <p>Read our <a href="/privacy/">privacy policy</a> and the <a href="/terms/#donations">donations section of our Terms</a>.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap cols-2">
+    <div>
+      <h2>Monthly giving helps us plan ahead</h2>
+      <p>Prefer to give another way or have questions about our work? <a href="/contact/">Contact us</a>.</p>
+    </div>
+    <div>
+      <h2>Course fees and gifts are different</h2>
+      <p>Payments for courses, workshops and programs are fees for services and are not tax-deductible charitable gifts. The Soil Food Web School is a program of the Soil Food Web Foundation, and course revenue funds the Foundation's work, but a course purchase is a purchase. Donations made on this page are gifts and are deductible to the extent allowed by law.</p>
+      <p><a class="more" href="/funding/">How we're funded</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="band band--cream" id="more-ways">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">More ways in</p><h2>Give time, reach, or a stage</h2></div>
+    <ul class="grid grid--3">
+      <li><article class="card card--plain"><div class="card__body"><h3 class="card__title">Volunteer</h3><p class="card__text">Our global volunteer network is just taking root. Tell us your skills and we'll find you a place.</p><p class="card__foot"><a class="btn btn--ghost btn--small" href="/volunteer/">Volunteer with us</a></p></div></article></li>
+      <li><article class="card card--plain"><div class="card__body"><h3 class="card__title">Speaking</h3><p class="card__text">Bring the soil food web to your stage, campus, or community.</p><p class="card__foot"><a class="btn btn--ghost btn--small" href="/invite-us-to-speak/">Invite us to speak</a></p></div></article></li>
+      <li><article class="card card--plain"><div class="card__body"><h3 class="card__title">Name and logo</h3><p class="card__text">Building something aligned with our mission? Ask us about brand use.</p><p class="card__foot"><a class="btn btn--ghost btn--small" href="/logo-brand-use/">Ask about brand use</a></p></div></article></li>
+    </ul>
+    <div class="notice notice--white" style="margin-top:1.5rem"><p><strong>Represent a company or a large landholding?</strong> Partner with our team and consultants on a documented transition to biological land management, good for your land, your books, and the record we're building together.</p><a class="btn" href="/work-with-us/">Partner with us</a></div>
+    {{funding}}
+  </div>
+</section>

@@ -3668,6 +3668,18 @@
   "source_size": "5990x3993",
   "w": 1600
  },
+ "img/2-hands-planting-shrub.jpg": {
+  "alt": "",
+  "bytes": 301336,
+  "file": "img/2-hands-planting-shrub.webp",
+  "flags": [],
+  "h": 1600,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/2-hands-planting-shrub.jpg",
+  "source_size": "2000x2000",
+  "w": 1600
+ },
  "img/ctpfw-student-moving-compost-1.jpg": {
   "alt": "People turning and watering a compost pile in a wire bay.",
   "bytes": 119690,
