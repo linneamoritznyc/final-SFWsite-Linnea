@@ -3679,5 +3679,17 @@
   "source_path": "img/ctpfw-student-moving-compost-1.jpg",
   "source_size": "2000x1125",
   "w": 1600
+ },
+ "img/ctpfw-student-squeezing-compost-1.jpg": {
+  "alt": "Man in a cap squeezing a handful of compost over a pile",
+  "bytes": 112054,
+  "file": "img/ctpfw-student-squeezing-compost-2.webp",
+  "flags": [],
+  "h": 900,
+  "shows": "A man in a grey cap and green t-shirt squeezes a handful of dark compost above a wire-edged compost pile while gloved. Several people in masks stand under a green-roofed shed behind him.",
+  "source": "repo",
+  "source_path": "img/ctpfw-student-squeezing-compost-1.jpg",
+  "source_size": "2000x1125",
+  "w": 1600
  }
 }

@@ -474,3 +474,4 @@ span.todo { display: inline; padding: .1rem .4rem; }
 .funding { font-size: .9375rem; color: var(--ink-soft); max-width: 46rem; border-left: 3px solid var(--green-light); padding-left: 1rem; margin-top: 1.5rem; }
 .pagehead + .band:not(.band--cream) { padding-top: clamp(1rem, .5rem + 2vw, 2rem); }
 .reach { align-self: start; }
+.stat__n--tbc { font-size: clamp(1.75rem, 1.3rem + 2vw, 2.75rem); color: var(--ink-soft); padding-top: .6em; }
