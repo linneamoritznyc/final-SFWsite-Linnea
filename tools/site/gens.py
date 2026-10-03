@@ -102,7 +102,17 @@ def esc_attr_text(t):
 
 
 # ------------------------------------------------------------------ courses
+# Ad Grant checklist (2 Oct): sales lines toned down on the course cards.
+COURSE_EDITS = [
+    (", Measure the real impact of your efforts near instantly", ", Measure the real impact of your efforts"),
+    (", and transforms what\u2019s possible on your land", ""),
+    (", and transforms what's possible on your land", ""),
+]
+
+
 def course_card(c, scroller=False):
+    for a, b in COURSE_EDITS:
+        c = dict(c, line=c["line"].replace(a, b))
     title = fix(c["title"]).replace(" : ", ": ")
     href = staging_link(c["href"])
     cta = fix(c["cta"]).replace(" →", "").replace("→", "").strip() or "Learn more"
@@ -117,6 +127,8 @@ def course_card(c, scroller=False):
 
 @gen
 def courses(args):
+    if args.strip():  # a short selection reads as a row of cards, no scroller
+        return '<ul class="grid">%s</ul>' % "".join(course_card(c, True) for c in data("courses")[:int(args)])
     cs = data("courses")
     return ('<div data-scroller><div class="scroller-head"><h3 class="sr-only">Programs</h3>'
             '<div class="scroller-nav"><button type="button" data-scroll="-1" aria-label="Previous programs">&lsaquo;</button>'

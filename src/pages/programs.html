@@ -4,7 +4,7 @@ title: Learn: programs and Online Courses
 description: Online Courses, workshops and certifications from the Soil Food Web School, from the free webinar and Foundation Courses to Advanced Programs. Find the path that fits you.
 source: staging
 bugs: 3, 5, 10, 22, 25, 33
-notes: Was /programs-overview/; menu label "Learn". Foundation Course 1 now links to school.soilfoodweb.com/courses/foundation-course-1 (staging had a typo, "couse"); the Permaculture Design Certification card pointed at localhost on staging and now links to school.soilfoodweb.com/courses/permaculture-design-certification. The two quotes from "Country" are removed; John Gehl's stays. The refund answer says "or have already attended the live aspects"; it probably means "have not yet attended". Left as staging has it for Evan to confirm.
+notes: Was /programs-overview/; menu label "Learn". Foundation Course 1 now links to school.soilfoodweb.com/courses/foundation-course-1 (staging had a typo, "couse"); the Permaculture Design Certification card pointed at localhost on staging and now links to school.soilfoodweb.com/courses/permaculture-design-certification. The two quotes from "Country" are removed; John Gehl's stays. From the Ad Grant checklist: the guarantee banner moves into the FAQ, whose refund answer now uses the Terms section 3 wording (staging's said "or have already attended the live aspects"); "near instantly" and "transforms what's possible on your land" are cut from two course cards; "microscopy" reads "microscope" in the equipment answer.
 nav: /programs/
 ---
 <section class="hero">
@@ -29,11 +29,6 @@ nav: /programs/
   </div>
 </section>
 
-<section class="band band--tight">
-  <div class="wrap">
-    <div class="notice notice--line"><p><strong>Our guarantee:</strong> 30-day, no-questions-asked money-back guarantee (<a href="/terms/">terms and conditions</a> apply).</p></div>
-  </div>
-</section>
 
 <section class="band">
   <div class="wrap">
@@ -57,8 +52,8 @@ nav: /programs/
     <div class="faq">
       <details><summary>Do I need a science background?</summary><div><p>No. The courses are designed for people with no relevant experience. And for advanced courses, you'll gain all the knowledge you need here while completing prerequisites which are clearly defined for each path.</p></div></details>
       <details><summary>I can't afford the courses. Are there options?</summary><div><p>We never want insurmountable financial limitations to get in the way of soil regeneration. We are always accepting applications and selections occur on an ongoing basis as we procure funds from donors and other resources. Selection committees place a priority on applicants in under-resourced regions. If you believe you qualify, see the <a href="/scholarship/">Scholarships page</a>.</p></div></details>
-      <details><summary>What if it's not for me?</summary><div><p>Every course carries a 30-day, no-questions-asked money-back guarantee, provided you've watched no more than one-third of the lectures or have already attended the live aspects of the program. Live in-person events may also have unique limitations. Please see individual program pages for specific details.</p></div></details>
-      <details><summary>Are there any costs above and beyond the listed program enrollment fees?</summary><div><p>Sometimes you will, but often you won't. Depending on the program you choose, you may need to procure equipment (ex: For Microscopy you will need access to the right type of microscopy, slides, sampling equipment etc.). Each program page provides information about the equipment requirements.</p></div></details>
+      <details open><summary>What if it's not for me?</summary><div><p>Every course carries our 30-day money-back guarantee. Unless a program page states otherwise, you may request a full refund within 30 days of registration provided you have not accessed a substantial portion of the course content. Live in-person events may also have unique limitations. Please see individual program pages for specific details, and the <a href="/terms/#refunds">refund policy</a> in our Terms.</p></div></details>
+      <details><summary>Are there any costs above and beyond the listed program enrollment fees?</summary><div><p>Sometimes you will, but often you won't. Depending on the program you choose, you may need to procure equipment (ex: For Microscopy you will need access to the right type of microscope, slides, sampling equipment etc.). Each program page provides information about the equipment requirements.</p></div></details>
     </div>
   </div>
 </section>
@@ -66,5 +61,6 @@ nav: /programs/
 <section class="band band--tight">
   <div class="wrap">
     <div class="notice"><p><strong>Financial barriers shouldn't keep anyone from caring for the Earth.</strong> Scholarships and payment options are growing.</p><a class="btn" href="/scholarship/">Explore scholarships</a></div>
+    {{funding}}
   </div>
 </section>
