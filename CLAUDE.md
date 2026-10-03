@@ -20,3 +20,9 @@ docs/sfw-website-audit-verbatim.md (Evan's feedback, the spec), docs/Fable_Cours
 ## Order
 1. index.html  2. learn.html (with the pathway diagram)  3. science.html  4. about-governance.html
 5. one case study  6. now.html  7. the rest as clean pages from the copy deck  8. link, a11y, speed passes.
+
+## The WordPress staging site (new.soilfoodweb.com)
+The team builds the real site in WordPress from this prototype. What staging actually contains, crawled 2 October 2026,
+is in docs/staging-reality.md, with every staging page exported as markdown under docs/staging-export/content/.
+Check it before marking an item open, before writing a redirect, and before copying anything from staging: it has
+invented testimonials, placeholder notes and broken links that must not come into this repo.

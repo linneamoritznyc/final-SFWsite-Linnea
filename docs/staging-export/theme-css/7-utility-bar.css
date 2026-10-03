@@ -1,0 +1,179 @@
+/**
+ * Dark utility bar above the main header.
+ */
+
+.sfw-utility {
+	box-sizing: border-box;
+	width: 100%;
+	max-height: 6.5rem;
+	overflow: hidden;
+	background: #231f1d;
+	color: #ffffff;
+	font-size: 0.8125rem;
+	line-height: 1.6;
+	transition: max-height 0.28s ease;
+}
+
+.sfw-utility.is-hidden {
+	max-height: 0;
+	pointer-events: none;
+}
+
+.sfw-utility *,
+.sfw-utility *::before,
+.sfw-utility *::after {
+	box-sizing: border-box;
+}
+
+#header-outer .sfw-utility .sfw-utility__wrap.container,
+body #header-outer .sfw-utility .container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1rem 1.5rem;
+	float: none;
+	width: min(1425px, calc(100% - 180px));
+	max-width: 1425px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 0.55rem;
+	padding-bottom: 0.55rem;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	text-align: left;
+}
+
+#header-outer .sfw-utility .sfw-utility__wrap.container::before,
+#header-outer .sfw-utility .sfw-utility__wrap.container::after,
+body #header-outer .sfw-utility .container::before,
+body #header-outer .sfw-utility .container::after {
+	content: none !important;
+	display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sfw-utility {
+		transition: none;
+	}
+}
+
+.sfw-utility__tagline {
+	display: flex;
+	align-items: center;
+	min-height: 44px;
+	margin: 0 auto 0 0 !important;
+	padding: 0 !important;
+	font-family: Montserrat, "Helvetica Neue", Arial, sans-serif;
+	font-weight: 600;
+	font-size: 0.8125rem;
+	letter-spacing: 0.01em;
+	line-height: 1;
+	color: #ffffff;
+}
+
+#header-outer .sfw-utility ul.sfw-utility__links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.5rem;
+	list-style: none;
+	margin: 0 0 0 auto;
+	padding: 0;
+	float: none;
+	width: auto;
+}
+
+#header-outer .sfw-utility ul.sfw-utility__links > li {
+	display: flex;
+	float: none;
+	margin: 0;
+	padding: 0;
+	position: static;
+	width: auto;
+}
+
+#header-outer .sfw-utility ul.sfw-utility__links > li > a,
+#header-outer .sfw-utility ul.sfw-utility__links > li > a .menu-title-text {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	margin: 0;
+	padding: 0 !important;
+	border: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	color: #ffffff !important;
+	font-family: Montserrat, "Helvetica Neue", Arial, sans-serif;
+	font-weight: 600;
+	font-size: 0.8125rem;
+	letter-spacing: normal;
+	line-height: 1.6;
+	text-transform: none;
+	text-decoration: none !important;
+	transform: none !important;
+}
+
+#header-outer .sfw-utility ul.sfw-utility__links > li > a:hover,
+#header-outer .sfw-utility ul.sfw-utility__links > li > a:focus-visible,
+#header-outer .sfw-utility ul.sfw-utility__links > li > a:hover .menu-title-text {
+	color: #ffffff !important;
+	text-decoration: underline !important;
+	background: transparent !important;
+	opacity: 1;
+}
+
+#header-outer .sfw-utility ul.sfw-utility__links > li > a:before,
+#header-outer .sfw-utility ul.sfw-utility__links > li > a:after {
+	display: none !important;
+	content: none !important;
+}
+
+#header-outer .sfw-utility ul.sfw-utility__links ul {
+	display: none !important;
+}
+
+@media (max-width: 40em) {
+	.sfw-utility__tagline {
+		display: none;
+	}
+
+	#header-outer .sfw-utility .sfw-utility__wrap.container,
+	body #header-outer .sfw-utility .container {
+		justify-content: center;
+		width: 100%;
+	}
+}
+
+@media (max-width: 999px) {
+	#header-outer .sfw-utility {
+		margin-bottom: 0;
+	}
+
+	#header-outer .sfw-utility .sfw-utility__wrap.container,
+	body #header-outer .sfw-utility .container {
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+	}
+
+	.sfw-utility__tagline,
+	#header-outer .sfw-utility ul.sfw-utility__links > li > a,
+	#header-outer .sfw-utility ul.sfw-utility__links > li > a .menu-title-text {
+		min-height: 36px;
+	}
+
+	body.sfw-ocm #header-outer #top {
+		position: relative;
+		padding-top: 14px;
+		padding-bottom: 14px;
+	}
+
+	body.sfw-ocm #header-outer #top .span_9 {
+		top: 0;
+		bottom: 0;
+		height: auto;
+		display: flex;
+		align-items: center;
+	}
+}

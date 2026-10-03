@@ -1,0 +1,700 @@
+/**
+ * Soil Food Web buttons, matched to the prototype.
+ *
+ * HTML (Custom HTML, text block, or Raw HTML):
+ *   <a class="btn" href="#">Join the community</a>
+ *   <a class="btn btn--ghost" href="#">Programs</a>
+ *   <a class="btn btn--white" href="#">Programs</a>
+ *   <a class="btn btn--donate" href="#">Donate</a>
+ *
+ * WPBakery Call to Action or Button: Extra Class Name = btn, btn btn--ghost, btn btn--white, or btn btn--donate
+ * Menu item: CSS Classes = btn btn--donate (applied to the <li>)
+ * Gutenberg: extra CSS class on the button block
+ */
+
+:root {
+	--sfw-green: #156826;
+	--sfw-moss: #22371f;
+	--sfw-gold: #c9a227;
+	--sfw-gold-hover: #b08e1f;
+	--sfw-soil: #4f3433;
+	--sfw-white: #ffffff;
+	--sfw-btn-font: Montserrat, "Helvetica Neue", Arial, sans-serif;
+	--sfw-btn-radius: 1.9em 0.6em;
+	--sfw-btn-radius-hover: 0.6em 1.9em;
+	--sfw-btn-dur: 320ms;
+	--sfw-btn-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+a.btn,
+button.btn,
+input.btn[type="submit"],
+input.btn[type="button"],
+span.btn,
+.nectar-button.btn,
+.wp-block-button__link.btn,
+.wp-block-button.btn .wp-block-button__link,
+.nectar-cta.btn .link_wrap,
+#header-outer li.btn > a,
+#header-outer li.btn--donate > a,
+#header-outer li.btn--ghost > a {
+	display: inline-block;
+	box-sizing: border-box;
+	font-family: var(--sfw-btn-font);
+	font-weight: 600;
+	font-size: 0.9375rem;
+	line-height: 1;
+	padding: 0.88em 1.5em;
+	border: 1px solid var(--sfw-green);
+	background: var(--sfw-green);
+	color: var(--sfw-white);
+	text-decoration: none;
+	text-transform: none;
+	letter-spacing: normal;
+	text-align: center;
+	cursor: pointer;
+	box-shadow: none;
+	border-radius: var(--sfw-btn-radius);
+	transition:
+		background var(--sfw-btn-dur) var(--sfw-btn-ease),
+		color var(--sfw-btn-dur) var(--sfw-btn-ease),
+		border-color var(--sfw-btn-dur) var(--sfw-btn-ease),
+		border-radius var(--sfw-btn-dur) var(--sfw-btn-ease),
+		transform 140ms var(--sfw-btn-ease),
+		box-shadow var(--sfw-btn-dur) var(--sfw-btn-ease);
+}
+
+button.btn,
+input.btn[type="submit"],
+input.btn[type="button"] {
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+a.btn:hover,
+a.btn:focus-visible,
+button.btn:hover,
+button.btn:focus-visible,
+input.btn[type="submit"]:hover,
+input.btn[type="button"]:hover,
+span.btn:hover,
+.nectar-button.btn:hover,
+.nectar-button.btn:focus-visible,
+.wp-block-button__link.btn:hover,
+.wp-block-button.btn .wp-block-button__link:hover,
+.nectar-cta.btn:hover .link_wrap,
+.nectar-cta.btn .link_wrap:hover,
+#header-outer li.btn > a:hover,
+#header-outer li.btn > a:focus-visible,
+#header-outer li.btn--donate > a:hover,
+#header-outer li.btn--ghost > a:hover {
+	background: var(--sfw-moss);
+	border-color: var(--sfw-moss);
+	color: var(--sfw-white);
+	border-radius: var(--sfw-btn-radius-hover);
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18);
+	text-decoration: none;
+	opacity: 1;
+}
+
+a.btn:active,
+button.btn:active,
+.nectar-button.btn:active,
+.nectar-cta.btn .link_wrap:active,
+#header-outer li.btn > a:active {
+	transform: translateY(0);
+	box-shadow: none;
+}
+
+a.btn:focus-visible,
+button.btn:focus-visible,
+.nectar-button.btn:focus-visible,
+.wp-block-button__link.btn:focus-visible,
+#header-outer li.btn > a:focus-visible {
+	outline: 3px solid var(--sfw-green);
+	outline-offset: 2px;
+}
+
+/* Ghost / outline (Programs) */
+a.btn.btn--ghost,
+button.btn.btn--ghost,
+span.btn.btn--ghost,
+.nectar-button.btn--ghost,
+.nectar-button.see-through.btn,
+.nectar-button.see-through-2.btn,
+.nectar-button.see-through-3.btn,
+.wp-block-button__link.btn--ghost,
+.wp-block-button.btn--ghost .wp-block-button__link,
+.wp-block-button.is-style-outline.btn .wp-block-button__link,
+.nectar-cta.btn--ghost .link_wrap,
+#header-outer li.btn--ghost > a {
+	background: transparent;
+	color: var(--sfw-green);
+	border-color: var(--sfw-green);
+}
+
+a.btn.btn--ghost:hover,
+a.btn.btn--ghost:focus-visible,
+button.btn.btn--ghost:hover,
+.nectar-button.btn--ghost:hover,
+.nectar-button.btn--ghost:focus-visible,
+.nectar-button.see-through.btn:hover,
+.wp-block-button__link.btn--ghost:hover,
+.wp-block-button.btn--ghost .wp-block-button__link:hover,
+.wp-block-button.is-style-outline.btn .wp-block-button__link:hover,
+.nectar-cta.btn--ghost:hover .link_wrap,
+.nectar-cta.btn--ghost .link_wrap:hover,
+#header-outer li.btn--ghost > a:hover,
+#header-outer li.btn--ghost > a:focus-visible {
+	background: var(--sfw-green);
+	border-color: var(--sfw-green);
+	color: var(--sfw-white);
+}
+
+/* Donate / gold */
+a.btn.btn--donate,
+button.btn.btn--donate,
+span.btn.btn--donate,
+.nectar-button.btn--donate,
+.wp-block-button__link.btn--donate,
+.wp-block-button.btn--donate .wp-block-button__link,
+.nectar-cta.btn--donate .link_wrap,
+#header-outer li.btn--donate > a {
+	background: var(--sfw-gold);
+	border-color: var(--sfw-gold);
+	color: var(--sfw-soil);
+}
+
+a.btn.btn--donate:hover,
+a.btn.btn--donate:focus-visible,
+button.btn.btn--donate:hover,
+.nectar-button.btn--donate:hover,
+.nectar-button.btn--donate:focus-visible,
+.wp-block-button__link.btn--donate:hover,
+.wp-block-button.btn--donate .wp-block-button__link:hover,
+.nectar-cta.btn--donate:hover .link_wrap,
+.nectar-cta.btn--donate .link_wrap:hover,
+#header-outer li.btn--donate > a:hover,
+#header-outer li.btn--donate > a:focus-visible {
+	background: var(--sfw-gold-hover);
+	border-color: var(--sfw-gold-hover);
+	color: var(--sfw-soil);
+}
+
+/* White / inverse — for dark backgrounds */
+a.btn.btn--white,
+button.btn.btn--white,
+span.btn.btn--white,
+.nectar-button.btn--white,
+.wp-block-button__link.btn--white,
+.wp-block-button.btn--white .wp-block-button__link,
+.nectar-cta.btn--white .link_wrap,
+#header-outer li.btn--white > a {
+	background: transparent;
+	border-color: var(--sfw-white);
+	color: var(--sfw-white);
+}
+
+a.btn.btn--white:hover,
+a.btn.btn--white:focus-visible,
+button.btn.btn--white:hover,
+.nectar-button.btn--white:hover,
+.nectar-button.btn--white:focus-visible,
+.wp-block-button__link.btn--white:hover,
+.wp-block-button.btn--white .wp-block-button__link:hover,
+.nectar-cta.btn--white:hover .link_wrap,
+.nectar-cta.btn--white .link_wrap:hover,
+#header-outer li.btn--white > a:hover,
+#header-outer li.btn--white > a:focus-visible {
+	background: var(--sfw-white);
+	border-color: var(--sfw-white);
+	color: var(--sfw-moss);
+}
+
+/* Side-by-side group, as on the prototype hero */
+.btn-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+p a.btn {
+	margin-right: 0.75rem;
+	margin-bottom: 0.35rem;
+}
+
+p a.btn:last-child {
+	margin-right: 0;
+}
+
+/* Salient Button: organic corners even without extra classes */
+body .nectar-button {
+	font-family: var(--sfw-btn-font);
+	font-weight: 600;
+	box-shadow: none;
+	border-radius: var(--sfw-btn-radius);
+	transition:
+		background var(--sfw-btn-dur) var(--sfw-btn-ease),
+		color var(--sfw-btn-dur) var(--sfw-btn-ease),
+		border-color var(--sfw-btn-dur) var(--sfw-btn-ease),
+		border-radius var(--sfw-btn-dur) var(--sfw-btn-ease),
+		transform 140ms var(--sfw-btn-ease),
+		box-shadow var(--sfw-btn-dur) var(--sfw-btn-ease),
+		opacity 0.45s cubic-bezier(0.25, 1, 0.33, 1);
+}
+
+body .nectar-button:hover,
+body .nectar-button:focus-visible {
+	border-radius: var(--sfw-btn-radius-hover);
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18);
+	opacity: 1;
+}
+
+body .nectar-button.btn,
+body .nectar-button.btn--ghost,
+body .nectar-button.btn--white,
+body .nectar-button.btn--donate {
+	box-shadow: none !important;
+	padding: 0.88em 1.5em !important;
+	font-size: 0.9375rem !important;
+	line-height: 1 !important;
+	margin-bottom: 0;
+}
+
+body .nectar-button.btn:hover,
+body .nectar-button.btn--ghost:hover,
+body .nectar-button.btn--white:hover,
+body .nectar-button.btn--donate:hover {
+	opacity: 1 !important;
+}
+
+/* WPBakery Call to Action: Extra Class Name = btn / btn--ghost / btn--donate */
+body #ajax-content-wrap .nectar-cta.btn,
+body #ajax-content-wrap .nectar-cta.btn--ghost,
+body #ajax-content-wrap .nectar-cta.btn--white,
+body #ajax-content-wrap .nectar-cta.btn--donate {
+	display: inline-block !important;
+	width: auto !important;
+	max-width: 100%;
+	vertical-align: middle;
+	margin-right: 0.85rem;
+	margin-bottom: 0.85rem !important;
+	font-size: 0.9375rem !important;
+}
+
+body #ajax-content-wrap .nectar-cta.btn .nectar-button-type,
+body #ajax-content-wrap .nectar-cta.btn--ghost .nectar-button-type,
+body #ajax-content-wrap .nectar-cta.btn--white .nectar-button-type,
+body #ajax-content-wrap .nectar-cta.btn--donate .nectar-button-type,
+body #ajax-content-wrap .nectar-cta.btn .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn--white .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn--donate .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn .link_text,
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_text,
+body #ajax-content-wrap .nectar-cta.btn--white .link_text,
+body #ajax-content-wrap .nectar-cta.btn--donate .link_text,
+body #ajax-content-wrap .nectar-cta.btn .text,
+body #ajax-content-wrap .nectar-cta.btn--ghost .text,
+body #ajax-content-wrap .nectar-cta.btn--white .text,
+body #ajax-content-wrap .nectar-cta.btn--donate .text {
+	font-family: var(--sfw-btn-font) !important;
+	font-weight: 600 !important;
+	font-size: 0.9375rem !important;
+	line-height: 1 !important;
+	letter-spacing: normal !important;
+	text-transform: none !important;
+}
+
+body #ajax-content-wrap .nectar-cta.btn .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn--white .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn--donate .link_wrap {
+	display: inline-flex !important;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 0.88em 1.5em !important;
+	border: 1px solid var(--sfw-green) !important;
+	background: var(--sfw-green) !important;
+	background-color: var(--sfw-green) !important;
+	color: var(--sfw-white) !important;
+	border-radius: var(--sfw-btn-radius) !important;
+	box-shadow: none !important;
+	cursor: pointer;
+	transition:
+		background var(--sfw-btn-dur) var(--sfw-btn-ease),
+		color var(--sfw-btn-dur) var(--sfw-btn-ease),
+		border-color var(--sfw-btn-dur) var(--sfw-btn-ease),
+		border-radius var(--sfw-btn-dur) var(--sfw-btn-ease),
+		transform 140ms var(--sfw-btn-ease),
+		box-shadow var(--sfw-btn-dur) var(--sfw-btn-ease);
+}
+
+body #ajax-content-wrap .nectar-cta.btn .link_wrap a,
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_wrap a,
+body #ajax-content-wrap .nectar-cta.btn--white .link_wrap a,
+body #ajax-content-wrap .nectar-cta.btn--donate .link_wrap a,
+body #ajax-content-wrap .nectar-cta.btn .link_text,
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_text,
+body #ajax-content-wrap .nectar-cta.btn--white .link_text,
+body #ajax-content-wrap .nectar-cta.btn--donate .link_text,
+body #ajax-content-wrap .nectar-cta.btn .text,
+body #ajax-content-wrap .nectar-cta.btn--ghost .text,
+body #ajax-content-wrap .nectar-cta.btn--white .text,
+body #ajax-content-wrap .nectar-cta.btn--donate .text,
+body #ajax-content-wrap .nectar-cta.btn .nectar-button-type,
+body #ajax-content-wrap .nectar-cta.btn--ghost .nectar-button-type,
+body #ajax-content-wrap .nectar-cta.btn--white .nectar-button-type,
+body #ajax-content-wrap .nectar-cta.btn--donate .nectar-button-type {
+	color: inherit !important;
+	padding: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+body #ajax-content-wrap .nectar-cta.btn .link_text:before,
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_text:before,
+body #ajax-content-wrap .nectar-cta.btn--white .link_text:before,
+body #ajax-content-wrap .nectar-cta.btn--donate .link_text:before,
+body #ajax-content-wrap .nectar-cta.btn .link_text:after,
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_text:after,
+body #ajax-content-wrap .nectar-cta.btn--white .link_text:after,
+body #ajax-content-wrap .nectar-cta.btn--donate .link_text:after,
+body #ajax-content-wrap .nectar-cta.btn .link_wrap:before,
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_wrap:before,
+body #ajax-content-wrap .nectar-cta.btn--white .link_wrap:before,
+body #ajax-content-wrap .nectar-cta.btn--donate .link_wrap:before,
+body #ajax-content-wrap .nectar-cta.btn .link_wrap:after,
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_wrap:after,
+body #ajax-content-wrap .nectar-cta.btn--white .link_wrap:after,
+body #ajax-content-wrap .nectar-cta.btn--donate .link_wrap:after {
+	display: none !important;
+	content: none !important;
+}
+
+body #ajax-content-wrap .nectar-cta.btn:hover .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn .link_wrap:hover {
+	background: var(--sfw-moss) !important;
+	background-color: var(--sfw-moss) !important;
+	border-color: var(--sfw-moss) !important;
+	color: var(--sfw-white) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18) !important;
+}
+
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_wrap {
+	background: transparent !important;
+	background-color: transparent !important;
+	border-color: var(--sfw-green) !important;
+	color: var(--sfw-green) !important;
+}
+
+body #ajax-content-wrap .nectar-cta.btn--ghost:hover .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn--ghost .link_wrap:hover {
+	background: var(--sfw-green) !important;
+	background-color: var(--sfw-green) !important;
+	border-color: var(--sfw-green) !important;
+	color: var(--sfw-white) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18) !important;
+}
+
+body #ajax-content-wrap .nectar-cta.btn--donate .link_wrap {
+	background: var(--sfw-gold) !important;
+	background-color: var(--sfw-gold) !important;
+	border-color: var(--sfw-gold) !important;
+	color: var(--sfw-soil) !important;
+}
+
+body #ajax-content-wrap .nectar-cta.btn--donate:hover .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn--donate .link_wrap:hover {
+	background: var(--sfw-gold-hover) !important;
+	background-color: var(--sfw-gold-hover) !important;
+	border-color: var(--sfw-gold-hover) !important;
+	color: var(--sfw-soil) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18) !important;
+}
+
+body #ajax-content-wrap .nectar-cta.btn--white .link_wrap {
+	background: transparent !important;
+	background-color: transparent !important;
+	border-color: var(--sfw-white) !important;
+	color: var(--sfw-white) !important;
+}
+
+body #ajax-content-wrap .nectar-cta.btn--white:hover .link_wrap,
+body #ajax-content-wrap .nectar-cta.btn--white .link_wrap:hover {
+	background: var(--sfw-white) !important;
+	background-color: var(--sfw-white) !important;
+	border-color: var(--sfw-white) !important;
+	color: var(--sfw-moss) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18) !important;
+}
+
+/* WPBakery Button element: Extra Class Name = btn / btn--ghost / btn--donate */
+body #ajax-content-wrap .nectar-button.btn,
+body #ajax-content-wrap .nectar-button.btn--ghost,
+body #ajax-content-wrap .nectar-button.btn--white,
+body #ajax-content-wrap .nectar-button.btn--donate {
+	display: inline-flex !important;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--sfw-btn-font) !important;
+	font-weight: 600 !important;
+	font-size: 0.9375rem !important;
+	line-height: 1 !important;
+	padding: 0.88em 1.5em !important;
+	margin-bottom: 0 !important;
+	border: 1px solid var(--sfw-green) !important;
+	background: var(--sfw-green) !important;
+	background-color: var(--sfw-green) !important;
+	color: var(--sfw-white) !important;
+	border-radius: var(--sfw-btn-radius) !important;
+	box-shadow: none !important;
+	opacity: 1 !important;
+	text-transform: none !important;
+	letter-spacing: normal !important;
+}
+
+body #ajax-content-wrap .nectar-button.btn span,
+body #ajax-content-wrap .nectar-button.btn--ghost span,
+body #ajax-content-wrap .nectar-button.btn--white span,
+body #ajax-content-wrap .nectar-button.btn--donate span {
+	color: inherit !important;
+	font: inherit !important;
+	transform: none !important;
+}
+
+body #ajax-content-wrap .nectar-button.btn:hover,
+body #ajax-content-wrap .nectar-button.btn:focus-visible {
+	background: var(--sfw-moss) !important;
+	background-color: var(--sfw-moss) !important;
+	border-color: var(--sfw-moss) !important;
+	color: var(--sfw-white) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	opacity: 1 !important;
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18) !important;
+}
+
+body #ajax-content-wrap .nectar-button.btn--ghost {
+	background: transparent !important;
+	background-color: transparent !important;
+	border-color: var(--sfw-green) !important;
+	color: var(--sfw-green) !important;
+}
+
+body #ajax-content-wrap .nectar-button.btn--ghost:hover,
+body #ajax-content-wrap .nectar-button.btn--ghost:focus-visible {
+	background: var(--sfw-green) !important;
+	background-color: var(--sfw-green) !important;
+	border-color: var(--sfw-green) !important;
+	color: var(--sfw-white) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	opacity: 1 !important;
+}
+
+body #ajax-content-wrap .nectar-button.btn--donate {
+	background: var(--sfw-gold) !important;
+	background-color: var(--sfw-gold) !important;
+	border-color: var(--sfw-gold) !important;
+	color: var(--sfw-soil) !important;
+}
+
+body #ajax-content-wrap .nectar-button.btn--donate:hover,
+body #ajax-content-wrap .nectar-button.btn--donate:focus-visible {
+	background: var(--sfw-gold-hover) !important;
+	background-color: var(--sfw-gold-hover) !important;
+	border-color: var(--sfw-gold-hover) !important;
+	color: var(--sfw-soil) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	opacity: 1 !important;
+}
+
+body #ajax-content-wrap .nectar-button.btn--white {
+	background: transparent !important;
+	background-color: transparent !important;
+	border-color: var(--sfw-white) !important;
+	color: var(--sfw-white) !important;
+}
+
+body #ajax-content-wrap .nectar-button.btn--white:hover,
+body #ajax-content-wrap .nectar-button.btn--white:focus-visible {
+	background: var(--sfw-white) !important;
+	background-color: var(--sfw-white) !important;
+	border-color: var(--sfw-white) !important;
+	color: var(--sfw-moss) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	opacity: 1 !important;
+}
+
+/* Header menu items: beat Salient's per-item color/padding (menu-dynamic.css). */
+body #header-outer #top nav ul > li.btn,
+body #header-outer #top nav ul > li.btn--ghost,
+body #header-outer #top nav ul > li.btn--white,
+body #header-outer #top nav ul > li.btn--donate {
+	display: flex;
+	align-items: center;
+	align-self: center;
+	height: auto;
+	padding: 0 6px;
+}
+
+body #header-outer #top nav ul > li.btn > a,
+body #header-outer #top nav ul > li.btn--ghost > a,
+body #header-outer #top nav ul > li.btn--white > a,
+body #header-outer #top nav ul > li.btn--donate > a {
+	display: inline-flex !important;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	height: auto !important;
+	min-height: 0 !important;
+	line-height: 1 !important;
+	padding: 0.88em 1.5em !important;
+	margin: 0 !important;
+	font-family: var(--sfw-btn-font) !important;
+	font-weight: 600 !important;
+	font-size: 0.9375rem !important;
+	letter-spacing: normal !important;
+	text-transform: none !important;
+	text-decoration: none !important;
+	border-width: 1px !important;
+	border-style: solid !important;
+	border-radius: var(--sfw-btn-radius) !important;
+	box-shadow: none !important;
+	background: var(--sfw-green) !important;
+	border-color: var(--sfw-green) !important;
+	color: var(--sfw-white) !important;
+	transition:
+		background var(--sfw-btn-dur) var(--sfw-btn-ease),
+		color var(--sfw-btn-dur) var(--sfw-btn-ease),
+		border-color var(--sfw-btn-dur) var(--sfw-btn-ease),
+		border-radius var(--sfw-btn-dur) var(--sfw-btn-ease),
+		transform 140ms var(--sfw-btn-ease),
+		box-shadow var(--sfw-btn-dur) var(--sfw-btn-ease);
+}
+
+body #header-outer #top nav ul > li.btn > a:before,
+body #header-outer #top nav ul > li.btn--ghost > a:before,
+body #header-outer #top nav ul > li.btn--white > a:before,
+body #header-outer #top nav ul > li.btn--donate > a:before,
+body #header-outer #top nav ul > li.btn > a:after,
+body #header-outer #top nav ul > li.btn--ghost > a:after,
+body #header-outer #top nav ul > li.btn--white > a:after,
+body #header-outer #top nav ul > li.btn--donate > a:after {
+	display: none !important;
+	content: none !important;
+}
+
+body #header-outer #top nav ul > li.btn > a .menu-title-text,
+body #header-outer #top nav ul > li.btn--ghost > a .menu-title-text,
+body #header-outer #top nav ul > li.btn--white > a .menu-title-text,
+body #header-outer #top nav ul > li.btn--donate > a .menu-title-text {
+	color: inherit !important;
+	line-height: 1 !important;
+	font: inherit !important;
+}
+
+body #header-outer #top nav ul > li.btn > a:hover,
+body #header-outer #top nav ul > li.btn > a:focus-visible {
+	background: var(--sfw-moss) !important;
+	border-color: var(--sfw-moss) !important;
+	color: var(--sfw-white) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18) !important;
+}
+
+body #header-outer #top nav ul > li.btn--ghost > a {
+	background: transparent !important;
+	border-color: var(--sfw-green) !important;
+	color: var(--sfw-green) !important;
+}
+
+body #header-outer #top nav ul > li.btn--ghost > a:hover,
+body #header-outer #top nav ul > li.btn--ghost > a:focus-visible {
+	background: var(--sfw-green) !important;
+	border-color: var(--sfw-green) !important;
+	color: var(--sfw-white) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18) !important;
+}
+
+body #header-outer #top nav ul > li.btn--donate > a {
+	background: var(--sfw-gold) !important;
+	border-color: var(--sfw-gold) !important;
+	color: var(--sfw-soil) !important;
+}
+
+body #header-outer #top nav ul > li.btn--donate > a:hover,
+body #header-outer #top nav ul > li.btn--donate > a:focus-visible {
+	background: var(--sfw-gold-hover) !important;
+	border-color: var(--sfw-gold-hover) !important;
+	color: var(--sfw-soil) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18) !important;
+}
+
+body #header-outer #top nav ul > li.btn--white > a {
+	background: transparent !important;
+	border-color: var(--sfw-white) !important;
+	color: var(--sfw-white) !important;
+}
+
+body #header-outer #top nav ul > li.btn--white > a:hover,
+body #header-outer #top nav ul > li.btn--white > a:focus-visible {
+	background: var(--sfw-white) !important;
+	border-color: var(--sfw-white) !important;
+	color: var(--sfw-moss) !important;
+	border-radius: var(--sfw-btn-radius-hover) !important;
+	transform: translateY(-1px);
+	box-shadow: 0 3px 10px rgba(34, 55, 31, 0.18) !important;
+}
+
+@media (max-width: 40em) {
+	body #header-outer #top nav ul > li.btn > a,
+	body #header-outer #top nav ul > li.btn--donate > a,
+	body #header-outer #top nav ul > li.btn--ghost > a,
+	body #header-outer #top nav ul > li.btn--white > a {
+		padding: 0.8em 1.05em !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	a.btn,
+	button.btn,
+	.nectar-button,
+	.nectar-cta.btn .link_wrap,
+	.nectar-cta.btn--ghost .link_wrap,
+	.nectar-cta.btn--white .link_wrap,
+	.nectar-cta.btn--donate .link_wrap,
+	#header-outer li.btn > a,
+	#header-outer li.btn--donate > a,
+	#header-outer li.btn--ghost > a,
+	#header-outer li.btn--white > a {
+		transition: background var(--sfw-btn-dur) var(--sfw-btn-ease), color var(--sfw-btn-dur) var(--sfw-btn-ease), border-color var(--sfw-btn-dur) var(--sfw-btn-ease);
+	}
+
+	a.btn:hover,
+	a.btn:focus-visible,
+	.nectar-button:hover,
+	.nectar-cta.btn:hover .link_wrap,
+	#header-outer li.btn > a:hover {
+		transform: none;
+		box-shadow: none;
+		border-radius: var(--sfw-btn-radius);
+	}
+}

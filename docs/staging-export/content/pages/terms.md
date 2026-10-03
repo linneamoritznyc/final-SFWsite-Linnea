@@ -1,0 +1,64 @@
+# Terms & Conditions – Soil Food Web Foundation
+
+Source: https://new.soilfoodweb.com/terms/  
+H1: Terms of Use  
+Words (main): 1358  
+Status: 200
+
+---
+
+# Terms of Use
+Soil Food Web Foundation Version 1.0 | Effective Date: October 16th, 2026
+## 1. Agreement
+These Terms of Use (“Terms”) govern your access to and use of the Soil Food Web Foundation’s (“Foundation”) website and services. The Foundation operates the Soil Food Web School as a doing-business-as (DBA) name; references to the “Soil Food Web School” refer to programs and activities of the Foundation.
+By using the website or services, you represent that you are at least 18 years old and agree to be bound by these Terms and all applicable laws. If you do not agree, do not use the website or services.
+Users in certain jurisdictions may have additional rights or protections under local law. Nothing in these Terms is intended to limit rights that cannot be waived under applicable law, including consumer protection laws in your country of residence.
+## 2. Educational Programs
+The Foundation offers a mix of free and paid courses, programs, and content. Program-specific terms — including pricing, access periods, and eligibility requirements — are set forth on the applicable program pages and are incorporated into these Terms by reference.
+The Foundation reserves the right to modify, suspend, or discontinue any program or content at its discretion without liability.
+## 3. Refund Policy
+Refund terms are specified at enrollment. Unless a program page states otherwise, you may request a full refund within 30 days of registration provided you have not accessed a substantial portion of the course content. No refunds are available after the applicable refund period. Refund requests should be directed to [email protected] .  
+  links: [[email protected]](https://new.soilfoodweb.com/cdn-cgi/l/email-protection)
+## 4. Donations
+The Foundation welcomes donations in support of its mission. The Soil Food Web Fund has been set up as a fiscally sponsored 501(c)(3) entity to accept tax-deductible donations pursuant to our mission. The Foundation’s application for independent 501(c)(3) tax-exempt status is pending with the IRS; donors should consult their tax advisor regarding deductibility. All donations are non-refundable except as required by law.
+## 5. Intellectual Property
+All website content — including text, images, video, audio, course materials, and software — is owned by or licensed to the Foundation and protected under U.S. and international intellectual property law. No content may be reproduced, distributed, or used for commercial purposes without the Foundation’s prior written consent. Nothing in these Terms grants any license to use the Foundation’s trademarks or proprietary materials.
+### 5.1 Open-Access Content
+Consistent with the Foundation’s mission of open knowledge sharing, certain materials may be designated as freely available under a Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0) or similar open license. Where content is so designated, it may be shared and adapted for non-commercial purposes with appropriate attribution to the Soil Food Web Foundation. Paid course content, Dr. Elaine Ingham’s archived research materials, and other materials not expressly designated as open-access remain subject to Section 5 above.
+### 5.2 Recording and Image Consent
+The Foundation may record program sessions (“Recordings”). By participating, you authorize the Foundation to use and publish Recordings and any derived photographs or media, including your name and likeness, for educational, promotional, and organizational purposes. This consent is voluntary; you waive any expectation of privacy or compensation with respect to such use.
+## 6. User Accounts
+You are solely responsible for maintaining the confidentiality of your account credentials and for all activity under your account. By registering, you consent to receive account-related and organizational communications from the Foundation. The Foundation is not liable for losses resulting from unauthorized account access caused by your failure to secure your credentials.
+## 7. Third-Party Educators and Affiliates
+The Foundation works with a global network of educators, practitioners, researchers, and affiliated contributors who are not employees of the Foundation. The Foundation is not responsible for the actions, advice, content, or representations of any such third parties. Any reliance on information or guidance provided by affiliated educators or practitioners is at your own risk.
+## 8. Community Code of Conduct
+Users participating in Foundation programs, live sessions, forums, or community spaces agree to engage respectfully and professionally. The following conduct is strictly prohibited: harassment, hate speech, or discrimination of any kind; plagiarism or misrepresentation of others’ work; misrepresentation of credentials or qualifications; and unauthorized reproduction or distribution of Dr. Elaine Ingham’s materials or other Foundation content. The Foundation reserves the right to remove any user from its community or programs for violations of these standards, without refund where applicable. A more detailed Community Guidelines document may be published separately and incorporated into these Terms by reference.
+## 9. Prohibited Conduct
+You may not:
+- Sell, sublicense, or transfer any rights granted under these Terms
+- Impersonate any person or entity or misrepresent your identity or affiliation
+- Use the website for any unlawful purpose
+- Circumvent or interfere with the website’s security features
+- Introduce malicious code or otherwise disrupt the website’s operation
+- Attempt unauthorized access to the website or its underlying systems
+## 10. Suspension and Termination
+The Foundation may suspend or terminate your access at any time, with or without cause, including for violation of these Terms.
+## 11. Disclaimer of Warranties
+The website and all content are provided “as is” and “as available” without warranty of any kind, express or implied, including warranties of merchantability, fitness for a particular purpose, or non-infringement. The Foundation does not warrant that the website will be uninterrupted, error-free, or free of harmful components.
+## 12. Limitation of Liability
+To the fullest extent permitted by law, the Foundation shall not be liable for any indirect, incidental, special, punitive, or consequential damages arising from your use of the website or services. The Foundation’s total liability for any claim shall not exceed the greater of (i) $100 or (ii) amounts you actually paid to the Foundation in the 12 months preceding the claim. These limitations apply regardless of the legal theory asserted and even if the Foundation has been advised of the possibility of such damages.
+## 13. Indemnification
+You agree to indemnify and hold harmless the Foundation and its officers, directors, employees, volunteers, and affiliated educators from any claims, damages, or expenses (including reasonable attorneys’ fees) arising from your violation of these Terms or any applicable law or third-party rights.
+## 14. Force Majeure
+The Foundation shall not be liable for any delay or failure to perform its obligations under these Terms where such delay or failure results from circumstances beyond its reasonable control, including but not limited to natural disasters, acts of government, platform or infrastructure outages, pandemics, or other events of force majeure. In such circumstances, the Foundation will make reasonable efforts to resume performance as soon as practicable.
+## 15. Dispute Resolution
+In the event of a dispute arising out of or relating to these Terms, the parties agree to first attempt resolution through good-faith negotiation. Either party may initiate this process by providing written notice describing the dispute. If the dispute is not resolved within 30 days of such notice, either party may pursue available legal remedies. Nothing in this section prevents the Foundation from seeking immediate injunctive or equitable relief where necessary to protect its intellectual property or confidential information.
+## 16. General Provisions
+Entire Agreement. These Terms, together with the Privacy Policy and any program-specific terms, constitute the entire agreement between you and the Foundation regarding use of the website and services.
+Severability. If any provision is found invalid or unenforceable, it will be modified to the minimum extent necessary, and the remaining provisions will remain in effect.
+No Waiver. The Foundation’s failure to enforce any provision of these Terms on any occasion shall not constitute a waiver of its right to enforce that provision or any other provision in the future.
+Modifications. The Foundation may update these Terms at any time by posting the revised version to the website. Continued use following posting constitutes acceptance. If you disagree with any changes, discontinue use of the website.
+Governing Law. These Terms are governed by the laws of the State of Oregon, without regard to conflict of law principles. Users residing in jurisdictions with mandatory consumer protection or data privacy laws retain any rights that cannot be contractually waived under those laws.
+## 17. Contact
+Soil Food Web Foundation 5441 S Macadam Ave Ste N, Portland, OR 97239 [email protected]  
+  links: [[email protected]](https://new.soilfoodweb.com/cdn-cgi/l/email-protection)

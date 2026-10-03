@@ -1,0 +1,30 @@
+/**
+ * Flip box: front title vs back copy, scoped so one side cannot restyle the other.
+ *
+ * Both faces use .inner, so rules like `.nectar-flip-box .inner { font-size: … }`
+ * change the back as well. Target .flip-box-front / .flip-box-back instead.
+ */
+
+body #ajax-content-wrap .nectar-flip-box .flip-box-front .inner,
+body #ajax-content-wrap .nectar-flip-box .flip-box-front .inner p,
+body #ajax-content-wrap .nectar-flip-box .flip-box-front .inner span,
+body #ajax-content-wrap .nectar-flip-box .flip-box-front .inner h1,
+body #ajax-content-wrap .nectar-flip-box .flip-box-front .inner h2,
+body #ajax-content-wrap .nectar-flip-box .flip-box-front .inner h3,
+body #ajax-content-wrap .nectar-flip-box .flip-box-front .inner h4 {
+	font-family: Montserrat, "Helvetica Neue", Arial, sans-serif !important;
+	font-size: clamp(1.35rem, 1.15rem + 0.7vw, 1.75rem) !important;
+	font-weight: 600 !important;
+	line-height: 1.2 !important;
+	letter-spacing: -0.01em;
+}
+
+body #ajax-content-wrap .nectar-flip-box .flip-box-back .inner,
+body #ajax-content-wrap .nectar-flip-box .flip-box-back .inner p,
+body #ajax-content-wrap .nectar-flip-box .flip-box-back .inner span {
+	font-family: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !important;
+	font-size: 0.9375rem !important;
+	font-weight: 400 !important;
+	line-height: 1.6 !important;
+	letter-spacing: normal;
+}

@@ -1,0 +1,47 @@
+/*
+Theme Name: Salient Child Theme
+Description: This is a custom child theme for Salient
+Theme URI:   https://themeforest.net/item/salient-responsive-multipurpose-theme/4363266
+Author: ThemeNectar
+Author URI:  https://themeforest.net/user/themenectar
+Template: salient
+Version: 1.0
+*/
+
+/* Art-directed post hero: never crop; height follows each image's aspect ratio. */
+.sfw-post-hero {
+	width: 100%;
+	max-width: 100%;
+	line-height: 0;
+}
+
+.sfw-post-hero__picture,
+.sfw-post-hero__img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.sfw-post-hero__img {
+	object-fit: contain;
+	object-position: center;
+}
+
+body.sfw-has-responsive-hero .sfw-post-hero {
+	position: relative;
+	z-index: 1;
+}
+
+/* In-content title sits on white; keep Salient default_minimal type readable. */
+body.sfw-has-responsive-hero .heading-title[data-header-style="default_minimal"] {
+	text-align: center;
+	padding-top: 30px;
+}
+
+body.sfw-has-responsive-hero .heading-title[data-header-style="default_minimal"] .entry-title {
+	color: inherit;
+}
+
+body.sfw-has-responsive-hero .heading-title[data-header-style="default_minimal"] #single-below-header {
+	color: inherit;
+}
