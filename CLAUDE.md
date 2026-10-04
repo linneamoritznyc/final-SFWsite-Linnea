@@ -71,8 +71,11 @@ and, on branch claude/staging-reality, docs/staging-reality.md (Fable's staging 
 - Supplied photos and diagrams go in img/new-2026-10/ (originals, not deployed) and are placed
   with `{{photo file="..." alt="..." caption="..." eager}}`: WebP up to 2400 px long side plus a
   1200 px version in img/new/ (srcset, no upscaling, never cropped to hide a BioRender credit).
-  Microscope photos get a short caption; diagrams and R5A shoot photos get none. R5A files are
-  flagged on /review/ until Evan confirms the rights. Bring an image from another branch only
+  Microscope photos get a short caption; diagrams and R5A shoot photos get none (SFW holds the
+  rights to the R5A shoot). `name="..."` sets a plain output name; `card` stops at 1200 px.
+  A second photo can overlap the first for depth: `<div class="layered">main<div class="layered__inset">...</div></div>`.
+  Every placed supplied image gets a row in docs/image-log-additions.csv for Stephanie's log
+  (never a personal Drive link in the Link column). Bring an image from another branch only
   if a page needs it.
 
 ## Before every commit

@@ -102,6 +102,12 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 }
 .split__media img, .media { width: 100%; border-radius: var(--radius); object-fit: cover; }
 .photo { margin: 1.5rem 0 0; }
+/* Layered photos: a second picture overlaps the corner of the first, for depth. */
+.layered { position: relative; margin-bottom: 2.5rem; }
+.layered__inset { position: absolute; left: -1.5rem; bottom: -2.5rem; width: 40%; }
+.layered__inset img, .hero__media .layered__inset img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border: 6px solid var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+.photo.layered > figcaption { padding-left: calc(40% - .5rem); min-height: 2.5rem; }
+@media (max-width: 47.99em) { .layered__inset { left: .75rem; bottom: -2rem; width: 36%; } .photo.layered > figcaption { padding-left: calc(36% + 1.5rem); } }
 .photo img { width: 100%; border-radius: var(--radius); }
 .photo figcaption { color: var(--ink-soft); font-size: .8125rem; margin-top: .5rem; }
 .cols-2 { display: grid; gap: 2rem 3.5rem; }

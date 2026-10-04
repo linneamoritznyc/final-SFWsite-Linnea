@@ -76,29 +76,36 @@ def img(src, alt=None, cls="", eager=False, sizes=None, name=None):
 
 NEW_SRC = os.path.join(ROOT, "img", "new-2026-10")   # originals, kept out of the deploy (.vercelignore)
 NEW_OUT = os.path.join(ROOT, "img", "new")
-NEW_FLAGS = {"r5a_": "needs rights confirmation from Evan (photographer's shoot)"}
+NEW_FLAGS = {}  # R5A shoot rights confirmed by Linnea, 4 October 2026
 
 
 def _loose(name):
     return re.sub(r"[\s_]+", " ", os.path.splitext(name)[0]).strip().lower()
 
 
-def photo(file, alt, cls="", eager=False, caption=None, sizes="(min-width: 64em) 50vw, 100vw"):
+def photo(file, alt, cls="", eager=False, caption=None, sizes="(min-width: 64em) 50vw, 100vw", name=None, full=True):
     """A supplied photo or diagram from img/new-2026-10/: WebP at up to 2400 px on the long
     side plus a 1200 px version for phones, no upscaling, never cropped (BioRender credits
-    stay visible). File names match loosely (underscores or spaces, any case)."""
-    from PIL import Image
+    stay visible). File names match loosely (underscores or spaces, any case). HEIC is read
+    via pillow-heif; phone photos are turned upright from their EXIF orientation. name sets
+    the output file name; full=False (cards) stops at 1200 px."""
+    from PIL import Image, ImageOps
+    try:
+        import pillow_heif
+        pillow_heif.register_heif_opener()
+    except ImportError:
+        pass
     want = _loose(file)
     hits = [f for f in os.listdir(NEW_SRC) if _loose(f) == want]
     if not hits:
         raise SystemExit("photo: %s not found in img/new-2026-10/" % file)
     srcf = os.path.join(NEW_SRC, hits[0])
-    slug = re.sub(r"[^a-z0-9]+", "-", want).strip("-")
+    slug = name or re.sub(r"[^a-z0-9]+", "-", want).strip("-")
     os.makedirs(NEW_OUT, exist_ok=True)
-    im = Image.open(srcf)
+    im = ImageOps.exif_transpose(Image.open(srcf))
     im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
     variants = []
-    for long_side in (2400, 1200):
+    for long_side in ((2400, 1200) if full else (1200,)):
         scale = min(1.0, long_side / max(im.size))
         w, h = round(im.size[0] * scale), round(im.size[1] * scale)
         if variants and w >= variants[-1][1]:
@@ -109,9 +116,9 @@ def photo(file, alt, cls="", eager=False, caption=None, sizes="(min-width: 64em)
             q = 82
             while True:
                 r.save(out, "WEBP", quality=q, method=6)
-                if os.path.getsize(out) <= (300 if max(w, h) <= 1600 else 600) * 1024 or q <= 50:
+                if os.path.getsize(out) <= 300 * 1024 or q <= 40:
                     break
-                q -= 6
+                q -= 4
         variants.append((os.path.relpath(out, ROOT), w, h))
     small = variants[-1]
     if _current is not None:
@@ -324,7 +331,10 @@ def render(text):
         if name == "photo":
             kv = {k: v for k, v in ATTR.findall(args)}
             extra = {"sizes": kv["sizes"]} if kv.get("sizes") else {}
-            return photo(kv["file"], kv["alt"], kv.get("class", ""), "eager" in kv, kv.get("caption") or None, **extra)
+            if kv.get("name"):
+                extra["name"] = kv["name"]
+            return photo(kv["file"], kv["alt"], kv.get("class", ""), "eager" in kv, kv.get("caption") or None,
+                         full="card" not in kv, **extra)
         return GEN[name](args)
     prev = None
     while prev != text:
