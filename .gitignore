@@ -35,3 +35,9 @@ exports/*.zip
 # Download cache for tools/asset-inventory.py
 _dev/asset-inventory-cache/
 _dev/asset-inventory-cache.log
+
+# Supplied originals that no page uses (they stay in Google Drive). Files the build
+# needs are committed explicitly and stay tracked.
+img/new-2026-10/R5A_*
+img/new-2026-10/*.HEIC
+img/new-2026-10/workshop-2025-veranda-1.jpg
