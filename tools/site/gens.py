@@ -147,7 +147,18 @@ def course_card(c, scroller=False, photos=False):
         attrs, card_image(c, title, photos), E(fix(c["kicker"])), A(href), E(title), E(fix(c["line"])), E(cta))
 
 
+# Repo photos for course cards that staging gives the same picture as another card.
+COURSE_IMAGES = [
+    ("Introduction to Ecosystem Restoration: Module 3", "img/erc-panchamana-garden.jpg"),
+    ("Introduction to Ecosystem Restoration: Module 4", "img/erc-panchamana-treeplanting-3-fb-img-1666271008784.jpg"),
+    ("Mini Foundation Course", "img/new-2026-10/R5A_4246.jpg"),
+]
+
+
 def card_image(c, title, photos):
+    for start, src in COURSE_IMAGES:
+        if title.startswith(start):
+            return img(src, "", "card__img")
     for start, f, alt in PROGRAM_PHOTOS if photos else ():
         if title.startswith(start):
             return B.photo(f, alt, "card__img", sizes="(min-width: 64em) 24rem, (min-width: 40em) 50vw, 100vw")

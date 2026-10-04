@@ -3692,6 +3692,30 @@
   "source_size": "2000x2000",
   "w": 1600
  },
+ "img/2025-year-in-review-gerald.webp": {
+  "alt": "Group of people gathered around a bucket on a floor",
+  "bytes": 228230,
+  "file": "img/2025-year-in-review-gerald-2.webp",
+  "flags": [],
+  "h": 1137,
+  "shows": "Seen from above, a group of about fifteen people stand and crouch in a circle around a white bucket on a concrete floor, looking at something one man in the centre is doing.",
+  "source": "repo",
+  "source_path": "img/2025-year-in-review-gerald.webp",
+  "source_size": "1600x1137",
+  "w": 1600
+ },
+ "img/Dr Elaine Ingham with Microscope.jpg": {
+  "alt": "",
+  "bytes": 227884,
+  "file": "img/dr-elaine-ingham-with-microscope.webp",
+  "flags": [],
+  "h": 2128,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/Dr Elaine Ingham with Microscope.jpg",
+  "source_size": "3516x4677",
+  "w": 1600
+ },
  "img/ctpfw-student-moving-compost-1.jpg": {
   "alt": "People turning and watering a compost pile in a wire bay.",
   "bytes": 119690,
@@ -3715,6 +3739,32 @@
   "source_path": "img/ctpfw-student-squeezing-compost-1.jpg",
   "source_size": "2000x1125",
   "w": 1600
+ },
+ "img/erc-panchamana-garden.jpg": {
+  "alt": "",
+  "bytes": 127886,
+  "file": "img/erc-panchamana-garden.webp",
+  "flags": [
+   "low resolution (641x540 source)"
+  ],
+  "h": 540,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/erc-panchamana-garden.jpg",
+  "source_size": "641x540",
+  "w": 641
+ },
+ "img/erc-panchamana-treeplanting-3-fb-img-1666271008784.jpg": {
+  "alt": "",
+  "bytes": 146350,
+  "file": "img/erc-panchamana-treeplanting-3-fb-img-1666271008784.webp",
+  "flags": [],
+  "h": 720,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/erc-panchamana-treeplanting-3-fb-img-1666271008784.jpg",
+  "source_size": "1080x720",
+  "w": 1080
  },
  "img/erc-panchmana-treeplanting-fb-img-1666270907385.jpg": {
   "alt": "",
@@ -3763,6 +3813,18 @@
   "source_path": "img/fungal-spores-in-suspension.jpg",
   "source_size": "2000x1533",
   "w": 1600
+ },
+ "img/new-2026-10/R5A_4246.jpg": {
+  "alt": "",
+  "bytes": 50866,
+  "file": "img/r5a-4246.webp",
+  "flags": [],
+  "h": 1000,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/R5A_4246.jpg",
+  "source_size": "1499x1000",
+  "w": 1499
  },
  "img/red-soil-hand.jpg": {
   "alt": "Open hand holding a clump of red crumbly soil.",
