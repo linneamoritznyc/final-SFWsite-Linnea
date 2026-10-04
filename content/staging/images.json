@@ -3716,6 +3716,18 @@
   "source_size": "2000x1125",
   "w": 1600
  },
+ "img/erc-panchmana-treeplanting-fb-img-1666270907385.jpg": {
+  "alt": "",
+  "bytes": 217048,
+  "file": "img/erc-panchmana-treeplanting-fb-img-1666270907385.webp",
+  "flags": [],
+  "h": 720,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/erc-panchmana-treeplanting-fb-img-1666270907385.jpg",
+  "source_size": "1080x720",
+  "w": 1080
+ },
  "img/erc-rancho-cacachilas-aerial-2.jpg": {
   "alt": "",
   "bytes": 287178,
@@ -3740,6 +3752,18 @@
   "source_size": "1500x1000",
   "w": 1500
  },
+ "img/fungal-spores-in-suspension.jpg": {
+  "alt": "",
+  "bytes": 215970,
+  "file": "img/fungal-spores-in-suspension.webp",
+  "flags": [],
+  "h": 1226,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/fungal-spores-in-suspension.jpg",
+  "source_size": "2000x1533",
+  "w": 1600
+ },
  "img/red-soil-hand.jpg": {
   "alt": "Open hand holding a clump of red crumbly soil.",
   "bytes": 246506,
@@ -3749,6 +3773,18 @@
   "shows": "A hand with a ring holds a clump of reddish brown crumbly soil over a field of the same red soil with bits of straw.",
   "source": "repo",
   "source_path": "img/red-soil-hand.jpg",
+  "source_size": "2000x2000",
+  "w": 1600
+ },
+ "img/soil-sample-close-up-test-tube.jpg": {
+  "alt": "",
+  "bytes": 102062,
+  "file": "img/soil-sample-close-up-test-tube.webp",
+  "flags": [],
+  "h": 1600,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/soil-sample-close-up-test-tube.jpg",
   "source_size": "2000x2000",
   "w": 1600
  },
@@ -3762,6 +3798,18 @@
   "source": "repo",
   "source_path": "img/uploads/Loida Teaching 3.JPG",
   "source_size": "1600x1066",
+  "w": 1600
+ },
+ "img/uploads/MAR Group Photo 2.jpg": {
+  "alt": "Large group posing around a compost pile under a shed.",
+  "bytes": 287588,
+  "file": "img/mar-group-photo-2-2.webp",
+  "flags": [],
+  "h": 1200,
+  "shows": "About thirty-five people in casual clothes pose for a group photo on a concrete floor under a green metal shed, around a large square compost pile. Blue barrels and trees are in the background.",
+  "source": "repo",
+  "source_path": "img/uploads/MAR Group Photo 2.jpg",
+  "source_size": "1600x1200",
   "w": 1600
  },
  "img/uploads/mar-group-photo-2.jpg": {

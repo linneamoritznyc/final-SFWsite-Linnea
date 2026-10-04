@@ -125,7 +125,10 @@ COURSE_EDITS = [
 PROGRAM_PHOTOS = [
     ("Soil Microscopy", "R5A_4247.jpg", "Microscope objective lens focused on a slide with a soil sample."),
     ("BioComplete™ Compost Production", "R5A_3985.jpg", "A woman turning a compost pile with a pitchfork, the cover pulled back."),
-    ("Foundation Course", "R5A_3994.jpg", "Compost thermometer dial reading the temperature inside a pile."),
+    ("Foundation Course 1", "R5A_4007.jpg", "A pitchfork lifting a load of dark compost from a pile."),
+    ("Foundation Course 2", "R5A_3994.jpg", "Compost thermometer dial reading the temperature inside a pile."),
+    ("Foundation Course 3", "R5A_4270.jpg", "Glass beakers, a pipette and a dropper on a sunny lab bench."),
+    ("Foundation Course 4", "R5A_4236.jpg", "Microscope objectives above a glass slide on the stage."),
 ]
 
 
@@ -154,7 +157,7 @@ def card_image(c, title, photos):
 @gen
 def courses(args):
     if args.strip():  # a short selection reads as a row of cards, no scroller
-        return '<ul class="grid">%s</ul>' % "".join(course_card(c, True) for c in data("courses")[:int(args)])
+        return '<ul class="grid">%s</ul>' % "".join(course_card(c, True, photos=True) for c in data("courses")[:int(args)])
     cs = data("courses")
     return ('<div data-scroller><div class="scroller-head"><h3 class="sr-only">Programs</h3>'
             '<div class="scroller-nav"><button type="button" data-scroll="-1" aria-label="Previous programs">&lsaquo;</button>'
