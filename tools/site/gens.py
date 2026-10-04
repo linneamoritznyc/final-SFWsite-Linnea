@@ -121,7 +121,15 @@ COURSE_EDITS = [
 ]
 
 
-def course_card(c, scroller=False):
+# Supplied photos for the program cards on /programs/ (October 2026 image brief). Other cards keep staging's.
+PROGRAM_PHOTOS = [
+    ("Soil Microscopy", "R5A_4247.jpg", "Microscope objective lens focused on a slide with a soil sample."),
+    ("BioComplete™ Compost Production", "R5A_3985.jpg", "A woman turning a compost pile with a pitchfork, the cover pulled back."),
+    ("Foundation Course", "R5A_3994.jpg", "Compost thermometer dial reading the temperature inside a pile."),
+]
+
+
+def course_card(c, scroller=False, photos=False):
     for a, b in COURSE_EDITS:
         c = dict(c, line=c["line"].replace(a, b))
     title = fix(c["title"]).replace(" : ", ": ")
@@ -133,7 +141,14 @@ def course_card(c, scroller=False):
     return ('<li%s><article class="card card--link">%s<div class="card__body"><p class="card__kicker">%s</p>'
             '<h3 class="card__title"><a href="%s">%s</a></h3><p class="card__text">%s</p>'
             '<p class="card__foot"><span class="more">%s</span></p></div></article></li>') % (
-        attrs, img(c["image"], "", "card__img"), E(fix(c["kicker"])), A(href), E(title), E(fix(c["line"])), E(cta))
+        attrs, card_image(c, title, photos), E(fix(c["kicker"])), A(href), E(title), E(fix(c["line"])), E(cta))
+
+
+def card_image(c, title, photos):
+    for start, f, alt in PROGRAM_PHOTOS if photos else ():
+        if title.startswith(start):
+            return B.photo(f, alt, "card__img", sizes="(min-width: 64em) 24rem, (min-width: 40em) 50vw, 100vw")
+    return img(c["image"], "", "card__img")
 
 
 @gen
@@ -161,7 +176,7 @@ def courses_grid(args):
             '<input id="prog-q" type="search" data-q placeholder="Search programs"></form>'
             '<p class="count" data-count data-one="program" data-many="programs" aria-live="polite"></p>'
             '<ul class="grid grid--3">%s</ul><p data-empty hidden>No programs match. Try another path.</p></div>') % (
-        chips, "".join(course_card(c) for c in cs))
+        chips, "".join(course_card(c, photos=True) for c in cs))
 
 
 @gen

@@ -7,7 +7,8 @@ Every internal href and src must resolve to a file (folder/index.html for
 pages) and every #anchor must exist on its target page. Also checks: one h1
 per page, noindex meta, no zoom blocking, no em dashes in text, no staging
 editorial notes ([VERIFY ...], [IMPACT LINES ...]), images WebP-or-svg under
-300 KB and at most 1600 px wide. Exits non-zero on any failure.
+300 KB and at most 1600 px wide
+(supplied photos in img/new/ may add a srcset variant up to 2400 px and 600 KB). Exits non-zero on any failure.
 """
 import os, re, sys, html, json
 from collections import defaultdict
@@ -81,15 +82,19 @@ def main():
     used = set()
     for h in docs.values():
         used.update(re.findall(r'src="/(img/[^"]+)"', h))
+        for ss in re.findall(r'srcset="([^"]+)"', h):
+            used.update(u.strip().split()[0].lstrip("/") for u in ss.split(","))
     for i in sorted(used):
         fp = os.path.join(ROOT, i)
         if not os.path.exists(fp):
             continue
-        if os.path.getsize(fp) > 300 * 1024:
+        # Supplied photos (img/new/) also ship a large srcset variant: up to 2400 px and 600 KB.
+        big = i.startswith("img/new/") and re.search(r"-(\d+)\.webp$", i) and int(re.search(r"-(\d+)\.webp$", i).group(1)) > 1600
+        if os.path.getsize(fp) > (600 if big else 300) * 1024:
             errors["images"].append("%s is %d KB" % (i, os.path.getsize(fp) // 1024))
         if i.endswith((".webp", ".png", ".jpg")):
-            w = Image.open(fp).size[0]
-            if w > 1600:
+            w = max(Image.open(fp).size) if big else Image.open(fp).size[0]
+            if w > (2400 if big else 1600):
                 errors["images"].append("%s is %d px wide" % (i, w))
     n = sum(len(v) for v in errors.values())
     for p, es in sorted(errors.items()):

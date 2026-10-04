@@ -101,6 +101,9 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
   .split--reverse > :first-child { order: 2; }
 }
 .split__media img, .media { width: 100%; border-radius: var(--radius); object-fit: cover; }
+.photo { margin: 1.5rem 0 0; }
+.photo img { width: 100%; border-radius: var(--radius); }
+.photo figcaption { color: var(--ink-soft); font-size: .8125rem; margin-top: .5rem; }
 .cols-2 { display: grid; gap: 2rem 3.5rem; }
 @media (min-width: 48em) { .cols-2 { grid-template-columns: 1fr 1fr; } }
 .stack > * + * { margin-top: 1rem; }

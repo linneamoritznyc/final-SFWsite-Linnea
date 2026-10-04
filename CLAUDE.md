@@ -67,7 +67,12 @@ and, on branch claude/staging-reality, docs/staging-reality.md (Fable's staging 
   1600 px wide and under 300 KB. `content/staging/images.json` records each source.
 - Alt text comes from image-descriptions.csv (sweet-babbage inventory), then
   content/alt.json, then the page. Screenshots and low-resolution sources are flagged
-  on /review/. Retired QR codes stay retired. Bring an image from another branch only
+  on /review/. Retired QR codes stay retired.
+- Supplied photos and diagrams go in img/new-2026-10/ (originals, not deployed) and are placed
+  with `{{photo file="..." alt="..." caption="..." eager}}`: WebP up to 2400 px long side plus a
+  1200 px version in img/new/ (srcset, no upscaling, never cropped to hide a BioRender credit).
+  Microscope photos get a short caption; diagrams and R5A shoot photos get none. R5A files are
+  flagged on /review/ until Evan confirms the rights. Bring an image from another branch only
   if a page needs it.
 
 ## Before every commit
