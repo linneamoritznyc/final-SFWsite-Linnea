@@ -440,6 +440,7 @@ input:focus, select:focus, textarea:focus { outline: 3px solid rgba(21, 104, 38,
 span.todo { display: inline; padding: .1rem .4rem; }
 .draft { transition: background var(--dur) var(--ease); }
 .is-review .draft { background: #FFF3B0; box-shadow: 0 0 0 3px #FFF3B0; border-radius: 3px; }
+.is-review .draft[data-from="title"]::after { content: " (written from the title only)"; font-style: italic; color: var(--ink-soft); }
 .preview-flag { background: var(--soil); color: var(--white); text-align: center; font-size: .8125rem; padding: .4rem var(--gutter); margin: 0; }
 .preview-flag a { color: var(--white); font-weight: 600; }
 

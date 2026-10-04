@@ -367,7 +367,9 @@ def pubs():
             p["kind"] = "Government publication"
         p["hide_citation"] = p["citation"] == "Journal citation not verified"  # 11
         b = blurbs.get(p["id"])
-        p["blurb"] = fix(b["blurb"]) if b else ""
+        text = fix(b["blurb"]).strip() if b else ""
+        p["blurb_title_only"] = text.endswith("[from title]")  # no abstract found; Carla checks these first
+        p["blurb"] = text.replace("[from title]", "").strip()
         p["blurb_source"] = b["source"] if b else ""
     return ps
 
@@ -423,7 +425,7 @@ def publications(args):
         for p in items:
             line = p["authors"] + ("" if p["hide_citation"] or not p["citation"] else " · " + p["citation"])
             links = " ".join('<a href="%s" rel="noopener">%s</a>' % (A(h), l) for l, h in pub_links(p))
-            why = ('<p class="entry__why"><b>Why read it:</b> <span class="draft">%s</span></p>' % E(p["blurb"])) if p["blurb"] else \
+            why = ('<p class="entry__why"><b>Why read it:</b> <span class="draft"%s>%s</span></p>' % (' data-from="title"' if p["blurb_title_only"] else "", E(p["blurb"]))) if p["blurb"] else \
                 '<p class="entry__why"><b>Why read it:</b> <span class="todo">one-sentence summary from the abstract; Carla Portugal checks</span></p>'
             rows.append('<li class="entry" data-item data-group="%s" data-topics="%s" data-text="%s"><span class="entry__year">%s</span>'
                         '<div><p class="entry__title"><a href="/publication/%s/">%s</a></p><p class="entry__line">%s</p>%s%s</div>'
@@ -668,7 +670,7 @@ def publication_pages():
         rows.append(("Collection", p["collection"]))
         if p["topics"]:
             rows.append(("Topics", ", ".join(p["topics"])))
-        why = '<p class="lead"><b>Why read it:</b> <span class="draft">%s</span></p>' % E(p["blurb"]) if p["blurb"] else TODO % "Why read it: one sentence from the abstract; Carla Portugal checks."
+        why = '<p class="lead"><b>Why read it:</b> <span class="draft"%s>%s</span></p>' % (' data-from="title"' if p["blurb_title_only"] else "", E(p["blurb"])) if p["blurb"] else TODO % "Why read it: one sentence from the abstract; Carla Portugal checks."
         extra = TODO % "Journal citation for this entry; Carla Portugal verifies it." if p["hide_citation"] else ""
         body = ('<section class="band"><div class="wrap wrap--narrow">%s<p class="eyebrow">%s</p><h1>%s</h1>%s'
                 '<dl class="kv">%s</dl>%s%s</div></section>') % (

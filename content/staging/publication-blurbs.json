@@ -1,0 +1,1074 @@
+[
+ {
+  "id": 1010,
+  "title": "Relationship between fluorescein diacetate-stained hyphae and oxygen utilization, glucose utilization and biomass of submerged fungal batch cultures",
+  "year": "1982",
+  "link": "https://doi.org/10.1128/aem.44.2.363-370.1982",
+  "blurb": "Tests whether fungal threads that pick up fluorescein diacetate stain are truly active, and finds the stain tracks growth, oxygen use and sugar use in lab-grown fungi.",
+  "source": "https://openalex.org/W2108634486"
+ },
+ {
+  "id": 1011,
+  "title": "The effect of chloroform on protozoa and other soil inhabitants",
+  "year": "1982",
+  "link": "https://new.soilfoodweb.com/publication/the-effect-of-chloroform-on-protozoa-and-other-soil-inhabitants/",
+  "blurb": "A short report on how chloroform fumigation affects soil protozoa and other small soil organisms. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1008,
+  "title": "Ultraviolet-induced autofluorescence of arbuscular mycorrhizal root infections: An alternative to clearing and staining methods for assessing infections",
+  "year": "1982",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:Se3iqnhoufwC",
+  "blurb": "Arbuscules, the tiny feeding structures of mycorrhizal fungi inside roots, glow under ultraviolet light, which gives a quicker way to measure root colonization than clearing and staining.",
+  "source": "https://openalex.org/W2073605915"
+ },
+ {
+  "id": 1009,
+  "title": "Ultraviolet-induced autofluorescence: a new method for detecting and quantifying vesicular-arbuscular mycorrhizal root infections",
+  "year": "1982",
+  "link": "https://new.soilfoodweb.com/publication/ultraviolet-induced-autofluorescence-a-new-method-for-detecting-and-quantifying-vesicular-arbuscular-mycorrhizal-root-infections/",
+  "blurb": "Describes using ultraviolet light to spot and measure mycorrhizal fungi inside plant roots without the usual staining work. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1016,
+  "title": "Effects of streptomycin, cycloheximide, fungizone, captan, carbofuran, cygon and PCNB on soil microbe populations and nutrient cycling",
+  "year": "1984",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:aqlVkmm33-oC",
+  "blurb": "Looks at how a set of common antibiotics, fungicides and insecticides change soil microbe numbers and the cycling of nutrients. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1015,
+  "title": "Phosphatase activity of Penicillium citrinum submerged batch cultures and its relationship to fungal activity",
+  "year": "1984",
+  "link": "https://doi.org/10.1007/BF02206894",
+  "blurb": "Lab study linking the phosphorus-releasing enzyme activity of a common soil fungus to how active that fungus is. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1014,
+  "title": "Rhizosphere bacterial population responses to root colonization by a vesicular-arbuscular mycorrhizal fungus",
+  "year": "1984",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:Zph67rFs4hoC",
+  "blurb": "Looks at how a mycorrhizal fungus on blue grama roots changes the bacteria living around those roots: some bacterial groups dropped while one species increased.",
+  "source": "https://openalex.org/W2082011586"
+ },
+ {
+  "id": 1013,
+  "title": "Soil fungi: Measurement of hyphal length",
+  "year": "1984",
+  "link": "https://doi.org/10.1016/0038-0717(84)90015-4",
+  "blurb": "A short method note on how to measure the length of fungal threads in soil. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1012,
+  "title": "Soil fungi: Relationships between hyphal activity and staining with fluorescein diacetate",
+  "year": "1984",
+  "link": "https://doi.org/10.1016/0038-0717(84)90014-2",
+  "blurb": "Checks whether a fluorescent stain can tell active soil fungi apart from inactive ones. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1021,
+  "title": "Filter-out grazers (FOG): A filtration experiment for separating protozoan grazers in soil",
+  "year": "1985",
+  "link": "https://doi.org/10.1007/BF00255133",
+  "blurb": "Sets out a filtering method that separates protozoa from the rest of the soil community, so their effect can be studied. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1017,
+  "title": "Interactions of bacteria, fungi and their nematode grazers: Effects on nutrient cycling and plant growth",
+  "year": "1985",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:RYcK_YlVTxYC",
+  "blurb": "Plants grown with bacteria and the nematodes that eat them grew faster and took up more nitrogen, because the grazing nematodes released nitrogen the plants could use.",
+  "source": "https://openalex.org/W2088335415"
+ },
+ {
+  "id": 1019,
+  "title": "Responses of microbial components of the rhizosphere to plant management strategies in semiarid rangeland",
+  "year": "1985",
+  "link": "https://doi.org/10.1007/BF02197801",
+  "blurb": "Compares the microbes living around roots under different ways of managing plants on dry rangeland. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1018,
+  "title": "Review of the effects of twelve selected biocides on target and non-target soil organisms",
+  "year": "1985",
+  "link": "https://new.soilfoodweb.com/publication/review-of-the-effects-of-twelve-selected-biocides-on-target-and-non-target-soil-organisms/",
+  "blurb": "Reviews what common pesticides do to the soil life they were never meant to hit, useful for anyone weighing chemical inputs. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1020,
+  "title": "Manipulation of bacteria, fungi and protozoa by biocides in lodgepole pine forest soil microcosms: Effects on organism interactions and nitrogen mineralization",
+  "year": "1986",
+  "link": "https://doi.org/10.4141/cjss86-028",
+  "blurb": "Uses selective biocides in forest soil to show how cutting back bacteria, fungi or protozoa changes how much plant-available nitrogen the soil releases.",
+  "source": "https://openalex.org/W1993205640"
+ },
+ {
+  "id": 1022,
+  "title": "Trophic interactions and nitrogen cycling in a semiarid grassland soil. Part I. Seasonal dynamics of the natural populations, their interactions and effects on nitrogen cycling",
+  "year": "1986",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:u5HHmVD_uO8C",
+  "blurb": "Follows soil bacteria, fungi, protozoa and nematodes through the seasons in a dry grassland, and how their feeding links drive nitrogen cycling. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1023,
+  "title": "Trophic interactions and nitrogen cycling in a semiarid grassland soil. Part II. System responses to removal of different groups of soil microbes or fauna",
+  "year": "1986",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:CHSYGLWDkRkC",
+  "blurb": "Removes selected groups of soil microbes or animals from grassland soil to see how each group affects nitrogen cycling. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1026,
+  "title": "Bacterial, fungal and protozoan responses to chloroform fumigation in stored prairie soil",
+  "year": "1987",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:hC7cP41nSMkC",
+  "blurb": "Measures how bacteria, fungi and protozoa in stored prairie soil respond to chloroform fumigation, a common step in biomass tests. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1025,
+  "title": "Inter- and intraspecific feeding selectivity of Folsomia candida (Willem) (Collembola, Isotomidae) on fungi: Method development and ecological consequences",
+  "year": "1987",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:D03iK_w7-QYC",
+  "blurb": "Develops a way to test which fungi springtails prefer to eat, and what those food choices mean for soil ecology. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1024,
+  "title": "The detrital food web in a short grass prairie",
+  "year": "1987",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:9ZlFYXVOiuMC",
+  "blurb": "Maps and measures the detrital food web of a short grass prairie: the soil organisms that feed on dead plant material and on each other. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1027,
+  "title": "Carbon, nitrogen, phosphorus and sulfur cycling in terrestrial ecosystems",
+  "year": "1988",
+  "link": "https://doi.org/10.1007/BF02180315",
+  "blurb": "An overview of how carbon, nitrogen, phosphorus and sulfur move through land ecosystems. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1029,
+  "title": "Early patterns of heterotroph activity in conifer logs",
+  "year": "1988",
+  "link": "https://www.cambridge.org/core/journals/proceedings-of-the-royal-society-of-edinburgh-section-b-biological-sciences/article/abs/early-patterns-of-heterotroph-activity-in-conifer-logs/6261E9D64E9229199D30E72B33CC7154",
+  "blurb": "Early results from a long-term study of rotting conifer logs, showing how bark and ambrosia beetles open channels and carry in the first decomposer community.",
+  "source": "https://openalex.org/W2268102040"
+ },
+ {
+  "id": 1031,
+  "title": "Interactions between soil animals and ectomycorrhizal fungal mats",
+  "year": "1988",
+  "link": "https://doi.org/10.1016/0167-8809(88)90063-1",
+  "blurb": "Explores how small soil animals interact with the dense mats that mycorrhizal fungi form under forest trees. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1028,
+  "title": "Nitrogen limitation of decomposition and primary production in short grass, mountain meadow and lodgepole pine forest",
+  "year": "1988",
+  "link": "https://doi.org/10.2307/1941256",
+  "blurb": "Decomposition and plant growth were tested against added or reduced nitrogen in prairie, meadow and pine forest; each leaf litter broke down fastest in its home ecosystem.",
+  "source": "https://openalex.org/W2113950208"
+ },
+ {
+  "id": 1083,
+  "title": "Report on the selection of several potentially critical terrestrial systems",
+  "year": "1988",
+  "link": "https://new.soilfoodweb.com/publication/report-on-the-selection-of-several-potentially-critical-terrestrial-systems/",
+  "blurb": "A report for the US Environmental Protection Agency on choosing land ecosystems that may be most at risk. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1030,
+  "title": "Social and economic concerns with respect to the choice of critical terrestrial ecosystems",
+  "year": "1988",
+  "link": "https://new.soilfoodweb.com/publication/social-and-economic-concerns-with-respect-to-the-choice-of-critical-terrestrial-ecosystems/",
+  "blurb": "Considers the social and economic questions involved in deciding which land ecosystems to treat as critical. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1084,
+  "title": "A general model of biotic interactions",
+  "year": "1989",
+  "link": "https://new.soilfoodweb.com/publication/a-general-model-of-biotic-interactions/",
+  "blurb": "Sets out a general model of how living organisms interact with each other, prepared for the US Environmental Protection Agency. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1032,
+  "title": "Analysis of food-web structure and function in a short grass prairie, a mountain meadow and lodgepole pine forest",
+  "year": "1989",
+  "link": "https://doi.org/10.1007/BF00260513",
+  "blurb": "Compares how soil food webs are built and how they function in a prairie, a mountain meadow and a pine forest. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1034,
+  "title": "Seasonal and faunal effects on decomposition in semiarid prairie, meadow and lodgepole pine forest",
+  "year": "1990",
+  "link": "https://doi.org/10.1016/S0031-4056(24)00022-2",
+  "blurb": "Looks at how season and soil animals affect the breakdown of plant litter in prairie, meadow and pine forest. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1033,
+  "title": "Use of staining and inhibitors to separate fungal and bacterial activity in soil",
+  "year": "1990",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:pyW8ca7W8N0C",
+  "blurb": "Shows how stains and selective inhibitors can be used to tell fungal activity apart from bacterial activity in soil. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1036,
+  "title": "A comparison of agar film techniques for estimating fungal biovolumes in litter and soil",
+  "year": "1991",
+  "link": "https://doi.org/10.1016/0167-8809(91)90101-3",
+  "blurb": "Compares agar film methods for estimating how much fungus is in leaf litter and soil. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1085,
+  "title": "Bioresponse of nontarget organisms resulting from the use of chloropicrin to control laminated root rot in a northwest conifer forest",
+  "year": "1991",
+  "link": "https://new.soilfoodweb.com/publication/bioresponse-of-nontarget-organisms-resulting-from-the-use-of-chloropicrin-to-control-laminated-root-rot-in-a-northwest-conifer-forest/",
+  "blurb": "Reports how soil organisms that were not the target responded when chloropicrin was used against laminated root rot in a conifer forest. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1035,
+  "title": "Comparison of direct versus fumigation incubation microbial biomass estimates in ectomycorrhizal mat and non-mat soils",
+  "year": "1991",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:iH-uZ7U-co4C",
+  "blurb": "Compares two ways of estimating microbial biomass in forest soils with and without dense fungal mats. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1078,
+  "title": "Interactions among mycorrhizal fungi, rhizosphere organisms, and plants",
+  "year": "1991",
+  "link": "https://andrewsforest.oregonstate.edu/publications/967",
+  "blurb": "Explains how mycorrhizal fungi change root exudates, nutrient uptake and the wider root-zone food web, with knock-on effects on disease, decomposition, soil structure and plant competition.",
+  "source": "https://andrewsforest.oregonstate.edu/sites/default/files/lter/pubs/pdf/pub967.pdf"
+ },
+ {
+  "id": 1037,
+  "title": "Microbial characteristics of ectomycorrhizal mat communities in Oregon and California",
+  "year": "1991",
+  "link": "https://doi.org/10.1007/BF00335767",
+  "blurb": "Describes the microbes found in dense mycorrhizal fungal mats in forest soils of Oregon and California. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1038,
+  "title": "Reduction of microbial and faunal groups following application of streptomycin and captan in Georgia no-till agroecosystems",
+  "year": "1991",
+  "link": "https://new.soilfoodweb.com/publication/reduction-of-microbial-and-faunal-groups-following-application-of-streptomycin-and-captan-in-georgia-no-till-agroecosystems/",
+  "blurb": "Tracks which soil microbes and small animals declined after an antibiotic and a fungicide were applied in no-till fields in Georgia. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1039,
+  "title": "Decomposition of fallen trees: Effects of initial conditions and heterotroph colonization rates",
+  "year": "1992",
+  "link": "https://andrewsforest.oregonstate.edu/sites/default/files/lter/pubs/pdf/pub1122.pdf",
+  "blurb": "Following newly cut conifer logs for two years shows that the insects and decomposers that move in first, plus the log's own chemistry, shape how fallen trees rot.",
+  "source": "https://andrewsforest.oregonstate.edu/sites/default/files/lter/pubs/pdf/pub1122.pdf"
+ },
+ {
+  "id": 1086,
+  "title": "Evaluation of terrestrial indicators for use in ecological assessments at hazardous waste sites",
+  "year": "1992",
+  "link": "https://new.soilfoodweb.com/publication/evaluation-of-terrestrial-indicators-for-use-in-ecological-assessments-at-hazardous-waste-sites/",
+  "blurb": "A US Environmental Protection Agency report weighing which soil and land indicators work best for assessing hazardous waste sites. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1040,
+  "title": "The functional significance and regulation of soil biodiversity: An executive summary of the Soil Ecology Society meeting",
+  "year": "1993",
+  "link": "https://new.soilfoodweb.com/publication/the-functional-significance-and-regulation-of-soil-biodiversity-an-executive-summary-of-the-soil-ecology-society-meeting/",
+  "blurb": "Summarises a Soil Ecology Society meeting on why soil biodiversity matters and what regulates it. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1041,
+  "title": "The sustainable biosphere initiative: A commentary from the U.S. Soil Ecology Society",
+  "year": "1993",
+  "link": "https://new.soilfoodweb.com/publication/the-sustainable-biosphere-initiative-a-commentary-from-the-u-s-soil-ecology-society/",
+  "blurb": "The US Soil Ecology Society's response to the Sustainable Biosphere Initiative, making the case for soil ecology research. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1087,
+  "title": "Use of soil foodweb structure and function to assess superfund sites",
+  "year": "1993",
+  "link": "https://new.soilfoodweb.com/publication/use-of-soil-foodweb-structure-and-function-to-assess-superfund-sites/",
+  "blurb": "Proposes using the structure and function of the soil food web to assess contaminated Superfund sites. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1042,
+  "title": "Population responses of target and non-target forest-soil organisms to selected biocides",
+  "year": "1994",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:g5m5HwL7SMYC",
+  "blurb": "Measures how forest soil organisms, both targeted and untargeted, respond to selected pesticides. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1045,
+  "title": "Protozoan communities around conifer roots colonized by ectomycorrhizal fungi",
+  "year": "1994",
+  "link": "https://doi.org/10.1007/BF00204020",
+  "blurb": "Describes the protozoa living around conifer roots that carry mycorrhizal fungi. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1043,
+  "title": "Soil organisms and forest health",
+  "year": "1994",
+  "link": "https://new.soilfoodweb.com/publication/soil-organisms-and-forest-health/",
+  "blurb": "A magazine piece on how soil organisms support healthy forests. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1047,
+  "title": "Soil protozoa",
+  "year": "1994",
+  "link": "https://new.soilfoodweb.com/publication/soil-protozoa/",
+  "blurb": "A methods chapter on how to sample and count protozoa in soil. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1089,
+  "title": "Standard Operating Procedure for Total Bacteria",
+  "year": "1994",
+  "link": "https://new.soilfoodweb.com/publication/standard-operating-procedure-for-total-bacteria/",
+  "blurb": "A standard lab procedure for counting total bacteria in soil, written for a US Environmental Protection Agency program. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1044,
+  "title": "Use of sulfamethoxazole-penicillin, oxytetracycline, carbofuran, carbaryl, naphthalene and Temik to remove key organism groups in soil in a corn agroecosystem",
+  "year": "1994",
+  "link": "https://doi.org/10.1300/J064v04n03_03",
+  "blurb": "Tests which pesticides can knock out particular soil organism groups for research, and finds most insecticides tested left bacteria, fungi and protozoa largely unaffected.",
+  "source": "https://openalex.org/W2150808842"
+ },
+ {
+  "id": 1046,
+  "title": "Assessing interactions between the soil foodweb and a strain of Pseudomonas putida genetically engineered to degrade 2,4-D",
+  "year": "1995",
+  "link": "https://new.soilfoodweb.com/publication/assessing-interactions-between-the-soil-foodweb-and-a-strain-of-pseudomonas-putida-genetically-engineered-to-degrade-24-d/",
+  "blurb": "Tests how a genetically engineered bacterium made to break down the herbicide 2,4-D interacts with the soil food web. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1093,
+  "title": "Biosafety regulation",
+  "year": "1995",
+  "link": "https://new.soilfoodweb.com/publication/biosafety-regulation/",
+  "blurb": "A report on how the release of genetically engineered organisms is, and should be, regulated for safety. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1092,
+  "title": "Biosafety regulations: A critique of existing documents",
+  "year": "1995",
+  "link": "https://new.soilfoodweb.com/publication/biosafety-regulations-a-critique-of-existing-documents/",
+  "blurb": "Critiques existing biosafety regulations for genetically engineered organisms and points out their gaps. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1079,
+  "title": "Microflora and microfauna on stems and trunks: Diversity, food webs and effects on plants",
+  "year": "1995",
+  "link": "https://doi.org/10.1016/B978-012276460-8/50013-8",
+  "blurb": "A book chapter on the microbes and tiny animals living on plant stems and tree trunks, and how they affect plants. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1088,
+  "title": "Standard Operating Procedure for Microbial Population Dynamics",
+  "year": "1995",
+  "link": "https://new.soilfoodweb.com/publication/standard-operating-procedure-for-microbial-population-dynamics/",
+  "blurb": "A standard lab procedure for measuring how soil microbe populations change over time. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1090,
+  "title": "Standard Operating Procedure for Nematode Population and Community Structure",
+  "year": "1995",
+  "link": "https://new.soilfoodweb.com/publication/standard-operating-procedure-for-nematode-population-and-community-structure/",
+  "blurb": "A standard lab procedure for counting soil nematodes and identifying their feeding groups. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1091,
+  "title": "Standard Operating Procedure for Protozoan Populations and Community Structure",
+  "year": "1995",
+  "link": "https://new.soilfoodweb.com/publication/standard-operating-procedure-for-protozoan-populations-and-community-structure/",
+  "blurb": "A standard lab procedure for counting soil protozoa and describing their community. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1048,
+  "title": "Foundations of bio-diversity in managed Douglas-fir forests",
+  "year": "1996",
+  "link": "https://new.soilfoodweb.com/publication/foundations-of-bio-diversity-in-managed-douglas-fir-forests/",
+  "blurb": "Discusses what underpins biodiversity in managed Douglas-fir forests, with attention to soil life. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1049,
+  "title": "Responses of soil foodweb organisms in the first year following clearcutting and application of chloropicrin to control laminated root rot",
+  "year": "1996",
+  "link": "https://doi.org/10.1016/0929-1393(95)00075-5",
+  "blurb": "Tracks how soil food web organisms responded in the first year after clearcutting and chloropicrin treatment for laminated root rot. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1053,
+  "title": "Changes in rhizosphere microflora and microfauna 10 years following Douglas-fir live tree injection with chloropicrin or methylisothiocyanate",
+  "year": "1997",
+  "link": "https://doi.org/10.1139/x97-051",
+  "blurb": "Ten years after Douglas-fir trees were injected with fumigants to fight root rot, the soil around their roots still had less active fungi, fewer bacteria and changed nematode numbers.",
+  "source": "https://openalex.org/W1964996281"
+ },
+ {
+  "id": 1052,
+  "title": "Chemistry and microbial activity of forest and pasture riparian-zone soils along three Pacific Northwest streams",
+  "year": "1997",
+  "link": "https://doi.org/10.1023/A:1004211121095",
+  "blurb": "Compares soil chemistry and microbial activity next to streams in forest and pasture land in the Pacific Northwest. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1051,
+  "title": "Conventional and organic alternatives to methyl bromide on California strawberries: Effect of Brassica residues and spent mushroom compost following successive chemical fumigation",
+  "year": "1997",
+  "link": "https://doi.org/10.1080/1065657X.1997.10701871",
+  "blurb": "On a California strawberry field, one round of broccoli residue or mushroom compost did not rebuild the soil food web enough to replace methyl bromide fumigation.",
+  "source": "https://openalex.org/W2045505348"
+ },
+ {
+  "id": 1054,
+  "title": "Soil foodweb structure and function in forests: A comparison of conifer, deciduous, riparian and managed forests",
+  "year": "1997",
+  "link": "https://new.soilfoodweb.com/publication/soil-foodweb-structure-and-function-in-forests-a-comparison-of-conifer-deciduous-riparian-and-managed-forests/",
+  "blurb": "Compares soil food webs under conifer, broadleaf, streamside and managed forests. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1080,
+  "title": "Soil microbiology",
+  "year": "1997",
+  "link": "https://new.soilfoodweb.com/publication/soil-microbiology/",
+  "blurb": "A textbook chapter introducing soil microbiology. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1056,
+  "title": "Ectomycorrhizae establishment on Douglas-fir seedlings following chloropicrin treatment to control laminated-root rot disease: Assessment 4 and 5 years after outplanting",
+  "year": "1998",
+  "link": "https://www.sciencedirect.com/science/article/pii/S092913939800033X",
+  "blurb": "Checks whether mycorrhizal fungi established on Douglas-fir seedlings four and five years after chloropicrin treatment for root rot. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1055,
+  "title": "Foodweb methodology to assess ecological effects of anthropogenic stressors in soil",
+  "year": "1998",
+  "link": "https://new.soilfoodweb.com/publication/foodweb-methodology-to-assess-ecological-effects-of-anthropogenic-stressors-in-soil/",
+  "blurb": "Describes how to use the soil food web to judge the ecological damage that human stresses cause to soil. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1058,
+  "title": "Soil organisms and their role in healthy turf",
+  "year": "1998",
+  "link": "https://new.soilfoodweb.com/publication/soil-organisms-and-their-role-in-healthy-turf/",
+  "blurb": "A magazine article for turf managers on how soil organisms keep turf healthy. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1059,
+  "title": "Soil view: Anaerobic bacteria and compost tea",
+  "year": "1998",
+  "link": "https://new.soilfoodweb.com/publication/soil-view-anaerobic-bacteria-and-compost-tea/",
+  "blurb": "A short column on anaerobic bacteria and what they mean for compost tea quality. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1057,
+  "title": "Sustainable agriculture and the ecology of soil",
+  "year": "1998",
+  "link": "https://new.soilfoodweb.com/publication/sustainable-agriculture-and-the-ecology-of-soil/",
+  "blurb": "Links sustainable farming to the ecology of soil life. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1063,
+  "title": "Compost tea, Part I & II",
+  "year": "1999",
+  "link": "https://new.soilfoodweb.com/publication/compost-tea-part-i-ii/",
+  "blurb": "A two-part magazine introduction to compost tea. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1062,
+  "title": "Dynamics of soil fungal and bacterial biomass in a temperate climate alley cropping system",
+  "year": "1999",
+  "link": "https://doi.org/10.1016/S0929-1393(98)00163-2",
+  "blurb": "Follows how fungal and bacterial biomass in soil changes over time in an alley cropping system. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1060,
+  "title": "Effects of Klebsiella planticola SDF20 on soil biota and wheat growth in sandy soil",
+  "year": "1999",
+  "link": "https://doi.org/10.1016/S0929-1393(98)00129-2",
+  "blurb": "Tests the effects of a genetically engineered bacterium, Klebsiella planticola SDF20, on soil life and wheat growth in sandy soil. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1050,
+  "title": "Soil biology and ecology",
+  "year": "1999",
+  "link": "https://new.soilfoodweb.com/publication/soil-biology-and-ecology/",
+  "blurb": "A reference chapter introducing soil biology and ecology. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1081,
+  "title": "The Compost Tea Handbook 1.1",
+  "year": "1999",
+  "link": "https://new.soilfoodweb.com/publication/the-compost-tea-handbook-1-1/",
+  "blurb": "A handbook on making and using compost tea. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1061,
+  "title": "The mycorrhizal colonization of six wetland plant species at sites differing in land use history",
+  "year": "1999",
+  "link": "https://doi.org/10.1007/s005720050272",
+  "blurb": "Compares mycorrhizal colonization in six wetland plants at sites with different land-use histories. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1064,
+  "title": "The Soil Biology Primer, Chapters 1-5: The Soil Foodweb; Soil Bacteria; Soil Fungi; Soil Protozoa; Soil Nematodes",
+  "year": "1999",
+  "link": "https://www.nrcs.usda.gov/resources/education-and-teaching-materials/soil-biology-primer",
+  "blurb": "Dr. Ingham's free, plain-language introduction to soil bacteria, fungi, protozoa and nematodes, written for the US Department of Agriculture. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1065,
+  "title": "Brewing compost tea",
+  "year": "2000",
+  "link": "https://new.soilfoodweb.com/publication/brewing-compost-tea/",
+  "blurb": "A gardening magazine guide to brewing compost tea. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1066,
+  "title": "The Compost Tea Brewing Manual",
+  "year": "2000",
+  "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iOm3z4AAAAAJ&citation_for_view=iOm3z4AAAAAJ:HoB7MX3m0LUC",
+  "blurb": "Dr. Ingham's practical guide to making aerobic compost tea, the method taught in the Soil Food Web School courses. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1067,
+  "title": "The functional roles of forest soil arthropods: The soil is a lively place",
+  "year": "2000",
+  "link": "https://new.soilfoodweb.com/publication/the-functional-roles-of-forest-soil-arthropods-the-soil-is-a-lively-place/",
+  "blurb": "A conference paper on the many jobs forest soil arthropods do, and why the soil is a lively place. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1068,
+  "title": "Micronized compost and microbial life in compost",
+  "year": "2001",
+  "link": "https://new.soilfoodweb.com/publication/micronized-compost-and-microbial-life-in-compost/",
+  "blurb": "A short column on micronized compost and the microbial life found in compost. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1070,
+  "title": "Effect of cover crops and tillage system on symphylan (Symphyla: Scutigerella immaculata, Newport) and Pergamasus quisquiliarum Canestrini (Acari: Mesostigmata) populations",
+  "year": "2002",
+  "link": "https://doi.org/10.1016/S0929-1393(02)00039-2",
+  "blurb": "Looks at how cover crops and tillage affect numbers of garden symphylans, a crop pest, and a predatory mite in the soil. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1069,
+  "title": "Wildlife and the remediation of contaminated soils: Extending the analysis of ecological risks to habitat restoration",
+  "year": "2002",
+  "link": "https://new.soilfoodweb.com/publication/wildlife-and-the-remediation-of-contaminated-soils-extending-the-analysis-of-ecological-risks-to-habitat-restoration/",
+  "blurb": "A handbook chapter on extending ecological risk assessment of contaminated soils to habitat restoration for wildlife. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1071,
+  "title": "Effects of compost amended container media on ornamental plant growth",
+  "year": "2004",
+  "link": "https://new.soilfoodweb.com/publication/effects-of-compost-amended-container-media-on-ornamental-plant-growth/",
+  "blurb": "Compost replacing peat in container mixes grew ornamental plants as well as or better than the standard mix, and the choice of compost ingredients shaped its chemistry.",
+  "source": "https://openalex.org/W1911286122"
+ },
+ {
+  "id": 1082,
+  "title": "The soil foodweb: Its role in ecosystem health",
+  "year": "2004",
+  "link": "https://new.soilfoodweb.com/publication/the-soil-foodweb-its-role-in-ecosystem-health/",
+  "blurb": "A short piece on the soil food web and its role in keeping ecosystems healthy. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1072,
+  "title": "The soil foodweb: soil and composts as living ecosystems",
+  "year": "2004",
+  "link": "https://new.soilfoodweb.com/publication/the-soil-foodweb-soil-and-composts-as-living-ecosystems/",
+  "blurb": "A conference paper presenting soil and compost as living ecosystems built on the soil food web. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1073,
+  "title": "Comparison of soil biota between organic and conventional agroecosystems in Oregon, USA",
+  "year": "2005",
+  "link": "https://new.soilfoodweb.com/publication/comparison-of-soil-biota-between-organic-and-conventional-agroecosystems-in-oregon-usa/",
+  "blurb": "Compares the soil organisms found on organic and conventional farms in Oregon. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1074,
+  "title": "A comparison of soil food webs beneath C3- and C4-dominated grasslands",
+  "year": "2008",
+  "link": "https://doi.org/10.1007/s00374-008-0312-4",
+  "blurb": "Compares the soil food webs under grasslands dominated by two different types of grasses. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1075,
+  "title": "Soil life in reconstructed ecosystems: initial soil food web responses after rebuilding a forest soil profile for a climate change experiment",
+  "year": "2010",
+  "link": "https://www.sciencedirect.com/science/article/abs/pii/S0929139310000119",
+  "blurb": "Follows how the soil food web responded at first after a forest soil profile was rebuilt for a climate change experiment. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1076,
+  "title": "Differences in milk characteristics between a cow herd transitioning to organic versus milk from a conventional dairy herd",
+  "year": "2015",
+  "link": "https://doi.org/10.1111/1471-0307.12255",
+  "blurb": "Following a dairy herd moving to organic management, the milk's fatty acid profile shifted once the cows settled into an organic diet, compared with a neighbouring conventional herd.",
+  "source": "https://openalex.org/W1896063945"
+ },
+ {
+  "id": 1077,
+  "title": "Case study: Comparison of milk composition from adjacent organic and conventional farms in the USA",
+  "year": "2016",
+  "link": "https://doi.org/10.1111/1471-0307.12284",
+  "blurb": "Milk from an organic grazing dairy had more conjugated linoleic acid and omega-3 fat in the grazing season than milk from a neighbouring confined conventional herd.",
+  "source": "https://openalex.org/W2206715478"
+ },
+ {
+  "id": 1137,
+  "title": "Study finds fungi, not plant matter, responsible for most carbon sequestration in northern forests",
+  "year": "2013",
+  "link": "https://new.soilfoodweb.com/publication/study-finds-fungi-not-plant-matter-responsible-for-most-carbon-sequestration-in-northern-forests/",
+  "blurb": "A news article on research suggesting that fungi, more than plant matter, are responsible for most carbon storage in northern forests. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1139,
+  "title": "Carbon sequestration: The climate change solution that virtually all climate activists ignore",
+  "year": "2015",
+  "link": "https://new.soilfoodweb.com/publication/carbon-sequestration-the-climate-change-solution-that-virtually-all-climate-activists-ignore/",
+  "blurb": "An opinion piece arguing that storing carbon in soil is an overlooked answer to climate change. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1140,
+  "title": "Researchers propose ecological route to plant disease control",
+  "year": "2015",
+  "link": "https://new.soilfoodweb.com/publication/researchers-propose-ecological-route-to-plant-disease-control/",
+  "blurb": "A news article on researchers proposing ecological, rather than chemical, ways to control plant disease. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1138,
+  "title": "Compost could be worth double or triple of current price only if…",
+  "year": "2018",
+  "link": "https://new.soilfoodweb.com/publication/compost-could-be-worth-double-or-triple-of-current-price-only-if/",
+  "blurb": "An article on what would need to change for compost to be valued at a higher price. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1141,
+  "title": "Predatory earwigs are attracted by herbivore-induced plant volatiles linked with plant growth-promoting rhizobacteria",
+  "year": "2021",
+  "link": "https://new.soilfoodweb.com/publication/predatory-earwigs-are-attracted-by-herbivore-induced-plant-volatiles-linked-with-plant-growth-promoting-rhizobacteria/",
+  "blurb": "Predatory earwigs were drawn most to plants that had both beneficial root bacteria and caterpillar damage, showing how soil microbes can help call in natural pest enemies.",
+  "source": "https://openalex.org/W3021169401"
+ },
+ {
+  "id": 1110,
+  "title": "The control of diseases on lettuce by the use of antagonistic organisms. 1. The control of Botrytis cinerea Pers.",
+  "year": "1951",
+  "link": "https://doi.org/10.1111/j.1744-7348.1951.tb07797.x",
+  "blurb": "An early study showing that selected bacteria, actinomycetes and fungi sprayed onto lettuce could protect leaves and young plants from grey mould rot.",
+  "source": "https://openalex.org/W2072736661"
+ },
+ {
+  "id": 1094,
+  "title": "Litter decomposition under snow cover in a balsam fir forest",
+  "year": "1990",
+  "link": "https://doi.org/10.1139/b90-016",
+  "blurb": "Measures how fir needles, birch leaves, lichens and twigs keep breaking down under deep winter snow, with decomposers active well before spring melt.",
+  "source": "https://openalex.org/W1975702690"
+ },
+ {
+  "id": 1095,
+  "title": "Biological nitrogen fixation for sustainable agriculture: A perspective",
+  "year": "1992",
+  "link": "https://doi.org/10.1007/BF00011307",
+  "blurb": "Reviews the role biological nitrogen fixation can play in sustainable farming. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1105,
+  "title": "Compost and compost water extract-induced systemic acquired resistance in cucumber and Arabidopsis",
+  "year": "1998",
+  "link": "https://doi.org/10.1094/PHYTO.1998.88.5.450",
+  "blurb": "A disease-suppressive compost mix, and water extracts made from it, switched on whole-plant defences in cucumber and Arabidopsis, and the effect came from living organisms in the compost.",
+  "source": "https://openalex.org/W2017813532"
+ },
+ {
+  "id": 1136,
+  "title": "Trophic relationships in the soil microfood-web: Predicting the responses to a changing global environment",
+  "year": "1998",
+  "link": "https://doi.org/10.1046/j.1365-2486.1998.00206.x",
+  "blurb": "Reviews how predators and food supply regulate the soil food web, and how rising carbon dioxide, land use and plant changes may ripple through soil life.",
+  "source": "https://openalex.org/W2144177084"
+ },
+ {
+  "id": 1096,
+  "title": "Heavy metals bioremediation of soil",
+  "year": "1999",
+  "link": "https://doi.org/10.1385/MB:12:2:149",
+  "blurb": "Reviews ways of using living organisms to clean heavy metals out of soil. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1097,
+  "title": "In situ and in vitro suppressive effect of agricultural composts and their water extracts on some phytopathogenic fungi",
+  "year": "2002",
+  "link": "https://doi.org/10.1023/A:1016302729218",
+  "blurb": "Tests how well farm composts and their water extracts hold back several plant disease fungi in the field and in the lab. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1134,
+  "title": "Top-down is bottom-up: Does predation in the rhizosphere regulate aboveground dynamics?",
+  "year": "2003",
+  "link": "https://doi.org/10.1890/0012-9658(2003)084%5B0846:TIBDPI%5D2.0.CO;2",
+  "blurb": "Argues that predators feeding around plant roots release nutrients that drive plant growth, so the whole pattern of root-zone feeding links life below and above ground.",
+  "source": "https://openalex.org/W1982139427"
+ },
+ {
+  "id": 1098,
+  "title": "Compost tea as a container medium drench for suppressing seedling damping-off caused by Pythium ultimum",
+  "year": "2004",
+  "link": "https://doi.org/10.1094/PHYTO.2004.94.11.1156",
+  "blurb": "Compares ways of brewing compost tea for preventing damping-off in cucumber seedlings; aerated tea made with kelp and humic acid gave the most consistent protection.",
+  "source": "https://openalex.org/W1972821982"
+ },
+ {
+  "id": 1099,
+  "title": "Microbial growth under the snow: Implications for nutrient and allelochemical availability in temperate soils",
+  "year": "2004",
+  "link": "https://new.soilfoodweb.com/publication/microbial-growth-under-the-snow-implications-for-nutrient-and-allelochemical-availability-in-temperate-soils/",
+  "blurb": "Discusses how microbes keep growing under snow and what that means for nutrients in temperate soils. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1100,
+  "title": "Bioremediation potential of spirulina: toxicity and biosorption studies of lead",
+  "year": "2005",
+  "link": "https://doi.org/10.1631/jzus.2005.B0171",
+  "blurb": "Lab tests show live spirulina, a blue-green alga, can soak up low levels of lead from wastewater very quickly.",
+  "source": "https://openalex.org/W2182674653"
+ },
+ {
+  "id": 1101,
+  "title": "Uptake of lead by a ciliate, Stylonychia mytilus, isolated from industrial effluents: Potential use in bioremediation of wastewater",
+  "year": "2005",
+  "link": "https://doi.org/10.1007/s00128-005-0751-7",
+  "blurb": "Shows a ciliate protozoan from industrial wastewater can take up lead, pointing to a possible use in cleaning wastewater. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1103,
+  "title": "Foliar spraying of vermicompost extracts: effects on fruit quality and indications of late-blight suppression of field-grown tomatoes",
+  "year": "2006",
+  "link": "https://orgprints.org/id/eprint/10450/",
+  "blurb": "Spraying vermicompost extracts on field tomatoes left yields unchanged, and half as many sprayed plants showed clear signs of late blight infection.",
+  "source": "https://openalex.org/W2080641690"
+ },
+ {
+  "id": 1102,
+  "title": "In vitro and in vivo evaluation of individually compost fungi for potato fusarium dry rot biocontrol",
+  "year": "2006",
+  "link": "https://doi.org/10.3923/jbs.2006.572.580",
+  "blurb": "Eight heat-tolerant fungi taken from compost extracts held back several Fusarium species in the lab and reduced dry rot on treated potato tubers.",
+  "source": "https://doi.org/10.3923/jbs.2006.572.580"
+ },
+ {
+  "id": 1104,
+  "title": "Suppression of Phytophthora infestans in potatoes by foliar application of food nutrients and compost tea",
+  "year": "2007",
+  "link": "https://new.soilfoodweb.com/publication/suppression-of-phytophthora-infestans-in-potatoes-by-foliar-application-of-food-nutrients-and-compost-tea/",
+  "blurb": "Tests foliar sprays of food nutrients and compost tea against late blight in potatoes. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1106,
+  "title": "Aerobic compost tea, compost and a combination of both reduce the severity of common scab (Streptomyces scabiei) on potato tubers",
+  "year": "2008",
+  "link": "https://doi.org/10.3923/jps.2008.168.175",
+  "blurb": "In a New Brunswick potato field, compost, compost tea and both together cut common scab on tubers, and the tea treatments gave higher yields.",
+  "source": "https://doi.org/10.3923/jps.2008.168.175"
+ },
+ {
+  "id": 1111,
+  "title": "Chitin signaling in plants: Insights into the perception of fungal pathogens and rhizobacterial symbionts",
+  "year": "2008",
+  "link": "https://doi.org/10.1105/tpc.108.058784",
+  "blurb": "Explains how plants recognise chitin from fungal cell walls to trigger their defences, and how this same signal system relates to helpful root bacteria.",
+  "source": "https://openalex.org/W2074682893"
+ },
+ {
+  "id": 1107,
+  "title": "Effect of bacterial isolates obtained from animal manure compost extracts on the development of Fusarium oxysporum f. sp. radicis-lycopersici",
+  "year": "2008",
+  "link": "https://doi.org/10.3923/ajppaj.2008.15.23",
+  "blurb": "Several bacteria isolated from manure compost extracts held back a tomato crown and root rot fungus in the lab and reduced the disease on seedlings.",
+  "source": "https://doi.org/10.3923/ajppaj.2008.15.23"
+ },
+ {
+  "id": 1109,
+  "title": "In vitro studies on control of soil-borne plant pathogens by earthworm Eudrilus eugeniae exudates",
+  "year": "2008",
+  "link": "https://new.soilfoodweb.com/publication/in-vitro-studies-on-control-of-soil-borne-plant-pathogens-by-earthworm-eudrilus-eugeniae-exudates/",
+  "blurb": "Lab study testing whether fluids from an earthworm species hold back soil-borne plant disease organisms. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1108,
+  "title": "Relative effects of biological amendments and crop rotations on soil microbial communities and soilborne diseases of potato",
+  "year": "2008",
+  "link": "https://www.sciencedirect.com/science/article/abs/pii/S0038071707001101",
+  "blurb": "Compares biological amendments and crop rotations for their effects on soil microbes and soil-borne potato diseases. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1115,
+  "title": "Bio-potential of compost tea from agro-waste to suppress Choanephora cucurbitarum L. the causal pathogen of wet rot of okra",
+  "year": "2009",
+  "link": "https://doi.org/10.1016/j.biocontrol.2008.11.008",
+  "blurb": "Tests compost tea made from farm waste against the fungus that causes wet rot of okra. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1114,
+  "title": "Control of powdery mildew (Erysiphe polygoni) in tomato by foliar applications of compost tea",
+  "year": "2009",
+  "link": "https://new.soilfoodweb.com/publication/control-of-powdery-mildew-erysiphe-polygoni-in-tomato-by-foliar-applications-of-compost-tea/",
+  "blurb": "Tests foliar sprays of compost tea for controlling powdery mildew on tomatoes. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1112,
+  "title": "Potential application of compost teas of agricultural wastes in the control of the mushroom pathogen Verticillium fungicola",
+  "year": "2009",
+  "link": "https://doi.org/10.1007/BF03356322",
+  "blurb": "Looks at compost teas from farm waste as a way to control a fungal disease of cultivated mushrooms. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1113,
+  "title": "Vermicompost extracts influence growth, mineral nutrients, phytonutrients and antioxidant activity in pak choi (Brassica rapa cv. Bonsai, Chinensis group) grown under vermicompost and chemical fertiliser",
+  "year": "2009",
+  "link": "https://doi.org/10.1002/jsfa.3732",
+  "blurb": "All the vermicompost teas tested boosted pak choi growth and mineral content, mostly through nitrogen, and aeration or additives made little difference to the result.",
+  "source": "https://openalex.org/W2169324788"
+ },
+ {
+  "id": 1116,
+  "title": "Biocontrol activity and induction of systemic resistance in pepper by compost water extracts against Phytophthora capsici",
+  "year": "2010",
+  "link": "https://doi.org/10.1094/PHYTO-100-8-0774",
+  "blurb": "Water extracts from some commercial composts held back Phytophthora on peppers, both by acting on the pathogen and by switching on the plant's own defences.",
+  "source": "https://openalex.org/W2126396822"
+ },
+ {
+  "id": 1117,
+  "title": "Evidence for nitrogen-fixation in the Salicaceae family",
+  "year": "2011",
+  "link": "https://new.soilfoodweb.com/publication/evidence-for-nitrogen-fixation-in-the-salicaceae-family/",
+  "blurb": "A short report on evidence that willows and poplars may host nitrogen fixation. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1118,
+  "title": "Phytotoxicity analysis of extracts from compost and their ability to inhibit soil-borne pathogenic fungi and reduce root-knot nematodes",
+  "year": "2011",
+  "link": "https://doi.org/10.1007/s11274-011-0922-0",
+  "blurb": "Checks compost extracts for harm to plants and for their ability to hold back soil-borne fungi and root-knot nematodes. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1120,
+  "title": "Biochemical properties of compost tea associated with compost quality and effects on pak choi growth",
+  "year": "2012",
+  "link": "https://www.sciencedirect.com/science/article/pii/S0304423812004542",
+  "blurb": "The quality of the starting compost shaped the nutrients, microbial activity and growth substances in compost tea, and therefore how well pak choi grew.",
+  "source": "https://openalex.org/W2009328342"
+ },
+ {
+  "id": 1121,
+  "title": "Compost and compost tea: Principles and prospects as substrates and soil-borne disease management strategies in soil-less vegetable production",
+  "year": "2012",
+  "link": "https://new.soilfoodweb.com/publication/compost-and-compost-tea-principles-and-prospects-as-substrates-and-soil-borne-disease-management-strategies-in-soil-less-vegetable-production/",
+  "blurb": "Reviews how compost and compost tea can replace peat and suppress root diseases in soil-less vegetable growing, and why living microbes seem central to that effect.",
+  "source": "https://openalex.org/W2167786678"
+ },
+ {
+  "id": 1122,
+  "title": "Effects and relationships of compost type, aeration and brewing time on compost tea properties, efficacy against Pythium ultimum, phytotoxicity and potential as a nutrient amendment for seedling production",
+  "year": "2012",
+  "link": "https://doi.org/10.1080/01448765.2012.727667",
+  "blurb": "Compost type, aeration and brewing time all changed compost tea's microbial and chemical make-up, and teas from both composts tested held back the damping-off fungus Pythium.",
+  "source": "https://openalex.org/W2065776407"
+ },
+ {
+  "id": 1123,
+  "title": "Humic-like substances from different compost extracts could significantly promote cucumber growth",
+  "year": "2012",
+  "link": "https://doi.org/10.1016/S1002-0160(12)60067-8",
+  "blurb": "Reports that humus-like substances extracted from different composts promoted cucumber growth. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1124,
+  "title": "In vitro and in vivo evaluation of microbial-enriched compost tea on the development of powdery mildew on melon",
+  "year": "2012",
+  "link": "https://doi.org/10.1007/s10526-012-9454-2",
+  "blurb": "Tests compost tea enriched with microbes against powdery mildew on melon, in the lab and on plants. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1119,
+  "title": "Microbiological community analysis of vermicompost tea and its influence on the growth of vegetables and cereals",
+  "year": "2012",
+  "link": "https://doi.org/10.1139/w2012-061",
+  "blurb": "Analyses the microbes in aerated vermicompost teas and tests them on vegetables and cereals; field yields did not change, though taste tests picked up differences.",
+  "source": "https://openalex.org/W1820055572"
+ },
+ {
+  "id": 1125,
+  "title": "Characters of compost teas from different sources and their suppressive effect on fungal phytopathogens",
+  "year": "2013",
+  "link": "https://doi.org/10.1007/s11274-013-1300-x",
+  "blurb": "Compares compost teas made from different sources and how well each holds back fungal plant diseases. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1126,
+  "title": "Influence of the nitrogen form on in vitro organogenesis in Equisetum arvense",
+  "year": "2013",
+  "link": "https://new.soilfoodweb.com/publication/influence-of-the-nitrogen-form-on-in-vitro-organogenesis-in-equisetum-arvense/",
+  "blurb": "In lab cultures of field horsetail, ammonium nitrogen stopped rhizomes and tubers from forming while nitrate did not, showing that the form of nitrogen matters.",
+  "source": "https://openalex.org/W2158090629"
+ },
+ {
+  "id": 1127,
+  "title": "Non-growing season soil CO2 efflux and its changes in an alpine meadow ecosystem of the Qilian Mountains, Northwest China",
+  "year": "2013",
+  "link": "https://doi.org/10.1007/s40333-013-0179-6",
+  "blurb": "Measures carbon dioxide released from alpine meadow soil outside the growing season in northwest China. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1130,
+  "title": "Comparison of seasonal soil microbial process in snow-covered temperate ecosystems of Northern China",
+  "year": "2014",
+  "link": "https://doi.org/10.1371/journal.pone.0092985",
+  "blurb": "Across six snow-covered sites in northern China, winter soils held relatively more fungi than in summer and broke down soil carbon faster.",
+  "source": "https://openalex.org/W1966697364"
+ },
+ {
+  "id": 1128,
+  "title": "Using aerated compost tea in comparison with a chemical pesticide for controlling rose powdery mildew",
+  "year": "2014",
+  "link": "https://doi.org/10.1080/03235408.2013.817075",
+  "blurb": "On roses, sprays of aerated compost tea controlled powdery mildew better than the chemical fungicide it was compared with, or no treatment.",
+  "source": "https://openalex.org/W2031535710"
+ },
+ {
+  "id": 1131,
+  "title": "Winter soil CO2 flux from different mid-latitude sites from Middle Taihang Mountain in North China",
+  "year": "2014",
+  "link": "https://doi.org/10.1371/journal.pone.0091589",
+  "blurb": "Soils at three sites in north China kept releasing carbon dioxide through winter, a share of the yearly total that carbon budgets should not ignore.",
+  "source": "https://openalex.org/W1983928586"
+ },
+ {
+  "id": 1129,
+  "title": "Altered carbon delivery from roots: rapid, sustained inhibition of border cell dispersal in response to compost water extracts",
+  "year": "2015",
+  "link": "https://doi.org/10.1007/s11104-014-2350-z",
+  "blurb": "Finds that compost water extracts change how root tips shed their protective border cells, which alters carbon delivery from roots. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1133,
+  "title": "Biocontrol activity of endophytic fungus of barley, Microdochium bolleyi, against Gaeumannomyces graminis var. tritici",
+  "year": "2018",
+  "link": "https://doi.org/10.22043/mi.2019.118205",
+  "blurb": "A fungus that lives inside healthy barley roots slowed take-all disease and boosted root and shoot growth of barley.",
+  "source": "https://openalex.org/W2919965756"
+ },
+ {
+  "id": 1132,
+  "title": "Overview of engineering problems of soil compaction and their effects on growth and yields of crops",
+  "year": "2018",
+  "link": "https://new.soilfoodweb.com/publication/overview-of-engineering-problems-of-soil-compaction-and-their-effects-on-growth-and-yields-of-crops/",
+  "blurb": "Reviews the engineering causes of soil compaction and how compaction hurts crop growth and yields. [from title]",
+  "source": "title only"
+ },
+ {
+  "id": 1135,
+  "title": "Fungal-bacterial diversity and microbiome complexity predict ecosystem functioning",
+  "year": "2019",
+  "link": "https://doi.org/10.1038/s41467-019-12798-y",
+  "blurb": "Grassland soils with more diverse, better-connected fungi and bacteria carried out more nutrient-cycling functions, showing why a rich soil microbiome matters.",
+  "source": "https://openalex.org/W2981774387"
+ }
+]
