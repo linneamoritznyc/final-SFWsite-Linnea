@@ -4087,3 +4087,5 @@ img[data-optional] { background: none; }
 @media (max-width: 30em) {
   .nudge { bottom: var(--s2); right: var(--s2); left: var(--s2); width: auto; max-width: none; }
 }
+/* picture wraps an img only to offer WebP; it takes no box of its own */
+picture { display: contents; }

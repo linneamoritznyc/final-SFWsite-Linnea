@@ -106,10 +106,7 @@ locally, never against Google Drive and never against any Foundation account:
 
 ```
 python3 tools/pd-assets.py --list                 # what it would fetch, and from where
-python3 tools/pd-assets.py --fetch --out img/pd   # into the repo only
 ```
-It writes `img/pd/CREDITS.json` with the source URL, the author and the licence for every file it
-saves, and refuses to save a file whose licence it cannot read.
 
 ### Where to look, and what the licence means before you take anything
 

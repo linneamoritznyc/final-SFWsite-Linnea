@@ -70,7 +70,6 @@ video are in `docs/volunteer-visuals.md`.
 | **Which animation "Watch the animation" means** | volunteer.html, Start in the next ten minutes | The mockup linked to nothing. It points at the science page, which carries the animations. Confirm, or give the exact URL. |
 | **Every photograph and caption on the page** | volunteer.html, 17 slots | The hero holds five stand-ins from the Foundation's own library, labelled as stand-ins; none of them shows a volunteer volunteering. Everything else is an empty labelled slot. Briefs and formats: `docs/volunteer-visuals.md`. |
 | **Instagram wall permissions** | volunteer.html, On Instagram | Six squares, waiting on written permission from each poster. A feed widget was deliberately not used: it is a third-party script on every page load and it cannot ask permission. |
-| **Openly licensed stand-ins were not fetched** | `img/pd/` does not exist | This build environment's egress proxy refuses commons.wikimedia.org, nrcs.usda.gov and archive.org, all with 403. `tools/pd-assets.py --fetch` does the work and records source, author and licence for every file; run it from a machine with normal internet access. |
 
 ---
 
