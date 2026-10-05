@@ -2,7 +2,7 @@
 
 Everything the site still shows as a visible placeholder, with the person who supplies it.
 
-Last updated 14 September 2026 (the Soil Food Web School app page added under Community; the day before: hero photograph, volunteer quotes cut, community photo slots, Salient brief). Placeholders render as dashed `.todo` blocks; add `?notes=1` to any page URL to reveal every one of them at once.
+Last updated 5 October 2026 (staff portraits, two community photographs and three news thumbnails taken from the WordPress staging site; see docs/staging-reality.md). Previously 14 September 2026 (the Soil Food Web School app page added under Community; the day before: hero photograph, volunteer quotes cut, community photo slots, Salient brief). Placeholders render as dashed `.todo` blocks; add `?notes=1` to any page URL to reveal every one of them at once.
 
 A placeholder leaves this list only when the real thing is in the repository. "Confirmed in a document" is not the same as "on the page".
 
@@ -80,21 +80,15 @@ video are in `docs/volunteer-visuals.md`.
 | :-- | :-- | :-- |
 | **Homepage hero caption** | index.html | Evan asked for a group photograph over the Elaine microscope portrait. The page now uses `MAR Group Photo 2.jpg` from the uploads folder (about thirty people around a compost pile under a shed). Which workshop, where and when, and confirmation that everyone in it agreed to be published. |
 | Photo captions | 14 pages, every `.shot` and `.ledger` | Place, people, date. The Image and Video Log sheet in the redesign folder is the lookup table once it is filled. Nothing here is invented: a caption naming a real place and real people is a claim. |
-| Staff portraits | about-team.html | Four exist on the Thinkific CDN, listed below. Everyone else still needs one. Until then the cards show initials. |
+| Staff portraits | about-team.html | 22 portraits taken from the WordPress staging site on 5 October 2026 (`new.soilfoodweb.com/wp-content/uploads/2026/06/`, same filenames in `img/`). Still showing initials: Dr. Adam Cobb, Allison Duck, Alex Bright, Dr. Caterina Capri, Dr. Nora Levay, Yolanda Hadjidemetriou, Anna Depetris, Laura Campos, Dr. Elina Psara, Tommy Tapper, Dr. Kathleen Groppe, Kavi Reddy. Loida Vasquez's staging file is a screenshot; a proper portrait is wanted. Dr. Ingham uses the library portrait at the microscope. |
 | Scholarship recipient stories | learn-scholarships.html | Two or three: photo, name, country, one paragraph. None were ever published on the old site, so the honest "the program is growing" framing stays until they arrive. |
+| Community story photographs | community.html | Two of the five empty slots are filled from the staging site: the Living Legacy webinar series graphic and the Soil Health Week 2025 group photograph. Still empty: Nick Padwick teaching at Karachi University, and both Costa Rica slots (Gerald Ramírez demonstrating liquid amendments; students at microscopes). Evan. |
 | Community map data | community.html | Opt-in member locations at city or region level only, never exact addresses. |
 | Impact lines for the donation amounts | donate.html | Pair with the preset amounts once program costs are confirmed. |
 
-### Staff portraits that exist but are not in this repository
+### Staff portraits
 
-These four are on the Thinkific CDN. They could not be downloaded from the build environment, which has no outbound access to that host. Someone with normal internet access needs to save them into `img/team/` and run `python3 tools/images.py`.
-
-| Person | Address |
-| :-- | :-- |
-| Evan Buckman | `https://import.cdn.thinkific.com/1181504/custom_site_themes/id/WaILrIdyQHO4W7K2RHmL_Screenshot%202026-07-28%20at%208.11.14%E2%80%AFAM.png` |
-| Loida Vasquez | `https://import.cdn.thinkific.com/1181504/custom_site_themes/id/PEkwppp1RKa5FaDMIH7Q_loida%20with%20pig.jpg` |
-| Gerald Ramírez | `https://import.cdn.thinkific.com/1181504/custom_site_themes/id/egL2u8ypSYaGHrSgXMOJ_Gerald-R.jpg` |
-| Kavi Reddy | `https://import.cdn.thinkific.com/1181504/custom_site_themes/id/ij2JVOWvSLamVlGQxugm_Screenshot%202026-07-28%20at%208.12.43%E2%80%AFAM.png` |
+The four Thinkific CDN files listed here earlier are no longer needed: Evan Buckman, Loida Vasquez and Gerald Ramírez now come from the staging site. Kavi Reddy is not on the staging team page and still shows initials.
 
 ## Waiting on Linnea, or Linnea and Evan
 
