@@ -3716,6 +3716,18 @@
   "source_size": "3516x4677",
   "w": 1600
  },
+ "img/Elaine Flower Shirt Microscope.png": {
+  "alt": "Woman looking into a microscope at a table with a laptop",
+  "bytes": 66204,
+  "file": "img/elaine-flower-shirt-microscope-2.webp",
+  "flags": [],
+  "h": 788,
+  "shows": "A woman with short grey-brown hair in a red and white patterned blouse looks into a microscope at a table with a laptop, water bottles and cups. An orange door and a fire extinguisher are behind her.",
+  "source": "repo",
+  "source_path": "img/Elaine Flower Shirt Microscope.png",
+  "source_size": "940x788",
+  "w": 940
+ },
  "img/ctpfw-student-moving-compost-1.jpg": {
   "alt": "People turning and watering a compost pile in a wire bay.",
   "bytes": 119690,
@@ -3739,6 +3751,18 @@
   "source_path": "img/ctpfw-student-squeezing-compost-1.jpg",
   "source_size": "2000x1125",
   "w": 1600
+ },
+ "img/elaine-ceremonial-compost-group-photo-scaled.webp": {
+  "alt": "",
+  "bytes": 298108,
+  "file": "img/elaine-ceremonial-compost-group-photo.webp",
+  "flags": [],
+  "h": 765,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/elaine-ceremonial-compost-group-photo-scaled.webp",
+  "source_size": "1360x765",
+  "w": 1360
  },
  "img/erc-panchamana-garden.jpg": {
   "alt": "",
@@ -3814,6 +3838,54 @@
   "source_size": "2000x1533",
   "w": 1600
  },
+ "img/new-2026-10/EN-ERC-Fig-M2L1P8_Water_pump-001-Leaf.png": {
+  "alt": "",
+  "bytes": 141122,
+  "file": "img/en-erc-fig-m2l1p8-water-pump-001-leaf.webp",
+  "flags": [],
+  "h": 1120,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/EN-ERC-Fig-M2L1P8_Water_pump-001-Leaf.png",
+  "source_size": "3000x2100",
+  "w": 1600
+ },
+ "img/new-2026-10/EN-ERC-Fig-M3L3P67_Erosion_Control-001-Leaf.png": {
+  "alt": "",
+  "bytes": 294820,
+  "file": "img/en-erc-fig-m3l3p67-erosion-control-001-leaf.webp",
+  "flags": [],
+  "h": 1309,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/EN-ERC-Fig-M3L3P67_Erosion_Control-001-Leaf.png",
+  "source_size": "2640x2160",
+  "w": 1600
+ },
+ "img/new-2026-10/EN-ERC-Fig-M4L3P2_Reforestation-001-Leaf.png": {
+  "alt": "",
+  "bytes": 205944,
+  "file": "img/en-erc-fig-m4l3p2-reforestation-001-leaf.webp",
+  "flags": [],
+  "h": 1017,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/EN-ERC-Fig-M4L3P2_Reforestation-001-Leaf.png",
+  "source_size": "3303x2100",
+  "w": 1600
+ },
+ "img/new-2026-10/EN-ERC-Fig-M4L4P5_Natural_Capital-001-Leaf.png": {
+  "alt": "",
+  "bytes": 123358,
+  "file": "img/en-erc-fig-m4l4p5-natural-capital-001-leaf.webp",
+  "flags": [],
+  "h": 862,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/EN-ERC-Fig-M4L4P5_Natural_Capital-001-Leaf.png",
+  "source_size": "3900x2100",
+  "w": 1600
+ },
  "img/new-2026-10/R5A_4246.jpg": {
   "alt": "",
   "bytes": 50866,
@@ -3825,6 +3897,152 @@
   "source_path": "img/new-2026-10/R5A_4246.jpg",
   "source_size": "1499x1000",
   "w": 1499
+ },
+ "img/new-2026-10/team-aysen-ustunay.jpg": {
+  "alt": "",
+  "bytes": 124436,
+  "file": "img/team-aysen-ustunay.webp",
+  "flags": [
+   "low resolution (717x717 source)"
+  ],
+  "h": 717,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/team-aysen-ustunay.jpg",
+  "source_size": "717x717",
+  "w": 717
+ },
+ "img/new-2026-10/team-brian-daubenspeck.jpg": {
+  "alt": "",
+  "bytes": 61908,
+  "file": "img/team-brian-daubenspeck.webp",
+  "flags": [
+   "low resolution (751x751 source)"
+  ],
+  "h": 751,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/team-brian-daubenspeck.jpg",
+  "source_size": "751x751",
+  "w": 751
+ },
+ "img/new-2026-10/team-casey-williams.jpg": {
+  "alt": "",
+  "bytes": 50048,
+  "file": "img/team-casey-williams.webp",
+  "flags": [
+   "low resolution (687x687 source)"
+  ],
+  "h": 687,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/team-casey-williams.jpg",
+  "source_size": "687x687",
+  "w": 687
+ },
+ "img/new-2026-10/team-delvin-solkinson.jpg": {
+  "alt": "",
+  "bytes": 75724,
+  "file": "img/team-delvin-solkinson.webp",
+  "flags": [
+   "low resolution (742x742 source)"
+  ],
+  "h": 742,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/team-delvin-solkinson.jpg",
+  "source_size": "742x742",
+  "w": 742
+ },
+ "img/new-2026-10/team-dora-tkalec.jpg": {
+  "alt": "",
+  "bytes": 59046,
+  "file": "img/team-dora-tkalec.webp",
+  "flags": [],
+  "h": 873,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/team-dora-tkalec.jpg",
+  "source_size": "873x873",
+  "w": 873
+ },
+ "img/new-2026-10/team-elena-kalli.jpg": {
+  "alt": "",
+  "bytes": 33020,
+  "file": "img/team-elena-kalli.webp",
+  "flags": [
+   "low resolution (512x512 source)"
+  ],
+  "h": 512,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/team-elena-kalli.jpg",
+  "source_size": "512x512",
+  "w": 512
+ },
+ "img/new-2026-10/team-ib-borup-pedersen.jpg": {
+  "alt": "",
+  "bytes": 20644,
+  "file": "img/team-ib-borup-pedersen.webp",
+  "flags": [
+   "low resolution (500x500 source)"
+  ],
+  "h": 500,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/team-ib-borup-pedersen.jpg",
+  "source_size": "500x500",
+  "w": 500
+ },
+ "img/new-2026-10/team-isadora-shmidt.jpg": {
+  "alt": "",
+  "bytes": 59496,
+  "file": "img/team-isadora-shmidt.webp",
+  "flags": [
+   "low resolution (401x401 source)"
+  ],
+  "h": 401,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/team-isadora-shmidt.jpg",
+  "source_size": "401x401",
+  "w": 401
+ },
+ "img/new-2026-10/team-kavi-reddy.jpg": {
+  "alt": "",
+  "bytes": 150104,
+  "file": "img/team-kavi-reddy.webp",
+  "flags": [],
+  "h": 800,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/team-kavi-reddy.jpg",
+  "source_size": "800x800",
+  "w": 800
+ },
+ "img/new-2026-10/team-loida-vasquez.jpg": {
+  "alt": "",
+  "bytes": 288826,
+  "file": "img/team-loida-vasquez.webp",
+  "flags": [],
+  "h": 1329,
+  "shows": "",
+  "source": "repo",
+  "source_path": "img/new-2026-10/team-loida-vasquez.jpg",
+  "source_size": "1329x1329",
+  "w": 1329
+ },
+ "img/pile-turning-wes-8.webp": {
+  "alt": "People building a compost pile of woody material by hand",
+  "bytes": 279370,
+  "file": "img/pile-turning-wes-8-2.webp",
+  "flags": [],
+  "h": 1200,
+  "shows": "Four people work on a large compost pile of dark woody material inside a mesh enclosure: a woman in blue gloves and a man in a cap reach in, while two others hold tools behind. A green fence and trees surround them.",
+  "source": "repo",
+  "source_path": "img/pile-turning-wes-8.webp",
+  "source_size": "1600x1200",
+  "w": 1600
  },
  "img/red-soil-hand.jpg": {
   "alt": "Open hand holding a clump of red crumbly soil.",

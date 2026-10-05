@@ -124,11 +124,11 @@ COURSE_EDITS = [
 # Supplied photos for the program cards on /programs/ (October 2026 image brief). Other cards keep staging's.
 PROGRAM_PHOTOS = [
     ("Soil Microscopy", "R5A_4247.jpg", "Microscope objective lens focused on a slide with a soil sample."),
-    ("BioComplete™ Compost Production", "R5A_3985.jpg", "A woman turning a compost pile with a pitchfork, the cover pulled back."),
-    ("Foundation Course 1", "R5A_4007.jpg", "A pitchfork lifting a load of dark compost from a pile."),
-    ("Foundation Course 2", "R5A_3994.jpg", "Compost thermometer dial reading the temperature inside a pile."),
+    ("BioComplete™ Compost Production", "R5A_3961.jpg", "Bales of hay broken open on the ground in front of compost piles and a tracked loader."),
+    ("Foundation Course 1", "Ciliate, 60x obj, Patricia J Coppola.jpg", "A single oval ciliate seen under a microscope against a pale grey background. Ciliate, 60x objective. Photo: Patricia J Coppola."),
+    ("Foundation Course 2", "R5A_4027.jpg", "A pitchfork standing in a large pile of dark finished compost."),
     ("Foundation Course 3", "R5A_4270.jpg", "Glass beakers, a pipette and a dropper on a sunny lab bench."),
-    ("Foundation Course 4", "R5A_4236.jpg", "Microscope objectives above a glass slide on the stage."),
+    ("Foundation Course 4", "R5A_4261.jpg", "A microscope stage with a glass slide under the objectives."),
 ]
 
 
@@ -149,15 +149,21 @@ def course_card(c, scroller=False, photos=False):
 
 # Repo photos for course cards that staging gives the same picture as another card.
 COURSE_IMAGES = [
-    ("Introduction to Ecosystem Restoration: Module 3", "img/erc-panchamana-garden.jpg"),
-    ("Introduction to Ecosystem Restoration: Module 4", "img/erc-panchamana-treeplanting-3-fb-img-1666271008784.jpg"),
+    ("Introduction to Ecosystem Restoration: Module 1", "img/new-2026-10/EN-ERC-Fig-M4L4P5_Natural_Capital-001-Leaf.png"),
+    ("Introduction to Ecosystem Restoration: Module 2", "img/new-2026-10/EN-ERC-Fig-M2L1P8_Water_pump-001-Leaf.png"),
+    ("Introduction to Ecosystem Restoration: Module 3", "img/new-2026-10/EN-ERC-Fig-M3L3P67_Erosion_Control-001-Leaf.png"),
+    ("Introduction to Ecosystem Restoration: Module 4", "img/new-2026-10/EN-ERC-Fig-M4L3P2_Reforestation-001-Leaf.png"),
     ("Mini Foundation Course", "img/new-2026-10/R5A_4246.jpg"),
+    ("Permaculture Design Certification", "img/new-2026-10/R5A_4016.jpg"),  # staging's card photo is from Ecosystem Restoration Camps
 ]
 
 
 def card_image(c, title, photos):
     for start, src in COURSE_IMAGES:
         if title.startswith(start):
+            if src.startswith("img/new-2026-10/"):
+                return B.photo(os.path.basename(src), "", "card__img card__img--fit" if "ERC-Fig" in src else "card__img",
+                               sizes="(min-width: 64em) 24rem, (min-width: 40em) 50vw, 100vw")
             return img(src, "", "card__img")
     for start, f, alt in PROGRAM_PHOTOS if photos else ():
         if title.startswith(start):
@@ -216,14 +222,33 @@ def video(args):
 
 
 # ------------------------------------------------------------------ team
+# Portraits supplied in October 2026 (staff folder on Drive and soilfoodweb.com/about), square crops.
+TEAM_PHOTOS = {n: "img/new-2026-10/team-%s.jpg" % f for n, f in [
+    ("Loida Vasquez", "loida-vasquez"), ("Delvin Solkinson", "delvin-solkinson"), ("Ib Borup Pedersen", "ib-borup-pedersen"),
+    ("Elena Kalli", "elena-kalli"), ("Dora Tkalec", "dora-tkalec"), ("Ay\u015fen \u00dcst\u00fcnay", "aysen-ustunay"),
+    ("Isadora Shmidt", "isadora-shmidt"), ("Brian Daubenspeck", "brian-daubenspeck"), ("Casey Williams", "casey-williams"),
+    ("Kavi Reddy", "kavi-reddy")]}
+
+
+def all_team():
+    """Staging's team list, then the people soilfoodweb.com/about lists that staging leaves out
+    (content/repo-team.json, copy from this repo's earlier team page)."""
+    extra = os.path.join(B.ROOT, "content", "repo-team.json")
+    return data("team") + (json.load(open(extra, encoding="utf-8")) if os.path.exists(extra) else [])
+
+
 def team_photo(t, cls=""):
+    if t["name"] in TEAM_PHOTOS:
+        t = dict(t, photo=TEAM_PHOTOS[t["name"]])
+    if t["photo"].startswith("img/new-2026-10/"):
+        return B.photo(os.path.basename(t["photo"]), "Portrait of %s" % t["name"], cls, sizes="(min-width: 64em) 12rem, 40vw")
     return img(t["photo"], "Portrait of %s" % t["name"], cls) if t["photo"] else '<span class="person__ph">%s</span>' % E(t["name"][:1])
 
 
 @gen
 def team(args):
     out = []
-    for t in data("team"):
+    for t in all_team():
         role = fix(t["role"])
         out.append('<li><a class="person" href="/team-member/%s/">%s<p class="person__name">%s</p>%s</a></li>' % (
             t["slug"], team_photo(t), E(t["name"]), '<p class="person__role">%s</p>' % E(role) if role else ""))
@@ -231,9 +256,17 @@ def team(args):
 
 
 # ------------------------------------------------------------------ news
+# Card photos chosen for the launch, in place of staging's featured image.
+POST_IMAGES = {"obituary-for-dr-elaine-ingham": "Elaine Flower Shirt Microscope.png"}
+
+
 def post_card(p):
     cat = p["categories"][0]["name"] if p["categories"] else ""
-    pic = img(p["featured"], "", "card__img card__img--square") if p.get("featured") else '<div class="card__img card__img--square"></div>'
+    if p["slug"] in POST_IMAGES:
+        pic = B.photo(POST_IMAGES[p["slug"]], "", "card__img card__img--square", sizes="(min-width: 64em) 18rem, 50vw")
+    else:
+        pic = None
+    pic = pic or (img(p["featured"], "", "card__img card__img--square") if p.get("featured") else '<div class="card__img card__img--square"></div>')
     return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker">%s &middot; '
             '<time datetime="%s">%s</time></p><h3 class="card__title"><a href="/%s/">%s</a></h3></div></article></li>') % (
         pic, E(cat), p["date"], fmt_date(p["date"]), p["slug"], E(fix(p["title"])))
@@ -544,7 +577,7 @@ TEAM_EDITS = {
 
 
 def team_pages():
-    for t in data("team"):
+    for t in all_team():
         for a, b in TEAM_EDITS.get(t["slug"], []):
             t = dict(t, bio=t["bio"].replace(a, b))
         path = "/team-member/%s/" % t["slug"]

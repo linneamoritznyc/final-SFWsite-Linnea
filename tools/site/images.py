@@ -4,7 +4,7 @@
 For each image URL a page asks for (usually a new.soilfoodweb.com upload):
   1. img/replacements/<same name> wins outright, if it exists.
   2. Otherwise look for the same picture already in this repo (img/, img/w/,
-     img/uploads/, img/pd/, img/video/, ...): first by normalised file name,
+     img/uploads/, img/video/, ...): first by normalised file name,
      then by perceptual hash, so a renamed or recompressed copy still matches.
      The staging side of the comparison uses thumbs/ (the sweet-babbage
      thumbnails of every live image) when it can, so most checks need no
@@ -25,7 +25,7 @@ IMG = os.path.join(ROOT, "img")
 MANIFEST = os.path.join(ROOT, "content", "staging", "images.json")
 CACHE = os.environ.get("SFW_IMG_CACHE", "/tmp/sfw-img-cache")
 MAX_W, MAX_BYTES = 1600, 300 * 1024
-REPO_DIRS = ["img", "img/w", "img/uploads", "img/pd", "img/video", "img/wild-ken-hill", "trifold-farmers"]
+REPO_DIRS = ["img", "img/w", "img/uploads", "img/video", "img/wild-ken-hill", "trifold-farmers"]
 EXT = (".jpg", ".jpeg", ".png", ".webp", ".gif")
 
 _manifest = None

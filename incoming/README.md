@@ -14,7 +14,6 @@ yet.
 | :-- | :-- | :-- |
 | Photographs | `img/` | Renamed for what is in them, then `tools/images.py` writes the 1600 and 800 pixel versions into `img/w/` that the pages load |
 | Clips | `video/`, or `video/<story>/` for a set belonging to one story | Converted to MP4 and WebM at a sensible bitrate, with a poster frame saved beside them |
-| Openly licensed work by other people | `img/pd/` | Different rules, its own README, a credit line per file |
 
 The originals stay in the repository at full size. The pages never load them.
 

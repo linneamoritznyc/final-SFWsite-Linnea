@@ -224,6 +224,7 @@ button { font: inherit; }
 .card:hover { box-shadow: var(--shadow-hover); }
 .card__img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; background: var(--cream); }
 .card__img--square { aspect-ratio: 1; }
+.card__img--fit { object-fit: contain; background: #000; } /* course diagrams: whole figure, labels kept */
 .card__body { padding: 1.25rem 1.35rem 1.4rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
 .card__body > * { margin: 0; }
 .card__kicker { font-family: var(--display); font-weight: 600; font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
@@ -266,7 +267,7 @@ button { font: inherit; }
 
 /* 11. Photo CTA band --------------------------------------------------------- */
 .band--photo { position: relative; color: var(--white); padding-block: clamp(5rem, 3rem + 10vw, 12rem) clamp(3rem, 2rem + 4vw, 5rem); overflow: hidden; background: var(--moss); }
-.band--photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.band--photo > img, .band--photo > picture > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .band--photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.6)); z-index: 1; }
 .band--photo .wrap { position: relative; z-index: 2; }
 .band--photo h2 { color: var(--white); font-size: var(--t-h1); max-width: 14ch; }
@@ -488,3 +489,6 @@ span.todo { display: inline; padding: .1rem .4rem; }
 /* Long words (chemical names) and pasted URLs wrap instead of widening the page. */
 main { overflow-wrap: break-word; }
 h1, .prose a, .entry__title, .kv dd, .card__title { overflow-wrap: anywhere; }
+
+/* picture only offers WebP beside JPG; it adds no box of its own */
+picture { display: contents; }

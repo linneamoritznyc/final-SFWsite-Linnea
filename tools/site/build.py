@@ -105,34 +105,47 @@ def photo(file, alt, cls="", eager=False, caption=None, sizes="(min-width: 64em)
     im = ImageOps.exif_transpose(Image.open(srcf))
     im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
     variants = []
-    for long_side in ((2400, 1200) if full else (1200,)):
-        scale = min(1.0, long_side / max(im.size))
+    # 1600 and 800 px wide, never upscaled, each written as WebP and as JPG, under 300 KB, no EXIF.
+    for width in (1600, 800):
+        scale = min(1.0, width / im.size[0])
         w, h = round(im.size[0] * scale), round(im.size[1] * scale)
         if variants and w >= variants[-1][1]:
-            continue  # source no bigger than the phone size: one file serves both
-        out = os.path.join(NEW_OUT, "%s-%d.webp" % (slug, max(w, h)))
-        if not os.path.exists(out) or os.path.getmtime(out) < os.path.getmtime(srcf):
+            continue  # source no wider than 800 px: one size serves both
+        stem = os.path.join(NEW_OUT, "%s-%dw" % (slug, w))
+        if not os.path.exists(stem + ".jpg") or os.path.getmtime(stem + ".jpg") < os.path.getmtime(srcf):
             r = im.resize((w, h), Image.LANCZOS) if scale < 1 else im
-            q = 82
-            while True:
-                r.save(out, "WEBP", quality=q, method=6)
-                if os.path.getsize(out) <= 300 * 1024 or q <= 40:
-                    break
-                q -= 4
-        variants.append((os.path.relpath(out, ROOT), w, h))
+            for ext, fmt in ((".webp", "WEBP"), (".jpg", "JPEG")):
+                rr = r.convert("RGB") if fmt == "JPEG" else r
+                rr, q = rr, 82
+                while True:
+                    if fmt == "JPEG":
+                        rr.save(stem + ext, fmt, quality=q, optimize=True, progressive=True)
+                    else:
+                        rr.save(stem + ext, fmt, quality=q, method=6)
+                    if os.path.getsize(stem + ext) <= 300 * 1024:
+                        break
+                    if q > 70:
+                        q -= 4
+                    else:  # still heavy at a decent quality: make it smaller rather than blurrier
+                        rr = rr.resize((round(rr.size[0] * .9), round(rr.size[1] * .9)), Image.LANCZOS)
+        actual = Image.open(stem + ".jpg").size
+        variants.append((os.path.relpath(stem, ROOT), actual[0], actual[1]))
     small = variants[-1]
     if _current is not None:
         flags = [why for k, why in NEW_FLAGS.items() if want.startswith(k.replace("_", " "))]
-        _current["images"].append({"src": "img/new-2026-10/" + hits[0], "file": small[0], "from": "supplied (Google Drive)", "flags": flags})
-    attrs = ['src="/%s"' % small[0], 'width="%d"' % small[1], 'height="%d"' % small[2], 'alt="%s"' % A(alt)]
+        _current["images"].append({"src": "img/new-2026-10/" + hits[0], "file": small[0] + ".jpg", "from": "supplied (Google Drive)", "flags": flags})
+    big = variants[0]
+    attrs = ['src="/%s.jpg"' % big[0], 'width="%d"' % big[1], 'height="%d"' % big[2], 'alt="%s"' % A(alt)]
+    srcset = lambda ext: ", ".join("/%s%s %dw" % (f, ext, w) for f, w, _ in reversed(variants))
     if len(variants) > 1:
-        attrs.append('srcset="%s"' % ", ".join("/%s %dw" % (f, w) for f, w, _ in reversed(variants)))
+        attrs.append('srcset="%s"' % srcset(".jpg"))
         attrs.append('sizes="%s"' % A(sizes))
     if cls:
         attrs.append('class="%s"' % cls)
     attrs.append('loading="eager" fetchpriority="high"' if eager else 'loading="lazy"')
     attrs.append('decoding="async"')
-    tag = "<img %s>" % " ".join(attrs)
+    source = '<source type="image/webp" srcset="%s"%s>' % (srcset(".webp"), ' sizes="%s"' % A(sizes) if len(variants) > 1 else "")
+    tag = "<picture>%s<img %s></picture>" % (source, " ".join(attrs))
     if caption:
         return '<figure class="photo">%s<figcaption>%s</figcaption></figure>' % (tag, E(caption))
     return tag
