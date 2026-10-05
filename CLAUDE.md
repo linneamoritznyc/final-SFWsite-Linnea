@@ -1,3 +1,8 @@
+## How to talk to Linnea
+- Never describe what you are doing or about to do.
+- Never ask for permission or confirmation. Decide and keep going.
+- Only message when the task is finished: the live link and anything that failed.
+
 <!-- This file is project configuration for Claude Code (claude.ai/code).
      It tells the AI assistant what rules to follow when working on this repo.
      It does not affect the website build or deployment. -->
@@ -69,8 +74,8 @@ and, on branch claude/staging-reality, docs/staging-reality.md (Fable's staging 
   content/alt.json, then the page. Screenshots and low-resolution sources are flagged
   on /review/. Retired QR codes stay retired.
 - Supplied photos and diagrams go in img/new-2026-10/ (originals, not deployed) and are placed
-  with `{{photo file="..." alt="..." caption="..." eager}}`: WebP up to 2400 px long side plus a
-  1200 px version in img/new/ (srcset, no upscaling, never cropped to hide a BioRender credit).
+  with `{{photo file="..." alt="..." caption="..." eager}}`: WebP and JPG at 1600 and 800 px
+  wide in img/new/ (picture + srcset, under 300 KB, no EXIF, no upscaling, never cropped to hide a BioRender credit).
   Microscope photos get a short caption; diagrams and R5A shoot photos get none (SFW holds the
   rights to the R5A shoot). `name="..."` sets a plain output name; `card` stops at 1200 px.
   A second photo can overlap the first for depth: `<div class="layered">main<div class="layered__inset">...</div></div>`.
