@@ -177,3 +177,7 @@ These apply to every course card, on Home and on Programs. The crops are 4:3 and
 | Ecosystem Restoration Module 4 | workshop-2025-veranda-2.jpg | card-veranda-group-teaching |
 
 The EN-ERC diagrams are off all cards. Soil Microscopy, the Biological Liquid Amendments course and Advanced Field Trial were not in the list, so they keep their current images.
+
+## Programs hero, 8 October
+
+The hero is now IMG_3536.heic, the man in a purple T-shirt teaching a group (Drive folder 1M8rnyoi8ZqLf9k6wBz_TC_1UjzLeR1PA). It replaces "Classroom looking at slides 2.jpg", which Linnea did not like.
