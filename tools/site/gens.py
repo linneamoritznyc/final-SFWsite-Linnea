@@ -125,7 +125,7 @@ COURSE_EDITS = [
 PROGRAM_PHOTOS = [
     ("Soil Microscopy", "R5A_4247.jpg", "Microscope objective lens focused on a slide with a soil sample."),
     ("BioComplete™ Compost Production", "R5A_3961.jpg", "Bales of hay broken open on the ground in front of compost piles and a tracked loader."),
-    ("Foundation Course 1", "Ciliate, 60x obj, Patricia J Coppola.jpg", "A single oval ciliate seen under a microscope against a pale grey background. Ciliate, 60x objective. Photo: Patricia J Coppola."),
+    ("Foundation Course 1", "forest-mycelium-aysen-ustunay.jpg", "A hand holding a piece of decaying wood with white fungal threads and a small fuzzy fungal tuft. Photo: Aysen Ustunay"),
     ("Foundation Course 2", "R5A_4027.jpg", "A pitchfork standing in a large pile of dark finished compost."),
     ("Foundation Course 3", "R5A_4270.jpg", "Glass beakers, a pipette and a dropper on a sunny lab bench."),
     ("Foundation Course 4", "R5A_4261.jpg", "A microscope stage with a glass slide under the objectives."),

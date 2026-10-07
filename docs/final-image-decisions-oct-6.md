@@ -150,3 +150,9 @@ The dates and places now come from the past workshop list on new.soilfoodweb.com
 - aug2023-workshop-group-7: Accelerator Workshop, Costa Rica, 7 to 18 August 2023. The photo was taken on 18 August 2023.
 - ctpfw-student-moving-compost-1: taken on 3 October 2023, so the caption says Consultant Training Program field workshop, October 2023.
 - Still without place or date: pile-turning-wes-8 and elaine-ceremonial-compost-group-photo.
+
+## Changes on 7 October, evening
+
+- **Home, Manage and monitor holistically tile:** now carrots-raised-garden-bed.jpg, from carrot-growing-in-vegitable-bed-community-garden-2025-01-08-04-14-23-utc.jpg in Drive folder 1ymvKW58O7B7hCjYpjSt260yWFp92rqeR. This is licensed stock, supplied by Linnea. Alt: Young carrot plants growing in rows in a raised wooden garden bed, lit by low sun.
+- **Foundation Course 1 card, on Home and Programs:** now forest-mycelium-aysen-ustunay.jpg, from "forest mycellium.jpeg" in the same folder. Photo by Aysen Ustunay. The source is 1200 px wide, so the large version stays 1200 px.
+- **Community wall:** four photos are removed because they show fewer than six people. They are ctpfw-student-moving-compost-1, cy-classes-3, cy-classes-4 and pile-turning-wes-8. Eight group photos remain.
