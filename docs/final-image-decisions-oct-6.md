@@ -13,10 +13,10 @@ How to read the columns:
 | Slot | Source file | Drive folder | Alt text or caption | Status |
 | :-- | :-- | :-- | :-- | :-- |
 | Hero | R5A_4108.jpg | Images from Brevity Media / Web | Five people sitting side by side on a hay bale outdoors, smiling, with compost piles, a white tarp and trees behind them | Live |
-| Approach tile: Observe and assess | R5A_4265.jpg | Images from Brevity Media / Web | Decorative (title on the tile) | Live, approved 6 Oct |
-| Approach tile: Incubate the biology | Bacterial-feeding nematode, 40x obj, Talbot Armstrong.jpg | Microbe library / Nematodes | Alt: a bacterial-feeding nematode under the microscope, 40x objective. Photo: Talbot Armstrong | Live, changed 6 Oct. Linnea wanted a micrograph here, not a person digging |
-| Approach tile: Multiply and apply | R5A_4028.jpg | Images from Brevity Media / Web | Decorative | Live, approved 6 Oct |
-| Approach tile: Manage and monitor holistically | R5A_4047.jpg | Images from Brevity Media / Web | Decorative | Live, approved 6 Oct |
+| Approach tile: Observe and assess | R5A_4246.jpg | Images from Brevity Media / Web | Microscope objectives above a glass slide on the microscope stage | Live, changed 7 Oct |
+| Approach tile: Incubate the biology | R5A_3985.jpg | Images from Brevity Media / Web | A woman in a red hat turning a compost pile with a pitchfork | Live, changed 7 Oct |
+| Approach tile: Multiply and apply | actively-aerated-compost-tea-brew-vessels.webp | Repo, img/ | Three white buckets of dark brewing compost tea with aerators | Live, changed 7 Oct |
+| Approach tile: Manage and monitor holistically | R5A_4047.jpg | Images from Brevity Media / Web | A smiling woman in a cap writing notes on a clipboard outdoors | Live, kept 7 Oct. No SFW-owned photo of food growing exists in the repo, the Brevity folder, the Day 1 folder or 1KUWnriWRmfK14ShnQ7oi6ELTsNMuT_RT |
 | Course card: Foundation Course 1 | Ciliate, 60x obj, Patricia J Coppola.jpg | Microbe library / Protozoa | Ciliate, 60x objective. Photo: Patricia J Coppola (in the alt text, because the card has no caption line) | Live |
 | Course card: Foundation Course 2 | R5A_4027.jpg | Images from Brevity Media / Web | A pitchfork standing in a large pile of dark finished compost | Live |
 | Course card: Foundation Course 3 | R5A_4270.jpg | Images from Brevity Media / Web | Glass beakers, a pipette and a dropper on a sunny lab bench | Unchanged |
@@ -118,3 +118,24 @@ These are twelve photos in a grid with no captions. On 7 October IMG_3539 was ad
 - **Dr. Adam Cobb:** portrait and bio needed.
 - **Permission:** Harrington's Organic Land Care has to agree to the York Farms photos, which are still on the site.
 - **Event details:** place and date for cy-workshop-8 and aug2023-workshop-group-7, and confirmation that everyone pictured agreed to be published.
+
+## Community wall captions (7 October)
+
+Each wall photo now has a short caption. Dates come from the photos' own camera data. Costa Rica for the August 2023 photo comes from its GPS data.
+
+| Photo | Caption | Still missing |
+| :-- | :-- | :-- |
+| IMG_3539.heic | Graduates with their certificates, March 2026 | Place |
+| StaffMembersIMG_0548.heic | Staff and mentors at our workshop in Costa Rica, March 2025 | |
+| cy-workshop-8.jpg | Workshop group in Cyprus, January 2025 | |
+| aug2023-workshop-group-7.jpg | Workshop graduates in Costa Rica, August 2023 | |
+| costa-rica-2025-gerald-liquid-amendments.jpg | Mentor Gerald Ramírez demonstrates liquid amendments, Costa Rica, March 2025 | |
+| costa-rica-2025-microscopy-students-mentors.jpg | Students and mentors at the microscopes, Costa Rica, March 2025 | |
+| pile-turning-wes-8 | Turning a compost pile by hand at a workshop | Place and date |
+| cy-classes-3.jpg | Classroom session in Cyprus | Date |
+| workshop-group-around-compost-pile.jpg | A workshop group around a freshly built compost pile | Place and date (the asset log says likely Costa Rica, March 2025) |
+| ctpfw-student-moving-compost-1.jpg | Consultant Training Program field workshop | Place and date |
+| cy-classes-4.jpg | Microscopy in the Cyprus classroom | Date |
+| elaine-ceremonial-compost-group-photo | Ceremonial compost build in honor of Dr. Elaine Ingham | Place and date |
+
+Not added: Katja-Mentors-Certificate-IMG_2975.HEIC, from August 2023. The file is not in any Drive folder this session can read.

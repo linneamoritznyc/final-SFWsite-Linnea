@@ -492,3 +492,6 @@ h1, .prose a, .entry__title, .kv dd, .card__title { overflow-wrap: anywhere; }
 
 /* picture only offers WebP beside JPG; it adds no box of its own */
 picture { display: contents; }
+
+/* photo grids: captioned photos sit flush in their cell */
+.grid > li > .photo { margin: 0; }
