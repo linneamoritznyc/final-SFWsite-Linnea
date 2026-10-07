@@ -258,3 +258,10 @@ Linnea does not want the Brevity hay-bale group photos (R5A_4061 to R5A_4108) an
 - WordPress staging (new.soilfoodweb.com) needs the same two changes made by hand.
 - Observe and assess tile: R5A_4246 (microscope objectives) replaced with R5A_3994, a compost thermometer dial in a compost pile (user's request: the thermometer or the person writing in the notebook; the thermometer was chosen because it stays centred in every tile crop). Alt: "A compost thermometer dial pushed into a compost pile".
 - Tiles brightened further (user: "just make them brighter for now"): overlay now black 0% to 15%, photos at 110% brightness, stronger title shadow; touch screens green overlay 35%.
+
+## Homepage tiles, user's final picks (7 October)
+
+Observe and assess unchanged (R5A_3994, compost thermometer). The other three come from Drive, 708 x 466 sources, cropped to the 3:4 tile with the person or machine centred, exported at native size only (350 x 466, JPG and WebP, no EXIF):
+- Incubate the biology: Soil-food-Web-Inc.-Windrow2-708X466.jpg (Drive 1lDbMSt-QF1wJlhk6LyGJazudaDVmvOAy). Alt: "A yellow backhoe loader turning a long compost windrow, with forest behind." Replaces the Arcella micrograph; its tile credit is removed.
+- Multiply and apply: Soil-food-Web-Inc.-Geo_Tea_Brewer-708X466.jpg (Drive 12U9jIBYydTDcGsjniw9k7pJHzTJLfu66). Alt: "A man stirring compost in a large tote compost tea brewer with a stainless steel aeration rig."
+- Manage and monitor holistically: Soil-food-Web-Inc.-Taking_Temp_After_Turning-708X466.jpg (Drive 1i0u2ir1AwCdbWe6X61Ygl7baUzyKuFXS). Alt: "A man pushing a probe thermometer into a compost windrow to take its temperature after turning."
