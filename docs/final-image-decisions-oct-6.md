@@ -116,7 +116,7 @@ These are twelve photos in a grid with no captions. On 7 October IMG_3539 was ad
 ## Still open
 
 - **Dr. Adam Cobb:** portrait and bio needed.
-- **Permission:** Harrington's Organic Land Care has to agree to the York Farms photos, which are still on the site.
+- **Permission:** settled. Linnea confirmed on 8 October that the Harrington's Organic Land Care photos can be published. This covers the York Farms photos and Todd Harrington's field photo.
 - **Event details:** place and date for cy-workshop-8 and aug2023-workshop-group-7, and confirmation that everyone pictured agreed to be published.
 
 ## Community wall captions (7 October)
