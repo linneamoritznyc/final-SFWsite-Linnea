@@ -185,3 +185,23 @@ The hero is now IMG_3536.heic, the man in a purple T-shirt teaching a group (Dri
 ## Ecosystem Restoration Module 1 card, 8 October
 
 The card now shows "20240731_112958.jpg", from Todd Harrington's images in Drive folder 1ymvKW58O7B7hCjYpjSt260yWFp92rqeR, taken 31 July 2024. It is a group in a crop field, cropped 4:3 so the people are in frame. It replaces cy-classes-3, which Modules 2 to 4 do not use.
+
+## Changes on 8 October, afternoon
+
+- **Home, Multiply and apply tile:** IMG_1974, wooden stands with white filter bags for brewing extract (UK Workshop, Wild Ken Hill, June 2025).
+- **Foundation Course 3 card:** 20250619_113304.heic, a gloved hand pointing at a jug of compost tea (Wild Ken Hill, June 2025).
+- **BioComplete Compost Production card:** Inspecting feedstock.HEIC, at the blue feedstock barrels (Synergia, Santa Fe, February 2026).
+- **Ecosystem Restoration Module 2:** soil coverage(1).jpeg, captioned Photo: Caterina Capri. The source is 1024 px wide, so it is not enlarged.
+- **Ecosystem Restoration Module 3:** roots.HEIC, captioned Photo: Caterina Capri.
+- **Ecosystem Restoration Module 4:** IMG_2498, a group in a field of red poppies (Wild Ken Hill, June 2025).
+- **Diagrams:** every EN-ERC-Fig diagram is gone from the site and from the repo.
+- **Community wall, added six with captions:**
+  - IMG_3536 (Santa Fe 2026)
+  - IMG_3535 (mentors, Santa Fe 2026)
+  - Learning Outside (Synergia 2026)
+  - fire pit (Synergia 2026)
+  - D39F55EC Hacienda sign (Costa Rica, March 2025)
+  - IMG_1499 (Wild Ken Hill 2026)
+- **Community wall size:** 14 photos.
+- **Not added:** IMG_0617, the poppy field photo. The Drive link does not open.
+- **Home alt text:** the multiply tile, the testimonial video thumbnail, the news cards and the bottom banner now have alt text.

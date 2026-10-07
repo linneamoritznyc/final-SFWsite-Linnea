@@ -128,14 +128,14 @@ PROGRAM_PHOTOS = [
     ("Workshops", "pile-turning-wes-8.jpg", "Four people in gloves turning a compost pile by hand"),
     ("Foundation Course 1", "forest-mycelium-aysen-ustunay.jpg", "A hand holding a piece of decaying wood with white fungal threads and a small fuzzy fungal tuft. Photo: Aysen Ustunay"),
     ("Foundation Course 2", "card-students-building-compost-pile.jpg", "Students building a compost pile under a shelter, one lifting compost while another waters it with a hose"),
-    ("Foundation Course 3", "card-liquid-amendments-demonstration.jpg", "A group of students crowded around an instructor kneeling beside a bucket"),
+    ("Foundation Course 3", "card-compost-tea-jug.jpg", "A gloved hand pointing at a measuring jug of brown compost tea held over a black bucket"),
     ("Foundation Course 4", "card-student-at-microscope.jpg", "A woman looking into a microscope at a long table, with other students at microscopes behind her"),
-    ("BioComplete™ Compost Production", "card-squeezing-compost-test.jpg", "A man in gloves squeezing a handful of compost while others watch"),
+    ("BioComplete™ Compost Production", "card-inspecting-feedstock-barrels.jpg", "A person in a wide-brimmed hat inspecting blue barrels of compost feedstock"),
     ("Permaculture Design Certification", "card-sorting-green-leaves.jpg", "A man crouching on a concrete floor, sorting fresh green leaves beside a heap of compost"),
     ("Introduction to Ecosystem Restoration: Module 1", "card-field-walk-crop-rows.jpg", "A group standing between rows of green crops in a field under a cloudy sky, listening to a man speaking"),
-    ("Introduction to Ecosystem Restoration: Module 2", "card-classroom-microscope-notebook.jpg", "A woman at a microscope while a man beside her holds up a notebook of diagrams"),
-    ("Introduction to Ecosystem Restoration: Module 3", "card-inspecting-feedstock-buckets.jpg", "People in hats gathered around blue barrels of compost feedstock outdoors"),
-    ("Introduction to Ecosystem Restoration: Module 4", "card-veranda-group-teaching.jpg", "A group seated along a tiled veranda listening to an instructor"),
+    ("Introduction to Ecosystem Restoration: Module 2", "card-vineyard-ground-cover-capri.jpg", "A vineyard with green ground cover and yellow wildflowers between the rows, hills behind", "Photo: Caterina Capri"),
+    ("Introduction to Ecosystem Restoration: Module 3", "card-roots-in-soil-capri.jpg", "A clump of soil full of fine roots held over a sieve", "Photo: Caterina Capri"),
+    ("Introduction to Ecosystem Restoration: Module 4", "card-group-in-field-wild-ken-hill.jpg", "A group of people standing in a field of grass and red poppies under a wide blue sky"),
 ]
 
 
@@ -162,9 +162,9 @@ COURSE_IMAGES = [
 
 
 def card_image(c, title, photos):
-    for start, f, alt in PROGRAM_PHOTOS:
+    for start, f, alt, *cap in PROGRAM_PHOTOS:
         if title.startswith(start):
-            return B.photo(f, alt, "card__img", sizes="(min-width: 64em) 24rem, (min-width: 40em) 50vw, 100vw")
+            return B.photo(f, alt, "card__img", caption=cap[0] if cap else None, sizes="(min-width: 64em) 24rem, (min-width: 40em) 50vw, 100vw")
     for start, src in COURSE_IMAGES:
         if title.startswith(start):
             return img(src, "", "card__img")
@@ -258,15 +258,23 @@ def team(args):
 # ------------------------------------------------------------------ news
 # Card photos chosen for the launch, in place of staging's featured image.
 POST_IMAGES = {"obituary-for-dr-elaine-ingham": "Elaine Flower Shirt Microscope.png"}
+# Plain alt text for post card images, by slug.
+POST_ALTS = {
+    "wild-ken-hill-2026": "Workshop participants standing around a tall wire compost cage topped with flowers, inside a barn",
+    "ciliates-soil-health-microscope-watermelon-crop": "A graphic reading Education: how a Soil Food Web education helps gardeners solve crop issues",
+    "soil-food-web-school-first-permaculture-design-certificate-course": "A yellow graphic reading A timely solution for uncertain times, with the Permaculture Design Course mark",
+    "soil-food-web-advanced-programs-reopen-2026": "The Soil Food Web Foundation logo",
+    "obituary-for-dr-elaine-ingham": "Dr. Elaine Ingham at a microscope in a laboratory",
+}
 
 
 def post_card(p):
     cat = p["categories"][0]["name"] if p["categories"] else ""
     if p["slug"] in POST_IMAGES:
-        pic = B.photo(POST_IMAGES[p["slug"]], "", "card__img card__img--square", sizes="(min-width: 64em) 18rem, 50vw")
+        pic = B.photo(POST_IMAGES[p["slug"]], POST_ALTS.get(p["slug"], ""), "card__img card__img--square", sizes="(min-width: 64em) 18rem, 50vw")
     else:
         pic = None
-    pic = pic or (img(p["featured"], "", "card__img card__img--square") if p.get("featured") else '<div class="card__img card__img--square"></div>')
+    pic = pic or (img(p["featured"], POST_ALTS.get(p["slug"], ""), "card__img card__img--square") if p.get("featured") else '<div class="card__img card__img--square"></div>')
     return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker">%s &middot; '
             '<time datetime="%s">%s</time></p><h3 class="card__title"><a href="/%s/">%s</a></h3></div></article></li>') % (
         pic, E(cat), p["date"], fmt_date(p["date"]), p["slug"], E(fix(p["title"])))

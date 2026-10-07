@@ -495,3 +495,8 @@ picture { display: contents; }
 
 /* photo grids: captioned photos sit flush in their cell */
 .grid > li > .photo { margin: 0; }
+
+/* course cards with a photo credit under the image */
+.card > .photo { margin: 0; }
+.card > .photo img { border-radius: 0; }
+.card > .photo figcaption { margin: .4rem 1.25rem 0; }
