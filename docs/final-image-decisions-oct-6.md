@@ -214,3 +214,7 @@ The card now shows "20240731_112958.jpg", from Todd Harrington's images in Drive
 | Foundation Course 2 card, on Home and Programs | CTPFW Students Laughing at Compost 1.jpg | card-students-laughing-at-compost-cage |
 | Workshops card | CTPFW Students Smiling 1.png | card-students-holding-buckets |
 | Volunteer hero | CTPFW Students Laughing 1.png | students-laughing-together |
+
+## Foundation Course 1 card, 8 October
+
+The card now shows Elaine Flower Shirt Microscope.png, Dr. Elaine Ingham at a microscope. It replaces the forest mycelium photo. The Mini Foundation Course card keeps the other Elaine microscope portrait.
