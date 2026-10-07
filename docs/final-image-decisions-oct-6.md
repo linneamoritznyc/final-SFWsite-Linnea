@@ -156,3 +156,24 @@ The dates and places now come from the past workshop list on new.soilfoodweb.com
 - **Home, Manage and monitor holistically tile:** now carrots-raised-garden-bed.jpg, from carrot-growing-in-vegitable-bed-community-garden-2025-01-08-04-14-23-utc.jpg in Drive folder 1ymvKW58O7B7hCjYpjSt260yWFp92rqeR. This is licensed stock, supplied by Linnea. Alt: Young carrot plants growing in rows in a raised wooden garden bed, lit by low sun.
 - **Foundation Course 1 card, on Home and Programs:** now forest-mycelium-aysen-ustunay.jpg, from "forest mycellium.jpeg" in the same folder. Photo by Aysen Ustunay. The source is 1200 px wide, so the large version stays 1200 px.
 - **Community wall:** four photos are removed because they show fewer than six people. They are ctpfw-student-moving-compost-1, cy-classes-3, cy-classes-4 and pile-turning-wes-8. Eight group photos remain.
+
+## Course cards, 8 October (Stephanie's rule: real photos of people doing the work, no Thinkific images, no diagrams)
+
+These apply to every course card, on Home and on Programs. The crops are 4:3 and keep faces and hands in frame.
+
+| Card | Source | Web file |
+| :-- | :-- | :-- |
+| Mini Foundation Course | Dr Elaine Ingham with Microscope.jpg (repo) | card-elaine-ingham-microscope |
+| Workshops | pile-turning-wes-8 (repo) | pile-turning-wes-8 |
+| Foundation Course 1 | forest mycellium.jpeg, Aysen Ustunay | forest-mycelium-aysen-ustunay |
+| Foundation Course 2 | ctpfw-student-moving-compost-1 | card-students-building-compost-pile |
+| Foundation Course 3 | costa-rica-2025-gerald-liquid-amendments | card-liquid-amendments-demonstration |
+| Foundation Course 4 | costa-rica-2025-microscopy-students-mentors, centered on the woman at the front microscope | card-student-at-microscope |
+| BioComplete Compost Production | ctpfw-student-squeezing-compost-1 | card-squeezing-compost-test |
+| Permaculture Design Certification | AF8A43C7-A12E-43FC-9B01-EE7E8E5C9962.JPG (workshop-2025-sorting-green-leaves) | card-sorting-green-leaves |
+| Ecosystem Restoration Module 1 | cy-classes-3 | card-classroom-notebook-diagrams |
+| Ecosystem Restoration Module 2 | cy-classes-4 | card-classroom-microscope-notebook |
+| Ecosystem Restoration Module 3 | Inspecting Feedstock 2.HEIC (Drive) | card-inspecting-feedstock-buckets |
+| Ecosystem Restoration Module 4 | workshop-2025-veranda-2.jpg | card-veranda-group-teaching |
+
+The EN-ERC diagrams are off all cards. Soil Microscopy, the Biological Liquid Amendments course and Advanced Field Trial were not in the list, so they keep their current images.

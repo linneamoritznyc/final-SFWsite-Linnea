@@ -121,14 +121,21 @@ COURSE_EDITS = [
 ]
 
 
-# Supplied photos for the program cards on /programs/ (October 2026 image brief). Other cards keep staging's.
+# Course card photos (Stephanie, 8 October 2026): real photos of people doing the work, on every
+# course card on every page. No Thinkific course images, no diagrams. Files are in img/new-2026-10/.
 PROGRAM_PHOTOS = [
-    ("Soil Microscopy", "R5A_4247.jpg", "Microscope objective lens focused on a slide with a soil sample."),
-    ("BioComplete™ Compost Production", "R5A_3961.jpg", "Bales of hay broken open on the ground in front of compost piles and a tracked loader."),
+    ("Mini Foundation Course", "card-elaine-ingham-microscope.jpg", "Dr. Elaine Ingham smiling beside a microscope"),
+    ("Workshops", "pile-turning-wes-8.jpg", "Four people in gloves turning a compost pile by hand"),
     ("Foundation Course 1", "forest-mycelium-aysen-ustunay.jpg", "A hand holding a piece of decaying wood with white fungal threads and a small fuzzy fungal tuft. Photo: Aysen Ustunay"),
-    ("Foundation Course 2", "R5A_4027.jpg", "A pitchfork standing in a large pile of dark finished compost."),
-    ("Foundation Course 3", "R5A_4270.jpg", "Glass beakers, a pipette and a dropper on a sunny lab bench."),
-    ("Foundation Course 4", "R5A_4261.jpg", "A microscope stage with a glass slide under the objectives."),
+    ("Foundation Course 2", "card-students-building-compost-pile.jpg", "Students building a compost pile under a shelter, one lifting compost while another waters it with a hose"),
+    ("Foundation Course 3", "card-liquid-amendments-demonstration.jpg", "A group of students crowded around an instructor kneeling beside a bucket"),
+    ("Foundation Course 4", "card-student-at-microscope.jpg", "A woman looking into a microscope at a long table, with other students at microscopes behind her"),
+    ("BioComplete™ Compost Production", "card-squeezing-compost-test.jpg", "A man in gloves squeezing a handful of compost while others watch"),
+    ("Permaculture Design Certification", "card-sorting-green-leaves.jpg", "A man crouching on a concrete floor, sorting fresh green leaves beside a heap of compost"),
+    ("Introduction to Ecosystem Restoration: Module 1", "card-classroom-notebook-diagrams.jpg", "A smiling man holding up an open notebook of hand-drawn diagrams in a classroom"),
+    ("Introduction to Ecosystem Restoration: Module 2", "card-classroom-microscope-notebook.jpg", "A woman at a microscope while a man beside her holds up a notebook of diagrams"),
+    ("Introduction to Ecosystem Restoration: Module 3", "card-inspecting-feedstock-buckets.jpg", "People in hats gathered around blue barrels of compost feedstock outdoors"),
+    ("Introduction to Ecosystem Restoration: Module 4", "card-veranda-group-teaching.jpg", "A group seated along a tiled veranda listening to an instructor"),
 ]
 
 
@@ -149,25 +156,18 @@ def course_card(c, scroller=False, photos=False):
 
 # Repo photos for course cards that staging gives the same picture as another card.
 COURSE_IMAGES = [
-    ("Introduction to Ecosystem Restoration: Module 1", "img/new-2026-10/EN-ERC-Fig-M4L4P5_Natural_Capital-001-Leaf.png"),
-    ("Introduction to Ecosystem Restoration: Module 2", "img/new-2026-10/EN-ERC-Fig-M2L1P8_Water_pump-001-Leaf.png"),
-    ("Introduction to Ecosystem Restoration: Module 3", "img/new-2026-10/EN-ERC-Fig-M3L3P67_Erosion_Control-001-Leaf.png"),
-    ("Introduction to Ecosystem Restoration: Module 4", "img/new-2026-10/EN-ERC-Fig-M4L3P2_Reforestation-001-Leaf.png"),
     ("Mini Foundation Course", "img/new-2026-10/R5A_4246.jpg"),
     ("Permaculture Design Certification", "img/new-2026-10/R5A_4016.jpg"),  # staging's card photo is from Ecosystem Restoration Camps
 ]
 
 
 def card_image(c, title, photos):
-    for start, src in COURSE_IMAGES:
-        if title.startswith(start):
-            if src.startswith("img/new-2026-10/"):
-                return B.photo(os.path.basename(src), "", "card__img card__img--fit" if "ERC-Fig" in src else "card__img",
-                               sizes="(min-width: 64em) 24rem, (min-width: 40em) 50vw, 100vw")
-            return img(src, "", "card__img")
-    for start, f, alt in PROGRAM_PHOTOS if photos else ():
+    for start, f, alt in PROGRAM_PHOTOS:
         if title.startswith(start):
             return B.photo(f, alt, "card__img", sizes="(min-width: 64em) 24rem, (min-width: 40em) 50vw, 100vw")
+    for start, src in COURSE_IMAGES:
+        if title.startswith(start):
+            return img(src, "", "card__img")
     return img(c["image"], "", "card__img")
 
 
