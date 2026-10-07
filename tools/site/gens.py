@@ -125,9 +125,9 @@ COURSE_EDITS = [
 # course card on every page. No Thinkific course images, no diagrams. Files are in img/new-2026-10/.
 PROGRAM_PHOTOS = [
     ("Mini Foundation Course", "card-elaine-ingham-microscope.jpg", "Dr. Elaine Ingham smiling beside a microscope"),
-    ("Workshops", "pile-turning-wes-8.jpg", "Four people in gloves turning a compost pile by hand"),
+    ("Workshops", "card-students-holding-buckets.jpg", "Seven people standing on a path outdoors holding white buckets, trees behind"),
     ("Foundation Course 1", "forest-mycelium-aysen-ustunay.jpg", "A hand holding a piece of decaying wood with white fungal threads and a small fuzzy fungal tuft. Photo: Aysen Ustunay"),
-    ("Foundation Course 2", "card-students-building-compost-pile.jpg", "Students building a compost pile under a shelter, one lifting compost while another waters it with a hose"),
+    ("Foundation Course 2", "card-students-laughing-at-compost-cage.jpg", "A man in a bucket hat and a laughing woman working a wire compost cage with a pitchfork"),
     ("Foundation Course 3", "card-compost-tea-jug.jpg", "A gloved hand pointing at a measuring jug of brown compost tea held over a black bucket"),
     ("Foundation Course 4", "card-student-at-microscope.jpg", "A woman looking into a microscope at a long table, with other students at microscopes behind her"),
     ("BioComplete™ Compost Production", "card-inspecting-feedstock-barrels.jpg", "A person in a wide-brimmed hat inspecting blue barrels of compost feedstock"),

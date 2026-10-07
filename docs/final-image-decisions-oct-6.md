@@ -205,3 +205,12 @@ The card now shows "20240731_112958.jpg", from Todd Harrington's images in Drive
 - **Community wall size:** 14 photos.
 - **Not added:** IMG_0617, the poppy field photo. The Drive link does not open.
 - **Home alt text:** the multiply tile, the testimonial video thumbnail, the news cards and the bottom banner now have alt text.
+
+## CTPFW student photos, 8 October
+
+| Slot | Source | Web file |
+| :-- | :-- | :-- |
+| Community hero | CTPFW Students High-Five at Compost 1.png | students-high-five-at-compost |
+| Foundation Course 2 card, on Home and Programs | CTPFW Students Laughing at Compost 1.jpg | card-students-laughing-at-compost-cage |
+| Workshops card | CTPFW Students Smiling 1.png | card-students-holding-buckets |
+| Volunteer hero | CTPFW Students Laughing 1.png | students-laughing-together |
