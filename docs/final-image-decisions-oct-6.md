@@ -250,3 +250,9 @@ Linnea does not want the Brevity hay-bale group photos (R5A_4061 to R5A_4108) an
 - **No picture:** Donations and Publications. Their hero photos are removed.
 - **Rejected by Linnea:** IMG_5813, IMG_1499 on the year one report, the donation photo strip, R5A_3980 on Funding, and the vineyard photo on Case studies.
 - **How it works:** no change. Every section already has its own animation video.
+
+## Homepage tiles, 7 October
+
+- Incubate the biology tile: R5A_3985 (woman turning compost) replaced with "Testate amoeba (Arcella), 40x obj, Mark Horton.jpg" from the Drive microbe library (Protozoa). Chosen as the clearest, highest-contrast micrograph of the eight candidates. Output img/new/testate-amoeba-arcella-mark-horton-*. Credit shown on the tile: "Testate amoeba (Arcella), 40x objective. Photo: Mark Horton".
+- Tile overlay lightened on all four tiles: from black 42% to 55% down to black 8% to 32%; titles get a text shadow to stay readable. Touch screens: green overlay from 78% to 55%. Hover overlay unchanged.
+- WordPress staging (new.soilfoodweb.com) needs the same two changes made by hand.

@@ -243,13 +243,14 @@ button { font: inherit; }
 .tiles li { margin: 0; }
 .tile { position: relative; border-radius: var(--radius-sm); overflow: hidden; aspect-ratio: 3 / 4; color: var(--white); background: var(--moss); }
 .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.tile::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.55)); z-index: 1; transition: background var(--dur) var(--ease); }
-.tile__in { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 1.5rem; }
-.tile h3 { color: var(--white); font-size: clamp(1.35rem, 1.1rem + .8vw, 1.75rem); margin: 0; }
+.tile::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.32)); z-index: 1; transition: background var(--dur) var(--ease); }
+.tile__in { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 1.5rem 1.5rem 2.25rem; }
+.tile h3 { color: var(--white); text-shadow: 0 1px 3px rgba(0,0,0,.6), 0 0 12px rgba(0,0,0,.35); font-size: clamp(1.35rem, 1.1rem + .8vw, 1.75rem); margin: 0; }
 .tile p { margin: 1rem 0 0; font-size: .9375rem; line-height: 1.5; max-height: 0; opacity: 0; overflow: hidden; transition: max-height var(--dur) var(--ease), opacity var(--dur) var(--ease); }
 .tile:hover::before, .tile:focus-within::before { background: rgba(34, 55, 31, .88); }
+.tile__credit { position: absolute; left: .75rem; right: .75rem; bottom: .5rem; z-index: 2; font-size: .75rem; color: var(--white); text-shadow: 0 1px 2px rgba(0,0,0,.7); }
 .tile:hover p, .tile:focus-within p { max-height: 14rem; opacity: 1; }
-@media (hover: none) { .tile::before { background: rgba(34, 55, 31, .78); } .tile p { max-height: none; opacity: 1; } .tile { aspect-ratio: auto; min-height: 20rem; } }
+@media (hover: none) { .tile::before { background: rgba(34, 55, 31, .55); } .tile p { text-shadow: 0 1px 3px rgba(0,0,0,.6); } .tile p { max-height: none; opacity: 1; } .tile { aspect-ratio: auto; min-height: 20rem; } }
 
 /* Course cards with horizontal scroll (staging programs.css carousel) */
 .scroller { display: grid; grid-auto-flow: column; grid-auto-columns: min(85%, 21rem); gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .5rem 0 1.5rem; list-style: none; margin: 0; scrollbar-width: thin; }
