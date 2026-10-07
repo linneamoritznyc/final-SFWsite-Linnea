@@ -222,3 +222,7 @@ The card now shows Elaine Flower Shirt Microscope.png, Dr. Elaine Ingham at a mi
 ## Foundation Course 2 card, 8 October
 
 The card now shows R5A_4027.jpg, a pitchfork going into a pile of finished compost (Brevity shoot). Linnea asked for it.
+
+## Foundation Course 3 card, 8 October
+
+The card now shows actively-aerated-compost-tea-brew-vessels.webp, three buckets of brewing compost tea. It replaces the compost tea jug photo.
