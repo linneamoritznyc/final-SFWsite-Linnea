@@ -257,3 +257,4 @@ Linnea does not want the Brevity hay-bale group photos (R5A_4061 to R5A_4108) an
 - Tile overlay lightened on all four tiles: from black 42% to 55% down to black 8% to 32%; titles get a text shadow to stay readable. Touch screens: green overlay from 78% to 55%. Hover overlay unchanged.
 - WordPress staging (new.soilfoodweb.com) needs the same two changes made by hand.
 - Observe and assess tile: R5A_4246 (microscope objectives) replaced with R5A_3994, a compost thermometer dial in a compost pile (user's request: the thermometer or the person writing in the notebook; the thermometer was chosen because it stays centred in every tile crop). Alt: "A compost thermometer dial pushed into a compost pile".
+- Tiles brightened further (user: "just make them brighter for now"): overlay now black 0% to 15%, photos at 110% brightness, stronger title shadow; touch screens green overlay 35%.
