@@ -218,3 +218,7 @@ The card now shows "20240731_112958.jpg", from Todd Harrington's images in Drive
 ## Foundation Course 1 card, 8 October
 
 The card now shows Elaine Flower Shirt Microscope.png, Dr. Elaine Ingham at a microscope. It replaces the forest mycelium photo. The Mini Foundation Course card keeps the other Elaine microscope portrait.
+
+## Foundation Course 2 card, 8 October
+
+The card now shows R5A_4027.jpg, a pitchfork going into a pile of finished compost (Brevity shoot). Linnea asked for it.

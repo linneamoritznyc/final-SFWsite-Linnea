@@ -127,7 +127,7 @@ PROGRAM_PHOTOS = [
     ("Mini Foundation Course", "card-elaine-ingham-microscope.jpg", "Dr. Elaine Ingham smiling beside a microscope"),
     ("Workshops", "card-students-holding-buckets.jpg", "Seven people standing on a path outdoors holding white buckets, trees behind"),
     ("Foundation Course 1", "Elaine Flower Shirt Microscope.png", "Dr. Elaine Ingham at a microscope in a laboratory, working from a screen beside her"),
-    ("Foundation Course 2", "card-students-laughing-at-compost-cage.jpg", "A man in a bucket hat and a laughing woman working a wire compost cage with a pitchfork"),
+    ("Foundation Course 2", "R5A_4027.jpg", "A pitchfork standing in a large pile of dark finished compost"),
     ("Foundation Course 3", "card-compost-tea-jug.jpg", "A gloved hand pointing at a measuring jug of brown compost tea held over a black bucket"),
     ("Foundation Course 4", "card-student-at-microscope.jpg", "A woman looking into a microscope at a long table, with other students at microscopes behind her"),
     ("BioComplete™ Compost Production", "card-inspecting-feedstock-barrels.jpg", "A person in a wide-brimmed hat inspecting blue barrels of compost feedstock"),
