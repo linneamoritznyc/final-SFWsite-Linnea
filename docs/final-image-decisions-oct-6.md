@@ -226,3 +226,7 @@ The card now shows R5A_4027.jpg, a pitchfork going into a pile of finished compo
 ## Foundation Course 3 card, 8 October
 
 The card now shows actively-aerated-compost-tea-brew-vessels.webp, three buckets of brewing compost tea. It replaces the compost tea jug photo.
+
+## Home hero, 8 October
+
+The home hero is now CTPFW Students Laughing at Compost 1.jpg, uncropped. It replaces R5A_4108.
