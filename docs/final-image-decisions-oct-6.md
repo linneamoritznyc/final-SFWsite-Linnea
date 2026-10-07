@@ -43,7 +43,7 @@ These course cards also appear on the home page where they are shown.
 | Slot | Source file | Drive folder or source | Alt text | Status |
 | :-- | :-- | :-- | :-- | :-- |
 | Hero: In service to the soil that sustains us all | handling-loose-soil.jpg | Staging media library (new.soilfoodweb.com/wp-content/uploads/2026/09/handling-loose-soil.jpg), Canva licence | Dark soil running from one hand into the other above a freshly worked field | Live, changed 6 Oct. Linnea prefers it to R5A_3989 |
-| Card: Teaching and learning | workshop-2025-classroom.jpg | 03/3/2025 - Day 1 (same set as IMG_0226) | Decorative | Live, changed 6 Oct. Linnea wants a classroom or workshop setting. No photo of people raising hands exists in the Drive folders |
+| Card: Teaching and learning | IMG_3536.heic | Drive folder 1M8rnyoi8ZqLf9k6wBz_TC_1UjzLeR1PA | Decorative | Live, changed 7 Oct. An instructor in a purple shirt teaching a seated group |
 | Card: Pursuing knowledge | Bacterial-feeding nematode, 40x obj, Sid Jensen.jpg | Microbe library / Nematodes | Decorative. Credit: Bacterial-feeding nematode, 40x objective. Photo: Sid Jensen | Live, changed 6 Oct. Linnea wants a microscope image |
 | Card: Incubating applied practice | garden-vegetable-beds.jpg | Stock folder (Dropbox), licensed stock | Decorative | Live, changed 6 Oct. Linnea wants a farming or vegetable-growing photo. No licensed photo shows a person growing vegetables, so these are raised vegetable beds |
 | Card: Building community and support | aug2023-workshop-group-7.jpg (Aug2023_Workshop_Group7.jpg) | Images from SFW drive / other | Decorative | Live, changed 6 Oct. Linnea wants people from the community here, not hay (R5A_3978 dropped) |
@@ -62,6 +62,12 @@ The portraits are square crops. The Drive staff folder files win where both exis
 
 Every other portrait is staging's file and is unchanged.
 
+## Programs hero (/programs/)
+
+| Slot | Source file | Drive folder | Alt text | Status |
+| :-- | :-- | :-- | :-- | :-- |
+| Hero: Learn to work with the life in your soil | Classroom looking at slides 2.jpg | Drive folder 1M8rnyoi8ZqLf9k6wBz_TC_1UjzLeR1PA | Students at long tables with microscopes and laptops, facing a projected microscope image at the front of a classroom | Live, changed 7 Oct. Replaces R5A_4268 |
+
 ## Other pages
 
 | Page | Slot | Source file | Drive folder | Alt text or caption | Status |
@@ -76,8 +82,9 @@ Every other portrait is staging's file and is unchanged.
 
 ## Community photo wall (/community/, bottom of the page)
 
-These are twelve photos in a grid with no captions. On 6 October Linnea added the staff group photo, so it now leads the grid. Elaine Flower Shirt Microscope.png left the grid, because it is already the obituary card.
+These are twelve photos in a grid with no captions. On 7 October IMG_3539 was added, and ctpfw-student-squeezing-compost-1 left the grid because the Workshops hero already shows it. On 6 October Linnea added the staff group photo, so it now leads the grid. Elaine Flower Shirt Microscope.png left the grid, because it is already the obituary card.
 
+1. IMG_3539.heic (Drive folder 1M8rnyoi8ZqLf9k6wBz_TC_1UjzLeR1PA, added 7 Oct): a large group in purple shirts holding certificates around a long table
 1. StaffMembersIMG_0548.heic (Drive folder 1pQSNo0xGd3atj824EhZ05jiqlQ1BVau4): about twenty-five staff members and mentors in a group photo, orange walls
 1. cy-workshop-8.jpg (Drive, other): workshop group under a garden pergola, Cyprus
 2. aug2023-workshop-group-7.jpg (Drive, other): graduates holding certificates, August 2023
@@ -89,7 +96,6 @@ These are twelve photos in a grid with no captions. On 6 October Linnea added th
 8. ctpfw-student-moving-compost-1.jpg (SFW archive): student lifting finished compost
 9. cy-classes-4.jpg (SFW archive, Cyprus classes): student at a microscope
 10. elaine-ceremonial-compost-group-photo (SFW archive): group in purple shirts around a sign reading Elaine
-11. ctpfw-student-squeezing-compost-1.jpg (SFW archive): student squeezing compost
 
 ## Removed from the site
 
