@@ -234,3 +234,19 @@ The home hero is now CTPFW Students Laughing at Compost 1.jpg, uncropped. It rep
 ## Hay-bale group photos, 8 October
 
 Linnea does not want the Brevity hay-bale group photos (R5A_4061 to R5A_4108) anywhere on the site. They are not used on any page.
+
+## Page photos, 8 October evening
+
+- **Contact:** IMG_3535, seven mentors in purple shirts, under "Other ways to reach us". Caption: Mentors, Accelerator Workshop, Santa Fe, 2026.
+- **Workshops, Previously:** one photo per past workshop, each captioned with its name, place and dates. The dates come from new.soilfoodweb.com/workshops.
+  - Learning Outside: Santa Fe, 23 February to 6 March 2026.
+  - IMG_2498: Wild Ken Hill, Norfolk, 16 to 27 June 2025.
+  - D39F55EC Hacienda sign: Costa Rica, 3 to 14 March 2025.
+  - cy-workshop-8: Kampia, Cyprus, 13 to 24 January 2025.
+- **Year one report:** IMG_3539, Santa Fe graduates with certificates, under the milestones.
+- **Scholarship hero:** CTPFW Students Laughing 1.png.
+- **Volunteer hero:** People Enjoying the fire pit _ Synergia.HEIC.
+- **Invite us to speak hero:** IMG_3536, a presenter facing a full room.
+- **No picture:** Donations and Publications. Their hero photos are removed.
+- **Rejected by Linnea:** IMG_5813, IMG_1499 on the year one report, the donation photo strip, R5A_3980 on Funding, and the vineyard photo on Case studies.
+- **How it works:** no change. Every section already has its own animation video.
