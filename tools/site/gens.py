@@ -132,7 +132,7 @@ PROGRAM_PHOTOS = [
     ("Foundation Course 4", "card-student-at-microscope.jpg", "A woman looking into a microscope at a long table, with other students at microscopes behind her"),
     ("BioComplete™ Compost Production", "card-squeezing-compost-test.jpg", "A man in gloves squeezing a handful of compost while others watch"),
     ("Permaculture Design Certification", "card-sorting-green-leaves.jpg", "A man crouching on a concrete floor, sorting fresh green leaves beside a heap of compost"),
-    ("Introduction to Ecosystem Restoration: Module 1", "card-classroom-notebook-diagrams.jpg", "A smiling man holding up an open notebook of hand-drawn diagrams in a classroom"),
+    ("Introduction to Ecosystem Restoration: Module 1", "card-field-walk-crop-rows.jpg", "A group standing between rows of green crops in a field under a cloudy sky, listening to a man speaking"),
     ("Introduction to Ecosystem Restoration: Module 2", "card-classroom-microscope-notebook.jpg", "A woman at a microscope while a man beside her holds up a notebook of diagrams"),
     ("Introduction to Ecosystem Restoration: Module 3", "card-inspecting-feedstock-buckets.jpg", "People in hats gathered around blue barrels of compost feedstock outdoors"),
     ("Introduction to Ecosystem Restoration: Module 4", "card-veranda-group-teaching.jpg", "A group seated along a tiled veranda listening to an instructor"),

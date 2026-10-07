@@ -181,3 +181,7 @@ The EN-ERC diagrams are off all cards. Soil Microscopy, the Biological Liquid Am
 ## Programs hero, 8 October
 
 The hero is now IMG_3536.heic, the man in a purple T-shirt teaching a group (Drive folder 1M8rnyoi8ZqLf9k6wBz_TC_1UjzLeR1PA). It replaces "Classroom looking at slides 2.jpg", which Linnea did not like.
+
+## Ecosystem Restoration Module 1 card, 8 October
+
+The card now shows "20240731_112958.jpg", from Todd Harrington's images in Drive folder 1ymvKW58O7B7hCjYpjSt260yWFp92rqeR, taken 31 July 2024. It is a group in a crop field, cropped 4:3 so the people are in frame. It replaces cy-classes-3, which Modules 2 to 4 do not use.
