@@ -230,3 +230,7 @@ The card now shows actively-aerated-compost-tea-brew-vessels.webp, three buckets
 ## Home hero, 8 October
 
 The home hero is now CTPFW Students Laughing at Compost 1.jpg, uncropped. It replaces R5A_4108.
+
+## Hay-bale group photos, 8 October
+
+Linnea does not want the Brevity hay-bale group photos (R5A_4061 to R5A_4108) anywhere on the site. They are not used on any page.
