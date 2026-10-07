@@ -139,3 +139,14 @@ Each wall photo now has a short caption. Dates come from the photos' own camera 
 | elaine-ceremonial-compost-group-photo | Ceremonial compost build in honor of Dr. Elaine Ingham | Place and date |
 
 Not added: Katja-Mentors-Certificate-IMG_2975.HEIC, from August 2023. The file is not in any Drive folder this session can read.
+
+## Caption update (7 October)
+
+The dates and places now come from the past workshop list on new.soilfoodweb.com/workshops/, matched to each photo's capture date.
+
+- IMG_3539: Accelerator Workshop, Santa Fe, United States, 23 February to 6 March 2026. The photo was taken on 6 March 2026.
+- StaffMembersIMG_0548, the two Costa Rica photos and workshop-group-around-compost-pile (MAR25 group photo): Accelerator Workshop, Costa Rica, 3 to 14 March 2025.
+- cy-workshop-8, cy-classes-3 and cy-classes-4: Accelerator Workshop, Kampia, Cyprus, 13 to 24 January 2025. The photos were taken on 15 and 24 January 2025.
+- aug2023-workshop-group-7: Accelerator Workshop, Costa Rica, 7 to 18 August 2023. The photo was taken on 18 August 2023.
+- ctpfw-student-moving-compost-1: taken on 3 October 2023, so the caption says Consultant Training Program field workshop, October 2023.
+- Still without place or date: pile-turning-wes-8 and elaine-ceremonial-compost-group-photo.
