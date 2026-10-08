@@ -1,0 +1,80 @@
+/* SFW Publications. Everything is scoped to .sfwp so the theme's own styles
+   are not touched. Colours and sizes follow the site: Soil Brown headings,
+   Food Web Green links and buttons, Montserrat for labels, body font from
+   the theme. Change the variables below, not the rules. */
+.sfwp {
+  --sfwp-soil: #4F3433;
+  --sfwp-green: #156826;
+  --sfwp-moss: #22371F;
+  --sfwp-cream: #F4F1EA;
+  --sfwp-ink: #333130;
+  --sfwp-ink-soft: #5A5550;
+  --sfwp-rule: #DDD8CF;
+  --sfwp-display: Montserrat, "Helvetica Neue", Arial, sans-serif;
+  color: var(--sfwp-ink);
+}
+.sfwp [hidden] { display: none !important; }
+.sfwp *, .sfwp *::before, .sfwp *::after { box-sizing: border-box; }
+
+.sfwp-counts { color: var(--sfwp-ink-soft); font-size: .875rem; margin: 0 0 1.25rem; }
+
+/* Collection chips */
+.sfwp-chips { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0 0 1.25rem; }
+.sfwp-chips li { margin: 0; padding: 0; }
+.sfwp-chips li::before { content: none; }
+.sfwp-chip { display: inline-block; font-family: var(--sfwp-display); font-weight: 600; font-size: .8125rem; line-height: 1.3; padding: .55em 1.1em; border-radius: 999px; border: 1px solid var(--sfwp-green); background: #fff; color: var(--sfwp-green); cursor: pointer; }
+.sfwp-chip:hover { background: var(--sfwp-cream); }
+.sfwp-chip[aria-pressed="true"] { background: var(--sfwp-green); color: #fff; }
+
+/* Search and dropdowns */
+.sfwp-searchbar { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 1rem; }
+.sfwp-field { flex: 1 1 11rem; min-width: 0; }
+.sfwp-field--q { flex: 1 1 100%; }
+.sfwp-field label { display: block; font-family: var(--sfwp-display); font-weight: 600; font-size: .8125rem; color: var(--sfwp-soil); margin: 0 0 .35rem; }
+.sfwp-field input, .sfwp-field select { width: 100%; font: inherit; font-size: 1rem; color: var(--sfwp-ink); background: #fff; border: 1px solid #A8A29A; border-radius: 8px; padding: .7rem .85rem; margin: 0; height: auto; }
+.sfwp-field select { cursor: pointer; }
+.sfwp-field input:focus, .sfwp-field select:focus { outline: 3px solid rgba(21, 104, 38, .35); border-color: var(--sfwp-green); }
+
+/* Tag guide */
+.sfwp-guide { margin: 0 0 1rem; max-width: 70ch; }
+.sfwp-guide > summary { cursor: pointer; font-weight: 600; color: var(--sfwp-green); text-decoration: underline; text-underline-offset: .18em; }
+.sfwp-guide > div { padding-top: .75rem; font-size: .9375rem; }
+.sfwp-guide h4 { font-family: var(--sfwp-display); font-size: 1rem; color: var(--sfwp-soil); margin: 1.5rem 0 .2rem; }
+.sfwp-guide__about { color: var(--sfwp-ink-soft); font-size: .875rem; margin: 0 0 .4rem; }
+.sfwp-guide dl { margin: 0; }
+.sfwp-guide dt { font-weight: 600; color: var(--sfwp-soil); margin-top: .45rem; }
+.sfwp-guide dd { margin: 0; }
+@media (min-width: 40em) {
+  .sfwp-guide dl { display: grid; grid-template-columns: 13rem minmax(0, 1fr); column-gap: 1.25rem; }
+  .sfwp-guide dd { margin-top: .45rem; }
+}
+
+/* Results line */
+.sfwp-status { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin: 0 0 1rem; }
+.sfwp-count { color: var(--sfwp-ink-soft); font-size: .9375rem; margin: 0; }
+.sfwp-clear { font-family: var(--sfwp-display); font-weight: 600; font-size: .8125rem; padding: .5em 1.1em; border-radius: 1.9em .6em; border: 1px solid var(--sfwp-green); background: #fff; color: var(--sfwp-green); cursor: pointer; }
+.sfwp-clear:hover { background: var(--sfwp-green); color: #fff; }
+
+/* The list: year | title, line, summary, useful for, link | type */
+.sfwp-group h3 { margin: 2rem 0 .75rem; }
+.sfwp-group:first-child h3 { margin-top: 0; }
+.sfwp-entries { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--sfwp-rule); }
+.sfwp-entry { display: grid; grid-template-columns: 3.75rem minmax(0, 1fr); gap: .25rem 1.25rem; padding: 1.1rem 0; border-bottom: 1px solid var(--sfwp-rule); margin: 0; }
+.sfwp-entry::before { content: none; }
+@media (min-width: 56em) { .sfwp-entry { grid-template-columns: 4.5rem minmax(0, 1fr) 11rem; } }
+.sfwp-entry p { margin: 0; }
+.sfwp-entry__year { font-family: var(--sfwp-display); font-weight: 700; color: var(--sfwp-soil); }
+.sfwp-entry__title { font-weight: 600; margin: 0 0 .2rem; line-height: 1.4; overflow-wrap: anywhere; }
+.sfwp .sfwp-entry__title a { color: var(--sfwp-soil); text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+.sfwp .sfwp-entry__title a:hover { color: var(--sfwp-green); }
+.sfwp .sfwp-entry__line { color: var(--sfwp-ink-soft); font-size: .9375rem; }
+.sfwp .sfwp-entry__why { margin-top: .45rem; font-size: .9375rem; }
+.sfwp .sfwp-entry__why + .sfwp-entry__why { margin-top: .2rem; }
+.sfwp-entry__why b { color: var(--sfwp-soil); }
+.sfwp .sfwp-entry__links { margin-top: .4rem; font-size: .875rem; }
+.sfwp .sfwp-entry__links a { color: var(--sfwp-green); text-decoration: underline; text-underline-offset: .18em; }
+.sfwp .sfwp-entry__links a:hover { color: var(--sfwp-moss); }
+.sfwp-entry__nolink { color: var(--sfwp-ink-soft); }
+.sfwp-entry__kind { grid-column: 2; font-size: .8125rem; color: var(--sfwp-ink-soft); line-height: 1.5; }
+@media (min-width: 56em) { .sfwp-entry__kind { grid-column: 3; text-align: right; } }
+.sfwp-empty { padding: 1.5rem 0; border-top: 1px solid var(--sfwp-rule); }
