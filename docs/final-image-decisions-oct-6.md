@@ -265,3 +265,15 @@ Observe and assess unchanged (R5A_3994, compost thermometer). The other three co
 - Incubate the biology: Soil-food-Web-Inc.-Windrow2-708X466.jpg (Drive 1lDbMSt-QF1wJlhk6LyGJazudaDVmvOAy). Alt: "A yellow backhoe loader turning a long compost windrow, with forest behind." Replaces the Arcella micrograph; its tile credit is removed.
 - Multiply and apply: Soil-food-Web-Inc.-Geo_Tea_Brewer-708X466.jpg (Drive 12U9jIBYydTDcGsjniw9k7pJHzTJLfu66). Alt: "A man stirring compost in a large tote compost tea brewer with a stainless steel aeration rig."
 - Manage and monitor holistically: Soil-food-Web-Inc.-Taking_Temp_After_Turning-708X466.jpg (Drive 1i0u2ir1AwCdbWe6X61Ygl7baUzyKuFXS). Alt: "A man pushing a probe thermometer into a compost windrow to take its temperature after turning."
+
+## Past workshop images for the WordPress workshop pages (8 October)
+
+Stephanie asked for images for every past workshop on the new site so the event pages look better. The WordPress calendar (new.soilfoodweb.com/calendar/) shows no past events; the past workshops are the ten "Past" entries on new.soilfoodweb.com/workshops/, each with its own /workshop/ page and none with photos yet. Photos were matched to workshops by their capture date (EXIF) or by the place and date already recorded in this file. Everything is at https://finalsite-tau.vercel.app/past-workshop-images/ (not linked from the site, noindex), with a zip of all JPGs, alt text and a caption for each photo. First photo in each list is the suggested featured image.
+
+- June 2026, Norfolk: IMG_1494, IMG_1501 (compost cage, 16 June 2026). IMG_1499 left out, as before.
+- February 2026, Santa Fe: Inspecting Feedstock 2, Reviewing Feed Stock, Learning Outside (23 Feb 2026), IMG_5780 (microscope, 5 Mar), IMG_3539 (graduates), IMG_3535 (mentors).
+- June 2025, Norfolk: 20250617_131213, IMG_1749, IMG_2498 (poppy field), 20250625_115451 (from "More workshop pictures from different workshops").
+- March 2025, Costa Rica: microscopy and Gerald liquid amendments photos, 20250303_132816 (feedstock sacks), Day 1 classroom IMG_0226, MAR25 group around compost pile, StaffMembersIMG_0548.
+- January 2025, Cyprus: CY-Workshop(8), CY-CLASSES(3).
+- August 2023, Costa Rica: Aug2023_Workshop_Group7.
+- No photos found for October 2025 (Costa Rica), July 2024 (Costa Rica), 2022 (México) and 2019 (Brasil). These need photos from the workshop team.
