@@ -528,10 +528,10 @@ picture { display: contents; }
 .pubs [data-pubs] > .pubs-group:first-child { margin-top: 0; }
 .pubs-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
 .pub { padding: 1.5rem 0; border-bottom: 1px solid var(--rule); margin: 0; }
-.pub > * { margin: 0; max-width: 72ch; }
+.pub > * { margin: 0; }
 .pub__meta { font-size: .8125rem; color: var(--ink-soft); margin-bottom: .35rem; }
 .pub__meta time { font-variant-numeric: tabular-nums; }
-.pub__title { font-size: 1.1875rem; line-height: 1.35; margin-bottom: .3rem; overflow-wrap: anywhere; }
+.pub__title { font-size: 1.1875rem; line-height: 1.35; margin-bottom: .3rem; overflow-wrap: anywhere; text-wrap: wrap; }
 .pub__title a { color: var(--soil); text-decoration: none; }
 .pub__title a:hover { color: var(--green); text-decoration: underline; }
 .pub__ext { display: inline-block; width: .8em; height: .8em; margin-left: .25em; vertical-align: baseline; }
