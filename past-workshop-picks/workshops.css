@@ -1,0 +1,436 @@
+/* Copied from new.soilfoodweb.com sfw-workshops plugin, workshops.css 1.0.22 (list page rules only). */
+.sfw-workshops {
+	--sfw-ws-paper: #ffffff;
+	--sfw-ws-ink: #333130;
+	--sfw-ws-ink-soft: #4a463f;
+	--sfw-ws-ink-faint: #6a665c;
+	--sfw-ws-soil: #4f3433;
+	--sfw-ws-green: #156826;
+	--sfw-ws-moss: #22371f;
+	--sfw-ws-panel: #eaded2;
+	--sfw-ws-surface: #f4f1ea;
+	--sfw-ws-rule: rgba(79, 52, 51, 0.22);
+	--sfw-ws-line-strong: rgba(79, 52, 51, 0.55);
+	--sfw-ws-shadow: 0 2px 12px rgba(79, 52, 51, 0.1);
+	--sfw-ws-display: Montserrat, "Helvetica Neue", Arial, sans-serif;
+	--sfw-ws-sans: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+	--sfw-ws-radius: 12px;
+	--sfw-ws-btn-radius: 1.9em 0.6em;
+	--sfw-ws-btn-radius-hover: 0.6em 1.9em;
+	--sfw-ws-chip-radius: 1.15em 0.45em;
+	--sfw-ws-gap: 24px;
+	--sfw-ws-dur: 320ms;
+	--sfw-ws-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+	box-sizing: border-box;
+	width: 100%;
+	color: var(--sfw-ws-ink);
+	font-family: var(--sfw-ws-sans);
+}
+.sfw-workshops *,
+.sfw-workshops *::before,
+.sfw-workshops *::after {
+	box-sizing: border-box;
+}
+.sfw-workshops__wrap {
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	padding: 0.5rem 0 2.5rem;
+}
+.sfw-workshops__title,
+.sfw-workshops__section-title {
+	margin: 0 0 1rem;
+	font-family: var(--sfw-ws-display);
+	font-weight: 500;
+	letter-spacing: -0.01em;
+	color: var(--sfw-ws-soil);
+}
+.sfw-workshops__title {
+	font-size: clamp(1.6rem, 2.2vw, 2rem);
+	margin-bottom: 1.5rem;
+}
+.sfw-workshops__section-title {
+	font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+}
+.sfw-workshops__filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 1.5rem;
+	align-items: flex-end;
+	justify-content: space-between;
+	margin-bottom: 1.25rem;
+}
+.sfw-workshops__chips {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+}
+.sfw-workshops button.sfw-workshops__chip,
+.sfw-workshops__chip {
+	appearance: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0.88em 1.5em;
+	border: 1px solid var(--sfw-ws-green) !important;
+	border-radius: var(--sfw-ws-btn-radius) !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	color: var(--sfw-ws-green) !important;
+	font-family: var(--sfw-ws-display);
+	font-size: 0.9375rem;
+	font-weight: 600;
+	line-height: 1;
+	cursor: pointer;
+	transition:
+		background var(--sfw-ws-dur) var(--sfw-ws-ease),
+		color var(--sfw-ws-dur) var(--sfw-ws-ease),
+		border-color var(--sfw-ws-dur) var(--sfw-ws-ease),
+		border-radius var(--sfw-ws-dur) var(--sfw-ws-ease);
+}
+.sfw-workshops__chip:hover,
+.sfw-workshops__chip:focus-visible {
+	background: var(--sfw-ws-green) !important;
+	border-color: var(--sfw-ws-green) !important;
+	color: var(--sfw-ws-paper) !important;
+	border-radius: var(--sfw-ws-btn-radius-hover) !important;
+	outline: none;
+}
+.sfw-workshops button.sfw-workshops__chip.is-active,
+.sfw-workshops__chip.is-active,
+.sfw-workshops button.sfw-workshops__chip.is-active:hover,
+.sfw-workshops__chip.is-active:hover {
+	background: var(--sfw-ws-green) !important;
+	border-color: var(--sfw-ws-green) !important;
+	color: var(--sfw-ws-paper) !important;
+}
+.sfw-workshops__year {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	min-width: 10rem;
+}
+.sfw-workshops__year label {
+	font-family: var(--sfw-ws-sans);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--sfw-ws-ink-faint);
+}
+.sfw-workshops__year select {
+	appearance: none;
+	height: 3.25rem;
+	padding: 0 2.25rem 0 1rem;
+	border: 1px solid var(--sfw-ws-line-strong);
+	border-radius: 1.1em 0.4em;
+	background:
+		var(--sfw-ws-paper)
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234f3433' d='M1 1l5 5 5-5'/%3E%3C/svg%3E")
+		no-repeat right 1rem center;
+	color: var(--sfw-ws-ink);
+	font: 500 0.95rem/1.2 var(--sfw-ws-sans);
+	cursor: pointer;
+}
+.sfw-workshops__year select:focus {
+	outline: 2px solid var(--sfw-ws-green);
+	outline-offset: 2px;
+}
+.sfw-workshops__section {
+	margin-bottom: 2.75rem;
+}
+.sfw-workshops__grid {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: var(--sfw-ws-gap);
+}
+.sfw-workshops__grid > li {
+	list-style: none !important;
+	margin: 0;
+	padding: 0;
+}
+.sfw-workshops__item.is-hidden {
+	display: none;
+}
+.sfw-workshops__item::marker,
+.sfw-workshops__item::before {
+	content: none !important;
+	display: none !important;
+}
+.sfw-workshops__card {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	height: 100%;
+	padding: 1.5rem;
+	background: var(--sfw-ws-paper);
+	border-radius: var(--sfw-ws-radius);
+	box-shadow: var(--sfw-ws-shadow);
+	transition: transform var(--sfw-ws-dur) var(--sfw-ws-ease);
+}
+.sfw-workshops__card:hover {
+	transform: translateY(-2px);
+}
+.sfw-workshops__media {
+	position: relative;
+	display: block;
+	aspect-ratio: 3 / 2;
+	overflow: hidden;
+	border-radius: var(--sfw-ws-radius);
+	background: var(--sfw-ws-panel);
+}
+.sfw-workshops__media a {
+	display: block;
+	height: 100%;
+}
+.sfw-workshops img.sfw-workshops__img,
+.sfw-workshops__placeholder {
+	display: block;
+	width: 100% !important;
+	max-width: none;
+	height: 100% !important;
+	object-fit: cover;
+	transition: transform 900ms var(--sfw-ws-ease);
+}
+.sfw-workshops__placeholder {
+	background:
+		linear-gradient(135deg, rgba(21, 104, 38, 0.12), transparent 55%),
+		var(--sfw-ws-panel);
+}
+.sfw-workshops__card:hover .sfw-workshops__img {
+	transform: scale(1.03);
+}
+.sfw-workshops__badge {
+	position: absolute;
+	top: 0.75rem;
+	left: 0.75rem;
+	z-index: 1;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.35rem 0.75rem;
+	border-radius: var(--sfw-ws-chip-radius);
+	font: 600 0.7rem/1.2 var(--sfw-ws-display);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--sfw-ws-soil);
+	box-shadow: 0 1px 4px rgba(79, 52, 51, 0.12);
+}
+.sfw-workshops__badge--upcoming-open {
+	background: var(--sfw-ws-green);
+	color: #fff;
+	box-shadow: none;
+}
+.sfw-workshops__badge--upcoming-sold-out,
+.sfw-workshops__badge--upcoming-closed {
+	background: var(--sfw-ws-soil);
+	color: #fff;
+	box-shadow: none;
+}
+.sfw-workshops__badge--past {
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--sfw-ws-ink-soft);
+}
+.sfw-workshops__kicker {
+	margin: 0;
+	font-family: var(--sfw-ws-sans);
+	font-size: 0.8125rem;
+	font-weight: 400;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--sfw-ws-ink-faint);
+	line-height: 1.6;
+}
+.sfw-workshops__name {
+	margin: 0;
+	font-family: var(--sfw-ws-display);
+	font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: -0.01em;
+	color: var(--sfw-ws-soil);
+}
+.sfw-workshops__name a {
+	color: inherit;
+	text-decoration: none;
+	background-image: linear-gradient(var(--sfw-ws-green), var(--sfw-ws-green));
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	background-size: 0 1px;
+	transition:
+		background-size var(--sfw-ws-dur) var(--sfw-ws-ease),
+		color var(--sfw-ws-dur) var(--sfw-ws-ease);
+}
+.sfw-workshops__name a:hover,
+.sfw-workshops__name a:focus-visible {
+	color: var(--sfw-ws-green);
+	text-decoration: none;
+	background-size: 100% 1px;
+}
+.sfw-workshops__line {
+	margin: 0;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	color: var(--sfw-ws-ink-soft);
+}
+.sfw-workshops__cta {
+	margin: auto 0 0;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+}
+.sfw-workshops__cta a {
+	color: var(--sfw-ws-green);
+	text-decoration: underline;
+	text-underline-offset: 0.16em;
+	text-decoration-thickness: 1px;
+	transition: color var(--sfw-ws-dur) var(--sfw-ws-ease);
+}
+.sfw-workshops__cta a:hover,
+.sfw-workshops__cta a:focus-visible {
+	color: var(--sfw-ws-soil);
+}
+.sfw-workshops__empty {
+	margin: 0;
+	color: var(--sfw-ws-ink-faint);
+	font-size: 0.95rem;
+}
+.sfw-workshops__empty.is-hidden {
+	display: none;
+}
+.sfw-workshop-cta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.85rem 1rem;
+}
+.sfw-workshop-cta .sfw-workshops__badge {
+	position: static;
+	box-shadow: none;
+}
+.sfw-workshop-cta__note {
+	margin: 0;
+	color: var(--sfw-ws-ink-soft);
+	font-size: 0.95rem;
+}
+.sfw-workshop-instructors,
+.sfw-workshop-videos {
+	margin-bottom: 2.75rem;
+}
+.sfw-workshop-instructors .sfw-team {
+	margin: 0;
+}
+.sfw-workshop-lightbox {
+	border: 0;
+	padding: 0;
+	max-width: min(960px, 94vw);
+	background: transparent;
+}
+.sfw-workshop-lightbox::backdrop {
+	background: rgba(35, 31, 29, 0.78);
+}
+.sfw-workshop-lightbox img {
+	display: block;
+	max-width: 100%;
+	max-height: 85vh;
+	margin: 0 auto;
+	border-radius: 8px;
+}
+.sfw-workshop-lightbox__close {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	appearance: none;
+	border: 0;
+	width: 2.4rem;
+	height: 2.4rem;
+	border-radius: var(--sfw-ws-chip-radius);
+	background: rgba(255, 255, 255, 0.92);
+	font-size: 1.5rem;
+	line-height: 1;
+	cursor: pointer;
+	color: var(--sfw-ws-soil);
+}
+.sfw-workshop-videos__list {
+	display: grid;
+	gap: 1.5rem;
+}
+.sfw-workshop-videos__item {
+	margin: 0;
+}
+.sfw-workshop-videos__item figcaption {
+	margin-top: 0.5rem;
+	font-size: 0.9rem;
+	color: var(--sfw-ws-ink-faint);
+}
+.sfw-workshop-videos .sfw-testimonials-video__frame,
+.sfw-workshop-videos iframe {
+	aspect-ratio: 16 / 9;
+	width: 100%;
+	border: 0;
+	border-radius: var(--sfw-ws-radius);
+	background: #111;
+}
+.sfw-workshop-videos .sfw-testimonials-video__frame iframe {
+	width: 100%;
+	height: 100%;
+}
+.sfw-workshop-testimonials.sfw-testimonials {
+	margin-bottom: 2.75rem;
+}
+.sfw-workshop-testimonials__toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem 1.25rem;
+	margin: 0 0 0.35rem;
+}
+.sfw-workshop-testimonials__toolbar .sfw-testimonials__nav {
+	margin: 0;
+}
+.sfw-workshop-testimonials .sfw-testimonials__card-link {
+	cursor: default;
+}
+.sfw-workshop-testimonials a.sfw-testimonials__card-link {
+	cursor: pointer;
+}
+@media (max-width: 900px) {
+  .sfw-workshops__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+@media (max-width: 600px) {
+  .sfw-workshops__grid {
+		grid-template-columns: 1fr;
+	}
+  .sfw-workshops__filters {
+		flex-direction: column;
+		align-items: stretch;
+	}
+  .sfw-workshops__year {
+		width: 100%;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+  .sfw-workshops__card,
+.sfw-workshops__img,
+.sfw-workshops__chip {
+		transition: none;
+	}
+  .sfw-workshops__card:hover {
+		transform: none;
+	}
+  .sfw-workshops__card:hover .sfw-workshops__img {
+		transform: none;
+	}
+}
+/* Not on staging: page frame and low-resolution note */
+.picks-page { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+.picks-page h1 { color: #4E3432; text-align: left; }
+.picks-links { font-size: .9375rem; margin: 0 0 1.25rem; }
+.sfw-workshops__note { margin: 0; padding: .35rem .6rem; background: #fdf3c4; border: 1px solid #e9d27a; border-radius: 6px; color: #5a4a12; font-size: .8125rem; line-height: 1.4; }
