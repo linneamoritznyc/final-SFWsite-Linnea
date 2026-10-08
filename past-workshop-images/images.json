@@ -103,7 +103,28 @@
   "place": "Área Metropolitana de San José, Costa Rica",
   "dates": "13–24 October 2025",
   "url": "https://new.soilfoodweb.com/workshop/accelerator-workshop-october-2025/",
-  "images": []
+  "images": [
+   {
+    "file": "accelerator-workshop-october-2025-01-talk-in-the-compost-shed",
+    "w": 1600,
+    "h": 1205,
+    "kb": 299,
+    "alt": "Participants sitting on white buckets and standing in a circle under a covered shed, listening to a man in a leather hat",
+    "caption": "Accelerator Workshop October 2025, Área Metropolitana de San José, Costa Rica, 13–24 October 2025",
+    "featured": true,
+    "low": false
+   },
+   {
+    "file": "accelerator-workshop-october-2025-02-certificate",
+    "w": 1440,
+    "h": 1084,
+    "kb": 275,
+    "alt": "Eight people standing in front of tropical plants, one of them holding up a certificate",
+    "caption": "Accelerator Workshop October 2025, Área Metropolitana de San José, Costa Rica, 13–24 October 2025",
+    "featured": false,
+    "low": false
+   }
+  ]
  },
  {
   "slug": "accelerator-workshop-june-2025",
