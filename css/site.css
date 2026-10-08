@@ -4087,3 +4087,72 @@ img[data-optional] { background: none; }
 @media (max-width: 30em) {
   .nudge { bottom: var(--s2); right: var(--s2); left: var(--s2); width: auto; max-width: none; }
 }
+/* --------------------------------------------------------------------------
+   24. Publications database (research.html). Added 8 October 2026.
+   The filter bar and the card parts the rule list did not have. A preview
+   of the WordPress build: Summary and Useful for are the point of the card,
+   so they get body size, full ink and air around them.
+   -------------------------------------------------------------------------- */
+.pubs-counts { color: var(--ink-soft); margin-top: var(--s3); }
+
+.pubs-filter {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s2);
+  margin: var(--s4) 0 var(--s2); padding: var(--s3) 0 0; scroll-margin-top: 6rem;
+  border-top: var(--hairline) solid var(--rule-strong);
+}
+@media (min-width: 40em) {
+  .pubs-filter { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pubs-filter__search { grid-column: 1 / -1; }
+}
+@media (min-width: 64em) {
+  .pubs-filter { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .pubs-filter__topic { grid-column: span 2; }
+}
+.pubs-filter label {
+  display: block; margin-bottom: .35em;
+  font-family: var(--display); font-weight: 600; font-size: var(--t-1); color: var(--ink);
+}
+.pubs-filter select.input { cursor: pointer; }
+.pubs-filter select:focus-visible { outline: var(--focus); outline-offset: 3px; }
+
+.pubs-guide { margin: 0 0 var(--s3); max-width: var(--measure); }
+.pubs-guide > summary {
+  cursor: pointer; font-size: var(--t0); color: var(--green);
+  text-decoration: underline; text-underline-offset: .14em;
+}
+.pubs-guide > summary:hover { color: var(--moss); }
+.pubs-guide[open] > summary { margin-bottom: var(--s3); }
+.pubs-guide h3 { font-size: var(--t1); margin: var(--s4) 0 .25em; }
+.pubs-guide h3:first-of-type { margin-top: 0; }
+.pubs-guide > .small { color: var(--ink-soft); margin-bottom: var(--s1); }
+.pubs-guide__list { margin: 0; font-size: var(--t0); }
+.pubs-guide__list dt { font-weight: 600; margin-top: var(--s1); }
+.pubs-guide__list dd { margin: 0; color: var(--ink-soft); }
+@media (min-width: 40em) {
+  .pubs-guide__list { display: grid; grid-template-columns: 14rem minmax(0, 1fr); column-gap: var(--s3); }
+  .pubs-guide__list dt, .pubs-guide__list dd { margin-top: var(--s1); }
+}
+
+.pubs-status {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s1) var(--s3);
+  margin: var(--s3) 0 var(--s4); min-height: 2.75rem;
+}
+.pubs-status p { margin: 0; font-weight: 600; }
+
+.pubs-group { margin: var(--s5) 0 var(--s2); }
+.pubs-group:first-child { margin-top: 0; }
+
+/* The card: one column at every width, unlike the three-column rule list. */
+.entry.pub { grid-template-columns: minmax(0, 1fr); gap: var(--s1); padding: var(--s3) 0; }
+.pub > * { margin: 0; }
+.pub__meta { font-size: var(--t-1); color: var(--ink-soft); }
+.pub__meta time { font-variant-numeric: tabular-nums; }
+.pub .entry__t { font-size: var(--t2); line-height: 1.25; }
+.pub__nolink { color: var(--ink-faint); }
+.pub__text { font-size: var(--t1); line-height: 1.55; color: var(--ink); }
+.pub__text strong { font-weight: 700; }
+.pub__text + .pub__text { margin-top: calc(var(--s1) * -.5); }
+.pub .entry__line + .pub__text, .pub__nolink + .pub__text { margin-top: var(--s1); }
+.pub__tags { gap: .4rem; margin-top: var(--s1); }
+.chip--tag { font-size: var(--t-1); font-weight: 500; padding: .25em .65em; color: var(--ink-soft); }
+.pubs-empty { padding: var(--s4) 0; border-top: var(--hairline) solid var(--rule-strong); }

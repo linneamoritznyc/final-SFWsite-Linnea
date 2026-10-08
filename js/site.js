@@ -1090,3 +1090,142 @@
 
   window.addEventListener("scroll", check, { passive: true });
 })();
+
+// Publications (research.html). Search, four dropdowns and a sort, all
+// combined with AND, and all held in the query string so a filtered view can
+// be shared as a link and the back button steps through it. The page renders
+// the full list grouped by collection, oldest first; without this script that
+// is what a reader gets, and the filter bar stays hidden.
+(function () {
+  var form = document.querySelector("[data-pubs-filter]");
+  var root = document.querySelector("[data-pubs]");
+  if (!form || !root) return;
+  var FIELDS = ["q", "collection", "topic", "study", "region", "sort"];
+  var ATTR = { collection: "data-collection", topic: "data-topic", study: "data-study", region: "data-region" };
+  var items = Array.prototype.slice.call(root.querySelectorAll(".pub"));
+  var groups = Array.prototype.slice.call(root.querySelectorAll("[data-pubs-group]"));
+  var flat = root.querySelector("[data-pubs-flat]");
+  var empty = root.querySelector("[data-pubs-empty]");
+  var bar = document.querySelector("[data-pubs-bar]");
+  var status = document.querySelector("[data-pubs-status]");
+  var clears = document.querySelectorAll("[data-pubs-clear]");
+  var total = items.length;
+
+  // Accents folded, so "Ostrom" finds "Öström" and the other way round.
+  function fold(s) {
+    s = String(s).toLowerCase();
+    return s.normalize ? s.normalize("NFD").replace(/[̀-ͯ]/g, "") : s;
+  }
+  // What the search reads: title, authors and citation, summary, useful for,
+  // topics and year. Not the labels, so "summary" does not match everything.
+  items.forEach(function (it) {
+    var parts = [it.getAttribute("data-year")];
+    Array.prototype.forEach.call(it.querySelectorAll(".entry__t, .entry__line, [data-s], .chip--tag"),
+      function (el) { parts.push(el.textContent); });
+    it._text = fold(parts.join(" "));
+    it._home = it.parentNode;
+  });
+
+  function read() {
+    var p = new URLSearchParams(location.search), s = {};
+    FIELDS.forEach(function (k) { s[k] = p.get(k) || ""; });
+    return s;
+  }
+  function toControls(s) {
+    FIELDS.forEach(function (k) {
+      var el = form.elements[k];
+      el.value = s[k];
+      if (el.value !== s[k]) el.value = "";   // a value from an old link that no longer exists
+    });
+  }
+  function fromControls() {
+    var s = {};
+    FIELDS.forEach(function (k) { s[k] = form.elements[k].value; });
+    return s;
+  }
+  function write(s, push) {
+    var p = new URLSearchParams();
+    FIELDS.forEach(function (k) { if (s[k].trim()) p.set(k, s[k].trim()); });
+    var qs = p.toString();
+    var url = location.pathname + (qs ? "?" + qs : "") + location.hash;
+    if (url === location.pathname + location.search + location.hash) return;
+    history[push ? "pushState" : "replaceState"](null, "", url);
+  }
+  function holds(it, attr, key) {
+    return (" " + (it.getAttribute(attr) || "") + " ").indexOf(" " + key + " ") > -1;
+  }
+
+  function apply(s) {
+    var words = fold(s.q).split(/\s+/).filter(Boolean);
+    var shown = 0;
+    items.forEach(function (it) {
+      var ok = true;
+      Object.keys(ATTR).forEach(function (k) { if (ok && s[k] && !holds(it, ATTR[k], s[k])) ok = false; });
+      for (var i = 0; ok && i < words.length; i++) if (it._text.indexOf(words[i]) < 0) ok = false;
+      it.hidden = !ok;
+      if (ok) shown++;
+    });
+
+    // Sort. Oldest first keeps the collection headings; newest first is one
+    // flat list. data-i is each card's place in the default order.
+    var newest = s.sort === "newest";
+    var order = items.slice().sort(function (a, b) {
+      return newest ? (b.getAttribute("data-year") - a.getAttribute("data-year")) || (a.getAttribute("data-i") - b.getAttribute("data-i"))
+                    : a.getAttribute("data-i") - b.getAttribute("data-i");
+    });
+    order.forEach(function (it) { (newest ? flat : it._home).appendChild(it); });
+    flat.hidden = !newest || shown === 0;
+    groups.forEach(function (ul) {
+      var head = root.querySelector('[data-pubs-head="' + ul.getAttribute("data-pubs-group") + '"]');
+      var any = !newest && ul.querySelector(".pub:not([hidden])");
+      ul.hidden = !any; head.hidden = !any;
+    });
+
+    var filtered = !!(s.q.trim() || s.collection || s.topic || s.study || s.region);
+    status.textContent = "Showing " + shown + " of " + total + " publications";
+    Array.prototype.forEach.call(clears, function (b) { b.hidden = !filtered; });
+    empty.hidden = shown !== 0;
+  }
+
+  function update(push) { var s = fromControls(); write(s, push); apply(s); }
+
+  var timer;
+  form.elements.q.addEventListener("input", function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () { update(false); }, 200);
+  });
+  // One history step per search, not per keystroke.
+  form.elements.q.addEventListener("change", function () { update(true); });
+  FIELDS.slice(1).forEach(function (k) {
+    form.elements[k].addEventListener("change", function () { update(true); });
+  });
+  form.addEventListener("submit", function (e) { e.preventDefault(); update(true); });
+
+  Array.prototype.forEach.call(clears, function (b) {
+    b.addEventListener("click", function () {
+      ["q", "collection", "topic", "study", "region"].forEach(function (k) { form.elements[k].value = ""; });
+      update(true);
+      form.elements.q.focus();
+    });
+  });
+
+  // A topic chip on a card sets the Topic filter to that tag.
+  root.addEventListener("click", function (e) {
+    var chip = e.target.closest ? e.target.closest("[data-topic]") : null;
+    if (!chip || !root.contains(chip) || chip.tagName !== "A") return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;   // new tab: let the link do it
+    e.preventDefault();
+    form.elements.topic.value = chip.getAttribute("data-topic");
+    update(true);
+    form.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    form.elements.topic.focus({ preventScroll: true });
+  });
+
+  window.addEventListener("popstate", function () { var s = read(); toControls(s); apply(s); });
+
+  form.hidden = false;
+  bar.hidden = false;
+  var start = read();
+  toControls(start);
+  apply(start);
+})();

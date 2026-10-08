@@ -1630,21 +1630,27 @@ def p_news():
     return MAIN("\n".join(o))
 
 
-def p_research():
-    c = load("research"); o = []
-    o.append(hero({"eyebrow": "RESEARCH", "h1": "The research behind living soil",
-                   "intro": "A growing database of soil food web science: Dr. Elaine Ingham's publications, research from the wider field, and, as our open-research program matures, studies from the Foundation and its partners."},
-                  "res-h", photo=("img/soil-sample-shovel-and-bag.jpg",
-                                  "Gloved hands easing a trowel of red soil into a sample bag")))
+def publications(c):
+    """The Publications section of research.html, from content/research.json.
 
-    # Sections, order and entry numbering come from the Foundation's own
-    # publications document: her papers, then book chapters, then the two kinds
-    # of technical report, then the wider literature and the internet articles.
-    # Oldest first inside each section, as the document has it, and the numbers
-    # are stable so an entry can be cited by one.
+    research.html is hand-written, so build.py does not regenerate it; this
+    section alone is rebuilt and spliced into it (see splice_publications).
+    """
+    # One list, filtered in the browser (site.js, publications). The page
+    # renders every entry in the default order, oldest first under the three
+    # collection headings, so without JavaScript it is the full list and the
+    # filter bar stays hidden. Entry numbers are gone: a filtered list with
+    # numbers 3, 17, 41 reads as missing entries.
     d = c["database"]
+    f = d["filters"]
+    order = [o["value"] for o in f["collection"]]
+    names = dict((o["value"], o["label"]) for o in f["collection"])
+    topic_slug = dict((o["label"], o["value"]) for g in f["topic"] for o in g["options"])
+    st_slug = dict((o["label"], o["value"]) for o in f["study_type"])
+    rg_slug = dict((o["label"], o["value"]) for o in f["region"])
+    entries = sorted(enumerate(d["entries"]), key=lambda t: (order.index(t[1]["collection"]), t[1]["year"], t[0]))
 
-    def entry(x):
+    def entry(i, x):
         title = e(x["title"])
         if x.get("url"):
             # The arrow must not be able to fall to a line of its own under the
@@ -1653,41 +1659,106 @@ def p_research():
             mark = ('<span style="white-space:nowrap">%s<svg class="icon" aria-hidden="true">'
                     '<use href="#i-external"/></svg></span>' % last)
             title = '<a href="%s">%s</a>' % (A(x["url"]), (head + " " + mark) if head else mark)
+        meta = " · ".join(['<time datetime="%d">%d</time>' % (x["year"], x["year"])]
+                          + [e(x[k]) for k in ("type", "study_type", "region")])
         line = " · ".join(e(x[k]) for k in ("authors", "citation") if x.get(k))
-        return ('        <li class="entry" id="p%d-%d">\n'
-                '          <span class="dated"><span class="entry__n">%d</span>'
-                '<time datetime="%d">%d</time></span>\n'
-                '          <div><h3 class="entry__t">%s</h3>%s</div>\n'
-                '          <span class="entry__kind">%s</span>\n        </li>\n'
-                % (x["_sec"], x["n"], x["n"], x["year"], x["year"], title,
-                   ('<p class="entry__line">%s</p>' % line) if line else "", e(x["type"])))
+        tags = "".join('<li><a class="chip chip--tag" href="research.html?topic=%s#publications" data-topic="%s">%s</a></li>'
+                       % (A(topic_slug[t]), A(topic_slug[t]), e(t)) for t in x["topics"])
+        return ('        <li class="entry pub" data-i="%d" data-collection="%s" data-topic="%s" '
+                'data-study="%s" data-region="%s" data-year="%d">\n'
+                '          <p class="pub__meta">%s</p>\n'
+                '          <h4 class="entry__t">%s</h4>\n'
+                '%s%s'
+                '          <p class="pub__text"><strong>Summary:</strong> <span data-s>%s</span></p>\n'
+                '          <p class="pub__text"><strong>Useful for:</strong> <span data-s>%s</span></p>\n'
+                '          <ul class="chips pub__tags" aria-label="Topics">%s</ul>\n'
+                '        </li>\n'
+                % (i, A(x["collection"]), A(" ".join(topic_slug[t] for t in x["topics"])),
+                   A(st_slug[x["study_type"]]), A(rg_slug[x["region"]]), x["year"],
+                   meta, title,
+                   ('          <p class="entry__line">%s</p>\n' % line) if line else "",
+                   "" if x.get("url") else '          <p class="pub__nolink small">No online copy found. Listed by citation.</p>\n',
+                   e(x["summary"]), e(x["useful_for"]), tags))
 
     body = ('      <h2 id="res-list-h">%s</h2>\n      <p class="lede">%s</p>\n'
             '      <p><a class="btn" href="%s">%s</a></p>\n'
+            '      <p class="small pubs-counts">%s</p>\n'
             % (e(d["h2"]),
                e(d["lede"]).replace("info@soilfoodweb.com",
                                     '<a href="%s">info@soilfoodweb.com</a>' % A(d["ledeMailto"])),
-               A(d["scholar"]["href"]), e(d["scholar"]["label"])))
-
-    # A contents list rather than filter chips: the sections are the structure
-    # now, and filtering a numbered bibliography leaves holes in the numbering.
-    body += ('      <ul class="chips" aria-label="Sections">%s</ul>\n'
-             % "".join('<li><a class="chip" href="#sec-%s">%s (%d)</a></li>'
-                       % (A(x["slug"]), e(x["name"]), len(x["entries"])) for x in d["sections"]))
+               A(d["scholar"]["href"]), e(d["scholar"]["label"]), e(d["counts"])))
     body += "".join('      <p class="todo">%s</p>\n' % e(n) for n in d["notes"])
 
-    for i, sec in enumerate(d["sections"], 1):
-        for x in sec["entries"]:
-            x["_sec"] = i
-        body += ('      <h3 id="sec-%s">%s</h3>\n      <ul class="rule-list">\n%s      </ul>\n'
-                 % (A(sec["slug"]), e(sec["name"]),
-                    "".join(entry(x) for x in sec["entries"])))
-        if sec["slug"] == "reports":
-            n = d["columnNote"]
-            body += ('      <h3>%s</h3>\n      <p>%s</p>\n      <p>%s</p>\n'
-                     % (e(n["h3"]), e(n["body"]), e(n["after"])))
+    def select(name, label, groups):
+        """groups: [(optgroup label or None, [option dicts])]."""
+        opts = '<option value="">Any</option>'
+        for g, options in groups:
+            inner = "".join('<option value="%s">%s (%d)</option>' % (A(o["value"]), e(o["label"]), o["count"])
+                            for o in options)
+            opts += ('<optgroup label="%s">%s</optgroup>' % (A(g), inner)) if g else inner
+        return ('        <div class="pubs-filter__field pubs-filter__%s">\n'
+                '          <label for="pf-%s">%s</label>\n'
+                '          <select class="input" id="pf-%s" name="%s">%s</select>\n        </div>\n'
+                % (name, name, e(label), name, name, opts))
 
-    o.append(sec_(body, label="res-list-h"))
+    # hidden until site.js wires it up: a filter bar that does nothing is worse
+    # than none.
+    body += ('      <form class="pubs-filter" data-pubs-filter role="search" aria-label="Filter publications" hidden>\n'
+             '        <div class="pubs-filter__field pubs-filter__search">\n'
+             '          <label for="pf-q">Search by title, author, topic or year</label>\n'
+             '          <input class="input" id="pf-q" name="q" type="search" autocomplete="off">\n'
+             '        </div>\n'
+             '%s%s%s%s'
+             '        <div class="pubs-filter__field">\n'
+             '          <label for="pf-sort">Sort</label>\n'
+             '          <select class="input" id="pf-sort" name="sort"><option value="">Oldest first</option>'
+             '<option value="newest">Newest first</option></select>\n        </div>\n'
+             '      </form>\n'
+             % (select("collection", "Collection", [(None, f["collection"])]),
+                select("topic", "Topic", [(g["facet"], g["options"]) for g in f["topic"]]),
+                select("study", "Study type", [(None, f["study_type"])]),
+                select("region", "Region", [(None, f["region"])])))
+
+    g = d["tagGuide"]
+    guide = "".join('        <h3>%s</h3>\n        <p class="small">%s</p>\n        <dl class="pubs-guide__list">\n%s        </dl>\n'
+                    % (e(fc["name"]), e(fc["about"][0].upper() + fc["about"][1:] + "."),
+                       "".join('          <dt>%s</dt><dd>%s</dd>\n' % (e(t["tag"]), e(t["definition"][0].upper() + t["definition"][1:]))
+                               for t in fc["tags"]))
+                    for fc in g["facets"] + [dict(g["studyType"], name="Study type")])
+    guide += ('        <h3>Region</h3>\n        <p class="small">One per paper.</p>\n        <p>%s. %s</p>\n'
+              % (e(", ".join(g["region"]["values"])), e(g["region"]["note"])))
+    body += ('      <details class="pubs-guide">\n        <summary>How the tags work</summary>\n%s      </details>\n'
+             % guide)
+
+    body += ('      <div class="pubs-status" data-pubs-bar hidden>\n'
+             '        <p aria-live="polite" data-pubs-status></p>\n'
+             '        <button class="btn btn--ghost" type="button" data-pubs-clear hidden>Clear filters</button>\n'
+             '      </div>\n'
+             '      <div data-pubs>\n')
+    for col in order:
+        body += ('      <h3 class="pubs-group" data-pubs-head="%s">%s</h3>\n      <ul class="rule-list" data-pubs-group="%s">\n%s      </ul>\n'
+                 % (A(col), e(names[col]), A(col),
+                    "".join(entry(n, x) for n, (_, x) in enumerate(entries) if x["collection"] == col)))
+    body += ('      <ul class="rule-list" data-pubs-flat hidden></ul>\n'
+             '      <div class="pubs-empty" data-pubs-empty hidden>\n'
+             '        <p>No publications match these filters.</p>\n'
+             '        <p><button class="btn btn--ghost" type="button" data-pubs-clear>Clear filters</button></p>\n'
+             '      </div>\n      </div>\n')
+    n = d["columnNote"]
+    body += ('      <h3>%s</h3>\n      <p>%s</p>\n      <p>%s</p>\n'
+             % (e(n["h3"]), e(n["body"]), e(n["after"])))
+
+    return sec_(body, label="res-list-h", sid="publications")
+
+
+def p_research():
+    c = load("research"); o = []
+    o.append(hero({"eyebrow": "RESEARCH", "h1": "The research behind living soil",
+                   "intro": "A growing database of soil food web science: Dr. Elaine Ingham's publications, research from the wider field, and, as our open-research program matures, studies from the Foundation and its partners."},
+                  "res-h", photo=("img/soil-sample-shovel-and-bag.jpg",
+                                  "Gloved hands easing a trowel of red soil into a sample bag")))
+
+    o.append(publications(c))
     w = c["workWithUs"]
     o.append(sec_('      <h2 id="rw-h">%s</h2>\n      <p class="lede">%s</p>\n      <p>%s</p>'
                   % (e(w["h2"]), e(w["body"]), cta(w["cta"])), "stratum--deep", "rw-h", "work-with-us"))
@@ -1903,6 +1974,17 @@ def restamp_head(path, doc):
     return doc.replace(anchor, anchor + tags, 1)
 
 
+PUBS_RE = re.compile(r'  <section class="stratum" aria-labelledby="res-list-h"[^>]*>.*?\n  </section>\n', re.S)
+
+
+def splice_publications(doc):
+    """Replace the Publications section of research.html with a fresh render."""
+    doc, n = PUBS_RE.subn(lambda m: publications(load("research")), doc, count=1)
+    if not n:
+        raise SystemExit("Publications section missing in research.html")
+    return doc
+
+
 def restamp(path):
     """Replace the header and footer blocks of a hand-written page in place."""
     full = os.path.join(ROOT, path)
@@ -1915,6 +1997,8 @@ def restamp(path):
     if not (nh and nf):
         raise SystemExit("chrome markers missing in " + path)
     doc = restamp_head(path, doc)
+    if path == "research.html":
+        doc = splice_publications(doc)
     with open(full, "w", encoding="utf-8") as fh:
         fh.write(doc)
     print("  re-stamped", path)

@@ -54,6 +54,9 @@ def main():
                     bad.append((rel, href, label, "no such anchor on this page"))
                 continue
             path, _, frag = href.partition("#")
+            # A query string selects a view of the page (the publications
+            # filters), not a different file.
+            path = path.partition("?")[0]
             if not path:
                 continue
             if path == "/":
