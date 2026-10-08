@@ -369,13 +369,23 @@
   "url": "https://new.soilfoodweb.com/workshop/accelerator-workshop-2022/",
   "images": [
    {
-    "file": "accelerator-workshop-2022-01-hats-in-the-air",
+    "file": "accelerator-workshop-2022-01-rancho-cacachilas-crop-rows",
+    "w": 1600,
+    "h": 1065,
+    "kb": 290,
+    "alt": "Rows of young green crops leading to three white hoop houses, with trees and mountains under a cloudy sky",
+    "caption": "Rancho Cacachilas, Mexico. Photo: Ecosystem Restoration Communities. Not taken at the workshop.",
+    "featured": true,
+    "low": false
+   },
+   {
+    "file": "accelerator-workshop-2022-02-hats-in-the-air",
     "w": 444,
     "h": 193,
     "kb": 20,
     "alt": "Participants throwing their hats in the air around a straw bale, with mountains and parasols behind",
     "caption": "Accelerator Workshop 2022, México, 14–25 March 2022",
-    "featured": true,
+    "featured": false,
     "low": true
    }
   ]
