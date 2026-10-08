@@ -277,3 +277,6 @@ Stephanie asked for images for every past workshop on the new site so the event 
 - January 2025, Cyprus: CY-Workshop(8), CY-CLASSES(3).
 - August 2023, Costa Rica: Aug2023_Workshop_Group7.
 - No photos found for October 2025 (Costa Rica), July 2024 (Costa Rica), 2022 (México) and 2019 (Brasil). These need photos from the workshop team.
+- Added 8 October, after checking the old soilfoodweb.com: its media library has the small cards from its old workshops page (brazil-2019, mexico-2022, costa-rica-2024, uploaded August 2025, 480 x 270 with a flag and label). These are cropped to the photo and used for 2019, 2022 and July 2024, marked as too small; the originals are needed. The old blog posts have no other workshop photos.
+- Linnea confirmed the CTPFW stills (CTPFW AUG2023 folder) are from Costa Rica, August 2023. Five of them (high five, laughing at compost cage, holding buckets, laughing together, moving compost) are added to August 2023. The earlier note that ctpfw-student-moving-compost-1 is from October 2023 (its file date) is wrong: it is August 2023.
+- Still no photos for October 2025, Costa Rica. Linnea is searching.
