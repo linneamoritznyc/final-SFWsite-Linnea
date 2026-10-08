@@ -411,48 +411,56 @@ START_HERE = [
 
 
 def pubs():
-    ps = data("publications")
-    blurbs = {}
-    bf = os.path.join(B.STG, "publication-blurbs.json")
-    if os.path.exists(bf):
-        blurbs = {b["id"]: b for b in json.load(open(bf, encoding="utf-8"))}
-    for p in ps:
-        p["title"] = fix(p["title"])
-        if p["id"] == 1064:  # 27 and section 7: one USDA label, typed as a government publication
-            p["kind"] = "Government publication"
-        p["hide_citation"] = p["citation"] == "Journal citation not verified"  # 11
-        b = blurbs.get(p["id"])
-        text = fix(b["blurb"]).strip() if b else ""
-        p["blurb_title_only"] = text.endswith("[from title]")  # no abstract found; Carla checks these first
-        p["blurb"] = text.replace("[from title]", "").strip()
-        p["blurb_source"] = b["source"] if b else ""
-    return ps
+    """content/publications.json, written by tools/publications-import.py from
+    docs/sfw-publications-final.csv (finalized 8 October 2026). Every entry has
+    a summary and a useful-for line, topic tags, a study type and a region."""
+    d = repo("publications")
+    for p in d["entries"]:
+        p["collection_label"] = d["collections"][p["collection"]]
+    return d["entries"]
 
 
-def pub_links(p):
-    """Dr. Elaine's own papers: Google Scholar first, DOI second (section 7)."""
-    href = p["href"]
-    own = p["collection"].startswith("Dr. Elaine")
-    doi = href if "doi.org/" in href else ""
-    if not doi and "doi.org/" in p.get("blurb_source", ""):
-        doi = p["blurb_source"]
-    links = []
-    if own:
-        scholar = href if "scholar.google" in href else "https://scholar.google.com/scholar?q=" + H.escape(re.sub(r"\s+", "+", '"%s"' % p["title"]), quote=True)
-        links.append(("Google Scholar", scholar))
-        if doi:
-            links.append(("DOI", doi))
-        elif href and "scholar.google" not in href and "soilfoodweb.com" not in href:
-            links.append(("Publisher", href))
-    else:
-        if href and "soilfoodweb.com" not in href:
-            links.append(("DOI" if doi else "Read it", href))
-    return links
+def pub_link_label(p):
+    """What the external link is, for the button on the publication's own page."""
+    u = p["url"]
+    if "scholar.google" in u:
+        return "Google Scholar"
+    if "doi.org/" in u:
+        return "DOI"
+    return "Read it"
+
+
+EXT_ICON = ('<svg class="pub__ext" viewBox="0 0 16 16" aria-hidden="true" focusable="false">'
+            '<path d="M6.5 3.5h6v6M12.5 3.5l-8 8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>')
+
+
+def pub_title(p):
+    """The title, linked to the paper when there is a copy online. The last word
+    and the arrow travel together, so the arrow never wraps onto a line alone."""
+    t = E(p["title"])
+    if not p["url"]:
+        return t
+    head, _, last = t.rpartition(" ")
+    mark = '<span class="nowrap">%s%s</span>' % (last, EXT_ICON)
+    return '<a href="%s" rel="noopener">%s</a>' % (A(p["url"]), (head + " " + mark) if head else mark)
+
+
+def tag_slug(t):
+    return re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
+
+
+def tag_chips(p):
+    return '<ul class="chips pub__tags" aria-label="Topics">%s</ul>' % "".join(
+        '<li><a class="chip chip--tag" href="/publications/?topic=%s#all" data-tag="%s">%s</a></li>' % (
+            tag_slug(t), tag_slug(t), E(t)) for t in p["topics"])
+
+
+NO_COPY = "No online copy found. Listed by citation."
 
 
 @gen
 def start_here(args):
-    by = {p["id"]: p for p in pubs()}
+    by = {p.get("staging_id"): p for p in pubs()}
     cards = []
     for title, year, cite, pid, blurb in START_HERE:
         p = by.get(pid)
@@ -465,37 +473,75 @@ def start_here(args):
 
 @gen
 def publications(args):
+    """The searchable list. Rendered complete, oldest first under the three
+    collection headings, so without JavaScript a reader gets every entry and
+    the filter bar stays hidden. js/site.js (section 5b) filters in the
+    browser and keeps the state in the query string."""
+    d = repo("publications")
     ps = pubs()
-    colls = OrderedDict()
-    for p in ps:
-        colls.setdefault(p["collection"], []).append(p)
-    topics = sorted({t for p in ps for t in p["topics"]})
-    slug = lambda s: re.sub(r"[^a-z0-9]+", "-", s.lower().replace("’", "")).strip("-")
-    chips = '<li><button class="chip" type="button" data-chip="" aria-pressed="true">All (%d)</button></li>' % len(ps) + "".join(
-        '<li><button class="chip" type="button" data-chip="%s" aria-pressed="false">%s (%d)</button></li>' % (slug(c), E(c), len(v)) for c, v in colls.items())
-    opts = '<option value="">Topic: any</option>' + "".join('<option value="%s">%s</option>' % (A(t.replace(" ", "-")), E(t)) for t in topics)
-    groups = []
-    for c, items in colls.items():
-        rows = []
-        for p in items:
-            line = p["authors"] + ("" if p["hide_citation"] or not p["citation"] else " · " + p["citation"])
-            links = " ".join('<a href="%s" rel="noopener">%s</a>' % (A(h), l) for l, h in pub_links(p))
-            why = ('<p class="entry__why"><b>Why read it:</b> <span class="draft"%s>%s</span></p>' % (' data-from="title"' if p["blurb_title_only"] else "", E(p["blurb"]))) if p["blurb"] else \
-                '<p class="entry__why"><b>Why read it:</b> <span class="todo">one-sentence summary from the abstract; Carla Portugal checks</span></p>'
-            rows.append('<li class="entry" data-item data-group="%s" data-topics="%s" data-text="%s"><span class="entry__year">%s</span>'
-                        '<div><p class="entry__title"><a href="/publication/%s/">%s</a></p><p class="entry__line">%s</p>%s%s</div>'
-                        '<span class="entry__kind">%s</span></li>' % (
-                            slug(c), A(" ".join(t.replace(" ", "-") for t in p["topics"])),
-                            esc_attr_text(" ".join([p["title"], p["authors"], p["citation"], p["year"], " ".join(p["topics"])])),
-                            E(p["year"]), p["slug"], E(p["title"]), E(line), why,
-                            '<p class="entry__links">%s</p>' % links if links else "", E(p["kind"])))
-        groups.append('<section data-group-block><h3>%s</h3><ul class="entries">%s</ul></section>' % (E(c), "".join(rows)))
-    return ('<div data-filter id="all"><ul class="chips" aria-label="Collections">%s</ul>'
-            '<form class="searchbar" role="search"><label class="sr-only" for="pub-q">Search publications</label>'
-            '<input id="pub-q" type="search" data-q placeholder="Search by title, author, topic, or year">'
-            '<label class="sr-only" for="pub-topic">Topic</label><select id="pub-topic" data-topic>%s</select></form>'
-            '<p class="count" data-count data-one="publication" data-many="publications" aria-live="polite"></p>%s'
-            '<p data-empty hidden>No publications match. Try a different word or topic.</p></div>') % (chips, opts, "".join(groups))
+    f = d["filters"]
+    order = [o["value"] for o in f["collection"]]
+    entries = sorted(enumerate(ps), key=lambda t: (order.index(t[1]["collection"]), t[1]["year"], t[0]))
+
+    def select(name, label, groups):
+        opts = '<option value="">Any</option>'
+        for g, options in groups:
+            inner = "".join('<option value="%s">%s (%d)</option>' % (A(o["value"]), E(o["label"]), o["count"]) for o in options)
+            opts += ('<optgroup label="%s">%s</optgroup>' % (A(g), inner)) if g else inner
+        return ('<div class="pubs-filter__field pubs-filter__%s"><label for="pf-%s">%s</label>'
+                '<select id="pf-%s" name="%s">%s</select></div>' % (name, name, E(label), name, name, opts))
+
+    form = ('<form class="pubs-filter" data-pubs-filter role="search" aria-label="Filter publications" hidden>'
+            '<div class="pubs-filter__field pubs-filter__q"><label for="pf-q">Search by title, author, topic or year</label>'
+            '<input id="pf-q" name="q" type="search" autocomplete="off"></div>%s%s%s%s'
+            '<div class="pubs-filter__field pubs-filter__sort"><label for="pf-sort">Sort</label>'
+            '<select id="pf-sort" name="sort"><option value="">Oldest first</option><option value="newest">Newest first</option></select></div>'
+            '</form>') % (
+        select("collection", "Collection", [(None, f["collection"])]),
+        select("topic", "Topic", [(g["facet"], g["options"]) for g in f["topic"]]),
+        select("study", "Study type", [(None, f["study_type"])]),
+        select("region", "Region", [(None, f["region"])]))
+
+    g = d["tagGuide"]
+    cap = lambda s: s[:1].upper() + s[1:]
+    guide = "".join('<h3>%s</h3><p class="pubs-guide__about">%s.</p><dl class="pubs-guide__list">%s</dl>' % (
+        E(fc["name"]), E(cap(fc["about"])),
+        "".join("<dt>%s</dt><dd>%s</dd>" % (E(t["tag"]), E(cap(t["definition"]))) for t in fc["tags"]))
+        for fc in g["facets"] + [dict(g["studyType"], name="Study type")])
+    guide += '<h3>Region</h3><p class="pubs-guide__about">One per paper.</p><p>%s. %s</p>' % (
+        E(", ".join(g["region"]["values"])), E(g["region"]["note"]))
+    guide = ('<p class="pubs-guide__about">A paper gets every tag that describes its main subject, usually 2 to 5. '
+             'The facets let you come at the list from the question you bring: which organism, which practice, '
+             'which result, which kind of land, which kind of work.</p>') + guide
+
+    st_slug = dict((o["label"], o["value"]) for o in f["study_type"])
+    rg_slug = dict((o["label"], o["value"]) for o in f["region"])
+
+    def card(i, p):
+        meta = " · ".join(['<time datetime="%d">%d</time>' % (p["year"], p["year"])] + [E(p[k]) for k in ("type", "study_type", "region")])
+        line = " · ".join(E(p[k]) for k in ("authors", "citation") if p[k])
+        return ('<li class="pub" data-i="%d" data-p-collection="%s" data-p-topic="%s" data-p-study="%s" data-p-region="%s" data-year="%d">'
+                '<p class="pub__meta">%s</p><h4 class="pub__title">%s</h4>%s%s'
+                '<p class="pub__text"><b>Summary:</b> <span data-s>%s</span></p>'
+                '<p class="pub__text"><b>Useful for:</b> <span data-s>%s</span></p>%s</li>') % (
+            i, p["collection"], A(" ".join(tag_slug(t) for t in p["topics"])), st_slug[p["study_type"]],
+            rg_slug[p["region"]], p["year"], meta, pub_title(p),
+            '<p class="entry__line">%s</p>' % line if line else "",
+            "" if p["url"] else '<p class="pub__nolink">%s</p>' % NO_COPY,
+            E(p["summary"]), E(p["useful_for"]), tag_chips(p))
+
+    groups = "".join('<h3 class="pubs-group" data-pubs-head="%s">%s</h3><ul class="pubs-list" data-pubs-group="%s">%s</ul>' % (
+        c, E(d["collections"][c]), c, "".join(card(n, p) for n, (_, p) in enumerate(entries) if p["collection"] == c)) for c in order)
+
+    return ('<div class="pubs" id="all">'
+            '<p class="pubs-counts">%s</p>%s'
+            '<details class="pubs-guide"><summary>How the tags work</summary><div>%s</div></details>'
+            '<div class="pubs-status" data-pubs-bar hidden><p aria-live="polite" data-pubs-status></p>'
+            '<button class="btn btn--ghost btn--small" type="button" data-pubs-clear hidden>Clear filters</button></div>'
+            '<div data-pubs>%s<ul class="pubs-list" data-pubs-flat hidden></ul>'
+            '<div class="pubs-empty" data-pubs-empty hidden><p>No publications match these filters.</p>'
+            '<p><button class="btn btn--ghost btn--small" type="button" data-pubs-clear>Clear filters</button></p></div>'
+            '</div></div>') % (E(d["counts"]), form, guide, groups)
 
 
 # ------------------------------------------------------------------ videos
@@ -716,23 +762,20 @@ def event_pages():
 def publication_pages():
     for p in pubs():
         path = "/publication/%s/" % p["slug"]
-        bugs = ["11"] if p["hide_citation"] else (["27"] if p["id"] == 1064 else [])
-        begin(path, "staging", bugs, "", "Publication")
-        links = " ".join('<a class="btn btn--ghost btn--small" href="%s" rel="noopener">%s</a>' % (A(h), l) for l, h in pub_links(p))
-        rows = [("Year", p["year"]), ("Type", p["kind"]), ("Authors", p["authors"])]
-        if p["citation"] and not p["hide_citation"]:
+        begin(path, "repo", [], "From docs/sfw-publications-final.csv (8 October 2026).", "Publication")
+        rows = [("Year", str(p["year"])), ("Type", p["type"]), ("Study type", p["study_type"]),
+                ("Region", p["region"]), ("Authors", p["authors"])]
+        if p["citation"]:
             rows.append(("Published in", p["citation"]))
-        rows.append(("Collection", p["collection"]))
-        if p["topics"]:
-            rows.append(("Topics", ", ".join(p["topics"])))
-        why = '<p class="lead"><b>Why read it:</b> <span class="draft"%s>%s</span></p>' % (' data-from="title"' if p["blurb_title_only"] else "", E(p["blurb"])) if p["blurb"] else TODO % "Why read it: one sentence from the abstract; Carla Portugal checks."
-        extra = TODO % "Journal citation for this entry; Carla Portugal verifies it." if p["hide_citation"] else ""
-        body = ('<section class="band"><div class="wrap wrap--narrow">%s<p class="eyebrow">%s</p><h1>%s</h1>%s'
+        rows.append(("Collection", p["collection_label"]))
+        link = ('<p class="actions"><a class="btn btn--ghost btn--small" href="%s" rel="noopener">%s</a></p>' % (A(p["url"]), pub_link_label(p))
+                if p["url"] else '<p class="pub__nolink">%s</p>' % NO_COPY)
+        body = ('<section class="band"><div class="wrap wrap--narrow">%s<p class="eyebrow">%s</p><h1>%s</h1>'
+                '<p class="lead"><b>Summary:</b> %s</p><p><b>Useful for:</b> %s</p>'
                 '<dl class="kv">%s</dl>%s%s</div></section>') % (
-            back("/publications/", "Back to publications"), E(p["kind"]), E(p["title"]), why,
-            "".join("<dt>%s</dt><dd>%s</dd>" % (E(k), E(v)) for k, v in rows), extra,
-            '<p class="actions">%s</p>' % links if links else "")
-        write(path, p["title"], "%s (%s). %s" % (p["title"], p["year"], p["authors"]), body, "/how-it-works/")
+            back("/publications/", "Back to publications"), E(p["type"]), E(p["title"]), E(p["summary"]), E(p["useful_for"]),
+            "".join("<dt>%s</dt><dd>%s</dd>" % (E(k), E(v)) for k, v in rows), tag_chips(p), link)
+        write(path, p["title"], "%s (%d). %s" % (p["title"], p["year"], p["summary"]), body, "/how-it-works/")
 
 
 def post_pages():

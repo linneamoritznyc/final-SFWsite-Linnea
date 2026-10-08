@@ -97,10 +97,17 @@ def photo(file, alt, cls="", eager=False, caption=None, sizes="(min-width: 64em)
         pass
     want = _loose(file)
     hits = [f for f in os.listdir(NEW_SRC) if _loose(f) == want]
-    if not hits:
-        raise SystemExit("photo: %s not found in img/new-2026-10/" % file)
-    srcf = os.path.join(NEW_SRC, hits[0])
     slug = name or re.sub(r"[^a-z0-9]+", "-", want).strip("-")
+    if not hits:
+        # Some originals are gitignored (phone HEICs, the R5A shoot), so a fresh
+        # clone has only the committed outputs. Use those rather than stop.
+        made = sorted((f for f in os.listdir(NEW_OUT) if re.fullmatch(re.escape(slug) + r"-\d+w\.jpg", f)),
+                      key=lambda f: -int(f.rsplit("-", 1)[1][:-5])) if os.path.isdir(NEW_OUT) else []
+        if not made:
+            raise SystemExit("photo: %s not found in img/new-2026-10/" % file)
+        return _photo_tag([(os.path.relpath(os.path.join(NEW_OUT, f[:-4]), ROOT),) + Image.open(os.path.join(NEW_OUT, f)).size
+                           for f in made], "img/new-2026-10/" + file, want, alt, cls, eager, caption, sizes)
+    srcf = os.path.join(NEW_SRC, hits[0])
     os.makedirs(NEW_OUT, exist_ok=True)
     im = ImageOps.exif_transpose(Image.open(srcf))
     im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
@@ -130,10 +137,15 @@ def photo(file, alt, cls="", eager=False, caption=None, sizes="(min-width: 64em)
                         rr = rr.resize((round(rr.size[0] * .9), round(rr.size[1] * .9)), Image.LANCZOS)
         actual = Image.open(stem + ".jpg").size
         variants.append((os.path.relpath(stem, ROOT), actual[0], actual[1]))
+    return _photo_tag(variants, "img/new-2026-10/" + hits[0], want, alt, cls, eager, caption, sizes)
+
+
+def _photo_tag(variants, src, want, alt, cls, eager, caption, sizes):
+    """variants: (path without extension, width, height), largest first."""
     small = variants[-1]
     if _current is not None:
         flags = [why for k, why in NEW_FLAGS.items() if want.startswith(k.replace("_", " "))]
-        _current["images"].append({"src": "img/new-2026-10/" + hits[0], "file": small[0] + ".jpg", "from": "supplied (Google Drive)", "flags": flags})
+        _current["images"].append({"src": src, "file": small[0] + ".jpg", "from": "supplied (Google Drive)", "flags": flags})
     big = variants[0]
     attrs = ['src="/%s.jpg"' % big[0], 'width="%d"' % big[1], 'height="%d"' % big[2], 'alt="%s"' % A(alt)]
     srcset = lambda ext: ", ".join("/%s%s %dw" % (f, ext, w) for f, w, _ in reversed(variants))

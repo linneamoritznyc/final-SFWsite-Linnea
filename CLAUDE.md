@@ -54,8 +54,10 @@ and, on branch claude/staging-reality, docs/staging-reality.md (Fable's staging 
   (copy deck section 5) appears on Home, About, Programs, Donate, Scholarship, footer.
 - No em dashes. One H1 per page. Footer legal block on every page (EIN 39-4439236,
   Oregon DOJ #71264, address).
-- Publication "Why read it" lines are drafts (class "draft"; `?review` highlights them)
-  for Carla Portugal; export in docs/publications-blurbs.csv.
+- Publications come from docs/sfw-publications-final.csv (finalized 8 October 2026), the
+  single source of truth: `python3 tools/publications-import.py docs/sfw-publications-final.csv`
+  writes content/publications.json, then rebuild. Never edit an entry by hand; list what looks
+  wrong for Linnea. Handoff for the WordPress build: docs/publications-wordpress-handoff.md.
 
 ## Design
 - Matches the staging child theme: Montserrat headings, Source Sans 3 body (self-hosted

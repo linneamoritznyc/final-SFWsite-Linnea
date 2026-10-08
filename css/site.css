@@ -501,3 +501,46 @@ picture { display: contents; }
 .card > .photo { margin: 0; }
 .card > .photo img { border-radius: 0; }
 .card > .photo figcaption { margin: .4rem 1.25rem 0; }
+
+/* Publications (/publications/). Added 8 October 2026. The filter bar, the
+   tag guide and the card. Summary and Useful for are the point of the card,
+   so they get body size, full ink and room around them. */
+.nowrap { white-space: nowrap; }
+.pubs-counts { color: var(--ink-soft); font-size: var(--t-small); margin: 0 0 1.5rem; }
+.pubs-filter { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin: 0 0 1.25rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); scroll-margin-top: 6rem; }
+@media (min-width: 40em) { .pubs-filter { grid-template-columns: repeat(2, minmax(0, 1fr)); } .pubs-filter__q { grid-column: 1 / -1; } }
+@media (min-width: 64em) { .pubs-filter { grid-template-columns: repeat(6, minmax(0, 1fr)); } .pubs-filter__topic { grid-column: span 2; } }
+.pubs-filter label { font-family: var(--display); font-size: .8125rem; }
+.pubs-filter select { cursor: pointer; }
+.pubs-guide { margin: 0 0 1.5rem; max-width: 70ch; }
+.pubs-guide > summary { cursor: pointer; font-weight: 600; color: var(--green); text-decoration: underline; text-underline-offset: .15em; }
+.pubs-guide > summary:hover { color: var(--moss); }
+.pubs-guide > div { padding-top: 1rem; }
+.pubs-guide h3 { font-size: 1.0625rem; margin: 1.75rem 0 .25rem; }
+.pubs-guide__about { color: var(--ink-soft); font-size: var(--t-small); margin: 0 0 .5rem; }
+.pubs-guide__list { margin: 0; font-size: .9375rem; }
+.pubs-guide__list dt { font-weight: 600; color: var(--soil); margin-top: .5rem; }
+.pubs-guide__list dd { margin: 0; }
+@media (min-width: 40em) { .pubs-guide__list { display: grid; grid-template-columns: 13rem minmax(0, 1fr); column-gap: 1.25rem; } .pubs-guide__list dd { margin-top: .5rem; } }
+.pubs-status { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; margin: 0 0 2rem; min-height: 2.75rem; }
+.pubs-status p { margin: 0; font-weight: 600; color: var(--soil); }
+.pubs-group { margin: 2.75rem 0 1rem; }
+.pubs [data-pubs] > .pubs-group:first-child { margin-top: 0; }
+.pubs-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+.pub { padding: 1.5rem 0; border-bottom: 1px solid var(--rule); margin: 0; }
+.pub > * { margin: 0; max-width: 72ch; }
+.pub__meta { font-size: .8125rem; color: var(--ink-soft); margin-bottom: .35rem; }
+.pub__meta time { font-variant-numeric: tabular-nums; }
+.pub__title { font-size: 1.1875rem; line-height: 1.35; margin-bottom: .3rem; overflow-wrap: anywhere; }
+.pub__title a { color: var(--soil); text-decoration: none; }
+.pub__title a:hover { color: var(--green); text-decoration: underline; }
+.pub__ext { display: inline-block; width: .8em; height: .8em; margin-left: .25em; vertical-align: baseline; }
+.pub .entry__line { font-size: .9375rem; }
+.pub__nolink { font-size: .8125rem; color: var(--ink-soft); margin-top: .25rem; }
+.pub__text { line-height: 1.55; margin-top: .65rem; }
+.pub__text + .pub__text { margin-top: .35rem; }
+.pub__text b { color: var(--soil); }
+.pub__tags { gap: .4rem; margin-top: .9rem; }
+.chip--tag { font-weight: 500; font-size: .75rem; padding: .35em .85em; border-color: var(--rule); color: var(--ink); }
+.chip--tag:hover { border-color: var(--green); color: var(--green); background: var(--white); }
+.pubs-empty { padding: 2rem 0; border-top: 1px solid var(--rule); }
