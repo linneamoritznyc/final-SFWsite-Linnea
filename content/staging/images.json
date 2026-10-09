@@ -475,6 +475,32 @@
   "source_size": "1224x1224",
   "w": 1224
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/06/Gerald-768x768.jpg": {
+  "alt": "Bearded man in a hat in a greenhouse full of red flowers.",
+  "bytes": 159398,
+  "file": "img/gerald-2.webp",
+  "flags": [],
+  "h": 1224,
+  "shows": "A young man with a dark beard, wide-brimmed tan hat and brown striped shirt takes a selfie inside a greenhouse. Behind him are rows of plants with red flowers under a white plastic roof.",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/06/Gerald-768x768.jpg",
+  "source_size": "1224x1224",
+  "w": 1224
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/06/Screenshot-2026-06-16-172957-768x724.jpg": {
+  "alt": "Woman in straw hat and blue shirt in front of green hills",
+  "bytes": 113026,
+  "file": "img/screenshot-2026-06-16-172957-2.webp",
+  "flags": [
+   "screenshot"
+  ],
+  "h": 763,
+  "shows": "A woman with long dark hair wears a straw hat, sunglasses and a blue shirt with a red cord, standing in front of green hills with scattered trees and cut brush.",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/06/Screenshot-2026-06-16-172957-768x724.jpg",
+  "source_size": "809x763",
+  "w": 809
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/06/Screenshot-2026-06-16-172957.jpg": {
   "alt": "Woman in straw hat and blue shirt in front of green hills",
   "bytes": 113026,
@@ -3150,6 +3176,18 @@
   "source_size": "2000x2000",
   "w": 1600
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/70CFA343-AD3A-4C7B-BEC0-00CAE1F6FFE0-scaled.jpg": {
+  "alt": "",
+  "bytes": 256584,
+  "file": "img/70cfa343-ad3a-4c7b-bec0-00cae1f6ffe0.webp",
+  "flags": [],
+  "h": 1541,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/70CFA343-AD3A-4C7B-BEC0-00CAE1F6FFE0-scaled.jpg",
+  "source_size": "1920x2560",
+  "w": 1156
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/09/CIC-4.jpg": {
   "alt": "Compost Intensive Course logo surrounded by compost photos",
   "bytes": 235520,
@@ -3161,6 +3199,18 @@
   "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/CIC-4.jpg",
   "source_size": "2375x1313",
   "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/IMG_1497-rotated.jpg": {
+  "alt": "",
+  "bytes": 295000,
+  "file": "img/img-1497-rotated.webp",
+  "flags": [],
+  "h": 1600,
+  "shows": "",
+  "source": "repo (picture match)",
+  "source_path": "img/wild-ken-hill/IMG_1497.jpg",
+  "source_size": "1600x1200",
+  "w": 1200
  },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/09/PDC-Community-3.jpg": {
   "alt": "Permaculture Design Course logo with certificate text on a sunset background.",
@@ -3277,6 +3327,96 @@
   "source_size": "1589x940",
   "w": 1589
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.53.18-PM.jpg": {
+  "alt": "",
+  "bytes": 50806,
+  "file": "img/screenshot-2026-10-08-at-6-53-18-pm.webp",
+  "flags": [
+   "screenshot",
+   "low resolution (704x688 source)"
+  ],
+  "h": 688,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.53.18-PM.jpg",
+  "source_size": "704x688",
+  "w": 704
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.53.27-PM.jpg": {
+  "alt": "",
+  "bytes": 89324,
+  "file": "img/screenshot-2026-10-08-at-6-53-27-pm.webp",
+  "flags": [
+   "screenshot",
+   "low resolution (718x680 source)"
+  ],
+  "h": 680,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.53.27-PM.jpg",
+  "source_size": "718x680",
+  "w": 718
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.53.51-PM.jpg": {
+  "alt": "",
+  "bytes": 89952,
+  "file": "img/screenshot-2026-10-08-at-6-53-51-pm.webp",
+  "flags": [
+   "screenshot",
+   "low resolution (708x972 source)"
+  ],
+  "h": 972,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.53.51-PM.jpg",
+  "source_size": "708x972",
+  "w": 708
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.54.05-PM.jpg": {
+  "alt": "",
+  "bytes": 41728,
+  "file": "img/screenshot-2026-10-08-at-6-54-05-pm.webp",
+  "flags": [
+   "screenshot",
+   "low resolution (702x686 source)"
+  ],
+  "h": 686,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.54.05-PM.jpg",
+  "source_size": "702x686",
+  "w": 702
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.54.12-PM.jpg": {
+  "alt": "",
+  "bytes": 103622,
+  "file": "img/screenshot-2026-10-08-at-6-54-12-pm.webp",
+  "flags": [
+   "screenshot",
+   "low resolution (710x960 source)"
+  ],
+  "h": 960,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.54.12-PM.jpg",
+  "source_size": "710x960",
+  "w": 710
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.54.23-PM.jpg": {
+  "alt": "",
+  "bytes": 103106,
+  "file": "img/screenshot-2026-10-08-at-6-54-23-pm.webp",
+  "flags": [
+   "screenshot",
+   "low resolution (712x904 source)"
+  ],
+  "h": 904,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/Screenshot-2026-10-08-at-6.54.23-PM.jpg",
+  "source_size": "712x904",
+  "w": 712
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/09/actively-aerated-compost-tea-brew-vessels.webp": {
   "alt": "Three white buckets of brewing compost tea with air tubes.",
   "bytes": 77982,
@@ -3288,6 +3428,18 @@
   "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/actively-aerated-compost-tea-brew-vessels.webp",
   "source_size": "960x540",
   "w": 960
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/ctpfw-student-moving-compost-1-1024x576.jpg": {
+  "alt": "People turning and watering a compost pile in a wire bay.",
+  "bytes": 119690,
+  "file": "img/ctpfw-student-moving-compost-2.webp",
+  "flags": [],
+  "h": 900,
+  "shows": "Several people work at a wire-mesh compost bay under a green shed; one lifts a large forkful of dark compost while a man in a cap sprays it with a hose. Others watch in the background.",
+  "source": "repo (name and picture match)",
+  "source_path": "img/ctpfw-student-moving-compost-1.jpg",
+  "source_size": "2000x1125",
+  "w": 1600
  },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/09/ctpfw-student-squeezing-compost-1-1024x576.jpg": {
   "alt": "Man in a cap squeezing a handful of compost over a pile",
@@ -3409,6 +3561,242 @@
   "source_size": "3083x2235",
   "w": 1600
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/49mtMKZ2TDDKB8IN42xj_23-768x960.png": {
+  "alt": "",
+  "bytes": 133972,
+  "file": "img/49mtmkz2tddkb8in42xj-23.webp",
+  "flags": [],
+  "h": 2000,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/49mtMKZ2TDDKB8IN42xj_23-768x960.png",
+  "source_size": "3375x4219",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/CIC-5-1024x566.jpg": {
+  "alt": "",
+  "bytes": 210100,
+  "file": "img/cic-5.webp",
+  "flags": [],
+  "h": 885,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/CIC-5-1024x566.jpg",
+  "source_size": "2375x1313",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Cbc6x9STSF0bFM1d8gaQ_Microscopy-768x960.jpg": {
+  "alt": "",
+  "bytes": 147128,
+  "file": "img/cbc6x9stsf0bfm1d8gaq-microscopy.webp",
+  "flags": [],
+  "h": 1350,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Cbc6x9STSF0bFM1d8gaQ_Microscopy-768x960.jpg",
+  "source_size": "1080x1350",
+  "w": 1080
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Complete-Practicum-4-1024x566.jpg": {
+  "alt": "",
+  "bytes": 150786,
+  "file": "img/complete-practicum-4.webp",
+  "flags": [],
+  "h": 885,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Complete-Practicum-4-1024x566.jpg",
+  "source_size": "2375x1313",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/DljnAzpkRnGPWGtDcvUS_Liquids-768x960.jpg": {
+  "alt": "",
+  "bytes": 128150,
+  "file": "img/dljnazpkrngpwgtdcvus-liquids.webp",
+  "flags": [],
+  "h": 1350,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/DljnAzpkRnGPWGtDcvUS_Liquids-768x960.jpg",
+  "source_size": "1080x1350",
+  "w": 1080
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/F632kP5MShGEuqjBrpim_24-768x960.png": {
+  "alt": "",
+  "bytes": 139454,
+  "file": "img/f632kp5mshgeuqjbrpim-24.webp",
+  "flags": [],
+  "h": 2000,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/F632kP5MShGEuqjBrpim_24-768x960.png",
+  "source_size": "3375x4219",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Foundation-Courses-Bundle-1024x566.jpg": {
+  "alt": "",
+  "bytes": 177566,
+  "file": "img/foundation-courses-bundle.webp",
+  "flags": [],
+  "h": 885,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Foundation-Courses-Bundle-1024x566.jpg",
+  "source_size": "2375x1313",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/IER-Community-2-1024x566.jpg": {
+  "alt": "",
+  "bytes": 100486,
+  "file": "img/ier-community-2.webp",
+  "flags": [],
+  "h": 885,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/IER-Community-2-1024x566.jpg",
+  "source_size": "2375x1313",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/IMG_2317-scaled.jpg": {
+  "alt": "",
+  "bytes": 134352,
+  "file": "img/img-2317.webp",
+  "flags": [],
+  "h": 1200,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/IMG_2317-scaled.jpg",
+  "source_size": "2560x1920",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Intro-to-the-FCs-3-1024x566.png": {
+  "alt": "",
+  "bytes": 190296,
+  "file": "img/intro-to-the-fcs-3.webp",
+  "flags": [],
+  "h": 885,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Intro-to-the-FCs-3-1024x566.png",
+  "source_size": "2375x1313",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/SZjnVYn8TiKcaBXywJqw_21-768x960.png": {
+  "alt": "",
+  "bytes": 132624,
+  "file": "img/szjnvyn8tikcabxywjqw-21.webp",
+  "flags": [],
+  "h": 2000,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/SZjnVYn8TiKcaBXywJqw_21-768x960.png",
+  "source_size": "3375x4219",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-03-110524-768x1026.jpg": {
+  "alt": "",
+  "bytes": 274874,
+  "file": "img/screenshot-2026-10-03-110524.webp",
+  "flags": [
+   "screenshot"
+  ],
+  "h": 1600,
+  "shows": "",
+  "source": "repo (picture match)",
+  "source_path": "img/wild-ken-hill/IMG_1501.jpg",
+  "source_size": "1600x1200",
+  "w": 1200
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-03-110542-768x1035.jpg": {
+  "alt": "",
+  "bytes": 291110,
+  "file": "img/screenshot-2026-10-03-110542.webp",
+  "flags": [
+   "screenshot"
+  ],
+  "h": 1600,
+  "shows": "",
+  "source": "repo (picture match)",
+  "source_path": "img/wild-ken-hill/IMG_1496.jpg",
+  "source_size": "1600x1200",
+  "w": 1200
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-03-122235.jpg": {
+  "alt": "",
+  "bytes": 107704,
+  "file": "img/screenshot-2026-10-03-122235.webp",
+  "flags": [
+   "screenshot"
+  ],
+  "h": 894,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-03-122235.jpg",
+  "source_size": "1761x984",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-08-230814.jpg": {
+  "alt": "",
+  "bytes": 14262,
+  "file": "img/screenshot-2026-10-08-230814.webp",
+  "flags": [
+   "screenshot"
+  ],
+  "h": 451,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-08-230814.jpg",
+  "source_size": "1061x451",
+  "w": 1061
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Ug9FBbW9R0WcyszlJApU_22-768x960.jpg": {
+  "alt": "",
+  "bytes": 54908,
+  "file": "img/ug9fbbw9r0wcyszljapu-22.webp",
+  "flags": [],
+  "h": 2000,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Ug9FBbW9R0WcyszlJApU_22-768x960.jpg",
+  "source_size": "3375x4219",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/aH3WakkmT5iZ9qrReo9y_Master-Compost-768x960.jpg": {
+  "alt": "",
+  "bytes": 306222,
+  "file": "img/ah3wakkmt5iz9qrreo9y-master-compost.webp",
+  "flags": [],
+  "h": 1350,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/aH3WakkmT5iZ9qrReo9y_Master-Compost-768x960.jpg",
+  "source_size": "1080x1350",
+  "w": 1080
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/be5jIXi2RdqTbDRjWDdN_25-768x960.png": {
+  "alt": "",
+  "bytes": 144546,
+  "file": "img/be5jixi2rdqtbdrjwddn-25.webp",
+  "flags": [],
+  "h": 2000,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/be5jIXi2RdqTbDRjWDdN_25-768x960.png",
+  "source_size": "3375x4219",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/dSQU5lGWTQO6uWigjNw5_Networking-768x960.jpg": {
+  "alt": "",
+  "bytes": 226992,
+  "file": "img/dsqu5lgwtqo6uwigjnw5-networking.webp",
+  "flags": [],
+  "h": 1350,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/dSQU5lGWTQO6uWigjNw5_Networking-768x960.jpg",
+  "source_size": "1080x1350",
+  "w": 1080
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/10/ij2JVOWvSLamVlGQxugm_Screenshot-2026-07-28-at-8.12.43-AM.jpg": {
   "alt": "",
   "bytes": 102528,
@@ -3423,6 +3811,30 @@
   "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/ij2JVOWvSLamVlGQxugm_Screenshot-2026-07-28-at-8.12.43-AM.jpg",
   "source_size": "632x812",
   "w": 632
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/quCD0e80Rw6BMURLRxCL_26-768x960.png": {
+  "alt": "",
+  "bytes": 94822,
+  "file": "img/qucd0e80rw6bmurlrxcl-26.webp",
+  "flags": [],
+  "h": 2000,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/quCD0e80Rw6BMURLRxCL_26-768x960.png",
+  "source_size": "3375x4219",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/wDGRj7EVSOCYyg0VzTMP_Experience-768x960.jpg": {
+  "alt": "",
+  "bytes": 259836,
+  "file": "img/wdgrj7evsocyyg0vztmp-experience.webp",
+  "flags": [],
+  "h": 1350,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/wDGRj7EVSOCYyg0VzTMP_Experience-768x960.jpg",
+  "source_size": "1080x1350",
+  "w": 1080
  },
  "https://soilfoodweb.com/wp-content/uploads/2019/04/Elaine-Ingham-pic_no-border.jpg": {
   "alt": "Dr. Elaine Ingham in a ploughed field, drawn around with a diagram of the soil food web",
@@ -3594,6 +4006,18 @@
   "source_size": "1920x2560",
   "w": 1600
  },
+ "https://soilfoodweb.com/wp-content/uploads/2026/04/PDC-Cohort-1-Launches-1.png": {
+  "alt": "Yellow graphic with Permaculture Design Course badge",
+  "bytes": 32608,
+  "file": "img/pdc-cohort-1-launches.webp",
+  "flags": [],
+  "h": 900,
+  "shows": "Yellow graphic with wavy shapes, an empty white outlined rectangle on the left and a circular badge on the right showing a blue, green and brown leaf emblem.",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2026/04/PDC-Cohort-1-Launches-1.png",
+  "source_size": "2240x1260",
+  "w": 1600
+ },
  "https://www.soilfoodweb.com/wp-content/uploads/2022/07/20220323_SUN_0209-e_web.jpg": {
   "alt": "Rider on a touring motorcycle with a Save Soil sticker",
   "bytes": 67674,
@@ -3666,6 +4090,30 @@
   "source": "staging download",
   "source_path": "https://www.soilfoodweb.com/wp-content/uploads/2022/11/seedlingsJPG-300x200.jpg",
   "source_size": "5472x3648",
+  "w": 1600
+ },
+ "https://www.soilfoodweb.com/wp-content/uploads/2024/03/Phili-Bartons-Syntropic-Forest-Background-Masthead-Images-2742-by-1202-pixels-scaled.jpg": {
+  "alt": "Dense green forest with palms and layered undergrowth.",
+  "bytes": 299216,
+  "file": "img/phili-bartons-syntropic-forest-background-masthead-images-2742-by-1202-pixels.webp",
+  "flags": [],
+  "h": 701,
+  "shows": "Dense green forest with tall palms, thin pale tree trunks and layered leafy undergrowth.",
+  "source": "staging download",
+  "source_path": "https://www.soilfoodweb.com/wp-content/uploads/2024/03/Phili-Bartons-Syntropic-Forest-Background-Masthead-Images-2742-by-1202-pixels-scaled.jpg",
+  "source_size": "2560x1122",
+  "w": 1600
+ },
+ "https://www.soilfoodweb.com/wp-content/uploads/2024/12/Copy-of-5-December-2024-Presentation-1.png": {
+  "alt": "Illustrated hands holding a seedling in soil on dark green",
+  "bytes": 78434,
+  "file": "img/copy-of-5-december-2024-presentation-2.webp",
+  "flags": [],
+  "h": 900,
+  "shows": "Illustration of two cupped hands holding soil with a green seedling, surrounded by leafy sprigs on a dark green background. A round logo and small white text sit along the bottom.",
+  "source": "staging download",
+  "source_path": "https://www.soilfoodweb.com/wp-content/uploads/2024/12/Copy-of-5-December-2024-Presentation-1.png",
+  "source_size": "1920x1080",
   "w": 1600
  },
  "https://www.soilfoodweb.com/wp-content/uploads/2025/09/Terra-Madre-Americas-300x200.jpg": {

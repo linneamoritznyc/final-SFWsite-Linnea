@@ -311,6 +311,13 @@ def posts():
                             "role": txt(tm.select_one(".position, p")),
                             "photo": im.get("src", "") if im else ""})
             tm.decompose()
+        hw = s.select_one(".page-header-bg-image img")
+        header = img_src(hw) if hw else ""
+        if header.startswith("data:"):
+            header = ""
+        if hw and not header:
+            header = media.get(r["featured_media"], "")
+        by = s.select_one("#page-header-bg .meta-author a, .page-header-meta .meta-author a, .meta-author a")
         restored = restore_images(r["slug"], m, media.get(r["featured_media"], ""))
         body = inner(m)
         out.append({
@@ -319,6 +326,8 @@ def posts():
             "date": r["date"][:10],
             "categories": [cats[c] for c in r["categories"] if c in cats],
             "featured": media.get(r["featured_media"], ""),
+            "header": header,
+            "wp_author": txt(by) if by else "",
             "excerpt": re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", H.unescape(r["excerpt"]["rendered"]))).strip(),
             "authors": authors,
             "body": body,
@@ -329,7 +338,52 @@ def posts():
     save("categories", [{"id": k, **v} for k, v in cats.items()])
 
 
+# ---------------------------------------------------------------- workshops, testimonials
+def mirror_main(s, sel):
+    """The staging <main> of a plugin page, kept as HTML (plugin classes kept, scripts out)."""
+    m = s.select_one(sel)
+    if not m:
+        return ""
+    for x in m.select("script, style, noscript"):
+        x.decompose()
+    for i in m.select("img"):
+        src = img_src(i)
+        for k in list(i.attrs):
+            if k not in ("alt", "class", "width", "height"):
+                del i[k]
+        i["src"] = src
+    for f in m.select("iframe"):
+        f["src"] = f.get("data-src") or f.get("src", "")
+        for k in list(f.attrs):
+            if k not in ("src", "title", "allow", "allowfullscreen"):
+                del f[k]
+    return str(m)
+
+
+def workshops():
+    out = []
+    for r in rest("sfw_workshop"):
+        s = page("workshop__" + r["slug"])
+        if not s:
+            continue
+        out.append({"slug": r["slug"], "title": H.unescape(r["title"]["rendered"]), "date": r["date"],
+                    "html": mirror_main(s, "main.sfw-workshop-single")})
+    save("workshops", out)
+
+
+def testimonials():
+    out = []
+    for r in rest("sfw_testimonial"):
+        s = page("testimonial__" + r["slug"])
+        if not s:
+            continue
+        m = s.select_one("main") or s.select_one(".container-wrap")
+        out.append({"slug": r["slug"], "title": H.unescape(r["title"]["rendered"]), "menu_order": r.get("menu_order", 0),
+                    "html": mirror_main(s, "main") if s.select_one("main") else mirror_main(s, ".container-wrap .container.main-content")})
+    save("testimonials", out)
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
-    for f in (publications, team, directory, videos, events, courses, posts):
+    for f in (publications, team, directory, videos, events, courses, posts, workshops, testimonials):
         f()

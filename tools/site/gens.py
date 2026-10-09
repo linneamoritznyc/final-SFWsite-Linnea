@@ -13,16 +13,9 @@ STAGING = "https://new.soilfoodweb.com"
 
 
 # ------------------------------------------------------------------ text fixes
+# Linnea, 9 October 2026: copy must be staging's text exactly. Only invisible zero-width characters go.
 FIXES = [
-    (re.compile(r"​|‌|‍|﻿"), ""),                       # 29 zero-width spaces
-    (re.compile(r"Bio[Cc]omplete(?:™|T\b|&#8482;|&trade;)?"), "BioComplete™"),  # 22
-    (re.compile(r"prerequesites|pre-requisites|prerequisits", re.I), "prerequisites"),     # 25
-    (re.compile(r"\bthat that\b"), "that"),                                   # 28
-    (re.compile(r"\bSpoil Sponge Workshop\b"), "Soil Sponge Workshop"),       # 26
-    (re.compile(r"@soilfoodwebfoundation\.org"), "@soilfoodweb.com"),          # 21
-    (re.compile(r"\s+—\s+|\s*—\s*"), ", "),                          # no em dashes
-    (re.compile(r"\s+–\s+"), ", "),
-    (re.compile(r",\s*,"), ","),
+    (re.compile(r"\u200b|\u200c|\u200d|\ufeff"), ""),
 ]
 
 
@@ -41,7 +34,7 @@ def staging_link(href):
     h = href.replace(STAGING, "").replace("https://www.soilfoodweb.com", "").replace("https://soilfoodweb.com", "") if ("soilfoodweb.com/" in href and "school." not in href and "webinar." not in href and "archive." not in href and "/wp-content/" not in href) else href
     table = [
         ("/donate/", "/donations/"), ("/contact-info/", "/contact-info/"), ("/sfw-directory/", "/find-a-professional/"),
-        ("/team/", "/about-us/#team"), ("/accessibility/", "/about-us/#contact-legal"),
+        ("/team/", "/about-us/#team"), ("/accessibility/", "/about-us/#contact-legal"), ("/about/", "/about-us/"),
     ]
     for a, b in table:
         if h.startswith(a):
@@ -139,8 +132,6 @@ PROGRAM_PHOTOS = [
 
 
 def course_card(c, scroller=False, photos=False):
-    for a, b in COURSE_EDITS:
-        c = dict(c, line=c["line"].replace(a, b))
     for a, b in COURSE_ENDS:
         if c["line"].endswith(a):
             c = dict(c, line=c["line"] + b)
@@ -204,7 +195,7 @@ def courses_grid(args):
 @gen
 def funding(args):
     """The School line and the funding sentence, for Home, About, Programs, Donate, Scholarship."""
-    return '<p class="funding">%s %s <a href="/funding/">How we\u2019re funded</a></p>' % (E(B.SCHOOL_LINE), E(B.FUNDING_LINE))
+    return ""  # staging has no funding sentence (9 October 2026)
 
 
 # ------------------------------------------------------------------ video facade
@@ -285,9 +276,6 @@ def post_card(p):
 
 def all_posts():
     ps = data("posts")
-    extra = os.path.join(B.ROOT, "content", "repo-posts.json")
-    if os.path.exists(extra):
-        ps = ps + json.load(open(extra, encoding="utf-8"))
     return sorted(ps, key=lambda p: p["date"], reverse=True)
 
 
@@ -341,17 +329,8 @@ def all_events():
     for e in data("events"):
         e = dict(e)
         e["type"] = event_type(e)
-        e["title"] = fix(e["title"]).replace(" | ", ": ")
-        if e["type"] == "community":
-            e["title"] = e["title"].replace("Community Event: ", "")
+        e["title"] = fix(e["title"])
         evs.append(e)
-    cal = repo("calendar")["indiaWorkshop"]
-    evs.append({"slug": "accelerator-workshop-india-2026", "title": "Accelerator Workshop: India", "start": "2026-10-19",
-                "end": "2026-10-30", "type": "workshop", "when": cal["dated"], "repo": True,
-                "href": "https://school.soilfoodweb.com/courses/india-workshop-2026"})
-    evs.append({"slug": "soil-health-week-pakistan-2026", "title": "Soil Health Week Pakistan 2026", "start": "2026-12-01",
-                "end": "2026-12-07", "type": "community", "when": "1 to 7 December 2026", "repo": "pakistan",
-                "href": "/soil-health-week-2025-wild-soils-uk-and-trashit-bring-the-soil-food-web-approach-to-pakistan/"})
     return sorted(evs, key=lambda e: e["start"])
 
 
@@ -366,6 +345,8 @@ REPO_EVENT_TEXT = {
 
 
 def event_when(e):
+    if not e.get("start"):
+        return e.get("when", "")
     w = fmt_range(e["start"], e["end"])
     m = re.search(r"(\d{1,2}):(\d{2}) ([ap])\.m\. UTC", e.get("when", ""))
     if m:
@@ -635,7 +616,7 @@ TEAM_EDITS = {
 
 def team_pages():
     for t in all_team():
-        for a, b in TEAM_EDITS.get(t["slug"], []):
+        for a, b in []:
             t = dict(t, bio=t["bio"].replace(a, b))
         path = "/team-member/%s/" % t["slug"]
         begin(path, "staging", [], "", "Team member")
@@ -721,55 +702,81 @@ EVENT_TEXT = {
 }
 
 
-# Header image of a calendar event: the same card image the workshop has on /past-workshop-picks/ and /workshops/.
-EVENT_HEADERS = {
-    "accelerator-workshop-india-2026": ("workshop-card-october-2026.jpg", "A collage: a compost tea brewer, a person at a microscope, a group of participants outdoors, hands holding compost, and the Accelerator Workshop logo"),
+def event_pages():
+    """Mirrors staging's calendar event page: centred title, then the event text (its first
+    picture is the event's header image, 863 px wide on staging), then previous / next event."""
+    evs = all_events()
+    for i, e in enumerate(evs):
+        path = "/calendar-event/%s/" % e["slug"]
+        begin(path, "staging", [], "Mirrors new.soilfoodweb.com, 9 October 2026.", "Calendar event")
+        body_html = rewrite_body(e["body"]) if e.get("body") else ""
+        nav = []
+        if i > 0:
+            nav.append('<a class="post-nav__prev" href="/calendar-event/%s/"><span>Previous Post</span>%s</a>' % (evs[i - 1]["slug"], E(evs[i - 1]["title"])))
+        if i + 1 < len(evs):
+            nav.append('<a class="post-nav__next" href="/calendar-event/%s/"><span>Next Post</span>%s</a>' % (evs[i + 1]["slug"], E(evs[i + 1]["title"])))
+        body = ('<section class="band"><div class="wrap"><h1 class="event-single__title">%s</h1>'
+                '<div class="event-single__body prose">%s</div></div></section>'
+                '<nav class="post-nav" aria-label="More events">%s</nav>') % (E(e["title"]), body_html, "".join(nav))
+        write(path, e["title"], "%s, %s." % (e["title"], event_when(e)) if e.get("start") else e["title"], body, "/community/")
+
+
+# Workshop pages: staging's own markup (sfw-workshops plugin), with its CSS in site.css. The hero
+# slot is empty on staging for past workshops; it carries the workshop's card image Linnea chose.
+WORKSHOP_HEROES = {
+    "accelerator-workshop-june-2026": ("workshop-card-june-2026.jpg", "Five people standing around a tall wire compost cage packed with green material, in a barn"),
+    "accelerator-workshop-february-2026": ("workshop-card-february-2026.jpg", "Workshop participants in caps and hats gathered around open blue barrels, inspecting the feedstock inside"),
+    "accelerator-workshop-october-2025": ("workshop-card-october-2025.jpg", "Eight people standing in front of tropical plants, one of them holding up a certificate"),
+    "accelerator-workshop-june-2025": ("workshop-card-june-2025.jpg", "A group standing in a field of red poppies under a blue sky"),
+    "accelerator-workshop-march-2025": ("workshop-card-march-2025.jpg", "A large group posing around a freshly built compost pile under an open-sided roof"),
+    "accelerator-workshop-january-2025": ("workshop-card-january-2025.jpg", "A large group posing under a garden pergola hung with burlap bunting"),
+    "accelerator-workshop-july-2024": ("workshop-card-july-2024.jpg", "Five people around a wire compost cage on a pallet, one kneeling with a pitchfork and giving a thumbs up"),
+    "accelerator-workshop-august-2023": ("workshop-card-august-2023.jpg", "Students reaching up for a high five over a compost pile"),
+    "accelerator-workshop-2022": ("workshop-card-2022.jpg", "People in sun hats raking and forking a long compost pile in a dry field, with mountains behind"),
+    "accelerator-workshop-2019": ("workshop-card-2019.jpg", "A group of participants posing together indoors"),
+    "accelerator-workshop-october-2026": ("workshop-card-october-2026.jpg", "A collage: a compost tea brewer, a person at a microscope, a group of participants outdoors, hands holding compost, and the Accelerator Workshop logo"),
 }
 
 
-def event_pages():
-    for e in all_events():
-        path = "/calendar-event/%s/" % e["slug"]
-        bugs = ["24"] if e["type"] in ("community", "course") or ":" in e.get("when", "") else []
-        begin(path, "repo" if e.get("repo") else "staging", bugs, "", "Calendar event")
-        detail = []
-        if e.get("repo") == "pakistan":
-            text, links = REPO_EVENT_TEXT["pakistan"]
-            detail.append("<p>%s</p>" % E(text))
-            detail.append('<p class="source">Source: this repo\u2019s calendar page. The 600 participants and 60 districts come from last year\u2019s event report.</p>')
-            detail.append("<p>%s</p>" % " &middot; ".join('<a href="%s">%s</a>' % (A(h), E(l)) for l, h in links))
-            detail.append(TODO % "Confirm the 2026 dates and the Foundation's role with Nick Padwick before publishing.")
-        elif e.get("repo"):
-            cal = repo("calendar")["featured"]
-            detail.append("<p>%s</p>" % E(fix(cal["body"])))
-            detail.append('<p class="source">Source: %s</p>' % E(cal["source"]))
-            detail.append('<p class="actions"><a class="btn" href="%s">%s</a></p>' % (A(cal["cta"]["href"]), E(cal["cta"]["label"])))
-        else:
-            if e.get("body"):
-                detail.append('<div class="prose">%s</div>' % rewrite_body(e["body"]))
-            else:
-                detail.append(TODO % ("Description, place and how to sign up for %s; the staging event page is empty. Evan or Stephanie McDaniel supplies." % e["title"]))
-            if e.get("text_dates") and e["start"] and fmt_range(e["start"], e["end"]).split(" to ")[-1] not in e["text_dates"].replace("rd", "").replace("th", "") \
-                    and e["slug"].endswith("2026-cohort-3"):
-                detail.append(TODO % ("Dates disagree on staging: the calendar says %s, the event text says \u201c%s\u201d. Confirm the end date." % (fmt_range(e["start"], e["end"]), e["text_dates"])))
-            if e["type"] == "community":
-                detail.append(TODO % "Start time: staging shows 3:27 pm UTC, which looks like a placeholder. Confirm the time and time zone.")
-            if e.get("signup"):
-                label = {"workshop": "Register interest", "course": "Enroll on the school site", "community": "Join on the webinar site"}.get(e["type"], "Sign up")
-                detail.append('<p class="actions"><a class="btn" href="%s">%s</a></p>' % (A(staging_link(e["signup"])), label))
-            more = {"workshop": ('/workshops/', "About our workshops"), "course": ('/programs-overview/#path', "See all Online Courses"),
-                    "community": ('/year-one-report/', "Read the year one report")}.get(e["type"])
-            if more:
-                detail.append('<p><a class="more" href="%s">%s</a></p>' % more)
-        header = ""
-        if e["slug"] in EVENT_HEADERS:
-            f, alt = EVENT_HEADERS[e["slug"]]
-            header = B.photo(f, alt, eager=True, sizes="(min-width: 48em) 46rem, 100vw")
-        body = ('<section class="band"><div class="wrap wrap--narrow">%s%s<p class="eyebrow">%s</p><h1>%s</h1>'
-                '<dl class="kv"><dt>When</dt><dd><time datetime="%s">%s</time></dd><dt>Type</dt><dd>%s</dd></dl>%s</div></section>') % (
-            back("/calendar/", "Back to the calendar"), header, EVENT_TYPES[e["type"]], E(e["title"]), e["start"], E(event_when(e)),
-            EVENT_TYPES[e["type"]], "".join(detail))
-        write(path, e["title"], "%s, %s." % (e["title"], event_when(e)), body, "/community/")
+def mirror_html(h):
+    """Staging plugin markup -> local: images through img(), staging links mapped, forms inert, no maps."""
+    def img_sub(m):
+        tag = m.group(0)
+        src = re.search(r'src="([^"]*)"', tag)
+        alt = re.search(r'alt="([^"]*)"', tag)
+        cls = re.search(r'class="([^"]*)"', tag)
+        if not src or not src.group(1).startswith("http"):
+            return ""
+        try:
+            return img(H.unescape(src.group(1)), H.unescape(alt.group(1)) if alt and alt.group(1) else "", cls.group(1) if cls else "")
+        except Exception as ex:
+            print("image failed", src.group(1), ex)
+            return ""
+    h = re.sub(r"<img\b[^>]*>", img_sub, h)
+    h = re.sub(r'href="([^"]*)"', lambda m: 'href="%s"' % A(staging_link(H.unescape(m.group(1)))), h)
+    h = re.sub(r'<form\b[^>]*>', '<form action="#" method="post" data-demo-form>', h)
+    h = re.sub(r'<div\s+class="sfw-workshops__map"[^>]*>.*?</div>\s*</div>', "", h, flags=re.S)
+    h = re.sub(r"<(/?)main\b", r"<\1div", h)
+    return fix(h)
+
+
+def workshop_pages():
+    for w in data("workshops"):
+        path = "/workshop/%s/" % w["slug"]
+        begin(path, "staging", [], "Mirrors new.soilfoodweb.com, 9 October 2026.", "Workshop")
+        h = mirror_html(w["html"])
+        if w["slug"] in WORKSHOP_HEROES:
+            f, alt = WORKSHOP_HEROES[w["slug"]]
+            pic = B.photo(f, alt, eager=True, sizes="(min-width: 64em) 50vw, 100vw")
+            h = re.sub(r'(<header class="sfw-workshop-single__hero">).*?(</header>)', lambda m: m.group(1) + pic + m.group(2), h, count=1, flags=re.S)
+        write(path, w["title"], w["title"], h, "/programs-overview/")
+
+
+def testimonial_pages():
+    for r in data("testimonials"):
+        path = "/testimonial/%s/" % r["slug"]
+        begin(path, "staging", [], "Mirrors new.soilfoodweb.com, 9 October 2026.", "Testimonial")
+        write(path, r["title"], r["title"], mirror_html(r["html"]), "/community/")
 
 
 def publication_pages():
@@ -809,19 +816,29 @@ def post_pages():
             note.append("Bug 30: the repeated paragraph reported on 2 October was already gone from staging on 3 October; the build still drops any repeated paragraph.")
         begin(path, p.get("source", "staging"), bugs, " ".join(note), "Blog post")
         B.EXTRA_FLAG = PARTNER_POSTS.get(p["slug"])
-        cats = " &middot; ".join('<a href="/category/%s/">%s</a>' % (c["slug"], E(c["name"])) for c in p["categories"])
-        hero = img(p["featured"], p.get("featured_alt", ""), "article-hero", eager=True) if p.get("featured") else ""
+        cats = "".join('<a class="post-hero__cat" href="/category/%s/">%s</a>' % (c["slug"], E(c["name"])) for c in p["categories"])
+        # Staging's post header: a full-width 550 px band with the header image behind the title.
+        src = POST_IMAGES.get(p["slug"])
+        alt = POST_ALTS.get(p["slug"], p.get("featured_alt", ""))
+        if src:
+            pic = B.photo(src, alt, "post-hero__img", eager=True, sizes="100vw")
+        elif p.get("header"):
+            pic = img(p["header"], alt, "post-hero__img", eager=True)
+        else:
+            pic = ""
+        meta = []
+        if p.get("wp_author"):
+            meta.append("By %s" % E(p["wp_author"]))
+        meta.append('<time datetime="%s">%s</time>' % (p["date"], fmt_date(p["date"])))
+        head = ('<header class="post-hero%s">%s<div class="post-hero__in"><p class="post-hero__cats">%s</p><h1>%s</h1>'
+                '<p class="post-hero__meta">%s</p></div></header>') % ("" if pic else " post-hero--plain", pic, cats, E(fix(p["title"])), " &middot; ".join(meta))
         body_html = B.render(p["body"]) if p.get("source") == "repo" else rewrite_body(p["body"])
         by = ""
-        for a in p.get("authors", []):
-            photo = AUTHOR_PHOTOS.get(a["name"])
-            pic = img(photo, "Portrait of %s" % a["name"]) if photo else ""
-            missing = "" if photo else TODO % ("Photo of %s; the old site’s image is broken and no copy exists. Ask %s." % (a["name"], a["name"]))
-            by += '<div class="byline">%s<p><strong>%s</strong><br>%s</p></div>%s' % (pic, E(a["name"]), E(fix(a["role"])), missing)
-        body = ('<article class="band"><div class="wrap"><header class="article-head"><a class="back" href="/news/">All news</a>'
-                '<p class="eyebrow">%s</p><h1>%s</h1><p class="meta"><time datetime="%s">%s</time></p></header>%s'
-                '<div class="prose">%s</div>%s</div></article>') % (
-            cats, E(fix(p["title"])), p["date"], fmt_date(p["date"]), hero, body_html, by)
+        for a_ in p.get("authors", []):
+            photo = AUTHOR_PHOTOS.get(a_["name"])
+            pic_a = img(photo, "Portrait of %s" % a_["name"]) if photo else ""
+            by += '<div class="byline">%s<p><strong>%s</strong><br>%s</p></div>' % (pic_a, E(a_["name"]), E(fix(a_["role"])))
+        body = head + '<article class="band"><div class="wrap"><div class="prose">%s</div>%s</div></article>' % (body_html, by)
         B.EXTRA_FLAG = None
         write(path, fix(p["title"]), (fix(p.get("excerpt", "")) or fix(p["title"]))[:200], body, "/community/")
 
@@ -863,6 +880,8 @@ def item_pages():
     directory_pages()
     video_pages()
     event_pages()
+    workshop_pages()
+    testimonial_pages()
     publication_pages()
     post_pages()
     category_pages()
