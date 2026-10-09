@@ -47,6 +47,6 @@ I'm an artist, not a developer. Keep replies short and plain: what changed, the 
 - **About Us:**
   - Teaching & learning = Learning Outside, Santa Fe 2026 (learning-outside-santa-fe-2026.jpg)
   - Pursuing knowledge = the funnel test photo (pursuing-knowledge-sieve-funnel-test.jpg)
-  - Incubating applied practice = the compost windrow photo (R5A_3980.jpg)
+  - Incubating applied practice = the windrow turner field day photo (incubating-practice-windrow-turner-field.jpg)
 - **Programs Overview:** approved.
 - **Community:** this chat. Start by screenshotting https://finalsite-tau.vercel.app/community/ and the final-images-v2 Community page, list every image slot in order (section, slot, current photo) so I can see what's there, then wait for Stephanie's photos.
