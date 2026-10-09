@@ -293,23 +293,26 @@ def post_card(p):
         pic, E(cat), p["date"], fmt_date(p["date"]), p["slug"], E(fix(p["title"])))
 
 
-def all_posts():
+def all_posts(listed=False):
+    """Every post, newest first. listed=True leaves out posts marked "hidden" (kept, not shown in lists)."""
     ps = data("posts")
     extra = os.path.join(B.ROOT, "content", "repo-posts.json")
     if os.path.exists(extra):
         ps = ps + json.load(open(extra, encoding="utf-8"))
+    if listed:
+        ps = [p for p in ps if not p.get("hidden")]
     return sorted(ps, key=lambda p: p["date"], reverse=True)
 
 
 @gen
 def news(args):
     n = int(args or 4)
-    return '<ul class="grid">%s</ul>' % "".join(post_card(p) for p in all_posts()[:n])
+    return '<ul class="grid">%s</ul>' % "".join(post_card(p) for p in all_posts(True)[:n])
 
 
 @gen
 def news_all(args):
-    ps = all_posts()
+    ps = all_posts(True)
     cats = OrderedDict()
     for p in ps:
         for c in p["categories"]:
@@ -848,7 +851,7 @@ AUTHOR_PHOTOS = {
 
 
 def category_pages():
-    ps = all_posts()
+    ps = all_posts(True)
     cats = OrderedDict()
     for p in ps:
         for c in p["categories"]:
