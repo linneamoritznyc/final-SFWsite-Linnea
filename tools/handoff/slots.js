@@ -38,6 +38,10 @@ const fs = require('fs');
             head = h.matches('section[aria-label]') ? h.getAttribute('aria-label') : h.textContent.trim().replace(/\s+/g, ' ');
           }
         }
+        // A heading inside the image's own section wins (a photo band's title comes after its photo).
+        const own = img.closest('section, header');
+        const oh = own && own.querySelector('h1, h2');
+        if (oh) head = oh.textContent.trim().replace(/\s+/g, ' ');
         if (!head && main.querySelector('h1')) head = main.querySelector('h1').textContent.trim().replace(/\s+/g, ' ');
         const anc = s => img.closest(s);
         let kind = 'image';

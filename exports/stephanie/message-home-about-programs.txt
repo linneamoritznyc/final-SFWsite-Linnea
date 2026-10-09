@@ -1,0 +1,346 @@
+Hi! Please put together a Google Drive folder for Stephanie with the final website images for three pages of new.soilfoodweb.com: Home, About Us and Programs Overview. Linnea has approved every image below.
+
+WHAT TO BUILD
+1. A folder "SFW website images for Stephanie" with three subfolders: "01 Home", "02 About Us", "03 Programs Overview".
+2. In each subfolder, every image listed below for that page. Download each one from its "File" link (they are public GitHub links; the files are already JPG, under 300 KB, EXIF removed, and cropped to the exact shape of the slot on the WordPress page). Name each file exactly as shown after "Save as", so the number keeps them in page order.
+3. In each subfolder, a Google Sheet called "<page> image list" with these columns: #, Where on the page (the "Jump to" link), Section, Slot, File name, Alt text, Caption, Size. Fill one row per image, in the order below.
+4. Share the main folder with Stephanie (view access is enough) and give Linnea the link.
+
+HOW STEPHANIE USES IT
+Each "Jump to" link opens the WordPress page and scrolls straight to the section (it highlights the section heading). Inside that section, "Slot" says which image it is: hero = the big picture at the top; tile 1, 2, 3... and card 1, 2, 3... are counted left to right; banner = the full-width photo behind the section text; side image = the picture next to the text. The card name in brackets is the card's title on the page. She uploads the file into that slot and pastes the alt text into the image's Alternative Text field (and the caption, if there is one, into the caption field).
+
+The "Original" line, where there is one, is the full-size source in Linnea's Drive, in case a bigger version is ever needed. You don't need to copy it.
+
+
+==============================
+HOME  (24 images)
+Page: https://new.soilfoodweb.com/
+==============================
+
+--- Section: "Join a global community of Soil Regenerators"
+Jump to: https://new.soilfoodweb.com/#:~:text=Join%20a%20global%20community%20of%20Soil%20Regenerators
+
+01. hero
+    Save as: 01 Join a global community of Soil Regenera - hero.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Join%20a%20global%20community%20of%20Soil%20Regenerators%20-%20hero.jpg
+    Alt text: A man in a bucket hat and a laughing woman working a wire compost cage with a pitchfork
+    Size: 1204 x 712 (shown at 602 x 356 on a 1440 px screen)
+    Original: CTPFW Students Laughing at Compost 1.jpg (https://drive.google.com/file/d/18-FeH_-PCJRUTY5vmwRFvxXI9xzu0ota/view)
+
+--- Section: "A Foundation built on living soil"
+Jump to: https://new.soilfoodweb.com/#:~:text=A%20Foundation%20built%20on%20living%20soil
+
+02. side image 1
+    Save as: 02 A Foundation built on living soil - side image 1.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20A%20Foundation%20built%20on%20living%20soil%20-%20side%20image%201.jpg
+    Alt text: Dr. Elaine Ingham smiling as she talks at an outdoor table
+    Size: 1204 x 1010 (shown at 602 x 505 on a 1440 px screen)
+    Original: elaine-smile-talking-800.jpg (https://new.soilfoodweb.com/wp-content/uploads/2026/09/elaine-smile-talking-800.jpg)
+
+--- Section: "Partner with nature's intelligence"
+Jump to: https://new.soilfoodweb.com/#:~:text=Partner%20with%20nature%27s%20intelligence
+
+03. tile 1 (Observe and assess)
+    Save as: 03 Partner with nature's intelligence - tile 1 (Observe and assess).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Partner%20with%20nature%27s%20intelligence%20-%20tile%201%20%28Observe%20and%20assess%29.jpg
+    Alt text: A compost thermometer dial pushed into a compost pile
+    Size: 594 x 792 (shown at 297 x 396 on a 1440 px screen)
+
+04. tile 2 (Incubate the biology)
+    Save as: 04 Partner with nature's intelligence - tile 2 (Incubate the biology).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Partner%20with%20nature%27s%20intelligence%20-%20tile%202%20%28Incubate%20the%20biology%29.jpg
+    Alt text: A yellow backhoe and trailer beside a long, steaming compost windrow, a man standing at the far end, pine forest behind
+    Size: 594 x 792 (shown at 297 x 396 on a 1440 px screen)
+    Original: Soil-food-Web-Inc.-Windrow2-708X466.jpg (https://drive.google.com/file/d/1lDbMSt-QF1wJlhk6LyGJazudaDVmvOAy/view)
+
+05. tile 3 (Multiply and apply)
+    Save as: 05 Partner with nature's intelligence - tile 3 (Multiply and apply).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Partner%20with%20nature%27s%20intelligence%20-%20tile%203%20%28Multiply%20and%20apply%29.jpg
+    Alt text: A man stirring compost in a large plastic tote fitted with a stainless steel brewing rig
+    Size: 594 x 792 (shown at 297 x 396 on a 1440 px screen)
+    Original: Soil-food-Web-Inc.-Geo_Tea_Brewer-708X466.jpg (https://drive.google.com/file/d/12U9jIBYydTDcGsjniw9k7pJHzTJLfu66/view)
+
+06. tile 4 (Manage and monitor holistically)
+    Save as: 06 Partner with nature's intelligence - tile 4 (Manage and monitor holistically).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Partner%20with%20nature%27s%20intelligence%20-%20tile%204%20%28Manage%20and%20monitor%20holistically%29.jpg
+    Alt text: A man in a blue jacket and knit hat pushing a probe thermometer into a dark compost pile
+    Size: 594 x 792 (shown at 297 x 396 on a 1440 px screen)
+    Original: Soil-food-Web-Inc.-Taking_Temp_After_Turning-708X466.jpg (https://drive.google.com/file/d/1i0u2ir1AwCdbWe6X61Ygl7baUzyKuFXS/view)
+
+--- Section: "Customize your learning path according to your needs and goals"
+Jump to: https://new.soilfoodweb.com/#:~:text=Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals
+
+07. card 1 (Foundation Courses)
+    Save as: 07 Customize your learning path according t - card 1 (Foundation Courses).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%201%20%28Foundation%20Courses%29.jpg
+    Alt text: A curved, transparent nematode among scattered soil particles seen under a microscope
+    Caption: Bacterial-feeding nematode, 40x. Photo: Talbot Armstrong
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+
+08. card 2 (Complete Practicum)
+    Save as: 08 Customize your learning path according t - card 2 (Complete Practicum).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%202%20%28Complete%20Practicum%29.jpg
+    Alt text: A woman in a cap and blue T-shirt smiling as she writes on a clipboard, with compost piles behind
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+    Original: R5A_4047.jpg (https://drive.google.com/file/d/1c8hJetywhJBow0rugmUkPXFgn6KDrAlW/view)
+
+09. card 3 (Soil Microscopy)
+    Save as: 09 Customize your learning path according t - card 3 (Soil Microscopy).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%203%20%28Soil%20Microscopy%29.jpg
+    Alt text: Test tubes of liquid samples in a rack beside a microscope
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+    Original: test-tubes-with-sample-1024x742.jpg (https://new.soilfoodweb.com/wp-content/uploads/2026/09/test-tubes-with-sample-1024x742.jpg)
+
+10. card 4 (BioComplete™ Compost Production)
+    Save as: 10 Customize your learning path according t - card 4 (BioComplete™ Compost Production).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%204%20%28BioComplete%E2%84%A2%20Compost%20Production%29.jpg
+    Alt text: A person in a wide-brimmed hat inspecting blue barrels of compost feedstock
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+    Original: Inspecting feedstock.HEIC (https://drive.google.com/file/d/1T-qP7wpwpMdsl3H-reIZgoiYsfFgUsU2/view)
+
+11. card 5 (Compost Intensive Course)
+    Save as: 11 Customize your learning path according t - card 5 (Compost Intensive Course).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%205%20%28Compost%20Intensive%20Course%29.jpg
+    Alt text: A woman forking wet plant material into a wire compost bin while a gloved hand sprays it with a hose
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+
+12. card 6 (Learn the Art and Science of Biological Liqui)
+    Save as: 12 Customize your learning path according t - card 6 (Learn the Art and Science of Biological Liqui).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%206%20%28Learn%20the%20Art%20and%20Science%20of%20Biological%20Liqui%29.jpg
+    Alt text: Three white buckets of dark brewing compost tea with aerators and a cloth bag of compost
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+    Original: actively-aerated-compost-tea-brew-vessels.webp (https://new.soilfoodweb.com/wp-content/uploads/2026/09/actively-aerated-compost-tea-brew-vessels.webp)
+
+13. card 7 (Advanced Field Trial)
+    Save as: 13 Customize your learning path according t - card 7 (Advanced Field Trial).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%207%20%28Advanced%20Field%20Trial%29.jpg
+    Alt text: A woman kneeling between vineyard rows with a soil probe
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+    Original: isadora.jpg (https://new.soilfoodweb.com/wp-content/uploads/2026/06/isadora.jpg)
+
+14. card 8 (Workshops)
+    Save as: 14 Customize your learning path according t - card 8 (Workshops).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%208%20%28Workshops%29.jpg
+    Alt text: People in gloves reaching into an open compost pile in a wire bin while others stand behind with tools
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+    Original: pile-turning-wes-8-scaled.jpg (https://new.soilfoodweb.com/wp-content/uploads/2026/08/pile-turning-wes-8-scaled.jpg)
+
+15. card 9 (Introduction to Ecosystem Restoration)
+    Save as: 15 Customize your learning path according t - card 9 (Introduction to Ecosystem Restoration).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%209%20%28Introduction%20to%20Ecosystem%20Restoration%29.jpg
+    Alt text: A group standing between rows of green crops in a field under a cloudy sky, listening to a man speaking
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+
+16. card 10 (Permaculture Design Certification)
+    Save as: 16 Customize your learning path according t - card 10 (Permaculture Design Certification).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%2010%20%28Permaculture%20Design%20Certification%29.jpg
+    Alt text: Raised wooden garden beds planted with onions and leafy greens
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+
+17. card 11 (Intro to the Foundation Courses)
+    Save as: 17 Customize your learning path according t - card 11 (Intro to the Foundation Courses).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%2011%20%28Intro%20to%20the%20Foundation%20Courses%29.jpg
+    Alt text: Close-up of microscope objectives above a glass slide on the stage
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+
+18. card 12 (Mini Foundation Course)
+    Save as: 18 Customize your learning path according t - card 12 (Mini Foundation Course).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Customize%20your%20learning%20path%20according%20to%20your%20needs%20and%20goals%20-%20card%2012%20%28Mini%20Foundation%20Course%29.jpg
+    Alt text: Dr. Elaine Ingham smiling beside a microscope
+    Size: 708 x 472 (shown at 354 x 236 on a 1440 px screen)
+    Original: Dr Elaine Ingham with Microscope.jpg (https://drive.google.com/file/d/1-F8T7lZORvm2Eh-txYY4XxZILD4TgARv/view)
+
+--- Section: "Hear from our students"
+Jump to: https://new.soilfoodweb.com/#:~:text=Hear%20from%20our%20students
+
+19. banner
+    Save as: 19 Hear from our students - banner.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Hear%20from%20our%20students%20-%20banner.jpg
+    Alt text: A grid of video-call portraits of students and practitioners
+    Size: 2880 x 1978 (shown at 1440 x 989 on a 1440 px screen)
+    Original: our-students-testimonials.jpg (https://new.soilfoodweb.com/wp-content/uploads/2026/09/our-students-testimonials.jpg)
+
+--- Section: "Keep up to date with our latest news and articles"
+Jump to: https://new.soilfoodweb.com/#:~:text=Keep%20up%20to%20date%20with%20our%20latest%20news%20and%20articles
+
+20. card 1 (What exactly is Brownian motion)
+    Save as: 20 Keep up to date with our latest news and - card 1 (What exactly is Brownian motion).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Keep%20up%20to%20date%20with%20our%20latest%20news%20and%20articles%20-%20card%201%20%28What%20exactly%20is%20Brownian%20motion%29.jpg
+    Alt text: Small particles and a faint streak on a pale background, seen under a microscope
+    Size: 590 x 394 (shown at 295 x 197 on a 1440 px screen)
+
+21. card 2 (A Fresh sMApp)
+    Save as: 21 Keep up to date with our latest news and - card 2 (A Fresh sMApp).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Keep%20up%20to%20date%20with%20our%20latest%20news%20and%20articles%20-%20card%202%20%28A%20Fresh%20sMApp%29.jpg
+    Alt text: A laptop screen showing a client portfolio web page, a microscope beside it
+    Size: 590 x 394 (shown at 295 x 197 on a 1440 px screen)
+
+22. card 3 (How a rare microbe find helps deduce the prob)
+    Save as: 22 Keep up to date with our latest news and - card 3 (How a rare microbe find helps deduce the prob).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Keep%20up%20to%20date%20with%20our%20latest%20news%20and%20articles%20-%20card%203%20%28How%20a%20rare%20microbe%20find%20helps%20deduce%20the%20prob%29.jpg
+    Alt text: A graphic reading Education: how a Soil Food Web education helps gardeners solve crop issues
+    Size: 590 x 394 (shown at 295 x 197 on a 1440 px screen)
+
+23. card 4 (The Soil Food Web School Launches Its First-E)
+    Save as: 23 Keep up to date with our latest news and - card 4 (The Soil Food Web School Launches Its First-E).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Keep%20up%20to%20date%20with%20our%20latest%20news%20and%20articles%20-%20card%204%20%28The%20Soil%20Food%20Web%20School%20Launches%20Its%20First-E%29.jpg
+    Alt text: A yellow graphic reading A timely solution for uncertain times, with the Permaculture Design Course mark
+    Size: 590 x 394 (shown at 295 x 197 on a 1440 px screen)
+
+--- Section: "Be part of the soil-ution"
+Jump to: https://new.soilfoodweb.com/#:~:text=Be%20part%20of%20the%20soil%2Dution
+
+24. banner
+    Save as: 24 Be part of the soil-ution - banner.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Be%20part%20of%20the%20soil-ution%20-%20banner.jpg
+    Alt text: A large group of workshop participants and mentors posing together under a garden pergola hung with burlap bunting
+    Size: 2880 x 1532 (shown at 1440 x 766 on a 1440 px screen)
+
+==============================
+ABOUT US  (6 images)
+Page: https://new.soilfoodweb.com/about-us/
+==============================
+
+--- Section: "In service to the soil that sustains us all"
+Jump to: https://new.soilfoodweb.com/about-us/#:~:text=In%20service%20to%20the%20soil%20that%20sustains%20us%20all
+
+01. hero
+    Save as: 01 In service to the soil that sustains us - hero.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/about-us/about-us%20-%20In%20service%20to%20the%20soil%20that%20sustains%20us%20all%20-%20hero.jpg
+    Alt text: Dark soil running from one hand into the other above a freshly worked field
+    Size: 1004 x 1004 (shown at 502 x 502 on a 1440 px screen)
+
+--- Section: "Four ways we grow this work"
+Jump to: https://new.soilfoodweb.com/about-us/#:~:text=Four%20ways%20we%20grow%20this%20work
+
+02. card 1 (Teaching & learning)
+    Save as: 02 Four ways we grow this work - card 1 (Teaching & learning).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/about-us/about-us%20-%20Four%20ways%20we%20grow%20this%20work%20-%20card%201%20%28Teaching%20%26%20learning%29.jpg
+    Alt text: A man in a purple T-shirt speaking to a full room of seated people
+    Size: 488 x 366 (shown at 244 x 183 on a 1440 px screen)
+    Original: IMG_3536.heic (https://drive.google.com/file/d/1tpizv6rYE1Cb3HM8rz6dpRq9dp3r6g5L/view)
+
+03. card 2 (Pursuing knowledge)
+    Save as: 03 Four ways we grow this work - card 2 (Pursuing knowledge).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/about-us/about-us%20-%20Four%20ways%20we%20grow%20this%20work%20-%20card%202%20%28Pursuing%20knowledge%29.jpg
+    Alt text: A nematode among soil particles seen under a microscope, on a pink background
+    Size: 488 x 366 (shown at 244 x 183 on a 1440 px screen)
+
+04. card 3 (Incubating applied practice)
+    Save as: 04 Four ways we grow this work - card 3 (Incubating applied practice).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/about-us/about-us%20-%20Four%20ways%20we%20grow%20this%20work%20-%20card%203%20%28Incubating%20applied%20practice%29.jpg
+    Alt text: A woman in a wide-brimmed hat turning a long compost windrow with a fork, forest behind
+    Size: 488 x 366 (shown at 244 x 183 on a 1440 px screen)
+
+05. card 4 (Building community & support)
+    Save as: 05 Four ways we grow this work - card 4 (Building community & support).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/about-us/about-us%20-%20Four%20ways%20we%20grow%20this%20work%20-%20card%204%20%28Building%20community%20%26%20support%29.jpg
+    Alt text: About twenty workshop graduates under a white tent holding up their certificates
+    Size: 488 x 366 (shown at 244 x 183 on a 1440 px screen)
+
+--- Section: "The woman who started it all"
+Jump to: https://new.soilfoodweb.com/about-us/#:~:text=The%20woman%20who%20started%20it%20all
+
+06. image 1
+    Save as: 06 The woman who started it all - image 1.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/about-us/about-us%20-%20The%20woman%20who%20started%20it%20all%20-%20image%201.jpg
+    Alt text: Dr. Elaine Ingham smiling beside a microscope
+    Size: 1204 x 678 (shown at 602 x 339 on a 1440 px screen)
+
+==============================
+PROGRAMS OVERVIEW  (13 images)
+Page: https://new.soilfoodweb.com/programs-overview/
+==============================
+
+--- Section: "Learn to work with the life in your soil"
+Jump to: https://new.soilfoodweb.com/programs-overview/#:~:text=Learn%20to%20work%20with%20the%20life%20in%20your%20soil
+
+01. hero
+    Save as: 01 Learn to work with the life in your soil - hero.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20Learn%20to%20work%20with%20the%20life%20in%20your%20soil%20-%20hero.jpg
+    Alt text: A man in a purple T-shirt teaching a seated group in a bright room with a high wooden ceiling
+    Size: 1204 x 1008 (shown at 602 x 504 on a 1440 px screen)
+    Original: IMG_3536.heic (https://drive.google.com/file/d/1tpizv6rYE1Cb3HM8rz6dpRq9dp3r6g5L/view)
+
+--- Section: "What brings you to the soil food web?"
+Jump to: https://new.soilfoodweb.com/programs-overview/#:~:text=What%20brings%20you%20to%20the%20soil%20food%20web%3F
+
+02. card 1 (Foundation Courses)
+    Save as: 02 What brings you to the soil food web? - card 1 (Foundation Courses).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%201%20%28Foundation%20Courses%29.jpg
+    Alt text: A curved, transparent nematode among scattered soil particles seen under a microscope
+    Caption: Bacterial-feeding nematode, 40x. Photo: Talbot Armstrong
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+
+03. card 2 (Complete Practicum)
+    Save as: 03 What brings you to the soil food web? - card 2 (Complete Practicum).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%202%20%28Complete%20Practicum%29.jpg
+    Alt text: A woman in a cap and blue T-shirt smiling as she writes on a clipboard, with compost piles behind
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: R5A_4047.jpg (https://drive.google.com/file/d/1c8hJetywhJBow0rugmUkPXFgn6KDrAlW/view)
+
+04. card 3 (Soil Microscopy)
+    Save as: 04 What brings you to the soil food web? - card 3 (Soil Microscopy).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%203%20%28Soil%20Microscopy%29.jpg
+    Alt text: Test tubes of liquid samples in a rack beside a microscope
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: test-tubes-with-sample-1024x742.jpg (https://new.soilfoodweb.com/wp-content/uploads/2026/09/test-tubes-with-sample-1024x742.jpg)
+
+05. card 4 (BioComplete™ Compost Production)
+    Save as: 05 What brings you to the soil food web? - card 4 (BioComplete™ Compost Production).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%204%20%28BioComplete%E2%84%A2%20Compost%20Production%29.jpg
+    Alt text: A person in a wide-brimmed hat inspecting blue barrels of compost feedstock
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: Inspecting feedstock.HEIC (https://drive.google.com/file/d/1T-qP7wpwpMdsl3H-reIZgoiYsfFgUsU2/view)
+
+06. card 5 (Compost Intensive Course)
+    Save as: 06 What brings you to the soil food web? - card 5 (Compost Intensive Course).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%205%20%28Compost%20Intensive%20Course%29.jpg
+    Alt text: A woman forking wet plant material into a wire compost bin while a gloved hand sprays it with a hose
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+
+07. card 6 (Learn the Art and Science of Biological Liqui)
+    Save as: 07 What brings you to the soil food web? - card 6 (Learn the Art and Science of Biological Liqui).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%206%20%28Learn%20the%20Art%20and%20Science%20of%20Biological%20Liqui%29.jpg
+    Alt text: Three white buckets of dark brewing compost tea with aerators and a cloth bag of compost
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: actively-aerated-compost-tea-brew-vessels.webp (https://new.soilfoodweb.com/wp-content/uploads/2026/09/actively-aerated-compost-tea-brew-vessels.webp)
+
+08. card 7 (Advanced Field Trial)
+    Save as: 08 What brings you to the soil food web? - card 7 (Advanced Field Trial).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%207%20%28Advanced%20Field%20Trial%29.jpg
+    Alt text: A woman kneeling between vineyard rows with a soil probe
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: isadora.jpg (https://new.soilfoodweb.com/wp-content/uploads/2026/06/isadora.jpg)
+
+09. card 8 (Workshops)
+    Save as: 09 What brings you to the soil food web? - card 8 (Workshops).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%208%20%28Workshops%29.jpg
+    Alt text: People in gloves reaching into an open compost pile in a wire bin while others stand behind with tools
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: pile-turning-wes-8-scaled.jpg (https://new.soilfoodweb.com/wp-content/uploads/2026/08/pile-turning-wes-8-scaled.jpg)
+
+10. card 9 (Introduction to Ecosystem Restoration)
+    Save as: 10 What brings you to the soil food web? - card 9 (Introduction to Ecosystem Restoration).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%209%20%28Introduction%20to%20Ecosystem%20Restoration%29.jpg
+    Alt text: A group standing between rows of green crops in a field under a cloudy sky, listening to a man speaking
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+
+11. card 10 (Permaculture Design Certification)
+    Save as: 11 What brings you to the soil food web? - card 10 (Permaculture Design Certification).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%2010%20%28Permaculture%20Design%20Certification%29.jpg
+    Alt text: Raised wooden garden beds planted with onions and leafy greens
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+
+12. card 11 (Intro to the Foundation Courses)
+    Save as: 12 What brings you to the soil food web? - card 11 (Intro to the Foundation Courses).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%2011%20%28Intro%20to%20the%20Foundation%20Courses%29.jpg
+    Alt text: Close-up of microscope objectives above a glass slide on the stage
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+
+13. card 12 (Mini Foundation Course)
+    Save as: 13 What brings you to the soil food web? - card 12 (Mini Foundation Course).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%2012%20%28Mini%20Foundation%20Course%29.jpg
+    Alt text: Dr. Elaine Ingham smiling beside a microscope
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: Dr Elaine Ingham with Microscope.jpg (https://drive.google.com/file/d/1-F8T7lZORvm2Eh-txYY4XxZILD4TgARv/view)

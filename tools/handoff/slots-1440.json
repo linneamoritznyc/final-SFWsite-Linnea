@@ -272,7 +272,7 @@
  {
   "page": "/",
   "index": 1,
-  "head": "Customize your learning path according to your needs and goals",
+  "head": "Hear from our students",
   "kind": "banner",
   "label": "",
   "src": "http://localhost:8765/img/our-students-testimonials.webp",
@@ -287,7 +287,7 @@
  {
   "page": "/",
   "index": 1,
-  "head": "Recent Posts",
+  "head": "Keep up to date with our latest news and articles",
   "kind": "card",
   "label": "What exactly is Brownian motion?",
   "src": "http://localhost:8765/img/screenshot-2026-10-08-230814-2.webp",
@@ -302,7 +302,7 @@
  {
   "page": "/",
   "index": 2,
-  "head": "Recent Posts",
+  "head": "Keep up to date with our latest news and articles",
   "kind": "card",
   "label": "A Fresh sMApp",
   "src": "http://localhost:8765/img/img-2317-2.webp",
@@ -317,7 +317,7 @@
  {
   "page": "/",
   "index": 3,
-  "head": "Recent Posts",
+  "head": "Keep up to date with our latest news and articles",
   "kind": "card",
   "label": "How a rare microbe find helps deduce the problem with unheal",
   "src": "http://localhost:8765/img/how-a-rare-microscope-sighting-tablet-header-1024-c3-97768.webp",
@@ -332,7 +332,7 @@
  {
   "page": "/",
   "index": 4,
-  "head": "Recent Posts",
+  "head": "Keep up to date with our latest news and articles",
   "kind": "card",
   "label": "The Soil Food Web School Launches Its First-Ever Permacultur",
   "src": "http://localhost:8765/img/pd-cohort-1-launches-2.webp",
@@ -347,7 +347,7 @@
  {
   "page": "/",
   "index": 1,
-  "head": "Recent Posts",
+  "head": "Be part of the soil-ution",
   "kind": "banner",
   "label": "",
   "src": "http://localhost:8765/img/new/cy-workshop-8-1600w.webp",
@@ -437,7 +437,7 @@
  {
   "page": "/about-us/",
   "index": 1,
-  "head": "The people tending this work",
+  "head": "The woman who started it all",
   "kind": "image",
   "label": "",
   "src": "http://localhost:8765/img/dr-elaine-ingham-with-microscope.webp",
@@ -467,7 +467,7 @@
  {
   "page": "/programs-overview/",
   "index": 1,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Foundation Courses",
   "src": "http://localhost:8765/img/new/bacterial-feeding-nematode-40x-obj-talbot-armstrong-800w.webp",
@@ -482,7 +482,7 @@
  {
   "page": "/programs-overview/",
   "index": 2,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Complete Practicum",
   "src": "http://localhost:8765/img/new/consultant-clipboard-compost-site-800w.webp",
@@ -497,7 +497,7 @@
  {
   "page": "/programs-overview/",
   "index": 3,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Soil Microscopy",
   "src": "http://localhost:8765/img/test-tubes-with-sample.webp",
@@ -512,7 +512,7 @@
  {
   "page": "/programs-overview/",
   "index": 4,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "BioComplete™ Compost Production",
   "src": "http://localhost:8765/img/new/card-inspecting-feedstock-barrels-800w.webp",
@@ -527,7 +527,7 @@
  {
   "page": "/programs-overview/",
   "index": 5,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Compost Intensive Course",
   "src": "http://localhost:8765/img/new/card-students-building-compost-pile-800w.webp",
@@ -542,7 +542,7 @@
  {
   "page": "/programs-overview/",
   "index": 6,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Learn the Art and Science of Biological Liquid Amendments",
   "src": "http://localhost:8765/img/actively-aerated-compost-tea-brew-vessels.webp",
@@ -557,7 +557,7 @@
  {
   "page": "/programs-overview/",
   "index": 7,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Advanced Field Trial",
   "src": "http://localhost:8765/img/isadora.webp",
@@ -572,7 +572,7 @@
  {
   "page": "/programs-overview/",
   "index": 8,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Workshops",
   "src": "http://localhost:8765/img/new/pile-turning-wes-8-800w.webp",
@@ -587,7 +587,7 @@
  {
   "page": "/programs-overview/",
   "index": 9,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Introduction to Ecosystem Restoration",
   "src": "http://localhost:8765/img/new/card-field-walk-crop-rows-800w.webp",
@@ -602,7 +602,7 @@
  {
   "page": "/programs-overview/",
   "index": 10,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Permaculture Design Certification",
   "src": "http://localhost:8765/img/new/garden-vegetable-beds-800w.webp",
@@ -617,7 +617,7 @@
  {
   "page": "/programs-overview/",
   "index": 11,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Intro to the Foundation Courses",
   "src": "http://localhost:8765/img/new/r5a-4246-800w.webp",
@@ -632,7 +632,7 @@
  {
   "page": "/programs-overview/",
   "index": 12,
-  "head": "Programs",
+  "head": "What brings you to the soil food web?",
   "kind": "card",
   "label": "Mini Foundation Course",
   "src": "http://localhost:8765/img/new/card-elaine-ingham-microscope-800w.webp",
@@ -902,7 +902,7 @@
  {
   "page": "/login/",
   "index": 1,
-  "head": "Healing soil. Feeding humanity. Restoring the living world.",
+  "head": "Be part of the soil-ution",
   "kind": "banner",
   "label": "",
   "src": "http://localhost:8765/img/new/r5a-4235-800w.webp",
@@ -1082,7 +1082,7 @@
  {
   "page": "/community/",
   "index": 1,
-  "head": "Recent Posts",
+  "head": "Read the latest updates",
   "kind": "card",
   "label": "What exactly is Brownian motion?",
   "src": "http://localhost:8765/img/screenshot-2026-10-08-230814.webp",
@@ -1097,7 +1097,7 @@
  {
   "page": "/community/",
   "index": 2,
-  "head": "Recent Posts",
+  "head": "Read the latest updates",
   "kind": "card",
   "label": "A Fresh sMApp",
   "src": "http://localhost:8765/img/img-2317.webp",
@@ -1112,7 +1112,7 @@
  {
   "page": "/community/",
   "index": 3,
-  "head": "Recent Posts",
+  "head": "Read the latest updates",
   "kind": "card",
   "label": "How a rare microbe find helps deduce the problem with unheal",
   "src": "http://localhost:8765/img/how-a-rare-microscope-sighting-tablet-header-1024-768.webp",
@@ -1127,7 +1127,7 @@
  {
   "page": "/community/",
   "index": 4,
-  "head": "Recent Posts",
+  "head": "Read the latest updates",
   "kind": "card",
   "label": "The Soil Food Web School Launches Its First-Ever Permacultur",
   "src": "http://localhost:8765/img/pd-cohort-1-launches.webp",
@@ -1877,7 +1877,7 @@
  {
   "page": "/volunteer/",
   "index": 1,
-  "head": "Four ways to get involved",
+  "head": "The woman who started it all",
   "kind": "image",
   "label": "",
   "src": "http://localhost:8765/img/2.webp",
@@ -2687,7 +2687,7 @@
  {
   "page": "/calendar-event/aw-uk-2027/",
   "index": 1,
-  "head": "In June 2026, we went to Norfolk, UK, and spent time with a small group of dedicated soil regenerators at our 2-week intensive Accelerator Workshop.",
+  "head": "Accelerator Workshop | UK",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/screenshot-2026-10-08-at-6-53-51-pm.webp",
@@ -2702,7 +2702,7 @@
  {
   "page": "/calendar-event/aw-uk-2027/",
   "index": 2,
-  "head": "In June 2026, we went to Norfolk, UK, and spent time with a small group of dedicated soil regenerators at our 2-week intensive Accelerator Workshop.",
+  "head": "Accelerator Workshop | UK",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/screenshot-2026-10-08-at-6-53-27-pm.webp",
@@ -2717,7 +2717,7 @@
  {
   "page": "/calendar-event/aw-uk-2027/",
   "index": 3,
-  "head": "In June 2026, we went to Norfolk, UK, and spent time with a small group of dedicated soil regenerators at our 2-week intensive Accelerator Workshop.",
+  "head": "Accelerator Workshop | UK",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/screenshot-2026-10-08-at-6-54-12-pm.webp",
@@ -2732,7 +2732,7 @@
  {
   "page": "/calendar-event/aw-uk-2027/",
   "index": 4,
-  "head": "In June 2026, we went to Norfolk, UK, and spent time with a small group of dedicated soil regenerators at our 2-week intensive Accelerator Workshop.",
+  "head": "Accelerator Workshop | UK",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/screenshot-2026-10-08-at-6-54-05-pm.webp",
@@ -2747,7 +2747,7 @@
  {
   "page": "/calendar-event/aw-uk-2027/",
   "index": 5,
-  "head": "In June 2026, we went to Norfolk, UK, and spent time with a small group of dedicated soil regenerators at our 2-week intensive Accelerator Workshop.",
+  "head": "Accelerator Workshop | UK",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/screenshot-2026-10-08-at-6-54-23-pm.webp",
@@ -2762,7 +2762,7 @@
  {
   "page": "/calendar-event/aw-uk-2027/",
   "index": 6,
-  "head": "In June 2026, we went to Norfolk, UK, and spent time with a small group of dedicated soil regenerators at our 2-week intensive Accelerator Workshop.",
+  "head": "Accelerator Workshop | UK",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/screenshot-2026-10-08-at-6-53-18-pm.webp",
@@ -2777,7 +2777,7 @@
  {
   "page": "/calendar-event/aw-uk-2027/",
   "index": 7,
-  "head": "In June 2026, we went to Norfolk, UK, and spent time with a small group of dedicated soil regenerators at our 2-week intensive Accelerator Workshop.",
+  "head": "Accelerator Workshop | UK",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/img-1497-rotated.webp",
@@ -2792,7 +2792,7 @@
  {
   "page": "/calendar-event/biological-liquid-amendments-intensive-course/",
   "index": 1,
-  "head": "All new course planned for enrollment in the Summer of 2027!",
+  "head": "Biological Liquid Amendments Intensive Course",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/actively-aerated-compost-tea-brew-vessels.webp",
@@ -2821,8 +2821,8 @@
  },
  {
   "page": "/calendar-event/compost-intensive-course-2027-cohort-1/",
-  "index": 1,
-  "head": "Why It’s Worth Your Time",
+  "index": 2,
+  "head": "Compost Intensive Course | 2026 Fall",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/70cfa343-ad3a-4c7b-bec0-00cae1f6ffe0.webp",
@@ -2851,8 +2851,8 @@
  },
  {
   "page": "/calendar-event/compost-intensive-course-2027-cohort-2/",
-  "index": 1,
-  "head": "Why It’s Worth Your Time",
+  "index": 2,
+  "head": "Compost Intensive Course | 2027 Jan – March",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/70cfa343-ad3a-4c7b-bec0-00cae1f6ffe0.webp",
@@ -2881,8 +2881,8 @@
  },
  {
   "page": "/calendar-event/compost-intensive-course-2027-may-july/",
-  "index": 1,
-  "head": "Why It’s Worth Your Time",
+  "index": 2,
+  "head": "Compost Intensive Course | 2027 May – July",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/70cfa343-ad3a-4c7b-bec0-00cae1f6ffe0.webp",
@@ -2911,8 +2911,8 @@
  },
  {
   "page": "/calendar-event/compost-intensive-course-2027-sept-november/",
-  "index": 1,
-  "head": "Why It’s Worth Your Time",
+  "index": 2,
+  "head": "Compost Intensive Course | 2027 Sept – November",
   "kind": "body image",
   "label": "",
   "src": "http://localhost:8765/img/70cfa343-ad3a-4c7b-bec0-00cae1f6ffe0.webp",
