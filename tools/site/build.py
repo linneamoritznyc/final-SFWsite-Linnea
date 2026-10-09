@@ -171,21 +171,21 @@ def flag_image(src, why):
 
 
 # ----------------------------------------------------------------- chrome
+# Menus copied from new.soilfoodweb.com (9 October 2026): same labels, same addresses.
+# Staging links "Partner on Research" and "Governance and financials" to "#" and "Media and
+# press" to /contact/ (which redirects to /contact-info/); here they go to the page that exists.
 NAV = [
     ("Home", "/", None),
-    ("About Us", "/about/", [
-        ("Mission, Vision & Story", "/about/#mission"),
-        ("Our Team", "/about/#team"),
-        ("Dr. Elaine’s Research", "/about/#dr-elaine"),
-        ("How we’re funded", "/funding/"),
-        ("Governance and financials", "/governance/"),
-        ("Year one report", "/year-one-report/"),
+    ("About Us", "/about-us/", [
+        ("Mission, Vision & Story", "/about-us/#mission"),
+        ("Our Team", "/about-us/#team"),
+        ("Dr. Elaine’s Research", "/about-us/#dr-elaine"),
         ("Foundation News", "/category/foundation-update/"),
-        ("Contact & Legal", "/about/#contact-legal"),
+        ("Contact & Legal", "/about-us/#contact-legal"),
     ]),
-    ("Learn", "/programs/", [
-        ("Programs Overview", "/programs/"),
-        ("Online Courses", "/programs/#path"),
+    ("Learn", "/programs-overview/", [
+        ("Programs Overview", "/programs-overview/"),
+        ("Online Courses", "/programs-overview/#path"),
         ("Workshops", "/workshops/"),
         ("Free Webinars", "https://webinar.soilfoodweb.com"),
         ("Scholarship", "/scholarship/"),
@@ -194,12 +194,12 @@ NAV = [
     ("Science", "/how-it-works/", [
         ("How the Soil Food Web Works", "/how-it-works/"),
         ("Research Database", "/publications/"),
-        ("Partner on Research", "/work-with-us/#research"),
+        ("Partner on Research", "/practice/#work-with-us"),
     ]),
-    ("Practice", "/case-studies/", [
-        ("Case Studies", "/case-studies/"),
+    ("Practice", "/practice/", [
+        ("Case Studies", "/practice/#CASE-STUDIES"),
         ("Find a Professional", "/find-a-professional/"),
-        ("Work With Us", "/work-with-us/"),
+        ("Work With Us", "/practice/#work-with-us"),
     ]),
     ("Community", "/community/", [
         ("Community Map", "/community/#community-map"),
@@ -210,15 +210,15 @@ NAV = [
 ]
 
 FOOTER = [
-    ("Foundation", [("About us", "/about/"), ("Our team and board", "/about/#team"),
+    ("Foundation", [("About us", "/about-us/"), ("Our team and board", "/about-us/#team"),
                     ("Dr. Elaine’s research", "/publications/"),
-                    ("Governance and financials", "/governance/"), ("Contact us", "/contact/")]),
-    ("Learn", [("Explore our programs", "/programs/"), ("Online Courses", "/programs/#path"),
+                    ("Governance and financials", "/foundation-legal/"), ("Contact us", "/about-us/#contact-legal")]),
+    ("Learn", [("Explore our programs", "/programs-overview/"), ("On-line Courses", "/programs-overview/#path"),
                ("Workshops and events", "/workshops/"), ("Calendar", "/calendar/"),
-               ("Free webinars", "https://webinar.soilfoodweb.com"), ("Scholarships", "/scholarship/")]),
+               ("Free webinars", "https://webinar.soilfoodweb.com/"), ("Scholarships", "/scholarship/")]),
     ("Resources", [("How the soil food web works", "/how-it-works/"),
-                   ("Research and publications", "/publications/"), ("Case studies", "/case-studies/"),
-                   ("Media and press", "/invite-us-to-speak/#press"),
+                   ("Research and publications", "/publications/"), ("Case studies", "/practice/#CASE-STUDIES"),
+                   ("Media and press", "/contact-info/"),
                    ("sMApp on soilmapp.com", "https://www.soilmapp.com/")]),
     ("Get involved", [("Donate", "/donations/"), ("Volunteer with us", "/volunteer/"),
                       ("Invite us to speak", "/invite-us-to-speak/"),
@@ -287,10 +287,10 @@ def footer(path):
 <small>One email a month. Unsubscribe with one click.</small></div>
 <div class="footer-cols">%s</div>
 </div>
-<div class="footer-legal"><p>%s Our Form 990 (once filed) and financial statements are on the <a href="/governance/">governance page</a> and available on request.</p><p>%s %s <a href="/funding/">How we\u2019re funded</a></p></div>
-<div class="footer-bottom"><p>&copy; 2026 Soil Food Web Foundation, a 501(c)(3) nonprofit organization.</p>
-<ul><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
-</div></footer>""" % (cols, E(LEGAL), E(SCHOOL_LINE), E(FUNDING_LINE))
+<div class="footer-legal"><p>EIN 39-4439236. Registered office: 5441 S Macadam Ave Ste N, Portland, Oregon 97239. Our Form 990 and financial statements are available on the <a href="/foundation-legal/">governance page</a> and on request.</p></div>
+<div class="footer-bottom"><p>&copy; 2026 Soil Food Web Foundation, a 501(c)(3) nonprofit organization. Soil Food Web School is a program of the Soil Food Web Foundation.</p>
+<ul><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="/about-us/#contact-legal">Accessibility</a></li></ul></div>
+</div></footer>""" % (cols,)
 
 
 def shell(path, title, desc, body, active=None):

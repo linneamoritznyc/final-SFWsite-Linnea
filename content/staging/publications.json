@@ -1231,76 +1231,6 @@
   "slug": "case-study-comparison-of-milk-composition-from-adjacent-organic-and-conventional-farms-in-the-usa"
  },
  {
-  "id": 1137,
-  "collection": "Internet articles",
-  "year": "2013",
-  "title": "Study finds fungi, not plant matter, responsible for most carbon sequestration in northern forests",
-  "href": "https://new.soilfoodweb.com/publication/study-finds-fungi-not-plant-matter-responsible-for-most-carbon-sequestration-in-northern-forests/",
-  "authors": "March 19, 2013",
-  "citation": "",
-  "kind": "Internet article",
-  "topics": [
-   "forest soils",
-   "fungi",
-   "soil carbon"
-  ],
-  "slug": "study-finds-fungi-not-plant-matter-responsible-for-most-carbon-sequestration-in-northern-forests"
- },
- {
-  "id": 1139,
-  "collection": "Internet articles",
-  "year": "2015",
-  "title": "Carbon sequestration: The climate change solution that virtually all climate activists ignore",
-  "href": "https://new.soilfoodweb.com/publication/carbon-sequestration-the-climate-change-solution-that-virtually-all-climate-activists-ignore/",
-  "authors": "February 3, 2015",
-  "citation": "",
-  "kind": "Internet article",
-  "topics": [
-   "soil carbon"
-  ],
-  "slug": "carbon-sequestration-the-climate-change-solution-that-virtually-all-climate-activists-ignore"
- },
- {
-  "id": 1140,
-  "collection": "Internet articles",
-  "year": "2015",
-  "title": "Researchers propose ecological route to plant disease control",
-  "href": "https://new.soilfoodweb.com/publication/researchers-propose-ecological-route-to-plant-disease-control/",
-  "authors": "September 24, 2015",
-  "citation": "",
-  "kind": "Internet article",
-  "topics": [],
-  "slug": "researchers-propose-ecological-route-to-plant-disease-control"
- },
- {
-  "id": 1138,
-  "collection": "Internet articles",
-  "year": "2018",
-  "title": "Compost could be worth double or triple of current price only if…",
-  "href": "https://new.soilfoodweb.com/publication/compost-could-be-worth-double-or-triple-of-current-price-only-if/",
-  "authors": "September 18, 2018",
-  "citation": "",
-  "kind": "Internet article",
-  "topics": [
-   "compost"
-  ],
-  "slug": "compost-could-be-worth-double-or-triple-of-current-price-only-if"
- },
- {
-  "id": 1141,
-  "collection": "Internet articles",
-  "year": "2021",
-  "title": "Predatory earwigs are attracted by herbivore-induced plant volatiles linked with plant growth-promoting rhizobacteria",
-  "href": "https://new.soilfoodweb.com/publication/predatory-earwigs-are-attracted-by-herbivore-induced-plant-volatiles-linked-with-plant-growth-promoting-rhizobacteria/",
-  "authors": "September 24, 2021",
-  "citation": "",
-  "kind": "Internet article",
-  "topics": [
-   "bacteria"
-  ],
-  "slug": "predatory-earwigs-are-attracted-by-herbivore-induced-plant-volatiles-linked-with-plant-growth-promoting-rhizobacteria"
- },
- {
   "id": 1110,
   "collection": "Other relevant publications",
   "year": "1951",
@@ -1934,5 +1864,75 @@
    "fungi"
   ],
   "slug": "fungal-bacterial-diversity-and-microbiome-complexity-predict-ecosystem-functioning"
+ },
+ {
+  "id": 1137,
+  "collection": "Peer Reviewed Articles",
+  "year": "2013",
+  "title": "Study finds fungi, not plant matter, responsible for most carbon sequestration in northern forests",
+  "href": "https://new.soilfoodweb.com/publication/study-finds-fungi-not-plant-matter-responsible-for-most-carbon-sequestration-in-northern-forests/",
+  "authors": "March 19, 2013",
+  "citation": "",
+  "kind": "Internet article",
+  "topics": [
+   "forest soils",
+   "fungi",
+   "soil carbon"
+  ],
+  "slug": "study-finds-fungi-not-plant-matter-responsible-for-most-carbon-sequestration-in-northern-forests"
+ },
+ {
+  "id": 1139,
+  "collection": "Peer Reviewed Articles",
+  "year": "2015",
+  "title": "Carbon sequestration: The climate change solution that virtually all climate activists ignore",
+  "href": "https://new.soilfoodweb.com/publication/carbon-sequestration-the-climate-change-solution-that-virtually-all-climate-activists-ignore/",
+  "authors": "February 3, 2015",
+  "citation": "",
+  "kind": "Internet article",
+  "topics": [
+   "soil carbon"
+  ],
+  "slug": "carbon-sequestration-the-climate-change-solution-that-virtually-all-climate-activists-ignore"
+ },
+ {
+  "id": 1140,
+  "collection": "Peer Reviewed Articles",
+  "year": "2015",
+  "title": "Researchers propose ecological route to plant disease control",
+  "href": "https://new.soilfoodweb.com/publication/researchers-propose-ecological-route-to-plant-disease-control/",
+  "authors": "September 24, 2015",
+  "citation": "",
+  "kind": "Internet article",
+  "topics": [],
+  "slug": "researchers-propose-ecological-route-to-plant-disease-control"
+ },
+ {
+  "id": 1138,
+  "collection": "Peer Reviewed Articles",
+  "year": "2018",
+  "title": "Compost could be worth double or triple of current price only if…",
+  "href": "https://new.soilfoodweb.com/publication/compost-could-be-worth-double-or-triple-of-current-price-only-if/",
+  "authors": "September 18, 2018",
+  "citation": "",
+  "kind": "Internet article",
+  "topics": [
+   "compost"
+  ],
+  "slug": "compost-could-be-worth-double-or-triple-of-current-price-only-if"
+ },
+ {
+  "id": 1141,
+  "collection": "Peer Reviewed Articles",
+  "year": "2021",
+  "title": "Predatory earwigs are attracted by herbivore-induced plant volatiles linked with plant growth-promoting rhizobacteria",
+  "href": "https://new.soilfoodweb.com/publication/predatory-earwigs-are-attracted-by-herbivore-induced-plant-volatiles-linked-with-plant-growth-promoting-rhizobacteria/",
+  "authors": "September 24, 2021",
+  "citation": "",
+  "kind": "Internet article",
+  "topics": [
+   "bacteria"
+  ],
+  "slug": "predatory-earwigs-are-attracted-by-herbivore-induced-plant-volatiles-linked-with-plant-growth-promoting-rhizobacteria"
  }
 ]

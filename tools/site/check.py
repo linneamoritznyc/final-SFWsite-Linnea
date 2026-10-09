@@ -44,7 +44,7 @@ def main():
         if "—" in text:
             errors[p].append("em dash: ..." + text[max(0, text.find("—") - 40):text.find("—") + 20].replace("\n", " ") + "...")
         for bad in () if p == "/review/" else ("[VERIFY", "[IMPACT", "[PLACEHOLDER", "Lorem ipsum", "John Doe", "Amara Okafor", "localhost", "foundation-couse",
-                    "On-line Courses", "Biocomplete", "prerequesites", "that that", "​", "Spoil Sponge"):
+                    "Biocomplete", "prerequesites", "that that", "​", "Spoil Sponge"):
             if bad in text or bad in h:
                 errors[p].append("contains %r" % bad)
         for attr, url in re.findall(r'\s(href|src|poster)="([^"]*)"', h):

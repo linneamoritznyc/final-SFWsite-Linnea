@@ -20,9 +20,6 @@ FIXES = [
     (re.compile(r"\bthat that\b"), "that"),                                   # 28
     (re.compile(r"\bSpoil Sponge Workshop\b"), "Soil Sponge Workshop"),       # 26
     (re.compile(r"@soilfoodwebfoundation\.org"), "@soilfoodweb.com"),          # 21
-    (re.compile(r"\bOn-line Courses\b|\bOnline courses\b(?= *<)"), "Online Courses"),       # 33
-    (re.compile(r"(?:more than|approximately|over) 1[0-9]0 countries"), "100+ countries"),  # 15
-    (re.compile(r"in more than 100 countries"), "in 100+ countries"),         # 15
     (re.compile(r"\s+—\s+|\s*—\s*"), ", "),                          # no em dashes
     (re.compile(r"\s+–\s+"), ", "),
     (re.compile(r",\s*,"), ","),
@@ -43,10 +40,8 @@ def staging_link(href):
         return href
     h = href.replace(STAGING, "").replace("https://www.soilfoodweb.com", "").replace("https://soilfoodweb.com", "") if ("soilfoodweb.com/" in href and "school." not in href and "webinar." not in href and "archive." not in href and "/wp-content/" not in href) else href
     table = [
-        ("/about-us/", "/about/"), ("/programs-overview/", "/programs/"), ("/practice/#CASE-STUDIES", "/case-studies/"),
-        ("/practice/#work-with-us", "/work-with-us/"), ("/practice/", "/case-studies/"), ("/donate/", "/donations/"),
-        ("/contact-info/", "/contact/"), ("/foundation-legal/", "/governance/"), ("/sfw-directory/", "/find-a-professional/"),
-        ("/team/", "/about/#team"), ("/accessibility/", "/about/#contact-legal"),
+        ("/donate/", "/donations/"), ("/contact-info/", "/contact-info/"), ("/sfw-directory/", "/find-a-professional/"),
+        ("/team/", "/about-us/#team"), ("/accessibility/", "/about-us/#contact-legal"),
     ]
     for a, b in table:
         if h.startswith(a):
@@ -130,7 +125,7 @@ COURSE_ENDS = [("support soil health, plant", " vitality, and nutrient cycling."
 PROGRAM_PHOTOS = [
     ("Mini Foundation Course", "card-elaine-ingham-microscope.jpg", "Dr. Elaine Ingham smiling beside a microscope"),
     ("Workshops", "pile-turning-wes-8.jpg", "People in gloves reaching into an open compost pile in a wire bin while others stand behind with tools"),
-    ("Foundation Course 1", "forest-mycelium-aysen-ustunay.jpg", "A hand holding a piece of rotting wood threaded with white fungal strands", "Photo: Aysen Ustunay"),
+    ("Foundation Course 1", "Bacterial-feeding nematode, 40x obj, Talbot Armstrong.jpg", "A curved, transparent nematode among scattered soil particles seen under a microscope", "Bacterial-feeding nematode, 40x. Photo: Talbot Armstrong"),
     ("Foundation Course 2", "ctpfw-student-moving-compost-1.jpg", "A woman lifting an armful of dark compost out of a wire bin while a man sprays it with a hose"),
     ("Foundation Course 3", "card-compost-tea-jug.jpg", "A yellow-gloved hand pointing at a measuring jug of brown liquid in a large shed"),
     ("Foundation Course 4", "card-student-at-microscope.jpg", "A woman looking into a microscope at a long table, with other students at microscopes behind her"),
@@ -648,9 +643,9 @@ def team_pages():
         bio = rewrite_body(t["bio"]) or TODO % ("Bio for %s; supplied by %s." % (t["name"], t["name"]))
         body = ('<section class="band"><div class="wrap">%s<div class="profile"><div class="profile__photo">%s</div><div>'
                 '<h1>%s</h1>%s<div class="prose">%s</div></div></div></div></section>') % (
-            back("/about/#team", "Back to the team"), team_photo(t), E(t["name"]),
+            back("/about-us/#team", "Back to the team"), team_photo(t), E(t["name"]),
             '<p class="profile__role">%s</p>' % E(role) if role else TODO % "Role or title for %s; Stephanie McDaniel supplies." % t["name"], bio)
-        write(path, t["name"], "%s, %s at the Soil Food Web Foundation." % (t["name"], role or "team member"), body, "/about/")
+        write(path, t["name"], "%s, %s at the Soil Food Web Foundation." % (t["name"], role or "team member"), body, "/about-us/")
 
 
 def directory_pages():
@@ -692,7 +687,7 @@ def directory_pages():
             '<p class="profile__role">%s</p>' % E(d["company"]) if d["company"] else "", bio,
             E(d["area"]) or TODO % "Area; member supplies", "".join(links) or "<dt>Contact</dt><dd>Through the Foundation</dd>")
         role = " and ".join(r.replace("Lab-Tech", "Lab Tech") for r in d["roles"])
-        write(path, name, "%s, Soil Food Web %s%s." % (name, role, (", " + d["area"]) if d["area"] else ""), body, "/case-studies/")
+        write(path, name, "%s, Soil Food Web %s%s." % (name, role, (", " + d["area"]) if d["area"] else ""), body, "/practice/")
 
 
 def video_pages():
@@ -715,10 +710,10 @@ def video_pages():
             body = ('<section class="band"><div class="wrap">%s<div class="video-layout"><div>%s'
                     '<p class="eyebrow" style="margin-top:1.25rem">%s</p><h1>%s</h1>%s</div>'
                     '<aside aria-label="%s"><h2 class="h3">%s</h2><p class="meta">%d videos</p><ol class="plist">%s</ol></aside></div></div></section>') % (
-                back("/case-studies/", "Back to case studies and videos"), player, E(name), E(fix(v["title"])),
+                back("/practice/", "Back to case studies and videos"), player, E(name), E(fix(v["title"])),
                 rewrite_body(v["body"]) if v["body"] else TODO % ("150 to 300 words about this film, written from its Vimeo transcript: who, where, what they did and what changed. Stephanie McDaniel."),
                 A(name), E(name), len(vids), items)
-            write(path, fix(v["title"]), "%s: a video from the Soil Food Web Foundation’s %s playlist." % (fix(v["title"]), name), body, "/case-studies/")
+            write(path, fix(v["title"]), "%s: a video from the Soil Food Web Foundation’s %s playlist." % (fix(v["title"]), name), body, "/practice/")
 
 
 EVENT_TEXT = {
@@ -762,7 +757,7 @@ def event_pages():
             if e.get("signup"):
                 label = {"workshop": "Register interest", "course": "Enroll on the school site", "community": "Join on the webinar site"}.get(e["type"], "Sign up")
                 detail.append('<p class="actions"><a class="btn" href="%s">%s</a></p>' % (A(staging_link(e["signup"])), label))
-            more = {"workshop": ('/workshops/', "About our workshops"), "course": ('/programs/#path', "See all Online Courses"),
+            more = {"workshop": ('/workshops/', "About our workshops"), "course": ('/programs-overview/#path', "See all Online Courses"),
                     "community": ('/year-one-report/', "Read the year one report")}.get(e["type"])
             if more:
                 detail.append('<p><a class="more" href="%s">%s</a></p>' % more)

@@ -5,6 +5,11 @@
   "name": "Blog"
  },
  {
+  "id": 2,
+  "slug": "school-update",
+  "name": "Community"
+ },
+ {
   "id": 22,
   "slug": "events",
   "name": "Events"
@@ -28,11 +33,6 @@
   "id": 23,
   "slug": "newsletter",
   "name": "Newsletter"
- },
- {
-  "id": 2,
-  "slug": "school-update",
-  "name": "School Update"
  },
  {
   "id": 11,
