@@ -1,78 +1,51 @@
 ---
 path: /practice/
 title: Case studies
-description: Case studies and films from farmers and Soil Food Web consultants applying the soil food web on market gardens, orchards and farms of up to 10,000 acres.
-source: repo
+description: Case studies, farm trials, restoration efforts, and partnerships where the Foundation, our practitioners, and our partners apply the Soil Food Web Approach.
+source: staging
 bugs: 3, 5, 23
-notes: Was /practice/; menu label "Practice". Staging's page has 246 words, so the copy is this repo's practice page, restyled. Title tag and H1 both read "Case studies" (staging's title tag said "Projects"). All twenty staging videos stay, in their five playlists. The Sweden market garden case study from this repo is a section here, with Renald Flores's film. The work-with-us section moves to /work-with-us/.
+notes: Mirrors new.soilfoodweb.com/practice/ as of 9 October 2026: staging's sections, headings, copy and links verbatim. Hero image slot (square, 617 x 617 at 1440 on staging) holds Linnea's vineyard photo by Caterina Capri instead of staging's red-soil-hand. The Videos heading is visually hidden, as on staging. The work-with-us form is a static mockup of staging's form (Name, Email, I am..., Message); the Turnstile check is not rebuilt.
 nav: /practice/
 ---
 <section class="hero">
   <div class="wrap split">
     <div>
-      <p class="eyebrow">Practice</p>
-      <h1 class="plain">Case studies</h1>
-      <p class="lead">Field trials, restoration efforts, and partnerships where the Foundation and its practitioners apply the soil food web, documented as they grow. Each case study pairs a grower's story with the data behind it, where they started, what they practiced, and what was measured.</p>
-      <div class="actions"><a class="btn" href="#farmer-case-studies">Watch the films</a><a class="btn btn--ghost" href="/practice/">Work with us</a></div>
+      <p class="eyebrow">PRACTICE</p>
+      <h1>Taking Action toward a Healthier World</h1>
+      <p>Case studies, farm trials, restoration efforts, and partnerships where the Foundation, our practitioners, and our partners apply the Soil Food Web Approach.</p>
     </div>
-    <div class="hero__media">{{photo file="card-vineyard-ground-cover-capri.jpg" alt="A vineyard with green ground cover and yellow wildflowers between the rows, hills behind" caption="Photo: Caterina Capri" eager}}</div>
+    <div class="split__media">{{photo file="card-vineyard-ground-cover-capri.jpg" alt="A vineyard with green ground cover and yellow wildflowers between the rows, hills behind" caption="Photo: Caterina Capri" class="card__img--square" eager}}</div>
   </div>
 </section>
 
-<section class="band band--cream" id="films">
+<section class="band band--rule" id="CASE-STUDIES">
   <div class="wrap">
-    <div class="section-head"><h2>Case studies and results</h2><p>The practitioners' own films, from the Foundation's Vimeo library.</p></div>
-    {{playlists Farmer Case Studies|Consultant Case Studies}}
-    <p class="todo">The written detail behind each film: where they started, what they practiced and what was measured, 150 to 300 words each from the Vimeo transcripts. Evan and Stephanie McDaniel.</p>
+    <h2 class="sr-only">Videos</h2>
+    {{playlists Consultant Case Studies|Farmer Case Studies|Implementing the Soil Food Web|Meet The Soil Food Web Family|Testimonials}}
   </div>
 </section>
 
-<section class="band" id="market-garden-sweden">
-  <div class="wrap split">
+<section class="band band--cream" id="work-with-us">
+  <div class="wrap split split--wide-text">
     <div>
-      <p class="eyebrow">Case study</p>
-      <h2>Market garden makeover, Sweden</h2>
-      <p class="meta">Renald Flores &middot; Sweden</p>
-      <p>This case study is still being written up from Renald Flores's own presentation. Until it is dated and its numbers are sourced, it is published as a record of who did the work and where, not as a result.</p>
-      <p>This is one site, managed by one practitioner, in one climate and one season. It is evidence that the approach can work here; it is not an average result, and it does not predict what your land will do.</p>
-      <p><a class="more" href="/video/renald-flores/">Watch Renald Flores's presentation</a></p>
-      <p class="todo">The year of the work, the site before, what was done and what was measured, from Renald Flores's presentation. Stephanie McDaniel.</p>
-    </div>
-    <div class="split__media">{{video id="537966540" h="a79eb5d201" thumb="https://i.vimeocdn.com/video/1153570392-20dd661b2351b59c6152b54729109251e0e40a4881ed7c38e2f447601588c74c-d_1280?region=us" title="Renald Flores, Market Garden Makeover, Sweden"}}</div>
-  </div>
-</section>
-
-<section class="band band--cream" id="videos">
-  <div class="wrap">
-    <div class="section-head"><h2>More from the community</h2></div>
-    {{playlists Implementing the Soil Food Web|Testimonials|Meet The Soil Food Web Family}}
-  </div>
-</section>
-
-<section class="band" id="app">
-  <div class="wrap cols-2">
-    <div>
-      <p class="eyebrow">Tools</p>
-      <h2>sMApp, the microscope tool</h2>
-      <p>Count what you see through the microscope, type the numbers in, and sMApp returns bacterial and fungal biomass, the fungal to bacterial ratio, and protozoa and nematode numbers. It builds the same report a Soil Food Web laboratory sends back on a posted sample.</p>
-      <p>Work is organised as portfolios, clients and projects, so one practitioner can follow many sites over the years. It needs a microscope that reaches about 400x. A phone camera will not do it. None of the data you enter is kept by Soil Food Web.</p>
-      <div class="actions"><a class="btn" href="https://www.soilmapp.com/">Open sMApp</a></div>
-      <p class="meta">Free to use. Accounts are for enrolled students for now.</p>
+      <p class="eyebrow">WORK WITH US</p>
+      <h2>Accelerating understanding into action</h2>
+      <p>Whether you’re a farmer looking to implement the Soil Food Web Approach to cut back on synthetic inputs and build your natural soil fertility, a landowner looking to restore biodiversity and remediate contamination, or a school system wanting to incorporate our methodology into your curriculum — we welcome you to reach out to us.</p>
+      <div class="cols-2" style="gap:20px;margin-top:2rem">
+        <div class="card card--plain"><div class="card__body"><h3>Farm with biology</h3><p>Cut back on synthetic inputs and build your natural soil fertility. We’ll connect you with our team and trained practitioners to plan, implement, and monitor the transition on your operation.</p></div></div>
+        <div style="align-self:center">{{img src="https://new.soilfoodweb.com/wp-content/uploads/2026/09/garden-vegetable-beds.jpg" alt="Raised wooden vegetable beds with rows of young greens and onions in a community garden" class="media"}}</div>
+        <div class="card card--plain"><div class="card__body"><h3>Restore your land</h3><p>Bring biodiversity back to degraded sites and put biology to work on remediation — from personal or market gardens and family farms to large landholdings and public lands.</p></div></div>
+        <div class="card card--plain"><div class="card__body"><h3>Bring it to your classroom</h3><p>Incorporate the soil food web methodology into your curriculum — for school systems, universities, and training programs.</p></div></div>
+      </div>
     </div>
     <div>
-      <h3>Put it on your phone</h3>
-      <p>Use it in a browser at www.soilmapp.com or add it to your home screen for quick access.</p>
-      <h4>iPhone and iPad</h4>
-      <ol><li>Open www.soilmapp.com in Safari.</li><li>Tap the Share button.</li><li>Choose Add to Home Screen, then tap Add.</li></ol>
-      <h4>Android</h4>
-      <ol><li>Open www.soilmapp.com in Chrome.</li><li>Tap the menu button, the three dots.</li><li>Choose Add to Home screen. Some phones say Install app.</li></ol>
-      <p class="todo">App store listing URLs for sMApp (Apple App Store, Google Play), if they exist. Whoever runs soilmapp.com.</p>
+      <form aria-label="Practice : Work with us" novalidate>
+        <div class="field"><label for="wwu-name">Name <span class="req">*</span></label><input id="wwu-name" name="name" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="wwu-email">Email <span class="req">*</span></label><input id="wwu-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="wwu-i-am">I am... <span class="req">*</span></label><select id="wwu-i-am" name="i_am" required><option value="">a Farmer</option><option>a Home or Market Gardener</option><option>a Farmer</option><option>an Agricultural Professional</option><option>looking for a new impactful career in soil regeneration</option></select></div>
+        <div class="field"><label for="wwu-message">Message <span class="req">*</span></label><textarea id="wwu-message" name="message" rows="5" required></textarea></div>
+        <button class="btn" type="submit">Submit</button>
+      </form>
     </div>
-  </div>
-</section>
-
-<section class="band band--tight">
-  <div class="wrap">
-    <div class="notice"><p><strong>Want results like these on your land?</strong> Find a trained practitioner near you, or start a conversation with our team.</p><a class="btn" href="/practice/">Work with us</a></div>
   </div>
 </section>

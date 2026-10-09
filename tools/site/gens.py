@@ -390,8 +390,29 @@ def event_when(e):
     return w
 
 
+def staging_events():
+    """Staging's /calendar/ list as it stands (9 October 2026): only the events staging files
+    under a type, with staging's titles, dates and type names verbatim, each with Learn more."""
+    evs = sorted((e for e in data("events") if e.get("staging_type") and e.get("start")), key=lambda e: e["start"])
+    key = lambda t: re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
+    types = OrderedDict((key(e["staging_type"]), e["staging_type"]) for e in evs)
+    chips = '<li><button class="chip" type="button" data-chip="" aria-pressed="true">All</button></li>' + "".join(
+        '<li><button class="chip" type="button" data-chip="%s" aria-pressed="false">%s</button></li>' % (k, E(v)) for k, v in types.items())
+    rows = "".join(
+        '<li class="event" data-item data-group="%s"><p class="event__date"><time datetime="%s">%s</time></p>'
+        '<div><h3 class="event__title"><a href="/calendar-event/%s/">%s</a></h3>'
+        '<p class="mt-0"><a class="btn btn--ghost" href="/calendar-event/%s/">Learn more</a></p></div>'
+        '<span class="event__type">%s</span></li>' % (
+            key(e["staging_type"]), e["start"], E(e.get("when") or fmt_range(e["start"], e["end"])), e["slug"], E(e["title"]),
+            e["slug"], E(e["staging_type"])) for e in evs)
+    return ('<div data-filter><ul class="chips" aria-label="Filter by type">%s</ul>'
+            '<ul class="events">%s</ul><p data-empty hidden>No events match this filter.</p></div>') % (chips, rows)
+
+
 @gen
 def events(args):
+    if args.strip() == "staging":
+        return staging_events()
     evs = all_events()
     chips = '<li><button class="chip" type="button" data-chip="" aria-pressed="true">All</button></li>' + "".join(
         '<li><button class="chip" type="button" data-chip="%s" aria-pressed="false">%s</button></li>' % (k, v)
@@ -587,7 +608,7 @@ def playlists(args):
         if name not in pl:
             continue
         vid = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
-        out.append('<section class="playlist" id="%s"><h3>%s</h3><ul class="grid">%s</ul></section>' % (vid, E(name), "".join(vcard(v) for v in pl[name])))
+        out.append('<section class="playlist" id="%s"><h3>%s</h3><ul class="grid">%s</ul></section>' % (vid, E(name), "".join(vcard(v) for v in sorted(pl[name], key=lambda v: v["title"].lower()))))
     return "".join(out)
 
 

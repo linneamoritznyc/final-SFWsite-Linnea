@@ -1,28 +1,26 @@
 ---
 path: /calendar/
 title: Calendar
-description: Workshops, Online Courses and intensives, webinars and community events from the Soil Food Web Foundation and School, with dates for the next twelve months.
-source: repo
+description: Live workshops, free webinars, and events in your community.
+source: staging
 bugs: 3, 5, 24
-notes: Staging's calendar page is thin (286 words, mostly the timeline widget), so the page copy is this repo's. The events are staging's ten calendar events, filed under the right types (staging put the anniversary under Webinars and the intensives under Promotions), plus two from this repo's calendar: the India workshop and Soil Health Week Pakistan. Times read like "3:27 pm UTC".
+notes: Mirrors new.soilfoodweb.com/calendar/ as of 9 October 2026: staging's sections, headings, copy and links verbatim. The events list is staging's (the four events staging files under a type, with its titles, dates and type names) from the events generator in staging mode. Staging's interactive timeline (zoom, month arrows, one row per type) is not rebuilt; the type filter stands in, and the two timeline help lines ("Showing Oct 2026 - Sep 2027. Use the arrows..." and "Use the arrows to scroll back...") are left out with it. The Events heading is visually hidden, as on staging.
 nav: /community/
 ---
 <section class="hero">
   <div class="wrap split">
     <div>
-      <p class="eyebrow">Calendar</p>
-      <h1 class="plain">Meet the community, in person and online</h1>
-      <p class="lead">Live workshops, free webinars, and events in your community.</p>
-      <div class="actions"><a class="btn" href="https://webinar.soilfoodweb.com">Free webinars</a><a class="btn btn--ghost" href="/workshops/">About workshops</a></div>
+      <p class="eyebrow">CALENDAR</p>
+      <h1>Get Your Hands Dirty</h1>
+      <p>Live workshops, free webinars, and events in your community.</p>
     </div>
-    <div class="hero__media">{{img src="img/ctpfw-student-moving-compost-1.jpg" alt="A student lifting an armful of finished compost at a workshop while a group looks on" eager}}</div>
+    <div class="split__media" style="max-width:510px;width:100%;justify-self:end">{{img src="img/ctpfw-student-moving-compost-1.jpg" alt="People turning and watering a compost pile in a wire bay." class="media" eager}}</div>
   </div>
 </section>
 
-<section class="band band--cream" id="events">
+<section class="band band--rule" id="events">
   <div class="wrap">
-    <div class="section-head"><h2>Events</h2></div>
-    {{events}}
-    <p class="meta" style="margin-top:1.5rem">Past events are taken off this list. Webinar dates live on <a href="https://webinar.soilfoodweb.com">webinar.soilfoodweb.com</a>. Want us at your event? <a href="/invite-us-to-speak/">Invite us to speak</a>.</p>
+    <h2 class="sr-only">Events</h2>
+    {{events staging}}
   </div>
 </section>

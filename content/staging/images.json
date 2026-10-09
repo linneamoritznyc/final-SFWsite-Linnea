@@ -3561,6 +3561,18 @@
   "source_size": "1000x666",
   "w": 1000
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/garden-vegetable-beds.jpg": {
+  "alt": "Wooden raised vegetable beds with onions and greens",
+  "bytes": 299476,
+  "file": "img/garden-vegetable-beds.webp",
+  "flags": [],
+  "h": 1066,
+  "shows": "Rows of wooden raised beds with dark soil, planted with onions, leafy greens and young vegetables, step down a slope. Trees and a green water barrel are in the background.",
+  "source": "repo (name and picture match)",
+  "source_path": "img/garden-vegetable-beds.jpg",
+  "source_size": "1600x1066",
+  "w": 1600
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/09/handling-loose-soil.jpg": {
   "alt": "Hands sifting dark soil over a tilled field",
   "bytes": 133146,

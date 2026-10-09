@@ -128,6 +128,12 @@ PROGRAM_PHOTOS = [
     ("Introduction to Ecosystem Restoration: Module 2", "card-vineyard-ground-cover-capri.jpg", "A vineyard with green ground cover and yellow wildflowers between the rows, hills behind", "Photo: Caterina Capri"),
     ("Introduction to Ecosystem Restoration: Module 3", "card-roots-in-soil-capri.jpg", "A clump of soil full of fine roots held over a sieve", "Photo: Caterina Capri"),
     ("Introduction to Ecosystem Restoration: Module 4", "card-group-in-field-wild-ken-hill.jpg", "A group of people standing in a field of grass and red poppies under a wide blue sky"),
+    # Staging carousel titles (9 October 2026) that the module keys above do not match.
+    ("Foundation Courses", "Bacterial-feeding nematode, 40x obj, Talbot Armstrong.jpg", "A curved, transparent nematode among scattered soil particles seen under a microscope", "Bacterial-feeding nematode, 40x. Photo: Talbot Armstrong"),
+    ("Complete Practicum", "consultant-clipboard-compost-site.jpg", "A woman in a cap and blue T-shirt smiling as she writes on a clipboard, with compost piles behind"),
+    ("Compost Intensive Course", "card-students-building-compost-pile.jpg", "A woman forking wet plant material into a wire compost bin while a gloved hand sprays it with a hose"),
+    ("Intro to the Foundation Courses", "R5A_4246.jpg", "Close-up of microscope objectives above a glass slide on the stage"),
+    ("Introduction to Ecosystem Restoration", "card-field-walk-crop-rows.jpg", "A group standing between rows of green crops in a field under a cloudy sky, listening to a man speaking"),
 ]
 
 
@@ -172,7 +178,7 @@ def courses(args):
     return ('<div data-scroller><div class="scroller-head"><h3 class="sr-only">Programs</h3>'
             '<div class="scroller-nav"><button type="button" data-scroll="-1" aria-label="Previous programs">&lsaquo;</button>'
             '<button type="button" data-scroll="1" aria-label="Next programs">&rsaquo;</button></div></div>'
-            '<ul class="scroller">%s</ul></div>') % "".join(course_card(c, True) for c in cs)
+            '<ul class="scroller">%s</ul></div>') % "".join(course_card(c, True, photos=True) for c in cs)
 
 
 PATHS = [("all", "All"), ("composter", "Composter"), ("consultant", "Consultant"), ("designer", "Designer"),
@@ -241,11 +247,12 @@ def team_photo(t, cls=""):
 @gen
 def team(args):
     out = []
-    for t in all_team():
+    for t in (data("team") if "staging" in args.split() else all_team()):
         role = fix(t["role"])
         out.append('<li><a class="person" href="/team-member/%s/">%s<p class="person__name">%s</p>%s</a></li>' % (
             t["slug"], team_photo(t), E(t["name"]), '<p class="person__role">%s</p>' % E(role) if role else ""))
-    return '<ul class="people">%s</ul>' % "".join(out)
+    style = ' style="grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr))"' if "staging" in args.split() else ""
+    return '<ul class="people"%s>%s</ul>' % (style, "".join(out))
 
 
 # ------------------------------------------------------------------ news
@@ -279,10 +286,39 @@ def all_posts():
     return sorted(ps, key=lambda p: p["date"], reverse=True)
 
 
+# Home "Recent Posts" as staging shows it (9 October 2026): staging posts only, staging's card
+# image, category, short date, title verbatim, and the author line where staging has one.
+HOME_POST_IMAGES = {
+    "what-exactly-is-brownian-motion": STAGING + "/wp-content/uploads/2026/10/Screenshot-2026-10-08-230814-1024x435.jpg",
+    "a-fresh-smapp": STAGING + "/wp-content/uploads/2026/10/IMG_2317-1024x768.jpg",
+    "ciliates-soil-health-microscope-watermelon-crop": STAGING + "/wp-content/uploads/2026/05/How-A-Rare-Microscope-Sighting-Tablet-Header-1024%C3%97768-1024x768.jpg",
+    "soil-food-web-school-first-permaculture-design-certificate-course": STAGING + "/wp-content/uploads/2026/04/PD-Cohort-1-Launches-1024x1024.jpg",
+}
+HOME_POST_ALTS = {
+    "what-exactly-is-brownian-motion": "Small particles and a faint streak on a pale background, seen under a microscope",
+    "a-fresh-smapp": "A laptop screen showing a client portfolio web page, a microscope beside it",
+}
+POST_AUTHORS = {"what-exactly-is-brownian-motion": "Wes Sander", "a-fresh-smapp": "Wes Sander"}
+
+
+def home_post_card(p):
+    cat = p["categories"][0]["name"] if p["categories"] else ""
+    src = HOME_POST_IMAGES.get(p["slug"]) or p.get("featured")
+    alt = HOME_POST_ALTS.get(p["slug"]) or POST_ALTS.get(p["slug"], "")
+    pic = img(src, alt, "card__img card__img--wide") if src else '<div class="card__img card__img--wide"></div>'
+    d = datetime.date.fromisoformat(p["date"][:10])
+    author = ", ".join(a["name"] for a in p["authors"]) or POST_AUTHORS.get(p["slug"], "")
+    return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker">%s &middot; '
+            '<time datetime="%s">%d %s %d</time></p><h3 class="card__title"><a href="/%s/">%s</a></h3>%s</div></article></li>') % (
+        pic, E(cat), p["date"], d.day, d.strftime("%b"), d.year, p["slug"], E(p["title"]),
+        '<p class="card__text">%s</p>' % E(author) if author else "")
+
+
 @gen
 def news(args):
     n = int(args or 4)
-    return '<ul class="grid">%s</ul>' % "".join(post_card(p) for p in all_posts()[:n])
+    ps = sorted(data("posts"), key=lambda p: p["date"], reverse=True)
+    return '<ul class="grid">%s</ul>' % "".join(home_post_card(p) for p in ps[:n])
 
 
 @gen

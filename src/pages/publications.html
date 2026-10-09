@@ -1,34 +1,38 @@
 ---
 path: /publications/
 title: Publications
-description: Dr. Elaine Ingham's publications and the wider soil food web research: 180 entries in three collections, each with a summary and who it is useful for, searchable by topic, study type and region.
+description: A growing database of soil food web science — Dr. Elaine Ingham’s publications, research from the wider field, and, as our open-research program matures, studies from the Foundation and its partners.
 source: staging
 bugs: 3, 5, 11, 22, 27
-notes: The list comes from docs/sfw-publications-final.csv (180 rows, finalized by Linnea Moritz on 8 October 2026) through tools/publications-import.py. Every entry has a Summary, a Useful for line, topic tags, a study type and a region; search, Collection, Topic, Study type, Region and Sort filter in the browser and keep their state in the address. The "Why read it" drafts are retired. Every staging address under /publication/ is kept; 46 entries are new. The Soil Biology Primer shows as "USDA publication". Handoff for the WordPress build: docs/publications-wordpress-handoff.md.
+notes: Mirrors new.soilfoodweb.com/publications/ as of 9 October 2026: staging's sections, headings, copy and links verbatim around the list. The list itself comes from docs/sfw-publications-final.csv (finalized by Linnea Moritz on 8 October 2026) through the publications generator, with its own collection, topic and search filters in place of staging's. Hero image slot (square, 403 x 403 at 1440 on staging) holds Linnea's photo of Dr. Ingham instead of staging's soil-sample-shovel-and-bag. Staging's "Start a research conversation" button has no link; it points to /practice/#work-with-us here, the address staging's menu uses for Partner on Research.
 nav: /how-it-works/
 ---
 <section class="hero">
-  <div class="wrap split">
+  <div class="wrap split split--wide-text">
     <div>
-      <p class="eyebrow">Research</p>
-      <h1 class="plain">The research behind living soil</h1>
-      <p class="lead">Dr. Elaine Ingham published for four decades on how soil life feeds plants, cycles nutrients and recovers from damage. Search the full list by topic.</p>
-      <div class="actions"><a class="btn" href="#all">Search all publications</a><a class="btn btn--ghost" href="https://scholar.google.com/citations?user=iOm3z4AAAAAJ">Dr. Ingham on Google Scholar</a></div>
+      <p class="eyebrow">RESEARCH</p>
+      <h1>The research behind living soil</h1>
+      <p>A growing database of soil food web science — Dr. Elaine Ingham’s publications, research from the wider field, and, as our open-research program matures, studies from the Foundation and its partners.</p>
     </div>
-    <div class="hero__media">{{photo file="elaine-ingham-nematode-extraction.jpg" alt="Dr. Elaine Ingham pouring liquid from a squeeze bottle into paper filters set over two bowls, with people on either side" eager}}</div>
+    <div class="split__media" style="max-width:403px;width:100%;justify-self:end">{{photo file="elaine-ingham-nematode-extraction.jpg" alt="Dr. Elaine Ingham pouring liquid from a squeeze bottle into paper filters set over two bowls, with people on either side" class="card__img--square" eager}}</div>
   </div>
 </section>
 
-<section class="band" id="publications">
+<section class="band band--rule" id="mission">
   <div class="wrap">
-    <div class="section-head"><h2>Publications</h2><p>Dr. Elaine Ingham's publications, research from the wider field, and, as our open-research program matures, studies from the Foundation and its partners.</p></div>
+    <h2>Publications</h2>
+    <p>Contributions and suggestions are welcome at <a href="mailto:info@soilfoodweb.com">info@soilfoodweb.com</a>.</p>
+    <div class="actions" style="margin-bottom:2rem"><a class="btn" href="https://scholar.google.com/citations?user=iOm3z4AAAAAJ">Dr. Ingham on Google Scholar</a></div>
     {{publications}}
-    <p style="margin-top:2rem">Know a study that belongs here? Send it to us through the <a href="/contact-info/">contact page</a>.</p>
   </div>
 </section>
 
-<section class="band band--cream" id="research">
+<section class="band band--rule" id="contact-legal">
   <div class="wrap">
-    <div class="notice notice--white"><p><strong>Work with us on research.</strong> We're opening our data, replicating key experiments, and partnering with universities and independent researchers to test the soil food web approach across ecoregions. If that's your work too, let's talk.</p><a class="btn" href="/practice/#research">Start a research conversation</a></div>
+    <div class="measure">
+      <h2>Work with us on research</h2>
+      <p>We’re opening our data, replicating key experiments, and partnering with universities and independent researchers to test the soil food web approach across ecoregions. If that’s your work too, let’s talk.</p>
+    </div>
+    <div class="actions"><a class="btn" href="/practice/#work-with-us">Start a research conversation</a></div>
   </div>
 </section>
