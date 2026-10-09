@@ -3,64 +3,130 @@ path: /programs-overview/
 title: Learn: programs and Online Courses
 description: Online Courses, workshops and certifications from the Soil Food Web School, from the free webinar and Foundation Courses to Advanced Programs. Find the path that fits you.
 source: staging
-bugs: 3, 5, 10, 22, 25, 33
-notes: Was /programs-overview/; menu label "Learn". Foundation Course 1 now links to school.soilfoodweb.com/courses/foundation-course-1 (staging had a typo, "couse"); the Permaculture Design Certification card pointed at localhost on staging and now links to school.soilfoodweb.com/courses/permaculture-design-certification. The two quotes from "Country" are removed; John Gehl's stays. From the Ad Grant checklist: the guarantee banner moves into the FAQ, whose refund answer now uses the Terms section 3 wording (staging's said "or have already attended the live aspects"); "near instantly" and "transforms what's possible on your land" are cut from two course cards; "microscopy" reads "microscope" in the equipment answer.
+bugs: 3, 5
+notes: Mirrors new.soilfoodweb.com/programs-overview/ as of 9 October 2026: staging's text verbatim and its image slots at staging's shapes (hero 610 x 511, program cards 356 x 237). The Permaculture Design Certification card pointed at localhost on staging and links to the school course page here. Testimonials use staging's own block (sfw-testimonials); its arrows need staging's plugin script and do nothing here.
 nav: /programs-overview/
 ---
 <section class="hero">
   <div class="wrap split">
     <div>
-      <p class="eyebrow">Learn with us</p>
+      <p class="eyebrow">LEARN WITH US</p>
       <h1>Learn to work with the life in your soil</h1>
-      <p class="lead">Whether you're growing in your backyard raised beds or advising farmers who care for thousand-acre farms, there's a path for you. Choose from self-paced or group classes, online or in person. Every program is grounded in decades of research and practice and designed to deliver practical skills and insights.</p>
-      <div class="actions"><a class="btn" href="#path">Choose your path</a><a class="btn btn--ghost" href="https://webinar.soilfoodweb.com">Start with a free webinar</a></div>
+      <p class="lead">Whether you’re growing in your backyard raised beds or advising farmers who care for thousand-acre farms, there’s a path for you. Choose from self-paced or group classes, online or in person. Every program is grounded in decades of research and practice and designed to deliver practical skills and insights.</p>
     </div>
-    <div class="hero__media">{{photo file="IMG_3536.heic" name="instructor-teaching-workshop-group" alt="A man in a purple T-shirt teaching a seated group in a bright room with a high wooden ceiling" eager}}</div>
+    <div class="hero__media frame" style="aspect-ratio:610/511">{{photo file="IMG_3536.heic" name="instructor-teaching-workshop-group" alt="A man in a purple T-shirt teaching a seated group in a bright room with a high wooden ceiling" eager}}</div>
   </div>
 </section>
 
-<section class="band band--cream" id="path">
+<section class="band band--rule" id="path">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Choose your path</p>
+      <p class="eyebrow">CHOOSE YOUR PATH</p>
       <h2>What brings you to the soil food web?</h2>
     </div>
-    {{courses_grid}}
+    <h2 class="sr-only">Programs</h2>
+    {{courses_grid staging}}
   </div>
 </section>
 
-
-<section class="band">
+<section class="band" id="what-we-do">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">From our students</p>
-      <h2>People like you, further down the path</h2>
+      <p class="eyebrow">From Our Students</p>
+      <h2>Testimonials from some of our amazing students</h2>
     </div>
-    <ul class="grid grid--3">
-      <li><blockquote class="quote"><p>"There's nobody like her in the world! I don't want to listen to anybody else because nobody else knows what she knows!"</p><footer><strong>John Gehl</strong>Wisconsin, USA &middot; Foundation Courses</footer></blockquote></li>
-    </ul>
-    <p class="todo" style="margin-top:1.5rem">Two more student quotes with name, country and program, used with permission. Stephanie McDaniel supplies them from course feedback.</p>
+    <section aria-labelledby="sfw-testimonials-3" class="sfw-testimonials" data-count="3" data-sfw-testimonials="">
+<div class="sfw-testimonials__wrap">
+<h2 class="sfw-testimonials__title visually-hidden" id="sfw-testimonials-3">Testimonials</h2>
+<div class="sfw-testimonials__nav">
+<p aria-live="polite" class="sfw-testimonials__counter" data-sfw-testimonials-counter="">
+<span data-sfw-testimonials-current="">1</span>
+							of							<span data-sfw-testimonials-total="">3</span>
+</p>
+<button aria-label="Previous testimonials" class="sfw-testimonials__arrow" data-sfw-testimonials-prev="" type="button">
+<span aria-hidden="true">‹</span>
+</button>
+<button aria-label="Next testimonials" class="sfw-testimonials__arrow" data-sfw-testimonials-next="" type="button">
+<span aria-hidden="true">›</span>
+</button>
+</div>
+<div class="sfw-testimonials__viewport">
+<ul class="sfw-testimonials__scroller" data-sfw-testimonials-scroller="">
+<li class="sfw-testimonials__item">
+<article class="sfw-testimonials__card">
+<a class="sfw-testimonials__card-link" href="/testimonial/kyle-babcock/">
+<div class="sfw-testimonials__media">
+<span aria-hidden="true" class="sfw-testimonials__placeholder sfw-testimonials__initials"><span class="sfw-testimonials__initials-text">KB</span></span> <div class="sfw-testimonials__pills">
+<span class="sfw-testimonials-pill">Certified SFW Consultant</span>
+</div>
+</div>
+<div class="sfw-testimonials__body">
+<h3 class="sfw-testimonials__name">Kyle Babcock</h3>
+<p class="sfw-testimonials__country">Washington, USA</p>
+<p class="sfw-testimonials__excerpt">I’m learning so much that I never knew before after receiving a degree in Horticulture.</p>
+<span class="sfw-testimonials__cta">Read more →</span>
+</div>
+</a>
+</article>
+</li>
+<li class="sfw-testimonials__item">
+<article class="sfw-testimonials__card">
+<a class="sfw-testimonials__card-link" href="/testimonial/norman-higgins/">
+<div class="sfw-testimonials__media">
+<span aria-hidden="true" class="sfw-testimonials__placeholder sfw-testimonials__initials"><span class="sfw-testimonials__initials-text">NH</span></span> <div class="sfw-testimonials__pills">
+<span class="sfw-testimonials-pill">Certified SFW Lab-Tech</span>
+</div>
+</div>
+<div class="sfw-testimonials__body">
+<h3 class="sfw-testimonials__name">Norman Higgins</h3>
+<p class="sfw-testimonials__country">New Zealand</p>
+<p class="sfw-testimonials__excerpt">I have spend the last 5 years or so soaking up every bit of knowledge I could find on healthy soil life.</p>
+<span class="sfw-testimonials__cta">Read more →</span>
+</div>
+</a>
+</article>
+</li>
+<li class="sfw-testimonials__item">
+<article class="sfw-testimonials__card">
+<a class="sfw-testimonials__card-link" href="/testimonial/zoe-unruh/">
+<div class="sfw-testimonials__media">
+<span aria-hidden="true" class="sfw-testimonials__placeholder sfw-testimonials__initials"><span class="sfw-testimonials__initials-text">ZU</span></span> <div class="sfw-testimonials__pills">
+<span class="sfw-testimonials-pill">Foundation Courses Student</span>
+</div>
+</div>
+<div class="sfw-testimonials__body">
+<h3 class="sfw-testimonials__name">Zoë Unruh</h3>
+<p class="sfw-testimonials__country">Canada</p>
+<p class="sfw-testimonials__excerpt">I recently completed my foundation classes through a scholarship and I just wanted to say thank you so much for allowing me to participate in a class that otherwise would have never been accessible to me.</p>
+<span class="sfw-testimonials__cta">Read more →</span>
+</div>
+</a>
+</article>
+</li>
+</ul>
+</div>
+</div>
+</section>
   </div>
 </section>
 
-<section class="band band--cream">
+<section class="band" id="team">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Questions</p>
-      <h2>Before you ask</h2>
+      <p class="eyebrow">QUESTIONS</p>
+      <h2>Frequently asked questions</h2>
     </div>
     <div class="faq">
-      <details><summary>Do I need a science background?</summary><div><p>No. The courses are designed for people with no relevant experience. And for advanced courses, you'll gain all the knowledge you need here while completing prerequisites which are clearly defined for each path.</p></div></details>
-      <details><summary>I can't afford the courses. Are there options?</summary><div><p>We never want insurmountable financial limitations to get in the way of soil regeneration. We are always accepting applications and selections occur on an ongoing basis as we procure funds from donors and other resources. Selection committees place a priority on applicants in under-resourced regions. If you believe you qualify, see the <a href="/scholarship/">Scholarships page</a>.</p></div></details>
-      <details open><summary>What if it's not for me?</summary><div><p>Every course carries our 30-day money-back guarantee. Unless a program page states otherwise, you may request a full refund within 30 days of registration provided you have not accessed a substantial portion of the course content. Live in-person events may also have unique limitations. Please see individual program pages for specific details, and the <a href="/terms/#refunds">refund policy</a> in our Terms.</p></div></details>
-      <details><summary>Are there any costs above and beyond the listed program enrollment fees?</summary><div><p>Sometimes you will, but often you won't. Depending on the program you choose, you may need to procure equipment (ex: For Microscopy you will need access to the right type of microscope, slides, sampling equipment etc.). Each program page provides information about the equipment requirements.</p></div></details>
+      <details><summary>Do I need a science background?</summary><div><p>No. The courses are designed for people with no relevant experience. And for advanced courses, you’ll gain all the knowledge you need here while completing prerequesites which are clearly defined for each path.</p></div></details>
+      <details><summary>I can’t afford the courses. Are there options?</summary><div><p>We never want insurmountable financial limitations to get in the way of soil regeneration. We are always accepting applications and selections occur on an ongoing basis as we procure funds from donors and other resources. Selection committees place a priority on applicants in under-resourced regions. If you believe you qualify, see the <a href="/scholarship/">Scholarships page</a>.</p></div></details>
+      <details><summary>What if it’s not for me?</summary><div><p>Every course carries a 30-day, no-questions-asked money-back guarantee, provided you’ve watched no more than one-third of the lectures or have already attended the live aspects of the program. Live in-person events may also have unique limitations. Please see individual program pages for specific details.</p></div></details>
+      <details><summary>Are there any costs above and beyond the listed program enrollment fees?</summary><div><p>Sometimes you will, but often you won’t. Depending on the program you choose, you may need to procure equipment (ex: For Microscopy you will need access to the right type of microscopy, slides, sampling equipment etc.). Each program page provides information about the equipment requirements.</p></div></details>
     </div>
   </div>
 </section>
 
-<section class="band band--tight">
+<section class="band band--tight" id="history">
   <div class="wrap">
-    <div class="notice"><p><strong>Financial barriers shouldn't keep anyone from caring for the Earth.</strong> Scholarships and payment options are growing.</p><a class="btn" href="/scholarship/">Explore scholarships</a></div>
-    {{funding}}
+    <div class="notice notice--white"><p><strong>Financial barriers shouldn’t keep anyone from caring for the Earth.</strong> Scholarships and payment options are growing.</p><a class="btn btn--ghost" href="/scholarship/">Explore scholarships</a></div>
   </div>
 </section>

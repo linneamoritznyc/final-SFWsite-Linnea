@@ -1,76 +1,231 @@
 ---
 path: /workshops/
 title: Workshops
-description: In-person Accelerator Workshops from the Soil Food Web School: compost piles built and samples read under the microscope with instructors and a small group. Upcoming dates and how to join.
-source: repo
-bugs: 3, 5, 12, 22, 26
-notes: Staging's /workshops/ has a heading and 191 words of program cards only. This page uses this repo's workshop copy (copy deck section 9, calendar page) plus the three upcoming workshops on the staging calendar. The India dates follow the live enrollment page (19 to 30 October), not the copy deck (18 to 31 October).
+description: In-person Accelerator Workshops from the Soil Food Web School: compost piles built and samples read under the microscope with instructors and a small group. Upcoming and past workshops.
+source: staging
+bugs: 3, 5
+notes: Mirrors new.soilfoodweb.com/workshops/ as of 9 October 2026: staging's text verbatim and its own workshop block (sfw-workshops), card images 356 x 237 as on staging. Card photos are Linnea's picks from /past-workshop-picks/ (staging shows empty placeholders for past workshops and a screenshot for India). Country and year filters run on site.js. The Leaflet map with workshop pins is a plain OpenStreetMap world view here; the pins are not rebuilt.
 nav: /programs-overview/
 ---
-<section class="hero">
-  <div class="wrap split">
-    <div>
-      <p class="eyebrow">Learn with us</p>
-      <h1 class="plain">In-person workshops</h1>
-      <p class="lead">Two weeks on a real site with instructors and a small group: compost piles built, samples read under the microscope, a year's worth of solo trial and error compressed. Workshops have run in Costa Rica, England and New Mexico; the first in Asia is this October.</p>
-      <div class="actions"><a class="btn" href="#upcoming">See upcoming workshops</a><a class="btn btn--ghost" href="https://school.soilfoodweb.com/pages/workshop-interest">Join the interest list</a></div>
-    </div>
-    <div class="hero__media">{{img src="https://new.soilfoodweb.com/wp-content/uploads/2026/09/ctpfw-student-squeezing-compost-1-1024x576.jpg" alt="A student squeezing a handful of compost to test it while others watch" eager}}</div>
-  </div>
-</section>
-
-<section class="band band--cream" id="india">
-  <div class="wrap split">
-    <div>
-      <p class="eyebrow">Confirmed</p>
-      <h2>Accelerator Workshop India 2026</h2>
-      <p class="meta"><time datetime="2026-10-19">19 to 30 October 2026</time> &middot; Coimbatore, Tamil Nadu</p>
-      <p>In collaboration with Isha Outreach. 19 to 30 October 2026 at Save Soil Farm, near the Isha Yoga Center, Coimbatore, Tamil Nadu. Our first workshop on the subcontinent. Hands in soil, microscopes on tables, and a community milestone for the region.</p>
-      <p class="source">Source: school.soilfoodweb.com/courses/india-workshop-2026, the live enrollment page, checked 11 September 2026.</p>
-      <div class="actions"><a class="btn" href="https://school.soilfoodweb.com/courses/india-workshop-2026">Enroll on the school site</a></div>
-    </div>
-    <div class="split__media">{{photo file="workshop-card-october-2026.jpg" alt="A collage: a compost tea brewer, a person at a microscope, a group of participants outdoors, hands holding compost, and the Accelerator Workshop logo"}}</div>
-  </div>
-</section>
-
-<section class="band" id="upcoming">
-  <div class="wrap">
-    <div class="section-head"><h2>Upcoming workshops</h2><p>Dates from our calendar. Each workshop page says where it runs and how to register interest.</p></div>
-    {{workshop_events}}
-    <p style="margin-top:1.5rem"><a class="more" href="/calendar/">See the full calendar</a></p>
-  </div>
-</section>
-
-<section class="band band--cream">
-  <div class="wrap cols-2">
-    <div>
-      <h2>Being planned</h2>
-      <p>Dates are announced as soon as they are fixed. Join the interest list and you'll hear first.</p>
-      <p><a class="btn" href="https://school.soilfoodweb.com/pages/workshop-interest">Join the interest list</a></p>
-    </div>
-    <div>
-      <h2>Soil Sponge Workshop</h2>
-      <p>A guest workshop with Didi Pershouse on the soil sponge. Online, four weeks.</p>
-      <p class="todo">Decision 13 in the copy deck: next cohort dates and price ($300 in the copy deck), or take the workshop off the site. Evan.</p>
-    </div>
-  </div>
-</section>
-
 <section class="band">
   <div class="wrap">
-    <h2>Previously</h2>
-    <ul class="grid" style="margin-top:1.5rem">
-      <li>{{photo file="workshop-card-june-2026.jpg" alt="Five people standing around a tall wire compost cage packed with green material, in a barn" class="card__img" card sizes="(min-width: 64em) 22rem, 50vw" caption="Accelerator Workshop, Norfolk, United Kingdom, 15 to 26 June 2026"}}</li>
-      <li>{{photo file="workshop-card-february-2026.jpg" alt="Workshop participants in caps and hats gathered around open blue barrels, inspecting the feedstock inside" class="card__img" card sizes="(min-width: 64em) 22rem, 50vw" caption="Accelerator Workshop, Santa Fe, United States, 23 February to 6 March 2026"}}</li>
-      <li>{{photo file="workshop-card-october-2025.jpg" alt="Eight people standing in front of tropical plants, one of them holding up a certificate" class="card__img" card sizes="(min-width: 64em) 22rem, 50vw" caption="Accelerator Workshop, Área Metropolitana de San José, Costa Rica, 13 to 24 October 2025"}}</li>
-      <li>{{photo file="workshop-card-june-2025.jpg" alt="A group standing in a field of red poppies under a blue sky" class="card__img" card sizes="(min-width: 64em) 22rem, 50vw" caption="Accelerator Workshop, Norfolk, United Kingdom, 16 to 27 June 2025"}}</li>
-      <li>{{photo file="workshop-card-march-2025.jpg" alt="A large group posing around a freshly built compost pile under an open-sided roof" class="card__img" card sizes="(min-width: 64em) 22rem, 50vw" caption="Accelerator Workshop, Área Metropolitana de San José, Costa Rica, 3 to 14 March 2025"}}</li>
-      <li>{{photo file="workshop-card-january-2025.jpg" alt="A large group posing under a garden pergola hung with burlap bunting" class="card__img" card sizes="(min-width: 64em) 22rem, 50vw" caption="Accelerator Workshop, Kampia, Cyprus, 13 to 24 January 2025"}}</li>
-      <li>{{photo file="workshop-card-july-2024.jpg" alt="Five people around a wire compost cage on a pallet, one kneeling with a pitchfork and giving a thumbs up" class="card__img" card sizes="(min-width: 64em) 22rem, 50vw" caption="Accelerator Workshop, Área Metropolitana de San José, Costa Rica, 15 to 26 July 2024"}}</li>
-      <li>{{photo file="workshop-card-august-2023.jpg" alt="Students reaching up for a high five over a compost pile" class="card__img" card sizes="(min-width: 64em) 22rem, 50vw" caption="Accelerator Workshop, Área Metropolitana de San José, Costa Rica, 7 to 18 August 2023"}}</li>
-      <li>{{photo file="workshop-card-2022.jpg" alt="People in sun hats raking and forking a long compost pile in a dry field, with mountains behind" class="card__img" card sizes="(min-width: 64em) 22rem, 50vw" caption="Accelerator Workshop, México, 14 to 25 March 2022"}}</li>
-      <li>{{photo file="workshop-card-2019.jpg" alt="A group of participants posing together indoors" class="card__img" card sizes="(min-width: 64em) 22rem, 50vw" caption="Accelerator Workshop, Brasil, 7 to 18 January 2019"}}</li>
-    </ul>
-    <div class="notice" style="margin-top:2rem"><p><strong>Want us to run one near you?</strong> Tell us about your site.</p><a class="btn" href="/invite-us-to-speak/">Invite us</a></div>
+    <h1 class="plain">In-person workshops</h1>
+    <p><strong>Our online courses are incredible, but it can be transformative to get together in real life and get hands-on with the art and science of composting, liquids, microscopy, and more.</strong></p>
+    <p><strong>Find out where we have been and where we are going next.</strong></p>
+    <section class="sfw-workshops" data-filter="">
+<div class="sfw-workshops__wrap">
+<div class="sfw-workshops__filters" data-sfw-filters="">
+<div aria-label="Filter by country" class="sfw-workshops__chips" role="group">
+<button aria-pressed="true" class="chip" data-chip="" type="button">All countries</button>
+<button aria-pressed="false" class="chip" data-chip="brasil" type="button">Brasil</button>
+<button aria-pressed="false" class="chip" data-chip="costa-rica" type="button">Costa Rica</button>
+<button aria-pressed="false" class="chip" data-chip="cyprus" type="button">Cyprus</button>
+<button aria-pressed="false" class="chip" data-chip="india" type="button">India</button>
+<button aria-pressed="false" class="chip" data-chip="mexico" type="button">México</button>
+<button aria-pressed="false" class="chip" data-chip="united-kingdom" type="button">United Kingdom</button>
+<button aria-pressed="false" class="chip" data-chip="united-states" type="button">United States</button>
+</div>
+<div class="sfw-workshops__year">
+<label for="sfw-workshops-year">Year</label>
+<select data-topic="" id="sfw-workshops-year">
+<option value="">All years</option>
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2019">2019</option>
+</select>
+</div>
+</div>
+<div aria-label="Workshop locations map" class="sfw-workshops__map" role="region"><iframe class="sfw-workshops__map-canvas" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-140%2C-45%2C140%2C70&amp;layer=mapnik" style="border:0" title="Workshop locations map"></iframe></div>
+<section class="sfw-workshops__section" data-group-block="" data-sfw-section="upcoming">
+<h3 class="sfw-workshops__section-title">Upcoming</h3>
+<ul class="sfw-workshops__grid">
+<li class="sfw-workshops__item" data-bucket="upcoming" data-country="india" data-group="india" data-item="" data-topics="2026" data-year="2026">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-october-2026/" tabindex="-1">{{photo file="workshop-card-october-2026.jpg" alt="A collage: a compost tea brewer, a person at a microscope, a group of participants outdoors, hands holding compost, and the Accelerator Workshop logo" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--upcoming-open">Open</span>
+</div>
+<p class="sfw-workshops__kicker">Tamil Nadu, India</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-october-2026/">Accelerator Workshop October 2026</a>
+</h3>
+<p class="sfw-workshops__line">19–30 October 2026</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-october-2026/">View workshop →</a>
+</p>
+</article>
+</li>
+</ul>
+</section>
+<section class="sfw-workshops__section" data-group-block="" data-sfw-section="past">
+<h3 class="sfw-workshops__section-title">Past</h3>
+<ul class="sfw-workshops__grid">
+<li class="sfw-workshops__item" data-bucket="past" data-country="united-kingdom" data-group="united-kingdom" data-item="" data-topics="2026" data-year="2026">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-june-2026/" tabindex="-1">{{photo file="workshop-card-june-2026.jpg" alt="Five people standing around a tall wire compost cage packed with green material, in a barn" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>
+</div>
+<p class="sfw-workshops__kicker">Norfolk, United Kingdom</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-june-2026/">Accelerator Workshop June 2026</a>
+</h3>
+<p class="sfw-workshops__line">15–26 June 2026</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-june-2026/">View workshop →</a>
+</p>
+</article>
+</li>
+<li class="sfw-workshops__item" data-bucket="past" data-country="united-states" data-group="united-states" data-item="" data-topics="2026" data-year="2026">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-february-2026/" tabindex="-1">{{photo file="workshop-card-february-2026.jpg" alt="Workshop participants in caps and hats gathered around open blue barrels, inspecting the feedstock inside" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>
+</div>
+<p class="sfw-workshops__kicker">Santa Fe, United States</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-february-2026/">Accelerator Workshop February 2026</a>
+</h3>
+<p class="sfw-workshops__line">23 Feb – 6 Mar 2026</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-february-2026/">View workshop →</a>
+</p>
+</article>
+</li>
+<li class="sfw-workshops__item" data-bucket="past" data-country="costa-rica" data-group="costa-rica" data-item="" data-topics="2025" data-year="2025">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-october-2025/" tabindex="-1">{{photo file="workshop-card-october-2025.jpg" alt="Eight people standing in front of tropical plants, one of them holding up a certificate" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>
+</div>
+<p class="sfw-workshops__kicker">Área Metropolitana de San José, Costa Rica</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-october-2025/">Accelerator Workshop October 2025</a>
+</h3>
+<p class="sfw-workshops__line">13–24 October 2025</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-october-2025/">View workshop →</a>
+</p>
+</article>
+</li>
+<li class="sfw-workshops__item" data-bucket="past" data-country="united-kingdom" data-group="united-kingdom" data-item="" data-topics="2025" data-year="2025">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-june-2025/" tabindex="-1">{{photo file="workshop-card-june-2025.jpg" alt="A group standing in a field of red poppies under a blue sky" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>
+</div>
+<p class="sfw-workshops__kicker">Norfolk, United Kingdom</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-june-2025/">Accelerator Workshop June 2025</a>
+</h3>
+<p class="sfw-workshops__line">16–27 June 2025</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-june-2025/">View workshop →</a>
+</p>
+</article>
+</li>
+<li class="sfw-workshops__item" data-bucket="past" data-country="costa-rica" data-group="costa-rica" data-item="" data-topics="2025" data-year="2025">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-march-2025/" tabindex="-1">{{photo file="workshop-card-march-2025.jpg" alt="A large group posing around a freshly built compost pile under an open-sided roof" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>
+</div>
+<p class="sfw-workshops__kicker">Área Metropolitana de San José, Costa Rica</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-march-2025/">Accelerator Workshop March 2025</a>
+</h3>
+<p class="sfw-workshops__line">3–14 March 2025</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-march-2025/">View workshop →</a>
+</p>
+</article>
+</li>
+<li class="sfw-workshops__item" data-bucket="past" data-country="cyprus" data-group="cyprus" data-item="" data-topics="2025" data-year="2025">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-january-2025/" tabindex="-1">{{photo file="workshop-card-january-2025.jpg" alt="A large group posing under a garden pergola hung with burlap bunting" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>
+</div>
+<p class="sfw-workshops__kicker">Kampia, Cyprus</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-january-2025/">Accelerator Workshop January 2025</a>
+</h3>
+<p class="sfw-workshops__line">13–24 January 2025</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-january-2025/">View workshop →</a>
+</p>
+</article>
+</li>
+<li class="sfw-workshops__item" data-bucket="past" data-country="costa-rica" data-group="costa-rica" data-item="" data-topics="2024" data-year="2024">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-july-2024/" tabindex="-1">{{photo file="workshop-card-july-2024.jpg" alt="Five people around a wire compost cage on a pallet, one kneeling with a pitchfork and giving a thumbs up" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>
+</div>
+<p class="sfw-workshops__kicker">Área Metropolitana de San José, Costa Rica</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-july-2024/">Accelerator Workshop July 2024</a>
+</h3>
+<p class="sfw-workshops__line">15–26 July 2024</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-july-2024/">View workshop →</a>
+</p>
+</article>
+</li>
+<li class="sfw-workshops__item" data-bucket="past" data-country="costa-rica" data-group="costa-rica" data-item="" data-topics="2023" data-year="2023">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-august-2023/" tabindex="-1">{{photo file="workshop-card-august-2023.jpg" alt="Students reaching up for a high five over a compost pile" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>
+</div>
+<p class="sfw-workshops__kicker">Área Metropolitana de San José, Costa Rica</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-august-2023/">Accelerator Workshop August 2023</a>
+</h3>
+<p class="sfw-workshops__line">7–18 August 2023</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-august-2023/">View workshop →</a>
+</p>
+</article>
+</li>
+<li class="sfw-workshops__item" data-bucket="past" data-country="mexico" data-group="mexico" data-item="" data-topics="2022" data-year="2022">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-2022/" tabindex="-1">{{photo file="workshop-card-2022.jpg" alt="People in sun hats raking and forking a long compost pile in a dry field, with mountains behind" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>
+</div>
+<p class="sfw-workshops__kicker">México</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-2022/">Accelerator Workshop 2022</a>
+</h3>
+<p class="sfw-workshops__line">14–25 March 2022</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-2022/">View workshop →</a>
+</p>
+</article>
+</li>
+<li class="sfw-workshops__item" data-bucket="past" data-country="brasil" data-group="brasil" data-item="" data-topics="2019" data-year="2019">
+<article class="sfw-workshops__card">
+<div class="sfw-workshops__media">
+<a aria-hidden="true" href="/workshop/accelerator-workshop-2019/" tabindex="-1">{{photo file="workshop-card-2019.jpg" alt="A group of participants posing together indoors" class="sfw-workshops__img" card sizes="(min-width: 64em) 22.25rem, (min-width: 40em) 50vw, 100vw"}}</a>
+<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>
+</div>
+<p class="sfw-workshops__kicker">Brasil</p>
+<h3 class="sfw-workshops__name">
+<a href="/workshop/accelerator-workshop-2019/">Accelerator Workshop 2019</a>
+</h3>
+<p class="sfw-workshops__line">7–18 January 2019</p>
+<p class="sfw-workshops__cta">
+<a href="/workshop/accelerator-workshop-2019/">View workshop →</a>
+</p>
+</article>
+</li>
+</ul>
+</section>
+</div>
+</section>
   </div>
 </section>

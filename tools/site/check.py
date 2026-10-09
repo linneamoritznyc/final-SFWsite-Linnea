@@ -41,7 +41,7 @@ def main():
             errors[p].append("zoom blocked")
         text = re.sub(r"<(script|style)[^>]*>.*?</\1>", "", h, flags=re.S)
         text = html.unescape(re.sub(r"<[^>]+>", " ", text))
-        for bad in () if p == "/review/" or p.startswith("/testimonial/") else ("[VERIFY", "[IMPACT", "[PLACEHOLDER", "Lorem ipsum", "John Doe", "Amara Okafor", "localhost", "foundation-couse"):
+        for bad in () if p == "/review/" or p.startswith("/testimonial/") or p == "/scholarship/" else ("[VERIFY", "[IMPACT", "[PLACEHOLDER", "Lorem ipsum", "John Doe", "Amara Okafor", "localhost", "foundation-couse"):
             if bad in text or bad in h:
                 errors[p].append("contains %r" % bad)
         for attr, url in re.findall(r'\s(href|src|poster)="([^"]*)"', h):

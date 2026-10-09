@@ -487,6 +487,18 @@
   "source_size": "3200x2400",
   "w": 1600
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/05/How-A-Rare-Microscope-Sighting-Tablet-Header-1024×768-scaled.jpg": {
+  "alt": "Article header: How a Soil Food Web education helps gardeners solve crop issues",
+  "bytes": 69930,
+  "file": "img/how-a-rare-microscope-sighting-tablet-header-1024-768.webp",
+  "flags": [],
+  "h": 1200,
+  "shows": "A pale grey text panel over a blurred teal microscope image of soil particles and organisms. Black headline text with a small black author label and a cursor arrow.",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/05/How-A-Rare-Microscope-Sighting-Tablet-Header-1024×768-scaled.jpg",
+  "source_size": "2560x1920",
+  "w": 1600
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/06/Gerald-1024x1024.jpg": {
   "alt": "Bearded man in a hat in a greenhouse full of red flowers.",
   "bytes": 159398,
@@ -804,6 +816,20 @@
   "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/06/sammie.jpg",
   "source_size": "800x800",
   "w": 800
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/06/sfwlogo-240.png": {
+  "alt": "Soil Food Web Foundation logo with leaves, flowers and roots",
+  "bytes": 10830,
+  "file": "img/sfwlogo-240.webp",
+  "flags": [
+   "low resolution (240x208 source)"
+  ],
+  "h": 208,
+  "shows": "Circular logo on white: a green leafy vine with purple flowers above brown lettering, with brown roots spreading beneath the word SOIL. A green circle outline surrounds it.",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/06/sfwlogo-240.png",
+  "source_size": "240x208",
+  "w": 240
  },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/06/stephanie.jpg": {
   "alt": "Smiling woman in white sweater against a brick wall.",
@@ -3585,6 +3611,18 @@
   "source_size": "2000x2000",
   "w": 1600
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/09/mar25-group-photo-rotated.jpg": {
+  "alt": "Group of about thirty people around a compost pile under a shelter",
+  "bytes": 267220,
+  "file": "img/mar25-group-photo-rotated.webp",
+  "flags": [],
+  "h": 1200,
+  "shows": "About thirty people of varied ages pose for a group photo around a tall dark compost pile under an open metal-roofed shelter, with some kneeling and sitting in front. Green plants are visible beyond.",
+  "source": "repo (picture match)",
+  "source_path": "img/uploads/MAR25 Group Photo.jpg",
+  "source_size": "1600x1200",
+  "w": 1600
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/09/our-students-testimonials.jpg": {
   "alt": "Grid of many people on a video call",
   "bytes": 176898,
@@ -3621,6 +3659,108 @@
   "source_size": "3083x2235",
   "w": 1600
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/1.jpg": {
+  "alt": "",
+  "bytes": 138154,
+  "file": "img/1.webp",
+  "flags": [],
+  "h": 720,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/1.jpg",
+  "source_size": "1280x720",
+  "w": 1280
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/2.jpg": {
+  "alt": "Woman in sunglasses holds out a bag of soil in a garden",
+  "bytes": 139332,
+  "file": "img/2-2.webp",
+  "flags": [],
+  "h": 720,
+  "shows": "A smiling older woman with short grey hair and sunglasses, wearing a purple cardigan over a black top, holds a clear bag of soil and a green object toward the camera in a sunny garden.",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/2.jpg",
+  "source_size": "1280x720",
+  "w": 1280
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/2025-JUN-UK-CTPAW-group-poppies.jpg": {
+  "alt": "",
+  "bytes": 98924,
+  "file": "img/2025-jun-uk-ctpaw-group-poppies.webp",
+  "flags": [
+   "low resolution (760x420 source)"
+  ],
+  "h": 420,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/2025-JUN-UK-CTPAW-group-poppies.jpg",
+  "source_size": "760x420",
+  "w": 760
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/2025-JUN-UK-CTPAW-group.jpg": {
+  "alt": "",
+  "bytes": 87816,
+  "file": "img/2025-jun-uk-ctpaw-group.webp",
+  "flags": [
+   "low resolution (760x420 source)"
+  ],
+  "h": 420,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/2025-JUN-UK-CTPAW-group.jpg",
+  "source_size": "760x420",
+  "w": 760
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/20260626_ElaineBirthday_Aberdares-Region_Smallholder-Farmer-Amaranth-Harvest-Success_Martin-Kihara_03-martin-kihara.jpg": {
+  "alt": "",
+  "bytes": 54346,
+  "file": "img/20260626-elainebirthday-aberdares-region-smallholder-farmer-amaranth-harvest-success-martin-kihara-03-martin-kihara.webp",
+  "flags": [
+   "low resolution (440x580 source)"
+  ],
+  "h": 580,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/20260626_ElaineBirthday_Aberdares-Region_Smallholder-Farmer-Amaranth-Harvest-Success_Martin-Kihara_03-martin-kihara.jpg",
+  "source_size": "440x580",
+  "w": 440
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/20260626_ElaineBirthday_KSTVET-Greenhouse-Nairobi_Probiotic-Fertilizer-Student-Training_Martin-Kihara_01-martin-kihara.jpg": {
+  "alt": "",
+  "bytes": 86628,
+  "file": "img/20260626-elainebirthday-kstvet-greenhouse-nairobi-probiotic-fertilizer-student-training-martin-kihara-01-martin-kihara.webp",
+  "flags": [],
+  "h": 523,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/20260626_ElaineBirthday_KSTVET-Greenhouse-Nairobi_Probiotic-Fertilizer-Student-Training_Martin-Kihara_01-martin-kihara.jpg",
+  "source_size": "1166x523",
+  "w": 1166
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/3.jpg": {
+  "alt": "",
+  "bytes": 129840,
+  "file": "img/3.webp",
+  "flags": [],
+  "h": 720,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/3.jpg",
+  "source_size": "1280x720",
+  "w": 1280
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/4.jpg": {
+  "alt": "",
+  "bytes": 147010,
+  "file": "img/4.webp",
+  "flags": [],
+  "h": 720,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/4.jpg",
+  "source_size": "1280x720",
+  "w": 1280
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/10/49mtMKZ2TDDKB8IN42xj_23-768x960.png": {
   "alt": "",
   "bytes": 133972,
@@ -3631,6 +3771,42 @@
   "source": "staging download",
   "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/49mtMKZ2TDDKB8IN42xj_23-768x960.png",
   "source_size": "3375x4219",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/5.jpg": {
+  "alt": "",
+  "bytes": 123556,
+  "file": "img/5.webp",
+  "flags": [],
+  "h": 720,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/5.jpg",
+  "source_size": "1280x720",
+  "w": 1280
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/6.jpg": {
+  "alt": "Illustrated soil layers with title Soil Carbon Sequestration",
+  "bytes": 114008,
+  "file": "img/6-2.webp",
+  "flags": [],
+  "h": 720,
+  "shows": "Flat illustration of layered brown soil under a black sky with pale yellow dots, a blue water drop and H2O labels. Orange labels with white text and a round orange logo.",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/6.jpg",
+  "source_size": "1280x720",
+  "w": 1280
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Beginner-microscopy-group-2-scaled.jpg": {
+  "alt": "",
+  "bytes": 184980,
+  "file": "img/beginner-microscopy-group-2.webp",
+  "flags": [],
+  "h": 900,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Beginner-microscopy-group-2-scaled.jpg",
+  "source_size": "2560x1440",
   "w": 1600
  },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/10/CIC-5-1024x566.jpg": {
@@ -3741,6 +3917,18 @@
   "source_size": "2560x1920",
   "w": 1600
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/IMG_3028-scaled.jpg": {
+  "alt": "",
+  "bytes": 87524,
+  "file": "img/img-3028.webp",
+  "flags": [],
+  "h": 900,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/IMG_3028-scaled.jpg",
+  "source_size": "2560x1440",
+  "w": 1600
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Intro-to-the-FCs-3-1024x566.png": {
   "alt": "",
   "bytes": 190296,
@@ -3751,6 +3939,42 @@
   "source": "staging download",
   "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Intro-to-the-FCs-3-1024x566.png",
   "source_size": "2375x1313",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Katja-Mentors-Certificate-IMG_2975-scaled.jpg": {
+  "alt": "",
+  "bytes": 247450,
+  "file": "img/katja-mentors-certificate-img-2975.webp",
+  "flags": [],
+  "h": 1541,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Katja-Mentors-Certificate-IMG_2975-scaled.jpg",
+  "source_size": "1920x2560",
+  "w": 1156
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/PXL_20240726_191918722-scaled.jpeg": {
+  "alt": "",
+  "bytes": 240954,
+  "file": "img/pxl-20240726-191918722.webp",
+  "flags": [],
+  "h": 1541,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/PXL_20240726_191918722-scaled.jpeg",
+  "source_size": "1920x2560",
+  "w": 1156
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Robert-Been-Loida-Laura-CTPAW-JUL2024-1-scaled.jpg": {
+  "alt": "",
+  "bytes": 125954,
+  "file": "img/robert-been-loida-laura-ctpaw-jul2024.webp",
+  "flags": [],
+  "h": 1362,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Robert-Been-Loida-Laura-CTPAW-JUL2024-1-scaled.jpg",
+  "source_size": "2560x2179",
   "w": 1600
  },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/10/SZjnVYn8TiKcaBXywJqw_21-768x960.png": {
@@ -3807,6 +4031,20 @@
   "source_size": "1761x984",
   "w": 1600
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-07-at-9.21.12-PM.jpg": {
+  "alt": "",
+  "bytes": 264928,
+  "file": "img/screenshot-2026-10-07-at-9-21-12-pm.webp",
+  "flags": [
+   "screenshot"
+  ],
+  "h": 820,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-07-at-9.21.12-PM.jpg",
+  "source_size": "1466x820",
+  "w": 1466
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-08-230814-1024x435.jpg": {
   "alt": "",
   "bytes": 14262,
@@ -3846,6 +4084,30 @@
   "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Ug9FBbW9R0WcyszlJApU_22-768x960.jpg",
   "source_size": "3375x4219",
   "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/WhatsApp-Image-2026-08-17-at-13.44.33.jpeg": {
+  "alt": "",
+  "bytes": 274556,
+  "file": "img/whatsapp-image-2026-08-17-at-13-44-33.webp",
+  "flags": [],
+  "h": 960,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/WhatsApp-Image-2026-08-17-at-13.44.33.jpeg",
+  "source_size": "1280x960",
+  "w": 1280
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/WhatsApp-Image-2026-08-17-at-13.44.45.jpeg": {
+  "alt": "",
+  "bytes": 298786,
+  "file": "img/whatsapp-image-2026-08-17-at-13-44-45.webp",
+  "flags": [],
+  "h": 960,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/WhatsApp-Image-2026-08-17-at-13.44.45.jpeg",
+  "source_size": "1280x960",
+  "w": 1280
  },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/10/aH3WakkmT5iZ9qrReo9y_Master-Compost-768x960.jpg": {
   "alt": "",

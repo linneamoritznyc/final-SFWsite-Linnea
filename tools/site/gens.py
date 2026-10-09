@@ -190,6 +190,12 @@ PATHS = [("all", "All"), ("composter", "Composter"), ("consultant", "Consultant"
 def courses_grid(args):
     cs = data("courses")
     chips = "".join('<li><button class="chip" type="button" data-chip="%s" aria-pressed="%s">%s</button></li>' % (k, "true" if k == "all" else "false", E(v)) for k, v in PATHS)
+    if "staging" in args:  # /programs-overview/ as staging shows it: 3:2 card images (356 x 237 at 1440), Search button, staging's empty message
+        return ('<div data-filter><ul class="chips" aria-label="Filter by path">%s</ul>'
+                '<form class="searchbar" role="search"><label class="sr-only" for="prog-q">Search programs</label>'
+                '<input id="prog-q" type="search" data-q placeholder="Search programs"><button class="btn" type="submit">Search</button></form>'
+                '<ul class="grid grid--3">%s</ul><p data-empty hidden>No programs match this pathway or search.</p></div>') % (
+            chips, "".join(course_card(c, photos=True) for c in cs).replace('class="card__img"', 'class="card__img card__img--wide"'))
     return ('<div data-filter><ul class="chips" aria-label="Filter by path">%s</ul>'
             '<form class="searchbar" role="search"><label class="sr-only" for="prog-q">Search programs</label>'
             '<input id="prog-q" type="search" data-q placeholder="Search programs"></form>'
@@ -270,12 +276,14 @@ POST_ALTS = {
 
 
 def post_card(p):
+    """News card as on staging /news/: 3:2 image (the post's featured image, else its header image)."""
     cat = p["categories"][0]["name"] if p["categories"] else ""
+    alt = POST_ALTS.get(p["slug"]) or HOME_POST_ALTS.get(p["slug"], "")
     if p["slug"] in POST_IMAGES:
-        pic = B.photo(POST_IMAGES[p["slug"]], POST_ALTS.get(p["slug"], ""), "card__img card__img--square", sizes="(min-width: 64em) 18rem, 50vw")
+        pic = B.photo(POST_IMAGES[p["slug"]], alt, "card__img card__img--wide", sizes="(min-width: 64em) 19rem, 50vw")
     else:
-        pic = None
-    pic = pic or (img(p["featured"], POST_ALTS.get(p["slug"], ""), "card__img card__img--square") if p.get("featured") else '<div class="card__img card__img--square"></div>')
+        src = p.get("featured") or p.get("header")
+        pic = img(src, alt, "card__img card__img--wide") if src else '<div class="card__img card__img--wide"></div>'
     return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker">%s &middot; '
             '<time datetime="%s">%s</time></p><h3 class="card__title"><a href="/%s/">%s</a></h3></div></article></li>') % (
         pic, E(cat), p["date"], fmt_date(p["date"]), p["slug"], E(fix(p["title"])))
