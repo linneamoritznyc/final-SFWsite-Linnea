@@ -87,7 +87,9 @@ def rewrite_body(body, page_imgs=True):
         if not src or not src.group(1).startswith("http") or re.match(r"https?://\d+$", src.group(1)):
             return ""  # empty or numeric src (bug 1): the picture does not exist
         try:
-            return img(H.unescape(src.group(1)), H.unescape(alt.group(1)) if alt and alt.group(1) else None)
+            tag = img(H.unescape(src.group(1)), H.unescape(alt.group(1)) if alt and alt.group(1) else None)
+            # The Costa Rica liquid amendments photo is low quality: never shown (Linnea, 9 October 2026).
+            return "" if "2025-year-in-review-gerald" in tag else tag
         except Exception as e:
             print("image failed", src.group(1), e)
             return ""
@@ -119,19 +121,21 @@ COURSE_EDITS = [
     (", and transforms what\u2019s possible on your land", ""),
     (", and transforms what's possible on your land", ""),
 ]
+# Staging cuts the Foundation Course 3 line short; the end is from the course page on school.soilfoodweb.com.
+COURSE_ENDS = [("support soil health, plant", " vitality, and nutrient cycling.")]
 
 
 # Course card photos (Stephanie, 8 October 2026): real photos of people doing the work, on every
 # course card on every page. No Thinkific course images, no diagrams. Files are in img/new-2026-10/.
 PROGRAM_PHOTOS = [
     ("Mini Foundation Course", "card-elaine-ingham-microscope.jpg", "Dr. Elaine Ingham smiling beside a microscope"),
-    ("Workshops", "card-students-holding-buckets.jpg", "Seven people standing on a path outdoors holding white buckets, trees behind"),
-    ("Foundation Course 1", "Elaine Flower Shirt Microscope.png", "Dr. Elaine Ingham at a microscope in a laboratory, working from a screen beside her"),
-    ("Foundation Course 2", "R5A_4027.jpg", "A pitchfork standing in a large pile of dark finished compost"),
-    ("Foundation Course 3", "actively-aerated-compost-tea-brew-vessels.webp", "Three white buckets of dark brewing compost tea with aerators and a cloth bag of compost"),
+    ("Workshops", "pile-turning-wes-8.jpg", "People in gloves reaching into an open compost pile in a wire bin while others stand behind with tools"),
+    ("Foundation Course 1", "forest-mycelium-aysen-ustunay.jpg", "A hand holding a piece of rotting wood threaded with white fungal strands", "Photo: Aysen Ustunay"),
+    ("Foundation Course 2", "ctpfw-student-moving-compost-1.jpg", "A woman lifting an armful of dark compost out of a wire bin while a man sprays it with a hose"),
+    ("Foundation Course 3", "card-compost-tea-jug.jpg", "A yellow-gloved hand pointing at a measuring jug of brown liquid in a large shed"),
     ("Foundation Course 4", "card-student-at-microscope.jpg", "A woman looking into a microscope at a long table, with other students at microscopes behind her"),
     ("BioComplete™ Compost Production", "card-inspecting-feedstock-barrels.jpg", "A person in a wide-brimmed hat inspecting blue barrels of compost feedstock"),
-    ("Permaculture Design Certification", "card-sorting-green-leaves.jpg", "A man crouching on a concrete floor, sorting fresh green leaves beside a heap of compost"),
+    ("Permaculture Design Certification", "garden-vegetable-beds.jpg", "Raised wooden garden beds planted with onions and leafy greens"),
     ("Introduction to Ecosystem Restoration: Module 1", "card-field-walk-crop-rows.jpg", "A group standing between rows of green crops in a field under a cloudy sky, listening to a man speaking"),
     ("Introduction to Ecosystem Restoration: Module 2", "card-vineyard-ground-cover-capri.jpg", "A vineyard with green ground cover and yellow wildflowers between the rows, hills behind", "Photo: Caterina Capri"),
     ("Introduction to Ecosystem Restoration: Module 3", "card-roots-in-soil-capri.jpg", "A clump of soil full of fine roots held over a sieve", "Photo: Caterina Capri"),
@@ -142,6 +146,9 @@ PROGRAM_PHOTOS = [
 def course_card(c, scroller=False, photos=False):
     for a, b in COURSE_EDITS:
         c = dict(c, line=c["line"].replace(a, b))
+    for a, b in COURSE_ENDS:
+        if c["line"].endswith(a):
+            c = dict(c, line=c["line"] + b)
     title = fix(c["title"]).replace(" : ", ": ")
     href = staging_link(c["href"])
     cta = fix(c["cta"]).replace(" →", "").replace("→", "").strip() or "Learn more"
@@ -257,13 +264,14 @@ def team(args):
 
 # ------------------------------------------------------------------ news
 # Card photos chosen for the launch, in place of staging's featured image.
-POST_IMAGES = {"obituary-for-dr-elaine-ingham": "Elaine Flower Shirt Microscope.png"}
+POST_IMAGES = {"obituary-for-dr-elaine-ingham": "Elaine Flower Shirt Microscope.png",
+               "soil-food-web-advanced-programs-reopen-2026": "inspecting-feedstock-barrels-group.jpg"}
 # Plain alt text for post card images, by slug.
 POST_ALTS = {
     "wild-ken-hill-2026": "Workshop participants standing around a tall wire compost cage topped with flowers, inside a barn",
     "ciliates-soil-health-microscope-watermelon-crop": "A graphic reading Education: how a Soil Food Web education helps gardeners solve crop issues",
     "soil-food-web-school-first-permaculture-design-certificate-course": "A yellow graphic reading A timely solution for uncertain times, with the Permaculture Design Course mark",
-    "soil-food-web-advanced-programs-reopen-2026": "The Soil Food Web Foundation logo",
+    "soil-food-web-advanced-programs-reopen-2026": "Workshop participants in caps gathered around open blue barrels, looking at the feedstock inside",
     "obituary-for-dr-elaine-ingham": "Dr. Elaine Ingham at a microscope in a laboratory",
 }
 
@@ -718,6 +726,12 @@ EVENT_TEXT = {
 }
 
 
+# Header image of a calendar event: the same card image the workshop has on /past-workshop-picks/ and /workshops/.
+EVENT_HEADERS = {
+    "accelerator-workshop-india-2026": ("workshop-card-october-2026.jpg", "A collage: a compost tea brewer, a person at a microscope, a group of participants outdoors, hands holding compost, and the Accelerator Workshop logo"),
+}
+
+
 def event_pages():
     for e in all_events():
         path = "/calendar-event/%s/" % e["slug"]
@@ -752,9 +766,13 @@ def event_pages():
                     "community": ('/year-one-report/', "Read the year one report")}.get(e["type"])
             if more:
                 detail.append('<p><a class="more" href="%s">%s</a></p>' % more)
-        body = ('<section class="band"><div class="wrap wrap--narrow">%s<p class="eyebrow">%s</p><h1>%s</h1>'
+        header = ""
+        if e["slug"] in EVENT_HEADERS:
+            f, alt = EVENT_HEADERS[e["slug"]]
+            header = B.photo(f, alt, eager=True, sizes="(min-width: 48em) 46rem, 100vw")
+        body = ('<section class="band"><div class="wrap wrap--narrow">%s%s<p class="eyebrow">%s</p><h1>%s</h1>'
                 '<dl class="kv"><dt>When</dt><dd><time datetime="%s">%s</time></dd><dt>Type</dt><dd>%s</dd></dl>%s</div></section>') % (
-            back("/calendar/", "Back to the calendar"), EVENT_TYPES[e["type"]], E(e["title"]), e["start"], E(event_when(e)),
+            back("/calendar/", "Back to the calendar"), header, EVENT_TYPES[e["type"]], E(e["title"]), e["start"], E(event_when(e)),
             EVENT_TYPES[e["type"]], "".join(detail))
         write(path, e["title"], "%s, %s." % (e["title"], event_when(e)), body, "/community/")
 
