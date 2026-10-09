@@ -3031,3 +3031,5 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 	}
 }
 
+
+.frame--top img { object-position: 50% 15%; } /* portrait photo in a landscape slot: keep the face */

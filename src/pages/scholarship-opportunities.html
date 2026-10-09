@@ -1,40 +1,16 @@
 ---
 path: /scholarship-opportunities/
 title: Scholarship Opportunities
-description: Sign up to hear when Soil Food Web School scholarship places open. Tell us where you are, what you steward and what you would do with the training.
-source: repo
+description: Sign up to hear when Soil Food Web School scholarship places open.
+source: staging
 bugs: 3, 5, 29
-notes: Staging's page has 21 words and no form; its title carried seven zero-width spaces ("Scholarship Opportunities" plus invisible characters), now removed. The intro sentence is staging's; the form fields follow this repo's description of the application. Mockup form: it checks the required fields and shows a confirmation, nothing is sent.
+notes: Mirrors new.soilfoodweb.com/scholarship-opportunities/ as of 9 October 2026 (copy verbatim). Staging's form section below the heading is an empty HTML block, so no form is shown; the page has no image slots.
 nav: /programs-overview/
 ---
-<section class="pagehead">
+<section class="band band--cream">
   <div class="wrap">
     <p class="eyebrow">Scholarships</p>
-    <h1>Scholarship Opportunities</h1>
-    <p class="lead">Submit your information on the form below, and we will email you when we have scholarship opportunities available.</p>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap contact-grid">
-    <div>
-      <form data-contact-form novalidate aria-label="Scholarship sign-up">
-        <div class="field"><label for="s-name">Name <span class="req">(required)</span></label><input id="s-name" name="name" type="text" required autocomplete="name"><p class="field__error" hidden>Please enter your name.</p></div>
-        <div class="field"><label for="s-email">Email <span class="req">(required)</span></label><input id="s-email" name="email" type="email" required autocomplete="email"><p class="field__error" hidden>Please enter an email address we can reply to.</p></div>
-        <div class="field"><label for="s-where">Where are you? <span class="req">(required)</span></label><input id="s-where" name="where" type="text" required placeholder="Town and country"><p class="field__error" hidden>Please tell us where you are.</p></div>
-        <div class="field"><label for="s-steward">What do you steward?</label><input id="s-steward" name="steward" type="text" placeholder="A farm, a garden, a community plot, a lab"></div>
-        <div class="field"><label for="s-why">What would you do with the training?</label><textarea id="s-why" name="training"></textarea></div>
-        <button class="btn" type="submit">Send</button>
-      </form>
-      <p class="form-done" data-contact-done tabindex="-1" hidden>Thank you. We will email you when we have scholarship opportunities available.</p>
-      <p class="todo" style="margin-top:1.25rem">Form tool and recipient for scholarship sign-ups, and who answers them. Alex builds it; Stephanie McDaniel owns the list.</p>
-    </div>
-    <aside class="reach">
-      <h2>About the program</h2>
-      <p>Priority goes to applicants working in under-resourced regions. Applications are read in cohorts.</p>
-      <p><a class="more" href="/scholarship/">How scholarships work</a></p>
-      <h3>Want to fund a place?</h3>
-      <p><a href="/donations/">Donate to support scholarships</a></p>
-    </aside>
+    <h1 class="center">Scholarship Opportunities</h1>
+    <p class="lead center">Submit your information on the form below, and we will email you when we have scholarship opportunities available.</p>
   </div>
 </section>

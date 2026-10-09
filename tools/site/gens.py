@@ -247,11 +247,12 @@ def team_photo(t, cls=""):
 @gen
 def team(args):
     out = []
-    for t in all_team():
+    for t in (data("team") if "staging" in args.split() else all_team()):
         role = fix(t["role"])
         out.append('<li><a class="person" href="/team-member/%s/">%s<p class="person__name">%s</p>%s</a></li>' % (
             t["slug"], team_photo(t), E(t["name"]), '<p class="person__role">%s</p>' % E(role) if role else ""))
-    return '<ul class="people">%s</ul>' % "".join(out)
+    style = ' style="grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr))"' if "staging" in args.split() else ""
+    return '<ul class="people"%s>%s</ul>' % (style, "".join(out))
 
 
 # ------------------------------------------------------------------ news

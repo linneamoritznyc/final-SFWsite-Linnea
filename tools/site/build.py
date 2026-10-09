@@ -404,6 +404,9 @@ def fmt_date(iso):
 
 
 def fmt_range(a, b):
+    b = b or a
+    if not a:
+        return ""
     da, db = datetime.date.fromisoformat(a), datetime.date.fromisoformat(b)
     if da == db:
         return fmt_date(a)

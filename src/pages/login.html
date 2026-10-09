@@ -2,36 +2,34 @@
 path: /login/
 title: Student login
 description: Log in to your Soil Food Web School courses: the new platform at school.soilfoodweb.com, or the original platform for courses bought before 15 March 2026.
-source: repo
+source: staging
 bugs: 3, 5
-notes: Staging's page has 136 words, so this is this repo's login page, restyled. The original platform's Log in now goes to archive.soilfoodweb.com (staging had "#"). "Join the community" goes to /community/ (staging pointed it at the programs page).
+notes: Mirrors new.soilfoodweb.com/login/ as of 9 October 2026 (copy verbatim, photo band at staging's height). The photo band keeps Linnea's photo (staging's background is a Rancho Cacachilas photo). The original platform's Log in has no address on staging ("#"), so it is shown without a link. Both band buttons go to /programs-overview/#path as on staging.
 nav: /programs-overview/
 ---
-<section class="pagehead">
-  <div class="wrap">
-    <p class="eyebrow">Student access</p>
-    <h1>Welcome back, Soil Regenerator</h1>
-    <p class="lead">Your courses live on one of two learning platforms. Pick yours below. One click and you're home.</p>
+<section class="hero">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">STUDENT ACCESS</p>
+      <h1>Welcome back, Soil Regenerator</h1>
+      <h2 class="subhead">Healing soil. Feeding humanity. Restoring the living world.</h2>
+      <p>Your courses live on one of two learning platforms. Pick yours.</p>
+    </div>
+    <div>
+      <div class="cols-2" style="gap:1rem">
+        <article class="card"><div class="card__body"><h3 class="card__title">New platform, Soil Food Web School on Thinkific</h3><p class="card__text">For courses bought after 15 March 2026, or accounts that have already moved.</p><p class="card__foot"><a class="btn" href="https://school.soilfoodweb.com/users/sign_in" target="_blank" rel="noopener">Log in</a></p></div></article>
+        <article class="card"><div class="card__body"><h3 class="card__title">Original platform</h3><p class="card__text">For courses bought before 15 March 2026 whose accounts have not moved yet.</p><p class="card__foot"><span class="btn">Log in</span></p></div></article>
+      </div>
+      <article class="card" style="margin-top:1rem;height:auto"><div class="card__body"><h3 class="card__title">sMApp, the microscope tool</h3><p class="card__text">Turns what you count through a microscope into biomass figures and a report. A separate free tool with its own account, not a course platform. Accounts are currently available for enrolled students.</p><p class="card__foot"><a class="btn" href="https://www.soilmapp.com/login">Open sMApp</a></p></div></article>
+    </div>
   </div>
 </section>
 
-<section class="band">
-  <div class="wrap">
-    <ul class="grid grid--3">
-      <li><article class="card card--plain"><div class="card__body"><p class="card__kicker">New platform</p><h2 class="card__title">Soil Food Web School on Thinkific</h2><p class="card__text">For courses bought after 15 March 2026, or accounts that have already moved.</p><p class="card__foot"><a class="btn" href="https://school.soilfoodweb.com/users/sign_in">Log in</a></p></div></article></li>
-      <li><article class="card card--plain"><div class="card__body"><p class="card__kicker">Original platform</p><h2 class="card__title">The original course platform</h2><p class="card__text">For courses bought before 15 March 2026 whose accounts have not moved yet.</p><p class="card__foot"><a class="btn btn--ghost" href="https://archive.soilfoodweb.com">Log in</a></p></div></article></li>
-      <li><article class="card card--plain"><div class="card__body"><p class="card__kicker">Tool</p><h2 class="card__title">sMApp, the microscope tool</h2><p class="card__text">Turns what you count through a microscope into biomass figures and a report. A separate free tool with its own account, not a course platform. Accounts are for enrolled students for now.</p><p class="card__foot"><a class="btn btn--ghost" href="https://www.soilmapp.com/">Open sMApp</a></p></div></article></li>
-    </ul>
-    <p style="margin-top:1.5rem">Students are moving to the new platform in stages. You will get an email when your account moves. Unsure? Write to <a href="mailto:info@soilfoodweb.com">info@soilfoodweb.com</a>.</p>
-    <p class="todo">Confirm archive.soilfoodweb.com is the original platform's login address after launch, and that it is served over HTTPS. Alex.</p>
-  </div>
-</section>
-
-<section class="band band--photo">
+<section class="band band--photo" style="padding-block:250px">
   {{photo file="R5A_4235.jpg" alt=""}}
   <div class="wrap">
     <h2>Be part of the soil-ution</h2>
-    <p>Wherever you are, a farm, a garden, a lab, a classroom, there's living soil beneath you and a global community beside you.</p>
-    <div class="actions"><a class="btn btn--white" href="/community/">Join the community</a><a class="btn" href="/programs-overview/#path">Programs</a></div>
+    <p>Wherever you are — a farm, a garden, a lab, a classroom — there’s living soil beneath you and a global community beside you.</p>
+    <div class="actions"><a class="btn btn--white" href="/programs-overview/#path">Join the community</a><a class="btn" href="/programs-overview/#path">Programs</a></div>
   </div>
 </section>
