@@ -3033,3 +3033,11 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 
 
 .frame--top img { object-position: 50% 15%; } /* portrait photo in a landscape slot: keep the face */
+/* Final blog header banners (1920x720) carry their own title: show them whole, with the page title below. */
+.post-hero--banner { height: auto; display: block; background: var(--white); color: var(--ink); text-align: left; }
+.post-hero--banner::after { display: none; }
+.post-hero--banner picture { position: static; display: block; }
+.post-hero--banner .post-banner__img { width: 100%; height: auto; aspect-ratio: 1920 / 720; object-fit: cover; }
+.post-hero--banner .post-hero__in { max-width: var(--wrap); margin: 0 auto; padding: 2.5rem var(--gutter) 0; }
+.post-hero--banner h1, .post-hero--banner .post-hero__cat { color: var(--soil); border-color: var(--rule); }
+.post-hero--banner .post-hero__cats { justify-content: flex-start; }

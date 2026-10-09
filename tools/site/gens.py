@@ -275,11 +275,25 @@ POST_ALTS = {
 }
 
 
+BLOG_IMAGES = {k: v for k, v in json.load(open(os.path.join(B.ROOT, "content", "blog-images.json"), encoding="utf-8")).items() if not k.startswith("_")}
+
+
+def blog_card_image(p, cls, sizes="(min-width: 64em) 19rem, 50vw"):
+    """The final 3:2 card graphic for a post (content/blog-images.json), or None."""
+    b = BLOG_IMAGES.get(p["slug"])
+    if not b:
+        return None
+    return B.photo(b["key"] + "--Thumbnail-3x2-1200x800.jpg", b["alt"], cls, sizes=sizes, name=b["key"] + "-thumbnail")
+
+
 def post_card(p):
     """News card as on staging /news/: 3:2 image (the post's featured image, else its header image)."""
     cat = p["categories"][0]["name"] if p["categories"] else ""
     alt = POST_ALTS.get(p["slug"]) or HOME_POST_ALTS.get(p["slug"], "")
-    if p["slug"] in POST_IMAGES:
+    pic = blog_card_image(p, "card__img card__img--wide")
+    if pic:
+        pass
+    elif p["slug"] in POST_IMAGES:
         pic = B.photo(POST_IMAGES[p["slug"]], alt, "card__img card__img--wide", sizes="(min-width: 64em) 19rem, 50vw")
     else:
         src = p.get("featured") or p.get("header")
@@ -313,7 +327,7 @@ def home_post_card(p):
     cat = p["categories"][0]["name"] if p["categories"] else ""
     src = HOME_POST_IMAGES.get(p["slug"]) or p.get("featured")
     alt = HOME_POST_ALTS.get(p["slug"]) or POST_ALTS.get(p["slug"], "")
-    pic = img(src, alt, "card__img card__img--wide") if src else '<div class="card__img card__img--wide"></div>'
+    pic = blog_card_image(p, "card__img card__img--wide") or (img(src, alt, "card__img card__img--wide") if src else '<div class="card__img card__img--wide"></div>')
     d = datetime.date.fromisoformat(p["date"][:10])
     author = ", ".join(a["name"] for a in p["authors"]) or POST_AUTHORS.get(p["slug"], "")
     return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker">%s &middot; '
@@ -885,7 +899,11 @@ def post_pages():
         # Staging's post header: a full-width 550 px band with the header image behind the title.
         src = POST_IMAGES.get(p["slug"])
         alt = POST_ALTS.get(p["slug"], p.get("featured_alt", ""))
-        if src:
+        banner = BLOG_IMAGES.get(p["slug"])
+        if banner:
+            # The final header is a finished banner with its own title text: shown whole, title below it.
+            pic = B.photo(banner["key"] + "--Desktop-1920x720.jpg", banner["alt"], "post-banner__img", eager=True, sizes="100vw", name=banner["key"] + "-desktop")
+        elif src:
             pic = B.photo(src, alt, "post-hero__img", eager=True, sizes="100vw")
         elif p.get("header"):
             pic = img(p["header"], alt, "post-hero__img", eager=True)
@@ -896,7 +914,7 @@ def post_pages():
             meta.append("By %s" % E(p["wp_author"]))
         meta.append('<time datetime="%s">%s</time>' % (p["date"], fmt_date(p["date"])))
         head = ('<header class="post-hero%s">%s<div class="post-hero__in"><p class="post-hero__cats">%s</p><h1>%s</h1>'
-                '<p class="post-hero__meta">%s</p></div></header>') % ("" if pic else " post-hero--plain", pic, cats, E(fix(p["title"])), " &middot; ".join(meta))
+                '<p class="post-hero__meta">%s</p></div></header>') % ((" post-hero--banner" if banner else "") if pic else " post-hero--plain", pic, cats, E(fix(p["title"])), " &middot; ".join(meta))
         body_html = B.render(p["body"]) if p.get("source") == "repo" else rewrite_body(p["body"])
         by = ""
         for a_ in p.get("authors", []):
