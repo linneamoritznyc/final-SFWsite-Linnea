@@ -439,6 +439,18 @@
   "source_size": "2240x1260",
   "w": 1600
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/04/PD-Cohort-1-Launches-1024x1024.jpg": {
+  "alt": "Yellow course promo graphic with a permaculture design course badge.",
+  "bytes": 56358,
+  "file": "img/pd-cohort-1-launches-2.webp",
+  "flags": [],
+  "h": 1080,
+  "shows": "Yellow promotional graphic with large dark text on the left and a circular badge on the right showing stylised green and blue leaves over soil lines.",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/04/PD-Cohort-1-Launches-1024x1024.jpg",
+  "source_size": "1080x1080",
+  "w": 1080
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/04/PD-Cohort-1-Launches.jpg": {
   "alt": "Yellow course promo graphic with a permaculture design course badge.",
   "bytes": 56358,
@@ -461,6 +473,18 @@
   "source": "staging download",
   "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/05/How-A-Rare-Microscope-Sighting-1400x1400-1-scaled.png",
   "source_size": "2560x2560",
+  "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/05/How-A-Rare-Microscope-Sighting-Tablet-Header-1024%C3%97768-1024x768.jpg": {
+  "alt": "",
+  "bytes": 72152,
+  "file": "img/how-a-rare-microscope-sighting-tablet-header-1024-c3-97768.webp",
+  "flags": [],
+  "h": 1200,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/05/How-A-Rare-Microscope-Sighting-Tablet-Header-1024%C3%97768-1024x768.jpg",
+  "source_size": "3200x2400",
   "w": 1600
  },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/06/Gerald-1024x1024.jpg": {
@@ -3657,6 +3681,18 @@
   "source_size": "2375x1313",
   "w": 1600
  },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/IMG_2317-1024x768.jpg": {
+  "alt": "",
+  "bytes": 42494,
+  "file": "img/img-2317-2.webp",
+  "flags": [],
+  "h": 768,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/IMG_2317-1024x768.jpg",
+  "source_size": "1024x768",
+  "w": 1024
+ },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/10/IMG_2317-scaled.jpg": {
   "alt": "",
   "bytes": 134352,
@@ -3734,6 +3770,20 @@
   "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-03-122235.jpg",
   "source_size": "1761x984",
   "w": 1600
+ },
+ "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-08-230814-1024x435.jpg": {
+  "alt": "",
+  "bytes": 14262,
+  "file": "img/screenshot-2026-10-08-230814-2.webp",
+  "flags": [
+   "screenshot"
+  ],
+  "h": 451,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-08-230814-1024x435.jpg",
+  "source_size": "1061x451",
+  "w": 1061
  },
  "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-08-230814.jpg": {
   "alt": "",

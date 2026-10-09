@@ -105,6 +105,9 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
   .split--reverse > :first-child { order: 2; }
 }
 .split__media img, .media { width: 100%; border-radius: var(--radius); object-fit: cover; }
+/* Frame: give the wrapper staging's slot shape inline (style="aspect-ratio:W/H"); the photo fills it. */
+.frame { position: relative; overflow: hidden; border-radius: var(--radius); }
+.frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .photo { margin: 1.5rem 0 0; }
 /* Layered photos: a second picture overlaps the corner of the first, for depth. */
 .layered { position: relative; margin-bottom: 2.5rem; }
@@ -228,6 +231,7 @@ button { font: inherit; }
 .card:hover { box-shadow: var(--shadow-hover); }
 .card__img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; background: var(--cream); }
 .card__img--square { aspect-ratio: 1; }
+.card__img--wide { aspect-ratio: 3 / 2; } /* staging news and program cards */
 .card__img--fit { object-fit: contain; background: #000; } /* course diagrams: whole figure, labels kept */
 .card__body { padding: 1.25rem 1.35rem 1.4rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
 .card__body > * { margin: 0; }
@@ -257,8 +261,9 @@ button { font: inherit; }
 @media (hover: none) { .tile::before { background: rgba(34, 55, 31, .35); } .tile p { text-shadow: 0 1px 3px rgba(0,0,0,.6); } .tile p { max-height: none; opacity: 1; } .tile { aspect-ratio: auto; min-height: 20rem; } }
 
 /* Course cards with horizontal scroll (staging programs.css carousel) */
-.scroller { display: grid; grid-auto-flow: column; grid-auto-columns: min(85%, 21rem); gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .5rem 0 1.5rem; list-style: none; margin: 0; scrollbar-width: thin; }
+.scroller { display: grid; grid-auto-flow: column; grid-auto-columns: min(85%, 22.25rem); gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .5rem 0 1.5rem; list-style: none; margin: 0; scrollbar-width: thin; }
 .scroller > li { scroll-snap-align: start; margin: 0; }
+.scroller .card__img { aspect-ratio: 3 / 2; } /* staging program carousel: 356 x 237 at 1440 */
 .scroller-head { display: flex; justify-content: space-between; align-items: end; gap: 1rem; flex-wrap: wrap; }
 .scroller-nav { display: flex; gap: .5rem; }
 .scroller-nav button { width: 2.5rem; height: 2.5rem; border-radius: 6px; border: 1px solid var(--soil); background: var(--white); color: var(--soil); cursor: pointer; font-size: 1.2rem; line-height: 1; }
