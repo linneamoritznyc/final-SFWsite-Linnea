@@ -47,10 +47,13 @@ const fs = require('fs');
         else if (anc('.card, .sfw-workshops__card, .grid > li, .scroller > li')) kind = 'card';
         else if (anc('.split__media')) kind = 'side image';
         else if (anc('.prose, .event-single__body')) kind = 'body image';
+        const box = img.closest('li, article, .card, .tile, .sfw-workshops__card');
+        const tt = box && box.querySelector('h3, h4, .card__title, .sfw-workshops__name');
+        const label = tt ? tt.textContent.trim().replace(/\s+/g, ' ').slice(0, 60) : '';
         const fig = img.closest('figure');
         const cap = fig && fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent.trim() : '';
         const cs = getComputedStyle(img);
-        res.push({ head, kind, src, alt, caption: cap, w: Math.round(r.width), h: Math.round(r.height),
+        res.push({ head, kind, label, src, alt, caption: cap, w: Math.round(r.width), h: Math.round(r.height),
                    fit: cs.objectFit, pos: cs.objectPosition, y: Math.round(r.top + scrollY) });
       }
       return res;

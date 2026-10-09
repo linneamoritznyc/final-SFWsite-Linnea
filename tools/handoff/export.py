@@ -74,6 +74,8 @@ def save(im, dest):
 
 def main():
     slots = json.load(open(sys.argv[1], encoding="utf-8"))
+    # Plain alt text for staging images that have none on the page (written from looking at each one).
+    fill = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "alt-fill.json"), encoding="utf-8"))
     if os.path.isdir(OUT):
         shutil.rmtree(OUT)
     os.makedirs(OUT)
@@ -82,6 +84,8 @@ def main():
         page = page_name(s["page"])
         section = clean(s["head"])
         slot = s["kind"] if s["kind"] in ("hero", "banner") and s["index"] == 1 else "%s %d" % (s["kind"], s["index"])
+        if s.get("label") and s["kind"] in ("card", "tile"):
+            slot += " (%s)" % clean(s["label"])[:45]
         name = "%s - %s - %s.jpg" % (page, section, slot)
         n = 2
         while (page, name) in used:
@@ -100,7 +104,7 @@ def main():
         os.makedirs(os.path.join(OUT, page), exist_ok=True)
         save(im, os.path.join(OUT, page, name))
         rows.append({"wordpress_page_url": STAGING + s["page"], "section_heading": s["head"] or "(top of page)",
-                     "slot": slot, "file_name": "%s/%s" % (page, name), "alt_text": s["alt"], "caption": s["caption"],
+                     "slot": slot, "file_name": "%s/%s" % (page, name), "alt_text": s["alt"] or fill.get(s["src"].split("/")[-1], ""), "caption": s["caption"],
                      "recommended_size_px": "%d x %d (shown at %d x %d on a 1440 px screen)" % (2 * s["w"], 2 * s["h"], s["w"], s["h"])})
     with open(os.path.join(OUT, "image-handoff.csv"), "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
