@@ -224,6 +224,7 @@ button { font: inherit; }
 .card:hover { box-shadow: var(--shadow-hover); }
 .card__img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; background: var(--cream); }
 .card__img--square { aspect-ratio: 1; }
+.card__img--wide { aspect-ratio: 3 / 2; } /* blog cards: the final 3:2 graphics */
 .card__img--fit { object-fit: contain; background: #000; } /* course diagrams: whole figure, labels kept */
 .card__body { padding: 1.25rem 1.35rem 1.4rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
 .card__body > * { margin: 0; }

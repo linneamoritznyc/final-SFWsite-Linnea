@@ -268,13 +268,20 @@ POST_ALTS = {
 }
 
 
+# Final blog images (Linnea's Drive folder, 9 October 2026): 3:2 card graphic and 1920x720 header banner.
+BLOG_IMAGES = {k: v for k, v in json.load(open(os.path.join(B.ROOT, "content", "blog-images.json"), encoding="utf-8")).items() if not k.startswith("_")}
+
+
 def post_card(p):
     cat = p["categories"][0]["name"] if p["categories"] else ""
-    if p["slug"] in POST_IMAGES:
-        pic = B.photo(POST_IMAGES[p["slug"]], POST_ALTS.get(p["slug"], ""), "card__img card__img--square", sizes="(min-width: 64em) 18rem, 50vw")
+    b = BLOG_IMAGES.get(p["slug"])
+    if b:
+        pic = B.photo(b["key"] + "--Thumbnail-3x2-1200x800.jpg", b["alt"], "card__img card__img--wide", sizes="(min-width: 64em) 18rem, 50vw", name=b["key"] + "-thumbnail")
+    elif p["slug"] in POST_IMAGES:
+        pic = B.photo(POST_IMAGES[p["slug"]], POST_ALTS.get(p["slug"], ""), "card__img card__img--wide", sizes="(min-width: 64em) 18rem, 50vw")
     else:
         pic = None
-    pic = pic or (img(p["featured"], POST_ALTS.get(p["slug"], ""), "card__img card__img--square") if p.get("featured") else '<div class="card__img card__img--square"></div>')
+    pic = pic or (img(p["featured"], POST_ALTS.get(p["slug"], ""), "card__img card__img--wide") if p.get("featured") else '<div class="card__img card__img--wide"></div>')
     return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker">%s &middot; '
             '<time datetime="%s">%s</time></p><h3 class="card__title"><a href="/%s/">%s</a></h3></div></article></li>') % (
         pic, E(cat), p["date"], fmt_date(p["date"]), p["slug"], E(fix(p["title"])))
@@ -797,7 +804,11 @@ def post_pages():
         begin(path, p.get("source", "staging"), bugs, " ".join(note), "Blog post")
         B.EXTRA_FLAG = PARTNER_POSTS.get(p["slug"])
         cats = " &middot; ".join('<a href="/category/%s/">%s</a>' % (c["slug"], E(c["name"])) for c in p["categories"])
-        hero = img(p["featured"], p.get("featured_alt", ""), "article-hero", eager=True) if p.get("featured") else ""
+        b = BLOG_IMAGES.get(p["slug"])
+        if b:
+            hero = B.photo(b["key"] + "--Desktop-1920x720.jpg", b["alt"], "article-hero", eager=True, sizes="(min-width: 80em) 1260px, 100vw", name=b["key"] + "-desktop")
+        else:
+            hero = img(p["featured"], p.get("featured_alt", ""), "article-hero", eager=True) if p.get("featured") else ""
         body_html = B.render(p["body"]) if p.get("source") == "repo" else rewrite_body(p["body"])
         by = ""
         for a in p.get("authors", []):
