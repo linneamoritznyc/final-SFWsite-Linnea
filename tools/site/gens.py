@@ -125,17 +125,23 @@ COURSE_EDITS = [
 # course card on every page. No Thinkific course images, no diagrams. Files are in img/new-2026-10/.
 PROGRAM_PHOTOS = [
     ("Mini Foundation Course", "card-elaine-ingham-microscope.jpg", "Dr. Elaine Ingham smiling beside a microscope"),
-    ("Workshops", "card-students-holding-buckets.jpg", "Seven people standing on a path outdoors holding white buckets, trees behind"),
-    ("Foundation Course 1", "Elaine Flower Shirt Microscope.png", "Dr. Elaine Ingham at a microscope in a laboratory, working from a screen beside her"),
-    ("Foundation Course 2", "R5A_4027.jpg", "A pitchfork standing in a large pile of dark finished compost"),
-    ("Foundation Course 3", "actively-aerated-compost-tea-brew-vessels.webp", "Three white buckets of dark brewing compost tea with aerators and a cloth bag of compost"),
+    ("Workshops", "pile-turning-wes-8.jpg", "People in gloves reaching into an open compost pile in a wire bin while others stand behind with tools"),
+    ("Foundation Course 1", "Bacterial-feeding nematode, 40x obj, Talbot Armstrong.jpg", "A curved, transparent nematode among scattered soil particles seen under a microscope", "Bacterial-feeding nematode, 40x. Photo: Talbot Armstrong"),
+    ("Foundation Course 2", "ctpfw-student-moving-compost-1.jpg", "A woman lifting an armful of dark compost out of a wire bin while a man sprays it with a hose"),
+    ("Foundation Course 3", "card-compost-tea-jug.jpg", "A yellow-gloved hand pointing at a measuring jug of brown liquid in a large shed"),
     ("Foundation Course 4", "card-student-at-microscope.jpg", "A woman looking into a microscope at a long table, with other students at microscopes behind her"),
     ("BioComplete™ Compost Production", "card-inspecting-feedstock-barrels.jpg", "A person in a wide-brimmed hat inspecting blue barrels of compost feedstock"),
-    ("Permaculture Design Certification", "card-sorting-green-leaves.jpg", "A man crouching on a concrete floor, sorting fresh green leaves beside a heap of compost"),
+    ("Permaculture Design Certification", "garden-vegetable-beds.jpg", "Raised wooden garden beds planted with onions and leafy greens"),
     ("Introduction to Ecosystem Restoration: Module 1", "card-field-walk-crop-rows.jpg", "A group standing between rows of green crops in a field under a cloudy sky, listening to a man speaking"),
     ("Introduction to Ecosystem Restoration: Module 2", "card-vineyard-ground-cover-capri.jpg", "A vineyard with green ground cover and yellow wildflowers between the rows, hills behind", "Photo: Caterina Capri"),
     ("Introduction to Ecosystem Restoration: Module 3", "card-roots-in-soil-capri.jpg", "A clump of soil full of fine roots held over a sieve", "Photo: Caterina Capri"),
     ("Introduction to Ecosystem Restoration: Module 4", "card-group-in-field-wild-ken-hill.jpg", "A group of people standing in a field of grass and red poppies under a wide blue sky"),
+    # Staging carousel titles (9 October 2026) that the module keys above do not match.
+    ("Foundation Courses", "Bacterial-feeding nematode, 40x obj, Talbot Armstrong.jpg", "A curved, transparent nematode among scattered soil particles seen under a microscope", "Bacterial-feeding nematode, 40x. Photo: Talbot Armstrong"),
+    ("Complete Practicum", "consultant-clipboard-compost-site.jpg", "A woman in a cap and blue T-shirt smiling as she writes on a clipboard, with compost piles behind"),
+    ("Compost Intensive Course", "card-students-building-compost-pile.jpg", "A woman forking wet plant material into a wire compost bin while a gloved hand sprays it with a hose"),
+    ("Intro to the Foundation Courses", "R5A_4246.jpg", "Close-up of microscope objectives above a glass slide on the stage"),
+    ("Introduction to Ecosystem Restoration", "card-field-walk-crop-rows.jpg", "A group standing between rows of green crops in a field under a cloudy sky, listening to a man speaking"),
 ]
 
 
@@ -179,7 +185,7 @@ def courses(args):
     return ('<div data-scroller><div class="scroller-head"><h3 class="sr-only">Programs</h3>'
             '<div class="scroller-nav"><button type="button" data-scroll="-1" aria-label="Previous programs">&lsaquo;</button>'
             '<button type="button" data-scroll="1" aria-label="Next programs">&rsaquo;</button></div></div>'
-            '<ul class="scroller">%s</ul></div>') % "".join(course_card(c, True) for c in cs)
+            '<ul class="scroller">%s</ul></div>') % "".join(course_card(c, True, photos=True) for c in cs)
 
 
 PATHS = [("all", "All"), ("composter", "Composter"), ("consultant", "Consultant"), ("designer", "Designer"),

@@ -1,60 +1,36 @@
 [
  {
-  "title": "Foundation Course 1: Introduction to the Soil Food Web",
-  "href": "https://school.soilfoodweb.com/courses/foundation-couse-1",
-  "kicker": "Start here",
-  "line": "Before compost, before teas, before microscopy, you must understand how the soil ecosystem actually functions. This course teaches the biological relationships that drive nutrient cycling, plant health, and long-term soil fertility.",
-  "cta": "Learn more →",
-  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/2-dirty-hands-1024x1024.jpg",
+  "title": "Foundation Courses",
+  "href": "https://school.soilfoodweb.com/bundles/soilfoodweb-foundation-courses",
+  "kicker": "Where it all began",
+  "line": "Build your living soil foundational knowledge as we take you through the 4 foundational courses: Foundation Course 1: Introduction to the Soil Food Web Foundation Course 2: BioComplete™ Compost Foundation Course 3: BioComplete™ Liquid Amendments Foundation Course 4: Microscopy",
+  "cta": "Learn more",
+  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Foundation-Courses-Bundle-1024x566.jpg",
   "pathways": [
    "composter",
    "consultant",
+   "designer",
+   "ecosystem-restorationist",
    "farmer",
+   "gardener",
    "lab-tech",
    "scientist"
   ]
  },
  {
-  "title": "Foundation Course 2: Biocomplete™ Compost",
-  "href": "https://school.soilfoodweb.com/courses/foundation-course-2",
-  "kicker": "Start here",
-  "line": "Foundation Course 2 teaches you how to create biologically complete compost that rebuilds soil life. Learn proper materials, pile management, and application methods to support nutrient cycling, soil structure, and long-term plant health.",
+  "title": "Complete Practicum",
+  "href": "https://school.soilfoodweb.com/bundles/complete-practicum",
+  "kicker": "From Curious to Consultant",
+  "line": "Begin with all four of the foundation courses to gain the foundational knowledge needed to understand the role and importance of the soil food web, as well as why microscopy is the best analysis method when the goal is efficient identification and population counts for the main beneficial soil microbes in the soil food web. Then move on to gaining practical hands-on skills in all four of our Advanced programs.",
   "cta": "Learn more →",
-  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/1181504_custom_site_themes_id_bzIUE4jRKy3PIhzujoI7_6.jpg",
+  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Complete-Practicum-4-1024x566.jpg",
   "pathways": [
    "composter",
    "consultant",
+   "designer",
+   "ecosystem-restorationist",
    "farmer",
-   "lab-tech",
-   "scientist"
-  ]
- },
- {
-  "title": "Foundation Course 3: BioComplete™ Liquid Amendments",
-  "href": "https://school.soilfoodweb.com/courses/foundation-course-3-biocomplete-liquid-amendments",
-  "kicker": "Start here",
-  "line": "Foundation Course 3 teaches you how to prepare and apply biologically correct compost extracts and teas. Learn brewing principles, equipment use, and application strategies to deliver living microorganisms effectively and support soil health, plant",
-  "cta": "Learn more →",
-  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/2-dirty-hands-1024x1024.jpg",
-  "pathways": [
-   "composter",
-   "consultant",
-   "farmer",
-   "lab-tech",
-   "scientist"
-  ]
- },
- {
-  "title": "Foundation Course 4: Microscopy",
-  "href": "https://school.soilfoodweb.com/courses/foundation-course-4-microscopy",
-  "kicker": "Start here",
-  "line": "Microscopy teaches you how to use a compound microscope to identify and quantify soil microorganisms. Learn to assess bacteria, fungi, protozoa, and nematodes, interpret biological data, and make informed decisions to improve soil health.",
-  "cta": "Learn more →",
-  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/2-dirty-hands-1024x1024.jpg",
-  "pathways": [
-   "composter",
-   "consultant",
-   "farmer",
+   "gardener",
    "lab-tech",
    "scientist"
   ]
@@ -89,6 +65,22 @@
   ]
  },
  {
+  "title": "Compost Intensive Course",
+  "href": "https://school.soilfoodweb.com/courses/compost-intensive-program",
+  "kicker": "12 weeks | 2 piles of BioComplete Compost",
+  "line": "The Compost Intensive Course is a hands-on, 10-week online training designed to guide you through the process from beginning to end alongside a global cohort of peers. There are NO prerequisites! And it counts toward your consultant pathway*",
+  "cta": "Learn more →",
+  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/CIC-5-1024x566.jpg",
+  "pathways": [
+   "composter",
+   "consultant",
+   "ecosystem-restorationist",
+   "farmer",
+   "gardener",
+   "lab-tech"
+  ]
+ },
+ {
   "title": "Learn the Art and Science of Biological Liquid Amendments",
   "href": "https://school.soilfoodweb.com/courses/biological-liquid-amendments",
   "kicker": "Hone your skills",
@@ -115,6 +107,33 @@
   ]
  },
  {
+  "title": "Workshops",
+  "href": "https://new.soilfoodweb.com/workshops/",
+  "kicker": "In person",
+  "line": "Build BioComplete™ Compost, create biological liquid amendments, and practice microscopy alongside Dr. Elaine's team of experienced mentors and an international community.",
+  "cta": "See the calendar of workshops →",
+  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/ctpfw-student-squeezing-compost-1-1024x576.jpg",
+  "pathways": [
+   "consultant",
+   "farmer",
+   "scientist"
+  ]
+ },
+ {
+  "title": "Introduction to Ecosystem Restoration",
+  "href": "https://school.soilfoodweb.com/bundles/introduction-to-ecosystem-restoration",
+  "kicker": "Restore Ecosystems",
+  "line": "Developed in Partnership with Ecosystem Restoration Communities Joining this course connects you with the Ecosystem Restoration Communities (ERC) – a vibrant network of individuals and groups dedicated to restoring ecosystems worldwide.",
+  "cta": "Learn more →",
+  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/IER-Community-2-1024x566.jpg",
+  "pathways": [
+   "consultant",
+   "designer",
+   "ecosystem-restorationist",
+   "scientist"
+  ]
+ },
+ {
   "title": "Permaculture Design Certification",
   "href": "http://localhost:8080/learn/",
   "kicker": "Design systems",
@@ -126,47 +145,17 @@
   ]
  },
  {
-  "title": "Introduction to Ecosystem Restoration : Module 1",
-  "href": "https://school.soilfoodweb.com/courses/introduction-to-ecosystem-restoration-module-1",
-  "kicker": "Understanding Ecosystem Health",
-  "line": "Build a strong foundation in ecosystem restoration and learn how healthy ecosystems function. Explore the key factors that shape ecosystems, including soil, biodiversity, climate, water, and species interactions, while gaining the knowledge to recognize ecosystem degradation and support the restoration of healthy, resilient land.",
+  "title": "Intro to the Foundation Courses",
+  "href": "https://school.soilfoodweb.com/courses/intro-foundation-course",
+  "kicker": "Mini Course",
+  "line": "A 10-lesson mini course into the world of Living Soil and all the ways it can help regenerate the world's living systems. Walk away with a broad view of just how impactful this work can be when applied consistently by educated land stewards and practitioners.",
   "cta": "Learn more →",
-  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/erc-panchamana-treeplanting-2-fb-img-1666270988322-1024x683.jpg",
+  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/10/Intro-to-the-FCs-3-1024x566.png",
   "pathways": [
-   "ecosystem-restorationist"
-  ]
- },
- {
-  "title": "Introduction to Ecosystem Restoration : Module 2",
-  "href": "https://school.soilfoodweb.com/courses/introduction-to-ecosystem-restoration-module-2",
-  "kicker": "Ecological Processes & Ecosystem Restoration",
-  "line": "Explore how species, ecological cycles, and natural processes work together to shape healthy ecosystems. Learn about invasive and keystone species, food webs, nutrient cycles, ecosystem services, ecological succession, marine ecosystems, and nature-based solutions for restoring and protecting our environment.",
-  "cta": "Learn more →",
-  "image": "https://new.soilfoodweb.com/wp-content/uploads/2020/02/forests.jpg",
-  "pathways": [
-   "ecosystem-restorationist"
-  ]
- },
- {
-  "title": "Introduction to Ecosystem Restoration : Module 3",
-  "href": "https://school.soilfoodweb.com/courses/introduction-to-ecosystem-restoration-module-3",
-  "kicker": "Practical Ecosystem Restoration",
-  "line": "Move from ecological theory into practical restoration principles. Explore ecosystem restoration strategies, site assessment, abiotic and biotic factors, aquatic impacts, population ecology, and real-world case studies to understand how damaged ecosystems can be assessed and restored.",
-  "cta": "Learn more →",
-  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/erc-panchamana-treeplanting-2-fb-img-1666270988322-1024x683.jpg",
-  "pathways": [
-   "ecosystem-restorationist"
-  ]
- },
- {
-  "title": "Introduction to Ecosystem Restoration : Module 4",
-  "href": "https://school.soilfoodweb.com/courses/introduction-to-ecosystem-restoration-module-4",
-  "kicker": "Practical Restoration & Recovery",
-  "line": "Take ecosystem restoration from theory to practice. Learn about restoration standards, natural recovery, seed collection and propagation, planting strategies, species-level restoration, population ecology, and real-world restoration projects.",
-  "cta": "Learn more →",
-  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/erc-panchamana-treeplanting-2-fb-img-1666270988322-1024x683.jpg",
-  "pathways": [
-   "ecosystem-restorationist"
+   "composter",
+   "designer",
+   "farmer",
+   "gardener"
   ]
  },
  {
@@ -179,19 +168,6 @@
   "pathways": [
    "designer",
    "ecosystem-restorationist"
-  ]
- },
- {
-  "title": "Workshops",
-  "href": "https://new.soilfoodweb.com/workshops/",
-  "kicker": "In person",
-  "line": "Build BioComplete™ Compost, create biological liquid amendments, and practice microscopy alongside Dr. Elaine's team of experienced mentors and an international community.",
-  "cta": "See the calendar of workshops →",
-  "image": "https://new.soilfoodweb.com/wp-content/uploads/2026/09/ctpfw-student-squeezing-compost-1-1024x576.jpg",
-  "pathways": [
-   "consultant",
-   "farmer",
-   "scientist"
   ]
  }
 ]
