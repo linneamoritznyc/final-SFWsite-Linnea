@@ -380,7 +380,7 @@
     s.sort(function (a, b) { return parseInt(b[1] || 0, 10) - parseInt(a[1] || 0, 10); });
     return s.length && s[0][0] ? s[0][0] : im.currentSrc || im.src;
   }
-  function show(k) { i = (k + imgs.length) % imgs.length; big.src = largest(imgs[i]); big.alt = imgs[i].alt; cap.textContent = imgs[i].alt; }
+  function show(k) { i = (k + imgs.length) % imgs.length; big.src = largest(imgs[i]); big.alt = imgs[i].alt; var li = imgs[i].closest("li"); cap.textContent = (li && li.dataset.caption) || imgs[i].alt; }
   imgs.forEach(function (im, k) {
     im.tabIndex = 0;
     im.setAttribute("role", "button");
