@@ -546,10 +546,3 @@ picture { display: contents; }
 .chip--tag { font-weight: 500; font-size: .75rem; padding: .35em .85em; border-color: var(--rule); color: var(--ink); }
 .chip--tag:hover { border-color: var(--green); color: var(--green); background: var(--white); }
 .pubs-empty { padding: 2rem 0; border-top: 1px solid var(--rule); }
-
-/* Workshop write-ups (/workshop/<slug>/): photos and photo pairs between paragraphs */
-.workshop-copy > .photo, .workshop-copy > .grid { margin: 1.75rem 0; }
-.workshop-copy > .grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
-.workshop-copy > .grid .photo { margin: 0; }
-.workshop-copy > h3 { margin-top: 2.25rem; }
-.workshop-copy > .kv { margin-bottom: 1.5rem; }

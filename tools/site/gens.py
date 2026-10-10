@@ -865,38 +865,7 @@ def category_pages():
         write(path, name, "Posts filed under %s." % name, body, "/community/")
 
 
-
-# ------------------------------------------------------------- /workshop/<slug>/
-def workshop_alts():
-    alts = {"fire-pit-synergia.jpg": "People sitting on benches around a fire pit under bare trees",
-            "group-hacienda-sign-costa-rica.jpg": "A group posing in front of a large painted wooden hacienda sign surrounded by plants",
-            "community-field-walk-norfolk-jun-2025.jpg": "Eight people in a green field under a wide sky, two kneeling to look at the soil, with a tractor working a field behind"}
-    for w in json.load(open(os.path.join(B.ROOT, "past-workshop-images", "images.json"))):
-        for i in w["images"]:
-            alts[i["file"] + ".jpg"] = i["alt"]
-    return alts
-
-
-def workshop_pages():
-    """One page per workshop from Linnea's workshop copy (content/workshop-copy.md, 10 October 2026)."""
-    import workshop_copy as WC
-    alts = workshop_alts()
-
-    def href(m):
-        u = H.unescape(m.group(1)).replace("/?p=321", "/soil-food-web-foundation-launches-as-nonprofit-to-carry-forward-dr-elaine-inghams-legacy/")
-        return 'href="%s"' % A(staging_link(u))
-    for c in WC.load():
-        path = "/workshop/%s/" % c["slug"]
-        begin(path, "new", [], "Linnea's workshop copy, 10 October 2026, with the photos it names.", "Workshop")
-        art = re.sub(r'href="(https://new\.soilfoodweb\.com[^"]*)"', href, WC.article(c, B.photo, alts, cover=True))
-        body = ('<section class="pagehead"><div class="wrap wrap--narrow"><a class="back" href="/workshops/">All workshops</a>'
-                '<p class="eyebrow">Workshop &middot; %s</p><h1>%s</h1><p class="lead">%s &middot; %s</p></div></section>'
-                '<article class="band"><div class="wrap wrap--narrow"><div class="prose">%s</div></div></article>') % (
-            "Open" if c.get("status") == "Open" else "Past", E(c["title"]), E(c["place"]), E(c["dates"]), art)
-        write(path, c["title"], "%s, %s, %s." % (c["title"], c["place"], c["dates"]), body, "/programs/")
-
 def item_pages():
-    workshop_pages()
     team_pages()
     directory_pages()
     video_pages()
