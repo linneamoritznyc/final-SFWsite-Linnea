@@ -1,0 +1,206 @@
+Hi! The Volunteer page of new.soilfoodweb.com is ready: Linnea has approved its images and the 21 role icons. Please add it to the Drive folder for Stephanie.
+
+WHAT TO DO
+1. In the folder "SFW website images for Stephanie", create the subfolder "05 Volunteer" and put the 27 files below in it (6 photos and 21 icons).
+2. Download each file from its "File" link (public GitHub links). Photos are JPG, under 300 KB, EXIF removed, already cropped to the exact shape of their slot on the WordPress page. Icons are 512 x 512 transparent PNG in Food Web Green (#156826), shown on the page at 48 x 48 px. Name each file exactly as shown after "Save as", so the numbers keep them in page order.
+3. In "05 Volunteer", add a Google Sheet "Volunteer image list", columns: #, Where on the page (the "Jump to" link), Section, Slot, File name, Alt text, Caption, Size. One row per file, in the order below.
+4. Rename the subfolder to "05 Volunteer (FINAL)" so Stephanie knows this page is ready to upload.
+5. Make sure Stephanie still has access to the main folder, then give Linnea the link to "05 Volunteer (FINAL)".
+
+HOW STEPHANIE USES IT
+Each "Jump to" link opens the WordPress page and scrolls to the section (the new sections only work once she has built them, as on the preview: https://finalsite-git-final-images-v2-linneamoritznycs-projects.vercel.app/volunteer/). "Slot" says which image it is: hero = the big picture at the top; card 1, 2 = the "Start in the next ten minutes" cards, left to right (card title in brackets); image 1 = the picture next to the text; icon 1 to 21 = the role cards in "Pick the way you want to help", left to right, row by row (card title in brackets). She uploads the file into that slot, pastes the alt text into the image's Alternative Text field, and the caption (if there is one) into the caption field. The icons are decorative: their alt text stays empty, because the card title next to each icon says the same thing. The SVG versions are in the repo at img/icons/volunteer/ if WordPress takes SVG.
+
+The third "Start in the next ten minutes" card (Show us your soil) has no photo: the photo Linnea chose for it (R5A_4016) is already the Permaculture Design Certification course card.
+
+
+==============================
+VOLUNTEER  (27 files)
+Page: https://new.soilfoodweb.com/volunteer/
+==============================
+
+
+--- Section: "Volunteer with us"
+Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Volunteer%20with%20us
+
+01. hero
+    Save as: 01 Volunteer with us - hero.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Volunteer%20with%20us%20-%20hero.jpg
+    Alt text: A woman in a burgundy hat and light blue shirt turning a long compost pile with a fork, the pile partly covered with white and blue tarps
+    Size: 1204 x 902 (shown at 602 x 451 on a 1440 px screen)
+
+
+--- Section: "Start in the next ten minutes"
+Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Start%20in%20the%20next%20ten%20minutes
+
+02. card 1 (Watch the soil food web animation)
+    Save as: 02 Start in the next ten minutes - card 1 (Watch the soil food web animation).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Start%20in%20the%20next%20ten%20minutes%20-%20card%201%20%28Watch%20the%20soil%20food%20web%20animation%29.jpg
+    Alt text: A single oval ciliate covered in fine hair-like cilia, seen under a microscope against a pale grey background
+    Caption: Photo: Patricia J Coppola
+    Size: 804 x 604 (shown at 402 x 302 on a 1440 px screen)
+
+03. card 2 (Share a free webinar)
+    Save as: 03 Start in the next ten minutes - card 2 (Share a free webinar).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Start%20in%20the%20next%20ten%20minutes%20-%20card%202%20%28Share%20a%20free%20webinar%29.jpg
+    Alt text: People seated at tables in a large barn, facing two projection screens at the front
+    Size: 804 x 604 (shown at 402 x 302 on a 1440 px screen)
+
+
+--- Section: "Pick the way you want to help"
+Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Pick%20the%20way%20you%20want%20to%20help
+
+04. icon 1 (Host a compost day)
+    Save as: 04 Pick the way you want to help - icon 1 (Host a compost day).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/01-host-a-compost-day.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+05. icon 2 (Share your microscope)
+    Save as: 05 Pick the way you want to help - icon 2 (Share your microscope).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/02-share-your-microscope.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+06. icon 3 (Translate the science)
+    Save as: 06 Pick the way you want to help - icon 3 (Translate the science).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/03-translate-the-science.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+07. icon 4 (Run a local meetup)
+    Save as: 07 Pick the way you want to help - icon 4 (Run a local meetup).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/04-run-a-local-meetup.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+08. icon 5 (Document the work)
+    Save as: 08 Pick the way you want to help - icon 5 (Document the work).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/05-document-the-work.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+09. icon 6 (Lend professional skills)
+    Save as: 09 Pick the way you want to help - icon 6 (Lend professional skills).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/06-lend-professional-skills.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+10. icon 7 (Collect field data)
+    Save as: 10 Pick the way you want to help - icon 7 (Collect field data).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/07-collect-field-data.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+11. icon 8 (Welcome new students)
+    Save as: 11 Pick the way you want to help - icon 8 (Welcome new students).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/08-welcome-new-students.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+12. icon 9 (Staff an event table)
+    Save as: 12 Pick the way you want to help - icon 9 (Staff an event table).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/09-staff-an-event-table.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+13. icon 10 (Write and research)
+    Save as: 13 Pick the way you want to help - icon 10 (Write and research).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/10-write-and-research.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+14. icon 11 (Host a fundraiser)
+    Save as: 14 Pick the way you want to help - icon 11 (Host a fundraiser).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/11-host-a-fundraiser.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+15. icon 12 (Share your own idea)
+    Save as: 15 Pick the way you want to help - icon 12 (Share your own idea).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/12-share-your-own-idea.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+16. icon 13 (Put your farm on the map)
+    Save as: 16 Pick the way you want to help - icon 13 (Put your farm on the map).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/13-put-your-farm-on-the-map.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+17. icon 14 (Run a jar test)
+    Save as: 17 Pick the way you want to help - icon 14 (Run a jar test).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/14-run-a-jar-test.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+18. icon 15 (Interview a grower)
+    Save as: 18 Pick the way you want to help - icon 15 (Interview a grower).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/15-interview-a-grower.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+19. icon 16 (Lend land or a space)
+    Save as: 19 Pick the way you want to help - icon 16 (Lend land or a space).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/16-lend-land-or-a-space.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+20. icon 17 (Move supplies)
+    Save as: 20 Pick the way you want to help - icon 17 (Move supplies).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/17-move-supplies.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+21. icon 18 (Start a worm bin)
+    Save as: 21 Pick the way you want to help - icon 18 (Start a worm bin).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/18-start-a-worm-bin.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+22. icon 19 (Spread the word)
+    Save as: 22 Pick the way you want to help - icon 19 (Spread the word).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/19-spread-the-word.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+23. icon 20 (Host a watch party)
+    Save as: 23 Pick the way you want to help - icon 20 (Host a watch party).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/20-host-a-watch-party.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+24. icon 21 (Answer questions online)
+    Save as: 24 Pick the way you want to help - icon 21 (Answer questions online).png
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/icons/21-answer-questions-online.png
+    Alt text: (empty, decorative)
+    Size: 512 x 512 transparent PNG (shown at 48 x 48)
+
+
+--- Section: "Grow at your own pace"
+Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Grow%20at%20your%20own%20pace
+
+25. image 1
+    Save as: 25 Grow at your own pace - image 1.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Grow%20at%20your%20own%20pace%20-%20image%201.jpg
+    Alt text: A smiling woman with a long braid, wearing a cap that reads Compost and a blue T-shirt, standing in front of a compost windrow
+    Size: 1204 x 804 (shown at 602 x 402 on a 1440 px screen)
+
+
+--- Section: "Questions people ask first"
+Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Questions%20people%20ask%20first
+
+26. image 1
+    Save as: 26 Questions people ask first - image 1.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Questions%20people%20ask%20first%20-%20image%201.jpg
+    Alt text: A student looking into a microscope at a table with sample tubes in a wooden rack, a squeeze bottle and a counting sheet
+    Size: 1204 x 1204 (shown at 602 x 602 on a 1440 px screen)
+
+
+--- Section: "Join the volunteer network"
+Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Join%20the%20volunteer%20network
+
+27. image 1
+    Save as: 27 Join the volunteer network - image 1.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Join%20the%20volunteer%20network%20-%20image%201.jpg
+    Alt text: A smiling woman in a burgundy wide-brimmed hat and a tan hooded jacket holding up a manure fork
+    Size: 844 x 564 (shown at 422 x 282 on a 1440 px screen)
