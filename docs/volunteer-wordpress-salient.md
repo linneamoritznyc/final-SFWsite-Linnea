@@ -37,7 +37,7 @@ The page has six sections, top to bottom. Build each one as its own WPBakery **R
   the H3 title, the text, and a text link "Watch the animation →" to `/how-it-works/#the-soil-food-web`.
 - **Card 2 (Share a free webinar)**: Single Image file 03, cropped 16:9. No caption. Label,
   title, text, link "Browse free webinars →" to `https://webinar.soilfoodweb.com`.
-- **Card 3 (Show us your soil)**: Single Image of our Instagram feed (file in the image list),
+- **Card 3 (Share what we post)**: Single Image of our Instagram feed (file in the image list),
   linked to `https://www.instagram.com/soilfoodwebschool/`. A live feed is better: an Instagram
   feed plugin (for example Smash Balloon Instagram Feed) shows the latest posts. The plain
   profile embed below is blocked in some browsers, so only use it as a test:
