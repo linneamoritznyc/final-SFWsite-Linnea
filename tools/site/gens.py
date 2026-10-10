@@ -839,16 +839,61 @@ def mirror_html(h):
     return fix(h)
 
 
+def workshop_alts():
+    import json as _j
+    alts = {"fire-pit-synergia.jpg": "People sitting on benches around a fire pit under bare trees",
+            "group-hacienda-sign-costa-rica.jpg": "A group posing in front of a large painted wooden hacienda sign surrounded by plants",
+            "community-field-walk-norfolk-jun-2025.jpg": "Eight people in a green field under a wide sky, two kneeling to look at the soil, with a tractor working a field behind"}
+    for w in _j.load(open(os.path.join(B.ROOT, "past-workshop-images", "images.json"))):
+        for i in w["images"]:
+            alts[i["file"] + ".jpg"] = i["alt"]
+    return alts
+
+
+def workshop_article(WC, c, alts):
+    """Linnea's write-up, with links to the staging site pointed at this site's pages."""
+    def href(m):
+        u = H.unescape(m.group(1)).replace("/?p=321", "/soil-food-web-foundation-launches-as-nonprofit-to-carry-forward-dr-elaine-inghams-legacy/")
+        return 'href="%s"' % A(staging_link(u))
+    return re.sub(r'href="(https://new\.soilfoodweb\.com[^"]*)"', href, WC.article(c, B.photo, alts))
+
+
 def workshop_pages():
+    import workshop_copy as WC
+    copy = {w["slug"]: w for w in WC.load()}
+    alts = workshop_alts()
+    seen = set()
     for w in data("workshops"):
         path = "/workshop/%s/" % w["slug"]
-        begin(path, "staging", [], "Mirrors new.soilfoodweb.com, 9 October 2026.", "Workshop")
+        c = copy.get(w["slug"])
+        begin(path, "staging", [], "Mirrors new.soilfoodweb.com, 9 October 2026." + (" Overview replaced with Linnea's workshop copy (10 October 2026)." if c else ""), "Workshop")
         h = mirror_html(w["html"])
         if w["slug"] in WORKSHOP_HEROES:
             f, alt = WORKSHOP_HEROES[w["slug"]]
             pic = B.photo(f, alt, eager=True, sizes="(min-width: 64em) 50vw, 100vw")
             h = re.sub(r'(<header class="sfw-workshop-single__hero">).*?(</header>)', lambda m: m.group(1) + pic + m.group(2), h, count=1, flags=re.S)
+        if c:
+            seen.add(w["slug"])
+            body = workshop_article(WC, c, alts)
+            h = re.sub(r'(<div class="sfw-workshop-single__prose">).*?(</div>\s*</section>)', lambda m: m.group(1) + body + m.group(2), h, count=1, flags=re.S)
+            if any(k == "photo" for k, _ in c["body"]):
+                # Staging's own gallery (screenshots) gives way to the photos in the write-up.
+                h = re.sub(r'<section class="sfw-workshop-gallery">.*?</section>', "", h, count=1, flags=re.S)
         write(path, w["title"], w["title"], h, "/programs-overview/")
+    for slug, c in copy.items():
+        if slug in seen:
+            continue
+        path = "/workshop/%s/" % slug
+        begin(path, "new", [], "Not on staging yet: page built from Linnea's workshop copy (10 October 2026).", "Workshop")
+        badge = ('<span class="sfw-workshops__badge sfw-workshops__badge--upcoming-open">Open</span>' if c.get("status") == "Open"
+                 else '<span class="sfw-workshops__badge sfw-workshops__badge--past">Past</span>')
+        h = ('<main class="sfw-workshop-single"><div class="sfw-workshop-single__inner"><div class="sfw-workshop-single__hero-copy">%s'
+             '<div class="sfw-workshop-single__title-row"><h1 class="sfw-workshop-single__title">%s</h1></div>'
+             '<p class="sfw-workshop-single__lede">%s · %s</p></div><header class="sfw-workshop-single__hero"></header>'
+             '<section class="sfw-workshop-single__content"><h2 class="sfw-workshop-single__section-title">Overview</h2>'
+             '<div class="sfw-workshop-single__prose">%s</div></section></div></main>') % (
+            badge, E(c["title"]), E(c["place"]), E(c["dates"]), workshop_article(WC, c, alts))
+        write(path, c["title"], c["title"], h, "/programs-overview/")
 
 
 def testimonial_pages():
