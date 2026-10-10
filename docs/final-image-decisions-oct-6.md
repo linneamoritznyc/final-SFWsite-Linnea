@@ -312,3 +312,4 @@ Santa Fe, February 2026: a "Photos from the workshop" gallery of 23 photos from 
 - Note B: photo 7 Inspecting Feedstock 3.HEIC (red jacket), photo 8 Inspecting Feedstock vertical.HEIC (crouched at the drums; Inspecting Feedstock 2 also fits but is already the page's cover), photo 9 Inspecting feedstock.HEIC (from above, straw hat).
 - Note C (photo 14): Class Inside Greenhouse 5.HEIC.
 - Skipped because they are already on the Community page: 19 Beginner microscopy group (community-beginner-microscopy-group.jpg) and 22 IMG_3028 (community-laughing-at-microscope.jpg).
+- Santa Fe gallery: photo 15 (Gerald and student TALL.HEIC, mentor and student in the hoop house) removed at Linnea's request; 22 photos remain.
