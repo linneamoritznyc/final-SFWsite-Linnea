@@ -51,21 +51,47 @@ The page has six sections, top to bottom. Build each one as its own WPBakery **R
 
 ## 3. "Pick the way you want to help" (21 flip cards with a time filter)
 
-- **Row**: white background, row ID `ways` (Row settings → Row ID), so the hero button jumps here.
-- H2 "Pick the way you want to help" and the intro sentence.
-- **Time filter**: six round "chip" buttons: All, Under an hour, Weekly, Monthly,
-  Per event or one-off, Flexible. Salient has no built-in filter for flip boxes, so use the
-  Raw HTML + small script in "The time filter" below.
-- **Cards**: an inner row with **3 columns** per row, 7 rows (21 cards), each holding one
-  Salient **Flip Box** element. Settings for every flip box:
-  - Flip direction: horizontal (flip to the right). Minimum height: **240 px**.
-  - **Front**: background white, 1 px `#E2DED4` border, 12 px radius. Content: the icon
-    (Image, 48 x 48 px, file "icon N", alt text empty because it is decorative), then the card
-    title as an H3 in Soil Brown. Nothing else on the front.
-  - **Back**: background **Food Web Green `#156826`**, text white. Content: the card's text,
-    then "**Time:** …" on its own line, a little smaller.
-  - Extra class name (Flip Box → Extra class): the card's time group, e.g. `time-event`,
-    used by the filter. The groups:
+### How the flip cards on new.soilfoodweb.com are built today
+
+Checked in the page source of new.soilfoodweb.com on 10 October 2026:
+
+- **The flip tiles on the home page** ("Observe and assess", "Incubate the biology" ...) are
+  Salient's own **Flip Box** element (`nectar-flip-box`), one per column in an inner row with
+  4 columns (`vc_col-sm-3`). Settings used: minimum height **400 px**, flip direction
+  **horizontal to left**, text aligned **centre / centre**. Front: a photo background with a
+  dark overlay and light text. Back: a background colour (`#F4F1EA` or `#59A76C`) with the text.
+  There is no filter on those tiles.
+- **The filters on the site are not Salient**: they come from the team's own plugins.
+  `/workshops/` uses the **sfw-workshops** plugin (version 1.0.22): workshops are their own post
+  type, the plugin prints the cards with `data-country` and `data-year`, and its
+  `workshops.js` shows and hides cards when you click a country chip
+  (`data-sfw-country`) or pick a year. The home page's program carousel is the **sfw-programs**
+  plugin (1.1.2). So "chips that filter cards" already exists on the site, built by Alex in a
+  plugin.
+
+### Recommended: build the roles like the workshops (Alex)
+
+Add the 21 roles the same way the workshops are done: a "Volunteer role" post type (title,
+short text, Time line, time group, icon) and a shortcode that prints the chips and the grid of
+flip cards, with the filter script copied from `workshops.js` (chips set a value, cards whose
+`data-time` does not match get `is-hidden`). This keeps the grid without gaps when cards are
+hidden, lets Stephanie edit roles like workshops, and the flip styling can copy Salient's Flip
+Box look (or the CSS of the preview, `.flip` in this repo's css/site.css).
+
+### Quicker option: Salient Flip Box elements only (Stephanie)
+
+If the plugin is not ready in time, build the cards with the same Flip Box element as the
+home page and add the filter as a Raw HTML snippet (below).
+
+- **Cards**: an inner row with **3 columns** per row, 7 rows (21 cards), each column holding one
+  **Flip Box**. Settings, matching the home page tiles:
+  - Flip direction: **horizontal to left**. Minimum height: **240 px** (the home tiles use
+    400 px with photos; these cards only hold an icon and a title). Text align: centre / centre.
+  - **Front**: background white, text dark. Content: the icon (file "icon N", 48 x 48 px, alt
+    text empty because it is decorative), then the card title as an H3 in Soil Brown.
+  - **Back**: background **Food Web Green `#156826`**, text light (white). Content: the card's
+    text, then "**Time:** …" on its own line.
+  - Extra class name: the card's time group, e.g. `time-event`, used by the filter.
 
 | # | Card | Time | Filter class(es) |
 |---|---|---|---|
@@ -91,12 +117,12 @@ The page has six sections, top to bottom. Build each one as its own WPBakery **R
 | 20 | Host a watch party | One evening | time-event |
 | 21 | Answer questions online | An hour a week | time-weekly |
 
-  The card text for each is on the preview page (back of each card).
+The card text for each is on the preview page (back of each card).
 
-### The time filter
+### The time filter (quick option only)
 
-Put this in a **Raw HTML** element above the cards (it draws the chips and hides the columns
-whose flip box does not have the chosen class):
+A **Raw HTML** element above the cards: it draws the chips and hides the columns whose flip box
+does not have the chosen class.
 
 ```html
 <div class="vol-chips" role="group" aria-label="Filter by time">
@@ -126,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 ```
 
-And this CSS in Salient → Custom CSS (or the child theme's style.css):
+CSS for Salient → Custom CSS:
 
 ```css
 .vol-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.25rem; }
@@ -136,9 +162,9 @@ And this CSS in Salient → Custom CSS (or the child theme's style.css):
 .vol-chips button[aria-pressed="true"] { background: #156826; color: #fff; }
 ```
 
-If the inner row wraps the 21 cards into several rows, the hidden columns leave gaps. To avoid
-that, put all 21 flip boxes in **one** inner row with 21 columns set to 1/3 width on desktop
-(Salient lets columns wrap), or ask Alex to build the cards as one grid in the child theme.
+With Salient columns, hidden cards leave gaps in their rows (each row keeps its 3 slots).
+Put all 21 flip boxes in **one** inner row so the columns wrap, or use the plugin route above,
+which has no gaps.
 
 ## 4. "Grow at your own pace"
 
