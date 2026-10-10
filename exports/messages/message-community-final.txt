@@ -1,0 +1,245 @@
+Hi! The Community page of new.soilfoodweb.com is now final: Linnea has approved every image on it. Please add it to the Drive folder for Stephanie.
+
+WHAT TO DO
+1. In the folder "SFW website images for Stephanie", create the subfolder "04 Community" (next to "01 Home", "02 About Us" and "03 Programs Overview") and put the 26 images below in it.
+2. Download each image from its "File" link (public GitHub links; JPG, under 300 KB, EXIF removed, already cropped to the exact shape of its slot on the WordPress page). Name each file exactly as shown after "Save as", so the numbers keep them in page order.
+3. In "04 Community", add a Google Sheet "Community image list", columns: #, Where on the page (the "Jump to" link), Section, Slot, File name, Alt text, Caption, Size. One row per image, in the order below. For the three photos marked "CAPTION NEEDED", write "CAPTION NEEDED from Stephanie" in the Caption column and highlight the row yellow.
+4. Rename the subfolder to "04 Community (FINAL)" so Stephanie knows this page is approved and ready to upload.
+5. Make sure Stephanie still has access to the main folder, then give Linnea the link to "04 Community (FINAL)".
+
+CAPTIONS STEPHANIE NEEDS TO SUPPLY
+Nobody on our side knows where or when these were taken. Stephanie uploaded them to the gallery, so she is the one to ask:
+- 12. gallery 5: the man beside the blue-lined tank (WhatsApp photo, sent 17 August 2026)
+- 13. gallery 6: two people laughing at the microscope (IMG_3028)
+- 19. gallery 12: four men by a pile of cut plants (WhatsApp photo, sent 17 August 2026)
+Also worth asking her: 18. gallery 11, "Beginner microscopy group", has no place or date. If she knows them, they can go in that caption too.
+
+HOW STEPHANIE USES IT
+Each "Jump to" link opens the WordPress page and scrolls straight to the section. Inside that section, "Slot" says which image it is: hero and hero 2 = the two big pictures at the top, left then right; card 1 to 4 = the blog post cards, left to right (the post title is in brackets); image 1 = the video thumbnail next to the text; gallery 1 to 19 = the photo gallery, in the order the photos sit in the page code (on the page they flow into three columns, top to bottom). She uploads the file into that slot, pastes the alt text into the image's Alternative Text field, and the caption into the caption field. Every gallery photo has a caption except the three above.
+
+The post cards (03 to 06) are the posts' own featured images, so they change by themselves when the posts change; they are listed so the folder is complete.
+
+The "Original" line is the full-size source, in case a bigger version is ever needed. You don't need to copy it.
+
+
+==============================
+COMMUNITY  (26 images, FINAL)
+Page: https://new.soilfoodweb.com/community/
+==============================
+
+
+--- Section: "Welcome to our global community"
+Jump to: https://new.soilfoodweb.com/community/#:~:text=Welcome%20to%20our%20global%20community
+
+01. hero
+    Save as: 01 Welcome to our global community - hero.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Welcome%20to%20our%20global%20community%20-%20hero.jpg
+    Alt text: Students in gloves high-fiving over a wire compost bin, everyone grinning
+    Size: 1220 x 914 (shown at 610 x 457 on a 1440 px screen)
+    Original: CTPFW Students High-Five at Compost 1.png (https://drive.google.com/file/d/1g0sNgJqYeHHReF_rp9IB7yPFBATdQwdW/view)
+
+02. hero 2
+    Save as: 02 Welcome to our global community - hero 2.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Welcome%20to%20our%20global%20community%20-%20hero%202.jpg
+    Alt text: A large workshop group posing under an open-sided shed around a compost pile
+    Size: 1220 x 914 (shown at 610 x 457 on a 1440 px screen)
+    Original: mar25-group-photo-rotated.jpg, already on new.soilfoodweb.com (https://new.soilfoodweb.com/wp-content/uploads/2026/09/mar25-group-photo-rotated.jpg)
+
+
+--- Section: "Read the latest updates"
+Jump to: https://new.soilfoodweb.com/community/#:~:text=Read%20the%20latest%20updates
+
+03. card 1 (What exactly is Brownian motion)
+    Save as: 03 Read the latest updates - card 1 (What exactly is Brownian motion).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Read%20the%20latest%20updates%20-%20card%201%20%28What%20exactly%20is%20Brownian%20motion%29.jpg
+    Alt text: Small pale particles scattered on a glass slide under the microscope
+    Size: 590 x 394 (shown at 295 x 197 on a 1440 px screen)
+    Original: Screenshot-2026-10-08-230814.jpg, the post's featured image on new.soilfoodweb.com (https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-08-230814.jpg)
+
+04. card 2 (A Fresh sMApp)
+    Save as: 04 Read the latest updates - card 2 (A Fresh sMApp).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Read%20the%20latest%20updates%20-%20card%202%20%28A%20Fresh%20sMApp%29.jpg
+    Alt text: A laptop on a desk showing the sMApp app
+    Size: 590 x 394 (shown at 295 x 197 on a 1440 px screen)
+    Original: IMG_2317-scaled.jpg, the post's featured image on new.soilfoodweb.com (https://new.soilfoodweb.com/wp-content/uploads/2026/10/IMG_2317-scaled.jpg)
+
+05. card 3 (How a rare microbe find helps deduce the prob)
+    Save as: 05 Read the latest updates - card 3 (How a rare microbe find helps deduce the prob).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Read%20the%20latest%20updates%20-%20card%203%20%28How%20a%20rare%20microbe%20find%20helps%20deduce%20the%20prob%29.jpg
+    Alt text: A graphic reading Education: how a Soil Food Web education helps gardeners solve crop issues
+    Size: 590 x 394 (shown at 295 x 197 on a 1440 px screen)
+    Original: How-A-Rare-Microscope-Sighting-Tablet-Header, the post's featured image on new.soilfoodweb.com (https://new.soilfoodweb.com/wp-content/uploads/2026/05/How-A-Rare-Microscope-Sighting-Tablet-Header-1024%C3%97768-scaled.jpg)
+
+06. card 4 (The Soil Food Web School Launches Its First-E)
+    Save as: 06 Read the latest updates - card 4 (The Soil Food Web School Launches Its First-E).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Read%20the%20latest%20updates%20-%20card%204%20%28The%20Soil%20Food%20Web%20School%20Launches%20Its%20First-E%29.jpg
+    Alt text: A yellow graphic reading A timely solution for uncertain times, with the Permaculture Design Course mark
+    Size: 590 x 394 (shown at 295 x 197 on a 1440 px screen)
+    Original: PD-Cohort-1-Launches.jpg, the post's featured image on new.soilfoodweb.com (https://new.soilfoodweb.com/wp-content/uploads/2026/04/PD-Cohort-1-Launches.jpg)
+
+
+--- Section: "Join the conversation on one of our live virtual events"
+Jump to: https://new.soilfoodweb.com/community/#:~:text=Join%20the%20conversation%20on%20one%20of%20our%20live%20virtual%20events
+
+07. image 1
+    Save as: 07 Join the conversation on one of our live - image 1.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Join%20the%20conversation%20on%20one%20of%20our%20live%20virtual%20events%20-%20image%201.jpg
+    Alt text: Video thumbnail reading Designing Abundance with David Holmgren, beside a photo of a smiling man in a checked shirt
+    Size: 964 x 538 (shown at 482 x 269 on a 1440 px screen)
+    Original: Screenshot-2026-10-07-at-9.21.12-PM.jpg, already on new.soilfoodweb.com (https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-07-at-9.21.12-PM.jpg)
+
+
+--- Section: "Community Photo Gallery"
+Jump to: https://new.soilfoodweb.com/community/#:~:text=Community%20Photo%20Gallery
+
+08. gallery 1
+    Save as: 08 Community Photo Gallery - gallery 1.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%201.jpg
+    Alt text: Three people in front of a stone wall, the man in the middle in a red shirt, the woman on the left holding a certificate of attendance
+    Caption: Robert Been, Loida and Laura, Accelerator Workshop, Costa Rica, July 2024
+    Size: 814 x 692 (shown at 407 x 346 on a 1440 px screen)
+    Original: Robert-Been-Loida-Laura-CTPAW-JUL2024-1.jpg, Stephanie's upload (https://new.soilfoodweb.com/wp-content/uploads/2026/10/Robert-Been-Loida-Laura-CTPAW-JUL2024-1.jpg)
+
+09. gallery 2
+    Save as: 09 Community Photo Gallery - gallery 2.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%202.jpg
+    Alt text: A large group in purple Soil Food Web shirts holding up their certificates around a long wooden table
+    Caption: Graduates of the Accelerator Workshop, Santa Fe, United States, February to March 2026
+    Size: 814 x 458 (shown at 407 x 229 on a 1440 px screen)
+    Original: IMG_3539.heic (https://drive.google.com/file/d/16Xg8yhXEVGxpt98ghWrWYLkAOMWYbCWG/view)
+
+10. gallery 3
+    Save as: 10 Community Photo Gallery - gallery 3.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%203.jpg
+    Alt text: About twenty-five staff members and mentors posing together for a group photo in a room with orange walls and tiled floor
+    Caption: Staff and mentors, Accelerator Workshop, Costa Rica, March 2025
+    Size: 814 x 610 (shown at 407 x 305 on a 1440 px screen)
+    Original: StaffMembersIMG_0548.heic (https://drive.google.com/file/d/16_mshxtjS7NZVDxRfsh-ldd_o9b6Cxou/view)
+
+11. gallery 4
+    Save as: 11 Community Photo Gallery - gallery 4.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%204.jpg
+    Alt text: A farmer in a pink cap and pale green coat holding an armful of harvested leafy greens in a field
+    Caption: Smallholder farmer with an amaranth harvest, Aberdares region, Kenya. Photo: Martin Kihara
+    Size: 814 x 610 (shown at 407 x 305 on a 1440 px screen)
+    Original: Martin Kihara, Aberdares amaranth harvest, Stephanie's upload, cropped to keep the face in (https://new.soilfoodweb.com/wp-content/uploads/2026/10/20260626_ElaineBirthday_Aberdares-Region_Smallholder-Farmer-Amaranth-Harvest-Success_Martin-Kihara_03-martin-kihara.jpg)
+
+12. gallery 5   *** CAPTION NEEDED from Stephanie ***
+    Save as: 12 Community Photo Gallery - gallery 5.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%205.jpg
+    Alt text: A man in a blue shirt standing beside a blue-lined tank framed with wooden poles, among trees
+    Caption: CAPTION NEEDED from Stephanie (where and when this was taken)
+    Size: 814 x 610 (shown at 407 x 305 on a 1440 px screen)
+    Original: WhatsApp Image 2026-08-17 at 13.44.45, Stephanie's upload (https://new.soilfoodweb.com/wp-content/uploads/2026/10/WhatsApp-Image-2026-08-17-at-13.44.45.jpeg)
+
+13. gallery 6   *** CAPTION NEEDED from Stephanie ***
+    Save as: 13 Community Photo Gallery - gallery 6.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%206.jpg
+    Alt text: Two people laughing at a table with a microscope, water bottles and lab supplies, flower pictures on the wall behind
+    Caption: CAPTION NEEDED from Stephanie (where and when this was taken)
+    Size: 814 x 458 (shown at 407 x 229 on a 1440 px screen)
+    Original: IMG_3028, Stephanie's upload (https://new.soilfoodweb.com/wp-content/uploads/2026/10/IMG_3028-scaled.jpg)
+
+14. gallery 7
+    Save as: 14 Community Photo Gallery - gallery 7.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%207.jpg
+    Alt text: Workshop graduates holding their certificates of attendance under a white tent
+    Caption: Graduates of the Accelerator Workshop, Costa Rica, August 2023
+    Size: 814 x 610 (shown at 407 x 305 on a 1440 px screen)
+    Original: Aug2023_Workshop_Group7.jpg (https://drive.google.com/file/d/19a60IYsUlN8YQeLgF_JqZX84PlZuiwdc/view)
+
+15. gallery 8
+    Save as: 15 Community Photo Gallery - gallery 8.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%208.jpg
+    Alt text: About thirty workshop participants smiling and waving in a field of red poppies, trees behind
+    Caption: Accelerator Workshop, Wild Ken Hill, Norfolk, United Kingdom, June 2025
+    Size: 814 x 610 (shown at 407 x 305 on a 1440 px screen)
+    Original: poppy field group (the same photo is on About Us, Linnea approved using it on both pages) (https://drive.google.com/file/d/1Tyyak324OX805jVsnB-il0Fklprga9vk/view)
+
+16. gallery 9
+    Save as: 16 Community Photo Gallery - gallery 9.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%209.jpg
+    Alt text: A large group posing on grass in front of trees under a blue sky
+    Caption: Accelerator Workshop, Kampia, Cyprus, January 2025
+    Size: 814 x 450 (shown at 407 x 225 on a 1440 px screen)
+    Original: 2025-JAN-CY-CTPAW-Group.jpg, Stephanie's upload (only 760 px wide) (https://new.soilfoodweb.com/wp-content/uploads/2026/10/2025-JAN-CY-CTPAW-Group.jpg)
+
+17. gallery 10
+    Save as: 17 Community Photo Gallery - gallery 10.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%2010.jpg
+    Alt text: Three people standing on a terrace, one holding a certificate, with stone retaining walls and a greenhouse behind
+    Caption: Accelerator Workshop, Costa Rica, July 2024
+    Size: 814 x 610 (shown at 407 x 305 on a 1440 px screen)
+    Original: PXL_20240726_191918722, Stephanie's upload, cropped to keep the faces in (https://new.soilfoodweb.com/wp-content/uploads/2026/10/PXL_20240726_191918722.jpeg)
+
+18. gallery 11
+    Save as: 18 Community Photo Gallery - gallery 11.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%2011.jpg
+    Alt text: People working at microscopes along a long table in a bright room
+    Caption: Beginner microscopy group
+    Size: 814 x 458 (shown at 407 x 229 on a 1440 px screen)
+    Original: Beginner-microscopy-group-2, Stephanie's upload (https://new.soilfoodweb.com/wp-content/uploads/2026/10/Beginner-microscopy-group-2-scaled.jpg)
+
+19. gallery 12   *** CAPTION NEEDED from Stephanie ***
+    Save as: 19 Community Photo Gallery - gallery 12.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%2012.jpg
+    Alt text: Four men standing outdoors in front of a pile of cut plant material, under trees
+    Caption: CAPTION NEEDED from Stephanie (where and when this was taken)
+    Size: 814 x 610 (shown at 407 x 305 on a 1440 px screen)
+    Original: WhatsApp Image 2026-08-17 at 13.44.33, Stephanie's upload (https://new.soilfoodweb.com/wp-content/uploads/2026/10/WhatsApp-Image-2026-08-17-at-13.44.33.jpeg)
+
+20. gallery 13
+    Save as: 20 Community Photo Gallery - gallery 13.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%2013.jpg
+    Alt text: A large group in matching grey shirts posing on grass among trees
+    Caption: Accelerator Workshop, Wild Ken Hill, Norfolk, United Kingdom, June 2025
+    Size: 814 x 450 (shown at 407 x 225 on a 1440 px screen)
+    Original: 2025-JUN-UK-CTPAW-group.jpg, Stephanie's upload (only 760 px wide) (https://new.soilfoodweb.com/wp-content/uploads/2026/10/2025-JUN-UK-CTPAW-group.jpg)
+
+21. gallery 14
+    Save as: 21 Community Photo Gallery - gallery 14.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%2014.jpg
+    Alt text: Five people, most in lab coats, standing in a row inside a greenhouse
+    Caption: Student training on probiotic fertilizer, KSTVET greenhouse, Nairobi, Kenya. Photo: Martin Kihara
+    Size: 814 x 364 (shown at 407 x 182 on a 1440 px screen)
+    Original: Martin Kihara, KSTVET greenhouse training, Stephanie's upload (https://new.soilfoodweb.com/wp-content/uploads/2026/10/20260626_ElaineBirthday_KSTVET-Greenhouse-Nairobi_Probiotic-Fertilizer-Student-Training_Martin-Kihara_01-martin-kihara.jpg)
+
+22. gallery 15
+    Save as: 22 Community Photo Gallery - gallery 15.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%2015.jpg
+    Alt text: Five people cheering with their arms up around a tall wire compost cage on a pallet, inside a barn
+    Caption: Accelerator Workshop, Wild Ken Hill, Norfolk, United Kingdom, June 2026
+    Size: 814 x 896 (shown at 407 x 448 on a 1440 px screen)
+    Original: Screenshot-2026-10-07-at-9.54.54-PM.jpg, Stephanie's upload (https://new.soilfoodweb.com/wp-content/uploads/2026/10/Screenshot-2026-10-07-at-9.54.54-PM.jpg)
+
+23. gallery 16
+    Save as: 23 Community Photo Gallery - gallery 16.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%2016.jpg
+    Alt text: Eight people in a green field under a wide sky, two kneeling to look at the soil, with a tractor working a field behind
+    Caption: In the field, Accelerator Workshop, Wild Ken Hill, Norfolk, United Kingdom, June 2025
+    Size: 814 x 610 (shown at 407 x 305 on a 1440 px screen)
+    Original: IMG_2593.HEIC (Sammie's Media, 20 June 2025) (https://drive.google.com/file/d/11TTGCnoRZdHCAEHge_cDAsLFIMI0uSb5/view)
+
+24. gallery 17
+    Save as: 24 Community Photo Gallery - gallery 17.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%2017.jpg
+    Alt text: Students and mentors practice microscopy together at our workshop in Costa Rica, March 2025
+    Caption: Students and mentors at the microscopes, Accelerator Workshop, Costa Rica, March 2025
+    Size: 814 x 610 (shown at 407 x 305 on a 1440 px screen)
+    Original: Students and mentors practice microscopy together at our workshop in Costa Rica, March 2025.jpg (https://drive.google.com/file/d/1139_xkKmVooE40pHKHQ4U-4jHu_hkroG/view)
+
+25. gallery 18
+    Save as: 25 Community Photo Gallery - gallery 18.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%2018.jpg
+    Alt text: A workshop group of about thirty people gathered around a freshly built compost pile under an open-sided shed
+    Caption: Workshop group around a freshly built compost pile, Accelerator Workshop, Costa Rica, March 2025
+    Size: 814 x 610 (shown at 407 x 305 on a 1440 px screen)
+    Original: MAR25 Group Photo.jpg (https://drive.google.com/file/d/1l0sVvWrrm_038Eb-PYG18S0jvumLdJW8/view)
+
+26. gallery 19
+    Save as: 26 Community Photo Gallery - gallery 19.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/community/community%20-%20Community%20Photo%20Gallery%20-%20gallery%2019.jpg
+    Alt text: A large group in purple shirts gathered outdoors around a sign reading Elaine
+    Caption: Ceremonial compost build in honor of Dr. Elaine Ingham
+    Size: 814 x 458 (shown at 407 x 229 on a 1440 px screen)
+    Original: Elaine-Ceremonial-Compost-Group-Photo-scaled-1.jpg, already on new.soilfoodweb.com (https://new.soilfoodweb.com/wp-content/uploads/2026/02/Elaine-Ceremonial-Compost-Group-Photo-scaled-1.jpg)
