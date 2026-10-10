@@ -8,9 +8,9 @@ WHAT TO DO
 5. Make sure Stephanie still has access to the main folder, then give Linnea the link to "05 Volunteer (FINAL)".
 
 HOW STEPHANIE USES IT
-Each "Jump to" link opens the WordPress page and scrolls to the section (the new sections only work once she has built them, as on the preview: https://finalsite-git-final-images-v2-linneamoritznycs-projects.vercel.app/volunteer/). "Slot" says which image it is: hero = the big picture at the top; card 1, 2 = the "Start in the next ten minutes" cards, left to right (card title in brackets); image 1 = the picture next to the text; icon 1 to 21 = the role cards in "Pick the way you want to help", left to right, row by row (card title in brackets). She uploads the file into that slot, pastes the alt text into the image's Alternative Text field, and the caption (if there is one) into the caption field. The icons are decorative: their alt text stays empty, because the card title next to each icon says the same thing. The SVG versions are in the repo at img/icons/volunteer/ if WordPress takes SVG.
+Each "Jump to" link opens the WordPress page and scrolls to the section (the new sections only work once she has built them, as on the preview: https://finalsite-git-final-images-v2-linneamoritznycs-projects.vercel.app/volunteer/). "Slot" says which image it is: hero = the big picture at the top; card 1, 2 = the "Start in the next ten minutes" cards, left to right (card title in brackets); image 1 = the picture next to the text; icon 1 to 21 = the role cards in "Pick the way you want to help", left to right, row by row (card title in brackets). She uploads the file into that slot, pastes the alt text into the image's Alternative Text field, and the caption (if there is one) into the caption field. The icons are decorative: their alt text stays empty, because the card title next to each icon says the same thing. The SVG versions are in the repo at img/icons/volunteer/ if WordPress takes SVG. Step-by-step build instructions for the Salient theme (rows, flip boxes, time filter, Instagram embed, toggles, form): https://github.com/linneamoritznyc/final-SFWsite-Linnea/blob/final-images-v2/docs/volunteer-wordpress-salient.md
 
-The third "Start in the next ten minutes" card (Show us your soil) has no photo: it embeds the Instagram profile instagram.com/soilfoodwebschool at the top of the card (an Instagram embed block, about 420 px tall).
+The third "Start in the next ten minutes" card (Show us your soil) has no photo: it embeds the Instagram profile instagram.com/soilfoodwebschool at the top of the card (an Instagram embed block, about 340 px tall).
 
 The role cards in "Pick the way you want to help" flip like the flip boxes on the home page: the front shows the icon and the card title on white; on hover (or tap on a phone) the card turns over to the card text and the Time line, in white on Food Web Green (#156826).
 
@@ -39,13 +39,13 @@ Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Start%20in%20the%20next%
     File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Start%20in%20the%20next%20ten%20minutes%20-%20card%201%20%28Watch%20the%20soil%20food%20web%20animation%29.jpg
     Alt text: A single oval ciliate covered in fine hair-like cilia, seen under a microscope against a pale grey background
     Caption: Photo: Patricia J Coppola
-    Size: 804 x 604 (shown at 402 x 302 on a 1440 px screen)
+    Size: 804 x 452 (shown at 402 x 226 on a 1440 px screen)
 
 03. card 2 (Share a free webinar)
     Save as: 03 Start in the next ten minutes - card 2 (Share a free webinar).jpg
     File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Start%20in%20the%20next%20ten%20minutes%20-%20card%202%20%28Share%20a%20free%20webinar%29.jpg
-    Alt text: People seated at tables in a large barn, facing two projection screens at the front
-    Size: 804 x 604 (shown at 402 x 302 on a 1440 px screen)
+    Alt text: A smiling bearded man in sunglasses, a cap and a plaid shirt holding a fluffy white dog outdoors, with hay bales and trees behind
+    Size: 804 x 452 (shown at 402 x 226 on a 1440 px screen)
 
 
 --- Section: "Pick the way you want to help"

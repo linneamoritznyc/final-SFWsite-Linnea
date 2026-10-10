@@ -2780,11 +2780,11 @@
   "head": "Start in the next ten minutes",
   "kind": "card",
   "label": "Watch the soil food web animation",
-  "src": "http://localhost:8702/img/new/volunteer-ciliate-coppola-800w.webp",
+  "src": "http://localhost:8702/img/new/volunteer-ciliate-coppola-wide-800w.webp",
   "alt": "A single oval ciliate covered in fine hair-like cilia, seen under a microscope against a pale grey background",
   "caption": "Photo: Patricia J Coppola",
   "w": 402,
-  "h": 302,
+  "h": 226,
   "fit": "cover",
   "pos": "50% 50%",
   "y": 1011
@@ -2795,11 +2795,11 @@
   "head": "Start in the next ten minutes",
   "kind": "card",
   "label": "Share a free webinar",
-  "src": "http://localhost:8702/img/new/volunteer-barn-lecture-screens-800w.webp",
-  "alt": "People seated at tables in a large barn, facing two projection screens at the front",
+  "src": "http://localhost:8702/img/new/volunteer-man-with-dog-wide-800w.webp",
+  "alt": "A smiling bearded man in sunglasses, a cap and a plaid shirt holding a fluffy white dog outdoors, with hay bales and trees behind",
   "caption": "",
   "w": 402,
-  "h": 302,
+  "h": 226,
   "fit": "cover",
   "pos": "50% 50%",
   "y": 1011
@@ -2817,7 +2817,7 @@
   "h": 402,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 4097
+  "y": 4033
  },
  {
   "page": "/volunteer/",
@@ -2832,7 +2832,7 @@
   "h": 402,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 4739
+  "y": 4675
  },
  {
   "page": "/volunteer/",
@@ -2847,7 +2847,7 @@
   "h": 282,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 5357
+  "y": 5293
  },
  {
   "page": "/what-exactly-is-brownian-motion/",
