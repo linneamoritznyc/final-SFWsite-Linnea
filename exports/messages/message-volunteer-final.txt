@@ -10,7 +10,9 @@ WHAT TO DO
 HOW STEPHANIE USES IT
 Each "Jump to" link opens the WordPress page and scrolls to the section (the new sections only work once she has built them, as on the preview: https://finalsite-git-final-images-v2-linneamoritznycs-projects.vercel.app/volunteer/). "Slot" says which image it is: hero = the big picture at the top; card 1, 2 = the "Start in the next ten minutes" cards, left to right (card title in brackets); image 1 = the picture next to the text; icon 1 to 21 = the role cards in "Pick the way you want to help", left to right, row by row (card title in brackets). She uploads the file into that slot, pastes the alt text into the image's Alternative Text field, and the caption (if there is one) into the caption field. The icons are decorative: their alt text stays empty, because the card title next to each icon says the same thing. The SVG versions are in the repo at img/icons/volunteer/ if WordPress takes SVG.
 
-The third "Start in the next ten minutes" card (Show us your soil) has no photo: the photo Linnea chose for it (R5A_4016) is already the Permaculture Design Certification course card.
+The third "Start in the next ten minutes" card (Show us your soil) has no photo: it embeds the Instagram profile instagram.com/soilfoodwebschool at the top of the card (an Instagram embed block, about 420 px tall).
+
+The role cards in "Pick the way you want to help" flip like the flip boxes on the home page: the front shows the icon and the card title on white; on hover (or tap on a phone) the card turns over to the card text and the Time line, in white on Food Web Green (#156826).
 
 
 ==============================
@@ -192,8 +194,8 @@ Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Questions%20people%20ask
 26. image 1
     Save as: 26 Questions people ask first - image 1.jpg
     File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Questions%20people%20ask%20first%20-%20image%201.jpg
-    Alt text: A student looking into a microscope at a table with sample tubes in a wooden rack, a squeeze bottle and a counting sheet
-    Size: 1204 x 1204 (shown at 602 x 602 on a 1440 px screen)
+    Alt text: Five smiling people sitting close together outdoors in front of compost piles and white tarps, two of them in wide-brimmed hats
+    Size: 1204 x 804 (shown at 602 x 402 on a 1440 px screen)
 
 
 --- Section: "Join the volunteer network"

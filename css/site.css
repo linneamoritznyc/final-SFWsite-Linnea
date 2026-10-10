@@ -3044,3 +3044,19 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 
 /* Volunteer role cards: a 48 px line icon above the title */
 .card__icon { display: block; width: 48px; height: 48px; margin: 0 0 .9rem; }
+
+/* Instagram profile embed at the top of a card, in place of a photo */
+.card__embed { display: block; width: 100%; height: 420px; border: 0; background: var(--cream); }
+
+/* Volunteer role cards: icon and title in front; hover, tap or keyboard focus flips to the text on Food Web Green (like staging's flip boxes) */
+.flip { perspective: 1200px; height: 100%; min-height: 15rem; border-radius: var(--radius); cursor: pointer; }
+.flip:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+.flip__in { position: relative; height: 100%; min-height: 15rem; transition: transform .6s ease; transform-style: preserve-3d; }
+.flip:hover .flip__in, .flip:focus-within .flip__in { transform: rotateY(180deg); }
+.flip__front, .flip__back { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 1.6rem; border-radius: var(--radius); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.flip__front { background: var(--white); border: 1px solid var(--rule); }
+.flip__front .card__title { margin: 0; }
+.flip__back { background: #156826; color: #fff; transform: rotateY(180deg); }
+.flip__back p { color: #fff; margin: 0 0 .9rem; }
+.flip__back .flip__time { margin: 0; font-size: .9rem; }
+@media (prefers-reduced-motion: reduce) { .flip__in { transition: none; } }

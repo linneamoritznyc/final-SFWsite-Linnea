@@ -2817,7 +2817,7 @@
   "h": 402,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 4149
+  "y": 4097
  },
  {
   "page": "/volunteer/",
@@ -2825,14 +2825,14 @@
   "head": "Questions people ask first",
   "kind": "image",
   "label": "",
-  "src": "http://localhost:8702/img/new/volunteer-student-at-microscope-800w.webp",
-  "alt": "A student looking into a microscope at a table with sample tubes in a wooden rack, a squeeze bottle and a counting sheet",
+  "src": "http://localhost:8702/img/new/volunteer-five-people-sitting-together-800w.webp",
+  "alt": "Five smiling people sitting close together outdoors in front of compost piles and white tarps, two of them in wide-brimmed hats",
   "caption": "",
   "w": 602,
-  "h": 602,
+  "h": 402,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 4779
+  "y": 4739
  },
  {
   "page": "/volunteer/",
@@ -2847,7 +2847,7 @@
   "h": 282,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 5585
+  "y": 5357
  },
  {
   "page": "/what-exactly-is-brownian-motion/",
