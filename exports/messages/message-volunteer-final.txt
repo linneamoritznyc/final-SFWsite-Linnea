@@ -1,22 +1,22 @@
 Hi! The images and the 21 role icons for the Volunteer page of new.soilfoodweb.com are ready. Please add them to the Drive folder for Stephanie.
 
 WHAT TO DO
-1. In the folder "SFW website images for Stephanie", create the subfolder "05 Volunteer" and put the 27 files below in it (6 photos and 21 icons).
+1. In the folder "SFW website images for Stephanie", create the subfolder "05 Volunteer" and put the 30 files below in it (9 photos and 21 icons).
 2. Download each file from its "File" link (public GitHub links). Photos are JPG, under 300 KB, EXIF removed, already cropped to the exact shape of their slot on the WordPress page. Icons are 512 x 512 transparent PNG in Food Web Green (#156826), shown on the page at 48 x 48 px. Name each file exactly as shown after "Save as", so the numbers keep them in page order.
 3. In "05 Volunteer", add a Google Sheet "Volunteer image list", columns: #, Where on the page (the "Jump to" link), Section, Slot, File name, Alt text, Caption, Size. One row per file, in the order below.
 4. Rename the subfolder to "05 Volunteer (FINAL)" so Stephanie knows this page is ready to upload.
 5. Make sure Stephanie still has access to the main folder, then give Linnea the link to "05 Volunteer (FINAL)".
 
 HOW STEPHANIE USES IT
-Each "Jump to" link opens the WordPress page and scrolls to the section (the new sections only work once she has built them, as on the preview: https://finalsite-git-final-images-v2-linneamoritznycs-projects.vercel.app/volunteer/). "Slot" says which image it is: hero = the big picture at the top; card 1, 2 = the "Start in the next ten minutes" cards, left to right (card title in brackets); image 1 = the picture next to the text; icon 1 to 21 = the role cards in "Pick the way you want to help", left to right, row by row (card title in brackets). She uploads the file into that slot, pastes the alt text into the image's Alternative Text field, and the caption (if there is one) into the caption field. The icons are decorative: their alt text stays empty, because the card title next to each icon says the same thing. The SVG versions are in the repo at img/icons/volunteer/ if WordPress takes SVG. Step-by-step build instructions for the Salient theme (rows, flip boxes, time filter, Instagram embed, toggles, form): https://github.com/linneamoritznyc/final-SFWsite-Linnea/blob/final-images-v2/docs/volunteer-wordpress-salient.md
+Each "Jump to" link opens the WordPress page and scrolls to the section (the new sections only work once she has built them, as on the preview: https://finalsite-git-final-images-v2-linneamoritznycs-projects.vercel.app/volunteer/). "Slot" says which image it is: hero = the big picture at the top; card 1, 2 = the "Start in the next ten minutes" cards, left to right (card title in brackets); icon 1 to 21 = the flip cards in "Pick the way you want to help", left to right, row by row (card title in brackets); card 1 to 3 in "Volunteers at work" = the three photos side by side, left to right; image 1 = the picture next to the text. She uploads the file into that slot, pastes the alt text into the image's Alternative Text field, and the caption (if there is one) into the caption field. The icons are decorative: their alt text stays empty, because the card title next to each icon says the same thing. The SVG versions are in the repo at img/icons/volunteer/.
 
-The third "Start in the next ten minutes" card (Show us your soil) has no photo: it embeds the Instagram profile instagram.com/soilfoodwebschool at the top of the card (an Instagram embed block, about 340 px tall).
+The third "Start in the next ten minutes" card (Show us your soil) has no photo: it embeds the Instagram profile instagram.com/soilfoodwebschool at the top of the card (about 340 px tall).
 
-The role cards in "Pick the way you want to help" flip like the flip boxes on the home page: the front shows the icon and the card title on white; on hover (or tap on a phone) the card turns over to the card text and the Time line, in white on Food Web Green (#156826).
+The role cards flip like the flip boxes on the home page: front = icon and title on white; on hover (or tap) the card turns over to the card text and the Time line, in white on Food Web Green (#156826). Step-by-step build instructions for the Salient theme: https://github.com/linneamoritznyc/final-SFWsite-Linnea/blob/final-images-v2/docs/volunteer-wordpress-salient.md
 
 
 ==============================
-VOLUNTEER  (27 files)
+VOLUNTEER  (30 files)
 Page: https://new.soilfoodweb.com/volunteer/
 ==============================
 
@@ -27,7 +27,7 @@ Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Volunteer%20with%20us
 01. hero
     Save as: 01 Volunteer with us - hero.jpg
     File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Volunteer%20with%20us%20-%20hero.jpg
-    Alt text: A woman in a burgundy hat and light blue shirt turning a long compost pile with a fork, the pile partly covered with white and blue tarps
+    Alt text: People in sun hats raking straw into a compost pile on dry ground, with mountains behind
     Size: 1204 x 902 (shown at 602 x 451 on a 1440 px screen)
 
 
@@ -178,11 +178,33 @@ Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Pick%20the%20way%20you%2
     Size: 512 x 512 transparent PNG (shown at 48 x 48)
 
 
+--- Section: "Volunteers at work"
+Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Volunteers%20at%20work
+
+25. card 1
+    Save as: 25 Volunteers at work - card 1.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Volunteers%20at%20work%20-%20card%201.jpg
+    Alt text: A young man kneeling to plant a seedling in a mulched bed, with others planting among tall trees behind
+    Size: 808 x 538 (shown at 404 x 269 on a 1440 px screen)
+
+26. card 2
+    Save as: 26 Volunteers at work - card 2.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Volunteers%20at%20work%20-%20card%202.jpg
+    Alt text: People spread across a grassy field among rows of young saplings, planting and digging, with a stone building behind
+    Size: 808 x 538 (shown at 404 x 269 on a 1440 px screen)
+
+27. card 3
+    Save as: 27 Volunteers at work - card 3.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Volunteers%20at%20work%20-%20card%203.jpg
+    Alt text: A group standing in a grassy clearing among trees under a blue sky, listening to a man speaking
+    Size: 808 x 538 (shown at 404 x 269 on a 1440 px screen)
+
+
 --- Section: "Grow at your own pace"
 Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Grow%20at%20your%20own%20pace
 
-25. image 1
-    Save as: 25 Grow at your own pace - image 1.jpg
+28. image 1
+    Save as: 28 Grow at your own pace - image 1.jpg
     File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Grow%20at%20your%20own%20pace%20-%20image%201.jpg
     Alt text: A smiling woman with a long braid, wearing a cap that reads Compost and a blue T-shirt, standing in front of a compost windrow
     Size: 1204 x 804 (shown at 602 x 402 on a 1440 px screen)
@@ -191,8 +213,8 @@ Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Grow%20at%20your%20own%2
 --- Section: "Questions people ask first"
 Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Questions%20people%20ask%20first
 
-26. image 1
-    Save as: 26 Questions people ask first - image 1.jpg
+29. image 1
+    Save as: 29 Questions people ask first - image 1.jpg
     File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Questions%20people%20ask%20first%20-%20image%201.jpg
     Alt text: Five smiling people sitting close together outdoors in front of compost piles and white tarps, two of them in wide-brimmed hats
     Size: 1204 x 804 (shown at 602 x 402 on a 1440 px screen)
@@ -201,8 +223,8 @@ Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Questions%20people%20ask
 --- Section: "Join the volunteer network"
 Jump to: https://new.soilfoodweb.com/volunteer/#:~:text=Join%20the%20volunteer%20network
 
-27. image 1
-    Save as: 27 Join the volunteer network - image 1.jpg
+30. image 1
+    Save as: 30 Join the volunteer network - image 1.jpg
     File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/volunteer/volunteer%20-%20Join%20the%20volunteer%20network%20-%20image%201.jpg
     Alt text: A smiling woman in a burgundy wide-brimmed hat and a tan hooded jacket holding up a manure fork
     Size: 844 x 564 (shown at 422 x 282 on a 1440 px screen)

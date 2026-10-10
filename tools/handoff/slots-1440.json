@@ -2765,8 +2765,8 @@
   "head": "Volunteer with us",
   "kind": "hero",
   "label": "",
-  "src": "http://localhost:8702/img/new/volunteer-hero-turning-compost-800w.webp",
-  "alt": "A woman in a burgundy hat and light blue shirt turning a long compost pile with a fork, the pile partly covered with white and blue tarps",
+  "src": "http://localhost:8702/img/new/volunteer-hero-raking-compost-800w.webp",
+  "alt": "People in sun hats raking straw into a compost pile on dry ground, with mountains behind",
   "caption": "",
   "w": 602,
   "h": 451,
@@ -2807,6 +2807,51 @@
  {
   "page": "/volunteer/",
   "index": 1,
+  "head": "Volunteers at work",
+  "kind": "card",
+  "label": "",
+  "src": "http://localhost:8702/img/new/volunteer-at-work-planting-seedling-800w.webp",
+  "alt": "A young man kneeling to plant a seedling in a mulched bed, with others planting among tall trees behind",
+  "caption": "",
+  "w": 404,
+  "h": 269,
+  "fit": "cover",
+  "pos": "50% 50%",
+  "y": 3977
+ },
+ {
+  "page": "/volunteer/",
+  "index": 2,
+  "head": "Volunteers at work",
+  "kind": "card",
+  "label": "",
+  "src": "http://localhost:8702/img/new/volunteer-at-work-planting-field-800w.webp",
+  "alt": "People spread across a grassy field among rows of young saplings, planting and digging, with a stone building behind",
+  "caption": "",
+  "w": 404,
+  "h": 269,
+  "fit": "cover",
+  "pos": "50% 50%",
+  "y": 3977
+ },
+ {
+  "page": "/volunteer/",
+  "index": 3,
+  "head": "Volunteers at work",
+  "kind": "card",
+  "label": "",
+  "src": "http://localhost:8702/img/new/volunteer-at-work-field-walk-800w.webp",
+  "alt": "A group standing in a grassy clearing among trees under a blue sky, listening to a man speaking",
+  "caption": "",
+  "w": 404,
+  "h": 269,
+  "fit": "cover",
+  "pos": "50% 50%",
+  "y": 3977
+ },
+ {
+  "page": "/volunteer/",
+  "index": 1,
   "head": "Grow at your own pace",
   "kind": "image",
   "label": "",
@@ -2817,7 +2862,7 @@
   "h": 402,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 4033
+  "y": 4474
  },
  {
   "page": "/volunteer/",
@@ -2832,7 +2877,7 @@
   "h": 402,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 4675
+  "y": 5116
  },
  {
   "page": "/volunteer/",
@@ -2847,7 +2892,7 @@
   "h": 282,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 5293
+  "y": 5734
  },
  {
   "page": "/what-exactly-is-brownian-motion/",
