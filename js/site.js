@@ -336,3 +336,60 @@
     });
   });
 })();
+
+// Workshops: country and year filters (same behaviour as the staging plugin).
+(function () {
+  var root = document.querySelector("[data-sfw-workshops]");
+  if (!root) return;
+  var country = "", year = "", chips = root.querySelectorAll("[data-sfw-country]"), sel = root.querySelector("[data-sfw-year]");
+  function apply() {
+    var n = { upcoming: 0, past: 0 };
+    root.querySelectorAll("[data-sfw-workshop-card]").forEach(function (c) {
+      var show = (!country || c.dataset.country === country) && (!year || c.dataset.year === year);
+      c.classList.toggle("is-hidden", !show);
+      if (show) n[c.dataset.bucket]++;
+    });
+    ["upcoming", "past"].forEach(function (b) {
+      var m = root.querySelector("[data-sfw-empty-" + b + "]");
+      if (m) { m.hidden = n[b] > 0; m.classList.toggle("is-hidden", n[b] > 0); }
+    });
+  }
+  chips.forEach(function (b) {
+    b.setAttribute("aria-pressed", b.classList.contains("is-active"));
+    b.addEventListener("click", function () {
+      country = b.dataset.sfwCountry;
+      chips.forEach(function (x) { x.classList.toggle("is-active", x === b); x.setAttribute("aria-pressed", x === b); });
+      apply();
+    });
+  });
+  if (sel) sel.addEventListener("change", function () { year = sel.value; apply(); });
+})();
+
+// Workshop photo galleries: open a photo larger, arrows move, Escape closes.
+(function () {
+  var g = document.querySelector("[data-ws-gallery]");
+  if (!g || !window.HTMLDialogElement) return;
+  var imgs = Array.prototype.slice.call(g.querySelectorAll("img")), i = 0;
+  var d = document.createElement("dialog");
+  d.className = "ws-lightbox";
+  d.innerHTML = '<img alt=""><p></p><button type="button" data-prev aria-label="Previous photo">&#8249;</button><button type="button" data-next aria-label="Next photo">&#8250;</button><button type="button" data-close aria-label="Close">&times;</button>';
+  document.body.appendChild(d);
+  var big = d.querySelector("img"), cap = d.querySelector("p");
+  function largest(im) {
+    var s = (im.getAttribute("srcset") || "").split(",").map(function (x) { return x.trim().split(" "); });
+    s.sort(function (a, b) { return parseInt(b[1] || 0, 10) - parseInt(a[1] || 0, 10); });
+    return s.length && s[0][0] ? s[0][0] : im.currentSrc || im.src;
+  }
+  function show(k) { i = (k + imgs.length) % imgs.length; big.src = largest(imgs[i]); big.alt = imgs[i].alt; cap.textContent = imgs[i].alt; }
+  imgs.forEach(function (im, k) {
+    im.tabIndex = 0;
+    im.setAttribute("role", "button");
+    im.addEventListener("click", function () { show(k); d.showModal(); });
+    im.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); show(k); d.showModal(); } });
+  });
+  d.querySelector("[data-prev]").addEventListener("click", function () { show(i - 1); });
+  d.querySelector("[data-next]").addEventListener("click", function () { show(i + 1); });
+  d.querySelector("[data-close]").addEventListener("click", function () { d.close(); });
+  d.addEventListener("click", function (ev) { if (ev.target === d) d.close(); });
+  d.addEventListener("keydown", function (ev) { if (ev.key === "ArrowLeft") show(i - 1); else if (ev.key === "ArrowRight") show(i + 1); });
+})();

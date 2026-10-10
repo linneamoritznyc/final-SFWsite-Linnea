@@ -302,3 +302,13 @@ Each card on /past-workshop-picks/ now opens its own page at /past-workshop-pick
 - New card and page: Ecosystem Restoration Workshop February 2024, Yucatán, México (from the doc; no photos yet, green placeholder).
 - México 2022: the doc says no cover (the only photo on file is an Ecosystem Restoration Camps partner photo, ruled out), so the Via Organica photo is off the card and the page; green placeholder. The doc has no body text for it yet, and none for Brasil 2019.
 - Added 10 October: the three calendar-only workshops from the doc (January 2027 Costa Rica, May 2027 New Mexico, September 2027 United Kingdom) as Upcoming cards with pages carrying the doc's one-paragraph copy; year filter now includes 2027. No photos yet, green placeholders.
+
+## Workshops page and workshop pages on the site (10 October)
+
+/workshops/ now follows the staging Workshops page (new.soilfoodweb.com/workshops/): "In-person workshops" heading and its two intro lines, country and year filters, Upcoming and Past cards. The staging map is left out (the site allows one script, js/site.js, and no map library). Every card opens /workshops/<slug>/, built from the workshop pages doc as before. The staging plugin's CSS is copied into css/site.css under its own sfw-workshops class names; the filter and the gallery lightbox are in js/site.js. /past-workshop-picks/ and its pages redirect to /workshops/; the card images stay in past-workshop-picks/img/ because the doc links to them.
+
+Santa Fe, February 2026: a "Photos from the workshop" gallery of 23 photos from Drive folder 2026-02_NM-Workshop_Synergia Ranch, converted from HEIC, at most 1600 px, a light contrast and colour lift, saved as img/new-2026-10/santa-fe-2026-NN-*.jpg. Click opens a lightbox with the alt text as caption; arrow keys move, Escape closes.
+- Note A (photo 3): Classroom Focus.HEIC (the wide view with the beam ceiling).
+- Note B: photo 7 Inspecting Feedstock 3.HEIC (red jacket), photo 8 Inspecting Feedstock vertical.HEIC (crouched at the drums; Inspecting Feedstock 2 also fits but is already the page's cover), photo 9 Inspecting feedstock.HEIC (from above, straw hat).
+- Note C (photo 14): Class Inside Greenhouse 5.HEIC.
+- Skipped because they are already on the Community page: 19 Beginner microscopy group (community-beginner-microscopy-group.jpg) and 22 IMG_3028 (community-laughing-at-microscope.jpg).

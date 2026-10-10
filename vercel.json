@@ -257,6 +257,16 @@
       "source": "/donate-get-involved",
       "destination": "/donations/",
       "permanent": true
+    },
+    {
+      "source": "/past-workshop-picks",
+      "destination": "/workshops/",
+      "permanent": false
+    },
+    {
+      "source": "/past-workshop-picks/:slug(accelerator-[a-z0-9-]+|ecosystem-[a-z0-9-]+)",
+      "destination": "/workshops/:slug/",
+      "permanent": false
     }
   ],
   "headers": [
