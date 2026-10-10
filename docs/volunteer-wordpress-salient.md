@@ -37,8 +37,10 @@ The page has six sections, top to bottom. Build each one as its own WPBakery **R
   the H3 title, the text, and a text link "Watch the animation →" to `/how-it-works/#the-soil-food-web`.
 - **Card 2 (Share a free webinar)**: Single Image file 03, cropped 16:9. No caption. Label,
   title, text, link "Browse free webinars →" to `https://webinar.soilfoodweb.com`.
-- **Card 3 (Show us your soil)**: no photo. At the top, a **Raw HTML** element with the
-  Instagram profile embed:
+- **Card 3 (Show us your soil)**: Single Image of our Instagram feed (file in the image list),
+  linked to `https://www.instagram.com/soilfoodwebschool/`. A live feed is better: an Instagram
+  feed plugin (for example Smash Balloon Instagram Feed) shows the latest posts. The plain
+  profile embed below is blocked in some browsers, so only use it as a test:
 
   ```html
   <iframe src="https://www.instagram.com/soilfoodwebschool/embed/"
@@ -165,13 +167,6 @@ CSS for Salient → Custom CSS:
 With Salient columns, hidden cards leave gaps in their rows (each row keeps its 3 slots).
 Put all 21 flip boxes in **one** inner row so the columns wrap, or use the plugin route above,
 which has no gaps.
-
-## 4. "Grow at your own pace"
-
-- **Row**: Organic Cream background, 2 columns (1/2 + 1/2), vertically centred.
-- **Left column**: H2, then 4 small white cards in a 2 x 2 grid (inner row, 2 columns, 2 rows):
-  each with the small label ("1 · SURFACE" etc.), H3 title and text.
-- **Right column**: Single Image file 25, rounded corners, no caption.
 
 ## 5. "Questions people ask first"
 

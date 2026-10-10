@@ -1432,12 +1432,12 @@
   "label": "",
   "src": "http://localhost:8702/img/new/community-laughing-at-microscope-800w.webp",
   "alt": "Two people laughing at a table with a microscope, water bottles and lab supplies, flower pictures on the wall behind",
-  "caption": "",
+  "caption": "Accelerator Workshop, Santa Fe, United States, February to March 2026",
   "w": 407,
   "h": 229,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 5111
+  "y": 5115
  },
  {
   "page": "/community/",
@@ -2867,21 +2867,6 @@
  {
   "page": "/volunteer/",
   "index": 1,
-  "head": "Grow at your own pace",
-  "kind": "image",
-  "label": "",
-  "src": "http://localhost:8702/img/new/volunteer-woman-compost-cap-800w.webp",
-  "alt": "A smiling woman with a long braid, wearing a cap that reads Compost and a blue T-shirt, standing in front of a compost windrow",
-  "caption": "",
-  "w": 602,
-  "h": 402,
-  "fit": "cover",
-  "pos": "50% 50%",
-  "y": 4374
- },
- {
-  "page": "/volunteer/",
-  "index": 1,
   "head": "Questions people ask first",
   "kind": "image",
   "label": "",
@@ -2892,7 +2877,7 @@
   "h": 402,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 5016
+  "y": 4246
  },
  {
   "page": "/volunteer/",
@@ -2907,7 +2892,7 @@
   "h": 282,
   "fit": "cover",
   "pos": "50% 50%",
-  "y": 5634
+  "y": 4864
  },
  {
   "page": "/what-exactly-is-brownian-motion/",
