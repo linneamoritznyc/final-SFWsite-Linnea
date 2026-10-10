@@ -3041,10 +3041,3 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 .post-hero--banner .post-hero__in { max-width: var(--wrap); margin: 0 auto; padding: 2.5rem var(--gutter) 0; }
 .post-hero--banner h1, .post-hero--banner .post-hero__cat { color: var(--soil); border-color: var(--rule); }
 .post-hero--banner .post-hero__cats { justify-content: flex-start; }
-
-/* Workshop write-ups (/workshop/<slug>/): photos and photo pairs between paragraphs */
-.workshop-copy > .photo, .workshop-copy > .grid { margin: 1.75rem 0; }
-.workshop-copy > .grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
-.workshop-copy > .grid .photo { margin: 0; }
-.workshop-copy > h3 { margin-top: 2.25rem; }
-.workshop-copy > .kv { margin-bottom: 1.5rem; }
