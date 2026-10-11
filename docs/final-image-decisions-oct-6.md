@@ -390,3 +390,4 @@ Only three photos exist, so no gallery. The Drive folder 2025-01_CY-Workshop_Riv
 ## Header photos are horizontal (11 October)
 
 Linnea's rule: a workshop page header is always a horizontal photo, or several vertical photos side by side. June 2026 has only portrait photos (two scenes), so its header is now IMG_1495 (the memorial pile) and IMG_1499 (the team at the pallet bin) side by side at one height; the text keeps IMG_1494 and IMG_1501. Every other header is already horizontal; July 2024's is Linnea's own near-square crop.
+- 11 October, Linnea's final crops on the October 2025 gallery: 3 (opening day), 7 (at the bin), 10 (wide shed), 17 (temperature curve slide), 18 (live microscope view), 20 (supply shelf), 21 (carved masks), 22 (bucket circle) and 23 (arms up at the pile). The caption "Listening in close in the compost shed" is removed.
