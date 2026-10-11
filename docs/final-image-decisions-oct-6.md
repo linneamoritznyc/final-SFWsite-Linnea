@@ -375,3 +375,12 @@ Only three photos exist, so no gallery. The Drive folder 2025-01_CY-Workshop_Riv
 - 11 October, Linnea's crops on the July 2024 page: the header photo (team at the wire bin, trimmed top and bottom), gallery 1 (Green Feedstock sign), 2 (feedstock sacks), 4 (Cracked Corn sign) and 5 (buckets on the tarp), each matched to her example. The Workshops card keeps its 3:2 cut.
 - 11 October, more of Linnea's crops on the July 2024 gallery: 12 (team at the pile), 13 (cheer at the covered pile), 14 (misting the pile), 15 (pallet bin), 16 (microscopy presentation), 19 (nematode extraction) and 23 (garden).
 - 11 October: the group photo on the terraced slope is removed from the July 2024 page (Linnea: quality too low; the only copy was a small web image). Its place in the text now holds Feedstock-PXL_20240715_193716573 (a student smelling feedstock from a sack), shown uncropped and narrower than the text column.
+
+## Costa Rica, August 2023: gallery (11 October)
+
+19-photo "Photos from the workshop" gallery on /workshops/accelerator-workshop-august-2023/, same component and lightbox as the other workshop pages. Source: Drive folder 2023-09_CR-Workshop_Armonia (named September by mistake). Saved as img/new-2026-10/costa-rica-2023-08-NN-*.jpg, at most 1600 px (never upscaled), light natural lift where flat. Alt text from Linnea's descriptions, no names except Dr. Elaine Ingham; captions in the warm voice. The existing page photos are unchanged.
+- Picks: A (15) IMG_0794.HEIC (brightest, team relaxed). B (18) PXL_20230818_220144411.jpg: the person on the screen is a graduate joining by video (name on screen: San Diego, CA), not Dr. Ingham; a woman beside the screen holds up the certificate. This frame shows both best. Alt text describes what is visible.
+- Small files kept: 2 (1040 x 780, sharp) and 7 (1024 x 768, sharp) show at their own size in the grid. 19 is 1362 x 767 and slightly soft; kept.
+- Edit: 14 (IMG_0791.PNG, a phone screenshot) has its black side bars cropped off.
+- 1 (graduates under the tent) repeats the page cover and 8 (laughing at the bin) repeats the Home page hero; Linnea approved both repeats. 13 also exists as copy-of-17.jpg, used only in old legacy pages, not on the site.
+- 17: no one crouching in the frame, so the listed photo is used.
