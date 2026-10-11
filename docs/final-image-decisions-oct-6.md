@@ -364,3 +364,11 @@ Only three photos exist, so no gallery. The Drive folder 2025-01_CY-Workshop_Riv
 - Header and Workshops card: cy-workshop-8 (repo copy 3000 x 2004). Header shown at 1600 x 1069 (the site's limit for page images); the card is re-cut from the same file at 1200 x 800. Alt: "Students and mentors of the January 2025 Accelerator Workshop gathered under burlap bunting in a garden in Kampia, Cyprus".
 - Body: cy-classes-3 (repo copy 1600 x 2844) placed under the paragraph about compound microscopes and hand-drawn notebooks, at 900 x 1600, uncropped, shown narrower than the text column. Caption: "Hand-drawn microscopy notes from the Cyprus workshop, January 2025." The CONFIRM note asking for this photo is not shown on the page.
 - cy-classes-4 is not used anywhere on the site (a phone snapshot).
+
+## Costa Rica, July 2024: gallery (11 October)
+
+25-photo "Photos from the workshop" gallery on /workshops/accelerator-workshop-july-2024/, same component and lightbox as the other workshop pages. Source: Linnea's Drive folder of 340 July 2024 photos. Saved as img/new-2026-10/costa-rica-2024-07-NN-*.jpg, at most 1600 px, light natural lift where flat. Alt text from Linnea's descriptions, no names; captions in the warm voice. The existing page photos are unchanged.
+- Picks: A (2) PXL_20240715_192902123 (sharpest of the near copies); B (3) Feedstock-PXL_20240715_192950312 (the dial close-up in fresh grass, dial sharp); C (4) PXL_20240716_154105726 (the "Cracked Corn" sign); D (12) PXL_20240716_172727766 (sharpest); E (13) PXL_20240716_172144602 (all arms up, sharpest); F (19) PXL_20240725_171117455 (woman in the red bandana leaning over the bowls).
+- Photo 15: PXL_20240716_172817572, the frame where the man on the right waves. Photo 20: PXL_20240725_141213340 (the listed frame is soft; the hyphae are sharp in this one).
+- Credit: photos 17 and 18 are by Horacio Narvaez-Mena; their lightbox captions end with "Photo: Horacio Narvaez-Mena". The nematode frame picked for 19 is not one of his.
+- Workshops card check: the card shows a different team (four men and a woman giving a thumbs up, in the green shed). Photos 12, 13 and 15 are other teams and moments, so nothing was skipped.
