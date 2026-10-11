@@ -1443,6 +1443,7 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .ws-gallery li { position: relative; margin: 0; overflow: hidden; border-radius: var(--sfw-ws-radius); }
 .ws-gallery li.ws-tall { grid-row: span 2; }
 .ws-gallery li.ws-wide { grid-column: span 2; }
+.ws-gallery li.ws-big { grid-column: span 2; grid-row: span 3; } /* near-square photos: about 0.87:1 at three and two columns */
 .ws-gallery img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform 600ms var(--sfw-ws-ease); }
 .ws-gallery li:hover img { transform: scale(1.03); }
 .ws-lightbox { max-width: min(92vw, 1400px); padding: 0; border: 0; border-radius: var(--radius-sm); background: #111; color: #fff; }

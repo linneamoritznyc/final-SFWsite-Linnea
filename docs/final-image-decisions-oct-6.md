@@ -333,4 +333,5 @@ Header on /workshops/accelerator-workshop-june-2025/ and its card on /workshops/
 - Picks: A (3) 20250617_101803 (thermometer held up, sharper); B (5) 20250617_123123 (sharper); C (8) 20250617_172100 (both students crouching); D (10) 20250619_103110 (Nick Padwick beside her); E (13) 20250620_153134(1) (students leaning in); F (20) IMG_20250626_100517 (one sharp organism in the centre of the field).
 - Edits: 20 cropped square around the microscope field.
 - Duplicate check: photo 2 is a different frame from the page's "Lectures in the barn" photo and photo 17 is a different scene from "Field instruction on the farm"; none of the 25 match a photo already on the site. No alternates needed.
-- Layout: 14 (compost mound) and 18 (rewilding woodland) fill one cell, and 20 shows before 19, so the grid closes with no gaps at three and two columns.
+- Layout: 20 shows before 19 so the grid closes with no gaps at three and two columns.
+- 11 October, Linnea's crops on the Wild Ken Hill gallery: 3 (thermometer lesson), 8 (scooping compost), 9 (arms up at the pile, tighter on the group) and 12 (windrow turner), each matched to her example. To show them as cropped in the grid: 9 is a large tile (two columns, three rows), 12 fills one cell, 2 (lecture in the barn) spans two columns; 14 and 18 are back to tall tiles.
