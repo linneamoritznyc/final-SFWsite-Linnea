@@ -160,29 +160,7 @@ COURSE_IMAGES = [
 ]
 
 
-# Programs Overview cards (Linnea, 11 October 2026): their own photos, so the page does not repeat
-# the Home carousel photo for photo. Cropped to the 3:2 card from the Drive originals. Advanced
-# Field Trial keeps its card photo: the photo picked for it is already on /community/.
-OVERVIEW_PHOTOS = [
-    ("Foundation Courses", "program-foundation-courses-barn-arc.jpg", "An instructor in a navy shirt facing a class standing in a wide arc in a barn"),
-    ("Complete Practicum", "program-practicum-compost-thermometers.jpg", "Students in a barn leaning in to compare the dials of long compost thermometers"),
-    ("Soil Microscopy", "program-microscopy-mentors-tables.jpg", "Two mentors walking between tables of students working at microscopes and laptops"),
-    ("BioComplete™ Compost Production", "program-biocomplete-mesh-bins.jpg", "A row of compost piles in wire mesh bins on pallets in an open barn"),
-    ("Compost Intensive Course", "program-compost-intensive-forking-tarp.jpg", "Students forking compost out of a wire mesh bin onto a blue tarp in a barn"),
-    ("Learn the Art and Science of Biological Liquid Amendments", "program-liquid-amendments-bowl.jpg", "A man in a navy sweater leaning over a bowl lined with white cloth, a woman photographing beside him"),
-    ("Workshops", "program-workshops-circle-shed.jpg", "A class standing in a wide circle around a compost pile in an open shed"),
-    ("Introduction to Ecosystem Restoration", "program-ecosystem-restoration-farm-track.jpg", "A class walking along a farm track toward green fields under a blue sky"),
-    ("Permaculture Design Certification", "program-pdc-shade-hoop-houses.jpg", "A row of shade-cloth hoop houses on dry ground under a blue sky"),
-    ("Intro to the Foundation Courses", "program-intro-foundation-compost-pile.jpg", "An instructor with a microphone pointing at a tall compost pile in a wire mesh bin, students behind"),
-    ("Mini Foundation Course", "program-mini-foundation-cup.jpg", "A woman in a Soil Food Web cap smelling a plastic cup of liquid, people and microscopes around her"),
-]
-
-
 def card_image(c, title, photos):
-    if photos == "overview":
-        for start, f, alt in OVERVIEW_PHOTOS:
-            if title == start:
-                return B.photo(f, alt, "card__img", sizes="(min-width: 64em) 24rem, (min-width: 40em) 50vw, 100vw")
     for start, f, alt, *cap in PROGRAM_PHOTOS:
         if title.startswith(start):
             return B.photo(f, alt, "card__img", caption=cap[0] if cap else None, sizes="(min-width: 64em) 24rem, (min-width: 40em) 50vw, 100vw")
@@ -217,7 +195,7 @@ def courses_grid(args):
                 '<form class="searchbar" role="search"><label class="sr-only" for="prog-q">Search programs</label>'
                 '<input id="prog-q" type="search" data-q placeholder="Search programs"><button class="btn" type="submit">Search</button></form>'
                 '<ul class="grid grid--3">%s</ul><p data-empty hidden>No programs match this pathway or search.</p></div>') % (
-            chips, "".join(course_card(c, photos="overview") for c in cs).replace('class="card__img"', 'class="card__img card__img--wide"'))
+            chips, "".join(course_card(c, photos=True) for c in cs).replace('class="card__img"', 'class="card__img card__img--wide"'))
     return ('<div data-filter><ul class="chips" aria-label="Filter by path">%s</ul>'
             '<form class="searchbar" role="search"><label class="sr-only" for="prog-q">Search programs</label>'
             '<input id="prog-q" type="search" data-q placeholder="Search programs"></form>'
