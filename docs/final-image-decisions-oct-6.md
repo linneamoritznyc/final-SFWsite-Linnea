@@ -422,11 +422,11 @@ Linnea: no evidence the México 2022 workshop officially took place (no record o
 
 ## India October 2026 header (11 October, Linnea)
 
-The placeholder collage with the Accelerator Workshop logo is replaced by four photos from SFW's own India workshop registration page, https://school.soilfoodweb.com/courses/india-workshop-2026, shown side by side as one horizontal header:
+The placeholder collage with the Accelerator Workshop logo is replaced by four photos from SFW's own India workshop registration page, https://school.soilfoodweb.com/courses/india-workshop-2026, shown side by side as one horizontal header. Only photos of the venue are used (Linnea: no photos from other workshops):
 
-1. Compost building in a hoop house (registration page file "Master Compost.png")
-2. Students at microscopes (file "Microscopy.png")
+1. The large black statue at the Isha Yoga Center, with visitors on the plaza (registration page file "26.png")
+2. A stone-walled bathing pool (file "24.png")
 3. A plate of South Indian food (file "22.png")
-4. The large black statue at the Isha Yoga Center, with visitors on the plaza (file "26.png")
+4. A guest room with two beds (file "21.png")
 
-Photos 1 and 2 are from earlier SFW workshops, not from India; the registration page uses them to show what students do. The card is photo 4, cut to 3:2 from the top. Not used: the hall photo (Isha watermark), the photo of Loida in a fenced yard (location not confirmed, could be Rancho Cacachilas), the staff portraits and the room and pool photos.
+The card is photo 1, cut to 3:2 from the top. Not used: the compost, microscopy, liquids and dinner photos (from earlier workshops, not India), the hall photo (Isha watermark), the photo of Loida in a fenced yard (location not confirmed), the staff portraits and the course graphics.
