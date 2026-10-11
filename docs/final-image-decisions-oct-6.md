@@ -323,3 +323,4 @@ Santa Fe, February 2026: a "Photos from the workshop" gallery of 23 photos from 
 - Edits: 2 cropped to the kit (feet cut off); 16 cropped on the left to remove the balloons and along the top to remove the green balloon by the whiteboard; 18 brightened with the shadows lifted.
 - Order: 25 (certificate) shows before 24 (farm team) so the grid closes with no gaps at three and two columns.
 - Caption for 24 is "With the Armonía farm team" until Linnea sends the names.
+- 11 October, Linnea's crops on the Costa Rica gallery: 1 (room set up, bottom and sides trimmed), 4 (teaching in the shed, cropped to the class and the instructor's boots), 5 (sorting feedstock, the blurred finger at the bottom removed), 25 (certificate, roof and floor trimmed).
