@@ -419,3 +419,14 @@ Linnea: no evidence the Brasil 2019 workshop officially took place, so it is off
 ## México 2022 removed (11 October)
 
 Linnea: no evidence the México 2022 workshop officially took place (no record online; the one datable Vía Orgánica photo was taken on 8 March 2019, during an Ecosystem Restoration Camps camp). Removed like Brasil 2019: its workshop page (src and built), the card and the 2022 year option on /workshops/ (the México filter stays for Yucatán 2024), its section on /past-workshop-images/ and its entry in images.json, its line in content/staging/built-pages.json (the review page), and its row in the WordPress image export. /workshops/accelerator-workshop-2022/ now redirects to /workshops/. It had no photo on the site, so no image files changed.
+
+## India October 2026 header (11 October, Linnea)
+
+The placeholder collage with the Accelerator Workshop logo is replaced by four photos from SFW's own India workshop registration page, https://school.soilfoodweb.com/courses/india-workshop-2026, shown side by side as one horizontal header:
+
+1. Compost building in a hoop house (registration page file "Master Compost.png")
+2. Students at microscopes (file "Microscopy.png")
+3. A plate of South Indian food (file "22.png")
+4. The large black statue at the Isha Yoga Center, with visitors on the plaza (file "26.png")
+
+Photos 1 and 2 are from earlier SFW workshops, not from India; the registration page uses them to show what students do. The card is photo 4, cut to 3:2 from the top. Not used: the hall photo (Isha watermark), the photo of Loida in a fenced yard (location not confirmed, could be Rancho Cacachilas), the staff portraits and the room and pool photos.
