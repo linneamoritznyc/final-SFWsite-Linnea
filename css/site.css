@@ -1443,6 +1443,7 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .ws-gallery picture { display: block; }
 .ws-gallery img { display: block; width: 100%; height: auto; cursor: zoom-in; }
 .ws-fig img, .ws-pair .ws-fig img { border-radius: 0; aspect-ratio: auto; object-fit: fill; height: auto; }
+.ws-fig--tall { max-width: 22rem; } /* portrait photo in the text: whole photo, not full column width */
 .ws-pair { display: flex; align-items: flex-start; }
 .ws-pair .ws-fig { flex: var(--r, 1) 1 0; min-width: 0; }
 .sfw-workshop-single__hero-media { aspect-ratio: auto; border-radius: 0; box-shadow: none; background: none; }

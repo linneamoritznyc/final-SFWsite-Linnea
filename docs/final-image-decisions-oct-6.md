@@ -350,10 +350,17 @@ Linnea: every photo on the workshop pages shows whole, in its own shape, with sq
 
 ## 2027 workshops: Unsplash cover photos (11 October)
 
-The three 2027 workshops have no workshop photos yet, so each header and card uses a regional Unsplash landscape (Linnea, 11 October). These are Unsplash photos, not SFW photos: replace them when real photos exist. Each page credits the photographer under the header. Files were taken from the Wikimedia Commons copies of the Unsplash uploads (released CC0 there), at 1920 x 1280; unsplash.com itself blocks automated downloads.
+The three 2027 workshops have no workshop photos yet, so each header and card uses a regional photo from Unsplash (Linnea, 11 October). These are Unsplash photos, not SFW photos: replace them when real photos exist. Downloaded through the Unsplash API (download registered with Unsplash), saved at 2400 px wide. Each page credits the photographer under the header, as Unsplash asks.
 
 | Workshop | File in img/new-2026-10/ | Unsplash photo | Photographer | Shows |
 | :- | :- | :- | :- | :- |
-| Accelerator Workshop January 2027, Costa Rica | unsplash-costa-rica-monteverde-foliage.jpg | https://unsplash.com/photos/xotmnyN3gdc | Isabella Jusková (@bellaskova) | Forest foliage, Monteverde, Costa Rica |
-| Accelerator Workshop May 2027, New Mexico | unsplash-new-mexico-plains.jpg | https://unsplash.com/photos/149vt6evNQQ | Braden Collum (@bradencollum) | Grass plains and a low mesa, New Mexico |
-| Accelerator Workshop September 2027, United Kingdom | unsplash-england-poppy-field.jpg | https://unsplash.com/photos/AbK52-bLm6w | Chris Child (@chris23) | Poppy field, Hartlip, Kent |
+| Accelerator Workshop January 2027, Costa Rica | unsplash-costa-rica-highland-rainforest.jpg (2400 x 1602; original 6014 x 4014) | https://unsplash.com/photos/bjVoK4pDMj4 | Christina Victoria Craft (@victoriabcphotographer) | Mist over highland rainforest, Poás Volcano, Alajuela, Costa Rica |
+| Accelerator Workshop May 2027, New Mexico | unsplash-new-mexico-san-mateo-mountains.jpg (2400 x 1800; original 3000 x 2250) | https://unsplash.com/photos/fsP0vlPKYJ8 | Raychel Sanner (@raychelsnr) | Open field below the San Mateo Mountains, central New Mexico |
+| Accelerator Workshop September 2027, United Kingdom | unsplash-norfolk-lavender-field.jpg (2400 x 1600; original 6591 x 4394) | https://unsplash.com/photos/Hh8X0PJJ668 | Sue Winston (@winniepix) | Lavender field on a farm in Heacham, Norfolk |
+
+## Cyprus, January 2025: page photos (11 October)
+
+Only three photos exist, so no gallery. The Drive folder 2025-01_CY-Workshop_Riverland was still empty, so the repo copies are used.
+- Header and Workshops card: cy-workshop-8 (repo copy 3000 x 2004). Header shown at 1600 x 1069 (the site's limit for page images); the card is re-cut from the same file at 1200 x 800. Alt: "Students and mentors of the January 2025 Accelerator Workshop gathered under burlap bunting in a garden in Kampia, Cyprus".
+- Body: cy-classes-3 (repo copy 1600 x 2844) placed under the paragraph about compound microscopes and hand-drawn notebooks, at 900 x 1600, uncropped, shown narrower than the text column. Caption: "Hand-drawn microscopy notes from the Cyprus workshop, January 2025." The CONFIRM note asking for this photo is not shown on the page.
+- cy-classes-4 is not used anywhere on the site (a phone snapshot).
