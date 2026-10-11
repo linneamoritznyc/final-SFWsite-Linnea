@@ -402,3 +402,7 @@ Every workshop page now carries the copy from "Workshop Page Copy, New SFW Websi
 The copy uses "certified" three times (Cyprus: "the school's first certified consultant in China"; Yucatán: "Certified Ecological Restoration Practitioner"; August 2023: "certified organic farmland"); kept as written, since it is Linnea's final copy.
 - 11 October, Linnea: removed from the July 2024 gallery: 04 (Cracked Corn sign), 08 (forking feedstock) and 31 (garden lawn, blurred). Gallery: 29 photos.
 - 11 October, Linnea: the bucket top view (PXL_20240716_143134312, her crop) moves into the four-photo panel in the text, and the cracked corn close-up (PXL_20240716_154135863) takes its place as gallery photo 05, so the gallery has only one bucket photo.
+
+## Final workshop images for WordPress (11 October)
+
+exports/workshop-images/ holds one zip per workshop (folder name "YYYY-MM Workshop, Place") with every image the page uses, plus images-for-wordpress.xlsx saying where each goes: header, Workshops page card, in the text (which section, which row) or gallery (order), with alt text, gallery caption, photo credit and size. workshop-images-for-wordpress-all-workshops.xlsx has every workshop on its own tab and an overview. Headers and in-text photos are re-exported from the originals with the same crops, up to 2400 px (headers) or 1600 px, JPEG quality 85, no EXIF; gallery photos are the prepared files; cards are 1200 x 800. No zips for Yucatán 2024 and México 2022 (no photos). Brasil 2019 has only the 444 px header.
