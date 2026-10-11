@@ -1,0 +1,118 @@
+Hi! The Programs Overview page of new.soilfoodweb.com is now final: Linnea has approved every image on it. Please add it to the Drive folder for Stephanie.
+
+WHAT TO DO
+1. In the folder "SFW website images for Stephanie", replace everything in the subfolder "03 Programs Overview" with the 13 images below (11 of the 12 course card photos changed since the last list, so start the subfolder fresh rather than updating it). If the subfolder doesn't exist yet, create it.
+2. Download each image from its "File" link (public GitHub links; JPG, under 300 KB, EXIF removed, already cropped to the exact shape of its slot on the WordPress page). Name each file exactly as shown after "Save as", so the numbers keep them in page order.
+3. In "03 Programs Overview", replace the Google Sheet "Programs Overview image list" with a new one, columns: #, Where on the page (the "Jump to" link), Section, Slot, File name, Alt text, Caption, Size. One row per image, in the order below.
+4. Rename the subfolder to "03 Programs Overview (FINAL)" so Stephanie knows this page is approved and ready to upload.
+5. Make sure Stephanie still has access to the main folder, then give Linnea the link to "03 Programs Overview (FINAL)".
+
+HOW STEPHANIE USES IT
+Each "Jump to" link opens the WordPress page and scrolls straight to the section. Inside that section, "Slot" says which image it is: hero = the big picture at the top (hero 1, 2, 3 are counted left to right); tile 1, 2, 3... and card 1, 2, 3... are counted left to right, row by row (the title is in brackets); banner = the full-width photo behind the section text; side image or image 1 = the picture next to the text. She uploads the file into that slot, pastes the alt text into the image's Alternative Text field, and the caption (if there is one) into the caption field.
+
+The "Original" line, where there is one, is the full-size source, in case a bigger version is ever needed. You don't need to copy it.
+
+
+==============================
+PROGRAMS OVERVIEW  (13 images, FINAL)
+Page: https://new.soilfoodweb.com/programs-overview/
+==============================
+
+
+--- Section: "Learn to work with the life in your soil"
+Jump to: https://new.soilfoodweb.com/programs-overview/#:~:text=Learn%20to%20work%20with%20the%20life%20in%20your%20soil
+
+01. hero
+    Save as: 01 Learn to work with the life in your soil - hero.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20Learn%20to%20work%20with%20the%20life%20in%20your%20soil%20-%20hero.jpg
+    Alt text: A man in a purple T-shirt teaching a seated group in a bright room with a high wooden ceiling
+    Size: 1204 x 1008 (shown at 602 x 504 on a 1440 px screen)
+    Original: IMG_3536.heic (https://drive.google.com/file/d/1tpizv6rYE1Cb3HM8rz6dpRq9dp3r6g5L/view)
+
+
+--- Section: "What brings you to the soil food web?"
+Jump to: https://new.soilfoodweb.com/programs-overview/#:~:text=What%20brings%20you%20to%20the%20soil%20food%20web
+
+02. card 1 (Foundation Courses)
+    Save as: 02 What brings you to the soil food web - card 1 (Foundation Courses).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%201%20%28Foundation%20Courses%29.jpg
+    Alt text: An instructor in a navy shirt facing a class standing in a wide arc in a barn
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: 20250617_101815.heic (https://drive.google.com/file/d/1C9a_JAeVeJMUM8Tdu3wSF9_n6jemQ4c0/view)
+
+03. card 2 (Complete Practicum)
+    Save as: 03 What brings you to the soil food web - card 2 (Complete Practicum).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%202%20%28Complete%20Practicum%29.jpg
+    Alt text: Students in a barn leaning in to compare the dials of long compost thermometers
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: 20250617_101910.heic (https://drive.google.com/file/d/1eNhZLNtaYJi1rK_SRt3YYhHG8_dt3Hvn/view)
+
+04. card 3 (Soil Microscopy)
+    Save as: 04 What brings you to the soil food web - card 3 (Soil Microscopy).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%203%20%28Soil%20Microscopy%29.jpg
+    Alt text: Two mentors walking between tables of students working at microscopes and laptops
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: 20250310_163523.heic (https://drive.google.com/file/d/1hAGq2A0UEkWWOyKt7rJsjipn12hSbekG/view)
+
+05. card 4 (BioComplete™ Compost Production)
+    Save as: 05 What brings you to the soil food web - card 4 (BioComplete™ Compost Production).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%204%20%28BioComplete%E2%84%A2%20Compost%20Production%29.jpg
+    Alt text: A row of compost piles in wire mesh bins on pallets in an open barn
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: IMG_20250617_155946.jpg (https://drive.google.com/file/d/1Khj9iwJc1HMEVvDUeBbaeH05AapJFfyJ/view)
+
+06. card 5 (Compost Intensive Course)
+    Save as: 06 What brings you to the soil food web - card 5 (Compost Intensive Course).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%205%20%28Compost%20Intensive%20Course%29.jpg
+    Alt text: Students forking compost out of a wire mesh bin onto a blue tarp in a barn
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: 20250626_093348.heic (https://drive.google.com/file/d/1aQfgmo6pg715_nWsx1Pwc5HAtg26477s/view)
+
+07. card 6 (Learn the Art and Science of Biological Liqui)
+    Save as: 07 What brings you to the soil food web - card 6 (Learn the Art and Science of Biological Liqui).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%206%20%28Learn%20the%20Art%20and%20Science%20of%20Biological%20Liqui%29.jpg
+    Alt text: A man in a navy sweater leaning over a bowl lined with white cloth, a woman photographing beside him
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: 20250311_112525.heic (https://drive.google.com/file/d/1lLOlEFdHRmm5U4CGNl1IWdGMiurPyrYr/view)
+
+08. card 7 (Advanced Field Trial)
+    Save as: 08 What brings you to the soil food web - card 7 (Advanced Field Trial).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%207%20%28Advanced%20Field%20Trial%29.jpg
+    Alt text: A woman kneeling between vineyard rows with a soil probe
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: isadora.jpg (https://new.soilfoodweb.com/wp-content/uploads/2026/06/isadora.jpg)
+
+09. card 8 (Workshops)
+    Save as: 09 What brings you to the soil food web - card 8 (Workshops).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%208%20%28Workshops%29.jpg
+    Alt text: A class standing in a wide circle around a compost pile in an open shed
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: 20250310_083603.heic (https://drive.google.com/file/d/1uizABjnBdG-kWJjGC2Wr0chvyM_Xzxgu/view)
+
+10. card 9 (Introduction to Ecosystem Restoration)
+    Save as: 10 What brings you to the soil food web - card 9 (Introduction to Ecosystem Restoration).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%209%20%28Introduction%20to%20Ecosystem%20Restoration%29.jpg
+    Alt text: A class walking along a farm track toward green fields under a blue sky
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: IMG_20250625_145015.jpg (https://drive.google.com/file/d/13c-aVSULDlsaHFj2IN652gQlMq8gA5Jf/view)
+
+11. card 10 (Permaculture Design Certification)
+    Save as: 11 What brings you to the soil food web - card 10 (Permaculture Design Certification).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%2010%20%28Permaculture%20Design%20Certification%29.jpg
+    Alt text: A row of shade-cloth hoop houses on dry ground under a blue sky
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: Greenhouses Wide View.heic (https://drive.google.com/file/d/1-A3ddhtts22Zn4uWmLXKIAlgmZcCzdB9/view)
+
+12. card 11 (Intro to the Foundation Courses)
+    Save as: 12 What brings you to the soil food web - card 11 (Intro to the Foundation Courses).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%2011%20%28Intro%20to%20the%20Foundation%20Courses%29.jpg
+    Alt text: An instructor with a microphone pointing at a tall compost pile in a wire mesh bin, students behind
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: 20250305_085239.heic (https://drive.google.com/file/d/1uqu_sc75FFMMJ1REzkmFywUTn-bzUu8e/view)
+
+13. card 12 (Mini Foundation Course)
+    Save as: 13 What brings you to the soil food web - card 12 (Mini Foundation Course).jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/programs-overview/programs-overview%20-%20What%20brings%20you%20to%20the%20soil%20food%20web%20-%20card%2012%20%28Mini%20Foundation%20Course%29.jpg
+    Alt text: A woman in a Soil Food Web cap smelling a plastic cup of liquid, people and microscopes around her
+    Size: 804 x 536 (shown at 402 x 268 on a 1440 px screen)
+    Original: 20250311_112408.heic (https://drive.google.com/file/d/1GWXTHW-8kKH1iU33xkCno056MrPmk1BI/view)

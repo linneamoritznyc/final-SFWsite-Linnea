@@ -1,7 +1,7 @@
 Hi! The Home page of new.soilfoodweb.com is now final: Linnea has approved every image on it. Please add it to the Drive folder for Stephanie.
 
 WHAT TO DO
-1. In the folder "SFW website images for Stephanie", replace everything in the subfolder "01 Home" with the 24 images below (some images changed since the last list, so start the subfolder fresh rather than updating it). If the folder doesn't exist yet, create it, with "01 Home" inside.
+1. In the folder "SFW website images for Stephanie", replace everything in the subfolder "01 Home" with the 24 images below (tile 1 (Observe and assess) changed since the last list, so start the subfolder fresh rather than updating it). If the subfolder doesn't exist yet, create it.
 2. Download each image from its "File" link (public GitHub links; JPG, under 300 KB, EXIF removed, already cropped to the exact shape of its slot on the WordPress page). Name each file exactly as shown after "Save as", so the numbers keep them in page order.
 3. In "01 Home", replace the Google Sheet "Home image list" with a new one, columns: #, Where on the page (the "Jump to" link), Section, Slot, File name, Alt text, Caption, Size. One row per image, in the order below.
 4. Rename the subfolder to "01 Home (FINAL)" so Stephanie knows this page is approved and ready to upload.
@@ -47,9 +47,9 @@ Jump to: https://new.soilfoodweb.com/#:~:text=Partner%20with%20nature%27s%20inte
 03. tile 1 (Observe and assess)
     Save as: 03 Partner with nature's intelligence - tile 1 (Observe and assess).jpg
     File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Partner%20with%20nature%27s%20intelligence%20-%20tile%201%20%28Observe%20and%20assess%29.jpg
-    Alt text: A microscope with a camera attached, on a wooden desk in front of a sunny window
+    Alt text: Students at microscopes and laptops along a long table in a bright room, two people standing behind them
     Size: 594 x 792 (shown at 297 x 396 on a 1440 px screen)
-    Original: Microscope photo from Linnea's Drive, cropped around the microscope (https://drive.google.com/file/d/1UkHGvgXNxpAD4OvpmscD2pGQKuzebWEU/view)
+    Original: IMG_2996.heic (https://drive.google.com/file/d/1G4XFbMiFdTFxuKu97AGk_jDexCg05slh/view)
 
 04. tile 2 (Incubate the biology)
     Save as: 04 Partner with nature's intelligence - tile 2 (Incubate the biology).jpg
@@ -165,6 +165,7 @@ Jump to: https://new.soilfoodweb.com/#:~:text=Hear%20from%20our%20students
     File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Hear%20from%20our%20students%20-%20banner.jpg
     Alt text: A grid of video-call portraits of students and practitioners
     Size: 2880 x 1978 (shown at 1440 x 989 on a 1440 px screen)
+    Original: our-students-testimonials.jpg (https://new.soilfoodweb.com/wp-content/uploads/2026/09/our-students-testimonials.jpg)
 
 
 --- Section: "Keep up to date with our latest news and articles"
@@ -203,3 +204,4 @@ Jump to: https://new.soilfoodweb.com/#:~:text=Be%20part%20of%20the%20soil-ution
     File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/home/home%20-%20Be%20part%20of%20the%20soil-ution%20-%20banner.jpg
     Alt text: A large group of workshop participants and mentors posing together under a garden pergola hung with burlap bunting
     Size: 2880 x 1532 (shown at 1440 x 766 on a 1440 px screen)
+    Original: cy-workshop-8.jpg

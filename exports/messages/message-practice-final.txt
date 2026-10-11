@@ -1,0 +1,42 @@
+Hi! The Practice page of new.soilfoodweb.com is now final: Linnea has approved every image on it. Please add it to the Drive folder for Stephanie.
+
+WHAT TO DO
+1. In the folder "SFW website images for Stephanie", replace everything in the subfolder "09 Practice" with the 2 images below (the photo in "Accelerating understanding into action" changed since the last list, so start the subfolder fresh rather than updating it). If the subfolder doesn't exist yet, create it.
+2. Download each image from its "File" link (public GitHub links; JPG, under 300 KB, EXIF removed, already cropped to the exact shape of its slot on the WordPress page). Name each file exactly as shown after "Save as", so the numbers keep them in page order.
+3. In "09 Practice", replace the Google Sheet "Practice image list" with a new one, columns: #, Where on the page (the "Jump to" link), Section, Slot, File name, Alt text, Caption, Size. One row per image, in the order below.
+4. Rename the subfolder to "09 Practice (FINAL)" so Stephanie knows this page is approved and ready to upload.
+5. Make sure Stephanie still has access to the main folder, then give Linnea the link to "09 Practice (FINAL)".
+
+HOW STEPHANIE USES IT
+Each "Jump to" link opens the WordPress page and scrolls straight to the section. Inside that section, "Slot" says which image it is: hero = the big picture at the top (hero 1, 2, 3 are counted left to right); tile 1, 2, 3... and card 1, 2, 3... are counted left to right, row by row (the title is in brackets); banner = the full-width photo behind the section text; side image or image 1 = the picture next to the text. She uploads the file into that slot, pastes the alt text into the image's Alternative Text field, and the caption (if there is one) into the caption field.
+
+The "Original" line, where there is one, is the full-size source, in case a bigger version is ever needed. You don't need to copy it.
+
+
+==============================
+PRACTICE  (2 images, FINAL)
+Page: https://new.soilfoodweb.com/practice/
+==============================
+
+
+--- Section: "Taking Action toward a Healthier World"
+Jump to: https://new.soilfoodweb.com/practice/#:~:text=Taking%20Action%20toward%20a%20Healthier%20World
+
+01. hero
+    Save as: 01 Taking Action toward a Healthier World - hero.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/practice/practice%20-%20Taking%20Action%20toward%20a%20Healthier%20World%20-%20hero.jpg
+    Alt text: A vineyard with green ground cover and yellow wildflowers between the rows, hills behind
+    Caption: Photo: Caterina Capri
+    Size: 1204 x 1204 (shown at 602 x 602 on a 1440 px screen)
+    Original: soil coverage(1).jpeg (https://drive.google.com/file/d/1E9mlMQ7tTMvvqDk6SlPptoTREWdZFuE8/view)
+
+
+--- Section: "Accelerating understanding into action"
+Jump to: https://new.soilfoodweb.com/practice/#:~:text=Accelerating%20understanding%20into%20action
+
+02. image 1
+    Save as: 02 Accelerating understanding into action - image 1.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/practice/practice%20-%20Accelerating%20understanding%20into%20action%20-%20image%201.jpg
+    Alt text: A manure fork standing in a pile of dark finished compost
+    Size: 702 x 468 (shown at 351 x 234 on a 1440 px screen)
+    Original: R5A_4027.jpg (https://drive.google.com/file/d/1xi-PXMauq2SnqURFAdvQrUTFr9ltEPa1/view)

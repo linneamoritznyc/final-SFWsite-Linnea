@@ -1,0 +1,30 @@
+Hi! The Find a Professional page of new.soilfoodweb.com is now final: Linnea has approved every image on it. Please add it to the Drive folder for Stephanie.
+
+WHAT TO DO
+1. In the folder "SFW website images for Stephanie", replace everything in the subfolder "07 Find a Professional" with the 1 image below (the hero photo changed since the last list, so start the subfolder fresh rather than updating it). If the subfolder doesn't exist yet, create it.
+2. Download each image from its "File" link (public GitHub links; JPG, under 300 KB, EXIF removed, already cropped to the exact shape of its slot on the WordPress page). Name each file exactly as shown after "Save as", so the numbers keep them in page order.
+3. In "07 Find a Professional", replace the Google Sheet "Find a Professional image list" with a new one, columns: #, Where on the page (the "Jump to" link), Section, Slot, File name, Alt text, Caption, Size. One row per image, in the order below.
+4. Rename the subfolder to "07 Find a Professional (FINAL)" so Stephanie knows this page is approved and ready to upload.
+5. Make sure Stephanie still has access to the main folder, then give Linnea the link to "07 Find a Professional (FINAL)".
+
+HOW STEPHANIE USES IT
+Each "Jump to" link opens the WordPress page and scrolls straight to the section. Inside that section, "Slot" says which image it is: hero = the big picture at the top (hero 1, 2, 3 are counted left to right); tile 1, 2, 3... and card 1, 2, 3... are counted left to right, row by row (the title is in brackets); banner = the full-width photo behind the section text; side image or image 1 = the picture next to the text. She uploads the file into that slot, pastes the alt text into the image's Alternative Text field, and the caption (if there is one) into the caption field.
+
+The "Original" line, where there is one, is the full-size source, in case a bigger version is ever needed. You don't need to copy it.
+
+
+==============================
+FIND A PROFESSIONAL  (1 images, FINAL)
+Page: https://new.soilfoodweb.com/find-a-professional/
+==============================
+
+
+--- Section: "Work with a Soil Food Web School Graduate"
+Jump to: https://new.soilfoodweb.com/find-a-professional/#:~:text=Work%20with%20a%20Soil%20Food%20Web%20School%20Graduate
+
+01. hero
+    Save as: 01 Work with a Soil Food Web School Graduat - hero.jpg
+    File: https://raw.githubusercontent.com/linneamoritznyc/final-SFWsite-Linnea/final-images-v2/exports/stephanie/find-a-professional/find-a-professional%20-%20Work%20with%20a%20Soil%20Food%20Web%20School%20Graduate%20-%20hero.jpg
+    Alt text: Dr. Elaine Ingham with four men in a harvested field, two of them holding clods of soil
+    Size: 964 x 602 (shown at 482 x 301 on a 1440 px screen)
+    Original: Soil-food-Web-Inc.-Elaine_with_client_talking_extract_application_and_soil_compaction1-708X466.jpg (https://drive.google.com/file/d/1EzT9ZuUFBy7F6cA-WCi08GD68sopA41T/view)
