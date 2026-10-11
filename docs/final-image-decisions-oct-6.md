@@ -384,3 +384,4 @@ Only three photos exist, so no gallery. The Drive folder 2025-01_CY-Workshop_Riv
 - Edit: 14 (IMG_0791.PNG, a phone screenshot) has its black side bars cropped off.
 - 1 (graduates under the tent) repeats the page cover and 8 (laughing at the bin) repeats the Home page hero; Linnea approved both repeats. 13 also exists as copy-of-17.jpg, used only in old legacy pages, not on the site.
 - 17: no one crouching in the frame, so the listed photo is used.
+- 11 October: workshop image file names now end in a short content hash (cards get ?v=hash), so a recropped or replaced photo gets a new URL. Browsers keep images for 7 days, which is why the old group photo and the uncropped Cracked Corn sign still showed after the update.
