@@ -1450,6 +1450,11 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .ws-hero-panel { display: flex; gap: .5rem; }
 .ws-hero-panel > div { flex: var(--r) 1 0; min-width: 0; }
 .ws-hero-panel .sfw-workshop-single__hero-img { width: 100%; max-height: none; }
+.ws-list { margin: 0 0 1rem; padding-left: 1.25rem; line-height: 1.7; }
+.ws-list li { margin-bottom: .35rem; }
+.ws-quote { margin: 1.5rem 0; padding: .25rem 0 .25rem 1rem; border-left: 3px solid var(--sfw-ws-ink-faint); font-style: italic; }
+.ws-quote p { margin: 0 0 .5rem; }
+.ws-quote footer { font-style: normal; font-size: .875rem; color: var(--sfw-ws-ink-faint); }
 .ws-fig--tall { max-width: 22rem; } /* portrait photo in the text: whole photo, not full column width */
 .ws-pair { display: flex; align-items: flex-start; }
 .ws-pair .ws-fig { flex: var(--r, 1) 1 0; min-width: 0; }
