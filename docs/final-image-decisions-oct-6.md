@@ -415,3 +415,7 @@ México 2022: the old site's comparison tile ("Mexico, March 2022") is the hats-
 ## Brasil 2019 removed (11 October)
 
 Linnea: no evidence the Brasil 2019 workshop officially took place, so it is off the site. Removed: its workshop page (src and built), the card and the Brasil country filter and 2019 year option on /workshops/, its section on /past-workshop-images/ and its entry in past-workshop-images/images.json, its line in content/staging/built-pages.json (the review page), its zip and tab in the WordPress image export. /workshops/accelerator-workshop-2019/ now redirects to /workshops/. The photo itself stays in the repo (past-workshop-images/accelerator-workshop-2019/ and past-workshop-picks/img/accelerator-workshop-2019-card.*), linked from nowhere. Earlier entries in this log that mention it are kept as history.
+
+## México 2022 removed (11 October)
+
+Linnea: no evidence the México 2022 workshop officially took place (no record online; the one datable Vía Orgánica photo was taken on 8 March 2019, during an Ecosystem Restoration Camps camp). Removed like Brasil 2019: its workshop page (src and built), the card and the 2022 year option on /workshops/ (the México filter stays for Yucatán 2024), its section on /past-workshop-images/ and its entry in images.json, its line in content/staging/built-pages.json (the review page), and its row in the WordPress image export. /workshops/accelerator-workshop-2022/ now redirects to /workshops/. It had no photo on the site, so no image files changed.

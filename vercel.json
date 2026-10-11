@@ -269,6 +269,16 @@
       "permanent": true
     },
     {
+      "source": "/workshops/accelerator-workshop-2022",
+      "destination": "/workshops/",
+      "permanent": true
+    },
+    {
+      "source": "/workshops/accelerator-workshop-2022/",
+      "destination": "/workshops/",
+      "permanent": true
+    },
+    {
       "source": "/past-workshop-picks/",
       "destination": "/workshops/",
       "permanent": false
