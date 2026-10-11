@@ -335,3 +335,7 @@ Header on /workshops/accelerator-workshop-june-2025/ and its card on /workshops/
 - Duplicate check: photo 2 is a different frame from the page's "Lectures in the barn" photo and photo 17 is a different scene from "Field instruction on the farm"; none of the 25 match a photo already on the site. No alternates needed.
 - Layout: 20 shows before 19 so the grid closes with no gaps at three and two columns.
 - 11 October, Linnea's crops on the Wild Ken Hill gallery: 3 (thermometer lesson), 8 (scooping compost), 9 (arms up at the pile, tighter on the group) and 12 (windrow turner), each matched to her example. To show them as cropped in the grid: 9 is a large tile (two columns, three rows), 12 fills one cell, 2 (lecture in the barn) spans two columns; 14 and 18 are back to tall tiles.
+
+## Workshop photos shown as they are (11 October)
+
+Linnea: every photo on the workshop pages shows whole, in its own shape, with square corners, so the mockup matches the files that will go into WordPress. The galleries (Santa Fe, Costa Rica, Wild Ken Hill) are now justified rows: each photo keeps its proportions, photos in a row share one height, nothing is cropped. Paired photos in the page text, the header photos and the lightbox show uncropped with square corners; card corners on /workshops/ are square too (the card files are already cut to 3:2). The packed-grid tile sizes and reorders are gone: the galleries follow the numbered order (Costa Rica 24 before 25, Wild Ken Hill 19 before 20).
