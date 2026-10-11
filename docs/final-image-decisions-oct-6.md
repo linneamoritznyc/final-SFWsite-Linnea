@@ -324,3 +324,13 @@ Santa Fe, February 2026: a "Photos from the workshop" gallery of 23 photos from 
 - Order: 25 (certificate) shows before 24 (farm team) so the grid closes with no gaps at three and two columns.
 - Caption for 24 is "With the Armonía farm team" until Linnea sends the names.
 - 11 October, Linnea's crops on the Costa Rica gallery: 1 (room set up, bottom and sides trimmed), 4 (teaching in the shed, cropped to the class and the instructor's boots), 5 (sorting feedstock, the blurred finger at the bottom removed), 25 (certificate, roof and floor trimmed).
+
+## Wild Ken Hill, June 2025: new header and gallery (11 October)
+
+Header on /workshops/accelerator-workshop-june-2025/ and its card on /workshops/: IMG_2620.HEIC (Linnea's choice), the eleven students and mentors in the clover field with the drone overhead. It replaces the poppy field group photo. Cropped to the full row of people, the drone and a strip of grass under their feet; saved at 2400 x 1200 as img/new-2026-10/wild-ken-hill-2025-06-header.jpg. A 21:9 frame cannot hold both the drone and the feet, so this one hero is 2:1 (class sfw-workshop-single__hero-media--wide). The card is the same photo cropped to 3:2. Caption under the header: "Our June 2025 group out in the fields".
+
+25-photo "Photos from the workshop" gallery, same grid and lightbox as Santa Fe and Costa Rica. Source: Drive folder 2025-06_UK-Workshop_Wild Ken Hill. Saved as img/new-2026-10/wild-ken-hill-2025-06-NN-*.jpg, at most 1600 px, light natural lift where flat. Alt text from Linnea's descriptions; captions in the warm voice.
+- Picks: A (3) 20250617_101803 (thermometer held up, sharper); B (5) 20250617_123123 (sharper); C (8) 20250617_172100 (both students crouching); D (10) 20250619_103110 (Nick Padwick beside her); E (13) 20250620_153134(1) (students leaning in); F (20) IMG_20250626_100517 (one sharp organism in the centre of the field).
+- Edits: 20 cropped square around the microscope field.
+- Duplicate check: photo 2 is a different frame from the page's "Lectures in the barn" photo and photo 17 is a different scene from "Field instruction on the farm"; none of the 25 match a photo already on the site. No alternates needed.
+- Layout: 14 (compost mound) and 18 (rewilding woodland) fill one cell, and 20 shows before 19, so the grid closes with no gaps at three and two columns.
