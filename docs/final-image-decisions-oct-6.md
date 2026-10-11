@@ -339,3 +339,21 @@ Header on /workshops/accelerator-workshop-june-2025/ and its card on /workshops/
 ## Workshop photos shown as they are (11 October)
 
 Linnea: every photo on the workshop pages shows whole, in its own shape, with square corners, so the mockup matches the files that will go into WordPress. The galleries (Santa Fe, Costa Rica, Wild Ken Hill) are now justified rows: each photo keeps its proportions, photos in a row share one height, nothing is cropped. Paired photos in the page text, the header photos and the lightbox show uncropped with square corners; card corners on /workshops/ are square too (the card files are already cut to 3:2). The packed-grid tile sizes and reorders are gone: the galleries follow the numbered order (Costa Rica 24 before 25, Wild Ken Hill 19 before 20).
+
+## Costa Rica, March 2025: gallery (11 October)
+
+25-photo "Photos from the workshop" gallery on /workshops/accelerator-workshop-march-2025/, same component and lightbox as the other workshop pages. Source: Drive folder 2025-03_CR-Workshop_Armonia. Saved as img/new-2026-10/costa-rica-2025-03-NN-*.jpg, at most 1600 px, light natural lift where flat. Alt text from Linnea's descriptions; captions in the warm voice. The existing page photos are unchanged.
+- Picks: A (5) A3ED2BF5-0F67-4A07-925F-B80CC8AE8FE9.JPG (the two Drive files are the same image); B (18) pile turning wes 7.HEIC: neither wes 2 (shovelling feedstock) nor wes 6 (gloved hands at the pile, standing) shows students kneeling, so the fallback, the team turning a pile with forks.
+- Edits: 7 (lecture in the orange classroom) cropped to remove the empty ceiling; the slide edge, instructor, whiteboard, class and blue door are kept.
+- Skipped: 19 (extracts wes 4 Gerald lecturing) is the same file as costa-rica-2025-gerald-liquid-amendments.jpg, already on this page, the Community page and a course card. Replaced with the alternate 20250305_085223.heic (instructor with a microphone teaching at the tall pile), saved as 19-teaching-at-the-pile.
+- Open: a Drive folder is named "Horacio Narvaez-Mena Photo Credit"; some March 2025 photos may need a credit to him. Linnea to confirm which.
+
+## 2027 workshops: Unsplash cover photos (11 October)
+
+The three 2027 workshops have no workshop photos yet, so each header and card uses a regional Unsplash landscape (Linnea, 11 October). These are Unsplash photos, not SFW photos: replace them when real photos exist. Each page credits the photographer under the header. Files were taken from the Wikimedia Commons copies of the Unsplash uploads (released CC0 there), at 1920 x 1280; unsplash.com itself blocks automated downloads.
+
+| Workshop | File in img/new-2026-10/ | Unsplash photo | Photographer | Shows |
+| :- | :- | :- | :- | :- |
+| Accelerator Workshop January 2027, Costa Rica | unsplash-costa-rica-monteverde-foliage.jpg | https://unsplash.com/photos/xotmnyN3gdc | Isabella Jusková (@bellaskova) | Forest foliage, Monteverde, Costa Rica |
+| Accelerator Workshop May 2027, New Mexico | unsplash-new-mexico-plains.jpg | https://unsplash.com/photos/149vt6evNQQ | Braden Collum (@bradencollum) | Grass plains and a low mesa, New Mexico |
+| Accelerator Workshop September 2027, United Kingdom | unsplash-england-poppy-field.jpg | https://unsplash.com/photos/AbK52-bLm6w | Chris Child (@chris23) | Poppy field, Hartlip, Kent |
