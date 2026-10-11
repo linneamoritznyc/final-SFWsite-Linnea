@@ -385,3 +385,8 @@ Only three photos exist, so no gallery. The Drive folder 2025-01_CY-Workshop_Riv
 - 1 (graduates under the tent) repeats the page cover and 8 (laughing at the bin) repeats the Home page hero; Linnea approved both repeats. 13 also exists as copy-of-17.jpg, used only in old legacy pages, not on the site.
 - 17: no one crouching in the frame, so the listed photo is used.
 - 11 October: workshop image file names now end in a short content hash (cards get ?v=hash), so a recropped or replaced photo gets a new URL. Browsers keep images for 7 days, which is why the old group photo and the uncropped Cracked Corn sign still showed after the update.
+- 11 October, Linnea: captions under the July 2024 header and in-text photo removed. The student smelling feedstock moves to the gallery (third, after the feedstock sacks; file costa-rica-2024-07-26-smelling-the-feedstock.jpg). In its place in the text: a panel of four day-one feedstock photos at one height, no captions: Feedstock-PXL_20240715_194018641 is not used; the four are PXL_20240715_192920132 (two students reading a sack label), Feedstock-PXL_20240715_193753231 (students over the hay heap), Feedstock-PXL_20240715_194018641 (hands in woody feedstock with a thermometer) and PXL_20240716_154135863 (cracked corn close-up).
+
+## Header photos are horizontal (11 October)
+
+Linnea's rule: a workshop page header is always a horizontal photo, or several vertical photos side by side. June 2026 has only portrait photos (two scenes), so its header is now IMG_1495 (the memorial pile) and IMG_1499 (the team at the pallet bin) side by side at one height; the text keeps IMG_1494 and IMG_1501. Every other header is already horizontal; July 2024's is Linnea's own near-square crop.

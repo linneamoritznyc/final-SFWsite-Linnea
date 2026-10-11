@@ -1443,6 +1443,13 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .ws-gallery picture { display: block; }
 .ws-gallery img { display: block; width: 100%; height: auto; cursor: zoom-in; }
 .ws-fig img, .ws-pair .ws-fig img { border-radius: 0; aspect-ratio: auto; object-fit: fill; height: auto; }
+/* Panel: photos side by side at one height, whole and uncropped (each grows with its width:height ratio --r); wraps to two rows on phones */
+.ws-panel { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0; }
+.ws-panel .ws-fig { margin: 0; flex: var(--r) 1 calc(var(--r) * 8rem); min-width: 0; }
+/* Header built from portrait photos side by side, equal height, uncropped */
+.ws-hero-panel { display: flex; gap: .5rem; }
+.ws-hero-panel > div { flex: var(--r) 1 0; min-width: 0; }
+.ws-hero-panel .sfw-workshop-single__hero-img { width: 100%; max-height: none; }
 .ws-fig--tall { max-width: 22rem; } /* portrait photo in the text: whole photo, not full column width */
 .ws-pair { display: flex; align-items: flex-start; }
 .ws-pair .ws-fig { flex: var(--r, 1) 1 0; min-width: 0; }
