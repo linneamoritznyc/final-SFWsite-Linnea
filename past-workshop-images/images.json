@@ -378,24 +378,5 @@
   "dates": "14–25 March 2022",
   "url": "https://new.soilfoodweb.com/workshop/accelerator-workshop-2022/",
   "images": []
- },
- {
-  "slug": "accelerator-workshop-2019",
-  "title": "Accelerator Workshop 2019",
-  "place": "Brasil",
-  "dates": "7–18 January 2019",
-  "url": "https://new.soilfoodweb.com/workshop/accelerator-workshop-2019/",
-  "images": [
-   {
-    "file": "accelerator-workshop-2019-01-group-photo",
-    "w": 444,
-    "h": 188,
-    "kb": 21,
-    "alt": "A group of participants posing together indoors",
-    "caption": "Accelerator Workshop 2019, Brasil, 7–18 January 2019",
-    "featured": true,
-    "low": true
-   }
-  ]
  }
 ]

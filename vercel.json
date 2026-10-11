@@ -259,6 +259,16 @@
       "permanent": true
     },
     {
+      "source": "/workshops/accelerator-workshop-2019",
+      "destination": "/workshops/",
+      "permanent": true
+    },
+    {
+      "source": "/workshops/accelerator-workshop-2019/",
+      "destination": "/workshops/",
+      "permanent": true
+    },
+    {
       "source": "/past-workshop-picks/",
       "destination": "/workshops/",
       "permanent": false
