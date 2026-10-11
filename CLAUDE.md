@@ -85,6 +85,21 @@ and, on branch claude/staging-reality, docs/staging-reality.md (Fable's staging 
   (never a personal Drive link in the Link column). Bring an image from another branch only
   if a page needs it.
 
+## Video thumbnails (Linnea's rules)
+- Never use the same layout on every thumbnail in a set. Identical compositions with
+  only the plant swapped look lazy and stupid, not like a "tidy series".
+- Each thumbnail gets its own composition built around its own idea: different
+  framing, scale, camera distance and arrangement (for example a close-up of one
+  root, a wide field, a cut-away block, a split, a magnified organism).
+- What may repeat across a set: logo position, title font (Montserrat Bold) and
+  title position, brand colours. Nothing else has to match.
+- Never replace or remove artwork Linnea said she loves without asking her first.
+- Show every raw image-generation output before rejecting or compositing anything.
+  Linnea chooses, not Claude.
+- Image generation: edit or reference a real image (google/nano-banana or
+  black-forest-labs/flux-kontext-pro with a reference image). Plain text-to-image
+  draws in a new style every run and must not be used for a matching set.
+
 ## Before every commit
 1. `python3 tools/site/build.py` then `python3 tools/site/check.py` (links, anchors,
    one H1, noindex, no zoom blocking, no em dashes, no staging editorial notes, image
