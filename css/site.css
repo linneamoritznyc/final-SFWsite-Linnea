@@ -3064,3 +3064,24 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 .card__img--short { aspect-ratio: 16 / 9; }
 .grid--top { align-items: start; }
 .grid--top .card__foot { margin-top: 1rem; }
+
+/* Page endings: a full-width photo band with one line and one button, before the footer (beautify-v1). */
+.band--photo.band--ending { padding-block: clamp(8rem, 4rem + 14vw, 16rem) clamp(2.5rem, 2rem + 2vw, 4rem); }
+.band--photo.band--ending::before { background: linear-gradient(rgba(20, 28, 18, 0) 35%, rgba(20, 28, 18, .72)); }
+.band--ending h2 { max-width: 20ch; margin-bottom: 1.25rem; }
+/* Students' micrographs in round frames, credited by name. */
+.micro-row { background: var(--moss); color: var(--white); }
+.micro-row h2 { color: var(--white); max-width: 22ch; }
+.micro-row ul { list-style: none; margin: 2rem 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
+.micro-row li { display: grid; gap: .6rem; justify-items: center; text-align: center; font-size: .9375rem; color: #d8e2d3; }
+.micro-row li b { display: block; color: var(--white); font-weight: 600; }
+.micro-row img { width: 100%; max-width: 13rem; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 4px solid var(--gold, #C9A227); filter: contrast(1.2) saturate(1.15); }
+@media (max-width: 47.99em) { .micro-row ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* A round photo beside a timeline entry. */
+.timeline__body--photo { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem; align-items: start; }
+.timeline__photo img { width: clamp(6rem, 4rem + 6vw, 9rem); aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 4px solid var(--white); box-shadow: var(--shadow); }
+@media (max-width: 47.99em) { .timeline__body--photo { grid-template-columns: 1fr; } }
+/* Card with a photo on top (Practice, work with us). */
+.card--photo-top { overflow: hidden; }
+.card--photo-top .card__img { aspect-ratio: 3 / 2; display: block; }
+.band--ending > picture > img, .band--ending > img { object-position: var(--pos, 50% 50%); }
