@@ -1699,7 +1699,7 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .rm-years__l { font-family: var(--display); font-weight: 600; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
 .rm-years input { width: min(14rem, 38vw); accent-color: var(--green); }
 .rm-stage { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 20rem; border: 1px solid var(--rule); border-radius: var(--radius); background: #FBF9F4; overflow: hidden; }
-.rm-svg { display: block; width: 100%; height: clamp(30rem, 70vh, 46rem); touch-action: none; cursor: grab; }
+.rm-svg { display: block; width: 100%; height: clamp(28rem, 62vh, 40rem); touch-action: none; cursor: grab; }
 .rm-svg.is-dragging { cursor: grabbing; }
 .rm-svg line { stroke: #4F3433; stroke-opacity: .13; stroke-width: 1; transition: stroke-opacity .2s; }
 .rm-svg line.is-hot { stroke-opacity: .7; stroke-width: 1.6; }
@@ -1760,4 +1760,5 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .ws-map figcaption { margin-top: .75rem; font-size: .875rem; color: var(--ink-soft); }
 @media (max-width: 47.99em) { .ws-pin__dot { width: 1.1rem; height: 1.1rem; border-width: 2px; } .ws-pin__label { font-size: .75rem; } }
 .ws-map__pins li:hover, .ws-map__pins li:focus-within { z-index: 5; }
-.ws-map__land { background: #3b2a1f url("/img/soil-texture.webp") 0 0 / 14% auto repeat; }
+.ws-map__land { background: #3b2a1f url("/img/new/r5a-3965-800w.webp") center / 22% auto repeat; }
+.hero--tight-end { padding-bottom: 1rem; } .band--flush-top { padding-top: 0; }

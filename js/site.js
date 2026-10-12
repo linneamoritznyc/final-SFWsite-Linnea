@@ -504,7 +504,7 @@
     nodes.forEach(function (n) {
       byId[n.id] = n; var o = pos[n.id], ang = Math.random() * 6.283, rad = n.kind === "paper" ? 120 : 300;
       if (n.kind === "topic") { ang = (D.facets.indexOf(n.t.facet) + Math.random() * .8) / D.facets.length * 6.283; }
-      n.x = o ? o.x : W / 2 + Math.cos(ang) * rad * (0.6 + Math.random() * .5); n.y = o ? o.y : H / 2 + Math.sin(ang) * rad * (0.6 + Math.random() * .5); n.vx = 0; n.vy = 0;
+      n.x = o ? o.x : W / 2 + Math.cos(ang) * rad * 1.5 * (0.6 + Math.random() * .5); n.y = o ? o.y : H / 2 + Math.sin(ang) * rad * .55 * (0.6 + Math.random() * .5); n.vx = 0; n.vy = 0;
       n.nb = [];
     });
     links = links.filter(function (l) { return byId[l.s] && byId[l.t]; });
@@ -554,7 +554,7 @@
       a.vx += dx * s; a.vy += dy * s; b.vx -= dx * s * .35; b.vy -= dy * s * .35;
     });
     nodes.forEach(function (n) {
-      var gr = n.nb.length < 2 ? 4 : 1; n.vx += (W / 2 - n.x) * .0009 * k * gr; n.vy += (H / 2 - n.y) * .0011 * k * gr;
+      var gr = n.nb.length < 2 ? 4 : 1; n.vx += (W / 2 - n.x) * .0006 * k * gr; n.vy += (H / 2 - n.y) * .0032 * k * gr;
       if (n === dragN) { n.vx = n.vy = 0; return; }
       n.vx *= .82; n.vy *= .82; n.x += n.vx; n.y += n.vy;
     });
