@@ -3232,3 +3232,21 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 /* A single wide photo under a centred page intro. */
 .wide-photo { max-width: 56rem; margin: 2rem auto 0; }
 .wide-photo img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 45%; border-radius: var(--radius); }
+/* Find a professional: world map of practitioners, one bubble per country. */
+.pmap { margin: 0 0 2rem; background: var(--cream); border-radius: var(--radius); padding: clamp(.75rem, 2vw, 1.5rem); }
+.pmap__stage { position: relative; }
+.pmap__world { display: block; width: 100%; height: auto; overflow: visible; }
+.pmap__frame { fill: none; stroke: var(--soil); stroke-opacity: .35; stroke-dasharray: 3 3; }
+.pmap__inset { position: absolute; left: .5%; bottom: 3%; width: 22%; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: .4rem .4rem .3rem; }
+.pmap__inset p { margin: 0 0 .2rem .3rem; font: 700 .6875rem/1 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--soil); }
+.pmap__inset svg { display: block; width: 100%; height: auto; overflow: hidden; border-radius: calc(var(--radius) - 2px); background: var(--cream); }
+@media (max-width: 40em) { .pmap__inset { position: static; width: 70%; margin: .75rem auto 0; } }
+.pmap__dot { cursor: pointer; outline: none; }
+.pmap__dot circle { fill: var(--green); fill-opacity: .78; stroke: var(--white); transition: fill .2s ease, fill-opacity .2s ease, transform .25s ease; transform-box: fill-box; transform-origin: center; }
+.pmap__dot text { fill: var(--white); font-family: var(--display); font-weight: 700; text-anchor: middle; pointer-events: none; }
+.pmap__dot:hover circle, .pmap__dot:focus-visible circle, .pmap__dot.is-hot circle { fill: var(--soil); fill-opacity: 1; transform: scale(1.18); }
+.pmap__dot:focus-visible circle { stroke: var(--soil); stroke-width: 3; }
+.pmap.has-pick .pmap__dot[aria-pressed="false"] circle { fill-opacity: .35; }
+.pmap__dot[aria-pressed="true"] circle { fill: var(--soil); fill-opacity: 1; }
+.pmap figcaption { margin-top: .75rem; font-size: .875rem; color: var(--ink-soft); text-align: center; }
+@media (prefers-reduced-motion: reduce) { .pmap__dot circle { transition: none; } }
