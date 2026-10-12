@@ -536,10 +536,9 @@ def lens(inner, src, k, cx=1300, cy=500, R=420, spot=None, bg=SOIL_R):
 
 def lens_scene(plant_svg, px, inner, src, k, soil_y=760, sky=SKY_C):
     b = ground(soil_y, sky, 61)
-    b += halo(px, soil_y - 200, 420, "haloG" if sky == SKY_C else "halo")
-    b += plant_svg
     b += roots_fan(px, soil_y, [[(px - 10, soil_y + 120), (px + 10, soil_y + 260)], [(px + 60, soil_y + 90), (px + 120, soil_y + 200)],
                                 [(px - 60, soil_y + 100), (px - 120, soil_y + 190)]], 22)
+    b += plant_svg
     b += lens(inner, src, k * 360 / 400, 1320, 450, 360, spot=(px, soil_y + 150, 70))
     return b
 
@@ -615,27 +614,39 @@ def scene_food_web(opt):
 
 
 def scene_nutrient(opt):
+    """The nutrient cycle around a root tip, clockwise: root releases sugars (top) -> bacteria multiply (right)
+    -> a protozoan and a nematode eat the bacteria (bottom) -> nutrients flow back into the root (left)."""
     if opt == "B":
-        return lens_scene(lettuce(430, 764, 1.0), 430, scene_nutrient("A"), (1100, 520), .58)
-    """A: soil field, amoeba eating bacteria next to a root hair. B: lettuce above, the same loop below."""
-    if opt == "A":
-        b = halo(1340, 560, 700) + speckles(0, 0, W, H, 140, 11)
-        rp = curve([(-60, 120), (300, 170), (620, 290), (880, 470)])
-        cy = 560
-    else:
-        b = ground(330, CREAM, 11)
-        rp = curve([(420, 330), (520, 470), (700, 560), (900, 640)])
-        cy = 720
-        b += lettuce(420, 334, 1.0)
-    b += hairs(rp, 100, 60, 6, 60, 12)
-    b += tube(rp, 100, 60)
-    cx = 1340
-    b += ciliate(cx, cy, 700 if opt == "A" else 560, 20)
-    b += bacteria_cloud(1380, cy + 40, 520, 380 if opt == "A" else 300, 22, 13, 1.3,
-                        avoid=lambda x, y: math.hypot((x - cx) / 330, (y - cy) / 240) < 1 or y < (0 if opt == "A" else 360) or (x > 1500 and y < 300))
-    for x, y in ([(1040, 600), (980, 545), (920, 505), (1090, 660)] if opt == "A" else [(1080, 760), (1020, 710), (960, 670), (1130, 810)]):
+        return lens_scene(lettuce(430, 740, 1.0), 430, scene_nutrient("A"), (1320, 520), .55)
+    cx, cy, R = 1320, 500, 320
+    b = speckles(0, 0, W, H, 140, 11)
+    # root from the top edge, tip at the top of the loop
+    rp = curve([(1310, -40), (1320, 60), (1315, 120), (1320, 180)])
+    b += hairs(rp, 120, 80, 6, 55, 12)
+    b += tube(rp, 120, 80)
+    for x, y in [(1285, 230), (1355, 240), (1320, 272), (1265, 272), (1375, 280)]:
+        b += sugar_dot(x, y, 13)
+
+    def arc(a0, a1):
+        pts = [(cx + R * math.cos(math.radians(t)), cy + R * math.sin(math.radians(t)))
+               for t in [a0 + (a1 - a0) * i / 12 for i in range(13)]]
+        return arrow(pts, w=16)
+
+    # four clockwise arcs, gaps at the four stations (angles: 0 right, 90 bottom, 180 left, 270 top)
+    b += arc(-62, -24) + arc(24, 62) + arc(118, 156) + arc(204, 242)
+    # right: bacteria multiply
+    r = random.Random(14)
+    for _ in range(16):
+        a, d = r.random() * 2 * math.pi, math.sqrt(r.random())
+        b += bacterium(cx + R + math.cos(a) * 120 * d, cy + math.sin(a) * 120 * d, r.randint(0, 179), 1.45)
+    # bottom: a protozoan and a nematode eat bacteria
+    b += ciliate(cx - 70, cy + R - 20, 300, 15)
+    b += nematode([(cx + 80, cy + R + 90), (cx + 130, cy + R + 20), (cx + 200, cy + R + 50), (cx + 260, cy + R - 20)], 38, 15)
+    for x, y, ang in [(cx + 300, cy + R - 40, 30), (cx + 320, cy + R + 10, 80)]:
+        b += bacterium(x, y, ang, 1.3)
+    # left: nutrients released, flowing back to the root
+    for x, y in [(cx - R - 40, cy + 40), (cx - R + 30, cy - 20), (cx - R - 30, cy - 70), (cx - R + 50, cy + 70), (cx - R - 70, cy - 10)]:
         b += glow_dot(x, y, 17)
-    b += arrow([(1090, 700), (990, 610), (930, 550)] if opt == "A" else [(1120, 850), (1030, 760), (960, 700)], w=14)
     return b
 
 
