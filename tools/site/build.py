@@ -205,6 +205,7 @@ NAV = [
         ("Community Map", "/community/#community-map"),
         ("News & Blog", "/news/"),
         ("Calendar", "/calendar/"),
+        ("Volunteer", "/volunteer/"),
         ("Join the Community", "https://school.soilfoodweb.com/products/communities/SFW-public-community"),
     ]),
 ]

@@ -1536,6 +1536,8 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .band--stats .todo { color: var(--ink); }
 .band--goal h2 { text-align: center; max-width: 40rem; margin-inline: auto; font-size: clamp(1.4rem, 1rem + 1.4vw, 2rem); }
 /* Home: a slow row of student micrographs. Pauses on hover; still for reduced motion. */
+
+/* Brought from beautify-v1 (12 October 2026): parts Linnea approved. */
 .marquee-band { overflow: hidden; }
 .marquee-band h2 { max-width: 26ch; }
 .marquee { overflow: hidden; margin-top: 2rem; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
@@ -1549,8 +1551,9 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 @media (prefers-reduced-motion: reduce) { .marquee { overflow-x: auto; } .marquee__track { animation: none; } }
 .marquee-band { background: var(--cream) url("/img/contour-lines.svg") center / 1400px auto no-repeat; }
 /* Micrographs framed like an eyepiece: a ring of tick marks around each circle. */
-.marquee__track picture { position: relative; display: block; width: 100%; }
-.marquee__track picture::after {
+.marquee__track picture, .web__node picture, .micro-row picture, .hero-art__lens picture { position: relative; display: block; width: 100%; }
+.web__node picture, .micro-row picture { width: auto; }
+.marquee__track picture::after, .web__node picture::after, .micro-row picture::after, .hero-art__lens picture::after {
   content: ""; position: absolute; inset: -9px; border-radius: 50%; pointer-events: none;
   background: repeating-conic-gradient(from 0deg, currentColor 0 .7deg, transparent .7deg 7.5deg);
   -webkit-mask: radial-gradient(circle closest-side, transparent calc(100% - 7px), #000 calc(100% - 6px), #000 calc(100% - 1px), transparent 100%);
@@ -1610,3 +1613,71 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .micro-row--cut li:nth-child(4n+3) img { clip-path: polygon(4% 10%, 22% 0, 38% 8%, 56% 4%, 70% 16%, 90% 10%, 100% 30%, 92% 50%, 100% 70%, 86% 92%, 66% 86%, 50% 98%, 30% 92%, 12% 100%, 2% 80%, 10% 60%, 0 40%, 8% 24%); }
 .micro-row--cut li:nth-child(4n) img { clip-path: polygon(10% 2%, 30% 10%, 46% 2%, 64% 8%, 82% 0, 98% 14%, 90% 34%, 100% 52%, 94% 72%, 100% 92%, 78% 96%, 62% 88%, 44% 100%, 24% 92%, 8% 98%, 0 76%, 6% 56%, 0 34%); }
 .micro-row--purple { background: var(--legacy-purple); }
+.marquee__track li, .hero-art__lens { color: var(--soil); }
+.web__node, .micro-row li { color: var(--white); }
+.marquee__track li { position: relative; }
+.marquee__track li::before { content: "40\00D7"; position: absolute; top: .2rem; right: .1rem; z-index: 1; font: 700 .6875rem/1 var(--display); letter-spacing: .04em; background: var(--white); color: var(--soil); padding: .25rem .4rem; border-radius: 999px; box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+/* Home: a slow ribbon of workshop and lab photos, drifting the other way from the micrograph row. */
+.ribbon { overflow: hidden; padding-block: 0 clamp(3rem, 2rem + 3vw, 5rem); background: var(--white); }
+.ribbon__track { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: clamp(.75rem, 1.5vw, 1.25rem); width: max-content; animation: ribbon 90s linear infinite; }
+.ribbon:hover .ribbon__track { animation-play-state: paused; }
+.ribbon__item img { display: block; height: clamp(11rem, 8rem + 8vw, 16rem); width: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+.ribbon__item--tall img { aspect-ratio: 3 / 4; }
+.ribbon__item--wide img { aspect-ratio: 16 / 9; }
+.ribbon__item:nth-child(even) { transform: translateY(1.25rem); }
+@keyframes ribbon { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) { .ribbon { overflow-x: auto; } .ribbon__track { animation: none; } }
+
+
+/* About timeline: a hypha grows down the line as you scroll; each year turns green when it is reached. */
+.timeline::before { border-left-color: rgba(79, 52, 51, .18); }
+.timeline::after { content: ""; position: absolute; left: calc(.5rem - 11px); top: 0; bottom: 0; width: 24px; background: url("/img/hypha-v.svg") top center / 24px 160px repeat-y; clip-path: inset(0 0 calc((1 - var(--grow, 1)) * 100%) 0); pointer-events: none; }
+.timeline li::before { z-index: 1; transition: background-color .4s ease, transform .4s ease; }
+.js-grow .timeline li:not(.is-reached)::before { border-color: rgba(79, 52, 51, .35); }
+.timeline li.is-reached::before { background: var(--green); transform: scale(1.15); }
+@media (prefers-reduced-motion: reduce) { .timeline::after { clip-path: none; } }
+@media (min-width: 56em)  { .timeline::after { left: calc(50% - 11px); } }
+/* About: the Messaging House drawn as a temple. Pediment = the core idea, four fluted columns = the pillars, steps = the foundation. */
+.temple { max-width: 62rem; margin-inline: auto; display: grid; justify-items: center; }
+.temple__roof { width: 100%; clip-path: polygon(50% 0, 100% 100%, 0 100%); background: var(--soil); color: var(--white); text-align: center; padding: clamp(3.5rem, 2rem + 6vw, 7rem) 18% clamp(1.25rem, 1rem + 1vw, 2rem); }
+.temple__roof .eyebrow { color: #e9dcd3; margin: 0 0 .4rem; }
+.temple__roof h2 { color: var(--white); margin: 0; font-size: clamp(1.2rem, .8rem + 1.8vw, 2.25rem); }
+.temple__beam { width: 100%; height: clamp(.9rem, .6rem + .8vw, 1.4rem); background: var(--soil); border-top: 3px solid var(--cream); box-shadow: inset 0 -3px 0 rgba(255,255,255,.12); }
+.temple__cols { list-style: none; margin: 0; padding: 0 4%; width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(.75rem, 3vw, 2.5rem); }
+.temple__cols li { margin: 0; position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(1.6rem, 1rem + 2vw, 2.6rem) clamp(.6rem, .4rem + .8vw, 1.2rem) clamp(1.8rem, 1rem + 2vw, 3rem); min-height: clamp(16rem, 12rem + 10vw, 22rem);
+  background: repeating-linear-gradient(90deg, var(--white) 0 14%, #ece6dc 14% 16%); border-inline: 1px solid #e2dacd; }
+.temple__cols li::before, .temple__cols li::after { content: ""; position: absolute; left: -10%; right: -10%; height: .9rem; background: var(--white); border: 1px solid #ddd3c4; border-radius: 3px; }
+.temple__cols li::before { top: -.1rem; }   /* capital */
+.temple__cols li::after { bottom: -.1rem; } /* column base */
+.temple__name { font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: clamp(.8rem, .7rem + .5vw, 1.05rem); color: var(--green); background: var(--white); padding: .3rem .55rem; border-radius: 999px; margin-bottom: .9rem; }
+.temple__cols p { margin: 0; font-size: clamp(.875rem, .8rem + .3vw, 1.0625rem); line-height: 1.45; color: var(--soil); background: rgba(255,255,255,.88); padding: .5rem .4rem; border-radius: var(--radius); }
+.temple__base { width: 100%; display: grid; justify-items: center; }
+.temple__base p { margin: 0; width: 104%; background: var(--soil); color: var(--white); text-align: center; font-family: var(--display); font-weight: 600; font-size: clamp(.8rem, .7rem + .4vw, 1rem); padding: .85rem 1rem; box-shadow: 0 .55rem 0 -.1rem #6b4f4d, 0 1.1rem 0 -.2rem #8a706d; margin-bottom: 1.1rem; }
+/* The temple rises as it comes into view: roof settles, columns lift one after another. */
+.js-rise .temple:not(.is-in) .temple__roof, .js-rise .temple:not(.is-in) .temple__beam { transform: translateY(-1.5rem); opacity: 0; }
+.js-rise .temple:not(.is-in) .temple__cols li { transform: translateY(2.5rem); opacity: 0; }
+.temple__roof, .temple__beam, .temple__cols li { transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .8s ease; }
+.temple__cols li:nth-child(2) { transition-delay: .1s; } .temple__cols li:nth-child(3) { transition-delay: .2s; } .temple__cols li:nth-child(4) { transition-delay: .3s; }
+.temple__roof, .temple__beam { transition-delay: .45s; }
+@media (max-width: 40em) {
+  .temple__roof { padding-inline: 12%; }
+  .temple__cols { grid-template-columns: repeat(2, 1fr); row-gap: 1.6rem; }
+  .temple__cols li { min-height: 13rem; }
+}
+@media (prefers-reduced-motion: reduce) { .temple__roof, .temple__beam, .temple__cols li { transition: none; } }
+.temple__cols li { background:
+    repeating-linear-gradient(90deg, transparent 0 calc(12.5% - 1px), rgba(79,52,51,.07) calc(12.5% - 1px) 12.5%),
+    linear-gradient(90deg, #e8e1d5 0%, #fff 28%, #fff 62%, #e4dccf 100%); }
+.temple__cols p { background: none; padding: .25rem .2rem; }
+.temple__name { background: none; padding: 0; }
+@media (max-width: 40em) { .temple__roof { padding: 5.5rem 16% 1rem; } .temple__roof h2 { font-size: 1.1rem; } .temple__roof .eyebrow { font-size: .7rem; } }
+/* Choose your path: chips fill with green from the left and grow an arrow; hovering one previews its programs. */
+[data-filter] .chips .chip { background-image: linear-gradient(var(--green), var(--green)); background-repeat: no-repeat; background-position: left center; background-size: 0% 100%; transition: background-size .35s ease, color .2s ease; }
+[data-filter] .chips .chip::after { content: "\2192"; display: inline-block; max-width: 0; opacity: 0; overflow: hidden; vertical-align: bottom; transition: max-width .3s ease, opacity .3s ease, margin .3s ease; }
+[data-filter] .chips .chip:hover, [data-filter] .chips .chip:focus-visible { background-size: 100% 100%; color: var(--white); }
+[data-filter] .chips .chip:hover::after, [data-filter] .chips .chip:focus-visible::after { max-width: 1.2em; opacity: 1; margin-left: .4em; }
+[data-filter] .chips .chip[aria-pressed="true"]::after { content: none; }
+[data-filter] [data-item] { transition: opacity .3s ease, filter .3s ease, transform .3s ease; }
+[data-filter].is-previewing [data-item]:not(.is-match) { opacity: .28; filter: grayscale(1); }
+[data-filter].is-previewing [data-item].is-match { transform: translateY(-.5rem); }
+@media (prefers-reduced-motion: reduce) { [data-filter] .chips .chip, [data-filter] .chips .chip::after, [data-filter] [data-item] { transition: none; } [data-filter].is-previewing [data-item].is-match { transform: none; } }

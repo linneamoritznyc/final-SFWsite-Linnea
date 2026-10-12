@@ -107,6 +107,21 @@
         apply();
       });
     });
+    // Hover or focus a path chip: the matching programs lift, the rest step back.
+    function preview(key) {
+      root.classList.toggle("is-previewing", !!key);
+      Array.prototype.forEach.call(items, function (it) {
+        it.classList.toggle("is-match", !!key && (" " + it.getAttribute("data-group") + " ").indexOf(" " + key + " ") > -1);
+      });
+    }
+    Array.prototype.forEach.call(chips, function (c) {
+      var key = c.getAttribute("data-chip");
+      if (key === "all") return;
+      function on() { if (c.getAttribute("aria-pressed") !== "true") preview(key); }
+      function off() { preview(""); }
+      c.addEventListener("mouseenter", on); c.addEventListener("focus", on);
+      c.addEventListener("mouseleave", off); c.addEventListener("blur", off); c.addEventListener("click", off);
+    });
     if (q) q.addEventListener("input", function () { state.q = q.value.trim().toLowerCase(); apply(); });
     if (topic) topic.addEventListener("change", function () { state.topic = topic.value; apply(); });
     var form = root.querySelector("form");
@@ -411,4 +426,39 @@
     });
     svg.addEventListener("mouseleave", function () { on(null); });
   });
+})();
+
+/* About timeline: grow the hypha line and mark each year as the reader reaches it. */
+(function () {
+  "use strict";
+  var lines = document.querySelectorAll(".timeline");
+  if (!lines.length || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+  document.documentElement.classList.add("js-grow");
+  function draw() {
+    var mark = window.innerHeight * 0.62;
+    Array.prototype.forEach.call(lines, function (tl) {
+      var r = tl.getBoundingClientRect();
+      tl.style.setProperty("--grow", String(Math.max(0, Math.min(1, (mark - r.top) / r.height))));
+      Array.prototype.forEach.call(tl.children, function (li) {
+        li.classList.toggle("is-reached", li.getBoundingClientRect().top + 12 < mark);
+      });
+    });
+  }
+  var ticking = false;
+  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; draw(); }); } }, { passive: true });
+  window.addEventListener("resize", draw);
+  draw();
+})();
+
+/* Things that rise into place once, when they first come into view. */
+(function () {
+  "use strict";
+  var els = document.querySelectorAll("[data-rise]");
+  if (!els.length || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.documentElement.classList.add("js-rise");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+  }, { threshold: 0.25 });
+  Array.prototype.forEach.call(els, function (el) { io.observe(el); });
 })();
