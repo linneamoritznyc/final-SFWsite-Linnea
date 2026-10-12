@@ -1787,3 +1787,9 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .scroller .card--link:hover .card__img, .scroller .card--link:focus-within .card__img { transform: scale(1.04); }
 .scroller .card--link:hover .more::after, .scroller .card--link:focus-within .more::after { transform: translateX(.3em); }
 @media (prefers-reduced-motion: reduce) { .scroller .card--link, .scroller .card--link .card__img, .scroller .card--link .more::after { transition: none; } }
+/* Home hero on damp topsoil (a real compost close-up), darkened behind the words (approved from preview collage-v1). */
+.hero--soil { position: relative; overflow: hidden; background: #1C140E url("/img/new/r5a-3966-1499w.webp") center / cover; color: #efe8dd; isolation: isolate; }
+.hero--soil::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(28,20,14,.94) 0 42%, rgba(28,20,14,.78) 70%, rgba(28,20,14,.6)); z-index: -1; }
+.hero--soil h1, .hero--soil .subhead { color: #fbf7f0; }
+.hero--soil .eyebrow { color: #9fd0ab; }
+.hero--soil p { color: #e7dfd3; }
