@@ -1681,3 +1681,4 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 [data-filter].is-previewing [data-item]:not(.is-match) { opacity: .28; filter: grayscale(1); }
 [data-filter].is-previewing [data-item].is-match { transform: translateY(-.5rem); }
 @media (prefers-reduced-motion: reduce) { [data-filter] .chips .chip, [data-filter] .chips .chip::after, [data-filter] [data-item] { transition: none; } [data-filter].is-previewing [data-item].is-match { transform: none; } }
+.marquee-band + .band { padding-top: var(--band-y); }
