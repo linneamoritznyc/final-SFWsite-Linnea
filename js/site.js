@@ -378,6 +378,17 @@
     });
   });
   if (sel) sel.addEventListener("change", function () { year = sel.value; apply(); });
+  // map pins: pick that country's chip, then scroll to the list
+  root.querySelectorAll("[data-sfw-pin]").forEach(function (p) {
+    p.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      var c = root.querySelector('[data-sfw-country="' + p.dataset.sfwPin + '"]');
+      if (c) c.click();
+      root.querySelectorAll("[data-sfw-pin]").forEach(function (x) { x.classList.toggle("is-on", x === p); });
+      var t = document.getElementById("workshop-list"); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+  chips.forEach(function (b) { b.addEventListener("click", function () { root.querySelectorAll("[data-sfw-pin]").forEach(function (x) { x.classList.toggle("is-on", x.dataset.sfwPin === b.dataset.sfwCountry); }); }); });
 })();
 
 // Workshop photo galleries: open a photo larger, arrows move, Escape closes.

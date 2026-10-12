@@ -1681,12 +1681,12 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 [data-filter].is-previewing [data-item]:not(.is-match) { opacity: .28; filter: grayscale(1); }
 [data-filter].is-previewing [data-item].is-match { transform: translateY(-.5rem); }
 @media (prefers-reduced-motion: reduce) { [data-filter] .chips .chip, [data-filter] .chips .chip::after, [data-filter] [data-item] { transition: none; } [data-filter].is-previewing [data-item].is-match { transform: none; } }
-.marquee-band + .band { padding-top: var(--band-y); }
+.marquee-band + .band { padding-top: var(--band-y) !important; }
 /* Home, Who we are: linen paper with a faint 1883 root-hair lithograph behind the words.
    Plate: Schwarz, "Die Wurzelhaare der Pflanzen" (1883), public domain (Wikimedia Commons, Biodiversity Heritage Library); ink lifted from the paper. */
 .band--linen { position: relative; overflow: hidden; isolation: isolate; background: #F2ECE1 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .2  0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 .linen__plate { position: absolute; left: -6rem; top: -2rem; width: min(46rem, 80vw); height: auto; opacity: .1; z-index: -1; pointer-events: none; }
-.band--linen + .band { padding-top: var(--band-y); }
+.band--linen + .band { padding-top: var(--band-y) !important; }
 /* Publications, research map: a force-directed web of papers, topics and colleagues. */
 .rm { --f0: #156826; --f1: #A8562F; --f2: #2F6F8F; --f3: #7A6A1E; --f4: #6B4C7A; }
 .rm-bar { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; align-items: center; margin-bottom: .75rem; }
@@ -1744,4 +1744,20 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .rm-svg .n--person text { opacity: 0; transition: opacity .2s; }
 .rm-svg .n--person.is-hot text, .rm-svg .n--person.is-sel text, .rm-svg .n--person:focus-visible text { opacity: 1; }
 .rm-svg.is-focus .n--topic:not(.is-hot) text { opacity: 0; }
-.band + .marquee-band { padding-top: var(--band-y); }
+.band + .marquee-band { padding-top: var(--band-y) !important; }
+/* Workshops: a see-through world map, the land filled with soil, a pin per country. */
+.ws-map { position: relative; margin: 1.5rem 0 2.5rem; }
+.ws-map__land { position: relative; aspect-ratio: 1000 / 394; background: #3b2a1f url("/img/new/r5a-3966-1499w.webp") center / cover; -webkit-mask: url("/img/world-land.svg") center / 100% 100% no-repeat; mask: url("/img/world-land.svg") center / 100% 100% no-repeat; }
+.ws-map__borders { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .55; }
+.ws-map__pins { list-style: none; margin: 0; padding: 0; position: absolute; inset: 0 0 auto; aspect-ratio: 1000 / 394; }
+.ws-map__pins li { position: absolute; transform: translate(-50%, -100%); }
+.ws-pin { display: block; position: relative; text-decoration: none; }
+.ws-pin__dot { display: block; width: 1.6rem; height: 1.6rem; background: var(--green); border: 3px solid var(--white); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 3px 8px rgba(0,0,0,.35); transition: transform .2s, background .2s; }
+.ws-pin__label { position: absolute; bottom: calc(100% + .5rem); left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--white); color: var(--soil); font-family: var(--display); font-size: .8125rem; font-weight: 600; padding: .35rem .6rem; border-radius: var(--radius-sm); box-shadow: 0 4px 14px rgba(0,0,0,.18); opacity: 0; pointer-events: none; transition: opacity .2s; }
+.ws-pin__label b { display: block; font-weight: 500; color: var(--ink-soft); font-size: .75rem; }
+.ws-pin:hover .ws-pin__dot, .ws-pin:focus-visible .ws-pin__dot, .ws-pin.is-on .ws-pin__dot { background: var(--soil); transform: rotate(-45deg) scale(1.15); }
+.ws-pin:hover .ws-pin__label, .ws-pin:focus-visible .ws-pin__label, .ws-pin.is-on .ws-pin__label { opacity: 1; }
+.ws-map figcaption { margin-top: .75rem; font-size: .875rem; color: var(--ink-soft); }
+@media (max-width: 47.99em) { .ws-pin__dot { width: 1.1rem; height: 1.1rem; border-width: 2px; } .ws-pin__label { font-size: .75rem; } }
+.ws-map__pins li:hover, .ws-map__pins li:focus-within { z-index: 5; }
+.ws-map__land { background: #3b2a1f url("/img/soil-texture.webp") 0 0 / 14% auto repeat; }
