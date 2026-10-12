@@ -543,6 +543,148 @@ def lens_scene(plant_svg, px, inner, src, k, soil_y=760, sky=SKY_C):
     return b
 
 
+# ---------- option D: the SFW wave layout, poor soil (left, cream) vs living soil (right, green wave) ----------
+WAVE = "M940 0 C860 260 1120 420 1010 700 C940 880 990 980 960 1080 L1920 1080 L1920 0 Z"
+
+
+def sprout(x, y, s=1.0, wilt=False, n=3):
+    """A small plant: stem with paired leaves; drooping and ochre when wilt."""
+    lc = dict(light=WILT_LIGHT, dark=WILT_DARK, vein=WILT_VEIN) if wilt else {}
+    h = 260 * s
+    out = stem([(x, y), (x + (14 if wilt else 4) * s, y - h * .6), (x + (40 if wilt else 0) * s, y - h)], 14 * s, 8 * s,
+               col="#C9A75E" if wilt else "#6FA77A")
+    for k in range(n):
+        fy = .35 + .25 * k
+        bx, by = x + (40 if wilt else 0) * s * fy ** 2, y - h * fy
+        for side in (-1, 1):
+            droop = 90 if wilt else -40
+            ln = (120 - 20 * k) * s
+            pts = [(bx, by), (bx + side * ln * .5, by + droop * .2 * s - 20 * s), (bx + side * ln, by + droop * .6 * s)]
+            out += leaf_on(curve(pts, 16), 34 * s, **lc)
+    return out
+
+
+def compacted(x0, x1, soil_y, seed):
+    """Pale, compacted, layered soil: flat grey-tan bands, few pores, no life."""
+    b = '<rect x="%d" y="%d" width="%d" height="%d" fill="#C9B79C"/>' % (x0, soil_y, x1 - x0, H - soil_y)
+    r = random.Random(seed)
+    for k, yy in enumerate(range(soil_y + 50, H, 70)):
+        b += '<path d="M%d %d C%d %d %d %d %d %d" stroke="#AE9B80" stroke-width="10" fill="none"/>' % (
+            x0, yy, x0 + 300, yy - 12, x1 - 300, yy + 12, x1, yy)
+    for _ in range(18):
+        b += '<ellipse cx="%d" cy="%d" rx="%d" ry="%d" fill="#B9A688"/>' % (
+            r.uniform(x0, x1), r.uniform(soil_y + 20, H), r.randint(10, 26), r.randint(5, 10))
+    return b
+
+
+def wave_scene(poor, rich, soil_y=700, sky_left=SKY_C):
+    """poor/rich: SVG strings drawn in full-frame coords; rich is clipped to the wave."""
+    b = '<rect width="%d" height="%d" fill="%s"/>' % (W, H, sky_left)
+    b += compacted(0, W, soil_y, 71)
+    b += '<rect y="%d" width="%d" height="10" fill="#B3A083"/>' % (soil_y, W)
+    b += poor
+    b += '<defs><clipPath id="wave"><path d="%s"/></clipPath></defs>' % WAVE
+    rb = '<rect width="%d" height="%d" fill="%s"/>' % (W, soil_y, SKY_G)
+    rb += tufts(900, W, soil_y, 72, "#9BD27A", .3)
+    rb += '<rect y="%d" width="%d" height="%d" fill="%s"/>' % (soil_y, W, H - soil_y, SOIL)
+    rb += speckles(900, soil_y, W - 900, H - soil_y, 40, 73)
+    rb += '<rect y="%d" width="%d" height="12" fill="#6E504A"/>' % (soil_y, W)
+    b += '<g clip-path="url(#wave)">%s%s</g>' % (rb, rich)
+    b += '<path d="%s" fill="none" stroke="#F4F1EA" stroke-width="10"/>' % WAVE.split(" L1920")[0]
+    return b
+
+
+def scene_wave(slug):
+    sy = 700
+    poor = sprout(480, sy + 4, 1.0, wilt=True)
+    poor += roots_fan(480, sy, [[(470, sy + 70), (450, sy + 120)], [(500, sy + 60), (540, sy + 100)]], 12)
+    if slug == "what-is-the-soil-food-web":
+        rich = roots_fan(1450, sy, [[(1440, sy + 160), (1460, sy + 330)], [(1520, sy + 120), (1620, sy + 260)], [(1380, sy + 120), (1290, sy + 250)]], 26)
+        rich += hypha([(1100, 1000), (1290, 930), (1450, 880), (1650, 940), (1900, 900)], 81, w=6, branches=8, blen=90)
+        rich += bacteria_cloud(1460, 860, 160, 70, 14, 82, 1.1)
+        rich += ciliate(1200, 870, 210, -20)
+        rich += nematode([(1620, 1030), (1680, 980), (1750, 1000), (1810, 950)], 30, 83)
+        rich += bean(1450, sy + 4, 1.05)
+    elif slug == "nutrient-cycling":
+        poor = lettuce(480, sy + 4, .6).replace(LEAF_LIGHT, WILT_LIGHT).replace(LEAF_DARK, WILT_DARK).replace("#EAF4D8", WILT_LIGHT).replace("#A9CF7A", WILT_DARK)
+        rich = roots_fan(1450, sy, [[(1440, sy + 140), (1450, sy + 260)], [(1500, sy + 100), (1560, sy + 200)], [(1400, sy + 100), (1340, sy + 200)]], 24)
+        cx, cy, R = 1450, 870, 115
+        for a0, a1 in [(-62, -24), (24, 62), (118, 156), (204, 242)]:
+            b_pts = [(cx + R * math.cos(math.radians(a0 + (a1 - a0) * i / 10)), cy + R * math.sin(math.radians(a0 + (a1 - a0) * i / 10))) for i in range(11)]
+            rich += arrow(b_pts, w=10)
+        for k in range(8):
+            rich += bacterium(cx + R + 30 + (k % 3) * 30 - 30, cy - 40 + (k // 3) * 34, 30 * k, 1.0)
+        rich += ciliate(cx - 10, cy + R + 5, 130, 10)
+        for x, y in [(cx - R - 20, cy), (cx - R + 20, cy - 30), (cx - R - 10, cy + 40)]:
+            rich += glow_dot(x, y, 12)
+        rich += lettuce(1450, sy + 4, 1.0)
+    elif slug == "formation-of-structure":
+        poor += '<ellipse cx="560" cy="%d" rx="160" ry="16" fill="#9CC3D6" stroke="#5E8FA8" stroke-width="4"/>' % (sy - 2)
+        rich = ""
+        r = random.Random(84)
+        for k in range(14):
+            rich += crumb(1050 + (k % 7) * 130 + r.uniform(-20, 20), sy + 110 + (k // 7) * 170 + r.uniform(-20, 20), 70, 58, 90 + k)
+        rich += roots_fan(1450, sy, [[(1440, sy + 160), (1460, sy + 330)], [(1520, sy + 120), (1620, sy + 260)], [(1380, sy + 120), (1290, sy + 250)]], 24)
+        rich += hypha([(1000, 860), (1200, 820), (1450, 900), (1700, 860), (1950, 900)], 85, w=6, branches=8, blen=90)
+        rich += sprout(1450, sy + 4, 1.5)
+    elif slug == "weed-suppression":
+        poor = grass(330, sy + 4, .7, 7, seed=3) + dandelion(560, sy + 4, .7) + bacteria_cloud(600, 860, 220, 110, 16, 86, 1.2)
+        rich = roots_fan(1450, sy, [[(1440, sy + 160), (1460, sy + 380)], [(1530, sy + 120), (1640, sy + 300)], [(1360, sy + 120), (1260, sy + 300)]], 28)
+        rich += hypha([(1080, 1060), (1260, 960), (1450, 900), (1650, 960), (1940, 920)], 87, w=6, branches=10, blen=100)
+        rich += hypha([(1100, 780), (1300, 820), (1500, 1000), (1940, 1060)], 88, w=6, branches=8, blen=90)
+        rich += corn(1450, sy + 6, 560, .95)
+        rich += dandelion(1150, sy + 4, .35, wilt=True)
+    elif slug == "inhibiting-pests-and-diseases":
+        for x, y in [(380, 860), (560, 940), (470, 1010), (640, 820)]:
+            poor += pathogen(x, y, 26)
+        rich = roots_fan(1450, sy, [[(1440, sy + 160), (1460, sy + 330)], [(1520, sy + 120), (1620, sy + 260)], [(1380, sy + 120), (1290, sy + 250)]], 26)
+        rp = curve([(1450, sy), (1440, sy + 160), (1460, sy + 330)])
+        rich += bacteria_along(rp, 26, 30, 89, .9, spread=14)
+        rich += hypha([(1100, 1000), (1290, 930), (1450, 880), (1650, 940), (1900, 900)], 90, w=6, branches=8, blen=90)
+        rich += tomato(1450, sy + 4, 1.0)
+    else:  # sequestering-carbon
+        poor = '<rect x="0" y="%d" width="960" height="40" fill="#B9A688"/>' % (sy - 30)
+        for x in (300, 520, 740):
+            poor += arrow([(x, sy - 20), (x - 10, sy - 160), (x + 10, sy - 300)], col="#C9B79C", w=12)
+        rich = roots_fan(1450, sy, [[(1440, sy + 160), (1460, sy + 330)], [(1520, sy + 120), (1620, sy + 260)], [(1380, sy + 120), (1290, sy + 250)]], 30)
+        rich += hypha([(1450, 900), (1600, 920), (1750, 960), (1900, 980)], 91, w=7, branches=6, blen=80)
+        for cx_, cy_, rx, ry, sd in [(1760, 960, 110, 85, 92), (1880, 820, 80, 65, 93)]:
+            rich += crumb(cx_, cy_, rx, ry, sd, fill="#2E2420", line="#17110E", grains=False)
+        rich += oak(1450, sy + 6, 380, .85)
+        rich += arrow([(1530, 300), (1460, 420), (1450, 760), (1470, 900), (1640, 930)], w=14)
+    return wave_scene(poor, rich, sy)
+
+
+def scene_weed_closeup(opt):
+    """Close-up: a young seedling's root wrapped in a mycorrhizal fungal net, on Soil Brown."""
+    b = speckles(0, 0, W, H, 140, 95)
+    rp = curve([(1330, 300), (1320, 520), (1340, 760), (1320, 1120)])
+    side = [curve([(1325, 520), (1460, 620), (1560, 760)]), curve([(1335, 680), (1200, 800), (1120, 940)]), curve([(1330, 860), (1480, 960), (1560, 1100)])]
+    for k in range(7):
+        y0 = 420 + k * 95
+        sd = 1 if k % 2 else -1
+        b += hypha([(1330, y0), (1330 + sd * 160, y0 - 30), (1330 + sd * 330, y0 + 20), (1330 + sd * 520, y0 - 10)], 96 + k, w=5, branches=6, blen=100)
+    for sp in side:
+        b += tube(sp, 34, 14, fill="#E2CFA6", line="#A88B66")
+    b += tube(rp, 70, 34, fill="#E2CFA6", line="#A88B66")
+    # the net wrapping the root
+    r = random.Random(97)
+    for i in range(0, len(rp) - 8, 3):
+        (x0, y0), (x1, y1) = rp[i], rp[i + 6]
+        b += '<path d="M%.0f %.0f Q%.0f %.0f %.0f %.0f" stroke="%s" stroke-width="4" fill="none" opacity=".95"/>' % (
+            x0 - 40, y0, x0 + r.uniform(-10, 10), (y0 + y1) / 2 + 20, x1 + 40, y1, "#FFFFFF")
+        b += '<path d="M%.0f %.0f Q%.0f %.0f %.0f %.0f" stroke="%s" stroke-width="4" fill="none" opacity=".95"/>' % (
+            x0 + 40, y0, x0 + r.uniform(-10, 10), (y0 + y1) / 2 + 20, x1 - 40, y1, "#FFFFFF")
+    # seedling above the soil cut
+    b += '<rect width="%d" height="300" fill="%s"/>' % (W, SKY_G)
+    b += tufts(-20, W, 300, 98, "#9BD27A", .3)
+    b += '<rect y="300" width="%d" height="12" fill="#6E504A"/>' % W
+    for side_ in (-1, 1):
+        b += leaf_on(curve([(1330, 230), (1330 + side_ * 110, 150), (1330 + side_ * 230, 170)], 20), 70, kind="ovate")
+    b += stem([(1330, 304), (1330, 230)], 18, 14)
+    return b
+
+
 def roots_fan(x, y, spec, w=22, seed=1):
     out = ""
     for pts in spec:
@@ -765,8 +907,8 @@ def render(svg_path, png_path):
 
 
 OPTIONS = {
-    "what-is-the-soil-food-web": "AB", "nutrient-cycling": "AB", "formation-of-structure": "AB",
-    "weed-suppression": "ABC", "inhibiting-pests-and-diseases": "ABC", "sequestering-carbon": "AB",
+    "what-is-the-soil-food-web": "ABD", "nutrient-cycling": "ABD", "formation-of-structure": "ABD",
+    "weed-suppression": "ABCDE", "inhibiting-pests-and-diseases": "ABCD", "sequestering-carbon": "ABD",
 }
 
 
@@ -776,7 +918,8 @@ def main(slugs, opts=None):
         for o in opts or OPTIONS[slug]:
             p = os.path.join(OUT, "%s-%s" % (slug, o))
             with open(p + ".svg", "w", encoding="utf-8") as f:
-                f.write(svg(SCENES[slug](o)))
+                body = scene_wave(slug) if o == "D" else scene_weed_closeup(o) if (slug, o) == ("weed-suppression", "E") else SCENES[slug](o)
+                f.write(svg(body))
             render(p + ".svg", p + ".png")
             print(p + ".png")
 

@@ -49,6 +49,13 @@ LAYOUT = {
     ("inhibiting-pests-and-diseases", "C"): (TL, C.GREEN, BR, WHITE, "Tomato on Organic Cream, magnifier on its root zone"),
     ("sequestering-carbon", "A"): (TR, WHITE, BL, WHITE, "Oak on Food Web Green: carbon flows down roots and fungal threads into dark soil clumps"),
     ("sequestering-carbon", "B"): (TR, C.GREEN, BL, WHITE, "Same, Organic Cream sky"),
+    ("what-is-the-soil-food-web", "D"): (TL, C.GREEN, BL, C.GREEN, "SFW wave layout: lifeless compacted soil vs a bean in living soil with its food web"),
+    ("nutrient-cycling", "D"): (TL, C.GREEN, BL, C.GREEN, "SFW wave layout: yellowing lettuce vs a lush lettuce with the nutrient cycle at its roots"),
+    ("formation-of-structure", "D"): (TL, C.GREEN, BL, C.GREEN, "SFW wave layout: compacted soil with standing water vs crumbly aggregates woven by fungi"),
+    ("weed-suppression", "D"): (TL, C.GREEN, BL, C.GREEN, "SFW wave layout: weeds in bacterial soil vs corn in fungal soil"),
+    ("weed-suppression", "E"): (TL, WHITE, TR, WHITE, "Close-up: a seedling root wrapped in a mycorrhizal fungal net"),
+    ("inhibiting-pests-and-diseases", "D"): (TL, C.GREEN, BL, C.GREEN, "SFW wave layout: wilting plant among pathogens vs a tomato whose roots are covered by beneficials"),
+    ("sequestering-carbon", "D"): (TL, C.GREEN, BL, C.GREEN, "SFW wave layout: bare soil losing carbon to the air vs an oak sending carbon down into the soil"),
 }
 
 
@@ -165,3 +172,78 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def share_deck():
+    """A deck to share for a decision: cover, one overview per video (options lettered), then each option full size."""
+    from pptx import Presentation
+    from pptx.util import Emu, Pt
+    from pptx.dml.color import RGBColor
+    from pptx.enum.text import PP_ALIGN
+
+    prs = Presentation()
+    prs.slide_width, prs.slide_height = Emu(12192000), Emu(6858000)
+    px = 12192000 / W
+    E = lambda v: Emu(round(v * px))
+    CREAM, INK, GREEN = RGBColor(0xF4, 0xF1, 0xEA), RGBColor(0x23, 0x1F, 0x1D), RGBColor(*C.GREEN)
+
+    def bg(slide, col):
+        f = slide.background.fill
+        f.solid()
+        f.fore_color.rgb = col
+
+    def text(slide, x, y, w, h, s, size, col, bold=True, align=PP_ALIGN.LEFT):
+        tb = slide.shapes.add_textbox(E(x), E(y), E(w), E(h))
+        tf = tb.text_frame
+        tf.word_wrap = True
+        for i, line in enumerate(s.split("\n")):
+            p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+            p.alignment = align
+            r = p.add_run()
+            r.text = line
+            r.font.name = "Montserrat"
+            r.font.bold = bold
+            r.font.size = Pt(size)
+            r.font.color.rgb = col
+        return tb
+
+    s = prs.slides.add_slide(prs.slide_layouts[6])
+    bg(s, CREAM)
+    text(s, MX, 330, 1700, 120, "How It Works video thumbnails", 50, GREEN)
+    text(s, MX, 500, 1600, 260, "Science-illustration options for the six videos, in SFW colours.\n"
+         "Each video has 3 to 5 options, lettered A to E. Reply with one letter per video.", 22, INK, bold=False)
+    lg = os.path.join(OUT, "layers", "logo-green-share.png")
+    logo(C.GREEN).save(lg)
+    s.shapes.add_picture(lg, E(W - MX - 196), E(MY), E(196), E(170))
+
+    for n, slug in enumerate(TITLES, 1):
+        opts = sorted(o for s_, o in LAYOUT if s_ == slug)
+        s = prs.slides.add_slide(prs.slide_layouts[6])
+        bg(s, CREAM)
+        text(s, MX, 50, 1600, 110, "%d  %s" % (n, TITLES[slug][0]), 32, GREEN)
+        cols = 3 if len(opts) <= 3 else 3
+        tw = (W - 2 * MX - (cols - 1) * 40) / cols
+        th = tw * 9 / 16
+        rows = (len(opts) + cols - 1) // cols
+        y0 = 190 if rows == 1 else 160
+        if rows == 1:
+            y0 = (H - th) / 2 + 30
+        shown = "ABCDE"   # letters shown to reviewers, consecutive; notes give the file letter
+        for i, o in enumerate(opts):
+            x = MX + (i % cols) * (tw + 40)
+            y = y0 + (i // cols) * (th + 70)
+            s.shapes.add_picture(os.path.join(OUT, "%s-%s.jpg" % (slug, o)), E(x), E(y), E(tw), E(th))
+            text(s, x, y + th + 4, tw, 50, "Option " + shown[i], 18, INK)
+        s.notes_slide.notes_text_frame.text = "\n".join("Option %s (file %s-%s.jpg): %s" % (shown[i], slug, o, LAYOUT[(slug, o)][4])
+                                                       for i, o in enumerate(opts))
+        for i, o in enumerate(opts):
+            s2 = prs.slides.add_slide(prs.slide_layouts[6])
+            s2.shapes.add_picture(os.path.join(OUT, "%s-%s.jpg" % (slug, o)), 0, 0, prs.slide_width, prs.slide_height)
+            s2.notes_slide.notes_text_frame.text = "%s, option %s (file %s-%s.jpg): %s" % (TITLES[slug][0], shown[i], slug, o, LAYOUT[(slug, o)][4])
+    out = os.path.join(C.HIW, "how-it-works-thumbnails-options-to-share.pptx")
+    prs.save(out)
+    print(out, len(prs.slides), "slides")
+
+
+if __name__ == "__main__" and "--share" in sys.argv:
+    share_deck()
