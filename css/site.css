@@ -3215,3 +3215,14 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 .temple__cols p { background: none; padding: .25rem .2rem; }
 .temple__name { background: none; padding: 0; }
 @media (max-width: 40em) { .temple__roof { padding: 5.5rem 16% 1rem; } .temple__roof h2 { font-size: 1.1rem; } .temple__roof .eyebrow { font-size: .7rem; } }
+
+/* Choose your path: chips fill with green from the left and grow an arrow; hovering one previews its programs. */
+[data-filter] .chips .chip { background-image: linear-gradient(var(--green), var(--green)); background-repeat: no-repeat; background-position: left center; background-size: 0% 100%; transition: background-size .35s ease, color .2s ease; }
+[data-filter] .chips .chip::after { content: "\2192"; display: inline-block; max-width: 0; opacity: 0; overflow: hidden; vertical-align: bottom; transition: max-width .3s ease, opacity .3s ease, margin .3s ease; }
+[data-filter] .chips .chip:hover, [data-filter] .chips .chip:focus-visible { background-size: 100% 100%; color: var(--white); }
+[data-filter] .chips .chip:hover::after, [data-filter] .chips .chip:focus-visible::after { max-width: 1.2em; opacity: 1; margin-left: .4em; }
+[data-filter] .chips .chip[aria-pressed="true"]::after { content: none; }
+[data-filter] [data-item] { transition: opacity .3s ease, filter .3s ease, transform .3s ease; }
+[data-filter].is-previewing [data-item]:not(.is-match) { opacity: .28; filter: grayscale(1); }
+[data-filter].is-previewing [data-item].is-match { transform: translateY(-.5rem); }
+@media (prefers-reduced-motion: reduce) { [data-filter] .chips .chip, [data-filter] .chips .chip::after, [data-filter] [data-item] { transition: none; } [data-filter].is-previewing [data-item].is-match { transform: none; } }

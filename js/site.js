@@ -107,6 +107,21 @@
         apply();
       });
     });
+    // Hover or focus a path chip: the matching programs lift, the rest step back.
+    function preview(key) {
+      root.classList.toggle("is-previewing", !!key);
+      Array.prototype.forEach.call(items, function (it) {
+        it.classList.toggle("is-match", !!key && (" " + it.getAttribute("data-group") + " ").indexOf(" " + key + " ") > -1);
+      });
+    }
+    Array.prototype.forEach.call(chips, function (c) {
+      var key = c.getAttribute("data-chip");
+      if (key === "all") return;
+      function on() { if (c.getAttribute("aria-pressed") !== "true") preview(key); }
+      function off() { preview(""); }
+      c.addEventListener("mouseenter", on); c.addEventListener("focus", on);
+      c.addEventListener("mouseleave", off); c.addEventListener("blur", off); c.addEventListener("click", off);
+    });
     if (q) q.addEventListener("input", function () { state.q = q.value.trim().toLowerCase(); apply(); });
     if (topic) topic.addEventListener("change", function () { state.topic = topic.value; apply(); });
     var form = root.querySelector("form");
