@@ -3250,3 +3250,8 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 .pmap__dot[aria-pressed="true"] circle { fill: var(--soil); fill-opacity: 1; }
 .pmap figcaption { margin-top: .75rem; font-size: .875rem; color: var(--ink-soft); text-align: center; }
 @media (prefers-reduced-motion: reduce) { .pmap__dot circle { transition: none; } }
+/* The tardigrade rides the tip of the growing timeline line. */
+.timeline__tardigrade { position: absolute; left: .5rem; top: calc(var(--grow, 0) * 100%); width: clamp(3rem, 2.4rem + 1.4vw, 4rem); height: auto; transform: translate(-50%, -55%); z-index: 2; pointer-events: none; animation: crawl 1.6s ease-in-out infinite alternate; filter: drop-shadow(0 1px 1px rgba(79,52,51,.25)); }
+@media (min-width: 56em) { .timeline__tardigrade { left: 50%; } }
+@keyframes crawl { from { transform: translate(-50%, -55%) rotate(-5deg); } to { transform: translate(-50%, -55%) rotate(5deg); } }
+@media (prefers-reduced-motion: reduce) { .timeline__tardigrade { animation: none; } }
