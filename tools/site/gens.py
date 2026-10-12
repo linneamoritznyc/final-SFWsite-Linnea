@@ -1018,3 +1018,13 @@ def review_page():
             '<section class="band"><div class="wrap"><h2>Main pages</h2>%s<h2 style="margin-top:3rem">Item pages</h2>%s%s</div></section>') % (
         table % "".join(row(p, r) for p, r in main), "".join(item_tables), notes)
     write("/review/", "Review", "What changed on each page of the launch preview.", body)
+
+
+# ------------------------------------------------------------------ mycelium
+@gen
+def mycelium(args):
+    """{{mycelium seed="7" h="260" class="..."}}: a hyphal network that grows as the reader scrolls."""
+    import mycelium as M
+    kv = dict(re.findall(r'(\w+)="([^"]*)"', args))
+    svg = M.network(int(kv.get("seed", 7)), 1600, int(kv.get("h", 260)))
+    return '<div class="mycelium %s" data-mycelium>%s</div>' % (kv.get("class", ""), svg)
