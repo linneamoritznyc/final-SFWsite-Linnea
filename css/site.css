@@ -1634,3 +1634,17 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 @media (min-width: 56em) { .timeline__tardigrade { left: 50%; } }
 @keyframes crawl { from { transform: translate(-50%, -55%) rotate(-5deg); } to { transform: translate(-50%, -55%) rotate(5deg); } }
 @media (prefers-reduced-motion: reduce) { .timeline__tardigrade { animation: none; } }
+/* Polish pass (12 October 2026): calmer reading rhythm, tighter headings, and small hover details. */
+body { line-height: 1.7; }
+h2 { line-height: 1.18; }
+.card--link:hover { transform: translateY(-4px); }
+.card--link .card__img, .card--link > picture img, .card--link > .photo img { transition: transform .6s cubic-bezier(.16,1,.3,1); }
+.card--link:hover .card__img, .card--link:hover > picture img, .card--link:hover > .photo img { transform: scale(1.04); }
+.more::after { content: "\2192"; display: inline-block; margin-left: .3em; transition: transform .25s ease; }
+.more:hover::after, .card--link:hover .more::after { transform: translateX(4px); }
+/* Home approach tiles: a soft scrim so the white titles always read. */
+.tiles .tile::before { background: radial-gradient(ellipse at center, rgba(28,22,18,.42) 0%, rgba(28,22,18,.18) 70%), linear-gradient(to top, rgba(28,22,18,.35), rgba(28,22,18,0) 60%); }
+/* Who we are: a drop cap to open the story. */
+.dropcap::first-letter { float: left; font-family: var(--display); font-weight: 700; color: var(--green); font-size: 4.1em; line-height: .82; padding: .08em .1em 0 0; }
+@media (prefers-reduced-motion: reduce) { .card--link:hover, .card--link:hover .card__img, .card--link:hover > picture img { transform: none; } }
+.tiles .tile:hover::before, .tiles .tile:focus-within::before { background: rgba(34, 55, 31, .88); }
