@@ -3268,3 +3268,25 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 .seal--footer { width: 6.5rem; margin-top: 1rem; color: var(--soil); }
 .seal--footer .seal__outer { fill: var(--cream); }
 .seal--donate { width: clamp(7rem, 5rem + 6vw, 10rem); }
+/* Home hero collage: cut-outs from SFW's own photos (an orchid from Costa Rica, crimson clover from Capri,
+   a compost thermometer, a student's nematode micrograph, a clump of finished compost, a microscope)
+   pinned around the hero photo, drifting slowly. */
+.hero:has(.collage) { overflow-x: clip; }
+.collage { position: relative; margin: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3rem) clamp(3rem, 6vw, 4.5rem); }
+.collage__photo { position: relative; z-index: 1; box-shadow: var(--shadow); }
+.collage__cut { position: absolute; z-index: 2; height: auto; pointer-events: none; filter: drop-shadow(0 6px 10px rgba(79,52,51,.22));
+  animation: drift var(--dur, 9s) ease-in-out var(--delay, 0s) infinite alternate, settle .9s cubic-bezier(.2,.7,.2,1) var(--in, .2s) both; }
+.collage__cut--orchid  { width: 34%; top: -30%; right: -14%; --rot: 8deg;  --dur: 10s; --in: .35s; }
+.collage__cut--clover  { width: 13%; left: -7%; bottom: -6%; --rot: -10deg; --dur: 8s; --delay: -2s; --in: .5s; }
+.collage__cut--thermo  { width: 19%; top: -13%; left: -5%; --rot: -12deg; --dur: 11s; --delay: -4s; --in: .2s; }
+.collage__cut--disc    { width: 21%; right: -11%; bottom: -10%; --rot: 0deg; --dur: 12s; --delay: -6s; --in: .65s; filter: none; }
+.collage__cut--disc img { display: block; width: 100%; border-radius: 50%; border: 5px solid var(--white); box-shadow: var(--shadow); }
+.collage__cut--disc::after { content: ""; position: absolute; inset: -10px; border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, var(--soil) 0 .7deg, transparent .7deg 7.5deg);
+  -webkit-mask: radial-gradient(circle closest-side, transparent calc(100% - 7px), #000 calc(100% - 6px), #000 calc(100% - 1px), transparent 100%);
+          mask: radial-gradient(circle closest-side, transparent calc(100% - 7px), #000 calc(100% - 6px), #000 calc(100% - 1px), transparent 100%); opacity: .5; }
+.collage__cut--compost { width: 34%; left: 22%; bottom: -20%; --rot: -2deg; --dur: 9s; --delay: -3s; --in: .8s; }
+.collage__cut--scope   { width: 21%; right: 7%; bottom: -24%; --rot: 4deg; --dur: 10s; --delay: -5s; --in: .95s; }
+@keyframes drift { from { transform: translateY(0) rotate(var(--rot, 0deg)); } to { transform: translateY(-10px) rotate(calc(var(--rot, 0deg) + 2deg)); } }
+@keyframes settle { from { opacity: 0; translate: 0 18px; scale: .92; } to { opacity: 1; translate: 0 0; scale: 1; } }
+@media (prefers-reduced-motion: reduce) { .collage__cut { animation: none; transform: rotate(var(--rot, 0deg)); } }
