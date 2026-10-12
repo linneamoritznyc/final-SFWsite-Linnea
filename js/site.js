@@ -393,3 +393,22 @@
   d.addEventListener("click", function (ev) { if (ev.target === d) d.close(); });
   d.addEventListener("keydown", function (ev) { if (ev.key === "ArrowLeft") show(i - 1); else if (ev.key === "ArrowRight") show(i + 1); });
 })();
+
+/* Programme plate: hovering or focusing a circle shows its course in the panel and dims the rest. */
+(function () {
+  document.querySelectorAll("[data-pp]").forEach(function (w) {
+    var svg = w.querySelector("svg"), k = w.querySelector(".pp-detail__k"), n = w.querySelector(".pp-detail__n"), l = w.querySelector(".pp-detail__l");
+    var d0 = [k.textContent, n.textContent, l.textContent];
+    function on(a) {
+      svg.querySelectorAll("a.is-on").forEach(function (x) { x.classList.remove("is-on"); });
+      if (!a) { svg.classList.remove("is-dim"); k.textContent = d0[0]; n.textContent = d0[1]; l.textContent = d0[2]; return; }
+      a.classList.add("is-on"); svg.classList.add("is-dim");
+      k.textContent = a.dataset.ppKicker || ""; n.textContent = a.dataset.ppName || ""; l.textContent = a.dataset.ppLine || "";
+    }
+    svg.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("mouseenter", function () { on(a); });
+      a.addEventListener("focus", function () { on(a); });
+    });
+    svg.addEventListener("mouseleave", function () { on(null); });
+  });
+})();

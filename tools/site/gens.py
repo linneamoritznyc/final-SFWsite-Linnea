@@ -930,3 +930,211 @@ def review_page():
             '<section class="band"><div class="wrap"><h2>Main pages</h2>%s<h2 style="margin-top:3rem">Item pages</h2>%s%s</div></section>') % (
         table % "".join(row(p, r) for p, r in main), "".join(item_tables), notes)
     write("/review/", "Review", "What changed on each page of the launch preview.", body)
+
+
+# ------------------------------------------------------------------ drawn plates (preview: plates-v1)
+# Generated at build time from a fixed seed, so every build draws the same plate. Plain inline SVG,
+# no script. Colours are the brand's: Food Web Green, Light Green, Soil Brown.
+import math as _m, random as _r
+
+GREEN, LIGHT, SOIL = "#156826", "#59A66C", "#4F3433"
+
+
+def _svg(body, label):
+    return ('<svg viewBox="0 0 400 320" role="img" aria-label="%s" xmlns="http://www.w3.org/2000/svg">%s</svg>' % (A(label), body))
+
+
+def _colony(seed, colour, n=520):
+    rnd = _r.Random(seed)
+    ph = [rnd.uniform(0, 6.28) for _ in range(3)]
+    rim = lambda t: 112 * (1 + .14 * _m.sin(3 * t + ph[0]) + .08 * _m.sin(5 * t + ph[1]) + .05 * _m.sin(7 * t + ph[2]))
+    out = []
+    while len(out) < n:
+        t = rnd.uniform(0, 2 * _m.pi); d = rnd.random() ** .62
+        if rnd.random() > 1.08 - d * .55:
+            continue
+        r = rim(t) * d
+        x, y = 200 + r * _m.cos(t), 160 + r * _m.sin(t) * .92
+        size = max(.8, rnd.gauss(3.4 - 2.1 * d, .9))
+        out.append('<circle cx="%.1f" cy="%.1f" r="%.1f"/>' % (x, y, size))
+    return '<g fill="%s">%s</g>' % (colour, "".join(out))
+
+
+def _hyphae(seed):
+    rnd = _r.Random(seed)
+    lines, tips = [], []
+
+    def grow(x, y, ang, length, w, depth):
+        pts = [(x, y)]
+        for _ in range(6):
+            ang += rnd.gauss(0, .16)
+            x += _m.cos(ang) * length / 6; y += _m.sin(ang) * length / 6
+            pts.append((x, y))
+        lines.append('<path d="M%s" stroke-width="%.2f"/>' % (" L".join("%.1f %.1f" % p for p in pts), w))
+        if depth == 0 or y < 22:
+            if rnd.random() < .75:
+                tips.append('<circle cx="%.1f" cy="%.1f" r="%.1f"/>' % (x, y, rnd.uniform(1.8, 3.6)))
+            return
+        for k in range(rnd.choice((2, 2, 3))):
+            grow(x, y, ang + rnd.uniform(-.75, .75), length * rnd.uniform(.62, .8), w * .72, depth - 1)
+    grow(205, 312, -_m.pi / 2 - .08, 92, 2.6, 5)
+    return ('<g fill="none" stroke="%s" stroke-linecap="round" stroke-linejoin="round">%s</g><g fill="%s">%s</g>'
+            % (SOIL, "".join(lines), SOIL, "".join(tips)))
+
+
+def _aggregate(seed):
+    rnd = _r.Random(seed)
+    out = []
+    for i in range(1, 760):
+        r = 6.2 * _m.sqrt(i); t = i * 2.39996
+        if r > 128:
+            break
+        x = 200 + r * _m.cos(t) + rnd.gauss(0, 1.6); y = 160 + r * _m.sin(t) * .94 + rnd.gauss(0, 1.6)
+        c = SOIL if rnd.random() < .7 else LIGHT
+        out.append('<circle cx="%.1f" cy="%.1f" r="%.1f" fill="%s" fill-opacity="%.2f"/>' % (x, y, rnd.uniform(1.1, 3.3), c, rnd.uniform(.55, 1)))
+    return "".join(out)
+
+
+def _amoeba(seed):
+    rnd = _r.Random(seed)
+    ph = [rnd.uniform(0, 6.28) for _ in range(4)]
+    pts = []
+    for k in range(120):
+        t = k / 120 * 2 * _m.pi
+        r = 92 * (1 + .22 * _m.sin(2 * t + ph[0]) + .16 * _m.sin(3 * t + ph[1]) + .1 * _m.sin(5 * t + ph[2]) + .05 * _m.sin(9 * t + ph[3]))
+        pts.append((200 + r * _m.cos(t), 160 + r * .8 * _m.sin(t)))
+    d = "M" + " L".join("%.1f %.1f" % p for p in pts) + " Z"
+    gran = []
+    while len(gran) < 170:
+        x, y = rnd.uniform(110, 290), rnd.uniform(80, 240)
+        if (x - 200) ** 2 / 85 ** 2 + (y - 160) ** 2 / 62 ** 2 < 1:
+            gran.append('<circle cx="%.1f" cy="%.1f" r="%.1f"/>' % (x, y, rnd.uniform(.8, 2.4)))
+    return ('<path d="%s" fill="%s" fill-opacity=".14" stroke="%s" stroke-width="2"/><g fill="%s">%s</g>'
+            '<circle cx="214" cy="150" r="15" fill="none" stroke="%s" stroke-width="2"/><circle cx="214" cy="150" r="5" fill="%s"/>'
+            % (d, LIGHT, GREEN, GREEN, "".join(gran), GREEN, GREEN))
+
+
+def _nematode(seed):
+    rnd = _r.Random(seed)
+    pts = []
+    for k in range(80):
+        s = k / 79
+        pts.append((60 + 280 * s, 160 + 62 * _m.sin(s * 2.4 * _m.pi + .6) * _m.sin(s * _m.pi) ** .6))
+    d = "M" + " L".join("%.1f %.1f" % p for p in pts)
+    specks = "".join('<circle cx="%.1f" cy="%.1f" r="%.1f"/>' % (rnd.uniform(20, 380), rnd.uniform(30, 290), rnd.uniform(.6, 1.8)) for _ in range(70))
+    return ('<g fill="%s" fill-opacity=".45">%s</g><path d="%s" fill="none" stroke="%s" stroke-width="11" stroke-linecap="round"/>'
+            '<path d="%s" fill="none" stroke="#F4F1EA" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 7"/>'
+            % (SOIL, specks, d, SOIL, d))
+
+
+def _root(seed):
+    rnd = _r.Random(seed)
+    pts, x = [], 200.0
+    for k in range(40):
+        y = 6 + k * 8; x += rnd.gauss(0, 1.8); pts.append((x, y))
+    d = "M" + " L".join("%.1f %.1f" % p for p in pts)
+    hairs, dots = [], []
+    for (x, y) in pts[6:]:
+        for side in (-1, 1):
+            if rnd.random() < .8:
+                L = rnd.uniform(14, 40); a = side * rnd.uniform(.6, 1.3) + _m.pi / 2 * (1 - side) * 0
+                ex, ey = x + side * L * _m.cos(rnd.uniform(.1, .6)), y + L * _m.sin(rnd.uniform(-.2, .5))
+                hairs.append('<path d="M%.1f %.1f Q%.1f %.1f %.1f %.1f"/>' % (x, y, (x + ex) / 2, y + rnd.gauss(0, 6), ex, ey))
+    for _ in range(260):
+        yy = rnd.uniform(40, 315); xx = 200 + rnd.gauss(0, 46 + (yy - 40) * .12)
+        dots.append('<circle cx="%.1f" cy="%.1f" r="%.1f"/>' % (xx, yy, rnd.uniform(.8, 2.6)))
+    return ('<g fill="%s" fill-opacity=".85">%s</g><g fill="none" stroke="%s" stroke-width="1.1" stroke-linecap="round">%s</g>'
+            '<path d="%s" fill="none" stroke="%s" stroke-width="7" stroke-linecap="round"/>'
+            % (LIGHT, "".join(dots), SOIL, "".join(hairs), d, SOIL))
+
+
+PLATES = [
+    ("I", "Bacteria", "A colony, densest at the centre.", lambda: _colony(11, GREEN), "Green dots clustered in an irregular colony shape, densest at the centre"),
+    ("II", "Fungal hyphae", "Branching threads that carry water and nutrients.", lambda: _hyphae(7), "A brown branching thread dividing again and again, with round tips"),
+    ("III", "Soil aggregate", "Particles bound together into a crumb.", lambda: _aggregate(5), "Brown and green dots spiralling out from a centre into a round crumb"),
+    ("IV", "Amoeba", "A single cell that grazes on bacteria.", lambda: _amoeba(3), "A soft green cell outline filled with small granules and a round nucleus"),
+    ("V", "Nematode", "A tiny roundworm moving through soil water.", lambda: _nematode(9), "A long brown wavy worm among small specks"),
+    ("VI", "Root", "Root hairs reaching into the living soil around them.", lambda: _root(4), "A brown root running down the plate with fine hairs and green dots around it"),
+]
+
+
+@gen
+def plates(args):
+    items = "".join('<li class="plate"><figure>%s<figcaption><span class="plate__n">Plate %s</span><b>%s</b><span>%s</span></figcaption></figure></li>'
+                    % (_svg(draw(), alt), n, E(name), E(line)) for n, name, line, draw, alt in PLATES)
+    return '<ul class="plates">%s</ul>' % items
+
+
+# The programme plate: how the School's programs connect. Structure only; each node links to its course.
+# Facts from the course cards and the Find a Professional page: Lab Techs have completed Soil Microscopy,
+# Consultants all four modules of the Complete Practicum. No prices here; the course pages carry them.
+@gen
+def pathway(args):
+    L = {c["title"]: staging_link(c["href"]) for c in data("courses")}
+    L["Permaculture Design Certification"] = "https://school.soilfoodweb.com/courses/permaculture-design-certification"
+
+    C = {c["title"]: c for c in data("courses")}
+    INFO = {
+        "Lab Tech": ("Title", "Soil Food Web Lab Techs have completed our Soil Microscopy Course, and are equipped to analyze soil and soil amendments like compost and compost tea."),
+        "Consultant": ("Title", "Soil Food Web Consultants have completed all four modules of our Complete Practicum: Soil Microscopy, BioComplete™ Compost Production, Biological Liquid Amendments and a culminating Field Trial."),
+        "Free|webinars": ("Free", "Live webinars on the soil food web, with the replays."),
+        "In-person|workshops": ("In person", C["Workshops"]["line"] if "Workshops" in C else ""),
+    }
+    KEY = {"Intro mini|course": "Intro to the Foundation Courses", "Foundation|Courses": "Foundation Courses", "Soil|Microscopy": "Soil Microscopy",
+           "BioComplete|Compost": "BioComplete™ Compost Production", "Liquid|Amendments": "Learn the Art and Science of Biological Liquid Amendments",
+           "Field|Trial": "Advanced Field Trial", "Compost|Intensive": "Compost Intensive Course", "Ecosystem|Restoration": "Introduction to Ecosystem Restoration",
+           "Permaculture|Design": "Permaculture Design Certification"}
+
+    def node(x, y, r, title, href, kind="ring", sub=""):
+        lines = title.split("|")
+        if title in KEY and KEY[title] in C:
+            c = C[KEY[title]]; line = fix(c["line"])
+            for a, b in COURSE_EDITS:
+                line = line.replace(a, b)
+            info = (fix(c["kicker"]), line)
+        else:
+            info = INFO.get(title, ("", ""))
+        name = KEY.get(title, title.replace("|", " "))
+        cls = {"ring": "pp-ring", "big": "pp-ring pp-big", "title": "pp-title", "side": "pp-ring pp-side"}[kind]
+        t = "".join('<tspan x="%d" dy="%s">%s</tspan>' % (x, "0" if i == 0 else "1.15em", E(l)) for i, l in enumerate(lines))
+        y0 = y - (len(lines) - 1) * 9 - (6 if sub else 0)
+        s = '<text x="%d" y="%d" class="pp-sub">%s</text>' % (x, y + r * .48, E(sub)) if sub else ""
+        inner = '<circle cx="%d" cy="%d" r="%d"/><text x="%d" y="%d" class="pp-t">%s</text>%s' % (x, y, r, x, y0 + 5, t, s)
+        data_attrs = ' data-pp-name="%s" data-pp-kicker="%s" data-pp-line="%s"' % (A(fix(name)), A(info[0]), A(info[1]))
+        return '<a href="%s" class="%s"%s>%s</a>' % (A(href), cls, data_attrs, inner)
+
+    edges = [
+        "M300 112 Q330 150 390 178", "M520 112 Q490 150 430 178",           # webinar, mini course -> Foundation
+        "M370 262 Q250 300 160 352", "M395 272 Q350 320 330 352",           # Foundation -> four modules
+        "M425 272 Q470 320 500 352", "M450 262 Q570 300 670 352",
+        "M160 456 L160 502", "M560 460 L560 504",                           # Microscopy -> Lab Tech; Practicum -> Consultant
+    ]
+    svg = ['<svg viewBox="0 0 980 640" class="pp" role="img" aria-labelledby="pp-t pp-d" xmlns="http://www.w3.org/2000/svg">',
+           '<title id="pp-t">How the Soil Food Web School programs connect</title>',
+           '<desc id="pp-d">The free webinar and the mini course lead into the Foundation Courses. After them come four modules: Soil Microscopy, BioComplete Compost Production, Biological Liquid Amendments and the Field Trial. Together the four make the Complete Practicum. Soil Microscopy leads to the Lab Tech title; the Complete Practicum leads to the Consultant title. The Compost Intensive, Ecosystem Restoration, Permaculture Design Certification and in-person workshops run alongside.</desc>',
+           '<g class="pp-edges">%s</g>' % "".join('<path d="%s"/>' % e for e in edges),
+           '<rect x="70" y="340" width="700" height="120" rx="60" class="pp-bracket"/>',
+           '<text x="200" y="488" class="pp-note pp-left">Together, the four make the Complete Practicum</text>',
+           node(300, 80, 44, "Free|webinars", "https://webinar.soilfoodweb.com"),
+           node(520, 80, 44, "Intro mini|course", L.get("Intro to the Foundation Courses", "")),
+           node(410, 220, 70, "Foundation|Courses", L.get("Foundation Courses", ""), "big", "four courses"),
+           node(160, 400, 56, "Soil|Microscopy", L.get("Soil Microscopy", "")),
+           node(330, 400, 56, "BioComplete|Compost", L.get("BioComplete™ Compost Production", "")),
+           node(500, 400, 56, "Liquid|Amendments", L.get("Learn the Art and Science of Biological Liquid Amendments", "")),
+           node(670, 400, 56, "Field|Trial", L.get("Advanced Field Trial", "")),
+           node(160, 548, 46, "Lab Tech", "/find-a-professional/", "title", "title"),
+           node(560, 560, 56, "Consultant", "/find-a-professional/", "title", "title"),
+           '<line x1="822" y1="30" x2="822" y2="610" class="pp-margin"/>',
+           '<text x="905" y="44" class="pp-note">Open to anyone</text>',
+           node(905, 120, 56, "Compost|Intensive", L.get("Compost Intensive Course", ""), "side"),
+           node(905, 250, 56, "Ecosystem|Restoration", L.get("Introduction to Ecosystem Restoration", ""), "side"),
+           node(905, 380, 56, "Permaculture|Design", L["Permaculture Design Certification"], "side"),
+           node(905, 510, 56, "In-person|workshops", "/workshops/", "side"),
+           '</svg>']
+    legend = ('<ul class="pp-legend"><li><span class="pp-k pp-k--ring"></span>Course or module</li>'
+              '<li><span class="pp-k pp-k--title"></span>Title you can earn</li>'
+              '<li><span class="pp-k pp-k--side"></span>Runs alongside the main path</li></ul>')
+    detail = ('<div class="pp-detail" aria-live="polite"><p class="pp-detail__k">Hover or tap a circle</p>'
+              '<h3 class="pp-detail__n">How the programs connect</h3>'
+              '<p class="pp-detail__l">Start free, build the foundation, then choose your modules. Every circle opens its course page.</p></div>')
+    return '<div class="pp-wrap" data-pp><div class="pp-scroll">%s</div>%s</div>%s' % ("".join(svg), detail, legend)
