@@ -485,6 +485,19 @@ def pubs():
     return d["entries"]
 
 
+def doi_tag(p):
+    """A small DOI reference under the citation, for papers whose link is a DOI."""
+    u = p.get("url") or ""
+    if "doi.org/" not in u:
+        return ""
+    return '<p class="pub__doi"><a href="%s">DOI %s</a></p>' % (A(u), E(u.split("doi.org/", 1)[1]))
+
+
+@gen
+def seal(args):
+    return B.seal_svg(args.strip())
+
+
 def pub_link_label(p):
     """What the external link is, for the button on the publication's own page."""
     u = p["url"]
@@ -591,7 +604,7 @@ def publications(args):
                 '<p class="pub__text"><b>Useful for:</b> <span data-s>%s</span></p>%s</li>') % (
             i, p["collection"], A(" ".join(tag_slug(t) for t in p["topics"])), st_slug[p["study_type"]],
             rg_slug[p["region"]], p["year"], meta, pub_title(p),
-            '<p class="entry__line">%s</p>' % line if line else "",
+            ('<p class="entry__line">%s</p>' % line if line else "") + doi_tag(p),
             "" if p["url"] else '<p class="pub__nolink">%s</p>' % NO_COPY,
             E(p["summary"]), E(p["useful_for"]), tag_chips(p))
 

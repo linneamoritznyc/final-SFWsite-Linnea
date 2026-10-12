@@ -3255,3 +3255,16 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 @media (min-width: 56em) { .timeline__tardigrade { left: 50%; } }
 @keyframes crawl { from { transform: translate(-50%, -55%) rotate(-5deg); } to { transform: translate(-50%, -55%) rotate(5deg); } }
 @media (prefers-reduced-motion: reduce) { .timeline__tardigrade { animation: none; } }
+/* Publications: DOI under the citation, like a reference list. */
+.pub__doi { margin: .15rem 0 .4rem; font-size: .8125rem; }
+.pub__doi a { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--green); text-decoration: none; border-bottom: 1px solid currentColor; }
+/* 501(c)(3) seal. */
+.seal { display: block; width: 8.5rem; height: auto; color: var(--soil); }
+.seal__outer { fill: var(--white); stroke: currentColor; stroke-width: 3; }
+.seal__inner { fill: none; stroke: currentColor; stroke-width: 1.2; stroke-dasharray: 2 3; }
+.seal__ring { fill: currentColor; font: 700 12.5px var(--display); }
+.seal__big { fill: var(--green); font: 700 22px var(--display); text-anchor: middle; }
+.seal__small { fill: currentColor; font: 600 11px var(--display); text-anchor: middle; letter-spacing: .5px; }
+.seal--footer { width: 6.5rem; margin-top: 1rem; color: var(--soil); }
+.seal--footer .seal__outer { fill: var(--cream); }
+.seal--donate { width: clamp(7rem, 5rem + 6vw, 10rem); }

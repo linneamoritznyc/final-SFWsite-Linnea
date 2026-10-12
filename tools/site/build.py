@@ -284,13 +284,13 @@ def footer(path):
 <p class="footer-brand__line">Healing soil. Feeding humanity. Restoring the living world.</p>
 <form class="newsletter" id="newsletter" data-newsletter action="#" method="post"><label class="sr-only" for="newsletter-email">Email for the newsletter</label>
 <input id="newsletter-email" type="email" name="email" placeholder="Email for the newsletter" autocomplete="email"><button class="btn" type="submit">Subscribe</button></form>
-<small>One email a month. Unsubscribe with one click.</small></div>
+<small>One email a month. Unsubscribe with one click.</small>%s</div>
 <div class="footer-cols">%s</div>
 </div>
 <div class="footer-legal"><p>EIN 39-4439236. Registered office: 5441 S Macadam Ave Ste N, Portland, Oregon 97239. Our Form 990 and financial statements are available on the <a href="/foundation-legal/">governance page</a> and on request.</p></div>
 <div class="footer-bottom"><p>&copy; 2026 Soil Food Web Foundation, a 501(c)(3) nonprofit organization. Soil Food Web School is a program of the Soil Food Web Foundation.</p>
 <ul><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="/about-us/#contact-legal">Accessibility</a></li></ul></div>
-</div></footer>""" % (cols,)
+</div></footer>""" % (seal_svg("seal--footer"), cols)
 
 
 def shell(path, title, desc, body, active=None):
@@ -387,6 +387,16 @@ def build_pages():
         bugs = [b.strip() for b in meta.get("bugs", "").split(",") if b.strip()]
         begin(meta["path"], meta.get("source", ""), bugs, meta.get("notes", ""))
         write(meta["path"], meta["title"], meta.get("description", ""), render(body), meta.get("nav"))
+
+
+def seal_svg(cls=""):
+    """Round 501(c)(3) seal: the Foundation's name and status around the ring, the EIN in the middle."""
+    return ('<svg class="seal %s" viewBox="0 0 200 200" role="img" aria-label="Soil Food Web Foundation, a 501(c)(3) nonprofit, EIN 39-4439236">'
+            '<defs><path id="seal-ring%s" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>'
+            '<circle cx="100" cy="100" r="96" class="seal__outer"/><circle cx="100" cy="100" r="58" class="seal__inner"/>'
+            '<text class="seal__ring"><textPath href="#seal-ring%s" startOffset="0" textLength="458" lengthAdjust="spacing">SOIL FOOD WEB FOUNDATION &#183; 501(C)(3) NONPROFIT &#183;</textPath></text>'
+            '<text x="100" y="94" class="seal__big">501(c)(3)</text><text x="100" y="116" class="seal__small">EIN 39-4439236</text></svg>') % (cls, cls, cls)
+
 
 
 # ----------------------------------------------------------------- generators
