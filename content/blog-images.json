@@ -80,8 +80,16 @@
   "key": "what-exactly-is-brownian-motion",
   "alt": "A graphic reading Microscopy, What exactly is Brownian motion?, over small particles and a faint streak on a pale micrograph"
  },
- "what-is-your-soil-test-really-telling-you": {
+ "learning-to-see-what-is-your-soil-test-really-telling-you": {
   "key": "what-is-your-soil-test-telling-you",
   "alt": "A graphic reading Blog, What is your soil test really telling you?, over a dry shrub on a plain beside a smiling woman in a hat with a white cow"
+ },
+ "brief-history-of-the-fungi-to-bacteria-ratio": {
+  "key": "fungi-to-bacteria-ratio-history",
+  "alt": "A graphic reading Education, A brief history of the fungi-to-bacteria ratio, over a green micrograph full of small round cells"
+ },
+ "beneath-the-surface-a-soil-food-web-school-newsletter": {
+  "key": "beneath-the-surface-newsletter",
+  "alt": "A graphic reading Blog, Beneath the Surface: A Soil Food Web School Newsletter, over a seedling in dark soil"
  }
 }

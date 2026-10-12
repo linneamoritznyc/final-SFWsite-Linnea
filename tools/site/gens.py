@@ -58,6 +58,13 @@ def staging_link(href):
         h = "/find-a-professional/"
     elif h.startswith(("/soil-sponge-regeneration-workshop/", "/product/regenerating-the-soil-sponge/")):
         h = "/workshops/"
+    # Old soilfoodweb.com program and workshop pages linked from posts brought over from the live site.
+    elif h.startswith(("/consultant-training-program-ctp/", "/grower-training-program/")):
+        h = "/programs/"
+    elif h.startswith("/mar2025-ctpaw/"):
+        h = "/workshops/"
+    elif h.startswith("/farmer-case-studies-soil-food-web/"):
+        h = "/case-studies/"
     h = h.replace("courses/foundation-couse-1", "courses/foundation-course-1")
     if "localhost" in h:
         h = "https://school.soilfoodweb.com/courses/permaculture-design-certification"
@@ -77,7 +84,7 @@ def rewrite_body(body, page_imgs=True):
     body = re.sub(r"<h4>\s*Tags:\s*</h4>(\s*<a href=\"[^\"]*/tag/[^\"]*\"[^>]*>.*?</a>\s*,?)*", "", body, flags=re.S)
     body = re.sub(r'href="([^"]*)"', a_sub, body)
     # Links with no launch target keep their text and lose the link.
-    body = re.sub(r'<a href="(?:/tag/[^"]*|/beneath-the-surface[^"]*|#brave_[^"]*)"[^>]*>(.*?)</a>', r"\1", body, flags=re.S)
+    body = re.sub(r'<a href="(?:/tag/[^"]*|#brave_[^"]*)"[^>]*>(.*?)</a>', r"\1", body, flags=re.S)
     body = body.replace('href="/october-2025-newsletter/#gettingthewordout"', 'href="/october-2025-newsletter/"')
 
     def img_sub(m):

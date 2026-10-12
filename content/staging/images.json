@@ -3462,6 +3462,42 @@
   "source_size": "1600x600",
   "w": 1600
  },
+ "https://soilfoodweb.com/wp-content/uploads/2022/08/trish.jpg": {
+  "alt": "",
+  "bytes": 114578,
+  "file": "img/trish.webp",
+  "flags": [],
+  "h": 800,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2022/08/trish.jpg",
+  "source_size": "800x800",
+  "w": 800
+ },
+ "https://soilfoodweb.com/wp-content/uploads/2022/09/allison.jpg": {
+  "alt": "",
+  "bytes": 87152,
+  "file": "img/allison.webp",
+  "flags": [],
+  "h": 800,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2022/09/allison.jpg",
+  "source_size": "800x800",
+  "w": 800
+ },
+ "https://soilfoodweb.com/wp-content/uploads/2022/09/sammie2.jpg": {
+  "alt": "",
+  "bytes": 119134,
+  "file": "img/sammie2.webp",
+  "flags": [],
+  "h": 800,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2022/09/sammie2.jpg",
+  "source_size": "800x800",
+  "w": 800
+ },
  "https://soilfoodweb.com/wp-content/uploads/2024/02/Webinar-picture--150x150.jpg": {
   "alt": "Philip Barton on a beach at sunset",
   "bytes": 80284,
@@ -3473,6 +3509,92 @@
   "source_path": "https://soilfoodweb.com/wp-content/uploads/2024/02/Webinar-picture--150x150.jpg",
   "source_size": "1141x990",
   "w": 1141
+ },
+ "https://soilfoodweb.com/wp-content/uploads/2024/12/2.jpg": {
+  "alt": "Woman in sunglasses holds out a bag of soil in a garden",
+  "bytes": 47626,
+  "file": "img/2-2.webp",
+  "flags": [],
+  "h": 1080,
+  "shows": "A smiling older woman with short grey hair and sunglasses, wearing a purple cardigan over a black top, holds a clear bag of soil and a green object toward the camera in a sunny garden.",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2024/12/2.jpg",
+  "source_size": "1080x1080",
+  "w": 1080
+ },
+ "https://soilfoodweb.com/wp-content/uploads/2024/12/3.jpg": {
+  "alt": "",
+  "bytes": 45356,
+  "file": "img/3.webp",
+  "flags": [],
+  "h": 1080,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2024/12/3.jpg",
+  "source_size": "1080x1080",
+  "w": 1080
+ },
+ "https://soilfoodweb.com/wp-content/uploads/2024/12/A3C2676E-D751-4B8A-AD9A-E9601450CA5C_1_201_a-1-571x400.jpeg": {
+  "alt": "",
+  "bytes": 119208,
+  "file": "img/a3c2676e-d751-4b8a-ad9a-e9601450ca5c-1-201-a.webp",
+  "flags": [
+   "low resolution (571x838 source)"
+  ],
+  "h": 838,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2024/12/A3C2676E-D751-4B8A-AD9A-E9601450CA5C_1_201_a-1-571x400.jpeg",
+  "source_size": "571x838",
+  "w": 571
+ },
+ "https://soilfoodweb.com/wp-content/uploads/2024/12/Image_20241108_94930_081-1-600x400.jpg": {
+  "alt": "",
+  "bytes": 101960,
+  "file": "img/image-20241108-94930-081.webp",
+  "flags": [],
+  "h": 1174,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2024/12/Image_20241108_94930_081-1-600x400.jpg",
+  "source_size": "1170x1174",
+  "w": 1170
+ },
+ "https://soilfoodweb.com/wp-content/uploads/2024/12/Image_20241108_94930_156-scaled-600x400.jpg": {
+  "alt": "",
+  "bytes": 287702,
+  "file": "img/image-20241108-94930-156.webp",
+  "flags": [],
+  "h": 1200,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2024/12/Image_20241108_94930_156-scaled-600x400.jpg",
+  "source_size": "2560x1920",
+  "w": 1600
+ },
+ "https://soilfoodweb.com/wp-content/uploads/2024/12/Image_20241108_94930_246-600x400.jpg": {
+  "alt": "",
+  "bytes": 283030,
+  "file": "img/image-20241108-94930-246.webp",
+  "flags": [],
+  "h": 1020,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2024/12/Image_20241108_94930_246-600x400.jpg",
+  "source_size": "2000x1500",
+  "w": 1360
+ },
+ "https://soilfoodweb.com/wp-content/uploads/2024/12/Image_20241108_94930_310-1-scaled-600x400.jpg": {
+  "alt": "",
+  "bytes": 254494,
+  "file": "img/image-20241108-94930-310.webp",
+  "flags": [],
+  "h": 867,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2024/12/Image_20241108_94930_310-1-scaled-600x400.jpg",
+  "source_size": "2560x1920",
+  "w": 1156
  },
  "https://soilfoodweb.com/wp-content/uploads/2025/02/Screenshot-2025-02-05-at-4.26.08 PM.png": {
   "alt": "Su Kahumbu Stephanou smiling beside a microscope",
@@ -3594,6 +3716,20 @@
   "source_size": "1920x2560",
   "w": 1600
  },
+ "https://soilfoodweb.com/wp-content/uploads/2026/07/Screenshot-2026-07-08-174411.png": {
+  "alt": "",
+  "bytes": 234254,
+  "file": "img/screenshot-2026-07-08-174411.webp",
+  "flags": [
+   "screenshot"
+  ],
+  "h": 1210,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://soilfoodweb.com/wp-content/uploads/2026/07/Screenshot-2026-07-08-174411.png",
+  "source_size": "1388x1210",
+  "w": 1388
+ },
  "https://www.soilfoodweb.com/wp-content/uploads/2022/07/20220323_SUN_0209-e_web.jpg": {
   "alt": "Rider on a touring motorcycle with a Save Soil sticker",
   "bytes": 67674,
@@ -3667,6 +3803,21 @@
   "source_path": "https://www.soilfoodweb.com/wp-content/uploads/2022/11/seedlingsJPG-300x200.jpg",
   "source_size": "5472x3648",
   "w": 1600
+ },
+ "https://www.soilfoodweb.com/wp-content/uploads/2024/11/Screenshot-2024-11-18-132045-296x300.png": {
+  "alt": "",
+  "bytes": 34484,
+  "file": "img/screenshot-2024-11-18-132045.webp",
+  "flags": [
+   "screenshot",
+   "low resolution (714x724 source)"
+  ],
+  "h": 724,
+  "shows": "",
+  "source": "staging download",
+  "source_path": "https://www.soilfoodweb.com/wp-content/uploads/2024/11/Screenshot-2024-11-18-132045-296x300.png",
+  "source_size": "714x724",
+  "w": 714
  },
  "https://www.soilfoodweb.com/wp-content/uploads/2025/09/Terra-Madre-Americas-300x200.jpg": {
   "alt": "Crowd walking past food trucks on a sunny city street.",
