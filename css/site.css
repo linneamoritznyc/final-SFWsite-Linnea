@@ -1482,7 +1482,7 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .micro-row ul { list-style: none; margin: 2rem 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
 .micro-row li { display: grid; gap: .6rem; justify-items: center; text-align: center; font-size: .9375rem; color: #d8e2d3; }
 .micro-row li b { display: block; color: var(--white); font-weight: 600; }
-.micro-row img { width: 100%; max-width: 13rem; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 4px solid var(--gold); filter: contrast(1.2) saturate(1.15); }
+.micro-row img { width: 100%; max-width: 13rem; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 4px solid rgba(255,255,255,.85); filter: contrast(1.2) saturate(1.15); }
 @media (max-width: 47.99em) { .micro-row ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 /* A round photo beside a timeline entry. */
 .timeline__body--photo { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem; align-items: start; }
@@ -1491,3 +1491,29 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 /* Card with a photo on top (Work with us). */
 .card--photo-top { overflow: hidden; }
 .card--photo-top .card__img { aspect-ratio: 3 / 2; display: block; }
+/* Who lives in healthy soil: student micrographs around the plant (How It Works). */
+.web-band { background: var(--soil); color: var(--white); }
+.web-band h2, .web-band h3 { color: var(--white); }
+.web-band .section-head p:not(.eyebrow) { color: #e9e2df; max-width: 40em; }
+.web-band .eyebrow { color: #cfe3cf; }
+.web { list-style: none; margin: 2.5rem 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 3vw, 3rem); align-items: start; }
+.web__node, .web__center { text-align: center; display: grid; justify-items: center; gap: .4rem; }
+.web__node img, .web__video { width: clamp(8rem, 6rem + 6vw, 11rem); aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 4px solid rgba(255, 255, 255, .85); filter: contrast(1.2) saturate(1.15); display: block; }
+.web__node h3 { font-size: 1.1rem; margin: .4rem 0 0; }
+.web__node p, .web__center p { margin: 0; font-size: .9375rem; color: #ece6e3; max-width: 18rem; }
+.web__node small { color: #cfc4c0; font-size: .8125rem; }
+.web__center { grid-column: 2; grid-row: 2; align-self: center; background: var(--green); border-radius: 50%; aspect-ratio: 1; width: clamp(11rem, 9rem + 6vw, 15rem); padding: 1.5rem; align-content: center; margin-inline: auto; }
+.web__center h3 { margin: 0; font-size: 1.35rem; }
+.web__n1 { grid-column: 1; grid-row: 1; } .web__n2 { grid-column: 2; grid-row: 1; } .web__n3 { grid-column: 3; grid-row: 1; }
+.web__n4 { grid-column: 1; grid-row: 2; } .web__n5 { grid-column: 3; grid-row: 2; } .web__n6 { grid-column: 2; grid-row: 3; }
+@media (max-width: 47.99em) { .web { grid-template-columns: repeat(2, minmax(0, 1fr)); } .web__center { grid-column: 1 / -1; grid-row: 1; } .web__node { grid-column: auto !important; grid-row: auto !important; } }
+/* Four steps with round photos (Programs). */
+.steps-photo { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2.5rem); counter-reset: step; }
+.steps-photo li { counter-increment: step; text-align: center; display: grid; justify-items: center; gap: .35rem; position: relative; }
+.steps-photo img { width: clamp(8rem, 6rem + 5vw, 11rem); aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 4px solid var(--white); box-shadow: var(--shadow); display: block; }
+.steps-photo li::before { content: counter(step); position: absolute; top: 0; left: calc(50% - clamp(4rem, 3rem + 2.5vw, 5.5rem)); width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--green); color: var(--white); font-family: var(--display); font-weight: 700; display: grid; place-items: center; z-index: 1; }
+.steps-photo h3 { color: var(--soil); margin: .6rem 0 0; font-size: 1.1rem; }
+.steps-photo p { margin: 0; font-size: .9375rem; max-width: 16rem; }
+@media (max-width: 47.99em) { .steps-photo { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.timeline li:nth-child(even) .timeline__body--photo { grid-template-columns: auto minmax(0, 1fr); }
+.timeline li:nth-child(even) .timeline__body--photo .timeline__photo { order: -1; }
