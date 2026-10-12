@@ -247,3 +247,70 @@ def share_deck():
 
 if __name__ == "__main__" and "--share" in sys.argv:
     share_deck()
+
+
+FINAL = [("what-is-the-soil-food-web", "D"), ("nutrient-cycling", "B"), ("formation-of-structure", "A"),
+         ("weed-suppression", "C"), ("inhibiting-pests-and-diseases", "C"), ("sequestering-carbon", "B")]
+
+
+def final_set():
+    """The chosen six: live JPGs in thumbnails/, the layered deck, and the review sheet."""
+    import shutil
+    from pptx import Presentation
+    from pptx.util import Emu, Pt
+    from pptx.dml.color import RGBColor
+    from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
+
+    prs = Presentation()
+    prs.slide_width, prs.slide_height = Emu(12192000), Emu(6858000)
+    px = 12192000 / W
+    ims = []
+    for slug, opt in FINAL:
+        name = "%s-%s" % (slug, opt)
+        shutil.copy(os.path.join(OUT, name + ".jpg"), os.path.join(C.HIW, "thumbnails", slug + ".jpg"))
+        art, lg, lp, im, (x, y, bw, bh, lh, align) = build(slug, opt)
+        ims.append(im)
+        s = prs.slides.add_slide(prs.slide_layouts[6])
+        s.shapes.add_picture(os.path.join(OUT, "layers", name + "-art.png"), 0, 0, prs.slide_width, prs.slide_height).name = "Artwork"
+        s.shapes.add_picture(os.path.join(OUT, "layers", name + "-logo.png"), Emu(round(lp[0] * px)), Emu(round(lp[1] * px)),
+                             Emu(round(lg.width * px)), Emu(round(lg.height * px))).name = "Logo"
+        tb = s.shapes.add_textbox(Emu(round((x - 24) * px)), Emu(round((y - C.TITLE_PX * 0.3) * px)),
+                                  Emu(round((bw + 48) * px)), Emu(round((bh + C.TITLE_PX * 0.5) * px)))
+        tb.name = "Title"
+        tf = tb.text_frame
+        tf.word_wrap = False
+        tf.vertical_anchor = MSO_ANCHOR.TOP
+        for m in ("margin_left", "margin_right", "margin_top", "margin_bottom"):
+            setattr(tf, m, 0)
+        for i, line in enumerate(LINES_OVERRIDE.get((slug, opt), TITLES[slug][1])):
+            p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+            p.alignment = PP_ALIGN.RIGHT if align == "right" else PP_ALIGN.LEFT
+            p.line_spacing = Pt(lh * 0.5)
+            r = p.add_run()
+            r.text = line
+            r.font.name = "Montserrat"
+            r.font.bold = True
+            r.font.size = Pt(C.TITLE_PX * 0.5)
+            r.font.color.rgb = RGBColor(*LAYOUT[(slug, opt)][1])
+        s.notes_slide.notes_text_frame.text = "%s: %s. Vector illustration, no AI image generation. Title is live text (Montserrat Bold)." % (
+            TITLES[slug][0], LAYOUT[(slug, opt)][4])
+    prs.save(os.path.join(C.HIW, "how-it-works-thumbnails.pptx"))
+
+    tw, th, g = 900, 506, 30
+    f = ImageFont.truetype(C.FONT, 26)
+    out = Image.new("RGB", (g + 3 * (tw + g), 2 * (th + 60) + 60 + 95 + 40), (244, 241, 234))
+    d = ImageDraw.Draw(out)
+    for i, ((slug, _), im) in enumerate(zip(FINAL, ims)):
+        x, y = g + (i % 3) * (tw + g), 20 + (i // 3) * (th + 60)
+        d.text((x, y), "%d  %s" % (i + 1, TITLES[slug][0]), font=f, fill=(35, 31, 29))
+        out.paste(im.resize((tw, th), Image.LANCZOS), (x, y + 38))
+    y = 20 + 2 * (th + 60) + 10
+    d.text((g, y), "At 168 px wide", font=f, fill=(35, 31, 29))
+    for i, im in enumerate(ims):
+        out.paste(im.resize((168, 95), Image.LANCZOS), (g + i * 188, y + 40))
+    out.save(os.path.join(ROOT, "docs", "how-it-works-thumbnails-final.png"), optimize=True)
+    print("final set written")
+
+
+if __name__ == "__main__" and "--final" in sys.argv:
+    final_set()
