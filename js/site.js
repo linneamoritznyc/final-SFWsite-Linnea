@@ -482,7 +482,8 @@
   var D = JSON.parse(root.querySelector("[data-rm-data]").textContent);
   var svg = root.querySelector("[data-rm-svg]"), panel = root.querySelector("[data-rm-panel]"), NS = "http://www.w3.org/2000/svg";
   var FC = {}; D.facets.forEach(function (f, i) { FC[f] = "var(--f" + i + ")"; });
-  var state = { set: "elaine", people: true, from: 1980, to: 2026, q: "", sel: null };
+  var state = { set: "elaine", people: true, facets: {}, q: "", sel: null };
+  D.facets.forEach(function (f) { state.facets[f] = true; });
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var W = 1000, H = 760, view = { x: 0, y: 0, k: 1 }, nodes = [], links = [], byId = {}, g, gl, gn, alpha = 1, raf = 0;
   var pos = {}; // keep positions between rebuilds
@@ -490,13 +491,14 @@
   function el(n, a) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; }
 
   function build() {
-    var papers = D.papers.filter(function (p) { return (state.set === "all" || p.c === "elaine") && p.y >= state.from && p.y <= state.to; });
+    var facetOf = {}; D.topics.forEach(function (t) { facetOf[t.name] = t.facet; });
+    var papers = D.papers.filter(function (p) { return (state.set === "all" || p.c === "elaine") && p.topics.some(function (t) { return state.facets[facetOf[t]]; }); });
     var used = {}, deg = {};
     nodes = []; links = []; byId = {};
     papers.forEach(function (p) {
       var n = { id: p.id, kind: "paper", p: p, r: 4 };
       nodes.push(n);
-      p.topics.forEach(function (t) { links.push({ s: p.id, t: "t:" + t }); used["t:" + t] = 1; deg["t:" + t] = (deg["t:" + t] || 0) + 1; });
+      p.topics.forEach(function (t) { if (!state.facets[facetOf[t]]) return; links.push({ s: p.id, t: "t:" + t }); used["t:" + t] = 1; deg["t:" + t] = (deg["t:" + t] || 0) + 1; });
       if (state.people) p.names.forEach(function (a) { if (D.people.some(function (x) { return x.name === a; })) { links.push({ s: p.id, t: "a:" + a }); used["a:" + a] = 1; deg["a:" + a] = (deg["a:" + a] || 0) + 1; } });
     });
     D.topics.forEach(function (t) { if (used[t.id]) nodes.push({ id: t.id, kind: "topic", t: t, r: 8 + Math.sqrt(deg[t.id]) * 3.2 }); });
@@ -521,6 +523,7 @@
     nodes.sort(function (a, b) { return (a.kind === "paper") - (b.kind === "paper"); }).reverse();
     nodes.forEach(function (n) {
       var e = el("g", { "class": "n n--" + n.kind + (n.kind === "paper" && n.p.c !== "elaine" ? " is-field" : "") });
+      if (n.kind === "paper") e.appendChild(el("circle", { r: 9, "class": "hit" }));
       var c = el("circle", { r: n.r });
       if (n.kind === "topic") c.setAttribute("style", "fill:" + FC[n.t.facet]);
       e.appendChild(c);
@@ -530,8 +533,9 @@
         var tx = el("text", { y: n.r + 13, "text-anchor": "middle" }); tx.textContent = n.kind === "topic" ? n.t.name : n.a.name; e.appendChild(tx);
       } else { var ti = el("title", {}); ti.textContent = n.p.t + " (" + n.p.y + ")"; e.appendChild(ti); }
       n.el = e; gn.appendChild(e);
-      e.addEventListener("mouseenter", function () { hot(n); });
-      e.addEventListener("mouseleave", function () { hot(state.sel ? byId[state.sel] : null); });
+      e.addEventListener("mouseenter", function () { hot(n); tipShow(n); });
+      e.addEventListener("mousemove", tipMove);
+      e.addEventListener("mouseleave", function () { hot(state.sel ? byId[state.sel] : null); tip.hidden = true; });
       e.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(n); } });
       e.addEventListener("focus", function () { hot(n); });
       e.addEventListener("pointerdown", function (ev) { dragN = n; ev.stopPropagation(); start(ev); });
@@ -618,6 +622,15 @@
   }
   panel.addEventListener("click", function (ev) { var b = ev.target.closest("[data-rm-go]"); if (b && byId[b.dataset.rmGo]) { select(byId[b.dataset.rmGo]); centre(byId[b.dataset.rmGo]); } });
 
+  var tip = root.querySelector("[data-rm-tip]"), stage = root.querySelector(".rm-stage");
+  function tipShow(n) {
+    var h;
+    if (n.kind === "paper") h = "<b>" + esc(n.p.t) + "</b><span>" + n.p.y + " &middot; " + esc(n.p.type) + " &middot; " + n.nb.filter(function (m) { return m.kind === "topic"; }).map(function (m) { return esc(m.t.name); }).join(", ") + "</span>";
+    else if (n.kind === "topic") h = "<b>" + esc(n.t.name) + "</b><span>" + esc(n.t.facet) + " &middot; " + papersOf(n).length + " papers</span>";
+    else h = "<b>" + esc(n.a.name) + "</b><span>" + n.a.n + " papers with Dr. Ingham</span>";
+    tip.innerHTML = h; tip.hidden = false;
+  }
+  function tipMove(ev) { var r = stage.getBoundingClientRect(), x = ev.clientX - r.left + 14, y = ev.clientY - r.top + 14; var sw = svg.getBoundingClientRect().width; if (x > sw - 290) x -= 300; if (x < 4) x = 4; tip.style.left = x + "px"; tip.style.top = y + "px"; }
   function centre(n) { view.x = W / 2 - n.x * view.k; view.y = H / 2 - n.y * view.k; applyView(); }
   function applyView() { if (g) g.setAttribute("transform", "translate(" + view.x + "," + view.y + ") scale(" + view.k + ")"); }
   root.querySelectorAll("[data-rm-zoom]").forEach(function (b) {
@@ -646,11 +659,8 @@
   // controls
   root.querySelectorAll('[data-rm-set="all"]').forEach(function (b) { b.addEventListener("click", function () { state.set = state.set === "all" ? "elaine" : "all"; b.classList.toggle("is-active", state.set === "all"); b.setAttribute("aria-pressed", state.set === "all"); build(); }); });
   root.querySelectorAll("[data-rm-layer]").forEach(function (b) { b.addEventListener("click", function () { state.people = !state.people; b.classList.toggle("is-active", state.people); b.setAttribute("aria-pressed", state.people); build(); }); });
-  var fr = root.querySelector("[data-rm-from]"), to = root.querySelector("[data-rm-to]"), yo = root.querySelector("[data-rm-yout]");
-  var minY = Math.min.apply(null, D.papers.map(function (p) { return p.y; })), maxY = Math.max.apply(null, D.papers.map(function (p) { return p.y; }));
-  [fr, to].forEach(function (r) { r.min = minY; r.max = maxY; }); fr.value = minY; to.value = maxY; state.from = minY; state.to = maxY; yo.textContent = minY + " to " + maxY;
-  var yt; function years() { var a = +fr.value, b = +to.value; if (a > b) { var t = a; a = b; b = t; } state.from = a; state.to = b; yo.textContent = a + " to " + b; clearTimeout(yt); yt = setTimeout(build, 120); }
-  fr.addEventListener("input", years); to.addEventListener("input", years);
+  root.querySelectorAll("[data-rm-facet]").forEach(function (b) { b.addEventListener("click", function () { var on = !b.classList.contains("is-active"); b.classList.toggle("is-active", on); b.setAttribute("aria-pressed", on); state.facets[b.dataset.rmFacet] = on; build(); }); });
+  root.querySelector("[data-rm-jump]").addEventListener("click", function (ev) { var b = ev.target.closest("[data-rm-go]"); if (!b) return; var n = byId[b.dataset.rmGo]; if (!n) return; select(n); centre(n); root.querySelectorAll("[data-rm-jump] .chip").forEach(function (x) { x.classList.toggle("is-active", x === b); }); });
   var q = root.querySelector("[data-rm-q]");
   function search() {
     var s = (q.value || "").trim().toLowerCase(); state.q = s;

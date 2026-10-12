@@ -1185,6 +1185,13 @@ def research_map(args):
             "papers": papers}
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     legend = "".join('<li><span class="rm-k rm-k--%d"></span>%s</li>' % (i, E(f)) for i, f in enumerate(data["facets"]))
+    kinds = "".join('<button type="button" class="chip is-active" aria-pressed="true" data-rm-facet="%s"><span class="rm-k rm-k--%d"></span>%s</button>' % (A(f), i, E(f)) for i, f in enumerate(data["facets"]))
+    tc = {}
+    for p in papers:
+        if p["c"] == "elaine":
+            for t in p["topics"]:
+                tc[t] = tc.get(t, 0) + 1
+    jump = "".join('<button type="button" class="chip chip--sm" data-rm-go="t:%s">%s</button>' % (A(t), E(t)) for t in sorted(tc, key=lambda t: -tc[t])[:12])
     return ('<div class="rm" data-research-map>'
             '<div class="rm-bar">'
             '<div class="rm-seg" role="group" aria-label="Which publications">'
@@ -1195,11 +1202,10 @@ def research_map(args):
             '<label class="rm-search"><span class="sr-only">Find a topic, colleague or paper</span>'
             '<input type="search" placeholder="Find a topic, colleague or paper" data-rm-q></label>'
             '</div>'
-            '<div class="rm-years" data-rm-years><span class="rm-years__l">Years</span>'
-            '<input type="range" min="1980" max="2026" value="1980" step="1" aria-label="From year" data-rm-from>'
-            '<input type="range" min="1980" max="2026" value="2026" step="1" aria-label="To year" data-rm-to>'
-            '<output data-rm-yout>1980 to 2026</output></div>'
+            '<div class="rm-row"><span class="rm-row__l">Kinds of topic</span><div class="rm-seg" role="group" aria-label="Kinds of topic">%s</div></div>'
+            '<div class="rm-row"><span class="rm-row__l">Jump to</span><div class="rm-seg" data-rm-jump>%s</div></div>'
             '<div class="rm-stage">'
+            '<div class="rm-tip" data-rm-tip hidden></div>'
             '<svg class="rm-svg" role="img" aria-label="A web of topics, colleagues and papers. Use the list below the map to browse without a mouse." data-rm-svg></svg>'
             '<div class="rm-zoom"><button type="button" data-rm-zoom="1.25" aria-label="Zoom in">+</button>'
             '<button type="button" data-rm-zoom="0.8" aria-label="Zoom out">&minus;</button>'
@@ -1212,4 +1218,4 @@ def research_map(args):
             '<ul class="rm-legend">%s<li><span class="rm-k rm-k--person"></span>Colleague</li><li><span class="rm-k rm-k--paper"></span>Paper</li></ul>'
             '<details class="rm-list"><summary>Browse the map as a list</summary><div data-rm-list></div></details>'
             '<script type="application/json" data-rm-data>%s</script>'
-            '</div>') % (legend, blob)
+            '</div>') % (kinds, jump, legend, blob)
