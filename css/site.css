@@ -3232,3 +3232,6 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 /* News categories as small ink stamps. */
 .stamp { display: inline-block; border: 1.5px solid currentColor; color: var(--green); border-radius: 3px; padding: .2em .55em .15em; margin-right: .35rem; font-family: var(--display); font-weight: 700; font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; transform: rotate(-1.5deg); }
 .stamp:empty { display: none; }
+/* A single wide photo under a centred page intro. */
+.wide-photo { max-width: 56rem; margin: 2rem auto 0; }
+.wide-photo img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 45%; border-radius: var(--radius); }
