@@ -1533,3 +1533,4 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .band--stats .stat__n { color: var(--white); }
 .band--stats .stat__l { color: #ece6e3; }
 .band--stats .todo { color: var(--ink); }
+.band--goal h2 { text-align: center; max-width: 40rem; margin-inline: auto; font-size: clamp(1.4rem, 1rem + 1.4vw, 2rem); }
