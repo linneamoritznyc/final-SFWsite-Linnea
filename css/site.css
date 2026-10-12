@@ -1517,3 +1517,19 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 @media (max-width: 47.99em) { .steps-photo { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .timeline li:nth-child(even) .timeline__body--photo { grid-template-columns: auto minmax(0, 1fr); }
 .timeline li:nth-child(even) .timeline__body--photo .timeline__photo { order: -1; }
+/* Donate: what your gift grows, three arched photos. */
+.grows { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); }
+.grows li { display: grid; gap: .5rem; align-content: start; }
+.grows picture { display: block; }
+.grows img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 999px 999px var(--radius) var(--radius); display: block; }
+.grows h3 { color: var(--soil); margin: .75rem 0 0; }
+.grows p { margin: 0; max-width: 24rem; }
+@media (max-width: 47.99em) { .grows { grid-template-columns: 1fr; } .grows img { aspect-ratio: 4 / 3; } }
+/* Numbers and goals on a dark photo band. */
+.band--photo.band--stats { padding-block: clamp(3.5rem, 2rem + 5vw, 6rem); }
+.band--stats::before { background: rgba(28, 22, 18, .66); }
+.band--stats > picture > img { object-position: var(--pos, 50% 50%); }
+.band--stats h2 { color: var(--white); max-width: 52rem; margin-inline: auto; }
+.band--stats .stat__n { color: var(--white); }
+.band--stats .stat__l { color: #ece6e3; }
+.band--stats .todo { color: var(--ink); }
