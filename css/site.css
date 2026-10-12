@@ -1517,3 +1517,52 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 @media (max-width: 47.99em) { .steps-photo { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .timeline li:nth-child(even) .timeline__body--photo { grid-template-columns: auto minmax(0, 1fr); }
 .timeline li:nth-child(even) .timeline__body--photo .timeline__photo { order: -1; }
+
+/* Drawn plates: generated soil organisms (How It Works, preview plates-v1). */
+.plates { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); }
+.plate figure { margin: 0; }
+.plate svg { display: block; width: 100%; height: auto; background: var(--cream); border: 1px solid rgba(79, 52, 51, .18); }
+.plate figcaption { display: grid; gap: .2rem; margin-top: .9rem; }
+.plate__n { font-family: var(--display); font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6a5f5c; }
+.plate b { font-family: var(--display); font-size: 1.25rem; font-weight: 600; color: var(--soil); }
+.plate figcaption span:last-child { color: #4d4745; }
+@media (max-width: 63.99em) { .plates { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 35.99em) { .plates { grid-template-columns: 1fr; } }
+/* The programme plate (Programs, preview plates-v1). */
+.pp-wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 18rem; gap: 2rem; align-items: start; margin-top: 1.5rem; }
+.pp { width: 100%; height: auto; display: block; }
+.pp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 47.99em) { .pp { min-width: 680px; } }
+.pp text { font-family: var(--display); fill: var(--soil); text-anchor: middle; }
+.pp .pp-t { font-size: 13px; font-weight: 600; }
+.pp .pp-sub { font-size: 11px; font-weight: 500; fill: #6a5f5c; letter-spacing: .04em; }
+.pp .pp-note { font-size: 12px; font-weight: 500; fill: #6a5f5c; }
+.pp .pp-left { text-anchor: start; }
+.pp-edges path { fill: none; stroke: var(--soil); stroke-width: 1.4; opacity: .55; }
+.pp-bracket { fill: none; stroke: var(--soil); stroke-width: 1; stroke-dasharray: 3 5; opacity: .5; }
+.pp-margin { stroke: var(--soil); stroke-width: 1; stroke-dasharray: 2 6; opacity: .45; }
+.pp a { cursor: pointer; transition: opacity .2s; }
+.pp a circle { fill: var(--white); stroke: var(--soil); stroke-width: 1.6; transition: fill .2s, stroke-width .2s; }
+.pp .pp-big circle { fill: #e6efe3; stroke: var(--green); stroke-width: 2.2; }
+.pp .pp-title circle { fill: var(--green); stroke: var(--green); }
+.pp .pp-title text { fill: var(--white); }
+.pp .pp-side circle { stroke-dasharray: 5 5; fill: var(--cream); }
+.pp a:hover circle, .pp a:focus-visible circle, .pp a.is-on circle { stroke: var(--green); stroke-width: 3.2; }
+.pp a:focus-visible { outline: none; }
+.pp.is-dim a:not(.is-on) { opacity: .32; }
+.pp-detail { position: sticky; top: 7rem; border-top: 2px solid var(--green); padding-top: 1rem; }
+.pp-detail__k { margin: 0; font-family: var(--display); font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--green); }
+.pp-detail__n { margin: .35rem 0 .5rem; }
+.pp-detail__l { margin: 0; color: #4d4745; }
+.pp-legend { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin: 1.25rem 0 0; padding: 0; font-size: .9375rem; color: #4d4745; }
+.pp-legend li { display: flex; align-items: center; gap: .5rem; }
+.pp-k { width: 1rem; height: 1rem; border-radius: 50%; border: 1.6px solid var(--soil); background: var(--white); display: inline-block; }
+.pp-k--title { background: var(--green); border-color: var(--green); }
+.pp-k--side { border-style: dashed; background: var(--cream); }
+@media (max-width: 63.99em) { .pp-wrap { grid-template-columns: 1fr; } .pp-detail { position: static; } }
+/* Collage cut-outs instead of circles for the student micrographs (Publications, preview plates-v1). */
+.micro-row--cut img { border: 0; border-radius: 0; filter: grayscale(.15) contrast(1.15); }
+.micro-row--cut li:nth-child(4n+1) img { clip-path: polygon(8% 18%, 24% 4%, 40% 14%, 58% 2%, 74% 12%, 94% 6%, 88% 30%, 100% 48%, 90% 66%, 98% 86%, 76% 94%, 58% 100%, 40% 90%, 20% 98%, 6% 82%, 12% 62%, 0 44%, 10% 30%); }
+.micro-row--cut li:nth-child(4n+2) img { clip-path: polygon(14% 6%, 34% 12%, 50% 0, 68% 10%, 88% 4%, 96% 24%, 86% 40%, 100% 58%, 92% 78%, 80% 98%, 60% 88%, 44% 100%, 26% 90%, 4% 94%, 10% 72%, 0 52%, 8% 34%, 2% 16%); }
+.micro-row--cut li:nth-child(4n+3) img { clip-path: polygon(4% 10%, 22% 0, 38% 8%, 56% 4%, 70% 16%, 90% 10%, 100% 30%, 92% 50%, 100% 70%, 86% 92%, 66% 86%, 50% 98%, 30% 92%, 12% 100%, 2% 80%, 10% 60%, 0 40%, 8% 24%); }
+.micro-row--cut li:nth-child(4n) img { clip-path: polygon(10% 2%, 30% 10%, 46% 2%, 64% 8%, 82% 0, 98% 14%, 90% 34%, 100% 52%, 94% 72%, 100% 92%, 78% 96%, 62% 88%, 44% 100%, 24% 92%, 8% 98%, 0 76%, 6% 56%, 0 34%); }
