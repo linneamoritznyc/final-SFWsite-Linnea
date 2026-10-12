@@ -3226,3 +3226,9 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 [data-filter].is-previewing [data-item]:not(.is-match) { opacity: .28; filter: grayscale(1); }
 [data-filter].is-previewing [data-item].is-match { transform: translateY(-.5rem); }
 @media (prefers-reduced-motion: reduce) { [data-filter] .chips .chip, [data-filter] .chips .chip::after, [data-filter] [data-item] { transition: none; } [data-filter].is-previewing [data-item].is-match { transform: none; } }
+/* Home approach tiles: numbered steps 01 to 04, like a field protocol. */
+.tiles--steps { counter-reset: step; }
+.tiles--steps .tile__in::before { counter-increment: step; content: "0" counter(step); position: absolute; top: 1.1rem; left: 1.25rem; font: 700 clamp(1.6rem, 1.2rem + 1.2vw, 2.4rem)/1 var(--display); color: var(--white); text-shadow: 0 1px 3px rgba(0,0,0,.6); padding-bottom: .45rem; border-bottom: 2px solid rgba(255,255,255,.85); }
+/* News categories as small ink stamps. */
+.stamp { display: inline-block; border: 1.5px solid currentColor; color: var(--green); border-radius: 3px; padding: .2em .55em .15em; margin-right: .35rem; font-family: var(--display); font-weight: 700; font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; transform: rotate(-1.5deg); }
+.stamp:empty { display: none; }

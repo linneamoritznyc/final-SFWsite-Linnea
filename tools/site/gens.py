@@ -289,6 +289,7 @@ def blog_card_image(p, cls, sizes="(min-width: 64em) 19rem, 50vw"):
 def post_card(p):
     """News card as on staging /news/: 3:2 image (the post's featured image, else its header image)."""
     cat = p["categories"][0]["name"] if p["categories"] else ""
+    cat = "" if cat == "Uncategorized" else cat
     alt = POST_ALTS.get(p["slug"]) or HOME_POST_ALTS.get(p["slug"], "")
     pic = blog_card_image(p, "card__img card__img--wide")
     if pic:
@@ -298,7 +299,7 @@ def post_card(p):
     else:
         src = p.get("featured") or p.get("header")
         pic = img(src, alt, "card__img card__img--wide") if src else '<div class="card__img card__img--wide"></div>'
-    return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker">%s &middot; '
+    return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker"><span class="stamp">%s</span> '
             '<time datetime="%s">%s</time></p><h3 class="card__title"><a href="/%s/">%s</a></h3></div></article></li>') % (
         pic, E(cat), p["date"], fmt_date(p["date"]), p["slug"], E(fix(p["title"])))
 
@@ -325,12 +326,13 @@ POST_AUTHORS = {"what-exactly-is-brownian-motion": "Wes Sander", "a-fresh-smapp"
 
 def home_post_card(p):
     cat = p["categories"][0]["name"] if p["categories"] else ""
+    cat = "" if cat == "Uncategorized" else cat
     src = HOME_POST_IMAGES.get(p["slug"]) or p.get("featured")
     alt = HOME_POST_ALTS.get(p["slug"]) or POST_ALTS.get(p["slug"], "")
     pic = blog_card_image(p, "card__img card__img--wide") or (img(src, alt, "card__img card__img--wide") if src else '<div class="card__img card__img--wide"></div>')
     d = datetime.date.fromisoformat(p["date"][:10])
     author = ", ".join(a["name"] for a in p["authors"]) or POST_AUTHORS.get(p["slug"], "")
-    return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker">%s &middot; '
+    return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker"><span class="stamp">%s</span> '
             '<time datetime="%s">%d %s %d</time></p><h3 class="card__title"><a href="/%s/">%s</a></h3>%s</div></article></li>') % (
         pic, E(cat), p["date"], d.day, d.strftime("%b"), d.year, p["slug"], E(p["title"]),
         '<p class="card__text">%s</p>' % E(author) if author else "")
