@@ -628,12 +628,12 @@ def directory(args):
                          A(rk), slug(country_of(d["area"])), esc_attr_text(" ".join([name, d["company"], d["area"], " ".join(d["roles"])])), pic,
                          E(" \u00b7 ".join(r.replace("Lab-Tech", "Lab Tech") for r in d["roles"])), dir_slug(d), E(name),
                          '<p class="card__text">%s</p>' % E(d["company"]) if d["company"] else "", E(d["area"])))
-    return ('<div data-filter><ul class="chips" aria-label="Filter by category">%s</ul>'
+    return ('<div data-filter>%s<ul class="chips" aria-label="Filter by category">%s</ul>'
             '<form class="searchbar" role="search"><label class="sr-only" for="dir-q">Search the directory</label>'
             '<input id="dir-q" type="search" data-q placeholder="Name, company, location">'
             '<label class="sr-only" for="dir-country">Country</label><select id="dir-country" data-topic>%s</select></form>'
             '<p class="count" data-count data-one="practitioner" data-many="practitioners" aria-live="polite"></p>'
-            '<ul class="grid">%s</ul><p data-empty hidden>No practitioners match. Try another country or a nearby region.</p></div>') % (chips, opts, "".join(cards))
+            '<ul class="grid">%s</ul><p data-empty hidden>No practitioners match. Try another country or a nearby region.</p></div>') % (practitioner_map(ds), chips, opts, "".join(cards))
 
 
 # ------------------------------------------------------------------ item pages
@@ -666,6 +666,46 @@ def team_pages():
             back("/about/#team", "Back to the team"), team_photo(t), E(t["name"]),
             '<p class="profile__role">%s</p>' % E(role) if role else TODO % "Role or title for %s; Stephanie McDaniel supplies." % t["name"], bio)
         write(path, t["name"], "%s, %s at the Soil Food Web Foundation." % (t["name"], role or "team member"), body, "/about/")
+
+
+
+def practitioner_map(ds):
+    """World map of the directory: one bubble per country, sized by how many practitioners
+    list it. Positions are country centres (content/practitioner-map.json, pre-rendered from
+    Natural Earth via world-atlas). Europe is crowded, so it also gets a zoomed inset.
+    Choosing a bubble filters the list below to that country."""
+    import collections, math
+    m = repo("practitioner-map")
+    slug = lambda t: re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
+    count = collections.Counter(country_of(d["area"]) for d in ds if country_of(d["area"]))
+    W, H = m["w"], m["h"]
+    EU = (448, 38, 132, 92)  # x, y, w, h of the inset window, in map units
+
+    def dots(scale, inset):
+        out = []
+        for c, n in sorted(count.items(), key=lambda kv: -kv[1]):
+            if c not in m["pts"]:
+                continue
+            x, y = m["pts"][c]
+            if inset and not (EU[0] < x < EU[0] + EU[2] and EU[1] < y < EU[1] + EU[3]):
+                continue
+            r = (4.5 + 3.2 * math.sqrt(n)) * scale
+            label = "%s, %d practitioner%s" % (c, n, "" if n == 1 else "s")
+            num = '<text x="%.1f" y="%.1f" font-size="%.1f">%d</text>' % (x, y + 4 * scale, 11 * scale, n) if n >= 3 or inset else ""
+            out.append('<g class="pmap__dot" data-country="%s" tabindex="%s" role="button" aria-pressed="false" aria-label="%s">'
+                       '<title>%s</title><circle cx="%.1f" cy="%.1f" r="%.1f" stroke-width="%.2f"/>%s</g>' % (
+                           slug(c), "-1" if inset else "0", A(label), E(label), x, y, r, 1.5 * scale, num))
+        return "".join(out)
+
+    land = '<image href="/img/world-land-pmap.svg" x="0" y="0" width="%d" height="%d"/>' % (W, H)
+    frame = '<rect class="pmap__frame" x="%d" y="%d" width="%d" height="%d"/>' % EU
+    main = ('<svg class="pmap__world" viewBox="0 0 %d %d" role="group" aria-label="Practitioners by country. Choose a country to filter the list.">%s%s%s</svg>'
+            % (W, H, land, frame, dots(1, False)))
+    inset = ('<div class="pmap__inset" aria-hidden="true"><p>Europe</p><svg viewBox="%d %d %d %d">%s%s</svg></div>'
+             % (EU + (land, dots(.42, True))))
+    return ('<figure class="pmap" id="practitioner-map" data-pmap><div class="pmap__stage">%s%s</div>'
+            '<figcaption>%d practitioners in %d countries. Choose a country to see who works there.</figcaption></figure>') % (
+                main, inset, sum(count.values()), len(count))
 
 
 def directory_pages():

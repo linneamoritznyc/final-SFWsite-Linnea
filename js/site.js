@@ -686,3 +686,36 @@
   root.querySelector("[data-rm-list]").addEventListener("click", function (ev) { var b = ev.target.closest("[data-rm-go]"); if (b && byId[b.dataset.rmGo]) { select(byId[b.dataset.rmGo]); centre(byId[b.dataset.rmGo]); panel.scrollIntoView({ block: "nearest", behavior: "smooth" }); } });
   build();
 })();
+
+/* Practitioner map: a bubble per country. Choosing one filters the directory list below;
+   hovering a practitioner's card lights up their country. */
+(function () {
+  "use strict";
+  var map = document.querySelector("[data-pmap]");
+  if (!map) return;
+  var root = map.closest("[data-filter]");
+  var select = root && root.querySelector("[data-topic]");
+  if (!select) return;
+  var dots = map.querySelectorAll("[data-country]");
+  function mark() {
+    Array.prototype.forEach.call(dots, function (d) { d.setAttribute("aria-pressed", String(d.getAttribute("data-country") === select.value)); });
+    map.classList.toggle("has-pick", !!select.value);
+  }
+  function pick(d) {
+    var c = d.getAttribute("data-country");
+    select.value = select.value === c ? "" : c;
+    select.dispatchEvent(new Event("change"));
+    mark();
+  }
+  Array.prototype.forEach.call(dots, function (d) {
+    d.addEventListener("click", function () { pick(d); });
+    d.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(d); } });
+  });
+  select.addEventListener("change", mark);
+  root.addEventListener("mouseover", function (e) {
+    var li = e.target.closest && e.target.closest("[data-item]");
+    var c = li ? li.getAttribute("data-topics") : "";
+    Array.prototype.forEach.call(dots, function (d) { d.classList.toggle("is-hot", !!c && d.getAttribute("data-country") === c); });
+  });
+  mark();
+})();

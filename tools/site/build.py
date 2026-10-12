@@ -177,6 +177,7 @@ NAV = [
         ("Mission, Vision & Story", "/about/#mission"),
         ("Our Team", "/about/#team"),
         ("Dr. Elaine’s Research", "/about/#dr-elaine"),
+        ("Research Map", "/publications/interactive/"),
         ("How we’re funded", "/funding/"),
         ("Governance and financials", "/governance/"),
         ("Year one report", "/year-one-report/"),
@@ -187,6 +188,7 @@ NAV = [
         ("Programs Overview", "/programs/"),
         ("Online Courses", "/programs/#path"),
         ("Workshops", "/workshops/"),
+        ("Workshop Map", "/workshops/#workshop-map"),
         ("Free Webinars", "https://webinar.soilfoodweb.com"),
         ("Scholarship", "/scholarship/"),
         ("Student Login", "/login/"),
@@ -200,6 +202,7 @@ NAV = [
     ("Practice", "/case-studies/", [
         ("Case Studies", "/case-studies/"),
         ("Find a Professional", "/find-a-professional/"),
+        ("Practitioner Map", "/find-a-professional/#practitioner-map"),
         ("Work With Us", "/work-with-us/"),
     ]),
     ("Community", "/community/", [
