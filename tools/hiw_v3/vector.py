@@ -20,13 +20,16 @@ OUT = os.path.join(ROOT, "docs", "vector-thumbnails")
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 W, H = 1920, 1080
 
-INK = "#2B1D14"
-SOIL, SPECK, SPECK2 = "#7A5C45", "#6B4A32", "#8A6446"
+INK = "#231F1D"
+SOIL, SPECK, SPECK2 = "#4F3433", "#3A2826", "#6E504A"
+SOIL_R = SOIL
+SKY_G, SKY_C = "#156826", "#F4F1EA"
+PALE_SOIL = "#C2A57F"
 DEEP = "#3E2C22"
 ROOT_FILL, ROOT_LINE = "#F4EBD3", "#C9B48F"
 HYPHA = "#F8F3E6"
-BAC, BAC_LINE = "#7DB05F", "#4F7C3F"
-GOLD = "#D9A23A"
+BAC, BAC_LINE = "#8CCB6A", "#2E6B3A"
+GOLD = "#59A66C"   # flow arrows: SFW Light Green with a dark outline (name kept for history)
 CREAM = "#F4F1EA"
 SKY = "#E4EEDC"
 
@@ -38,8 +41,15 @@ def icon(name):
 
 DEFS = """<defs>
 <radialGradient id="nglow"><stop offset="0" stop-color="#F4FF8A"/><stop offset=".5" stop-color="#C9F23A" stop-opacity=".8"/><stop offset="1" stop-color="#C9F23A" stop-opacity="0"/></radialGradient>
-<radialGradient id="sglow"><stop offset="0" stop-color="#FFE08A"/><stop offset=".5" stop-color="#F5C04D" stop-opacity=".7"/><stop offset="1" stop-color="#F5C04D" stop-opacity="0"/></radialGradient>
-<marker id="ahg" markerUnits="userSpaceOnUse" markerWidth="60" markerHeight="60" refX="34" refY="30" orient="auto"><path d="M0 4 L58 30 L0 56 z" fill="%s"/></marker>
+<radialGradient id="sglow"><stop offset="0" stop-color="#F4F1EA" stop-opacity="0"/></radialGradient>
+<linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B7A31"/><stop offset=".6" stop-color="#156826"/><stop offset="1" stop-color="#2E6B3A"/></linearGradient>
+<linearGradient id="skyC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAF8F2"/><stop offset="1" stop-color="#EDE6D4"/></linearGradient>
+<linearGradient id="soilV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E4240"/><stop offset=".35" stop-color="#4F3433"/><stop offset="1" stop-color="#231F1D"/></linearGradient>
+<radialGradient id="soilR" cx=".62" cy=".45" r=".85"><stop offset="0" stop-color="#6A4B46"/><stop offset=".45" stop-color="#4F3433"/><stop offset="1" stop-color="#231F1D"/></radialGradient>
+<linearGradient id="paleSoil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CDB28C"/><stop offset="1" stop-color="#A88B66"/></linearGradient>
+<radialGradient id="halo"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".22"/><stop offset=".6" stop-color="#FFFFFF" stop-opacity=".07"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+<radialGradient id="haloG"><stop offset="0" stop-color="#9BD27A" stop-opacity=".35"/><stop offset=".6" stop-color="#59A66C" stop-opacity=".12"/><stop offset="1" stop-color="#59A66C" stop-opacity="0"/></radialGradient>
+<marker id="ahg" markerUnits="userSpaceOnUse" markerWidth="60" markerHeight="60" refX="34" refY="30" orient="auto"><path d="M0 4 L58 30 L0 56 z" fill="%s" stroke="#231F1D" stroke-width="4"/></marker>
 <marker id="ahk" markerUnits="userSpaceOnUse" markerWidth="44" markerHeight="44" refX="26" refY="22" orient="auto"><path d="M0 2 L44 22 L0 42 z" fill="%s"/></marker>
 </defs>""" % (GOLD, INK)
 
@@ -211,16 +221,23 @@ def hypha(pts, seed, w=7, branches=6, blen=110, col=HYPHA, depth=2):
 
 
 def glow_dot(x, y, r=15):
+    """A released nutrient: plain light-green dot (no glow)."""
+    return '<circle cx="%.0f" cy="%.0f" r="%.0f" fill="#F4F1EA" stroke="#2E6B3A" stroke-width="5"/>' % (x, y, r * 1.2)
     return ('<circle cx="%.0f" cy="%.0f" r="%.0f" fill="url(#nglow)"/><circle cx="%.0f" cy="%.0f" r="%.0f" fill="#E9FF6B" stroke="#9BC21B" stroke-width="2.5"/>'
             % (x, y, r * 2.4, x, y, r))
 
 
 def sugar_dot(x, y, r=13):
+    """A root exudate droplet: plain cream dot with a soil-brown outline (no glow)."""
+    return '<circle cx="%.0f" cy="%.0f" r="%.0f" fill="#F4F1EA" stroke="#4F3433" stroke-width="4"/>' % (x, y, r)
     return ('<circle cx="%.0f" cy="%.0f" r="%.0f" fill="url(#sglow)"/><circle cx="%.0f" cy="%.0f" r="%.0f" fill="#F7C548" stroke="#B9821C" stroke-width="2.5"/>'
             % (x, y, r * 2.2, x, y, r))
 
 
 def arrow(pts, col=GOLD, w=16, marker="ahg"):
+    d = d_poly(curve(pts, 30), False)
+    return ('<path d="%s" stroke="#231F1D" stroke-width="%d" fill="none" stroke-linecap="round" stroke-linejoin="round"/>' % (d, w + 8)
+            + '<path d="%s" stroke="%s" stroke-width="%d" fill="none" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#%s)"/>' % (d, col, w, marker))
     return ('<path d="%s" stroke="%s" stroke-width="%d" fill="none" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#%s)"/>'
             % (d_poly(curve(pts, 30), False), col, w, marker))
 
@@ -281,20 +298,21 @@ def pathogen(cx, cy, r):
             + '<circle cx="%.0f" cy="%.0f" r="%.0f" fill="#8E5C90"/>' % (cx - r * .25, cy - r * .25, r * .35))
 
 
-def crumb(cx, cy, rx, ry, seed, fill="#8A6446", line="#5A3E29", grains=True):
+def crumb(cx, cy, rx, ry, seed, fill="#8A6050", line="#3A2826", grains=True):
     out = '<path d="%s" fill="%s" stroke="%s" stroke-width="6"/>' % (blob(cx, cy, rx, ry, .14, seed, 10), fill, line)
+    out += '<path d="%s" fill="#FFFFFF" opacity=".10"/>' % blob(cx - rx * .18, cy - ry * .22, rx * .62, ry * .5, .1, seed + 3, 9)
     if grains:
         r = random.Random(seed)
         for _ in range(int(rx * ry / 2200)):
             a, d = r.random() * 2 * math.pi, math.sqrt(r.random()) * .78
             gx, gy = cx + math.cos(a) * rx * d, cy + math.sin(a) * ry * d
-            c = r.choice(("#B59A7A", "#A88B68", "#5E4330", "#C9B497"))
+            c = r.choice(("#C2A07E", "#A9826A", "#5A3B33", "#D6BE9C"))
             out += '<path d="%s" fill="%s" opacity=".9"/>' % (blob(gx, gy, r.uniform(9, 22), r.uniform(8, 18), .3, r.randint(0, 9999), 6), c)
     return out
 
 
 # ---------- plants, drawn in the line style of the plant icon ----------
-LEAF_LIGHT, LEAF_DARK, LEAF_VEIN, LEAF_INK = "#E8EEE6", "#9DBBA4", "#5F7A66", "#26293A"
+LEAF_LIGHT, LEAF_DARK, LEAF_VEIN, LEAF_INK = "#E3F0D6", "#6FB37E", "#2E6B3A", "#173A22"
 WILT_LIGHT, WILT_DARK, WILT_VEIN = "#F2E3BE", "#D3A85A", "#8E6A2E"
 
 
@@ -339,7 +357,7 @@ def leaf_on(pl, wmax, kind="ovate", teeth=0, light=LEAF_LIGHT, dark=LEAF_DARK, v
     return out
 
 
-def stem(pts, w0, w1, col="#8FAE8F", ink=LEAF_INK, lw=5):
+def stem(pts, w0, w1, col="#6FA77A", ink=LEAF_INK, lw=5):
     return tube(curve(pts, 30), w0, w1, fill=col, line=ink, lw=lw, cap=False)
 
 
@@ -359,13 +377,13 @@ def dandelion(x, y, s=1.0, wilt=False):
                 x, y - 20, x + sx * 40 * s, (y + fy) / 2, fx, fy, LEAF_INK, 14 * s)
             out += '<path d="M%.0f %.0f Q%.0f %.0f %.0f %.0f" stroke="#8FAE8F" stroke-width="%d" fill="none"/>' % (
                 x, y - 20, x + sx * 40 * s, (y + fy) / 2, fx, fy, 7 * s)
-            for r_, col in ((62, "#E8A817"), (48, "#F4C430"), (28, "#F9DA62")):
+            for r_, col in ((62, "#F2D23C"), (48, "#F7E06A"), (28, "#FBEDA0")):
                 pet = []
                 for i in range(36):
                     a = 2 * math.pi * i / 36
                     rr = r_ * s * (1 if i % 2 else .82)
                     pet.append((fx + math.cos(a) * rr, fy + math.sin(a) * rr))
-                out += '<path d="%s" fill="%s" stroke="%s" stroke-width="%d"/>' % (d_poly(pet), col, "#9A6A10" if r_ == 62 else "none", 4 if r_ == 62 else 0)
+                out += '<path d="%s" fill="%s" stroke="%s" stroke-width="%d"/>' % (d_poly(pet), col, "#8F7A1E" if r_ == 62 else "none", 4 if r_ == 62 else 0)
     return out
 
 
@@ -397,13 +415,13 @@ def corn(x, y, h, s=1.0):
     cy = y - h * .5
     cob = blob(x + 62 * s, cy - 10 * s, 34 * s, 90 * s, .03, 3, 14, 0.25)
     out += '<g transform="rotate(14 %.0f %.0f)">' % (x + 40 * s, cy)
-    out += '<ellipse cx="%.0f" cy="%.0f" rx="%.0f" ry="%.0f" fill="#F2D06B" stroke="%s" stroke-width="5"/>' % (x + 66 * s, cy - 30 * s, 40 * s, 100 * s, LEAF_INK)
+    out += '<ellipse cx="%.0f" cy="%.0f" rx="%.0f" ry="%.0f" fill="#F3E39A" stroke="%s" stroke-width="5"/>' % (x + 66 * s, cy - 30 * s, 40 * s, 100 * s, LEAF_INK)
     for k in range(-2, 3):
-        out += '<path d="M%.0f %.0f L%.0f %.0f" stroke="#D9A23A" stroke-width="3"/>' % (x + 66 * s + k * 13 * s, cy - 115 * s, x + 66 * s + k * 13 * s, cy + 55 * s)
+        out += '<path d="M%.0f %.0f L%.0f %.0f" stroke="#CDBB62" stroke-width="3"/>' % (x + 66 * s + k * 13 * s, cy - 115 * s, x + 66 * s + k * 13 * s, cy + 55 * s)
     out += leaf_on(curve([(x + 22 * s, cy + 80 * s), (x + 30 * s, cy - 20 * s), (x + 62 * s, cy - 130 * s)], 14), 34 * s, kind="strap")
     out += leaf_on(curve([(x + 110 * s, cy + 70 * s), (x + 104 * s, cy - 20 * s), (x + 74 * s, cy - 120 * s)], 14), 30 * s, kind="strap")
     for k in range(5):
-        out += '<path d="M%.0f %.0f q%.0f %.0f %.0f %.0f" stroke="#B9821C" stroke-width="3" fill="none"/>' % (
+        out += '<path d="M%.0f %.0f q%.0f %.0f %.0f %.0f" stroke="#A88B66" stroke-width="3" fill="none"/>' % (
             x + 68 * s, cy - 128 * s, (k - 2) * 14 * s, -40 * s, (k - 2) * 26 * s, -80 * s)
     out += '</g>'
     # tassel
@@ -411,12 +429,12 @@ def corn(x, y, h, s=1.0):
         a = math.radians(-90 + (k - 3) * 17)
         ln = (120 if k == 3 else 95) * s
         x2, y2 = x + math.cos(a) * ln, top + 40 * s + math.sin(a) * ln
-        out += '<path d="M%.0f %.0f Q%.0f %.0f %.0f %.0f" stroke="#B9955A" stroke-width="%d" fill="none" stroke-linecap="round"/>' % (
+        out += '<path d="M%.0f %.0f Q%.0f %.0f %.0f %.0f" stroke="#A88B66" stroke-width="%d" fill="none" stroke-linecap="round"/>' % (
             x, top + 40 * s, (x + x2) / 2, top + 10 * s, x2, y2 + 25 * s, 7 * s)
         for j in range(1, 5):
             t = j / 5
             px, py = x + (x2 - x) * t, top + 40 * s + (y2 + 25 * s - top - 40 * s) * t - 12 * s * math.sin(math.pi * t)
-            out += '<ellipse cx="%.0f" cy="%.0f" rx="%.0f" ry="%.0f" fill="#E2C988" stroke="#8E6A2E" stroke-width="2"/>' % (px, py, 6 * s, 10 * s)
+            out += '<ellipse cx="%.0f" cy="%.0f" rx="%.0f" ry="%.0f" fill="#E3D6B0" stroke="#8A6050" stroke-width="2"/>' % (px, py, 6 * s, 10 * s)
     return out
 
 
@@ -494,7 +512,7 @@ def tomato(x, y, s=1.0):
     return out
 
 
-def lens(inner, src, k, cx=1300, cy=500, R=420, spot=None, bg=SOIL):
+def lens(inner, src, k, cx=1300, cy=500, R=420, spot=None, bg=SOIL_R):
     """A magnifier circle showing `inner` (drawn in full-frame coordinates) zoomed by k around src."""
     out = '<defs><clipPath id="lens"><circle cx="%d" cy="%d" r="%d"/></clipPath></defs>' % (cx, cy, R)
     if spot:
@@ -516,8 +534,9 @@ def lens(inner, src, k, cx=1300, cy=500, R=420, spot=None, bg=SOIL):
     return out
 
 
-def lens_scene(plant_svg, px, inner, src, k, soil_y=760):
-    b = ground(soil_y, CREAM, 61)
+def lens_scene(plant_svg, px, inner, src, k, soil_y=760, sky=SKY_C):
+    b = ground(soil_y, sky, 61)
+    b += halo(px, soil_y - 200, 420, "haloG" if sky == SKY_C else "halo")
     b += plant_svg
     b += roots_fan(px, soil_y, [[(px - 10, soil_y + 120), (px + 10, soil_y + 260)], [(px + 60, soil_y + 90), (px + 120, soil_y + 200)],
                                 [(px - 60, soil_y + 100), (px - 120, soil_y + 190)]], 22)
@@ -532,7 +551,27 @@ def roots_fan(x, y, spec, w=22, seed=1):
     return out
 
 
-def svg(body, bg=SOIL):
+def halo(cx, cy, r, kind="halo"):
+    return ""
+    return '<circle cx="%d" cy="%d" r="%d" fill="url(#%s)"/>' % (cx, cy, r, kind)
+
+
+def tufts(x0, x1, y, seed, col="#9BD27A", op=.35, h=110):
+    """Soft semi-transparent grass tufts along the soil line, for depth."""
+    r = random.Random(seed)
+    out = ""
+    x = x0
+    while x < x1:
+        for k in range(r.randint(3, 6)):
+            a = math.radians(-90 + r.uniform(-28, 28))
+            ln = h * r.uniform(.4, 1)
+            out += '<path d="M%.0f %.0f Q%.0f %.0f %.0f %.0f" stroke="%s" stroke-width="%d" fill="none" stroke-linecap="round" opacity="%.2f"/>' % (
+                x + k * 6, y + 4, x + k * 6 + math.cos(a) * ln * .3, y - ln * .6, x + k * 6 + math.cos(a) * ln, y + math.sin(a) * ln, col, r.randint(5, 9), op)
+        x += r.randint(70, 160)
+    return out
+
+
+def svg(body, bg=SOIL_R):
     return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d">%s<rect width="%d" height="%d" fill="%s"/>%s</svg>'
             % (W, H, W, H, DEFS, W, H, bg, body))
 
@@ -542,17 +581,18 @@ def svg(body, bg=SOIL):
 
 def ground(soil_y, sky, seed, soil=SOIL):
     b = '<rect width="%d" height="%d" fill="%s"/>' % (W, soil_y, sky)
+    b += tufts(-20, W, soil_y, seed, "#9BD27A" if sky == SKY_G else "#59A66C", .3 if sky == SKY_G else .22)
     b += '<rect y="%d" width="%d" height="%d" fill="%s"/>' % (soil_y, W, H - soil_y, soil)
     b += speckles(0, soil_y, W, H - soil_y, int(90 * (H - soil_y) / H) + 20, seed)
-    return b + '<line x1="0" y1="%d" x2="%d" y2="%d" stroke="#5A3E29" stroke-width="6"/>' % (soil_y, W, soil_y)
+    return b + '<rect y="%d" width="%d" height="14" fill="#6E504A"/>' % (soil_y, W)
 
 
 def scene_food_web(opt):
     if opt == "B":
-        return lens_scene(bean(430, 764, .85), 430, scene_food_web("A"), (1300, 700), .62)
+        return lens_scene(bean(430, 764, .85), 430, scene_food_web("A"), (1300, 700), .62, sky=SKY_G)
     """A: close-up soil field around a root tip. B: bean plant above, the same community below."""
     if opt == "A":
-        b = speckles(0, 0, W, H, 140, 1)
+        b = halo(1300, 600, 700) + speckles(0, 0, W, H, 140, 1)
         rp = curve([(1320, -40), (1300, 260), (1330, 520), (1300, 760), (1270, 900)])
         top = 0
     else:
@@ -579,7 +619,7 @@ def scene_nutrient(opt):
         return lens_scene(lettuce(430, 764, 1.0), 430, scene_nutrient("A"), (1100, 520), .58)
     """A: soil field, amoeba eating bacteria next to a root hair. B: lettuce above, the same loop below."""
     if opt == "A":
-        b = speckles(0, 0, W, H, 140, 11)
+        b = halo(1340, 560, 700) + speckles(0, 0, W, H, 140, 11)
         rp = curve([(-60, 120), (300, 170), (620, 290), (880, 470)])
         cy = 560
     else:
@@ -601,7 +641,7 @@ def scene_nutrient(opt):
 
 def scene_structure(opt):
     """A: crumbs in a soil field. B: the same crumbs as a specimen on cream."""
-    b = speckles(0, 0, W, H, 120, 21) if opt == "A" else '<rect width="%d" height="%d" fill="%s"/>' % (W, H, CREAM)
+    b = (halo(1350, 560, 750) + speckles(0, 0, W, H, 120, 21)) if opt == "A" else ('<rect width="%d" height="%d" fill="%s"/>' % (W, H, SKY_G) + halo(1350, 560, 750))
     crumbs = [(1180, 380, 300, 260, 1), (1620, 740, 280, 250, 2), (980, 860, 230, 200, 3), (1740, 230, 200, 170, 4)]
     for cx, cy, rx, ry, sd in crumbs:
         b += crumb(cx, cy, rx, ry, sd)
@@ -611,7 +651,7 @@ def scene_structure(opt):
             a = r.random() * 2 * math.pi
             b += bacterium(cx + math.cos(a) * rx * r.uniform(.3, .8), cy + math.sin(a) * ry * r.uniform(.3, .8), r.randint(0, 179), 1.25)
     col = HYPHA if opt == "A" else "#FFFFFF"
-    hl = "" if opt == "A" else ' style="filter:drop-shadow(0 0 2px #8A6E4E)"'
+    hl = ""
     hy = hypha([(700, 300), (900, 250), (1150, 140), (1400, 180), (1560, 330), (1700, 470), (1900, 520)], 22, w=8, branches=8, blen=120, col=col)
     hy += hypha([(860, 1100), (900, 700), (1100, 640), (1380, 560), (1560, 520), (1820, 560), (1960, 760)], 23, w=8, branches=8, blen=120, col=col)
     hy += hypha([(1300, 1100), (1380, 900), (1500, 640), (1460, 420), (1380, 250), (1500, 40)], 24, w=7, branches=6, blen=100, col=col)
@@ -623,15 +663,18 @@ def scene_structure(opt):
 
 def scene_weed(opt):
     soil_y = 680
-    sky_l, sky_r = {"A": (CREAM, CREAM), "B": ("#F6EED3", "#2E6B3A"), "C": (SKY, SKY)}[opt]
+    sky_l, sky_r = {"A": (SKY_C, SKY_G), "B": (SKY_G, SKY_G), "C": (SKY_C, SKY_C)}[opt]
     b = '<rect width="%d" height="%d" fill="%s"/>' % (W // 2, soil_y, sky_l)
     b += '<rect x="%d" width="%d" height="%d" fill="%s"/>' % (W // 2, W - W // 2, soil_y, sky_r)
     # one soil band: left disturbed (pale, bacterial), right fungal (dark)
-    b += '<rect x="0" y="%d" width="%d" height="%d" fill="#B49372"/>' % (soil_y, W // 2, H - soil_y)
+    b += tufts(-20, W // 2, soil_y, 37, "#59A66C" if sky_l == SKY_C else "#9BD27A", .22)
+    b += tufts(W // 2, W, soil_y, 38, "#9BD27A" if sky_r == SKY_G else "#59A66C", .28)
+    b += '<rect x="0" y="%d" width="%d" height="%d" fill="%s"/>' % (soil_y, W // 2, H - soil_y, PALE_SOIL)
     b += '<rect x="%d" y="%d" width="%d" height="%d" fill="%s"/>' % (W // 2, soil_y, W - W // 2, H - soil_y, SOIL)
     b += speckles(0, soil_y, W // 2, H - soil_y, 40, 31, ("#A2835F", "#C2A483"))
     b += speckles(W // 2, soil_y, W - W // 2, H - soil_y, 50, 32)
-    b += '<line x1="0" y1="%d" x2="%d" y2="%d" stroke="#5A3E29" stroke-width="6"/>' % (soil_y, W, soil_y)
+    b += '<rect x="0" y="%d" width="%d" height="12" fill="#D9C4A2"/><rect x="%d" y="%d" width="%d" height="12" fill="#6E504A"/>' % (
+        soil_y, W // 2, W // 2, soil_y, W - W // 2)
     # left: weeds thriving, shallow roots, bacteria
     b += roots_fan(560, soil_y, [[(540, 790), (500, 880)], [(600, 770), (680, 830)], [(510, 750), (420, 800)]], 26)
     b += roots_fan(270, soil_y, [[(260, 780), (230, 850)], [(300, 760), (350, 810)]], 18)
@@ -652,14 +695,14 @@ def scene_weed(opt):
 
 def scene_pests(opt):
     if opt == "C":
-        return lens_scene(tomato(430, 764, .78), 430, scene_pests("A"), (1300, 640), .55)
+        return lens_scene(tomato(430, 764, .78), 430, scene_pests("A"), (1300, 640), .55, sky=SKY_C)
     """A root sleeved in beneficial bacteria and fungi; a pathogen kept out. A: soil field. B: cream specimen."""
-    b = speckles(0, 0, W, H, 140, 41) if opt == "A" else '<rect width="%d" height="%d" fill="%s"/>' % (W, H, CREAM)
+    b = (halo(1300, 560, 750) + speckles(0, 0, W, H, 140, 41)) if opt == "A" else ('<rect width="%d" height="%d" fill="%s"/>' % (W, H, SKY_G) + halo(1300, 560, 750))
     rp = curve([(2000, 470), (1500, 500), (1000, 570), (640, 660)])
-    col = HYPHA if opt == "A" else "#FFFFFF"
+    col = HYPHA
     hy = hypha([(1960, 260), (1600, 380), (1300, 430), (1000, 490)], 42, w=7, branches=6, blen=110, col=col)
     hy += hypha([(1960, 780), (1600, 650), (1250, 660), (900, 720)], 43, w=7, branches=6, blen=110, col=col)
-    b += hy if opt == "A" else '<g style="filter:drop-shadow(0 0 2px #8A6E4E)">%s</g>' % hy
+    b += hy
     b += hairs(rp, 170, 110, 7, 70, 44)
     b += tube(rp, 170, 110)
     b += bacteria_along(rp, 150, 90, 45, 1.25, spread=40)
@@ -673,7 +716,8 @@ def scene_pests(opt):
 def scene_carbon(opt):
     """Oak pulls carbon from the air; a gold flow runs down the roots, along fungal threads, into dark soil clumps."""
     soil_y = 560
-    b = ground(soil_y, SKY if opt == "A" else CREAM, 51)
+    b = ground(soil_y, SKY_G if opt == "A" else SKY_C, 51)
+    b += halo(600, 330, 420, "halo" if opt == "A" else "haloG")
     for pts in [[(600, 700), (620, 880)], [(700, 640), (800, 720)], [(500, 640), (420, 760)]]:
         b += tube(curve([(600, soil_y)] + pts, 20), 34, 12, lw=5)
     b += hypha([(640, 840), (860, 830), (1080, 860), (1320, 900), (1540, 900)], 52, w=8, branches=8, blen=110)

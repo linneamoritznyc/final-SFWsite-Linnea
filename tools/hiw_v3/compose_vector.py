@@ -35,20 +35,20 @@ TITLES = {
 TL, TR, BL, BR = "tl", "tr", "bl", "br"
 # option: (title corner or "lm" left-middle, title colour, logo corner, logo colour, short description)
 LAYOUT = {
-    ("what-is-the-soil-food-web", "A"): (TL, WHITE, BL, WHITE, "Close-up: root tip with bacteria, fungi, a protozoan and a nematode"),
-    ("what-is-the-soil-food-web", "B"): (TL, C.GREEN, BR, WHITE, "Bean plant with a magnifier on its root zone"),
+    ("what-is-the-soil-food-web", "A"): (TL, WHITE, BL, WHITE, "Close-up: root tip with bacteria, fungi, a protozoan and a nematode, on Soil Brown"),
+    ("what-is-the-soil-food-web", "B"): (TL, WHITE, BR, WHITE, "Bean plant on Food Web Green, magnifier on its root zone"),
     ("nutrient-cycling", "A"): (BL, WHITE, TR, WHITE, "Close-up: protozoan eats bacteria, nutrients flow to the root hair"),
-    ("nutrient-cycling", "B"): (TL, C.GREEN, BR, WHITE, "Lettuce with a magnifier on the nutrient loop"),
-    ("formation-of-structure", "A"): (TL, WHITE, BL, WHITE, "Soil crumbs glued by bacteria, woven by fungal threads"),
-    ("formation-of-structure", "B"): (TL, C.GREEN, BL, C.GREEN, "The same crumbs as a specimen on cream"),
-    ("weed-suppression", "A"): (TL, C.GREEN, TR, C.GREEN, "Weeds in bacterial soil vs corn in fungal soil, cream sky"),
-    ("weed-suppression", "B"): (TL, C.GREEN, TR, WHITE, "Same, cream and deep green sky like the reference"),
-    ("weed-suppression", "C"): (TL, C.GREEN, TR, C.GREEN, "Same, pale green sky"),
-    ("inhibiting-pests-and-diseases", "A"): (TL, WHITE, BL, WHITE, "Close-up: root sleeved in beneficials, pathogen kept out"),
-    ("inhibiting-pests-and-diseases", "B"): (TL, C.GREEN, BL, C.GREEN, "The same as a specimen on cream"),
-    ("inhibiting-pests-and-diseases", "C"): (TL, C.GREEN, BR, WHITE, "Tomato with a magnifier on its root zone"),
-    ("sequestering-carbon", "A"): (TR, C.GREEN, BL, WHITE, "Oak: carbon flows down the roots and fungal threads into dark soil clumps"),
-    ("sequestering-carbon", "B"): (TR, C.GREEN, BL, WHITE, "Same, cream sky"),
+    ("nutrient-cycling", "B"): (TL, C.GREEN, BR, WHITE, "Lettuce on Organic Cream, magnifier on the nutrient loop"),
+    ("formation-of-structure", "A"): (TL, WHITE, BL, WHITE, "Soil crumbs glued by bacteria, woven by fungal threads, on Soil Brown"),
+    ("formation-of-structure", "B"): (TL, WHITE, BL, WHITE, "The same crumbs as a specimen on Food Web Green"),
+    ("weed-suppression", "A"): (TL, C.GREEN, TR, WHITE, "Weeds in bacterial soil vs corn in fungal soil; cream and green sky like the reference"),
+    ("weed-suppression", "B"): (TL, WHITE, TR, WHITE, "Same, Food Web Green sky"),
+    ("weed-suppression", "C"): (TL, C.GREEN, TR, C.GREEN, "Same, Organic Cream sky"),
+    ("inhibiting-pests-and-diseases", "A"): (TL, WHITE, BL, WHITE, "Close-up: root sleeved in beneficials, pathogen kept out, on Soil Brown"),
+    ("inhibiting-pests-and-diseases", "B"): (TL, WHITE, BL, WHITE, "The same as a specimen on Food Web Green"),
+    ("inhibiting-pests-and-diseases", "C"): (TL, C.GREEN, BR, WHITE, "Tomato on Organic Cream, magnifier on its root zone"),
+    ("sequestering-carbon", "A"): (TR, WHITE, BL, WHITE, "Oak on Food Web Green: carbon flows down roots and fungal threads into dark soil clumps"),
+    ("sequestering-carbon", "B"): (TR, C.GREEN, BL, WHITE, "Same, Organic Cream sky"),
 }
 
 
