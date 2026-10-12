@@ -1773,3 +1773,17 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .rm-tip b { display: block; color: var(--soil); font-family: var(--display); font-weight: 600; }
 .rm-tip span { color: var(--ink-soft); font-size: .8rem; }
 .rm-svg .n circle.hit { fill: transparent; stroke: none; }
+/* Small touches (approved 12 October 2026). */
+/* Home, Who we are: a big green first letter. */
+.band--linen .split > div:first-child > h2 + p::first-letter { float: left; font-family: var(--display); font-weight: 700; font-size: 3.6em; line-height: .82; color: var(--green); margin: .08em .12em 0 0; }
+/* Approach tiles: a soft shade behind the titles so they read on any photo. */
+.tile::before { background: radial-gradient(ellipse 70% 38% at 50% 50%, rgba(0,0,0,.42), rgba(0,0,0,0) 100%); }
+/* Course cards: lift, a slight photo zoom and the arrow sliding right on hover. */
+.scroller .card--link { transition: transform .25s ease, box-shadow .25s ease; }
+.scroller .card--link .card__img { transition: transform .5s ease; }
+.scroller .card--link figure, .scroller .card--link picture { overflow: hidden; }
+.scroller .card--link .more::after { display: inline-block; transition: transform .25s ease; }
+.scroller .card--link:hover, .scroller .card--link:focus-within { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,.12); }
+.scroller .card--link:hover .card__img, .scroller .card--link:focus-within .card__img { transform: scale(1.04); }
+.scroller .card--link:hover .more::after, .scroller .card--link:focus-within .more::after { transform: translateX(.3em); }
+@media (prefers-reduced-motion: reduce) { .scroller .card--link, .scroller .card--link .card__img, .scroller .card--link .more::after { transition: none; } }
