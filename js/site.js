@@ -358,3 +358,16 @@
   window.addEventListener("resize", draw);
   draw();
 })();
+
+/* Things that rise into place once, when they first come into view. */
+(function () {
+  "use strict";
+  var els = document.querySelectorAll("[data-rise]");
+  if (!els.length || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.documentElement.classList.add("js-rise");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+  }, { threshold: 0.25 });
+  Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+})();

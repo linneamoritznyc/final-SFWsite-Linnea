@@ -3181,3 +3181,37 @@ body .sfw-forms button.btn.sfw-forms-submit:focus-visible {
 .timeline li.is-reached::before { background: var(--green); transform: scale(1.15); }
 @media (prefers-reduced-motion: reduce) { .timeline::after { clip-path: none; } }
 @media (min-width: 56em)  { .timeline::after { left: calc(50% - 11px); } }
+/* About: the Messaging House drawn as a temple. Pediment = the core idea, four fluted columns = the pillars, steps = the foundation. */
+.temple { max-width: 62rem; margin-inline: auto; display: grid; justify-items: center; }
+.temple__roof { width: 100%; clip-path: polygon(50% 0, 100% 100%, 0 100%); background: var(--soil); color: var(--white); text-align: center; padding: clamp(3.5rem, 2rem + 6vw, 7rem) 18% clamp(1.25rem, 1rem + 1vw, 2rem); }
+.temple__roof .eyebrow { color: #e9dcd3; margin: 0 0 .4rem; }
+.temple__roof h2 { color: var(--white); margin: 0; font-size: clamp(1.2rem, .8rem + 1.8vw, 2.25rem); }
+.temple__beam { width: 100%; height: clamp(.9rem, .6rem + .8vw, 1.4rem); background: var(--soil); border-top: 3px solid var(--cream); box-shadow: inset 0 -3px 0 rgba(255,255,255,.12); }
+.temple__cols { list-style: none; margin: 0; padding: 0 4%; width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(.75rem, 3vw, 2.5rem); }
+.temple__cols li { margin: 0; position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(1.6rem, 1rem + 2vw, 2.6rem) clamp(.6rem, .4rem + .8vw, 1.2rem) clamp(1.8rem, 1rem + 2vw, 3rem); min-height: clamp(16rem, 12rem + 10vw, 22rem);
+  background: repeating-linear-gradient(90deg, var(--white) 0 14%, #ece6dc 14% 16%); border-inline: 1px solid #e2dacd; }
+.temple__cols li::before, .temple__cols li::after { content: ""; position: absolute; left: -10%; right: -10%; height: .9rem; background: var(--white); border: 1px solid #ddd3c4; border-radius: 3px; }
+.temple__cols li::before { top: -.1rem; }   /* capital */
+.temple__cols li::after { bottom: -.1rem; } /* column base */
+.temple__name { font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: clamp(.8rem, .7rem + .5vw, 1.05rem); color: var(--green); background: var(--white); padding: .3rem .55rem; border-radius: 999px; margin-bottom: .9rem; }
+.temple__cols p { margin: 0; font-size: clamp(.875rem, .8rem + .3vw, 1.0625rem); line-height: 1.45; color: var(--soil); background: rgba(255,255,255,.88); padding: .5rem .4rem; border-radius: var(--radius); }
+.temple__base { width: 100%; display: grid; justify-items: center; }
+.temple__base p { margin: 0; width: 104%; background: var(--soil); color: var(--white); text-align: center; font-family: var(--display); font-weight: 600; font-size: clamp(.8rem, .7rem + .4vw, 1rem); padding: .85rem 1rem; box-shadow: 0 .55rem 0 -.1rem #6b4f4d, 0 1.1rem 0 -.2rem #8a706d; margin-bottom: 1.1rem; }
+/* The temple rises as it comes into view: roof settles, columns lift one after another. */
+.js-rise .temple:not(.is-in) .temple__roof, .js-rise .temple:not(.is-in) .temple__beam { transform: translateY(-1.5rem); opacity: 0; }
+.js-rise .temple:not(.is-in) .temple__cols li { transform: translateY(2.5rem); opacity: 0; }
+.temple__roof, .temple__beam, .temple__cols li { transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .8s ease; }
+.temple__cols li:nth-child(2) { transition-delay: .1s; } .temple__cols li:nth-child(3) { transition-delay: .2s; } .temple__cols li:nth-child(4) { transition-delay: .3s; }
+.temple__roof, .temple__beam { transition-delay: .45s; }
+@media (max-width: 40em) {
+  .temple__roof { padding-inline: 12%; }
+  .temple__cols { grid-template-columns: repeat(2, 1fr); row-gap: 1.6rem; }
+  .temple__cols li { min-height: 13rem; }
+}
+@media (prefers-reduced-motion: reduce) { .temple__roof, .temple__beam, .temple__cols li { transition: none; } }
+.temple__cols li { background:
+    repeating-linear-gradient(90deg, transparent 0 calc(12.5% - 1px), rgba(79,52,51,.07) calc(12.5% - 1px) 12.5%),
+    linear-gradient(90deg, #e8e1d5 0%, #fff 28%, #fff 62%, #e4dccf 100%); }
+.temple__cols p { background: none; padding: .25rem .2rem; }
+.temple__name { background: none; padding: 0; }
+@media (max-width: 40em) { .temple__roof { padding: 5.5rem 16% 1rem; } .temple__roof h2 { font-size: 1.1rem; } .temple__roof .eyebrow { font-size: .7rem; } }
