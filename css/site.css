@@ -1626,3 +1626,11 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 [data-filter].is-previewing [data-item]:not(.is-match) { opacity: .28; filter: grayscale(1); }
 [data-filter].is-previewing [data-item].is-match { transform: translateY(-.5rem); }
 @media (prefers-reduced-motion: reduce) { [data-filter] .chips .chip, [data-filter] .chips .chip::after, [data-filter] [data-item] { transition: none; } [data-filter].is-previewing [data-item].is-match { transform: none; } }
+/* News categories as small ink stamps. */
+.stamp { display: inline-block; border: 1.5px solid currentColor; color: var(--green); border-radius: 3px; padding: .2em .55em .15em; margin-right: .35rem; font-family: var(--display); font-weight: 700; font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; transform: rotate(-1.5deg); }
+.stamp:empty { display: none; }
+/* The tardigrade rides the tip of the growing timeline line. */
+.timeline__tardigrade { position: absolute; left: .5rem; top: calc(var(--grow, 0) * 100%); width: clamp(3rem, 2.4rem + 1.4vw, 4rem); height: auto; transform: translate(-50%, -55%); z-index: 2; pointer-events: none; animation: crawl 1.6s ease-in-out infinite alternate; filter: drop-shadow(0 1px 1px rgba(79,52,51,.25)); }
+@media (min-width: 56em) { .timeline__tardigrade { left: 50%; } }
+@keyframes crawl { from { transform: translate(-50%, -55%) rotate(-5deg); } to { transform: translate(-50%, -55%) rotate(5deg); } }
+@media (prefers-reduced-motion: reduce) { .timeline__tardigrade { animation: none; } }

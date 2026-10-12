@@ -287,6 +287,7 @@ BLOG_IMAGES = {k: v for k, v in json.load(open(os.path.join(B.ROOT, "content", "
 
 def post_card(p):
     cat = p["categories"][0]["name"] if p["categories"] else ""
+    cat = "" if cat == "Uncategorized" else cat
     b = BLOG_IMAGES.get(p["slug"])
     if b:
         pic = B.photo(b["key"] + "--Thumbnail-3x2-1200x800.jpg", b["alt"], "card__img card__img--wide", sizes="(min-width: 64em) 18rem, 50vw", name=b["key"] + "-thumbnail")
@@ -295,7 +296,7 @@ def post_card(p):
     else:
         pic = None
     pic = pic or (img(p["featured"], POST_ALTS.get(p["slug"], ""), "card__img card__img--wide") if p.get("featured") else '<div class="card__img card__img--wide"></div>')
-    return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker">%s &middot; '
+    return ('<li><article class="card card--link card--plain">%s<div class="card__body"><p class="card__kicker"><span class="stamp">%s</span> '
             '<time datetime="%s">%s</time></p><h3 class="card__title"><a href="/%s/">%s</a></h3></div></article></li>') % (
         pic, E(cat), p["date"], fmt_date(p["date"]), p["slug"], E(fix(p["title"])))
 

@@ -415,12 +415,18 @@
   var lines = document.querySelectorAll(".timeline");
   if (!lines.length || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
   document.documentElement.classList.add("js-grow");
+  // The tardigrade from the staging timeline crawls down at the tip of the line.
+  Array.prototype.forEach.call(lines, function (tl) {
+    var t = document.createElement("img");
+    t.src = "/img/tardigrade.webp"; t.alt = ""; t.className = "timeline__tardigrade"; t.setAttribute("aria-hidden", "true");
+    tl.appendChild(t);
+  });
   function draw() {
     var mark = window.innerHeight * 0.62;
     Array.prototype.forEach.call(lines, function (tl) {
       var r = tl.getBoundingClientRect();
       tl.style.setProperty("--grow", String(Math.max(0, Math.min(1, (mark - r.top) / r.height))));
-      Array.prototype.forEach.call(tl.children, function (li) {
+      Array.prototype.forEach.call(tl.querySelectorAll(":scope > li"), function (li) {
         li.classList.toggle("is-reached", li.getBoundingClientRect().top + 12 < mark);
       });
     });
