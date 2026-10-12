@@ -1745,3 +1745,15 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .rm-svg .n--person.is-hot text, .rm-svg .n--person.is-sel text, .rm-svg .n--person:focus-visible text { opacity: 1; }
 .rm-svg.is-focus .n--topic:not(.is-hot) text { opacity: 0; }
 .band + .marquee-band { padding-top: var(--band-y); }
+/* Preview collage-v1: hero on damp topsoil (a real compost close-up), and the numbers as pressed paper tags. */
+.hero--soil { position: relative; overflow: hidden; background: #1C140E url("/img/new/r5a-3966-1499w.webp") center / cover; color: #efe8dd; isolation: isolate; }
+.hero--soil::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(28,20,14,.94) 0 42%, rgba(28,20,14,.78) 70%, rgba(28,20,14,.6)); z-index: -1; }
+.hero--soil h1, .hero--soil .subhead { color: #fbf7f0; }
+.hero--soil .eyebrow { color: #9fd0ab; }
+.hero--soil p { color: #e7dfd3; }
+.band--tags .stats { gap: clamp(1.25rem, 3vw, 2.5rem); }
+.band--tags .stats li { position: relative; background: #EADEC9; color: #2f2a27; padding: 2.2rem 1.25rem 1.5rem; border-radius: 6px; clip-path: polygon(14% 0, 86% 0, 100% 12%, 100% 100%, 0 100%, 0 12%); box-shadow: 0 10px 25px rgba(0,0,0,.2); }
+.band--tags .stats li:nth-child(1) { transform: rotate(-2.5deg); } .band--tags .stats li:nth-child(2) { transform: rotate(1.5deg) translateY(.6rem); } .band--tags .stats li:nth-child(3) { transform: rotate(-1deg); }
+.band--tags .stats li::before { content: ""; position: absolute; top: .8rem; left: 50%; width: .8rem; height: .8rem; margin-left: -.4rem; border-radius: 50%; background: #3a2c24; box-shadow: inset 0 1px 2px rgba(0,0,0,.6), 0 0 0 3px #d7c8ae; }
+.band--tags .stat__n { color: #9E3F22; font-family: Georgia, "Times New Roman", serif; font-weight: 700; }
+.band--tags .stat__l { color: #3a3330; }
