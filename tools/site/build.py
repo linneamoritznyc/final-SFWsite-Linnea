@@ -194,6 +194,7 @@ NAV = [
     ("Science", "/how-it-works/", [
         ("How the Soil Food Web Works", "/how-it-works/"),
         ("Research Database", "/publications/"),
+        ("Research Map", "/publications/interactive/"),
         ("Partner on Research", "/work-with-us/#research"),
     ]),
     ("Practice", "/case-studies/", [

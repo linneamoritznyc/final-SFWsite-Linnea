@@ -1138,3 +1138,78 @@ def pathway(args):
               '<h3 class="pp-detail__n">How the programs connect</h3>'
               '<p class="pp-detail__l">Start free, build the foundation, then choose your modules. Every circle opens its course page.</p></div>')
     return '<div class="pp-wrap" data-pp><div class="pp-scroll">%s</div>%s</div>%s' % ("".join(svg), detail, legend)
+
+
+# ------------------------------------------------------------------ research map
+def _authors(s):
+    """'Ames, R.N., E.R. Ingham and C.P.P. Reid' -> ['R.N. Ames', 'E.R. Ingham', 'C.P.P. Reid'].
+    The first author is written surname first; the rest initials first."""
+    s = re.sub(r",?\s+Jr\.?", " Jr.", s.strip())
+    parts = re.split(r",\s+|\s+and\s+", s)
+    out = []
+    if len(parts) >= 2 and re.fullmatch(r"([A-Z]\.\s?)+( Jr\.)?", parts[1].strip()):
+        jr = " Jr." if parts[1].endswith("Jr.") else ""
+        out.append("%s %s%s" % (parts[1].replace(" Jr.", "").strip(), parts[0].strip(), jr))
+        parts = parts[2:]
+    out += [p.strip() for p in parts if p.strip()]
+    return out
+
+
+def _is_elaine(n):
+    return re.fullmatch(r"E\.(\s?R\.)?\s+Ingham", n) is not None
+
+
+@gen
+def research_map(args):
+    """An interactive web of Dr. Elaine Ingham's publications: each paper joins the
+    topics it is tagged with and the colleagues who wrote it with her. Built only from
+    content/publications.json (the finalized CSV); nothing is added by hand."""
+    d = repo("publications")
+    facets = {t["tag"]: f["name"] for f in d["tagGuide"]["facets"] for t in f["tags"]}
+    defs = {t["tag"]: t["definition"] for f in d["tagGuide"]["facets"] for t in f["tags"]}
+    papers = []
+    co = {}
+    for p in d["entries"]:
+        names = [n for n in _authors(p["authors"] or "") if not _is_elaine(n)]
+        papers.append({"id": "p%d" % len(papers), "t": p["title"], "y": p["year"], "c": p["collection"],
+                       "cite": p["citation"], "s": p["summary"], "u": p["useful_for"],
+                       "href": "/publication/%s/" % p["slug"], "topics": p["topics"],
+                       "type": p["study_type"], "authors": p["authors"], "names": names})
+        if p["collection"] == "elaine":
+            for n in names:
+                co[n] = co.get(n, 0) + 1
+    coll = sorted([n for n, k in co.items() if k >= 3], key=lambda n: -co[n])
+    data = {"facets": [f["name"] for f in d["tagGuide"]["facets"]],
+            "topics": [{"id": "t:" + t, "name": t, "facet": facets.get(t, "Approach"), "def": defs.get(t, "")} for t in facets],
+            "people": [{"id": "a:" + n, "name": n, "n": co[n]} for n in coll],
+            "papers": papers}
+    blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    legend = "".join('<li><span class="rm-k rm-k--%d"></span>%s</li>' % (i, E(f)) for i, f in enumerate(data["facets"]))
+    return ('<div class="rm" data-research-map>'
+            '<div class="rm-bar">'
+            '<div class="rm-seg" role="group" aria-label="Which publications">'
+            
+            '<button type="button" class="chip" aria-pressed="false" data-rm-set="all">Add the wider soil food web science</button></div>'
+            '<div class="rm-seg" role="group" aria-label="Show">'
+            '<button type="button" class="chip is-active" aria-pressed="true" data-rm-layer="people">Colleagues</button></div>'
+            '<label class="rm-search"><span class="sr-only">Find a topic, colleague or paper</span>'
+            '<input type="search" placeholder="Find a topic, colleague or paper" data-rm-q></label>'
+            '</div>'
+            '<div class="rm-years" data-rm-years><span class="rm-years__l">Years</span>'
+            '<input type="range" min="1980" max="2026" value="1980" step="1" aria-label="From year" data-rm-from>'
+            '<input type="range" min="1980" max="2026" value="2026" step="1" aria-label="To year" data-rm-to>'
+            '<output data-rm-yout>1980 to 2026</output></div>'
+            '<div class="rm-stage">'
+            '<svg class="rm-svg" role="img" aria-label="A web of topics, colleagues and papers. Use the list below the map to browse without a mouse." data-rm-svg></svg>'
+            '<div class="rm-zoom"><button type="button" data-rm-zoom="1.25" aria-label="Zoom in">+</button>'
+            '<button type="button" data-rm-zoom="0.8" aria-label="Zoom out">&minus;</button>'
+            '<button type="button" data-rm-zoom="0" aria-label="Reset view">&#8634;</button></div>'
+            '<aside class="rm-panel" data-rm-panel aria-live="polite"><p class="rm-panel__k">How to read it</p>'
+            '<h3 class="rm-panel__h">Every dot is a paper</h3>'
+            '<p>Big circles are topics, coloured by kind. Green-ringed circles are the colleagues who wrote three or more papers with Dr. Ingham. '
+            'A line joins each paper to its topics and its authors, so clusters show where her work gathers. Hover or tap anything to follow its threads; drag to rearrange.</p></aside>'
+            '</div>'
+            '<ul class="rm-legend">%s<li><span class="rm-k rm-k--person"></span>Colleague</li><li><span class="rm-k rm-k--paper"></span>Paper</li></ul>'
+            '<details class="rm-list"><summary>Browse the map as a list</summary><div data-rm-list></div></details>'
+            '<script type="application/json" data-rm-data>%s</script>'
+            '</div>') % (legend, blob)

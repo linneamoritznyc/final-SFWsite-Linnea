@@ -1687,3 +1687,61 @@ body:has(#header-outer .sfHover) .sfw-workshop-single__hero-copy--sticky.is-fixe
 .band--linen { position: relative; overflow: hidden; isolation: isolate; background: #F2ECE1 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .2  0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 .linen__plate { position: absolute; left: -6rem; top: -2rem; width: min(46rem, 80vw); height: auto; opacity: .1; z-index: -1; pointer-events: none; }
 .band--linen + .band { padding-top: var(--band-y); }
+/* Publications, research map: a force-directed web of papers, topics and colleagues. */
+.rm { --f0: #156826; --f1: #A8562F; --f2: #2F6F8F; --f3: #7A6A1E; --f4: #6B4C7A; }
+.rm-bar { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; align-items: center; margin-bottom: .75rem; }
+.rm-seg { display: flex; flex-wrap: wrap; gap: .5rem; }
+.rm .chip { cursor: pointer; }
+.rm .chip.is-active { background: var(--green); color: var(--white); border-color: var(--green); }
+.rm-search { flex: 1 1 16rem; }
+.rm-search input { width: 100%; padding: .6rem .8rem; border: 1px solid #b9b2a8; border-radius: var(--radius-sm); font: inherit; }
+.rm-years { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin: 0 0 1rem; font-size: .9375rem; color: var(--ink-soft); }
+.rm-years__l { font-family: var(--display); font-weight: 600; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+.rm-years input { width: min(14rem, 38vw); accent-color: var(--green); }
+.rm-stage { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 20rem; border: 1px solid var(--rule); border-radius: var(--radius); background: #FBF9F4; overflow: hidden; }
+.rm-svg { display: block; width: 100%; height: clamp(30rem, 70vh, 46rem); touch-action: none; cursor: grab; }
+.rm-svg.is-dragging { cursor: grabbing; }
+.rm-svg line { stroke: #4F3433; stroke-opacity: .13; stroke-width: 1; transition: stroke-opacity .2s; }
+.rm-svg line.is-hot { stroke-opacity: .7; stroke-width: 1.6; }
+.rm-svg .n { cursor: pointer; transition: opacity .2s; }
+.rm-svg .n circle { stroke: #fff; stroke-width: 1.5; }
+.rm-svg .n--paper circle { fill: #4F3433; }
+.rm-svg .n--paper.is-field circle { fill: #9b8f86; }
+.rm-svg .n--person circle { fill: #fff; stroke: var(--green); stroke-width: 3; }
+.rm-svg .n text { font-family: var(--display); font-size: 11px; font-weight: 600; fill: #2f2a27; paint-order: stroke; stroke: rgba(251,249,244,.92); stroke-width: 3.5px; pointer-events: none; }
+.rm-svg .n--topic text { font-size: 12.5px; }
+.rm-svg .n--person text { font-weight: 500; font-size: 11px; }
+.rm-svg.is-focus .n:not(.is-hot) { opacity: .12; }
+.rm-svg.is-focus line:not(.is-hot) { stroke-opacity: .03; }
+.rm-svg .n.is-sel circle { stroke: #1f1a17; stroke-width: 3; }
+.rm-svg .n:focus-visible { outline: none; } .rm-svg .n:focus-visible circle { stroke: #1f1a17; stroke-width: 3; }
+.rm-zoom { position: absolute; left: .75rem; top: .75rem; display: grid; gap: .35rem; }
+.rm-zoom button { width: 2.2rem; height: 2.2rem; border-radius: 50%; border: 1px solid var(--rule); background: #fff; font-size: 1.1rem; cursor: pointer; color: var(--soil); }
+.rm-panel { border-left: 1px solid var(--rule); background: #fff; padding: 1.25rem 1.25rem 1.5rem; overflow-y: auto; max-height: clamp(30rem, 70vh, 46rem); font-size: .9375rem; }
+.rm-panel__k { margin: 0; font-family: var(--display); font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.rm-panel__h { margin: .35rem 0 .6rem; font-size: 1.15rem; }
+.rm-panel ul { list-style: none; padding: 0; margin: .5rem 0 0; display: grid; gap: .55rem; }
+.rm-panel li { line-height: 1.35; }
+.rm-panel li span { color: var(--ink-soft); font-size: .85rem; }
+.rm-panel button.linkish { background: none; border: 0; padding: 0; font: inherit; color: var(--green); text-decoration: underline; cursor: pointer; text-align: left; }
+.rm-panel .meta { color: var(--ink-soft); font-size: .875rem; }
+.rm-legend { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; padding: 0; margin: 1rem 0 0; font-size: .875rem; color: var(--ink-soft); }
+.rm-legend li { display: flex; align-items: center; gap: .45rem; }
+.rm-k { width: .9rem; height: .9rem; border-radius: 50%; display: inline-block; }
+.rm-k--0 { background: var(--f0); } .rm-k--1 { background: var(--f1); } .rm-k--2 { background: var(--f2); } .rm-k--3 { background: var(--f3); } .rm-k--4 { background: var(--f4); }
+.rm-k--person { background: #fff; border: 3px solid var(--green); } .rm-k--paper { background: #4F3433; width: .5rem; height: .5rem; }
+.rm-list { margin-top: 1.25rem; } .rm-list summary { cursor: pointer; font-weight: 600; color: var(--green); }
+.rm-list h3 { font-size: 1rem; margin: 1.25rem 0 .4rem; }
+.rm-list ul { columns: 2 16rem; padding-left: 1.1rem; margin: 0; }
+@media (max-width: 63.99em) { .rm-stage { grid-template-columns: 1fr; } .rm-panel { border-left: 0; border-top: 1px solid var(--rule); max-height: none; } .rm-svg { height: 30rem; } }
+/* Programs: classroom photos above the student stories. */
+.classroom { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: clamp(.75rem, 2vw, 1.5rem); align-items: end; }
+.classroom picture { display: block; }
+.classroom img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+.classroom li:nth-child(2) img { aspect-ratio: 4 / 5; }
+@media (max-width: 47.99em) { .classroom { grid-template-columns: 1fr 1fr; } .classroom li:first-child { grid-column: 1 / -1; } .classroom li:nth-child(2) img { aspect-ratio: 4 / 3; } }
+.rm-svg .n:focus { outline: none; }
+.rm-svg .n--person text { opacity: 0; transition: opacity .2s; }
+.rm-svg .n--person.is-hot text, .rm-svg .n--person.is-sel text, .rm-svg .n--person:focus-visible text { opacity: 1; }
+.rm-svg.is-focus .n--topic:not(.is-hot) text { opacity: 0; }
+.band + .marquee-band { padding-top: var(--band-y); }

@@ -1,0 +1,23 @@
+---
+path: /publications/interactive/
+title: Research map
+description: An interactive map of Dr. Elaine Ingham's publications: how her papers connect through shared topics and the colleagues she wrote them with.
+source: repo
+bugs:
+notes: New page (12 October 2026). Built only from content/publications.json (docs/sfw-publications-final.csv): each paper is joined to its topic tags and to its co-authors. Colleagues shown are those with three or more papers with Dr. Ingham, names as written in the citations. "A. Moldenke" and "A.R. Moldenke" appear as two names because the citations spell them differently.
+nav: /how-it-works/
+---
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow"><a href="/publications/">Research</a></p>
+    <h1 class="plain">A web of four decades of research</h1>
+    <p class="lead">Every paper Dr. Elaine Ingham published touches others: through the organisms it studies, the practices it tests, the systems it was done in, and the colleagues who did the work with her. Follow the threads.</p>
+  </div>
+</section>
+
+<section class="band band--tight" id="map">
+  <div class="wrap">
+    {{research_map}}
+    <p style="margin-top:1.5rem"><a class="more" href="/publications/#all">Search the full publication list</a></p>
+  </div>
+</section>

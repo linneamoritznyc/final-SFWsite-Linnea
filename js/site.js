@@ -462,3 +462,206 @@
   }, { threshold: 0.25 });
   Array.prototype.forEach.call(els, function (el) { io.observe(el); });
 })();
+
+/* Publications, research map: papers joined to their topics and co-authors, laid out by a small force simulation. */
+(function () {
+  "use strict";
+  var root = document.querySelector("[data-research-map]");
+  if (!root) return;
+  var D = JSON.parse(root.querySelector("[data-rm-data]").textContent);
+  var svg = root.querySelector("[data-rm-svg]"), panel = root.querySelector("[data-rm-panel]"), NS = "http://www.w3.org/2000/svg";
+  var FC = {}; D.facets.forEach(function (f, i) { FC[f] = "var(--f" + i + ")"; });
+  var state = { set: "elaine", people: true, from: 1980, to: 2026, q: "", sel: null };
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var W = 1000, H = 760, view = { x: 0, y: 0, k: 1 }, nodes = [], links = [], byId = {}, g, gl, gn, alpha = 1, raf = 0;
+  var pos = {}; // keep positions between rebuilds
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function el(n, a) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; }
+
+  function build() {
+    var papers = D.papers.filter(function (p) { return (state.set === "all" || p.c === "elaine") && p.y >= state.from && p.y <= state.to; });
+    var used = {}, deg = {};
+    nodes = []; links = []; byId = {};
+    papers.forEach(function (p) {
+      var n = { id: p.id, kind: "paper", p: p, r: 4 };
+      nodes.push(n);
+      p.topics.forEach(function (t) { links.push({ s: p.id, t: "t:" + t }); used["t:" + t] = 1; deg["t:" + t] = (deg["t:" + t] || 0) + 1; });
+      if (state.people) p.names.forEach(function (a) { if (D.people.some(function (x) { return x.name === a; })) { links.push({ s: p.id, t: "a:" + a }); used["a:" + a] = 1; deg["a:" + a] = (deg["a:" + a] || 0) + 1; } });
+    });
+    D.topics.forEach(function (t) { if (used[t.id]) nodes.push({ id: t.id, kind: "topic", t: t, r: 8 + Math.sqrt(deg[t.id]) * 3.2 }); });
+    if (state.people) D.people.forEach(function (a) { if (used[a.id]) nodes.push({ id: a.id, kind: "person", a: a, r: 6 + Math.sqrt(deg[a.id]) * 2 }); });
+    nodes.forEach(function (n) {
+      byId[n.id] = n; var o = pos[n.id], ang = Math.random() * 6.283, rad = n.kind === "paper" ? 120 : 300;
+      if (n.kind === "topic") { ang = (D.facets.indexOf(n.t.facet) + Math.random() * .8) / D.facets.length * 6.283; }
+      n.x = o ? o.x : W / 2 + Math.cos(ang) * rad * (0.6 + Math.random() * .5); n.y = o ? o.y : H / 2 + Math.sin(ang) * rad * (0.6 + Math.random() * .5); n.vx = 0; n.vy = 0;
+      n.nb = [];
+    });
+    links = links.filter(function (l) { return byId[l.s] && byId[l.t]; });
+    links.forEach(function (l) { l.a = byId[l.s]; l.b = byId[l.t]; l.a.nb.push(l.b); l.b.nb.push(l.a); });
+    state.sel = null; svg.classList.remove("is-focus"); panel.innerHTML = panel.dataset.intro || panel.innerHTML; draw(); alpha = 1; fitted = false; if (reduce) { for (var i = 0; i < 300; i++) tick(); paint(); fitted = true; fit(); } else kick();
+    list();
+  }
+
+  function draw() {
+    var bx = svg.getBoundingClientRect(); if (bx.width) H = Math.round(W * bx.height / bx.width);
+    svg.innerHTML = ""; svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    g = el("g", {}); gl = el("g", {}); gn = el("g", {}); g.appendChild(gl); g.appendChild(gn); svg.appendChild(g);
+    links.forEach(function (l) { l.el = el("line", {}); gl.appendChild(l.el); });
+    nodes.sort(function (a, b) { return (a.kind === "paper") - (b.kind === "paper"); }).reverse();
+    nodes.forEach(function (n) {
+      var e = el("g", { "class": "n n--" + n.kind + (n.kind === "paper" && n.p.c !== "elaine" ? " is-field" : "") });
+      var c = el("circle", { r: n.r });
+      if (n.kind === "topic") c.setAttribute("style", "fill:" + FC[n.t.facet]);
+      e.appendChild(c);
+      if (n.kind !== "paper") {
+        e.setAttribute("tabindex", "0"); e.setAttribute("role", "button");
+        e.setAttribute("aria-label", n.kind === "topic" ? n.t.name + ", topic" : n.a.name + ", colleague");
+        var tx = el("text", { y: n.r + 13, "text-anchor": "middle" }); tx.textContent = n.kind === "topic" ? n.t.name : n.a.name; e.appendChild(tx);
+      } else { var ti = el("title", {}); ti.textContent = n.p.t + " (" + n.p.y + ")"; e.appendChild(ti); }
+      n.el = e; gn.appendChild(e);
+      e.addEventListener("mouseenter", function () { hot(n); });
+      e.addEventListener("mouseleave", function () { hot(state.sel ? byId[state.sel] : null); });
+      e.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(n); } });
+      e.addEventListener("focus", function () { hot(n); });
+      e.addEventListener("pointerdown", function (ev) { dragN = n; ev.stopPropagation(); start(ev); });
+    });
+    applyView(); paint(); search();
+  }
+
+  function tick() {
+    var i, j, a, b, dx, dy, d2, d, f, k = alpha;
+    for (i = 0; i < nodes.length; i++) for (j = i + 1; j < nodes.length; j++) {
+      a = nodes[i]; b = nodes[j]; dx = b.x - a.x; dy = b.y - a.y; d2 = dx * dx + dy * dy || .01;
+      if (d2 > 160000) continue;
+      f = (a.kind === "paper" && b.kind === "paper" ? 140 : a.kind !== "paper" && b.kind !== "paper" ? 5200 : 700) * k / d2; d = Math.sqrt(d2);
+      a.vx -= dx / d * f; a.vy -= dy / d * f; b.vx += dx / d * f; b.vy += dy / d * f;
+      var m = a.r + b.r + 3; if (d < m) { var o = (m - d) / d * .5; a.x -= dx * o; a.y -= dy * o; b.x += dx * o; b.y += dy * o; }
+    }
+    links.forEach(function (l) {
+      a = l.a; b = l.b; dx = b.x - a.x; dy = b.y - a.y; d = Math.sqrt(dx * dx + dy * dy) || 1;
+      var len = l.b.kind === "person" ? 95 : 80, s = (d - len) / d * .03 * k;
+      a.vx += dx * s; a.vy += dy * s; b.vx -= dx * s * .35; b.vy -= dy * s * .35;
+    });
+    nodes.forEach(function (n) {
+      var gr = n.nb.length < 2 ? 4 : 1; n.vx += (W / 2 - n.x) * .0009 * k * gr; n.vy += (H / 2 - n.y) * .0011 * k * gr;
+      if (n === dragN) { n.vx = n.vy = 0; return; }
+      n.vx *= .82; n.vy *= .82; n.x += n.vx; n.y += n.vy;
+    });
+    alpha *= .985;
+  }
+  function paint() {
+    links.forEach(function (l) { l.el.setAttribute("x1", l.a.x.toFixed(1)); l.el.setAttribute("y1", l.a.y.toFixed(1)); l.el.setAttribute("x2", l.b.x.toFixed(1)); l.el.setAttribute("y2", l.b.y.toFixed(1)); });
+    nodes.forEach(function (n) { n.el.setAttribute("transform", "translate(" + n.x.toFixed(1) + "," + n.y.toFixed(1) + ")"); pos[n.id] = { x: n.x, y: n.y }; });
+  }
+  function fit() {
+    if (!nodes.length) return;
+    var xs = nodes.map(function (n) { return n.x; }).sort(function (a, b) { return a - b; }), ys = nodes.map(function (n) { return n.y; }).sort(function (a, b) { return a - b; });
+    var q = function (a, f) { return a[Math.max(0, Math.min(a.length - 1, Math.round(f * (a.length - 1))))]; };
+    var x0 = q(xs, .02) - 40, x1 = q(xs, .98) + 40, y0 = q(ys, .02) - 30, y1 = q(ys, .98) + 40;
+    var k = Math.min(2.2, Math.min((W - 60) / (x1 - x0), (H - 60) / (y1 - y0)));
+    view = { k: k, x: W / 2 - (x0 + x1) / 2 * k, y: H / 2 - (y0 + y1) / 2 * k }; applyView();
+  }
+  var fitted = false;
+  function loop() { tick(); paint(); if (!fitted && alpha < .25) { fitted = true; fit(); } if (alpha > .02) raf = requestAnimationFrame(loop); else { raf = 0; if (fitted === true) { fitted = 2; fit(); } } }
+  function kick() { alpha = Math.max(alpha, .3); if (!raf) raf = requestAnimationFrame(loop); }
+
+  function hot(n) {
+    svg.classList.toggle("is-focus", !!n);
+    nodes.forEach(function (m) { m.el.classList.remove("is-hot"); });
+    links.forEach(function (l) { l.el.classList.remove("is-hot"); });
+    if (!n) return;
+    n.el.classList.add("is-hot");
+    links.forEach(function (l) { if (l.a === n || l.b === n) { l.el.classList.add("is-hot"); l.a.el.classList.add("is-hot"); l.b.el.classList.add("is-hot"); } });
+  }
+
+  function papersOf(n) { return n.nb.filter(function (m) { return m.kind === "paper"; }).map(function (m) { return m.p; }).sort(function (a, b) { return a.y - b.y; }); }
+  function plist(ps) { return "<ul>" + ps.map(function (p) { return '<li><a href="' + esc(p.href) + '">' + esc(p.t) + "</a> <span>" + p.y + "</span></li>"; }).join("") + "</ul>"; }
+  function related(n, kind) {
+    var c = {}; n.nb.forEach(function (p) { p.nb.forEach(function (m) { if (m !== n && m.kind === kind) c[m.id] = (c[m.id] || 0) + 1; }); });
+    return Object.keys(c).sort(function (a, b) { return c[b] - c[a]; }).slice(0, 6).map(function (id) { return '<button type="button" class="linkish" data-rm-go="' + esc(id) + '">' + esc(byId[id].kind === "topic" ? byId[id].t.name : byId[id].a.name) + "</button> <span>(" + c[id] + ")</span>"; }).join(", ");
+  }
+  function select(n) {
+    if (state.sel && byId[state.sel]) byId[state.sel].el.classList.remove("is-sel");
+    state.sel = n ? n.id : null; hot(n);
+    if (!n) return;
+    n.el.classList.add("is-sel");
+    var h;
+    if (n.kind === "topic") {
+      var ps = papersOf(n);
+      h = '<p class="rm-panel__k">' + esc(n.t.facet) + '</p><h3 class="rm-panel__h">' + esc(n.t.name) + "</h3>" + (n.t.def ? "<p>" + esc(n.t.def.charAt(0).toUpperCase() + n.t.def.slice(1)) + "</p>" : "") +
+        '<p class="meta">' + ps.length + " paper" + (ps.length === 1 ? "" : "s") + (ps.length ? ", " + ps[0].y + " to " + ps[ps.length - 1].y : "") + "</p>" +
+        "<p><strong>Often studied with:</strong> " + related(n, "topic") + "</p>" + plist(ps);
+    } else if (n.kind === "person") {
+      var qs = papersOf(n);
+      h = '<p class="rm-panel__k">Colleague</p><h3 class="rm-panel__h">' + esc(n.a.name) + "</h3>" +
+        '<p class="meta">' + n.a.n + " papers with Dr. Ingham" + (qs.length ? ", " + qs[0].y + " to " + qs[qs.length - 1].y : "") + "</p>" +
+        "<p><strong>Topics together:</strong> " + related(n, "topic") + "</p>" + plist(qs);
+    } else {
+      var p = n.p;
+      h = '<p class="rm-panel__k">' + esc(p.type) + " &middot; " + p.y + '</p><h3 class="rm-panel__h"><a href="' + esc(p.href) + '">' + esc(p.t) + "</a></h3>" +
+        '<p class="meta">' + esc(p.authors) + (p.cite ? ". " + esc(p.cite) : "") + "</p><p>" + esc(p.s) + "</p>" +
+        (p.u ? "<p><strong>Useful for:</strong> " + esc(p.u) + "</p>" : "") +
+        "<p><strong>Threads:</strong> " + n.nb.map(function (m) { return '<button type="button" class="linkish" data-rm-go="' + esc(m.id) + '">' + esc(m.kind === "topic" ? m.t.name : m.a.name) + "</button>"; }).join(", ") + "</p>";
+    }
+    panel.innerHTML = h;
+  }
+  panel.addEventListener("click", function (ev) { var b = ev.target.closest("[data-rm-go]"); if (b && byId[b.dataset.rmGo]) { select(byId[b.dataset.rmGo]); centre(byId[b.dataset.rmGo]); } });
+
+  function centre(n) { view.x = W / 2 - n.x * view.k; view.y = H / 2 - n.y * view.k; applyView(); }
+  function applyView() { if (g) g.setAttribute("transform", "translate(" + view.x + "," + view.y + ") scale(" + view.k + ")"); }
+  root.querySelectorAll("[data-rm-zoom]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var z = parseFloat(b.dataset.rmZoom);
+      if (!z) { fit(); return; } else { var k2 = Math.max(.5, Math.min(4, view.k * z)); view.x = W / 2 - (W / 2 - view.x) * k2 / view.k; view.y = H / 2 - (H / 2 - view.y) * k2 / view.k; view.k = k2; }
+      applyView();
+    });
+  });
+
+  // drag nodes, pan the background
+  var dragN = null, panning = false, moved = false, last = null;
+  function pt(ev) { var r = svg.getBoundingClientRect(); return { x: (ev.clientX - r.left) / r.width * W, y: (ev.clientY - r.top) / r.height * H }; }
+  function start(ev) { last = pt(ev); moved = false; svg.setPointerCapture && svg.setPointerCapture(ev.pointerId); svg.classList.add("is-dragging"); }
+  svg.addEventListener("pointerdown", function (ev) { if (dragN) return; panning = true; start(ev); });
+  svg.addEventListener("pointermove", function (ev) {
+    if (!last) return; var p = pt(ev), dx = p.x - last.x, dy = p.y - last.y; if (Math.abs(dx) + Math.abs(dy) > 2) moved = true; last = p;
+    if (dragN) { dragN.x += dx / view.k; dragN.y += dy / view.k; kick(); if (reduce) paint(); }
+    else if (panning) { view.x += dx; view.y += dy; applyView(); }
+  });
+  function end() { if (dragN && !moved) select(dragN); if (!dragN && panning && !moved) { select(null); panel.innerHTML = panel.dataset.intro; } dragN = null; panning = false; last = null; svg.classList.remove("is-dragging"); setTimeout(function () { moved = false; }, 0); }
+  svg.addEventListener("pointerup", end); svg.addEventListener("pointercancel", end);
+  svg.addEventListener("wheel", function (ev) { if (!ev.ctrlKey && !ev.metaKey) return; ev.preventDefault(); var p = pt(ev), k2 = Math.max(.5, Math.min(4, view.k * (ev.deltaY < 0 ? 1.12 : .89))); view.x = p.x - (p.x - view.x) * k2 / view.k; view.y = p.y - (p.y - view.y) * k2 / view.k; view.k = k2; applyView(); }, { passive: false });
+  panel.dataset.intro = panel.innerHTML;
+
+  // controls
+  root.querySelectorAll('[data-rm-set="all"]').forEach(function (b) { b.addEventListener("click", function () { state.set = state.set === "all" ? "elaine" : "all"; b.classList.toggle("is-active", state.set === "all"); b.setAttribute("aria-pressed", state.set === "all"); build(); }); });
+  root.querySelectorAll("[data-rm-layer]").forEach(function (b) { b.addEventListener("click", function () { state.people = !state.people; b.classList.toggle("is-active", state.people); b.setAttribute("aria-pressed", state.people); build(); }); });
+  var fr = root.querySelector("[data-rm-from]"), to = root.querySelector("[data-rm-to]"), yo = root.querySelector("[data-rm-yout]");
+  var minY = Math.min.apply(null, D.papers.map(function (p) { return p.y; })), maxY = Math.max.apply(null, D.papers.map(function (p) { return p.y; }));
+  [fr, to].forEach(function (r) { r.min = minY; r.max = maxY; }); fr.value = minY; to.value = maxY; state.from = minY; state.to = maxY; yo.textContent = minY + " to " + maxY;
+  var yt; function years() { var a = +fr.value, b = +to.value; if (a > b) { var t = a; a = b; b = t; } state.from = a; state.to = b; yo.textContent = a + " to " + b; clearTimeout(yt); yt = setTimeout(build, 120); }
+  fr.addEventListener("input", years); to.addEventListener("input", years);
+  var q = root.querySelector("[data-rm-q]");
+  function search() {
+    var s = (q.value || "").trim().toLowerCase(); state.q = s;
+    if (!s) { if (!state.sel) hot(null); return; }
+    svg.classList.add("is-focus");
+    nodes.forEach(function (n) { var txt = n.kind === "topic" ? n.t.name : n.kind === "person" ? n.a.name : n.p.t + " " + n.p.authors; n.el.classList.toggle("is-hot", txt.toLowerCase().indexOf(s) > -1); });
+    links.forEach(function (l) { l.el.classList.toggle("is-hot", l.a.el.classList.contains("is-hot") || l.b.el.classList.contains("is-hot")); });
+  }
+  q.addEventListener("input", search);
+  q.addEventListener("keydown", function (ev) { if (ev.key === "Enter") { var n = nodes.filter(function (m) { return m.el.classList.contains("is-hot"); }).sort(function (a, b) { return (a.kind === "paper") - (b.kind === "paper"); })[0]; if (n) { select(n); centre(n); } } });
+
+  function list() {
+    var box = root.querySelector("[data-rm-list]"), h = "";
+    D.facets.forEach(function (f) {
+      var ts = nodes.filter(function (n) { return n.kind === "topic" && n.t.facet === f; });
+      if (!ts.length) return;
+      h += "<h3>" + esc(f) + "</h3><ul>" + ts.map(function (n) { return '<li><button type="button" class="linkish" data-rm-go="' + esc(n.id) + '">' + esc(n.t.name) + "</button> (" + papersOf(n).length + ")</li>"; }).join("") + "</ul>";
+    });
+    var ps = nodes.filter(function (n) { return n.kind === "person"; });
+    if (ps.length) h += "<h3>Colleagues</h3><ul>" + ps.map(function (n) { return '<li><button type="button" class="linkish" data-rm-go="' + esc(n.id) + '">' + esc(n.a.name) + "</button> (" + n.a.n + ")</li>"; }).join("") + "</ul>";
+    box.innerHTML = h;
+  }
+  root.querySelector("[data-rm-list]").addEventListener("click", function (ev) { var b = ev.target.closest("[data-rm-go]"); if (b && byId[b.dataset.rmGo]) { select(byId[b.dataset.rmGo]); centre(byId[b.dataset.rmGo]); panel.scrollIntoView({ block: "nearest", behavior: "smooth" }); } });
+  build();
+})();
