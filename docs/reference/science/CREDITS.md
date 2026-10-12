@@ -1,0 +1,59 @@
+# Science reference images (openly licensed, via Openverse)
+
+Reference only, not for publication without checking each licence.
+
+- 01-soil-food-web-diagram.jpg: Soil Food Web diagram, by Milkwood.net, CC by-nc-sa 2.0. https://www.flickr.com/photos/69961849@N00/2569385115
+- 02-mycorrhiza-diagram.jpg: ArbuscularMycorrhizae, by Werdnus_Roo, CC by-nc-nd 2.0. https://www.flickr.com/photos/66916583@N07/6091498087
+- 03-ectomycorrhiza-root.jpg: Helvella 'lacunosa' variations:An all white and a dark top with light stipe, by Seattle.roamer, CC by-nc-nd 2.0. https://www.flickr.com/photos/66277514@N00/10900557574
+- 04-ectomycorrhiza-root.jpg: IMGP0245, by juliamaddison42, CC by-nc-nd 2.0. https://www.flickr.com/photos/125033104@N04/14306667661
+- 05-ectomycorrhiza-root.jpg: IMGP0157, by juliamaddison42, CC by-nc-nd 2.0. https://www.flickr.com/photos/125033104@N04/14305788934
+- 08-fungal-hyphae-soil.jpg: Peltigera, by A.Davey, CC by-nc-nd 2.0. https://www.flickr.com/photos/40595948@N00/54141279208
+- 11-root-hair-microscope.jpg: Broken Root Hairs, by BlueRidgeKitties, CC by-nc-sa 2.0. https://www.flickr.com/photos/41380738@N05/4426272866
+- 14-root-cap.jpg: duckweed root cap, by robanhk, CC by-sa 2.0. https://www.flickr.com/photos/35747367@N00/7203885410
+- 16-soil-aggregate.jpg: Observing a Tomographic Reconstruction of the Inside of a Soil Aggregate, by Pacific Northwest National Laboratory - PNNL, CC by-nc-sa 2.0. https://www.flickr.com/photos/36016325@N04/9466502635
+- 17-soil-aggregate.jpg: Granular Soil Aggregates and Earthworm, by nrcs-pia-enews, CC pdm 1.0. https://www.flickr.com/photos/194676499@N06/51759576906
+- 18-soil-aggregate.jpg: Rhizosheaths on Plant Roots and Soil Aggregates, by nrcs-pia-enews, CC pdm 1.0. https://www.flickr.com/photos/194676499@N06/51760439470
+- 19-ciliate-protozoa.jpg: Ciliated Protozoa: Vorticella, by bccoer, CC cc0 1.0. https://www.flickr.com/photos/146824358@N03/44716054772
+- 20-ciliate-protozoa.jpg: Ciliated Protozoa: Vorticella, by bccoer, CC cc0 1.0. https://www.flickr.com/photos/146824358@N03/44046567434
+- 21-ciliate-protozoa.jpg: ciliated protozoa, by GTMResearchReserve, CC by-nc 2.0. https://www.flickr.com/photos/69638033@N06/25045857011
+- 22-amoeba-microscope.jpg: Amoeba feeding 1, by Marc Perkins - OCC Biology Department, CC by-nc 2.0. https://www.flickr.com/photos/60206038@N05/5619021445
+- 23-amoeba-microscope.jpg: Two preserved amoebas at 100x, by Marc Perkins - OCC Biology Department, CC by-nc 2.0. https://www.flickr.com/photos/60206038@N05/5691857078
+- 24-testate-amoeba.jpg: Cyphoderia ampulla - Testate amoeba - 160x (14997391862), by Picturepest, CC by 2.0. https://commons.wikimedia.org/w/index.php?curid=39164646
+- 25-testate-amoeba.jpg: Cyphoderia ampulla - Testate amoeba - 160x, by Picturepest, CC by 2.0. https://www.flickr.com/photos/59923990@N05/14997391862
+- 28-soil-nematode.jpg: corn fields_fisher delta research center_0007, by Mizzou CAFNR, CC by-nc 2.0. https://www.flickr.com/photos/62135710@N03/10802547124
+- 32-dandelion-root.jpg: Hands and dandelion roots, by isforinsects, CC by 2.0. https://www.flickr.com/photos/30719633@N00/5702116853
+- 33-corn-plant-roots.jpg: Corn Sections - Raynox Macro, by BlueRidgeKitties, CC by-nc-sa 2.0. https://www.flickr.com/photos/41380738@N05/4427414696
+- 34-corn-plant-roots.jpg: Corn Planted by Western Scrub Jays, by Noël Zia Lee, CC by 2.0. https://www.flickr.com/photos/36899742@N00/267129769
+- 35-soil-profile-horizons.jpg: Typic Plagganthrepts, by SoilScience.info, CC by 2.0. https://www.flickr.com/photos/22503286@N06/5093650035
+- 36-soil-profile-horizons.jpg: Typic Hapludand (Medial, amorphic, isothermic) – Subagjo H1B, by SoilScience.info, CC by 2.0. https://www.flickr.com/photos/22503286@N06/8742041060
+- 39-arbuscular-mycorrhiza.jpg: Germinating Mycorrhiza Fungus Spores, by Sainsbury Laboratory University of Cambridge, CC by-nc-sa 2.0. https://www.flickr.com/photos/129349420@N02/15360069864
+- 42-nematophagous-fungi.jpg: 20100814 175958 FungusOnDeadnematode HarposporiumAnguillulae, by Bob Blaylock Whidou (date removal), CC by-sa 3.0. https://commons.wikimedia.org/w/index.php?curid=11204216
+- 44-carbon-cycle-diagram.jpg: Global Carbon Cycle, by Atmospheric Infrared Sounder, CC by 2.0. https://www.flickr.com/photos/90896682@N06/8263952221
+- 45-carbon-cycle-diagram.jpg: Carbon Cycle, by Atmospheric Infrared Sounder, CC by 2.0. https://www.flickr.com/photos/90896682@N06/8265010034
+- 52-soil-structure.jpg: Subangular Soil Structure (1), by SoilScience.info, CC by 2.0. https://www.flickr.com/photos/22503286@N06/5097125149
+- 54-earthworm-soil.jpg: Free earthworm soil closeup image, by unknown, CC cc0 1.0. https://www.rawpixel.com/image/5914077/image-public-domain-free-animal
+- 55-bacteria-microscope-rod.jpg: Actinobacillus equuli on smear from bovine spleen, by TheRubinLab, CC by-nc 2.0. https://www.flickr.com/photos/143588891@N02/51898355514
+- 56-bacteria-microscope-rod.jpg: Nocardia species pure culture, by TheRubinLab, CC by-nc 2.0. https://www.flickr.com/photos/143588891@N02/51897972066
+- 57-actinomycetes.jpg: Antibiotic Producing Actinomycetes, by adonofrio (Biology101.org), CC by 2.0. https://www.flickr.com/photos/48784416@N06/6268871099
+- 63-fungal-hyphae-microscope.jpg: Fungal hyphae in potassium hydroxide digested hair sample 2, by Nathan Reading, CC by-nc-nd 2.0. https://www.flickr.com/photos/54976525@N08/6653040841
+- 64-fungal-hyphae-microscope.jpg: Fungal hyphae in potassium hydroxide digested hair sample - detail, by Nathan Reading, CC by-nc-nd 2.0. https://www.flickr.com/photos/54976525@N08/6653036249
+- 65-nematode-microscope.jpg: Wuchereria bancrofti, 400x 1, by Marc Perkins - OCC Biology Department, CC by-nc 2.0. https://www.flickr.com/photos/60206038@N05/6414495735
+- 66-nematode-microscope.jpg: Wuchereria bancrofti, 400x 2, by Marc Perkins - OCC Biology Department, CC by-nc 2.0. https://www.flickr.com/photos/60206038@N05/6414497563
+- 69-root-nodules.jpg: Soybean root nodules, by IITA Image Library, CC by-nc 2.0. https://www.flickr.com/photos/45796762@N03/4600729987
+- 73-protozoa-microscope.jpg: UN PERFIL DE CINE PARA PAMPHAGUS, by PROYECTO AGUA** /** WATER PROJECT, CC by-nc-sa 2.0. https://www.flickr.com/photos/25898159@N07/3270230838
+- 77-soil-profile.jpg: Well drained red soil profile, by NSW DPI Schools program, CC by-nc-sa 2.0. https://www.flickr.com/photos/30555753@N03/4075830693
+- 78-mycelium-soil.jpg: Mildew mycelium, by nojhan, CC by-sa 2.0. https://www.flickr.com/photos/25891376@N00/3015423617
+- 80-sfw-nematode-trapping-fungus-with-dead-nematode-40x-ob.jpg: Nematode-trapping fungus with dead nematode, 40x obj.jpg, Soil Food Web School (India decks source folder)
+- 81-sfw-fungal-hyphae-40x-obj-tanja-dekker.jpg: Fungal hyphae, 40x obj, Tanja Dekker.jpg, Soil Food Web School (India decks source folder)
+- 82-sfw-testate-amoebae-fungal-hypha-40x-obj-sid-jensen.jpg: Testate amoebae, fungal hypha, 40x obj, Sid Jensen.jpg, Soil Food Web School (India decks source folder)
+- 83-sfw-ciliate-60x-obj-patricia-j-coppola.jpg: Ciliate, 60x obj, Patricia J Coppola.jpg, Soil Food Web School (India decks source folder)
+- 84-sfw-naked-amoebae-stellate-40x-obj-kelly-moss.jpg: Naked amoebae (stellate), 40x obj, Kelly Moss.jpg, Soil Food Web School (India decks source folder)
+- 85-sfw-flagellate-40x-obj.jpg: Flagellate, 40x obj.jpg, Soil Food Web School (India decks source folder)
+- 86-sfw-bacterial-feeding-nematode-40x-obj-sid-jensen.jpg: Bacterial-feeding nematode, 40x obj, Sid Jensen.jpg, Soil Food Web School (India decks source folder)
+- 87-sfw-predatory-nematode-40x-obj-jeff-bruce.jpg: Predatory nematode, 40x obj, Jeff Bruce.jpg, Soil Food Web School (India decks source folder)
+- 88-sfw-root-feeding-nematode-40x-obj-talbot-armstrong.jpg: Root-feeding nematode, 40x obj, Talbot Armstrong.jpg, Soil Food Web School (India decks source folder)
+- 89-sfw-actinobacteria-40x-obj-isadora-schmidt.jpg: Actinobacteria, 40x obj, Isadora Schmidt.jpg, Soil Food Web School (India decks source folder)
+- 90-sfw-aggregation-biorender.jpg: aggregation-biorender.png, Soil Food Web School (India decks source folder)
+- 91-sfw-soil-zoom-aggregates-organisms-biorender.jpg: soil-zoom-aggregates-organisms-biorender.png, Soil Food Web School (India decks source folder)
+- 92-sfw-succession-biorender.jpg: succession-biorender.png, Soil Food Web School (India decks source folder)
+- 93-sfw-nematode-illustration.jpg: nematode-illustration.png, Soil Food Web School (India decks source folder)
