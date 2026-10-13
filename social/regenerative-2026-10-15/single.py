@@ -50,40 +50,34 @@ def questions(d, s, x, y, w, size, before_c, after_c, gap=34, rule=None):
     return y
 
 
-# 1. Cream page on a torn strip of real soil, website colours
+# Only the headline and its small line are on the image; the three questions go in the caption.
+# 1. Cream page on a torn strip of real soil
 d = Single("1"); s = d.slide(CREAM)
-d.img(s, "logo", logo_img(130), W - 72 - 130, 40)
-d.text(s, "headline", [(HEAD, SOIL, False)], 72, 120, 936, 260, 76, lh=1.1)
-d.text(s, "small-line", [(SMALL1, GREEN, False)], 74, 390, 800, 56, 44, font="Source Sans 3", weight=600)
-y = questions(d, s, 72, 490, 936, 50, SOIL, GREEN, rule="#D9D0BF")
-d.text(s, "cta", [(SMALL5, SOIL, False)], 74, y + 6, 560, 110, 38, font="Source Sans 3", lh=1.25)
-d.img(s, "soil-strip", soil_strip(270, 7), 0, H - 270)
-im = cut("fern-fiddlehead.png", w=200); d.img(s, "fern-fiddlehead", im, 940, H - 270 - im.height // 2 + 50, center=True)
-im = cut("mushrooms.png", w=180); d.img(s, "mushrooms", im, 780, H - 270 - im.height // 2 + 50, center=True)
+d.img(s, "logo", logo_img(150), W - 72 - 150, 56)
+d.text(s, "headline", [(HEAD, SOIL, False)], 72, 230, 936, 340, 104, lh=1.04)
+d.text(s, "small-line", [(SMALL1, GREEN, False)], 76, 590, 900, 70, 56, font="Source Sans 3", weight=600)
+d.img(s, "soil-strip", soil_strip(340, 7), 0, H - 340)
+for nm, f, w_, cx in [("mushrooms", "mushrooms.png", 260, 300), ("fern-fiddlehead", "fern-fiddlehead.png", 280, 620), ("moss", "moss-clump.png", 280, 880)]:
+    im = cut(f, w=w_); d.img(s, nm, im, cx, H - 340 - im.height // 2 + 60, center=True)
 d.write()
 
 # 2. Deep green ground with flowers from the four workshop regions
 d = Single("2"); s = d.slide(DEEP)
-d.img(s, "logo", logo_img(100, disc=True), W - 72 - 125, 40)
-d.text(s, "headline", [(HEAD, CREAM, False)], 72, 120, 936, 260, 76, lh=1.08)
-d.text(s, "small-line", [(SMALL1, LIGHT, False)], 74, 390, 800, 56, 44, font="Source Sans 3", weight=600)
-y = questions(d, s, 72, 490, 936, 50, CREAM, LIGHT, rule="#3A5235")
-d.text(s, "cta", [(SMALL5, CREAM, False)], 74, y + 6, 520, 110, 38, font="Source Sans 3", lh=1.25)
-for nm, f, h_, cx, cy, r in [("poppy", "norfolk-common-poppy.png", 330, 760, 1150, -6), ("marigold", "tamil-nadu-marigold.png", 280, 610, 1220, 6),
-                             ("paintbrush", "santa-fe-indian-paintbrush.png", 380, 900, 1120, -4), ("heliconia", "costa-rica-heliconia.png", 420, 1010, 1130, 8)]:
+d.img(s, "logo", logo_img(120, disc=True), W - 72 - 150, 56)
+d.text(s, "headline", [(HEAD, CREAM, False)], 72, 200, 936, 340, 104, lh=1.04)
+d.text(s, "small-line", [(SMALL1, LIGHT, False)], 76, 560, 900, 70, 56, font="Source Sans 3", weight=600)
+for nm, f, h_, cx, cy, r in [("poppy", "norfolk-common-poppy.png", 480, 170, 1080, -6), ("marigold", "tamil-nadu-marigold.png", 400, 420, 1130, 6),
+                             ("paintbrush", "santa-fe-indian-paintbrush.png", 520, 660, 1060, -4), ("heliconia", "costa-rica-heliconia.png", 560, 910, 1060, 8)]:
     d.img(s, "flower-" + nm, cut(f, h=h_, rot=r, folder=FLOW), cx, cy, center=True)
 d.write()
 
-# 3. One photo: the August 2023 high-five over the compost, type on cream below a torn edge
+# 3. One photo: the August 2023 high-five over the compost, headline on cream below a torn edge
 d = Single("3"); s = d.slide(CREAM)
-ph = Image.open(os.path.join(NEW, "students-high-five-at-compost.jpg")).convert("RGB")
-ph = v.cover(os.path.join(NEW, "students-high-five-at-compost.jpg"), W, 560, .35).convert("RGBA"); ph.putalpha(ragged(W, 560, "b", 91, 14))
+ph = v.cover(os.path.join(NEW, "students-high-five-at-compost.jpg"), W, 820, .3).convert("RGBA"); ph.putalpha(ragged(W, 820, "b", 91, 14))
 d.img(s, "photo-high-five-at-compost", ph, 0, 0)
 d.img(s, "logo", logo_img(110, disc=True), W - 72 - 138, 40)
-d.text(s, "headline", [(HEAD, SOIL, False)], 72, 590, 936, 160, 64, lh=1.1)
-d.text(s, "small-line", [(SMALL1, GREEN, False)], 74, 745, 800, 50, 40, font="Source Sans 3", weight=600)
-questions(d, s, 72, 830, 936, 40, SOIL, GREEN, gap=24, rule="#D9D0BF")
-d.text(s, "cta", [(SMALL5, SOIL, False)], 74, 1240, 936, 60, 34, font="Source Sans 3", lh=1.25)
+d.text(s, "headline", [(HEAD, SOIL, False)], 72, 860, 936, 280, 92, lh=1.06)
+d.text(s, "small-line", [(SMALL1, GREEN, False)], 76, 1170, 900, 64, 50, font="Source Sans 3", weight=600)
 d.write()
 
 # side by side
