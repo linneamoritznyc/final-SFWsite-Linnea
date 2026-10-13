@@ -166,16 +166,6 @@ L.alpha_composite(shadow_of(R, 0.55, 3), (2, 3))
 L.alpha_composite(R)
 
 cutout("mycelium-on-bark", fit_w(rgba("mycelium-on-bark.webp"), 92), 735, 1128, angle=10, strength=0.5)
-# micrographs in the soil, labelled
-for f, label, x, y in (("Bacterial-feeding nematode (omnivore), 40x obj, Jane Monteagle.jpg", "NEMATODE", 345, 1062),
-                       ("Fungal hypha, 100x obj, Marco Trevisan.jpg", "FUNGAL HYPHA", 550, 1085),
-                       ("Naked amoeba (stellate), ciliate, 40x obj, Cameron Radman.jpg", "AMOEBA", 755, 1062)):
-    im = disc(os.path.join(IMG, f), 84, ring=6, ring_col=CREAM)
-    cutout("micrograph-" + label.lower().replace(" ", "-"), im, x - im.width // 2, y - im.height // 2, strength=0.6)
-    TEXT.append(dict(name="label-" + label.lower().replace(" ", "-"), text=label, x=x - 80, y=y + im.height // 2 + 5,
-                     w=160, h=18, font="Montserrat", size=13, bold=True, color=CREAM, align="center",
-                     pil=ff("montserrat", 13, 700), anchor="ma", at=(x, y + im.height // 2 + 5)))
-
 # earthworm
 E = Image.new("RGBA", (W, H), (0, 0, 0, 0))
 ed = ImageDraw.Draw(E)
@@ -190,21 +180,9 @@ L = layer("earthworm")
 L.alpha_composite(shadow_of(E, 0.55, 4), (3, 5))
 L.alpha_composite(E)
 
-# framed micrographs hanging on the back wall
-for f, x, y in (("Bacterial-feeding nematode, 40x obj, Sid Jensen (I3).jpg", 330, 362),
-                ("Testate amoeba (Arcella), 40x obj, Mark Horton.jpg", 700, 368)):
-    im = disc(os.path.join(IMG, f), 88, ring=8)
-    L = layer("wall-frame-" + os.path.basename(f).split(",")[0].lower().replace(" ", "-").replace("(", "").replace(")", ""))
-    d = ImageDraw.Draw(L)
-    d.line((x + im.width // 2, OY0 + 4, x + im.width // 2 - 22, y + 6), fill=SOIL, width=2)
-    d.line((x + im.width // 2, OY0 + 4, x + im.width // 2 + 22, y + 6), fill=SOIL, width=2)
-    L.alpha_composite(shadow_of(im), (x + 5, y + 8))
-    L.alpha_composite(im, (x, y))
-
 # people and flowers inside the room, standing on the soil
 cheer = fit_h(cut("raw-cheering-cage.png", thr=170, keep=0.2), 290)
 cutout("people-cheering-compost-cage", cheer, 545 - cheer.width // 2, FLOOR - 292)
-cutout("person-misting-pile", fit_h(cut("raw-misting-man.png", box=(0, 0, 0.6, 1)), 360), OX0 + 6, FLOOR - 350)
 cutout("person-kneeling-field", fit_h(cut("raw-kneeling-field.png", thr=170), 190), 452, FLOOR - 176)
 smell = fit_h(cut("raw-smelling-compost.png"), 350)
 cutout("person-smelling-compost", smell, OX1 - smell.width + 8, FLOOR - 338)

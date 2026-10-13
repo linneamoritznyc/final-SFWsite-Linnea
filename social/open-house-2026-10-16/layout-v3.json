@@ -42,35 +42,8 @@
   },
   {
    "type": "image",
-   "name": "micrograph-nematode",
-   "file": "layers-v3/05-micrograph-nematode.png",
-   "x": 297,
-   "y": 1014,
-   "w": 102,
-   "h": 105
-  },
-  {
-   "type": "image",
-   "name": "micrograph-fungal-hypha",
-   "file": "layers-v3/06-micrograph-fungal-hypha.png",
-   "x": 502,
-   "y": 1037,
-   "w": 102,
-   "h": 105
-  },
-  {
-   "type": "image",
-   "name": "micrograph-amoeba",
-   "file": "layers-v3/07-micrograph-amoeba.png",
-   "x": 707,
-   "y": 1014,
-   "w": 102,
-   "h": 105
-  },
-  {
-   "type": "image",
    "name": "earthworm",
-   "file": "layers-v3/08-earthworm.png",
+   "file": "layers-v3/05-earthworm.png",
    "x": 289,
    "y": 1147,
    "w": 178,
@@ -78,26 +51,8 @@
   },
   {
    "type": "image",
-   "name": "wall-frame-bacterial-feeding-nematode",
-   "file": "layers-v3/09-wall-frame-bacterial-feeding-nematode.png",
-   "x": 330,
-   "y": 322,
-   "w": 109,
-   "h": 152
-  },
-  {
-   "type": "image",
-   "name": "wall-frame-testate-amoeba-arcella",
-   "file": "layers-v3/10-wall-frame-testate-amoeba-arcella.png",
-   "x": 700,
-   "y": 322,
-   "w": 109,
-   "h": 158
-  },
-  {
-   "type": "image",
    "name": "people-cheering-compost-cage",
-   "file": "layers-v3/11-people-cheering-compost-cage.png",
+   "file": "layers-v3/06-people-cheering-compost-cage.png",
    "x": 402,
    "y": 676,
    "w": 292,
@@ -105,17 +60,8 @@
   },
   {
    "type": "image",
-   "name": "person-misting-pile",
-   "file": "layers-v3/12-person-misting-pile.png",
-   "x": 268,
-   "y": 618,
-   "w": 171,
-   "h": 369
-  },
-  {
-   "type": "image",
    "name": "person-kneeling-field",
-   "file": "layers-v3/13-person-kneeling-field.png",
+   "file": "layers-v3/07-person-kneeling-field.png",
    "x": 452,
    "y": 792,
    "w": 127,
@@ -124,7 +70,7 @@
   {
    "type": "image",
    "name": "person-smelling-compost",
-   "file": "layers-v3/14-person-smelling-compost.png",
+   "file": "layers-v3/08-person-smelling-compost.png",
    "x": 587,
    "y": 630,
    "w": 265,
@@ -133,7 +79,7 @@
   {
    "type": "image",
    "name": "poppies",
-   "file": "layers-v3/15-poppies.png",
+   "file": "layers-v3/09-poppies.png",
    "x": 395,
    "y": 772,
    "w": 139,
@@ -142,7 +88,7 @@
   {
    "type": "image",
    "name": "clover-room",
-   "file": "layers-v3/16-clover-room.png",
+   "file": "layers-v3/10-clover-room.png",
    "x": 618,
    "y": 831,
    "w": 79,
@@ -151,7 +97,7 @@
   {
    "type": "image",
    "name": "sfw-caps",
-   "file": "layers-v3/17-sfw-caps.png",
+   "file": "layers-v3/11-sfw-caps.png",
    "x": 520,
    "y": 916,
    "w": 126,
@@ -160,7 +106,7 @@
   {
    "type": "image",
    "name": "door-frame",
-   "file": "layers-v3/18-door-frame.png",
+   "file": "layers-v3/12-door-frame.png",
    "x": 228,
    "y": 278,
    "w": 645,
@@ -169,7 +115,7 @@
   {
    "type": "image",
    "name": "front-door-open",
-   "file": "layers-v3/19-front-door-open.png",
+   "file": "layers-v3/13-front-door-open.png",
    "x": 50,
    "y": 253,
    "w": 227,
@@ -178,7 +124,7 @@
   {
    "type": "image",
    "name": "sfw-logo-door",
-   "file": "layers-v3/20-sfw-logo-door.png",
+   "file": "layers-v3/14-sfw-logo-door.png",
    "x": 78,
    "y": 432,
    "w": 148,
@@ -187,7 +133,7 @@
   {
    "type": "image",
    "name": "vine",
-   "file": "layers-v3/21-vine.png",
+   "file": "layers-v3/15-vine.png",
    "x": 881,
    "y": 451,
    "w": 176,
@@ -196,7 +142,7 @@
   {
    "type": "image",
    "name": "passion-flower",
-   "file": "layers-v3/22-passion-flower.png",
+   "file": "layers-v3/16-passion-flower.png",
    "x": 874,
    "y": 378,
    "w": 206,
@@ -205,7 +151,7 @@
   {
    "type": "image",
    "name": "orchid",
-   "file": "layers-v3/23-orchid.png",
+   "file": "layers-v3/17-orchid.png",
    "x": 905,
    "y": 710,
    "w": 167,
@@ -214,7 +160,7 @@
   {
    "type": "image",
    "name": "clover-in-pot",
-   "file": "layers-v3/24-clover-in-pot.png",
+   "file": "layers-v3/18-clover-in-pot.png",
    "x": 928,
    "y": 991,
    "w": 99,
@@ -223,7 +169,7 @@
   {
    "type": "image",
    "name": "pot",
-   "file": "layers-v3/25-pot.png",
+   "file": "layers-v3/19-pot.png",
    "x": 900,
    "y": 1146,
    "w": 146,
@@ -232,7 +178,7 @@
   {
    "type": "image",
    "name": "step",
-   "file": "layers-v3/26-step.png",
+   "file": "layers-v3/20-step.png",
    "x": 202,
    "y": 1196,
    "w": 697,
@@ -241,59 +187,11 @@
   {
    "type": "image",
    "name": "doormat",
-   "file": "layers-v3/27-doormat.png",
+   "file": "layers-v3/21-doormat.png",
    "x": 305,
    "y": 1236,
    "w": 476,
    "h": 101
-  },
-  {
-   "type": "text",
-   "name": "label-nematode",
-   "text": "NEMATODE",
-   "x": 265,
-   "y": 1115,
-   "w": 160,
-   "h": 18,
-   "font": "Montserrat",
-   "size": 13,
-   "align": "center",
-   "bold": true,
-   "italic": false,
-   "valign": "top",
-   "color": "F4F1EA"
-  },
-  {
-   "type": "text",
-   "name": "label-fungal-hypha",
-   "text": "FUNGAL HYPHA",
-   "x": 470,
-   "y": 1138,
-   "w": 160,
-   "h": 18,
-   "font": "Montserrat",
-   "size": 13,
-   "align": "center",
-   "bold": true,
-   "italic": false,
-   "valign": "top",
-   "color": "F4F1EA"
-  },
-  {
-   "type": "text",
-   "name": "label-amoeba",
-   "text": "AMOEBA",
-   "x": 675,
-   "y": 1115,
-   "w": 160,
-   "h": 18,
-   "font": "Montserrat",
-   "size": 13,
-   "align": "center",
-   "bold": true,
-   "italic": false,
-   "valign": "top",
-   "color": "F4F1EA"
   },
   {
    "type": "text",
