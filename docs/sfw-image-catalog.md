@@ -649,7 +649,7 @@ Photographer: Nick Padwick (farmer, SFW consultant and mentor, Norfolk). Shared 
 
 ## Folder: 2026-06_UK-Workshop_Wild Ken Hill
 
-Workshop: Accelerator Workshop June 2026, Wild Ken Hill, Norfolk, UK, 15 to 26 Jun 2026. Only 11 photos exist (two bursts). Drive folder ID: 1-j4Tw1tEmRSOtU7G6Qajs7rW60sUH5lH. No gallery for this page.
+Workshop: Accelerator Workshop June 2026, Wild Ken Hill, Norfolk, UK, 15 to 26 Jun 2026. Only 11 photos in this folder (two bursts). Drive folder ID: 1-j4Tw1tEmRSOtU7G6Qajs7rW60sUH5lH. More photos of this workshop are in the SFW Drive folder "PICTURES - June 2026 - Student Access" (see the section near the end).
 
 | File | What it shows | Workshop / date |
 | :---- | :---- | :---- |
