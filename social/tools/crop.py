@@ -11,6 +11,8 @@ W, H = 1080, 1350
 PHOTOS = {
     "microscope": ("img/costa-rica-2025-microscopy-students-mentors.jpg", 0.0, 0.5),
     "compost-pile": ("img/pile-turning-wes-8-scaled.jpg", 0.5, 0.5),
+    "group-cover": ("img/cy-workshop-8.jpg", 0.5, 0.5),
+    "learning": ("img/IMG_1942-scaled.jpg", 0.5, 0.5),
     "group": ("img/wild-ken-hill/IMG_1500.jpg", 0.5, 0.75),
     "living-soil": ("img/ctpfw-student-squeezing-compost-1.jpg", 0.5, 0.5),
     "field": ("img/uploads/loida-teaching-3.jpg", 0.22, 0.5),

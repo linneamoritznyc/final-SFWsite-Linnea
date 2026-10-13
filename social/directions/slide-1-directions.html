@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post 1, slide 1: three directions</title>
+<style>
+@font-face { font-family: "Montserrat"; src: url("../../fonts/montserrat-latin-variable.woff2") format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "Source Sans 3"; src: url("../../fonts/source-sans-3-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Source Sans 3"; src: url("../../fonts/source-sans-3-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+:root { --deep: #22371F; --cream: #F4F1EA; --green: #156826; --light: #59A66C; --gold: #C9A227;
+        --head: "Montserrat", Arial, sans-serif; --small: "Source Sans 3", Arial, sans-serif; }
+* { box-sizing: border-box; margin: 0; }
+body { background: #777; padding: 40px; display: flex; gap: 40px; }
+.slide { position: relative; width: 1080px; height: 1350px; overflow: hidden; flex: none; }
+.photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.disc { position: absolute; width: 132px; height: 132px; border-radius: 50%; background: var(--cream);
+        display: grid; place-items: center; }
+.disc img { width: 104px; }
+.fill { outline: 4px dashed var(--gold); outline-offset: 8px; }
+
+/* A. Cover story: full bleed, soft gradient from the bottom, a magazine coverline */
+#a .photo { object-position: 50% 50%; }
+#a::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(20,32,18,.0) 58%, rgba(20,32,18,.7) 76%, rgba(20,32,18,.94) 100%); }
+#a .disc { top: 56px; right: 56px; z-index: 2; }
+#a .text { position: absolute; left: 72px; right: 72px; bottom: 72px; z-index: 2; color: var(--cream); }
+#a h1 { font: 800 132px/1 var(--head); letter-spacing: -.045em; white-space: nowrap; }
+#a .line { font: 700 52px/1.15 var(--head); margin-top: 24px; letter-spacing: -.01em; }
+#a .time { font: 600 44px/1 var(--small); margin-top: 26px; display: inline-block; }
+
+/* B. The numeral: a monumental 1! in the canopy, the people below it */
+#b .photo { object-position: 46% 50%; }
+#b::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(20,32,18,.72) 0%, rgba(20,32,18,.35) 40%, rgba(20,32,18,.15) 58%, rgba(20,32,18,.88) 100%); }
+#b .head { position: absolute; z-index: 2; left: 72px; right: 56px; top: -24px; display: flex; align-items: baseline; justify-content: space-between; color: var(--cream); }
+#b .we { font: 800 108px/.92 var(--head); letter-spacing: -.035em; }
+#b .one { font: 900 640px/.8 var(--head); letter-spacing: -.07em; }
+#b .disc { bottom: 72px; right: 72px; z-index: 3; }
+#b .bottom { position: absolute; left: 72px; right: 260px; bottom: 76px; z-index: 3; color: var(--cream); }
+#b .bottom .line { font: 700 58px/1.12 var(--head); letter-spacing: -.01em; }
+#b .bottom .time { font: 600 44px/1 var(--small); margin-top: 24px; display: inline-block; }
+
+/* C. The print: cream page, photo set as a framed plate, editorial caption below */
+#c { background: var(--cream); color: var(--deep); }
+#c .plate { position: absolute; left: 56px; right: 56px; top: 56px; height: 700px; overflow: hidden; }
+#c .plate img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+#c .disc { bottom: 56px; right: 56px; width: 132px; height: 132px; background: transparent; }
+#c .disc img { width: 132px; }
+#c .text { position: absolute; left: 64px; right: 64px; top: 808px; }
+#c h1 { font: 800 128px/1 var(--head); letter-spacing: -.045em; white-space: nowrap; }
+#c .line { font: 700 52px/1.15 var(--head); margin-top: 30px; letter-spacing: -.01em; }
+#c .time { font: 600 42px/1 var(--small); margin-top: 22px; display: inline-block; color: var(--green); }
+</style>
+</head>
+<body>
+
+<section class="slide" id="a">
+  <img class="photo" src="../../img/cy-workshop-8.jpg" alt="Workshop participants and mentors gathered under a garden pergola">
+  <div class="disc"><img src="../../img/sfwlogo-240.png" alt="Soil Food Web"></div>
+  <div class="text">
+    <h1>We turned 1!</h1>
+    <p class="line">Open house party, October 16</p>
+    <p class="time"><span class="fill">[TIME + TIME ZONE]</span></p>
+  </div>
+</section>
+
+<section class="slide" id="b">
+  <img class="photo" src="../../img/cy-workshop-8.jpg" alt="Workshop participants and mentors gathered under a garden pergola">
+  <h1 class="head"><span class="we">We<br>turned</span> <span class="one">1!</span></h1>
+  <div class="bottom">
+    <p class="line">Open house party, October 16</p>
+    <p class="time"><span class="fill">[TIME + TIME ZONE]</span></p>
+  </div>
+  <div class="disc"><img src="../../img/sfwlogo-240.png" alt="Soil Food Web"></div>
+</section>
+
+<section class="slide" id="c">
+  <div class="plate"><img src="../../img/cy-workshop-8.jpg" alt="Workshop participants and mentors gathered under a garden pergola"></div>
+  <div class="text">
+    <h1>We turned 1!</h1>
+    <p class="line">Open house party, October 16</p>
+    <p class="time"><span class="fill">[TIME + TIME ZONE]</span></p>
+  </div>
+  <div class="disc"><img src="../../img/sfwlogo-240.png" alt="Soil Food Web"></div>
+</section>
+
+</body>
+</html>
