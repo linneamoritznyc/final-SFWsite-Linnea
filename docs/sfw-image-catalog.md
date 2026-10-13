@@ -1,6 +1,6 @@
 # SFW image catalog
 
-Updated 13 Oct 2026. One file: the main catalog (10 Oct) plus the 1,073 rows from the per-workshop Drive folders (11 Oct).
+Updated 14 Oct 2026. One file: the main catalog (10 Oct), the rows from the per-workshop Drive folders (11 Oct), the June 2025 upload (13 Oct) and the June 2026 SFW Drive folder (14 Oct).
 
 **For anyone picking photos (people or Claude):** read this catalog before choosing any photo. It describes every SFW photo we have, with its Drive file, workshop and date, and marks the best ones. Choose from these rows. Use no stock photos, and no image under 1200 px wide.
 
@@ -1954,3 +1954,33 @@ Workshop: Accelerator Workshop June 2025, Wild Ken Hill, Norfolk, UK, 16 to 27 J
 | WhatsApp Bild 2025-06-27 um 12.38.12_d08d627d.jpg | Wider view of participants pushing through a sea of bracken under tall trees. 1536 x 2048. | Wild Ken Hill, 27 Jun 2025 |
 | brix-chart_copy.pdf | PDF: refractive index (Brix) chart of crop juices. | Wild Ken Hill Jun 2025 |
 | WhatsApp Video 2025-06-24 um 17.16.42_92be34a3.mp4 | Short video clip (3.1 MB), not yet seen. | Wild Ken Hill, 24 Jun 2025 |
+
+## Folder (SFW Drive): PICTURES - June 2026 - Student Access
+
+Workshop: Accelerator Workshop June 2026, Wild Ken Hill, Norfolk, UK, 15 to 26 Jun 2026. Shared by Stephanie McDaniel on 12 Oct 2026: https://drive.google.com/drive/folders/1iqeeS6hhTBe78l4nulfDTkDkNOk7qGuy (open to anyone with the link). 55 photos and 23 videos. All photos are 3024 px or wider on the long side.
+
+### Gallery for the June 2026 workshop page (20 photos, in page order, added 14 Oct 2026)
+
+1. IMG_20260615_082154.jpg: barn classroom on day one
+2. IMG_20260615_134554.jpg: notebook of pressed leaves over green feedstock
+3. IMG_20260615_134616.jpg: class circle on the grass around the feedstock
+4. IMG_20260615_141823.jpg: bending over compost on a blue tarp, yellow clipboard
+5. IMG_20260615_142904.jpg: woman in gloves working compost on the tarp
+6. IMG_20260616_141445.jpg: layered feedstock: grain, wool and green material
+7. 20260616_150258.jpg: five people laughing at a filled wire bin
+8. IMG_20260616_155429.jpg: man in overalls with a bucket of compost
+9. 20260616_170340.jpg: woman in a red top watering a filled bin
+10. IMG_20260617_084245.jpg: person standing inside a round mesh bin
+11. IMG_20260617_152921.jpg: woman in red explaining a sampling kit in the grass
+12. IMG_0947.HEIC: thermometer dial among purple wildflowers
+13. IMG_20260619_131504.jpg: class by the tractor and water tank in the farmyard
+14. IMG_20260619_131847.jpg: two men in caps talking over a steel grid
+15. 20260625_132654.jpg: windrow turner paddles against blue sky
+16. IMG_20260625_133704.jpg (saved as /storage/emulated/…): man bending over a compost windrow
+17. IMG_20260625_131752.jpg: group in a field with poppies
+18. IMG_20260625_131912.jpg: woman in a straw hat with green spray bottles
+19. IMG_1001.HEIC: man on the beach at sunset with driftwood
+20. IMG_1002.HEIC: campfire on the beach at night
+
+Left out: the pizza van (already on the June 2025 page), the fisheye frames (IMG_20260615_080232, IMG_20260619_131510), the wrapped microscope, the tank fittings, near-repeat frames of each burst, and all videos.
+

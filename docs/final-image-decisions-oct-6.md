@@ -436,3 +436,9 @@ The card is photo 1, cut to 3:2 from the top. Not used: the compost, microscopy,
 - The body text of the nine past workshop pages is replaced word for word with docs/copy/workshop-page-final-texts-2026-10-13.md. Old headings, sources, references, quote boxes and "Why it matters" sections are gone. Dates, header photos, in-text photos and galleries are unchanged; the in-text photo rows now sit between paragraphs, spread evenly through the text.
 - The WordPress spreadsheets give each in-text photo's new spot as "After paragraph N of the text".
 - June 2025: the 16 gallery photos merged from add-wkh-2025-photos (26 to 41) are added to the June 2025 download and both spreadsheets, so the folder now has 41 gallery photos.
+
+## June 2026 gallery (14 October)
+
+The June 2026 page gets a 20-photo gallery from the SFW Drive folder "PICTURES - June 2026 - Student Access" (shared by Stephanie on 12 October), picked from the catalog's picks for that folder. The list is in docs/sfw-image-catalog.md. The two header photos stay. The June 2026 download and both spreadsheets now include the gallery (23 images).
+
+Note: scratchpad generator ws-site.py still holds the 11 October copy. Do not regenerate the workshop pages with it; the 13 October final texts and the merged galleries live in src/pages.
