@@ -1,7 +1,8 @@
-"""Soil-life cutouts: nano-banana with one of our real photos as reference, then BiRefNet background removal.
+"""Photo cutouts: nano-banana with one of our real photos as reference, then BiRefNet background removal.
 
-  python3 social/tools/soil_cutouts.py [names]   generate (all by default) into social/cutouts-soil/
-  python3 social/tools/soil_cutouts.py sheet     contact sheet of the cutouts on a checkerboard
+  python3 social/tools/soil_cutouts.py soil [names]      soil life     -> social/cutouts-soil/
+  python3 social/tools/soil_cutouts.py flowers [names]   regional flowers -> social/cutouts-flowers/
+  python3 social/tools/soil_cutouts.py <set> sheet       contact sheet of that set on a checkerboard
 """
 import os, sys, time, concurrent.futures as cf
 import requests
@@ -9,11 +10,37 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 SRC = os.path.join(ROOT, "img", "new-2026-10")
-OUT = os.path.join(ROOT, "social", "cutouts-soil")
-RAW = os.path.join(OUT, "_raw")
+OUT = RAW = None  # set per run from SETS
 API = "https://api.replicate.com/v1"
 H = {"Authorization": f"Bearer {os.environ['REPLICATE_API_TOKEN']}"}
 BIREFNET = "f74986db0355b58403ed20963af156525e2891ea3c2d499bfbfb2a28cd87c5d7"
+
+FLOWER_PROMPT = ("Use this photo as the reference for real colour, light and photographic quality. Make a new high-detail "
+          "photograph of {subject}. Fresh and true to the real species, centred, fully in frame with space around it, sharp focus, "
+          "natural daylight, true-to-life colours, on a plain pure white background with nothing else. A real photograph, not an "
+          "illustration. No text, no hands, no people, no vase.")
+NORFOLK = "ending-donate-poppy-field-wild-ken-hill.jpg"
+SANTA_FE = "santa-fe-2026-01-ranch.jpg"
+COSTA_RICA = "costa-rica-2024-07-23-garden.jpg"
+INDIA = "costa-rica-2025-03-23-pink-trumpet-flowers.jpg"  # no Tamil Nadu photo in the repo yet; one of our real flower photos
+FLOWERS = {
+    "norfolk-common-poppy": (NORFOLK, "a single red common poppy (Papaver rhoeas) bloom with its hairy stem and one seed bud"),
+    "norfolk-cornflower": (NORFOLK, "a single blue cornflower (Centaurea cyanus) on a short stem"),
+    "norfolk-foxglove": (NORFOLK, "a single stem of purple-pink foxglove (Digitalis purpurea) with several bell flowers"),
+    "norfolk-sea-lavender": (NORFOLK, "a sprig of sea lavender (Limonium vulgare) from a Norfolk salt marsh, tiny lilac flowers on branching stems"),
+    "tamil-nadu-gloriosa-lily": (INDIA, "a single flame lily (Gloriosa superba) flower, red and yellow swept-back petals, with its curling leaf tip"),
+    "tamil-nadu-jasmine": (INDIA, "a small sprig of Madurai jasmine (Jasminum sambac) with white flowers, buds and glossy leaves"),
+    "tamil-nadu-marigold": (INDIA, "a single bright orange marigold (Tagetes erecta) flower head on a short stem with a leaf"),
+    "tamil-nadu-pink-lotus": (INDIA, "a single open pink lotus (Nelumbo nucifera) flower on its stem"),
+    "santa-fe-indian-paintbrush": (SANTA_FE, "a single stem of scarlet Indian paintbrush (Castilleja) wildflower"),
+    "santa-fe-chamisa": (SANTA_FE, "a sprig of flowering chamisa, rubber rabbitbrush (Ericameria nauseosa), with golden yellow flower clusters"),
+    "santa-fe-globemallow": (SANTA_FE, "a stem of orange desert globemallow (Sphaeralcea ambigua) with several cup-shaped flowers and grey-green leaves"),
+    "santa-fe-prickly-pear-flower": (SANTA_FE, "a single yellow prickly pear cactus flower on the top edge of one green cactus pad"),
+    "costa-rica-heliconia": (COSTA_RICA, "a single hanging red and yellow heliconia (Heliconia rostrata) flower stem"),
+    "costa-rica-hibiscus": (COSTA_RICA, "a single red hibiscus flower with a long stamen and two leaves"),
+    "costa-rica-poro-flower": (COSTA_RICA, "a branch tip of poro tree (Erythrina poeppigiana) with bright orange flowers"),
+    "costa-rica-torch-ginger": (COSTA_RICA, "a single pink torch ginger (Etlingera elatior) flower head on its stem"),
+}
 
 PROMPT = ("Use this photo as the reference for real soil, colour, light and texture. Make a new high-detail macro photograph "
           "of {subject}. One single object, centred, fully in frame with space around it, sharp focus, natural daylight, "
@@ -67,9 +94,10 @@ def ref_url(name):
 
 def one(name):
     ref, subject = ITEMS[name]
+    prompt = PROMPT_FOR.format(subject=subject)
     try:
         out = predict(f"{API}/models/google/nano-banana/predictions",
-                      {"input": {"prompt": PROMPT.format(subject=subject), "image_input": [ref_url(ref)], "output_format": "png"}})
+                      {"input": {"prompt": prompt, "image_input": [ref_url(ref)], "output_format": "png"}})
         raw = os.path.join(RAW, f"{name}.png")
         open(raw, "wb").write(requests.get(out, headers=H).content)
         cut = predict(f"{API}/predictions", {"version": BIREFNET, "input": {"image": upload(raw)}})
@@ -102,12 +130,16 @@ def sheet():
     S.save(os.path.join(OUT, "contact-sheet.png"))
 
 
+SETS = {"soil": ("cutouts-soil", ITEMS, PROMPT), "flowers": ("cutouts-flowers", FLOWERS, FLOWER_PROMPT)}
+
 if __name__ == "__main__":
+    folder, ITEMS, PROMPT_FOR = SETS[sys.argv[1]]
+    OUT = os.path.join(ROOT, "social", folder); RAW = os.path.join(OUT, "_raw")
     os.makedirs(RAW, exist_ok=True)
-    if sys.argv[1:] == ["sheet"]:
+    if sys.argv[2:] == ["sheet"]:
         sheet()
     else:
-        names = sys.argv[1:] or list(ITEMS)
+        names = sys.argv[2:] or list(ITEMS)
         for n in names: ref_url(ITEMS[n][0])
         with cf.ThreadPoolExecutor(2) as ex:
             for r in ex.map(one, names): print(r, flush=True)
