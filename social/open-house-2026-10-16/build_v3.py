@@ -176,6 +176,25 @@ L.alpha_composite(E)
 
 # people and flowers inside the room, standing on the soil
 cheer = fit_h(cut("raw-cheering-cage.png", thr=170, keep=0.2), 525)
+# erase stray bits: the cardboard sign top left, the red hook and black strap on the right
+ca = cheer.split()[3]
+ImageDraw.Draw(ca).rectangle((0, 0, 66, 57), fill=0)
+ImageDraw.Draw(ca).rectangle((472, 280, 518, 422), fill=0)
+ImageDraw.Draw(ca).rectangle((470, 190, 518, 425), fill=0)
+px_ = cheer.load()
+for yy in range(115, 195):  # the red hook beside her shoulder: drop red pixels only
+    for xx in range(462, cheer.width):
+        r_, g_, b_, a_ = px_[xx, yy]
+        if a_ and r_ > 120 and g_ < 95 and b_ < 95:
+            ca.putpixel((xx, yy), 0)
+# drop the thin leftover ring of the hook: keep only solid shapes in that corner
+reg = (455, 105, cheer.width, 205)
+sub = np.array(ca.crop(reg)) > 100
+solid = ndimage.binary_dilation(ndimage.binary_opening(sub, structure=np.ones((7, 7))), iterations=2)
+arr = np.array(ca)
+arr[reg[1]:reg[3], reg[0]:reg[2]][~solid] = 0
+ca = Image.fromarray(arr)
+cheer.putalpha(ca)
 cutout("people-cheering-compost-cage", cheer, 538 - cheer.width // 2, FLOOR - 512)
 clover = fit_h(rgba("crimson-clover-capri.webp"), 150)
 
