@@ -1,0 +1,380 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "band",
+    "file": "layers/s1-02-band.png",
+    "x": 9,
+    "y": 31,
+    "w": 1062,
+    "h": 548
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 100,
+    "y": 125,
+    "w": 880,
+    "h": 260,
+    "size": 78,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.04,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 104,
+    "y": 420,
+    "w": 860,
+    "h": 60,
+    "size": 46,
+    "font": "Source Sans 3",
+    "weight": 700,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "dark-soil",
+    "file": "layers/s1-05-dark-soil.png",
+    "x": 102,
+    "y": 682,
+    "w": 798,
+    "h": 519
+   },
+   {
+    "type": "image",
+    "name": "mushrooms",
+    "file": "layers/s1-06-mushrooms.png",
+    "x": 730,
+    "y": 990,
+    "w": 260,
+    "h": 320
+   }
+  ]
+ },
+ {
+  "n": 2,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s2-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "label",
+    "file": "layers/s2-02-label.png",
+    "x": 9,
+    "y": 61,
+    "w": 1062,
+    "h": 798
+   },
+   {
+    "type": "text",
+    "name": "question",
+    "runs": [
+     [
+      "A destination",
+      "#22371F",
+      true
+     ],
+     [
+      "or a direction?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 100,
+    "y": 170,
+    "w": 880,
+    "h": 600,
+    "size": 88,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "earthworm",
+    "file": "layers/s2-04-earthworm.png",
+    "x": 109,
+    "y": 626,
+    "w": 784,
+    "h": 724
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s2-05-logo.png",
+    "x": 72,
+    "y": 1165,
+    "w": 130,
+    "h": 113
+   }
+  ]
+ },
+ {
+  "n": 3,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s3-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "label",
+    "file": "layers/s3-02-label.png",
+    "x": 9,
+    "y": 61,
+    "w": 1062,
+    "h": 798
+   },
+   {
+    "type": "text",
+    "name": "question",
+    "runs": [
+     [
+      "A certified status",
+      "#22371F",
+      true
+     ],
+     [
+      "or a way of thinking?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 100,
+    "y": 170,
+    "w": 880,
+    "h": 600,
+    "size": 88,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "acorns",
+    "file": "layers/s3-04-acorns.png",
+    "x": 239,
+    "y": 880,
+    "w": 524,
+    "h": 341
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s3-05-logo.png",
+    "x": 72,
+    "y": 1165,
+    "w": 130,
+    "h": 113
+   }
+  ]
+ },
+ {
+  "n": 4,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s4-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "label",
+    "file": "layers/s4-02-label.png",
+    "x": 9,
+    "y": 61,
+    "w": 1062,
+    "h": 798
+   },
+   {
+    "type": "text",
+    "name": "question",
+    "runs": [
+     [
+      "A premium product,",
+      "#22371F",
+      true
+     ],
+     [
+      "or a standard everyone who works the land can reach?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 100,
+    "y": 170,
+    "w": 880,
+    "h": 600,
+    "size": 88,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "fern-fiddlehead",
+    "file": "layers/s4-04-fern-fiddlehead.png",
+    "x": 272,
+    "y": 800,
+    "w": 458,
+    "h": 501
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s4-05-logo.png",
+    "x": 72,
+    "y": 1165,
+    "w": 130,
+    "h": 113
+   }
+  ]
+ },
+ {
+  "n": 5,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s5-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "flower-poppy",
+    "file": "layers/s5-02-flower-poppy.png",
+    "x": 0,
+    "y": 7,
+    "w": 346,
+    "h": 628
+   },
+   {
+    "type": "image",
+    "name": "flower-marigold",
+    "file": "layers/s5-03-flower-marigold.png",
+    "x": 198,
+    "y": 100,
+    "w": 367,
+    "h": 522
+   },
+   {
+    "type": "image",
+    "name": "flower-paintbrush",
+    "file": "layers/s5-04-flower-paintbrush.png",
+    "x": 431,
+    "y": 0,
+    "w": 380,
+    "h": 609
+   },
+   {
+    "type": "image",
+    "name": "flower-heliconia",
+    "file": "layers/s5-05-flower-heliconia.png",
+    "x": 671,
+    "y": 0,
+    "w": 380,
+    "h": 624
+   },
+   {
+    "type": "image",
+    "name": "band",
+    "file": "layers/s5-06-band.png",
+    "x": 9,
+    "y": 721,
+    "w": 1062,
+    "h": 598
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "Living soil in the hands of every person who works the land.",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 100,
+    "y": 830,
+    "w": 880,
+    "h": 260,
+    "size": 70,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.08,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "What does regenerative mean to you? Tell us in the comments.",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 104,
+    "y": 1110,
+    "w": 860,
+    "h": 110,
+    "size": 42,
+    "font": "Source Sans 3",
+    "weight": 700,
+    "lh": 1.25,
+    "align": "left"
+   }
+  ]
+ }
+]

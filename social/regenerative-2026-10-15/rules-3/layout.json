@@ -1,0 +1,85 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "text",
+    "name": "what-does",
+    "runs": [
+     [
+      "What does",
+      "#4F3433",
+      false
+     ]
+    ],
+    "x": 62,
+    "y": 470,
+    "w": 956,
+    "h": 80,
+    "size": 64,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.0,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "word-regenerative-soil",
+    "file": "layers/s1-03-word-regenerative-soil.png",
+    "x": 57,
+    "y": 568,
+    "w": 966,
+    "h": 144
+   },
+   {
+    "type": "text",
+    "name": "actually-mean",
+    "runs": [
+     [
+      "actually mean?",
+      "#4F3433",
+      false
+     ]
+    ],
+    "x": 62,
+    "y": 735,
+    "w": 956,
+    "h": 80,
+    "size": 64,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.0,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 64,
+    "y": 860,
+    "w": 956,
+    "h": 60,
+    "size": 46,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   }
+  ]
+ }
+]

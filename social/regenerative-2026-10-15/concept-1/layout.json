@@ -1,0 +1,74 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#4F3433",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 110,
+    "w": 936,
+    "h": 340,
+    "size": 100,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.04,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 76,
+    "y": 440,
+    "w": 900,
+    "h": 64,
+    "size": 52,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "fern-fiddlehead",
+    "file": "layers/s1-04-fern-fiddlehead.png",
+    "x": 670,
+    "y": 646,
+    "w": 260,
+    "h": 289
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-05-logo.png",
+    "x": 870,
+    "y": 1140,
+    "w": 138,
+    "h": 138
+   }
+  ]
+ }
+]

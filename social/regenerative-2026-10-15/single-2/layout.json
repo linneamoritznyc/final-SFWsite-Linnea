@@ -1,0 +1,101 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-02-logo.png",
+    "x": 858,
+    "y": 56,
+    "w": 150,
+    "h": 150
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 200,
+    "w": 936,
+    "h": 340,
+    "size": 104,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.04,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#59A66C",
+      false
+     ]
+    ],
+    "x": 76,
+    "y": 560,
+    "w": 900,
+    "h": 70,
+    "size": 56,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "flower-poppy",
+    "file": "layers/s1-05-flower-poppy.png",
+    "x": 34,
+    "y": 829,
+    "w": 271,
+    "h": 502
+   },
+   {
+    "type": "image",
+    "name": "flower-marigold",
+    "file": "layers/s1-06-flower-marigold.png",
+    "x": 282,
+    "y": 918,
+    "w": 276,
+    "h": 424
+   },
+   {
+    "type": "image",
+    "name": "flower-paintbrush",
+    "file": "layers/s1-07-flower-paintbrush.png",
+    "x": 515,
+    "y": 791,
+    "w": 290,
+    "h": 538
+   },
+   {
+    "type": "image",
+    "name": "flower-heliconia",
+    "file": "layers/s1-08-flower-heliconia.png",
+    "x": 759,
+    "y": 766,
+    "w": 302,
+    "h": 584
+   }
+  ]
+ }
+]

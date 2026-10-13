@@ -1,0 +1,101 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-02-logo.png",
+    "x": 858,
+    "y": 56,
+    "w": 150,
+    "h": 130
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#4F3433",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 230,
+    "w": 936,
+    "h": 340,
+    "size": 104,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.04,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 76,
+    "y": 590,
+    "w": 900,
+    "h": 70,
+    "size": 56,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "soil-strip",
+    "file": "layers/s1-05-soil-strip.png",
+    "x": 0,
+    "y": 1010,
+    "w": 1080,
+    "h": 340
+   },
+   {
+    "type": "image",
+    "name": "mushrooms",
+    "file": "layers/s1-06-mushrooms.png",
+    "x": 170,
+    "y": 750,
+    "w": 260,
+    "h": 320
+   },
+   {
+    "type": "image",
+    "name": "fern-fiddlehead",
+    "file": "layers/s1-07-fern-fiddlehead.png",
+    "x": 480,
+    "y": 758,
+    "w": 280,
+    "h": 312
+   },
+   {
+    "type": "image",
+    "name": "moss",
+    "file": "layers/s1-08-moss.png",
+    "x": 740,
+    "y": 878,
+    "w": 280,
+    "h": 193
+   }
+  ]
+ }
+]

@@ -1,0 +1,344 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 300,
+    "w": 936,
+    "h": 400,
+    "size": 112,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.04,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#59A66C",
+      false
+     ]
+    ],
+    "x": 76,
+    "y": 730,
+    "w": 900,
+    "h": 70,
+    "size": 54,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "earthworm",
+    "file": "layers/s1-04-earthworm.png",
+    "x": 603,
+    "y": 884,
+    "w": 474,
+    "h": 466
+   },
+   {
+    "type": "image",
+    "name": "fern-fiddlehead",
+    "file": "layers/s1-05-fern-fiddlehead.png",
+    "x": 90,
+    "y": 1004,
+    "w": 280,
+    "h": 312
+   }
+  ]
+ },
+ {
+  "n": 2,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s2-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s2-02-logo.png",
+    "x": 870,
+    "y": 64,
+    "w": 138,
+    "h": 138
+   },
+   {
+    "type": "text",
+    "name": "question",
+    "runs": [
+     [
+      "A destination",
+      "#F4F1EA",
+      true
+     ],
+     [
+      "or a direction?",
+      "#59A66C",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 340,
+    "w": 936,
+    "h": 700,
+    "size": 108,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "pebbles",
+    "file": "layers/s2-04-pebbles.png",
+    "x": 70,
+    "y": 1076,
+    "w": 260,
+    "h": 247
+   }
+  ]
+ },
+ {
+  "n": 3,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s3-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s3-02-logo.png",
+    "x": 870,
+    "y": 64,
+    "w": 138,
+    "h": 138
+   },
+   {
+    "type": "text",
+    "name": "question",
+    "runs": [
+     [
+      "A certified status",
+      "#F4F1EA",
+      true
+     ],
+     [
+      "or a way of thinking?",
+      "#59A66C",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 340,
+    "w": 936,
+    "h": 700,
+    "size": 108,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "acorns",
+    "file": "layers/s3-04-acorns.png",
+    "x": 60,
+    "y": 1132,
+    "w": 280,
+    "h": 137
+   }
+  ]
+ },
+ {
+  "n": 4,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s4-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s4-02-logo.png",
+    "x": 870,
+    "y": 64,
+    "w": 138,
+    "h": 138
+   },
+   {
+    "type": "text",
+    "name": "question",
+    "runs": [
+     [
+      "A premium product,",
+      "#F4F1EA",
+      true
+     ],
+     [
+      "or a standard everyone who works the land can reach?",
+      "#59A66C",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 340,
+    "w": 936,
+    "h": 700,
+    "size": 108,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "moss-clump",
+    "file": "layers/s4-04-moss-clump.png",
+    "x": 50,
+    "y": 1096,
+    "w": 300,
+    "h": 207
+   }
+  ]
+ },
+ {
+  "n": 5,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s5-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "flower-poppy",
+    "file": "layers/s5-02-flower-poppy.png",
+    "x": 40,
+    "y": 90,
+    "w": 260,
+    "h": 480
+   },
+   {
+    "type": "image",
+    "name": "flower-marigold",
+    "file": "layers/s5-03-flower-marigold.png",
+    "x": 279,
+    "y": 159,
+    "w": 262,
+    "h": 402
+   },
+   {
+    "type": "image",
+    "name": "flower-paintbrush",
+    "file": "layers/s5-04-flower-paintbrush.png",
+    "x": 510,
+    "y": 42,
+    "w": 281,
+    "h": 516
+   },
+   {
+    "type": "image",
+    "name": "flower-heliconia",
+    "file": "layers/s5-05-flower-heliconia.png",
+    "x": 754,
+    "y": 17,
+    "w": 292,
+    "h": 566
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "Living soil in the hands of every person who works the land.",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 720,
+    "w": 936,
+    "h": 330,
+    "size": 80,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.08,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "What does regenerative mean to you? Tell us in the comments.",
+      "#59A66C",
+      false
+     ]
+    ],
+    "x": 76,
+    "y": 1080,
+    "w": 900,
+    "h": 130,
+    "size": 46,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.25,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s5-08-logo.png",
+    "x": 870,
+    "y": 1180,
+    "w": 138,
+    "h": 138
+   }
+  ]
+ }
+]

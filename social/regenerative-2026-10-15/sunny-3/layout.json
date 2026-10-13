@@ -1,0 +1,119 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#22371F",
+      false
+     ]
+    ],
+    "x": 90,
+    "y": 330,
+    "w": 900,
+    "h": 300,
+    "size": 92,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.05,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 92,
+    "y": 650,
+    "w": 900,
+    "h": 60,
+    "size": 50,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "flower-cornflower",
+    "file": "layers/s1-04-flower-cornflower.png",
+    "x": 0,
+    "y": 830,
+    "w": 246,
+    "h": 520
+   },
+   {
+    "type": "image",
+    "name": "flower-marigold",
+    "file": "layers/s1-05-flower-marigold.png",
+    "x": 122,
+    "y": 982,
+    "w": 256,
+    "h": 368
+   },
+   {
+    "type": "image",
+    "name": "flower-paintbrush",
+    "file": "layers/s1-06-flower-paintbrush.png",
+    "x": 248,
+    "y": 806,
+    "w": 304,
+    "h": 544
+   },
+   {
+    "type": "image",
+    "name": "flower-hibiscus",
+    "file": "layers/s1-07-flower-hibiscus.png",
+    "x": 414,
+    "y": 1054,
+    "w": 291,
+    "h": 296
+   },
+   {
+    "type": "image",
+    "name": "flower-chamisa",
+    "file": "layers/s1-08-flower-chamisa.png",
+    "x": 517,
+    "y": 916,
+    "w": 366,
+    "h": 434
+   },
+   {
+    "type": "image",
+    "name": "flower-heliconia",
+    "file": "layers/s1-09-flower-heliconia.png",
+    "x": 708,
+    "y": 756,
+    "w": 304,
+    "h": 594
+   },
+   {
+    "type": "image",
+    "name": "flower-cornflower-2",
+    "file": "layers/s1-10-flower-cornflower-2.png",
+    "x": 850,
+    "y": 890,
+    "w": 230,
+    "h": 460
+   }
+  ]
+ }
+]

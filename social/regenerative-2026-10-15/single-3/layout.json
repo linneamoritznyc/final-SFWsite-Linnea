@@ -1,0 +1,74 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "photo-high-five-at-compost",
+    "file": "layers/s1-02-photo-high-five-at-compost.png",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 820
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-03-logo.png",
+    "x": 870,
+    "y": 40,
+    "w": 138,
+    "h": 138
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#4F3433",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 860,
+    "w": 936,
+    "h": 280,
+    "size": 92,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 76,
+    "y": 1170,
+    "w": 900,
+    "h": 64,
+    "size": 50,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   }
+  ]
+ }
+]

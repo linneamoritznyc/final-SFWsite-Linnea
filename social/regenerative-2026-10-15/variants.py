@@ -127,6 +127,7 @@ class Deck:
                                f"font-weight:{it['weight']};line-height:{it['lh']};text-align:{it['align']}'>{body}</p>")
             out.append("</section>")
         open(os.path.join(self.dir, "slides.html"), "w").write("\n".join(out + ["</body></html>"]))
+        json.dump(self.slides, open(os.path.join(self.dir, "layout.json"), "w"), indent=1)
         subprocess.run(["node", os.path.join(ROOT, "social", "turns-one-2026-10-16", "render.cjs"), self.dir], check=True)
         from pptx import Presentation
         from pptx.util import Emu, Pt

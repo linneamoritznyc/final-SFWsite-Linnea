@@ -1,0 +1,112 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "text",
+    "name": "what-does",
+    "runs": [
+     [
+      "What does",
+      "#4F3433",
+      false
+     ]
+    ],
+    "x": 58,
+    "y": 360,
+    "w": 936,
+    "h": 110,
+    "size": 96,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.0,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "word-regenerative-soil",
+    "file": "layers/s1-03-word-regenerative-soil.png",
+    "x": 47,
+    "y": 466,
+    "w": 986,
+    "h": 158
+   },
+   {
+    "type": "text",
+    "name": "actually-mean",
+    "runs": [
+     [
+      "actually mean?",
+      "#4F3433",
+      false
+     ]
+    ],
+    "x": 58,
+    "y": 625,
+    "w": 936,
+    "h": 110,
+    "size": 96,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.0,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 62,
+    "y": 760,
+    "w": 900,
+    "h": 64,
+    "size": 52,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-06-logo.png",
+    "x": 72,
+    "y": 1148,
+    "w": 150,
+    "h": 130
+   },
+   {
+    "type": "image",
+    "name": "fern-fiddlehead",
+    "file": "layers/s1-07-fern-fiddlehead.png",
+    "x": 640,
+    "y": 1036,
+    "w": 240,
+    "h": 267
+   },
+   {
+    "type": "image",
+    "name": "mushrooms",
+    "file": "layers/s1-08-mushrooms.png",
+    "x": 830,
+    "y": 1042,
+    "w": 240,
+    "h": 296
+   }
+  ]
+ }
+]

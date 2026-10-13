@@ -1,0 +1,398 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "band",
+    "file": "layers/s1-02-band.png",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 470
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 72,
+    "w": 936,
+    "h": 200,
+    "size": 80,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 76,
+    "y": 345,
+    "w": 900,
+    "h": 60,
+    "size": 46,
+    "font": "Source Sans 3",
+    "weight": 700,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "soil-strip",
+    "file": "layers/s1-05-soil-strip.png",
+    "x": 0,
+    "y": 990,
+    "w": 1080,
+    "h": 360
+   },
+   {
+    "type": "image",
+    "name": "fern-fiddlehead",
+    "file": "layers/s1-06-fern-fiddlehead.png",
+    "x": 375,
+    "y": 686,
+    "w": 330,
+    "h": 367
+   },
+   {
+    "type": "image",
+    "name": "earthworm",
+    "file": "layers/s1-07-earthworm.png",
+    "x": 187,
+    "y": 1101,
+    "w": 226,
+    "h": 198
+   }
+  ]
+ },
+ {
+  "n": 2,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s2-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s2-02-logo.png",
+    "x": 858,
+    "y": 64,
+    "w": 150,
+    "h": 130
+   },
+   {
+    "type": "text",
+    "name": "question",
+    "runs": [
+     [
+      "A destination",
+      "#22371F",
+      true
+     ],
+     [
+      "or a direction?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 260,
+    "w": 936,
+    "h": 640,
+    "size": 104,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "soil-strip",
+    "file": "layers/s2-04-soil-strip.png",
+    "x": 0,
+    "y": 1050,
+    "w": 1080,
+    "h": 300
+   },
+   {
+    "type": "image",
+    "name": "moss-clump",
+    "file": "layers/s2-05-moss-clump.png",
+    "x": 670,
+    "y": 904,
+    "w": 300,
+    "h": 207
+   }
+  ]
+ },
+ {
+  "n": 3,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s3-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s3-02-logo.png",
+    "x": 858,
+    "y": 64,
+    "w": 150,
+    "h": 130
+   },
+   {
+    "type": "text",
+    "name": "question",
+    "runs": [
+     [
+      "A certified status",
+      "#22371F",
+      true
+     ],
+     [
+      "or a way of thinking?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 260,
+    "w": 936,
+    "h": 640,
+    "size": 104,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "soil-strip",
+    "file": "layers/s3-04-soil-strip.png",
+    "x": 0,
+    "y": 1050,
+    "w": 1080,
+    "h": 300
+   },
+   {
+    "type": "image",
+    "name": "mushrooms",
+    "file": "layers/s3-05-mushrooms.png",
+    "x": 680,
+    "y": 766,
+    "w": 280,
+    "h": 345
+   }
+  ]
+ },
+ {
+  "n": 4,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s4-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s4-02-logo.png",
+    "x": 858,
+    "y": 64,
+    "w": 150,
+    "h": 130
+   },
+   {
+    "type": "text",
+    "name": "question",
+    "runs": [
+     [
+      "A premium product,",
+      "#22371F",
+      true
+     ],
+     [
+      "or a standard everyone who works the land can reach?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 260,
+    "w": 936,
+    "h": 640,
+    "size": 104,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.06,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "soil-strip",
+    "file": "layers/s4-04-soil-strip.png",
+    "x": 0,
+    "y": 1050,
+    "w": 1080,
+    "h": 300
+   },
+   {
+    "type": "image",
+    "name": "fern-fiddlehead",
+    "file": "layers/s4-05-fern-fiddlehead.png",
+    "x": 705,
+    "y": 854,
+    "w": 230,
+    "h": 256
+   }
+  ]
+ },
+ {
+  "n": 5,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s5-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "band",
+    "file": "layers/s5-02-band.png",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 480
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "Living soil in the hands of every person who works the land.",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 72,
+    "y": 72,
+    "w": 936,
+    "h": 260,
+    "size": 72,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.08,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "What does regenerative mean to you? Tell us in the comments.",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 76,
+    "y": 340,
+    "w": 900,
+    "h": 110,
+    "size": 42,
+    "font": "Source Sans 3",
+    "weight": 700,
+    "lh": 1.25,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "soil-strip",
+    "file": "layers/s5-05-soil-strip.png",
+    "x": 0,
+    "y": 1050,
+    "w": 1080,
+    "h": 300
+   },
+   {
+    "type": "image",
+    "name": "flower-poppy",
+    "file": "layers/s5-06-flower-poppy.png",
+    "x": 44,
+    "y": 606,
+    "w": 251,
+    "h": 484
+   },
+   {
+    "type": "image",
+    "name": "flower-marigold",
+    "file": "layers/s5-07-flower-marigold.png",
+    "x": 279,
+    "y": 674,
+    "w": 262,
+    "h": 416
+   },
+   {
+    "type": "image",
+    "name": "flower-paintbrush",
+    "file": "layers/s5-08-flower-paintbrush.png",
+    "x": 509,
+    "y": 556,
+    "w": 282,
+    "h": 534
+   },
+   {
+    "type": "image",
+    "name": "flower-heliconia",
+    "file": "layers/s5-09-flower-heliconia.png",
+    "x": 772,
+    "y": 552,
+    "w": 256,
+    "h": 538
+   }
+  ]
+ }
+]
