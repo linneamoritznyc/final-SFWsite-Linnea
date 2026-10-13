@@ -42,8 +42,8 @@
   },
   {
    "type": "image",
-   "name": "laptop-webinar",
-   "file": "layers-v2/05-laptop-webinar.png",
+   "name": "laptop-webinar-video",
+   "file": "layers-v2/05-laptop-webinar-video.png",
    "x": 300,
    "y": 826,
    "w": 196,
@@ -239,15 +239,6 @@
    "h": 135
   },
   {
-   "type": "image",
-   "name": "kicker-rule",
-   "file": "layers-v2/27-kicker-rule.png",
-   "x": 70,
-   "y": 100,
-   "w": 941,
-   "h": 2
-  },
-  {
    "type": "pill",
    "name": "date-pill",
    "x": 72,
@@ -335,38 +326,6 @@
    "italic": false,
    "valign": "top",
    "color": "F4F1EA"
-  },
-  {
-   "type": "text",
-   "name": "kicker-left",
-   "text": "SOIL FOOD WEB FOUNDATION",
-   "x": 70,
-   "y": 58,
-   "w": 520,
-   "h": 34,
-   "font": "Montserrat",
-   "size": 21,
-   "align": "left",
-   "bold": true,
-   "italic": false,
-   "valign": "top",
-   "color": "22371F"
-  },
-  {
-   "type": "text",
-   "name": "kicker-right",
-   "text": "TURNING ONE",
-   "x": 710,
-   "y": 58,
-   "w": 300,
-   "h": 34,
-   "font": "Montserrat",
-   "size": 21,
-   "align": "right",
-   "bold": true,
-   "italic": false,
-   "valign": "top",
-   "color": "22371F"
   },
   {
    "type": "text",

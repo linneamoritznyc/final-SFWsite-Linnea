@@ -227,20 +227,14 @@ cutout("compost-thermometer", fit_w(rgba("compost-thermometer.webp"), 120), 640,
 
 # ---------- type ----------
 TEXT += [
-    dict(name="kicker-left", text="SOIL FOOD WEB FOUNDATION", x=70, y=58, w=520, h=34, font="Montserrat",
-         size=21, bold=True, color=DEEP, align="left", pil=("montserrat-latin-variable.ttf", 21, 700), at=(70, 62)),
-    dict(name="kicker-right", text="TURNING ONE", x=W - 70 - 300, y=58, w=300, h=34, font="Montserrat",
-         size=21, bold=True, color=DEEP, align="right", pil=("montserrat-latin-variable.ttf", 21, 700),
-         anchor="ra", at=(W - 70, 62)),
     dict(name="headline", text="Open House", x=64, y=118, w=900, h=200, font="EB Garamond", size=168,
          italic=True, color=DEEP, align="left", pil=("eb-garamond-latin-500-italic.ttf", 168, None), at=(64, 108)),
     dict(name="subline", text="Come celebrate our first year", x=72, y=318, w=700, h=52, font="EB Garamond",
          size=38, color=SOIL, align="left", pil=("eb-garamond-latin-400-normal.ttf", 38, None), at=(72, 316)),
 ]
 
-# divider line under the kickers, date pill
-L = layer("kicker-rule")
-ImageDraw.Draw(L).line((70, 100, W - 70, 100), fill=(190, 200, 180), width=2)
+# date pill
+L = Image.new("RGBA", (W, H))  # scratch, for measuring the date pill
 pill_font = font("montserrat-latin-variable.ttf", 26, 700)
 pill_w = int(ImageDraw.Draw(L).textlength("FRIDAY, OCTOBER 16", font=pill_font)) + 44
 PILL = dict(x=72, y=380, w=pill_w, h=48, color=GREEN)

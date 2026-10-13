@@ -1,6 +1,6 @@
 """Open House post, version 2: the ground is cut open under the house.
-Above ground: the house, the people, the flowers, a steaming compost pile, a laptop with the
-Living Legacy webinar. Below ground: the soil food web Dr. Elaine Ingham taught, as a
+Above ground: the house, the people, the flowers, a steaming compost pile, a laptop playing a
+microscope webinar. Below ground: the soil food web Dr. Elaine Ingham taught, as a
 cut-paper cross-section with roots, fungal hyphae, an earthworm, pebbles and five student
 micrographs.
 
@@ -223,15 +223,21 @@ cutout("compost-thermometer", fit_w(rgba("compost-thermometer.webp"), 70), px0 +
 
 # ---- laptop showing the Living Legacy webinar ----
 lw, lh = 150, 96
-scr = Image.open(os.path.join(IMG, "living-legacy-webinar-series--Thumbnail-3x2-1200x800.jpg")).convert("RGB")
-scr = scr.resize((lw - 12, lh - 12), Image.LANCZOS)
+scr = Image.open(os.path.join(IMG, "Ciliate (stalked), 40x obj, Sid Jensen.jpg")).convert("RGB")
+sw_, sh_ = lw - 12, lh - 12
+k = max(sw_ / scr.width, sh_ / scr.height)
+scr = scr.resize((int(scr.width * k) + 1, int(scr.height * k) + 1), Image.LANCZOS).crop((0, 0, sw_, sh_))
+sdr = ImageDraw.Draw(scr)
+pcx, pcy = sw_ // 2, sh_ // 2
+sdr.ellipse((pcx - 18, pcy - 18, pcx + 18, pcy + 18), fill=(21, 104, 38))
+sdr.polygon([(pcx - 6, pcy - 10), (pcx - 6, pcy + 10), (pcx + 11, pcy)], fill=CREAM)
 lap = Image.new("RGBA", (lw + 40, lh + 18), (0, 0, 0, 0))
 ldr = ImageDraw.Draw(lap)
 ldr.rounded_rectangle((20, 0, 20 + lw, lh), radius=6, fill=(48, 48, 50))
 lap.paste(scr, (26, 6))
 ldr.polygon([(8, lh + 2), (32 + lw, lh + 2), (40 + lw, lh + 16), (0, lh + 16)], fill=(175, 175, 178))
 ldr.rectangle((0, lh + 14, 40 + lw, lh + 17), fill=(120, 120, 124))
-cutout("laptop-webinar", lap, 300, GY - lh - 8)
+cutout("laptop-webinar-video", lap, 300, GY - lh - 8)
 
 # ---- flowers and people ----
 cutout("passion-flower", fit_w(cut("raw-passion-flower.png", box=(0, 0, 1, 0.72)), 200), 835, 450, angle=-12)
@@ -360,13 +366,8 @@ for f, label, x, y in MICRO:
                      pil=ff("montserrat", 15, 700), anchor="ma", at=(x, y + im.height // 2 + 8)))
 
 # ================= TYPE =================
-L = layer("kicker-rule")
-ImageDraw.Draw(L).line((70, 100, W - 70, 100), fill=(190, 200, 180), width=2)
+L = Image.new("RGBA", (W, H))  # scratch, for measuring the date pill
 TEXT += [
-    dict(name="kicker-left", text="SOIL FOOD WEB FOUNDATION", x=70, y=58, w=520, h=34, font="Montserrat", size=21,
-         bold=True, color=DEEP, align="left", pil=ff("montserrat", 21, 700), at=(70, 62)),
-    dict(name="kicker-right", text="TURNING ONE", x=W - 370, y=58, w=300, h=34, font="Montserrat", size=21,
-         bold=True, color=DEEP, align="right", pil=ff("montserrat", 21, 700), anchor="ra", at=(W - 70, 62)),
     dict(name="headline", text="Open House", x=64, y=118, w=900, h=200, font="EB Garamond", size=168, italic=True,
          color=DEEP, align="left", pil=ff("garamond-it", 168), at=(64, 108)),
     dict(name="subline", text="Come celebrate our first year", x=72, y=318, w=700, h=52, font="EB Garamond",
