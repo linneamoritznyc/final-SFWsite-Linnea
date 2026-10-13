@@ -430,3 +430,9 @@ The placeholder collage with the Accelerator Workshop logo is replaced by four p
 4. A guest room with two beds (file "21.png")
 
 The card is photo 1, cut to 3:2 from the top. Not used: the compost, microscopy, liquids and dinner photos (from earlier workshops, not India), the hall photo (Isha watermark), the photo of Loida in a fenced yard (location not confirmed), the staff portraits and the course graphics.
+
+## Final workshop texts and June 2025 additions (13 October, Linnea)
+
+- The body text of the nine past workshop pages is replaced word for word with docs/copy/workshop-page-final-texts-2026-10-13.md. Old headings, sources, references, quote boxes and "Why it matters" sections are gone. Dates, header photos, in-text photos and galleries are unchanged; the in-text photo rows now sit between paragraphs, spread evenly through the text.
+- The WordPress spreadsheets give each in-text photo's new spot as "After paragraph N of the text".
+- June 2025: the 16 gallery photos merged from add-wkh-2025-photos (26 to 41) are added to the June 2025 download and both spreadsheets, so the folder now has 41 gallery photos.
