@@ -23,7 +23,6 @@ ITEMS = {
     "earthworm": ("costa-rica-2024-07-11-hands-in-the-compost.jpg", "one live pink-brown earthworm in a loose S curve with a few crumbs of dark soil on it"),
     "compost-white-fungal-threads": ("costa-rica-2024-07-20-fungal-hyphae.jpg", "a clump of dark finished compost with fluffy white fungal threads growing over it"),
     "dark-soil-clump": ("card-roots-in-soil-capri.jpg", "one crumbly clump of dark rich living soil with visible aggregates and tiny root hairs"),
-    "roots-with-soil": ("card-roots-in-soil-capri.jpg", "a plant root ball: branching roots with soil crumbs clinging to them"),
     "wood-chips-pile": ("santa-fe-2026-10-aged-wood-chips.jpg", "a small heap of aged weathered wood chips"),
     "cracked-corn-pile": ("costa-rica-2024-07-05-cracked-corn-close-up.jpg", "a small mound of golden cracked corn kernels"),
     "pebbles": ("card-roots-in-soil-capri.jpg", "a small group of five smooth pebbles in earthy greys and browns"),
@@ -32,7 +31,6 @@ ITEMS = {
     "fern-fiddlehead": ("costa-rica-2023-08-16-tropical-leaves.jpg", "a single fern fiddlehead, a young green frond unrolling in a tight spiral"),
     "ground-beetle": ("costa-rica-2024-07-20-fungal-hyphae.jpg", "one shiny dark ground beetle seen from above"),
     "dry-leaves-twigs": ("santa-fe-2026-10-aged-wood-chips.jpg", "a small loose bundle of dry brown fallen leaves and thin twigs"),
-    "seedling-in-soil": ("card-roots-in-soil-capri.jpg", "a young green seedling with two leaves, pulled up with its white roots and a clump of soil"),
     "acorns": ("santa-fe-2026-10-aged-wood-chips.jpg", "two brown acorns with their caps"),
 }
 
