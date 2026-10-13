@@ -159,11 +159,6 @@ def branch(dr, x, y, ang, length, width, depth):
         branch(dr, x2, y2, ang + random.uniform(-0.7, 0.7), length * random.uniform(0.6, 0.8), width * 0.65, depth - 1)
 
 
-rd = ImageDraw.Draw(R)
-for x0 in (300, 455, 640, 800):
-    branch(rd, x0, FLOOR + 8, math.pi / 2 + random.uniform(-0.2, 0.2), 48, 5, 5)
-L.alpha_composite(shadow_of(R, 0.55, 3), (2, 3))
-L.alpha_composite(R)
 
 # earthworm
 E = Image.new("RGBA", (W, H), (0, 0, 0, 0))
