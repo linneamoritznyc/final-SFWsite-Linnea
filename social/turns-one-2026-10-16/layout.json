@@ -166,56 +166,56 @@
     "h": 1350
    },
    {
-    "type": "image",
-    "name": "photo-elaine",
-    "file": "layers/s2-02-photo-elaine.png",
-    "x": 0,
-    "y": 0,
-    "w": 1080,
-    "h": 802
-   },
-   {
-    "type": "image",
-    "name": "photo-elaine-ceremony",
-    "file": "layers/s2-03-photo-elaine-ceremony.png",
-    "x": 630,
-    "y": 966,
-    "w": 450,
-    "h": 368
-   },
-   {
     "type": "text",
     "name": "words",
     "text": "A year ago, we became a nonprofit foundation to carry Dr. Elaine Ingham's work to everyone who wants to learn it.",
-    "x": 72,
-    "y": 830,
-    "w": 640,
-    "h": 420,
-    "size": 50,
+    "x": 84,
+    "y": 300,
+    "w": 900,
+    "h": 760,
+    "size": 84,
     "font": "garamond",
     "italic": true,
     "weight": 500,
     "color": "#6B4C7A",
     "align": "left",
-    "lh": 1.14
-   },
-   {
-    "type": "image",
-    "name": "flower-foxglove",
-    "file": "layers/s2-04-flower-foxglove.png",
-    "x": 830,
-    "y": 560,
-    "w": 250,
-    "h": 460
+    "lh": 1.1
    },
    {
     "type": "image",
     "name": "flower-orchid",
-    "file": "layers/s2-05-flower-orchid.png",
+    "file": "layers/s2-02-flower-orchid.png",
     "x": 0,
-    "y": 606,
-    "w": 295,
-    "h": 309
+    "y": 0,
+    "w": 403,
+    "h": 353
+   },
+   {
+    "type": "image",
+    "name": "flower-foxglove",
+    "file": "layers/s2-03-flower-foxglove.png",
+    "x": 800,
+    "y": 769,
+    "w": 280,
+    "h": 581
+   },
+   {
+    "type": "image",
+    "name": "flower-lavender",
+    "file": "layers/s2-04-flower-lavender.png",
+    "x": 566,
+    "y": 871,
+    "w": 389,
+    "h": 479
+   },
+   {
+    "type": "image",
+    "name": "flower-orchid-2",
+    "file": "layers/s2-05-flower-orchid-2.png",
+    "x": 0,
+    "y": 1062,
+    "w": 314,
+    "h": 288
    }
   ]
  },
@@ -236,10 +236,10 @@
     "name": "big",
     "text": "More than $72,000",
     "x": 64,
-    "y": 80,
+    "y": 260,
     "w": 960,
-    "h": 130,
-    "size": 112,
+    "h": 170,
+    "size": 150,
     "font": "garamond",
     "italic": false,
     "weight": 600,
@@ -251,11 +251,11 @@
     "type": "text",
     "name": "words",
     "text": "in full scholarships in June alone, plus around $250,000 in partial scholarships.",
-    "x": 68,
-    "y": 225,
-    "w": 900,
-    "h": 130,
-    "size": 48,
+    "x": 70,
+    "y": 600,
+    "w": 880,
+    "h": 260,
+    "size": 64,
     "font": "garamond",
     "italic": true,
     "weight": 500,
@@ -265,48 +265,39 @@
    },
    {
     "type": "image",
-    "name": "photo-certificates-stone-wall",
-    "file": "layers/s3-02-photo-certificates-stone-wall.png",
-    "x": 0,
-    "y": 352,
-    "w": 594,
-    "h": 496
-   },
-   {
-    "type": "image",
-    "name": "photo-graduates-purple",
-    "file": "layers/s3-03-photo-graduates-purple.png",
-    "x": 489,
-    "y": 406,
-    "w": 591,
-    "h": 468
-   },
-   {
-    "type": "image",
-    "name": "photo-certificates-terrace",
-    "file": "layers/s3-04-photo-certificates-terrace.png",
-    "x": 24,
-    "y": 792,
-    "w": 552,
-    "h": 496
-   },
-   {
-    "type": "image",
-    "name": "photo-graduates-aug-2023",
-    "file": "layers/s3-05-photo-graduates-aug-2023.png",
-    "x": 464,
-    "y": 810,
-    "w": 616,
-    "h": 500
-   },
-   {
-    "type": "image",
     "name": "flower-gloriosa",
-    "file": "layers/s3-06-flower-gloriosa.png",
-    "x": 384,
-    "y": 1099,
-    "w": 351,
-    "h": 251
+    "file": "layers/s3-02-flower-gloriosa.png",
+    "x": 702,
+    "y": 0,
+    "w": 378,
+    "h": 415
+   },
+   {
+    "type": "image",
+    "name": "flower-sunflower-chamisa",
+    "file": "layers/s3-03-flower-sunflower-chamisa.png",
+    "x": 0,
+    "y": 792,
+    "w": 520,
+    "h": 558
+   },
+   {
+    "type": "image",
+    "name": "flower-hibiscus",
+    "file": "layers/s3-04-flower-hibiscus.png",
+    "x": 400,
+    "y": 932,
+    "w": 440,
+    "h": 418
+   },
+   {
+    "type": "image",
+    "name": "flower-marigold",
+    "file": "layers/s3-05-flower-marigold.png",
+    "x": 758,
+    "y": 875,
+    "w": 322,
+    "h": 470
    }
   ]
  },
@@ -327,10 +318,10 @@
     "name": "big",
     "text": "35",
     "x": 64,
-    "y": 40,
-    "w": 420,
-    "h": 300,
-    "size": 300,
+    "y": 120,
+    "w": 700,
+    "h": 460,
+    "size": 460,
     "font": "garamond",
     "italic": false,
     "weight": 500,
@@ -342,62 +333,53 @@
     "type": "text",
     "name": "words",
     "text": "live events, with guests like Vandana Shiva, David Holmgren and Mary Cole.",
-    "x": 470,
-    "y": 120,
-    "w": 560,
-    "h": 260,
-    "size": 50,
+    "x": 72,
+    "y": 640,
+    "w": 800,
+    "h": 330,
+    "size": 70,
     "font": "garamond",
     "italic": true,
     "weight": 500,
     "color": "#F4F1EA",
     "align": "left",
-    "lh": 1.14
-   },
-   {
-    "type": "image",
-    "name": "photo-microscopy-group",
-    "file": "layers/s4-02-photo-microscopy-group.png",
-    "x": 0,
-    "y": 368,
-    "w": 677,
-    "h": 544
-   },
-   {
-    "type": "image",
-    "name": "photo-microscopy-costa-rica",
-    "file": "layers/s4-03-photo-microscopy-costa-rica.png",
-    "x": 486,
-    "y": 507,
-    "w": 594,
-    "h": 506
-   },
-   {
-    "type": "image",
-    "name": "photo-laughing-at-microscope",
-    "file": "layers/s4-04-photo-laughing-at-microscope.png",
-    "x": 57,
-    "y": 829,
-    "w": 646,
-    "h": 502
+    "lh": 1.12
    },
    {
     "type": "image",
     "name": "flower-cornflower",
-    "file": "layers/s4-05-flower-cornflower.png",
-    "x": 740,
-    "y": 928,
-    "w": 320,
-    "h": 422
+    "file": "layers/s4-02-flower-cornflower.png",
+    "x": 681,
+    "y": 3,
+    "w": 398,
+    "h": 594
    },
    {
     "type": "image",
     "name": "mushrooms",
-    "file": "layers/s4-06-mushrooms.png",
-    "x": 848,
-    "y": 1084,
-    "w": 232,
-    "h": 266
+    "file": "layers/s4-03-mushrooms.png",
+    "x": 688,
+    "y": 953,
+    "w": 384,
+    "h": 397
+   },
+   {
+    "type": "image",
+    "name": "moss",
+    "file": "layers/s4-04-moss.png",
+    "x": 358,
+    "y": 1088,
+    "w": 404,
+    "h": 262
+   },
+   {
+    "type": "image",
+    "name": "fern-fiddlehead",
+    "file": "layers/s4-05-fern-fiddlehead.png",
+    "x": 24,
+    "y": 1012,
+    "w": 352,
+    "h": 338
    }
   ]
  },
@@ -418,10 +400,10 @@
     "name": "big",
     "text": "Our first course in Spanish.",
     "x": 64,
-    "y": 80,
-    "w": 900,
-    "h": 260,
-    "size": 118,
+    "y": 360,
+    "w": 820,
+    "h": 480,
+    "size": 150,
     "font": "garamond",
     "italic": true,
     "weight": 500,
@@ -431,48 +413,39 @@
    },
    {
     "type": "image",
-    "name": "photo-high-five",
-    "file": "layers/s5-02-photo-high-five.png",
-    "x": 0,
-    "y": 258,
-    "w": 687,
-    "h": 524
-   },
-   {
-    "type": "image",
-    "name": "photo-staff-and-mentors",
-    "file": "layers/s5-03-photo-staff-and-mentors.png",
-    "x": 481,
-    "y": 516,
-    "w": 599,
-    "h": 488
-   },
-   {
-    "type": "image",
-    "name": "photo-group-at-compost-pile",
-    "file": "layers/s5-04-photo-group-at-compost-pile.png",
-    "x": 36,
-    "y": 783,
-    "w": 728,
-    "h": 554
-   },
-   {
-    "type": "image",
     "name": "flower-heliconia",
-    "file": "layers/s5-05-flower-heliconia.png",
-    "x": 841,
-    "y": 210,
-    "w": 239,
-    "h": 520
+    "file": "layers/s5-02-flower-heliconia.png",
+    "x": 776,
+    "y": 0,
+    "w": 304,
+    "h": 663
    },
    {
     "type": "image",
     "name": "flower-torch-ginger",
-    "file": "layers/s5-06-flower-torch-ginger.png",
-    "x": 760,
-    "y": 960,
-    "w": 320,
-    "h": 390
+    "file": "layers/s5-03-flower-torch-ginger.png",
+    "x": 640,
+    "y": 805,
+    "w": 440,
+    "h": 545
+   },
+   {
+    "type": "image",
+    "name": "flower-hibiscus",
+    "file": "layers/s5-04-flower-hibiscus.png",
+    "x": 0,
+    "y": 856,
+    "w": 462,
+    "h": 494
+   },
+   {
+    "type": "image",
+    "name": "flower-poro",
+    "file": "layers/s5-05-flower-poro.png",
+    "x": 344,
+    "y": 1006,
+    "w": 432,
+    "h": 344
    }
   ]
  },
@@ -493,10 +466,10 @@
     "name": "big",
     "text": "Our first workshop in Asia!",
     "x": 64,
-    "y": 80,
-    "w": 860,
-    "h": 240,
-    "size": 112,
+    "y": 280,
+    "w": 900,
+    "h": 300,
+    "size": 140,
     "font": "garamond",
     "italic": true,
     "weight": 500,
@@ -508,11 +481,11 @@
     "type": "text",
     "name": "words",
     "text": "Hosted at the Save Soil Farm in Coimbatore India.",
-    "x": 68,
-    "y": 330,
+    "x": 70,
+    "y": 760,
     "w": 760,
-    "h": 120,
-    "size": 46,
+    "h": 160,
+    "size": 62,
     "font": "garamond",
     "italic": true,
     "weight": 500,
@@ -522,48 +495,39 @@
    },
    {
     "type": "image",
-    "name": "photo-isha-adiyogi",
-    "file": "layers/s6-02-photo-isha-adiyogi.png",
-    "x": 11,
-    "y": 447,
-    "w": 738,
-    "h": 626
-   },
-   {
-    "type": "image",
-    "name": "photo-india-meal",
-    "file": "layers/s6-03-photo-india-meal.png",
-    "x": 526,
-    "y": 776,
-    "w": 548,
-    "h": 548
+    "name": "flower-gloriosa",
+    "file": "layers/s6-02-flower-gloriosa.png",
+    "x": 700,
+    "y": 0,
+    "w": 380,
+    "h": 424
    },
    {
     "type": "image",
     "name": "flower-lotus",
-    "file": "layers/s6-04-flower-lotus.png",
+    "file": "layers/s6-03-flower-lotus.png",
     "x": 0,
-    "y": 934,
-    "w": 383,
-    "h": 416
+    "y": 837,
+    "w": 484,
+    "h": 513
    },
    {
     "type": "image",
     "name": "flower-marigold",
-    "file": "layers/s6-05-flower-marigold.png",
-    "x": 802,
-    "y": 325,
-    "w": 278,
-    "h": 390
+    "file": "layers/s6-04-flower-marigold.png",
+    "x": 721,
+    "y": 844,
+    "w": 358,
+    "h": 492
    },
    {
     "type": "image",
     "name": "flower-jasmine",
-    "file": "layers/s6-06-flower-jasmine.png",
-    "x": 378,
-    "y": 1098,
-    "w": 324,
-    "h": 252
+    "file": "layers/s6-05-flower-jasmine.png",
+    "x": 368,
+    "y": 1048,
+    "w": 404,
+    "h": 302
    }
   ]
  },
@@ -583,11 +547,11 @@
     "type": "text",
     "name": "words",
     "text": "Foundation courses that no longer expire, weekly office hours, and every support message answered within 48 hours.",
-    "x": 64,
-    "y": 80,
-    "w": 930,
-    "h": 300,
-    "size": 62,
+    "x": 70,
+    "y": 230,
+    "w": 900,
+    "h": 560,
+    "size": 82,
     "font": "garamond",
     "italic": true,
     "weight": 500,
@@ -597,48 +561,48 @@
    },
    {
     "type": "image",
-    "name": "photo-amaranth-kenya",
-    "file": "layers/s7-02-photo-amaranth-kenya.png",
-    "x": 0,
-    "y": 348,
-    "w": 582,
-    "h": 584
-   },
-   {
-    "type": "image",
-    "name": "photo-lined-tank",
-    "file": "layers/s7-03-photo-lined-tank.png",
-    "x": 504,
-    "y": 382,
-    "w": 572,
-    "h": 476
-   },
-   {
-    "type": "image",
-    "name": "photo-greenhouse-nairobi",
-    "file": "layers/s7-04-photo-greenhouse-nairobi.png",
-    "x": 177,
-    "y": 802,
-    "w": 766,
-    "h": 516
-   },
-   {
-    "type": "image",
     "name": "earthworm",
-    "file": "layers/s7-05-earthworm.png",
+    "file": "layers/s7-02-earthworm.png",
     "x": 0,
-    "y": 1047,
-    "w": 281,
-    "h": 303
+    "y": 924,
+    "w": 359,
+    "h": 426
+   },
+   {
+    "type": "image",
+    "name": "acorns",
+    "file": "layers/s7-03-acorns.png",
+    "x": 272,
+    "y": 1110,
+    "w": 356,
+    "h": 239
+   },
+   {
+    "type": "image",
+    "name": "pebbles",
+    "file": "layers/s7-04-pebbles.png",
+    "x": 548,
+    "y": 1104,
+    "w": 304,
+    "h": 246
    },
    {
     "type": "image",
     "name": "flower-globemallow",
-    "file": "layers/s7-06-flower-globemallow.png",
-    "x": 820,
-    "y": 964,
-    "w": 260,
-    "h": 386
+    "file": "layers/s7-05-flower-globemallow.png",
+    "x": 732,
+    "y": 809,
+    "w": 348,
+    "h": 541
+   },
+   {
+    "type": "image",
+    "name": "flower-paintbrush",
+    "file": "layers/s7-06-flower-paintbrush.png",
+    "x": 793,
+    "y": 0,
+    "w": 287,
+    "h": 416
    }
   ]
  },
@@ -658,11 +622,11 @@
     "type": "text",
     "name": "words",
     "text": "Launched our Compost Intensive Course, the first in a series of online group programs.",
-    "x": 64,
-    "y": 80,
-    "w": 920,
-    "h": 240,
-    "size": 64,
+    "x": 70,
+    "y": 240,
+    "w": 900,
+    "h": 520,
+    "size": 86,
     "font": "garamond",
     "italic": true,
     "weight": 500,
@@ -672,57 +636,48 @@
    },
    {
     "type": "image",
-    "name": "photo-cheering-compost-cage",
-    "file": "layers/s8-02-photo-cheering-compost-cage.png",
-    "x": 0,
-    "y": 309,
-    "w": 555,
-    "h": 662
-   },
-   {
-    "type": "image",
-    "name": "photo-wild-ken-hill-pile",
-    "file": "layers/s8-03-photo-wild-ken-hill-pile.png",
-    "x": 490,
-    "y": 283,
-    "w": 540,
-    "h": 634
-   },
-   {
-    "type": "image",
-    "name": "photo-four-men-plant-pile",
-    "file": "layers/s8-04-photo-four-men-plant-pile.png",
-    "x": 0,
-    "y": 861,
-    "w": 601,
-    "h": 478
-   },
-   {
-    "type": "image",
-    "name": "photo-grey-shirts",
-    "file": "layers/s8-05-photo-grey-shirts.png",
-    "x": 489,
-    "y": 821,
-    "w": 591,
-    "h": 478
-   },
-   {
-    "type": "image",
     "name": "compost-fungal-threads",
-    "file": "layers/s8-06-compost-fungal-threads.png",
-    "x": 823,
-    "y": 1122,
-    "w": 257,
-    "h": 228
+    "file": "layers/s8-02-compost-fungal-threads.png",
+    "x": 0,
+    "y": 897,
+    "w": 462,
+    "h": 453
    },
    {
     "type": "image",
     "name": "wood-chips",
-    "file": "layers/s8-07-wood-chips.png",
-    "x": 0,
-    "y": 1145,
-    "w": 262,
-    "h": 205
+    "file": "layers/s8-03-wood-chips.png",
+    "x": 328,
+    "y": 1008,
+    "w": 464,
+    "h": 342
+   },
+   {
+    "type": "image",
+    "name": "dark-soil",
+    "file": "layers/s8-04-dark-soil.png",
+    "x": 668,
+    "y": 1004,
+    "w": 412,
+    "h": 292
+   },
+   {
+    "type": "image",
+    "name": "earthworm",
+    "file": "layers/s8-05-earthworm.png",
+    "x": 535,
+    "y": 896,
+    "w": 330,
+    "h": 308
+   },
+   {
+    "type": "image",
+    "name": "dry-leaves",
+    "file": "layers/s8-06-dry-leaves.png",
+    "x": 746,
+    "y": 0,
+    "w": 334,
+    "h": 347
    }
   ]
  },
@@ -739,74 +694,74 @@
     "h": 1350
    },
    {
-    "type": "image",
-    "name": "photo-poppy-field-group",
-    "file": "layers/s9-02-photo-poppy-field-group.png",
-    "x": 0,
-    "y": 0,
-    "w": 1080,
-    "h": 842
-   },
-   {
     "type": "text",
     "name": "words",
     "text": "Thank you for growing with us. Here's to year two. \ud83d\udc9a",
-    "x": 64,
-    "y": 860,
-    "w": 620,
-    "h": 330,
-    "size": 72,
+    "x": 70,
+    "y": 300,
+    "w": 900,
+    "h": 520,
+    "size": 120,
     "font": "garamond",
     "italic": true,
     "weight": 500,
     "color": "#F4F1EA",
     "align": "left",
-    "lh": 1.08
-   },
-   {
-    "type": "image",
-    "name": "photo-cyprus-group",
-    "file": "layers/s9-03-photo-cyprus-group.png",
-    "x": 666,
-    "y": 827,
-    "w": 414,
-    "h": 346
-   },
-   {
-    "type": "image",
-    "name": "photo-field-walk-norfolk",
-    "file": "layers/s9-04-photo-field-walk-norfolk.png",
-    "x": 647,
-    "y": 1045,
-    "w": 426,
-    "h": 305
+    "lh": 1.04
    },
    {
     "type": "image",
     "name": "logo",
-    "file": "layers/s9-05-logo.png",
-    "x": 18,
-    "y": 1148,
-    "w": 204,
-    "h": 202
+    "file": "layers/s9-02-logo.png",
+    "x": 33,
+    "y": 43,
+    "w": 234,
+    "h": 234
    },
    {
     "type": "image",
     "name": "flower-poppy",
-    "file": "layers/s9-06-flower-poppy.png",
-    "x": 869,
-    "y": 566,
-    "w": 211,
-    "h": 408
+    "file": "layers/s9-03-flower-poppy.png",
+    "x": 0,
+    "y": 796,
+    "w": 303,
+    "h": 548
    },
    {
     "type": "image",
     "name": "flower-hibiscus",
-    "file": "layers/s9-07-flower-hibiscus.png",
-    "x": 497,
-    "y": 1106,
-    "w": 286,
-    "h": 244
+    "file": "layers/s9-04-flower-hibiscus.png",
+    "x": 156,
+    "y": 979,
+    "w": 408,
+    "h": 371
+   },
+   {
+    "type": "image",
+    "name": "flower-marigold",
+    "file": "layers/s9-05-flower-marigold.png",
+    "x": 444,
+    "y": 913,
+    "w": 311,
+    "h": 434
+   },
+   {
+    "type": "image",
+    "name": "flower-paintbrush",
+    "file": "layers/s9-06-flower-paintbrush.png",
+    "x": 639,
+    "y": 828,
+    "w": 322,
+    "h": 504
+   },
+   {
+    "type": "image",
+    "name": "flower-foxglove",
+    "file": "layers/s9-07-flower-foxglove.png",
+    "x": 826,
+    "y": 778,
+    "w": 254,
+    "h": 564
    }
   ]
  }

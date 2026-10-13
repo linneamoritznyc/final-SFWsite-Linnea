@@ -1,7 +1,7 @@
 """Soil Food Web Foundation turns one: 9-slide Instagram carousel, Friday 16 October 2026.
 
-Words are exactly the slide words in the post doc. Photos are the 'Amazing Community Images' set
-(all in the repo), the Isha/India workshop photos and the cutout kits in social/cutouts-*.
+Words are exactly the slide words in the post doc. Design only: type, the soil-layer cake and the
+cutout kits in social/cutouts-*; no photos.
 
   python3 social/turns-one-2026-10-16/build.py
     -> layers/ (every photo, cutout and background as its own PNG)
@@ -202,82 +202,78 @@ s.layer("flower-poppy", cutout(os.path.join(C, "norfolk-common-poppy.png"), h=36
 s.layer("flower-paintbrush", cutout(os.path.join(C, "santa-fe-indian-paintbrush.png"), h=330), 975, 740, rot=8)
 s.layer("flower-jasmine", cutout(os.path.join(C, "tamil-nadu-jasmine.png"), w=190), 870, 1240, rot=0)
 
+# Slides 2 to 9: type and cutouts only, no photos.
 # ---------- 2. Dr. Elaine Ingham ----------
 s = Slide(2, CREAM)
-s.layer("photo-elaine", torn_photo(P("img", "Dr Elaine Ingham with Microscope.jpg"), W, 760, "b", fy=0.25, seed=21, amp=16), 0, 0, shadowed=True, anchor="tl")
-s.layer("photo-elaine-ceremony", print_photo(P("img", "new-2026-10", "elaine-ceremonial-compost-group-photo.jpg"), 330, 230), 860, 1150, rot=-4)
-s.text("words", "A year ago, we became a nonprofit foundation to carry Dr. Elaine Ingham's work to everyone who wants to learn it.", 72, 830, 640, 50, color=PURPLE, lh=1.14, h=420)
-s.layer("flower-foxglove", cutout(os.path.join(C, "norfolk-foxglove.png"), h=360), 960, 790, rot=10)
+s.text("words", "A year ago, we became a nonprofit foundation to carry Dr. Elaine Ingham's work to everyone who wants to learn it.", 84, 300, 900, 84, color=PURPLE, lh=1.1, h=760)
 orch = P("social", "open-house-2026-10-16", "cutouts", "orchid-costa-rica.webp")
-s.layer("flower-orchid", cutout(orch, w=230), 120, 760, rot=-14)
+s.layer("flower-orchid", cutout(orch, w=330), 170, 150, rot=-14)
+s.layer("flower-foxglove", cutout(os.path.join(C, "norfolk-foxglove.png"), h=520), 960, 1080, rot=8)
+s.layer("flower-lavender", cutout(os.path.join(C, "norfolk-sea-lavender.png"), h=440), 760, 1150, rot=-10)
+s.layer("flower-orchid-2", cutout(orch, w=220), 140, 1220, rot=20)
 
 # ---------- 3. Scholarships ----------
 s = Slide(3, KRAFT)
-s.text("big", "More than $72,000", 64, 80, 960, 112, italic=False, weight=600, lh=1.0, h=130)
-s.text("words", "in full scholarships in June alone, plus around $250,000 in partial scholarships.", 68, 225, 900, 48, lh=1.15, h=130)
-s.layer("photo-certificates-stone-wall", print_photo(P("img", "new-2026-10", "community-certificate-stone-wall-jul-2024.jpg"), 470, 350, fy=0.3), 290, 600, rot=-4)
-s.layer("photo-graduates-purple", print_photo(P("past-workshop-images", "accelerator-workshop-february-2026", "accelerator-workshop-february-2026-05-graduates-with-certificates.jpg"), 470, 330), 790, 640, rot=3)
-s.layer("photo-certificates-terrace", print_photo(P("img", "new-2026-10", "community-certificate-terrace-jul-2024.jpg"), 420, 360, fy=0.4), 300, 1040, rot=3)
-s.layer("photo-graduates-aug-2023", print_photo(P("img", "aug2023-workshop-group-7.jpg"), 500, 360, fy=0.55), 780, 1060, rot=-3)
-s.layer("flower-gloriosa", cutout(os.path.join(C, "tamil-nadu-gloriosa-lily.png"), h=230), 560, 1250, rot=-70)
+s.text("big", "More than $72,000", 64, 260, 960, 150, italic=False, weight=600, lh=1.0, h=170)
+s.text("words", "in full scholarships in June alone, plus around $250,000 in partial scholarships.", 70, 600, 880, 64, lh=1.15, h=260)
+s.layer("flower-gloriosa", cutout(os.path.join(C, "tamil-nadu-gloriosa-lily.png"), h=360), 900, 170, rot=14)
+s.layer("flower-sunflower-chamisa", cutout(os.path.join(C, "santa-fe-chamisa.png"), w=420), 240, 1130, rot=-6)
+s.layer("flower-hibiscus", cutout(os.path.join(C, "costa-rica-hibiscus.png"), w=300), 620, 1170, rot=10)
+s.layer("flower-marigold", cutout(os.path.join(C, "tamil-nadu-marigold.png"), h=360), 930, 1110, rot=-8)
 
 # ---------- 4. 35 live events ----------
 s = Slide(4, DEEP)
-s.text("big", "35", 64, 40, 420, 300, italic=False, weight=500, color=CREAM, lh=1.0, h=300)
-s.text("words", "live events, with guests like Vandana Shiva, David Holmgren and Mary Cole.", 470, 120, 560, 50, color=CREAM, lh=1.14, h=260)
-s.layer("photo-microscopy-group", print_photo(P("img", "new-2026-10", "community-beginner-microscopy-group.jpg"), 560, 400), 330, 640, rot=-3)
-s.layer("photo-microscopy-costa-rica", print_photo(P("img", "new-2026-10", "costa-rica-2025-microscopy-students-mentors.jpg"), 470, 360), 790, 760, rot=4)
-s.layer("photo-laughing-at-microscope", print_photo(P("img", "new-2026-10", "community-laughing-at-microscope.jpg"), 520, 370), 380, 1080, rot=2)
-s.layer("flower-cornflower", cutout(os.path.join(C, "norfolk-cornflower.png"), h=330), 900, 1150, rot=-12)
-s.layer("mushrooms", cutout(os.path.join(S, "mushrooms.png"), w=200), 990, 1250)
+s.text("big", "35", 64, 120, 700, 460, italic=False, weight=500, color=CREAM, lh=1.0, h=460)
+s.text("words", "live events, with guests like Vandana Shiva, David Holmgren and Mary Cole.", 72, 640, 800, 70, color=CREAM, lh=1.12, h=330)
+s.layer("flower-cornflower", cutout(os.path.join(C, "norfolk-cornflower.png"), h=480), 880, 300, rot=8)
+s.layer("mushrooms", cutout(os.path.join(S, "mushrooms.png"), w=300), 880, 1180)
+s.layer("moss", cutout(os.path.join(S, "moss-clump.png"), w=320), 560, 1240)
+s.layer("fern-fiddlehead", cutout(os.path.join(S, "fern-fiddlehead.png"), w=240), 200, 1200, rot=-6)
 
 # ---------- 5. First course in Spanish ----------
 s = Slide(5, CREAM)
-s.text("big", "Our first course in Spanish.", 64, 80, 900, 118, italic=True, weight=500, color=GREEN, lh=1.0, h=260)
-s.layer("photo-high-five", print_photo(P("img", "new-2026-10", "students-high-five-at-compost.jpg"), 560, 380, fy=0.35), 340, 520, rot=-3)
-s.layer("photo-staff-and-mentors", print_photo(P("past-workshop-images", "accelerator-workshop-march-2025", "accelerator-workshop-march-2025-06-staff-and-mentors.jpg"), 480, 340), 790, 760, rot=4)
-s.layer("photo-group-at-compost-pile", print_photo(P("img", "new-2026-10", "workshop-group-around-compost-pile.jpg"), 600, 420), 400, 1060, rot=-2)
-s.layer("flower-heliconia", cutout(os.path.join(C, "costa-rica-heliconia.png"), h=420), 990, 470, rot=6)
-s.layer("flower-torch-ginger", cutout(os.path.join(C, "costa-rica-torch-ginger.png"), h=320), 930, 1180, rot=-14)
+s.text("big", "Our first course in Spanish.", 64, 360, 820, 150, italic=True, weight=500, color=GREEN, lh=1.0, h=480)
+s.layer("flower-heliconia", cutout(os.path.join(C, "costa-rica-heliconia.png"), h=560), 960, 330, rot=6)
+s.layer("flower-torch-ginger", cutout(os.path.join(C, "costa-rica-torch-ginger.png"), h=460), 860, 1100, rot=-12)
+s.layer("flower-hibiscus", cutout(os.path.join(C, "costa-rica-hibiscus.png"), w=330), 230, 1110, rot=-8)
+s.layer("flower-poro", cutout(os.path.join(C, "costa-rica-poro-flower.png"), w=330), 560, 1190, rot=4)
 
 # ---------- 6. First workshop in Asia ----------
 s = Slide(6, DEEP)
-s.text("big", "Our first workshop in Asia!", 64, 80, 860, 112, italic=True, weight=500, color=CREAM, lh=1.0, h=240)
-s.text("words", "Hosted at the Save Soil Farm in Coimbatore India.", 68, 330, 760, 46, font="garamond", italic=True, color=CREAM, lh=1.15, h=120)
-s.layer("photo-isha-adiyogi", print_photo(india("header-1.jpg"), 600, 480, fy=0.3), 380, 760, rot=-3)
-s.layer("photo-india-meal", print_photo(india("header-3.jpg"), 400, 400), 800, 1050, rot=5)
-s.layer("flower-lotus", cutout(os.path.join(C, "tamil-nadu-pink-lotus.png"), w=280), 180, 1150, rot=-8)
-s.layer("flower-marigold", cutout(os.path.join(C, "tamil-nadu-marigold.png"), h=280), 950, 520, rot=10)
-s.layer("flower-jasmine", cutout(os.path.join(C, "tamil-nadu-jasmine.png"), w=240), 540, 1230)
+s.text("big", "Our first workshop in Asia!", 64, 280, 900, 140, italic=True, weight=500, color=CREAM, lh=1.0, h=300)
+s.text("words", "Hosted at the Save Soil Farm in Coimbatore India.", 70, 760, 760, 62, color=CREAM, lh=1.15, h=160)
+s.layer("flower-gloriosa", cutout(os.path.join(C, "tamil-nadu-gloriosa-lily.png"), h=380), 900, 170, rot=12)
+s.layer("flower-lotus", cutout(os.path.join(C, "tamil-nadu-pink-lotus.png"), w=380), 230, 1110, rot=-6)
+s.layer("flower-marigold", cutout(os.path.join(C, "tamil-nadu-marigold.png"), h=380), 900, 1090, rot=8)
+s.layer("flower-jasmine", cutout(os.path.join(C, "tamil-nadu-jasmine.png"), w=320), 570, 1210)
 
 # ---------- 7. Courses and support ----------
 s = Slide(7, KRAFT)
-s.text("words", "Foundation courses that no longer expire, weekly office hours, and every support message answered within 48 hours.", 64, 80, 930, 62, color=DEEP, lh=1.1, h=300)
-s.layer("photo-amaranth-kenya", print_photo(P("img", "new-2026-10", "community-amaranth-harvest-aberdares-kenya.jpg"), 440, 440, fy=0.3), 290, 640, rot=-4)
-s.layer("photo-lined-tank", print_photo(P("img", "new-2026-10", "community-man-beside-lined-tank.jpg"), 440, 340), 790, 620, rot=3)
-s.layer("photo-greenhouse-nairobi", print_photo(P("img", "new-2026-10", "community-greenhouse-training-nairobi.jpg"), 640, 380, fy=0.6), 560, 1060, rot=-2)
-s.layer("earthworm", cutout(os.path.join(S, "earthworm.png"), h=230), 110, 1230, rot=-20)
-s.layer("flower-globemallow", cutout(os.path.join(C, "santa-fe-globemallow.png"), h=320), 990, 1180, rot=8)
+s.text("words", "Foundation courses that no longer expire, weekly office hours, and every support message answered within 48 hours.", 70, 230, 900, 82, color=DEEP, lh=1.1, h=560)
+s.layer("earthworm", cutout(os.path.join(S, "earthworm.png"), h=300), 150, 1150, rot=-20)
+s.layer("acorns", cutout(os.path.join(S, "acorns.png"), w=260), 450, 1230, rot=6)
+s.layer("pebbles", cutout(os.path.join(S, "pebbles.png"), w=220), 700, 1250)
+s.layer("flower-globemallow", cutout(os.path.join(C, "santa-fe-globemallow.png"), h=440), 950, 1090, rot=8)
+s.layer("flower-paintbrush", cutout(os.path.join(C, "santa-fe-indian-paintbrush.png"), h=380), 960, 170, rot=10)
 
 # ---------- 8. Compost Intensive Course ----------
 s = Slide(8, CREAM)
-s.text("words", "Launched our Compost Intensive Course, the first in a series of online group programs.", 64, 80, 920, 64, color=DEEP, lh=1.1, h=240)
-s.layer("photo-cheering-compost-cage", print_photo(P("img", "new-2026-10", "community-cheering-compost-cage-jun-2026.jpg"), 420, 520, fy=0.4), 270, 640, rot=-4)
-s.layer("photo-wild-ken-hill-pile", print_photo(P("img", "wild-ken-hill", "IMG_1495.jpg"), 400, 500, fy=0.55), 760, 600, rot=3)
-s.layer("photo-four-men-plant-pile", print_photo(P("img", "new-2026-10", "community-four-men-plant-pile.jpg"), 470, 340), 300, 1100, rot=3)
-s.layer("photo-grey-shirts", print_photo(P("img", "new-2026-10", "community-group-grey-shirts-jun-2025.jpg"), 470, 340), 790, 1060, rot=-3)
-s.layer("compost-fungal-threads", cutout(os.path.join(S, "compost-white-fungal-threads.png"), w=230), 980, 1280)
-s.layer("wood-chips", cutout(os.path.join(S, "wood-chips-pile.png"), w=260), 90, 1290)
+s.text("words", "Launched our Compost Intensive Course, the first in a series of online group programs.", 70, 240, 900, 86, color=DEEP, lh=1.1, h=520)
+s.layer("compost-fungal-threads", cutout(os.path.join(S, "compost-white-fungal-threads.png"), w=380), 230, 1130)
+s.layer("wood-chips", cutout(os.path.join(S, "wood-chips-pile.png"), w=380), 560, 1200)
+s.layer("dark-soil", cutout(os.path.join(S, "dark-soil-clump.png"), w=340), 880, 1150)
+s.layer("earthworm", cutout(os.path.join(S, "earthworm.png"), h=200), 700, 1050, rot=70)
+s.layer("dry-leaves", cutout(os.path.join(S, "dry-leaves-twigs.png"), w=260), 940, 150, rot=10)
 
 # ---------- 9. Thank you ----------
 s = Slide(9, DEEP)
-s.layer("photo-poppy-field-group", torn_photo(P("img", "new-2026-10", "building-community-poppy-field-group.jpg"), W, 800, "b", fy=0.55, seed=91, amp=16), 0, 0, anchor="tl")
-s.text("words", "Thank you for growing with us. Here's to year two. 💚", 64, 860, 620, 72, color=CREAM, lh=1.08, h=330)
-s.layer("photo-cyprus-group", print_photo(P("img", "new-2026-10", "community-group-cyprus-jan-2025.jpg"), 300, 210), 880, 1000, rot=4)
-s.layer("photo-field-walk-norfolk", print_photo(P("img", "new-2026-10", "community-field-walk-norfolk-jun-2025.jpg"), 300, 210), 860, 1215, rot=-3)
-s.layer("logo", logo_disc(120), 120, 1250)
-s.layer("flower-poppy", cutout(os.path.join(C, "norfolk-common-poppy.png"), h=300), 1010, 770, rot=12)
-s.layer("flower-hibiscus", cutout(os.path.join(C, "costa-rica-hibiscus.png"), w=170), 640, 1260, rot=-10)
+s.text("words", "Thank you for growing with us. Here's to year two. 💚", 70, 300, 900, 120, color=CREAM, lh=1.04, h=520)
+s.layer("logo", logo_disc(150), 150, 160)
+s.layer("flower-poppy", cutout(os.path.join(C, "norfolk-common-poppy.png"), h=440), 130, 1070, rot=-8)
+s.layer("flower-hibiscus", cutout(os.path.join(C, "costa-rica-hibiscus.png"), w=280), 360, 1200, rot=8)
+s.layer("flower-marigold", cutout(os.path.join(C, "tamil-nadu-marigold.png"), h=330), 600, 1130, rot=-6)
+s.layer("flower-paintbrush", cutout(os.path.join(C, "santa-fe-indian-paintbrush.png"), h=400), 800, 1080, rot=6)
+s.layer("flower-foxglove", cutout(os.path.join(C, "norfolk-foxglove.png"), h=460), 980, 1060, rot=10)
 
 # ---------------- outputs ----------------
 json.dump([dict(n=s.n, items=s.items) for s in SLIDES], open(os.path.join(HERE, "layout.json"), "w"), indent=1)
