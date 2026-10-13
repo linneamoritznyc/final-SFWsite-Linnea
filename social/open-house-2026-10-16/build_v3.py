@@ -165,7 +165,6 @@ for x0 in (300, 455, 640, 800):
 L.alpha_composite(shadow_of(R, 0.55, 3), (2, 3))
 L.alpha_composite(R)
 
-cutout("mycelium-on-bark", fit_w(rgba("mycelium-on-bark.webp"), 92), 735, 1128, angle=10, strength=0.5)
 # earthworm
 E = Image.new("RGBA", (W, H), (0, 0, 0, 0))
 ed = ImageDraw.Draw(E)
@@ -181,15 +180,9 @@ L.alpha_composite(shadow_of(E, 0.55, 4), (3, 5))
 L.alpha_composite(E)
 
 # people and flowers inside the room, standing on the soil
-cheer = fit_h(cut("raw-cheering-cage.png", thr=170, keep=0.2), 290)
-cutout("people-cheering-compost-cage", cheer, 545 - cheer.width // 2, FLOOR - 292)
-cutout("person-kneeling-field", fit_h(cut("raw-kneeling-field.png", thr=170), 190), 452, FLOOR - 176)
-smell = fit_h(cut("raw-smelling-compost.png"), 350)
-cutout("person-smelling-compost", smell, OX1 - smell.width + 8, FLOOR - 338)
-cutout("poppies", fit_h(cut("raw-poppies.png", thr=170, keep=0.02), 200), 395, FLOOR - 196)
+cheer = fit_h(cut("raw-cheering-cage.png", thr=170, keep=0.2), 525)
+cutout("people-cheering-compost-cage", cheer, 538 - cheer.width // 2, FLOOR - 512)
 clover = fit_h(rgba("crimson-clover-capri.webp"), 150)
-cutout("clover-room", clover, 615, FLOOR - 140, angle=-4)
-cutout("sfw-caps", fit_w(cut("raw-hats.png"), 120), 520, FLOOR - 52)
 
 # door frame (drawn over the room edges)
 L = layer("door-frame")
@@ -254,7 +247,6 @@ cutout("orchid", fit_w(rgba("orchid-costa-rica.webp"), 150), 900, 700, angle=-8)
 pot = Image.new("RGBA", (140, 104), (0, 0, 0, 0))
 ImageDraw.Draw(pot).polygon([(0, 0), (140, 0), (118, 104), (22, 104)], fill=(178, 92, 60))
 ImageDraw.Draw(pot).rectangle((0, 0, 140, 18), fill=(158, 78, 50))
-cutout("clover-in-pot", fit_h(clover, 200), 922, 990, angle=4)
 cutout("pot", pot, 900, 1146)
 
 # step and doormat with the date
