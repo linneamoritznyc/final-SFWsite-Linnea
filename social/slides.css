@@ -1,0 +1,42 @@
+/* Instagram carousel slides, 1080 x 1350. Shared by both posts. */
+@font-face { font-family: "Montserrat"; src: url("../fonts/montserrat-latin-variable.woff2") format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "Source Sans 3"; src: url("../fonts/source-sans-3-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Source Sans 3"; src: url("../fonts/source-sans-3-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+
+:root {
+  --deep: #22371F;    /* Deep Green: bands, headlines */
+  --cream: #F4F1EA;   /* Cream: slide ground, text on bands */
+  --green: #156826;   /* Food Web Green */
+  --gold: #C9A227;    /* Harvest Gold: small accents only */
+  --head: "Montserrat", Arial, sans-serif;
+  --small: "Source Sans 3", Arial, sans-serif;
+  --emoji: "Noto Color Emoji", "Apple Color Emoji", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: #888; padding: 40px; display: grid; gap: 40px; justify-content: center; }
+
+.slide { position: relative; width: 1080px; height: 1350px; overflow: hidden; background: var(--cream); color: var(--deep); }
+.slide--photo > img.photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.logo { position: absolute; top: 64px; right: 72px; width: 168px; height: auto; }
+
+/* Cream slides: text block on the left, low in the frame */
+.cream { position: absolute; left: 96px; right: 96px; bottom: 150px; }
+.rule { width: 96px; height: 8px; background: var(--gold); margin-bottom: 48px; }
+.h-xl { font: 700 168px/1 var(--head); letter-spacing: -0.03em; }
+.h-l { font: 700 92px/1.08 var(--head); letter-spacing: -0.02em; }
+.h-m { font: 700 64px/1.15 var(--head); letter-spacing: -0.01em; margin-top: 36px; }
+.sub { font: 600 46px/1.3 var(--small); margin-top: 32px; }
+.or-before { color: var(--deep); display: block; }
+.or-after { color: var(--green); display: block; }
+
+/* Deep Green band over a photo */
+.band { position: absolute; left: 0; right: 0; background: var(--deep); color: var(--cream); padding: 64px 80px 72px; }
+.band--bottom { bottom: 0; }
+.band--top { top: 0; padding: 64px 80px 56px; }
+.band .rule { width: 72px; height: 6px; margin-bottom: 32px; }
+.band h2 { font: 700 58px/1.18 var(--head); letter-spacing: -0.01em; }
+.band p { font: 400 42px/1.35 var(--small); margin-top: 22px; }
+.emoji { font-family: var(--emoji); font-weight: 400; }
+
+/* A field still to fill. Delete the class when the real text goes in. */
+.fill { outline: 4px dashed var(--gold); outline-offset: 6px; }
