@@ -152,116 +152,121 @@ class Deck:
         prs.save(os.path.join(self.dir, f"regenerative-option-{self.key}-canva.pptx"))
 
 
-# ---------- B. Deep green ground: the whole post on dark green, questions in cream and Light Green ----------
-d = Deck("b")
-s = d.slide(DEEP)
-d.text(s, "headline", [(HEAD, CREAM, False)], 72, 300, 936, 400, 112, lh=1.04)
-d.text(s, "small-line", [(SMALL1, LIGHT, False)], 76, 730, 900, 70, 54, font="Source Sans 3", weight=600)
-d.img(s, "earthworm", cut("earthworm.png", h=380, rot=-35), 840, 1130, center=True)
-d.img(s, "fern-fiddlehead", cut("fern-fiddlehead.png", w=280), 230, 1160, center=True)
-for (before, after), item in zip(Q, [("pebbles.png", 260), ("acorns.png", 280), ("moss-clump.png", 300)]):
+def build_options():
+    # ---------- B. Deep green ground: the whole post on dark green, questions in cream and Light Green ----------
+    d = Deck("b")
     s = d.slide(DEEP)
-    d.img(s, "logo", logo_img(110, disc=True), W - 72 - 138, 64)
-    d.text(s, "question", [(before, CREAM, True), (after, LIGHT, False)], 72, 340, 936, 700, 108, lh=1.06)
-    d.img(s, item[0][:-4], cut(item[0], w=item[1]), 200, 1200, center=True)
-s = d.slide(DEEP)
-for nm, f, h_, cx, cy, r in [("poppy", "norfolk-common-poppy.png", 460, 170, 330, -6), ("marigold", "tamil-nadu-marigold.png", 380, 410, 360, 6),
-                             ("paintbrush", "santa-fe-indian-paintbrush.png", 500, 650, 300, -4), ("heliconia", "costa-rica-heliconia.png", 540, 900, 300, 8)]:
-    d.img(s, "flower-" + nm, cut(f, h=h_, rot=r, folder=FLOW), cx, cy, center=True)
-d.text(s, "headline", [(HEAD5, CREAM, False)], 72, 720, 936, 330, 80, lh=1.08)
-d.text(s, "small-line", [(SMALL5, LIGHT, False)], 76, 1080, 900, 130, 46, font="Source Sans 3", weight=600, lh=1.25)
-d.img(s, "logo", logo_img(110, disc=True), W - 72 - 138, 1180)
-d.write()
+    d.text(s, "headline", [(HEAD, CREAM, False)], 72, 300, 936, 400, 112, lh=1.04)
+    d.text(s, "small-line", [(SMALL1, LIGHT, False)], 76, 730, 900, 70, 54, font="Source Sans 3", weight=600)
+    d.img(s, "earthworm", cut("earthworm.png", h=380, rot=-35), 840, 1130, center=True)
+    d.img(s, "fern-fiddlehead", cut("fern-fiddlehead.png", w=280), 230, 1160, center=True)
+    for (before, after), item in zip(Q, [("pebbles.png", 260), ("acorns.png", 280), ("moss-clump.png", 300)]):
+        s = d.slide(DEEP)
+        d.img(s, "logo", logo_img(110, disc=True), W - 72 - 138, 64)
+        d.text(s, "question", [(before, CREAM, True), (after, LIGHT, False)], 72, 340, 936, 700, 108, lh=1.06)
+        d.img(s, item[0][:-4], cut(item[0], w=item[1]), 200, 1200, center=True)
+    s = d.slide(DEEP)
+    for nm, f, h_, cx, cy, r in [("poppy", "norfolk-common-poppy.png", 460, 170, 330, -6), ("marigold", "tamil-nadu-marigold.png", 380, 410, 360, 6),
+                                 ("paintbrush", "santa-fe-indian-paintbrush.png", 500, 650, 300, -4), ("heliconia", "costa-rica-heliconia.png", 540, 900, 300, 8)]:
+        d.img(s, "flower-" + nm, cut(f, h=h_, rot=r, folder=FLOW), cx, cy, center=True)
+    d.text(s, "headline", [(HEAD5, CREAM, False)], 72, 720, 936, 330, 80, lh=1.08)
+    d.text(s, "small-line", [(SMALL5, LIGHT, False)], 76, 1080, 900, 130, 46, font="Source Sans 3", weight=600, lh=1.25)
+    d.img(s, "logo", logo_img(110, disc=True), W - 72 - 138, 1180)
+    d.write()
 
-# ---------- C. The soil line: cream pages standing on a torn cross-section of real soil ----------
-d = Deck("c")
-s = d.slide(CREAM)
-band = Image.new("RGBA", (W, 470), rgb(DEEP) + (255,)); band.putalpha(ragged(W, 470, "b", 31, 12))
-d.img(s, "band", band, 0, 0)
-d.text(s, "headline", [(HEAD, CREAM, False)], 72, 72, 936, 200, 80, lh=1.06)
-d.text(s, "small-line", [(SMALL1, CREAM, False)], 76, 345, 900, 60, 46, font="Source Sans 3")
-d.img(s, "soil-strip", soil_strip(360, 3), 0, H - 360)
-d.img(s, "fern-fiddlehead", cut("fern-fiddlehead.png", w=330), 540, 870, center=True)
-d.img(s, "earthworm", cut("earthworm.png", h=200, rot=-80), 300, 1200, center=True)
-for i, ((before, after), (sprout, sw)) in enumerate(zip(Q, [("moss-clump.png", 300), ("mushrooms.png", 280), ("fern-fiddlehead.png", 230)])):
+    # ---------- C. The soil line: cream pages standing on a torn cross-section of real soil ----------
+    d = Deck("c")
     s = d.slide(CREAM)
-    d.img(s, "logo", logo_img(150), W - 72 - 150, 64)
-    d.text(s, "question", [(before, DEEP, True), (after, GREEN, False)], 72, 260, 936, 640, 104, lh=1.06)
-    d.img(s, "soil-strip", soil_strip(300, 10 + i), 0, H - 300)
-    im = cut(sprout, w=sw); d.img(s, sprout[:-4], im, 820, H - 300 - im.height // 2 + 60, center=True)
-s = d.slide(CREAM)
-band = Image.new("RGBA", (W, 480), rgb(DEEP) + (255,)); band.putalpha(ragged(W, 480, "b", 51, 12))
-d.img(s, "band", band, 0, 0)
-d.text(s, "headline", [(HEAD5, CREAM, False)], 72, 72, 936, 260, 72, lh=1.08)
-d.text(s, "small-line", [(SMALL5, CREAM, False)], 76, 340, 900, 110, 42, font="Source Sans 3", lh=1.25)
-d.img(s, "soil-strip", soil_strip(300, 55), 0, H - 300)
-for nm, f, h_, cx, r in [("poppy", "norfolk-common-poppy.png", 470, 170, -4), ("marigold", "tamil-nadu-marigold.png", 400, 410, 4),
-                         ("paintbrush", "santa-fe-indian-paintbrush.png", 520, 650, -3), ("heliconia", "costa-rica-heliconia.png", 520, 900, 5)]:
-    im = cut(f, h=h_, rot=r, folder=FLOW); d.img(s, "flower-" + nm, im, cx, H - 300 - im.height // 2 + 40, center=True)
-d.write()
+    band = Image.new("RGBA", (W, 470), rgb(DEEP) + (255,)); band.putalpha(ragged(W, 470, "b", 31, 12))
+    d.img(s, "band", band, 0, 0)
+    d.text(s, "headline", [(HEAD, CREAM, False)], 72, 72, 936, 200, 80, lh=1.06)
+    d.text(s, "small-line", [(SMALL1, CREAM, False)], 76, 345, 900, 60, 46, font="Source Sans 3")
+    d.img(s, "soil-strip", soil_strip(360, 3), 0, H - 360)
+    d.img(s, "fern-fiddlehead", cut("fern-fiddlehead.png", w=330), 540, 870, center=True)
+    d.img(s, "earthworm", cut("earthworm.png", h=200, rot=-80), 300, 1200, center=True)
+    for i, ((before, after), (sprout, sw)) in enumerate(zip(Q, [("moss-clump.png", 300), ("mushrooms.png", 280), ("fern-fiddlehead.png", 230)])):
+        s = d.slide(CREAM)
+        d.img(s, "logo", logo_img(150), W - 72 - 150, 64)
+        d.text(s, "question", [(before, DEEP, True), (after, GREEN, False)], 72, 260, 936, 640, 104, lh=1.06)
+        d.img(s, "soil-strip", soil_strip(300, 10 + i), 0, H - 300)
+        im = cut(sprout, w=sw); d.img(s, sprout[:-4], im, 820, H - 300 - im.height // 2 + 60, center=True)
+    s = d.slide(CREAM)
+    band = Image.new("RGBA", (W, 480), rgb(DEEP) + (255,)); band.putalpha(ragged(W, 480, "b", 51, 12))
+    d.img(s, "band", band, 0, 0)
+    d.text(s, "headline", [(HEAD5, CREAM, False)], 72, 72, 936, 260, 72, lh=1.08)
+    d.text(s, "small-line", [(SMALL5, CREAM, False)], 76, 340, 900, 110, 42, font="Source Sans 3", lh=1.25)
+    d.img(s, "soil-strip", soil_strip(300, 55), 0, H - 300)
+    for nm, f, h_, cx, r in [("poppy", "norfolk-common-poppy.png", 470, 170, -4), ("marigold", "tamil-nadu-marigold.png", 400, 410, 4),
+                             ("paintbrush", "santa-fe-indian-paintbrush.png", 520, 650, -3), ("heliconia", "costa-rica-heliconia.png", 520, 900, 5)]:
+        im = cut(f, h=h_, rot=r, folder=FLOW); d.img(s, "flower-" + nm, im, cx, H - 300 - im.height // 2 + 40, center=True)
+    d.write()
 
-# ---------- D. Specimen sheet: kraft paper, one soil specimen per page, type on a torn cream label ----------
-d = Deck("d")
-def label(w, h, seed):
-    im = Image.new("RGBA", (w, h), rgb(CREAM) + (255,)); m = ragged(w, h, "tb", seed, 9)
-    im.putalpha(m); return im
-s = d.slide(KRAFT)
-lab = Image.new("RGBA", (W - 96, 470), rgb(DEEP) + (255,)); lab.putalpha(ragged(W - 96, 470, "tb", 61, 10))
-d.img(s, "band", lab, 48, 70, shade=True)
-d.text(s, "headline", [(HEAD, CREAM, False)], 100, 125, 880, 260, 78, lh=1.04)
-d.text(s, "small-line", [(SMALL1, CREAM, False)], 104, 420, 860, 60, 46, font="Source Sans 3")
-d.img(s, "dark-soil", cut("dark-soil-clump.png", w=720), 540, 980, center=True, shade=True)
-d.img(s, "mushrooms", cut("mushrooms.png", w=260), 860, 1150, center=True)
-for i, ((before, after), (spec, sw, rot)) in enumerate(zip(Q, [("earthworm.png", 520, -20), ("acorns.png", 420, 8), ("fern-fiddlehead.png", 380, 0)])):
+    # ---------- D. Specimen sheet: kraft paper, one soil specimen per page, type on a torn cream label ----------
+    d = Deck("d")
+    def label(w, h, seed):
+        im = Image.new("RGBA", (w, h), rgb(CREAM) + (255,)); m = ragged(w, h, "tb", seed, 9)
+        im.putalpha(m); return im
     s = d.slide(KRAFT)
-    d.img(s, "label", label(W - 96, 720, 70 + i), 48, 100, shade=True)
-    d.text(s, "question", [(before, DEEP, True), (after, GREEN, False)], 100, 170, 880, 600, 88, lh=1.06)
-    d.img(s, spec[:-4], cut(spec, w=sw, rot=rot), 540, 1090, center=True, shade=True)
-    d.img(s, "logo", logo_img(130), 72, H - 72 - 113)
-s = d.slide(KRAFT)
-for nm, f, h_, cx, cy, r in [("poppy", "norfolk-common-poppy.png", 520, 190, 360, -8), ("marigold", "tamil-nadu-marigold.png", 420, 420, 400, 6),
-                             ("paintbrush", "santa-fe-indian-paintbrush.png", 540, 660, 330, -4), ("heliconia", "costa-rica-heliconia.png", 560, 900, 330, 8)]:
-    d.img(s, "flower-" + nm, cut(f, h=h_, rot=r, folder=FLOW), cx, cy, center=True, shade=True)
-lab = Image.new("RGBA", (W - 96, 520), rgb(DEEP) + (255,)); lab.putalpha(ragged(W - 96, 520, "tb", 81, 10))
-d.img(s, "band", lab, 48, 760, shade=True)
-d.text(s, "headline", [(HEAD5, CREAM, False)], 100, 830, 880, 260, 70, lh=1.08)
-d.text(s, "small-line", [(SMALL5, CREAM, False)], 104, 1110, 860, 110, 42, font="Source Sans 3", lh=1.25)
-d.write()
+    lab = Image.new("RGBA", (W - 96, 470), rgb(DEEP) + (255,)); lab.putalpha(ragged(W - 96, 470, "tb", 61, 10))
+    d.img(s, "band", lab, 48, 70, shade=True)
+    d.text(s, "headline", [(HEAD, CREAM, False)], 100, 125, 880, 260, 78, lh=1.04)
+    d.text(s, "small-line", [(SMALL1, CREAM, False)], 104, 420, 860, 60, 46, font="Source Sans 3")
+    d.img(s, "dark-soil", cut("dark-soil-clump.png", w=720), 540, 980, center=True, shade=True)
+    d.img(s, "mushrooms", cut("mushrooms.png", w=260), 860, 1150, center=True)
+    for i, ((before, after), (spec, sw, rot)) in enumerate(zip(Q, [("earthworm.png", 520, -20), ("acorns.png", 420, 8), ("fern-fiddlehead.png", 380, 0)])):
+        s = d.slide(KRAFT)
+        d.img(s, "label", label(W - 96, 720, 70 + i), 48, 100, shade=True)
+        d.text(s, "question", [(before, DEEP, True), (after, GREEN, False)], 100, 170, 880, 600, 88, lh=1.06)
+        d.img(s, spec[:-4], cut(spec, w=sw, rot=rot), 540, 1090, center=True, shade=True)
+        d.img(s, "logo", logo_img(130), 72, H - 72 - 113)
+    s = d.slide(KRAFT)
+    for nm, f, h_, cx, cy, r in [("poppy", "norfolk-common-poppy.png", 520, 190, 360, -8), ("marigold", "tamil-nadu-marigold.png", 420, 420, 400, 6),
+                                 ("paintbrush", "santa-fe-indian-paintbrush.png", 540, 660, 330, -4), ("heliconia", "costa-rica-heliconia.png", 560, 900, 330, 8)]:
+        d.img(s, "flower-" + nm, cut(f, h=h_, rot=r, folder=FLOW), cx, cy, center=True, shade=True)
+    lab = Image.new("RGBA", (W - 96, 520), rgb(DEEP) + (255,)); lab.putalpha(ragged(W - 96, 520, "tb", 81, 10))
+    d.img(s, "band", lab, 48, 760, shade=True)
+    d.text(s, "headline", [(HEAD5, CREAM, False)], 100, 830, 880, 260, 70, lh=1.08)
+    d.text(s, "small-line", [(SMALL5, CREAM, False)], 104, 1110, 860, 110, 42, font="Source Sans 3", lh=1.25)
+    d.write()
 
 
-# ---------- E. One photo only: slide 1 is the August 2023 high-five over the compost, the rest is type and cutouts ----------
-d = Deck("e")
-s = d.slide(CREAM)
-ph = Image.open(os.path.join(NEW, "students-high-five-at-compost.jpg")).convert("RGB")   # 2400 x 1350, catalog best for Aug 2023
-cw = round(ph.height * W / H); x0 = round((ph.width - cw) * 0.5)
-d.img(s, "photo-high-five-at-compost", ph.crop((x0, 0, x0 + cw, ph.height)).resize((W, H), Image.LANCZOS), 0, 0, jpg=True)
-band = Image.new("RGBA", (W, 330), rgb(DEEP) + (255,)); d.img(s, "band", band, 0, 0)
-d.text(s, "headline", [(HEAD, CREAM, False)], 72, 64, 936, 160, 64, lh=1.15)
-d.text(s, "small-line", [(SMALL1, CREAM, False)], 72, 236, 936, 56, 42, font="Source Sans 3", lh=1.3)
-for (before, after) in Q:
+    # ---------- E. One photo only: slide 1 is the August 2023 high-five over the compost, the rest is type and cutouts ----------
+    d = Deck("e")
     s = d.slide(CREAM)
-    d.img(s, "logo", logo_img(168), W - 72 - 168, 64)
-    d.text(s, "question", [(before, DEEP, True), (after, GREEN, False)], 96, 420, 888, 760, 96, lh=1.1)
-s = d.slide(CREAM)
-for nm, f, h_, cx, cy, r in [("poppy", "norfolk-common-poppy.png", 520, 160, 520, -6), ("marigold", "tamil-nadu-marigold.png", 420, 400, 560, 6),
-                             ("paintbrush", "santa-fe-indian-paintbrush.png", 560, 640, 470, -4), ("heliconia", "costa-rica-heliconia.png", 600, 900, 460, 8)]:
-    d.img(s, "flower-" + nm, cut(f, h=h_, rot=r, folder=FLOW), cx, cy, center=True)
-d.img(s, "band", Image.new("RGBA", (W, 440), rgb(DEEP) + (255,)), 0, H - 440)
-d.text(s, "headline", [(HEAD5, CREAM, False)], 72, H - 376, 936, 230, 60, lh=1.15)
-d.text(s, "small-line", [(SMALL5, CREAM, False)], 72, H - 140, 936, 110, 42, font="Source Sans 3", lh=1.3)
-d.write()
+    ph = Image.open(os.path.join(NEW, "students-high-five-at-compost.jpg")).convert("RGB")   # 2400 x 1350, catalog best for Aug 2023
+    cw = round(ph.height * W / H); x0 = round((ph.width - cw) * 0.5)
+    d.img(s, "photo-high-five-at-compost", ph.crop((x0, 0, x0 + cw, ph.height)).resize((W, H), Image.LANCZOS), 0, 0, jpg=True)
+    band = Image.new("RGBA", (W, 330), rgb(DEEP) + (255,)); d.img(s, "band", band, 0, 0)
+    d.text(s, "headline", [(HEAD, CREAM, False)], 72, 64, 936, 160, 64, lh=1.15)
+    d.text(s, "small-line", [(SMALL1, CREAM, False)], 72, 236, 936, 56, 42, font="Source Sans 3", lh=1.3)
+    for (before, after) in Q:
+        s = d.slide(CREAM)
+        d.img(s, "logo", logo_img(168), W - 72 - 168, 64)
+        d.text(s, "question", [(before, DEEP, True), (after, GREEN, False)], 96, 420, 888, 760, 96, lh=1.1)
+    s = d.slide(CREAM)
+    for nm, f, h_, cx, cy, r in [("poppy", "norfolk-common-poppy.png", 520, 160, 520, -6), ("marigold", "tamil-nadu-marigold.png", 420, 400, 560, 6),
+                                 ("paintbrush", "santa-fe-indian-paintbrush.png", 560, 640, 470, -4), ("heliconia", "costa-rica-heliconia.png", 600, 900, 460, 8)]:
+        d.img(s, "flower-" + nm, cut(f, h=h_, rot=r, folder=FLOW), cx, cy, center=True)
+    d.img(s, "band", Image.new("RGBA", (W, 440), rgb(DEEP) + (255,)), 0, H - 440)
+    d.text(s, "headline", [(HEAD5, CREAM, False)], 72, H - 376, 936, 230, 60, lh=1.15)
+    d.text(s, "small-line", [(SMALL5, CREAM, False)], 72, H - 140, 936, 110, 42, font="Source Sans 3", lh=1.3)
+    d.write()
 
-# ---------- side-by-side comparison ----------
-rows = [("A  current", HERE)] + [(f"{k.upper()}  " + n, os.path.join(HERE, f"option-{k}")) for k, n in
-                                 [("b", "deep green ground"), ("c", "the soil line"), ("d", "specimen sheet"), ("e", "one photo only")]]
-tw, th, g = 300, 375, 18
-cmp_ = Image.new("RGB", (60 + 5 * (tw + g) + 200, 40 + len(rows) * (th + 60)), (31, 31, 31)); dr = ImageDraw.Draw(cmp_)
-from PIL import ImageFont
-f = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 26)
-for r, (lab_, folder) in enumerate(rows):
-    y = 30 + r * (th + 60); dr.text((30, y), lab_, font=f, fill=(240, 240, 240))
-    for i in range(5):
-        im = Image.open(os.path.join(folder, f"slide-{i + 1}.png")).convert("RGB").resize((tw, th), Image.LANCZOS)
-        cmp_.paste(im, (30 + i * (tw + g), y + 40))
-cmp_.crop((0, 0, 30 + 5 * (tw + g) + 12, cmp_.height)).save(os.path.join(HERE, "options-compare.png"))
-print("done")
+    # ---------- side-by-side comparison ----------
+    rows = [("A  current", HERE)] + [(f"{k.upper()}  " + n, os.path.join(HERE, f"option-{k}")) for k, n in
+                                     [("b", "deep green ground"), ("c", "the soil line"), ("d", "specimen sheet"), ("e", "one photo only")]]
+    tw, th, g = 300, 375, 18
+    cmp_ = Image.new("RGB", (60 + 5 * (tw + g) + 200, 40 + len(rows) * (th + 60)), (31, 31, 31)); dr = ImageDraw.Draw(cmp_)
+    from PIL import ImageFont
+    f = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 26)
+    for r, (lab_, folder) in enumerate(rows):
+        y = 30 + r * (th + 60); dr.text((30, y), lab_, font=f, fill=(240, 240, 240))
+        for i in range(5):
+            im = Image.open(os.path.join(folder, f"slide-{i + 1}.png")).convert("RGB").resize((tw, th), Image.LANCZOS)
+            cmp_.paste(im, (30 + i * (tw + g), y + 40))
+    cmp_.crop((0, 0, 30 + 5 * (tw + g) + 12, cmp_.height)).save(os.path.join(HERE, "options-compare.png"))
+    print("done")
+
+
+if __name__ == "__main__":
+    build_options()
