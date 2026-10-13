@@ -1,0 +1,832 @@
+/* ==========================================================================
+   Soil Food Web Foundation, six-panel trifold. Print only.
+   Separate from css/site.css on purpose: this is a printed artifact, it is
+   never served to a browser as a page, and it must not touch the site's
+   stylesheet. Tokens below are copied verbatim from css/site.css section 1
+   so the two stay in step; the comment beside each one is the site's own.
+   Units are inches and points throughout, because this is print.
+   ========================================================================== */
+
+:root {
+  /* Colour, copied from css/site.css section 1. */
+  --paper:      #FFFFFF;   /* the page. White, and mostly empty. */
+  --panel:      #F4F1EA;   /* Organic Cream. A SHAPE, never the page. */
+  --panel-green:#E6EADC;   /* the specimen case */
+  --ink:        #333130;   /* body text */
+  --ink-soft:   #4A463F;
+  --ink-faint:  #6A665C;   /* captions, source lines */
+  --soil:       #4F3433;   /* headings */
+  --moss:       #22371F;
+  --green:      #156826;   /* Food Web Green */
+  --edu:        #3780B8;   /* Education Blue */
+  --legacy:     #6B4C7A;   /* Legacy Purple. Dr. Elaine content ONLY. */
+  --tan:        #C89B7B;
+  /* site.css scopes --gold to the Donate button. This brochure now carries a
+     donate ask, so the token is here, and it is used exactly as the site uses
+     it: on the donate ask and nowhere else. Never on the QR code itself, where
+     it gives a scanner too little to work with against white. */
+  --gold:       #C9A227;
+
+  --rule:        rgba(79, 52, 51, .22);
+  --rule-strong: rgba(79, 52, 51, .55);
+
+  /* Two faces, and only two. Montserrat sets every heading, label, number and
+     the tagline; Source Sans sets everything a reader reads in sentences, its
+     italic doing the work captions and source lines used to ask a third family
+     for. Six panels cannot carry three families without reading as three
+     different pieces, which is how it read. */
+  --display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --sans:    "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+
+  /* Trim. Letter roll fold. The tucked panel folds in first and the other two
+     close over it, so it has to clear the far crease with the paper's own
+     thickness taken up as well. This has now been tested on paper twice. At
+     1/16in short it bound. At 5/32in short it still would not sit inside a
+     sheet that had been cut and folded carefully, and had to be trimmed with
+     scissors. It is now a full 1/4in short, which is at the generous end of the
+     allowance and is the point: a flap that is a little shy of the crease is
+     invisible once the piece is closed, and one that is a little long is the
+     thing that has failed twice.
+
+     The other two are equal, so the cover meets the folded edge exactly rather
+     than leaving a strip of the panel behind it showing.
+
+       3.75 + 3.75 + 3.5 = 11in.
+
+     All three are whole pixels at 300 DPI (1125, 1125, 1050), which the old
+     sixteenths were not. */
+  --w-wide: 3.75in;
+  --w-tuck: 3.5in;
+  --h:      8.5in;
+  --bleed:  0.125in;
+  /* Everything that runs off the sheet is pulled out with a negative margin,
+     and a negative margin lands a fraction short of the media edge once
+     Chromium rounds it into PDF user space: a white hairline about 1/300in
+     wide along the top trim, and down the outer edge beside the photographs.
+     It sits inside the bleed so a press would trim it away, but it is visible
+     in the file and a preflight will flag it. So every bleeding element is
+     pushed this much further out and the panel, which is overflow:hidden and
+     whose own box is exact, does the cutting. */
+  --overshoot: 0.02in;
+  --pad:    0.28in;   /* panel margin. Safe area is --pad in from trim. */
+
+  /* One rhythm across all six panels. The band and the photograph are fixed
+     heights, so their edges line up across both folds however long a heading
+     runs. Headings that need fewer lines sit lower in the band rather than
+     pulling the photograph up with them, which is what made the panels look
+     unrelated. */
+  /* Vertical rhythm. Every gap in the piece is one of these four, and none of
+     them is written inline on an element. The brochure previously carried
+     thirteen different hand-set margin-top values between 0.02in and 0.15in,
+     every one of them a nudge to make some panel fit, and the result was that
+     no two panels breathed the same way. When a panel overflows now, the fix
+     is this scale or the copy, never a margin on one element. */
+  --s1: 0.035in;   /* a label to the thing it labels */
+  --s2: 0.06in;   /* between paragraphs */
+  --s3: 0.095in;   /* between blocks: after a photograph, before a heading */
+  --s4: 0.14in;   /* between sections */
+
+  --band-h:  0.98in;
+  --photo-h: 1.20in;
+  /* The cover's photograph used to be taller than the others. It is now the
+     same height, because the cover and Community sit side by side on the sheet
+     and are the front and the back of the folded piece: the bottom edge of the
+     photograph is a line that runs across both, and it only reads as one line
+     if the two are the same. */
+  --hero-h:  var(--photo-h);
+  /* Both closing fields on that sheet are exactly this tall, so the green foot
+     is one band across the crease and the white above it is one band too. */
+  --foot-h:  2.80in;
+}
+
+/* Fonts, self-hosted and subsetted, from the repository's own fonts/ folder.
+   Rules copied from css/site.css section 2, paths rewritten for this depth.
+   The site's third family is deliberately not loaded here: see --display and
+   --sans above. */
+@font-face { font-family: "Montserrat";    font-style: normal; font-weight: 600 700; src: url("/fonts/montserrat-latin-variable.woff2") format("woff2-variations"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 400; src: url("/fonts/source-sans-3-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: italic; font-weight: 400; src: url("/fonts/source-sans-3-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 600; src: url("/fonts/source-sans-3-latin-600-normal.woff2") format("woff2"); }
+
+* , *::before, *::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; background: var(--paper); }
+
+/* The sheet is trim plus bleed on all four sides. The bleed is not padding
+   on the sheet: the panels themselves carry it, so a photograph set flush to
+   a panel edge runs past the trim instead of stopping at it. Top and bottom
+   bleed belong to every panel; left and right only to the two outer ones. */
+.sheet {
+  position: relative;
+  width:  calc(var(--w-wide) * 2 + var(--w-tuck) + var(--bleed) * 2);
+  height: calc(var(--h) + var(--bleed) * 2);
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.spread { display: flex; width: 100%; height: 100%; }
+
+.panel {
+  position: relative;
+  height: 100%;
+  padding: calc(var(--pad) + var(--bleed)) var(--pad);
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 8.4pt;
+  line-height: 1.38;
+  overflow: hidden;
+}
+/* Each panel carries its own trim width in --pw, and the bleed modifiers add to
+   whatever that is. They used to hardcode --w-wide into --first and --w-tuck
+   into --last, which quietly assumed the tuck panel is always the last one on
+   the sheet. It is not: the outside sheet is mirrored, so the tuck panel is
+   first there and the cover is last. */
+.panel--wide { --pw: var(--w-wide); }
+.panel--tuck { --pw: var(--w-tuck); }
+.panel { width: var(--pw); flex: 0 0 var(--pw); }
+
+/* The two panels against the outer trim edge are one bleed wider, so their
+   border box ends at the sheet edge and .figure--full reaches it. */
+.panel--first { flex-basis: calc(var(--pw) + var(--bleed)); width: calc(var(--pw) + var(--bleed)); padding-left:  calc(var(--pad) + var(--bleed)); }
+.panel--last  { flex-basis: calc(var(--pw) + var(--bleed)); width: calc(var(--pw) + var(--bleed)); padding-right: calc(var(--pad) + var(--bleed)); }
+
+/* --------------------------------------------------------------------------
+   Type
+   -------------------------------------------------------------------------- */
+p, ul { margin: 0 0 var(--s2); }
+p:last-child, ul:last-child { margin-bottom: 0; }
+strong { font-weight: 600; }
+
+.eyebrow {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 6.4pt;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin: 0 0 0.055in;
+}
+.eyebrow--edu    { color: var(--edu); }
+.eyebrow--legacy { color: var(--legacy); }
+.eyebrow span { color: var(--ink-faint); font-weight: 600; }
+
+h1, h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--soil);
+  letter-spacing: -0.006em;
+  line-height: 1.08;
+  margin: 0 0 0.09in;
+  text-wrap: balance;
+}
+h1 { font-size: 20pt; }
+h2 { font-size: 15.5pt; }
+
+h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 8.4pt;
+  color: var(--soil);
+  line-height: 1.2;
+  margin: var(--s3) 0 var(--s1);
+}
+
+.lede {
+  font-family: var(--sans);
+  font-size: 9.8pt;
+  line-height: 1.3;
+  color: var(--ink);
+  margin: var(--s3) 0 var(--s2);
+}
+/* Captions and source lines: the sans in italic, one size, on all six panels. */
+.caption, .source {
+  font-family: var(--sans);
+  font-style: italic;
+  font-size: 6.7pt;
+  line-height: 1.26;
+  color: var(--ink-faint);
+  margin: var(--s1) 0 var(--s2);
+}
+.source::before { content: "Source: "; font-style: normal; }
+
+/* A fact that is not confirmed yet. The site does this with .todo, which is
+   display:none until ?notes=1 is set; in a flattened print PNG that would
+   render as nothing at all. So it is always visible here, in the .awaiting
+   tone: a straight sentence about what is coming, not a grey box. */
+/* Production notes. These are addressed to the team, not the reader, and must
+   never appear in a piece that goes to print. They stay in the markup so the
+   outstanding questions travel with the file, and the review render turns them
+   on: set data-notes on the sheet, which is the same gesture the website uses.
+
+     node "Trifold Design/build/render.js"              the piece
+     TRIFOLD_NOTES=1 node "Trifold Design/build/render.js"   the review copy */
+.awaiting { display: none; }
+[data-notes] .awaiting { display: block; }
+.awaiting {
+  font-family: var(--sans);
+  font-style: italic;
+  font-size: 6.6pt;
+  line-height: 1.24;
+  color: var(--ink-soft);
+  border-left: 1.4pt solid var(--tan);
+  padding: 0.005in 0 0.005in 0.07in;
+  margin: var(--s2) 0;
+}
+.awaiting b { font-style: normal; font-weight: 600; color: var(--soil); }
+
+.pull {
+  font-family: var(--sans);
+  font-size: 8.9pt;
+  line-height: 1.29;
+  color: var(--ink);
+}
+.pull b {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 7.6pt;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--soil);
+  display: block;
+  margin-bottom: 0.035in;
+}
+
+.url {
+  font-family: var(--sans);
+  font-size: 7.1pt;
+  color: var(--green);
+  word-break: break-word;
+}
+
+/* A block that opens a panel, a card or an item does not also carry the gap
+   that would have separated it from something above it. */
+/* .banner is excluded on purpose: its negative top margin is what carries the
+   colour up through the panel's padding into the bleed, so zeroing it here
+   left a white strip along the top trim of every banner panel. */
+.panel > :first-child:not(.banner),
+.card > :first-child,
+.items > div > :first-child,
+.figure--side + .awaiting,
+.banner + * { margin-top: 0; }
+.card > :last-child, .items > div > :last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   Shapes and rules
+   -------------------------------------------------------------------------- */
+.hr   { border: 0; border-top: 0.7pt solid var(--rule); margin: var(--s3) 0; }
+.hr--strong { border-top: 1pt solid var(--rule-strong); }
+
+/* --------------------------------------------------------------------------
+   The colour band
+   --------------------------------------------------------------------------
+   Each pillar panel opens with its eyebrow and heading reversed out of Food
+   Web Green, running the full width of the panel and up through the panel's
+   own top padding into the bleed, so after trimming it sits flush to the top
+   edge. It costs almost no height: that top padding was already empty white,
+   so only the band's bottom padding is new.
+
+   The gradient runs green to moss, both already in the palette. The eyebrow
+   accent modifiers (--edu, --legacy) do not apply inside the band, since
+   neither blue nor purple holds against green; the accents still carry the
+   QR rules, where they have room to read. */
+/* Every gradient in this file is painted over a solid of its own first colour.
+   Chromium's own PDF is clean, but Ghostscript's CMYK conversion turns a CSS
+   gradient into a shading placed a fraction short of where the element is, and
+   the sliver it leaves along the top trim shows the panel's white paper
+   through: a hairline about 1/300in wide, the full width of every panel whose
+   banner is a gradient. The solid underneath means the sliver, where it still
+   happens, is the band's own green rather than white. Do not remove the second
+   value from any of these backgrounds. */
+.banner {
+  margin: calc((var(--pad) + var(--bleed) + var(--overshoot)) * -1) calc(var(--pad) * -1) 0;
+  padding: calc(var(--bleed) + var(--overshoot) + 0.13in) var(--pad) 0.11in;
+  height: calc(var(--band-h) + var(--bleed) + var(--overshoot));
+  box-sizing: border-box;
+  /* The panel is a flex column, so without this the band and the photograph
+     are shrunk on whichever panel carries the most copy, and the rhythm the
+     fixed heights exist to create is quietly lost on exactly one panel. */
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(158deg, var(--field-a) 0%, var(--field-b) 100%) var(--field-a);
+}
+.panel--first .banner {
+  margin-left: calc((var(--pad) + var(--bleed) + var(--overshoot)) * -1);
+  padding-left: calc(var(--pad) + var(--bleed) + var(--overshoot));
+}
+.panel--last .banner {
+  margin-right: calc((var(--pad) + var(--bleed) + var(--overshoot)) * -1);
+  padding-right: calc(var(--pad) + var(--bleed) + var(--overshoot));
+}
+.banner .eyebrow,
+.banner .eyebrow--edu,
+.banner .eyebrow--legacy { color: rgba(255, 255, 255, 0.86); }
+.banner h2 { color: #FFFFFF; margin-bottom: 0; line-height: 1.05; font-size: 14pt; }
+
+/* --------------------------------------------------------------------------
+   Colour fields
+   --------------------------------------------------------------------------
+   A field is a block of Food Web Green running to moss, carrying white type.
+   Three sizes of the same idea:
+
+     .banner        the eyebrow and heading at the top of a pillar panel
+     .field         a bounded block inside a white panel
+     .panel--field  a whole panel given over to the colour
+
+   A background costs no height, which is the reason a whole panel can turn
+   green on a sheet where four of the six panels have under 12 points spare.
+   Only the padding of a bounded field is new height. */
+.field {
+  margin-left: calc(var(--pad) * -1);
+  margin-right: calc(var(--pad) * -1);
+  padding: 0.16in var(--pad);
+  background: linear-gradient(158deg, var(--field-a) 0%, var(--field-b) 100%) var(--field-a);
+  color: #FFFFFF;
+}
+.panel--first .field { margin-left: calc((var(--pad) + var(--bleed) + var(--overshoot)) * -1); padding-left: calc(var(--pad) + var(--bleed) + var(--overshoot)); }
+.panel--last  .field { margin-right: calc((var(--pad) + var(--bleed) + var(--overshoot)) * -1); padding-right: calc(var(--pad) + var(--bleed) + var(--overshoot)); }
+.field--flush { margin-bottom: calc((var(--pad) + var(--bleed) + var(--overshoot)) * -1); padding-bottom: calc(var(--pad) + var(--bleed) + var(--overshoot)); }
+
+/* The closing field on the cover and on Community. Fixed to the same height on
+   both rather than left to its own content, because the two panels are the
+   front and the back of the folded piece and the top edge of the green has to
+   be one line across the crease. Content sits at the foot of it, so the two
+   taglines land on the same baseline as well. */
+.field--foot {
+  height: var(--foot-h);
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Anything reversed out of a bounded field. These used to be written only for
+   .panel--field, a whole panel in the colour, because that was the only place
+   white type appeared. The closing field on Community is now the other place. */
+.field .card {
+  background: rgba(255, 255, 255, 0.12);
+  border-left-color: rgba(255, 255, 255, 0.65);
+}
+.field .legal        { color: rgba(255, 255, 255, 0.82); }
+.field .legal .addr  { color: #FFFFFF; }
+.field .qr .t        { color: #FFFFFF; }
+.field .qr .d        { color: rgba(255, 255, 255, 0.86); }
+.field .qr .h        { color: rgba(255, 255, 255, 0.70); }
+.field .qr img {
+  background: #FFFFFF;
+  padding: 0.05in;
+  border-radius: 0.035in;
+}
+
+/* A whole panel in the colour. Everything that carries an ink token has to be
+   restated, or it keeps a colour tuned for white paper and disappears. */
+/* Every panel carries the two ends of its own gradient. Green is the default;
+   the story panel takes Legacy Purple and the teaching panel Education Blue,
+   so each pillar's accent becomes its field rather than only its QR rule. The
+   deep ends are the same hues taken down, not new tokens. */
+:root {
+  --field-a: var(--green);
+  --field-b: var(--moss);
+  --edu-deep:    #1F4E73;
+  --legacy-deep: #3F2C4B;
+}
+.panel--field       { --field-a: var(--green);  --field-b: var(--moss); color: #FFFFFF; }
+.panel--field--edu    { --field-a: var(--edu);    --field-b: var(--edu-deep); }
+.panel--field--legacy { --field-a: var(--legacy); --field-b: var(--legacy-deep); }
+.panel--field .banner { background: none; margin-bottom: 0; padding-bottom: 0.11in; }
+
+/* Everything that sets its own ink colour has to be restated here, or it keeps
+   a value tuned for white paper and either disappears or sits at two or three
+   to one against the field. This is the full list as of this pass: if a new
+   component sets a colour, it belongs here too. */
+.panel--field h1,
+.panel--field h2,
+.panel--field h3,
+.panel--field .lede,
+.panel--field .pull,
+.panel--field .pull b,
+.panel--field .awaiting b,
+.panel--field .checks b,
+.panel--field .figures .n,
+.panel--field .qr .t,
+.panel--field .legal .addr,
+.panel--field .tagline,
+.panel--field .url,
+.panel--field a            { color: #FFFFFF; }
+.panel--field .eyebrow,
+.panel--field .eyebrow--edu,
+.panel--field .eyebrow--legacy { color: rgba(255, 255, 255, 0.86); }
+.panel--field .awaiting,
+.panel--field .legal,
+.panel--field .qr .d,
+.panel--field .figures .l  { color: rgba(255, 255, 255, 0.86); }
+.panel--field .caption,
+.panel--field .source,
+.panel--field .eyebrow span,
+.panel--field .qr .h       { color: rgba(255, 255, 255, 0.70); }
+.panel--field .hr          { border-top-color: rgba(255, 255, 255, 0.28); }
+.panel--field .pull        { border-left-color: rgba(255, 255, 255, 0.55); }
+.panel--field .awaiting    { border-left-color: rgba(255, 255, 255, 0.45); }
+.panel--field .checks li::before { background: rgba(255, 255, 255, 0.85); }
+/* A code has to be dark on light to scan, whatever it is standing on. */
+.panel--field .qr img {
+  background: #FFFFFF;
+  padding: 0.05in;
+  border-radius: 0.035in;
+  /* Matched to the white panels. At 1.04in the scholarship code came out at
+     0.45mm a module, under the practical print minimum, and a decoder run over
+     the 300 DPI render could not read it. */
+  width: 1.15in; height: 1.15in;
+}
+
+/* The figures block reversed out, for the cover's closing field. */
+.field .figures .n { color: #FFFFFF; }
+.field .figures .l { color: rgba(255, 255, 255, 0.86); }
+.field .source     { color: rgba(255, 255, 255, 0.68); }
+.field .tagline    { color: #FFFFFF; }
+
+/* A photograph in the colour panel fades into the field along its lower edge,
+   so the picture joins the green rather than sitting on it as a hard rectangle.
+
+   Only in the colour panel. On a white panel the same fade lands behind the
+   caption and turns it into grey type on a grey-green band, which is how it
+   first went out. The caption is lifted above the fade either way. */
+.figure { position: relative; }
+.panel--field .figure--fade::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 0.7in;
+  background: linear-gradient(to bottom, transparent 0%, var(--field-b) 94%);
+  pointer-events: none;
+  z-index: 0;
+}
+.figure figcaption { position: relative; z-index: 1; }
+
+
+/* A tinted ground for the practice panel.
+   Panels 4 and 5 were both white, so the crease between them was invisible and
+   the sheet could not be folded by eye. Organic Cream is the brand's only light
+   neutral; site.css keeps it for shapes and never for the page, but a printed
+   panel has to declare its own edge, so here it is the ground. The tint is
+   about 4% darker than the paper: enough to find the fold, not enough to read
+   as a coloured panel beside the two that are. */
+.panel--cream { background: var(--panel); }
+/* The panel makes a stacking context so that a field panel's ::before, which
+   paints the colour at z-index -1, lands behind the panel's own content and in
+   front of the sheet. Take this away and the purple and blue panels lose their
+   colour entirely: the ::before drops behind the sheet's white background and
+   the white type is left on white paper. */
+.panel { z-index: 1; }
+
+.panel--field { background: none; }
+.panel--field::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(168deg, var(--field-a) 0%, var(--field-b) 108%) var(--field-a);
+  z-index: -1;
+}
+
+/* Organic Cream as a bounded rectangle behind a group, never as the page. */
+.card {
+  margin-top: var(--s3);
+  background: var(--panel-green);
+  padding: 0.12in 0.13in;
+  border-radius: 0.045in;
+  border-left: 1.6pt solid var(--green);
+}
+.card--cream { background: var(--panel); border-left-color: var(--tan); }
+.panel--field .card {
+  background: rgba(255, 255, 255, 0.12);
+  border-left-color: rgba(255, 255, 255, 0.65);
+}
+
+/* Photographs. .figure--full reaches both panel edges; add --bleed-l or
+   --bleed-r on a panel that sits against the outer trim. */
+.figure { margin: 0; }
+.figure--full { margin-left: calc(var(--pad) * -1); margin-right: calc(var(--pad) * -1); }
+.panel--first .figure--full { margin-left:  calc((var(--pad) + var(--bleed) + var(--overshoot)) * -1); }
+.panel--last  .figure--full { margin-right: calc((var(--pad) + var(--bleed) + var(--overshoot)) * -1); }
+.figure--full .caption { margin-left: var(--pad); margin-right: var(--pad); }
+.panel--first .figure--full .caption { margin-left: calc(var(--pad) + var(--bleed)); }
+.panel--last  .figure--full .caption { margin-right: calc(var(--pad) + var(--bleed)); }
+.figure img {
+  display: block;
+  width: 100%;
+  height: var(--photo-h);
+  object-fit: cover;
+}
+/* A photograph run to both panel edges and left square. Two things need it.
+   The curve is generated per panel by build/apply-curve.py, which pairs one
+   .figure--full with one panel, so a second clipped figure on a panel would
+   break the single line across the sheet; and this is used where the picture
+   is the evidence rather than the atmosphere, which wants a straight edge and
+   its caption underneath rather than beside it. */
+.figure--band { margin: var(--s3) calc(var(--pad) * -1) 0; }
+.panel--first .figure--band { margin-left:  calc((var(--pad) + var(--bleed) + var(--overshoot)) * -1); }
+.panel--last  .figure--band { margin-right: calc((var(--pad) + var(--bleed) + var(--overshoot)) * -1); }
+.figure--band img { width: 100%; height: 0.92in; object-fit: cover; }
+.figure--band .caption { margin-left: var(--pad); margin-right: var(--pad); }
+.panel--first .figure--band .caption { margin-left:  calc(var(--pad) + var(--bleed)); }
+.panel--last  .figure--band .caption { margin-right: calc(var(--pad) + var(--bleed)); }
+
+/* Three photographs across, no captions. The practice panel is about the range
+   of places this is done in, and three pictures say that faster than a sentence
+   can. No captions on purpose: naming each one invites a reader to check three
+   facts instead of taking in one idea. */
+.figure--trio { display: flex; gap: 0.08in; margin-top: var(--s3); }
+/* min-width:0 is not optional. A flex item defaults to min-width:auto, which
+   for an image is its intrinsic pixel width, so without this the three keep
+   their full size, refuse to shrink, and run straight off the panel into the
+   next one. The vertical overflow check cannot see that, which is why
+   render.js now measures horizontally too. */
+.figure--trio img { flex: 1 1 0; width: auto; min-width: 0; height: 0.82in; object-fit: cover; }
+
+/* The lower edge of each photograph is not its own shape. One curve is drawn
+   across the whole sheet and each picture is clipped by the segment of it that
+   falls in that panel, so the three edges join into a single line across both
+   folds. The polygons are generated per panel from the panel spans that
+   build/measure.js reports; they are inline on the images because each one is
+   a different part of the same curve. */
+.figure--full { margin-bottom: var(--s2); flex: 0 0 auto; }
+
+/* The cover opens with the masthead rather than a colour band, so it has room
+   the other five do not, and it was spending it on a gap above the green field.
+   It goes into the picture instead. The curve is a fraction of each frame, so a
+   taller frame keeps the same shape and still meets the fold. */
+.figure--hero img { height: var(--hero-h); }
+
+/* The spacer grows to push what follows to the foot of the panel. Its floor is
+   only there so two blocks never touch when a panel is full; the gaps a reader
+   sees are the s1 to s4 margins, which apply regardless. The floor was 0.04in,
+   which on a full panel is 0.08in of unshrinkable air across two spacers. */
+.spacer { flex: 1 1 auto; min-height: 0.02in; }
+
+/* --------------------------------------------------------------------------
+   Components
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Icons
+   --------------------------------------------------------------------------
+   The site's own set, from img/icons.svg, inlined at the top of each sheet
+   because <use href="#id"> only reaches a symbol in the same document and
+   these files are opened directly by the renderer.
+
+   Two changes for print. The stroke is 1.2 rather than the site's 1, because
+   at these sizes a 1/24 stroke lands under three pixels at 300 DPI and prints
+   thin; and the colour is inherited, so an icon standing on a colour panel is
+   reversed by the same block that reverses everything else there. */
+.icon {
+  width: 0.2in; height: 0.2in;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+  display: block;
+  color: var(--green);
+}
+.icon--lg { width: 0.3in; height: 0.3in; }
+.panel--field .icon { color: rgba(255, 255, 255, 0.92); }
+
+/* A row of pillars: icon over a one-word label. Used on the cover to name the
+   four parts of the Foundation, and on the community panel to name the four
+   ways in. Equal columns, so the labels sit on one baseline. */
+.pillars { display: flex; gap: 0.1in; margin-top: var(--s3); }
+.pillars > div { flex: 1 1 0; text-align: center; }
+.pillars .icon { margin: 0 auto 0.045in; }
+.pillars .l {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 6.2pt;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1.16;
+  color: var(--soil);
+}
+.panel--field .pillars .l, .field .pillars .l { color: #FFFFFF; }
+.pillars .d { font-size: 6.8pt; line-height: 1.2; color: var(--ink-faint); margin-top: 0.025in; }
+.panel--field .pillars .d, .field .pillars .d { color: rgba(255, 255, 255, 0.82); }
+
+/* An icon on the heading line, not beside the block.
+   The first version of this put the icon in a column to the left of a heading
+   and its paragraph together, which took 0.29in off the measure on a panel
+   only 3.1in wide inside its margins. Three or four of those re-wrapped enough
+   copy to push two panels off the sheet. On the heading line the icon costs
+   nothing vertically and nothing at all to the paragraph under it. */
+.hd { display: flex; align-items: center; gap: 0.075in; margin: var(--s3) 0 var(--s1); }
+.hd h3 { margin: 0; }
+.hd .icon { width: 0.19in; height: 0.19in; }
+
+/* The checks list takes icons in place of its dots. The dot rule stays for any
+   list that does not carry them. */
+.checks li.ico { padding-left: 0; display: flex; gap: 0.085in; align-items: flex-start; }
+.checks li.ico::before { content: none; }
+.checks li.ico .icon { width: 0.17in; height: 0.17in; margin-top: 0.008in; }
+
+/* A small photograph with its caption beside it rather than beneath it.
+   The caption is centred against the picture: a three or four line caption
+   against a taller picture left a notch of white under the text, which is
+   what made the block look badly set rather than deliberately asymmetric. */
+.figure--side { display: flex; gap: 0.13in; align-items: center; margin-top: var(--s3); }
+.figure--side img { width: 1.18in; height: 0.72in; flex: 0 0 1.18in; }
+.figure--side .caption { margin-top: 0; }
+/* Bigger, for the one picture that is the argument rather than an
+   illustration: what a microscope count actually looks at. */
+.figure--side--lg img { width: 1.42in; height: 0.82in; flex: 0 0 1.42in; }
+
+/* The pull quote's standfirst takes its icon the same way. */
+.pull b { display: flex; align-items: center; gap: 0.06in; }
+.pull b .icon { width: 0.18in; height: 0.18in; }
+
+
+/* The masthead: the provisional logo, then the type-set wordmark, exactly
+   as the live site does until the real vector mark arrives (Decision 16). */
+/* The cover has no banner, so nothing set the height of its masthead and the
+   photograph under it started 0.16in higher than the photographs on the two
+   panels beside it. On a sheet where all three are visible at once that reads
+   as a mistake. The masthead is given exactly the height a banner leaves: the
+   band, less the panel's own top padding, measured to the same bottom edge. */
+/* The cover's masthead is a banner too.
+   Teaching and Community open with a green band ending at 1.105in and the cover
+   opened with white, so the one edge every panel on that sheet shares was the
+   only one not drawn. The masthead now takes the banner's box exactly, in
+   Organic Cream instead of green: the same band, lighter, because it is the
+   cover. That is also where the pale green shape belongs. Height, margins and
+   the negative top margin into the bleed all come from .banner; this only turns
+   it back into a row and gives it its colour. */
+.banner--mast {
+  background: var(--panel-green);
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.1in;
+  /* Sat lower in its band than the eyebrows do in theirs, because a banner
+     pushes its text to the bottom and this centres a lockup instead. Less above
+     and more below lifts the whole group to about where the eyebrow sits. */
+  padding-top: calc(var(--bleed) + var(--overshoot) + 0.10in);
+  padding-bottom: 0.16in;
+}
+/* The mark is 240 x 208, so width sets the height. At 0.62in it stood 0.537in
+   in a 0.70in box and was smaller than the box it sat in. 0.80in fills the box
+   to 0.693in, and the wordmark is scaled with it: the lockup is the first thing
+   on the cover and it was reading as the smallest. */
+.mast img { width: 0.80in; height: auto; }
+.mast .wordmark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 11.6pt;
+  line-height: 1.12;
+  letter-spacing: -0.008em;
+  color: var(--soil);
+}
+.mast .sub {
+  font-family: var(--sans);
+  font-style: italic;
+  font-size: 8pt;
+  color: var(--ink-faint);
+  margin-top: 0.015in;
+}
+
+/* The three figures from the homepage.
+   Stacked, not columned. Two columns cannot work here: the numbers are 100+,
+   10,000+ and 40, so any fixed column either ragged-lefts them (right-aligned)
+   or leaves a void beside the short one (left-aligned), and the labels wrap to
+   two lines in the narrow measure that is left, which makes the row rhythm
+   uneven on top of it. Stacked, the label gets the full panel width and fits on
+   one line, every row is the same height, and a hairline does the separating
+   that the gutter was failing to do. */
+.figures { display: flex; flex-direction: column; }
+.figures .row + .row {
+  border-top: 0.7pt solid var(--rule);
+  margin-top: var(--s2);
+  padding-top: var(--s2);
+}
+.figures .n {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 17pt;
+  line-height: 1;
+  color: var(--green);
+  letter-spacing: -0.02em;
+}
+.figures .l {
+  display: block;
+  margin-top: 0.035in;
+  font-size: 7.9pt;
+  line-height: 1.24;
+  color: var(--ink-soft);
+}
+.field .figures .row + .row { border-top-color: rgba(255, 255, 255, 0.3); }
+/* The sign-off needs more air than the rows give each other, or it reads as a
+   fourth row of the stack rather than the close of the panel. */
+.field .tagline { margin-top: var(--s4); }
+
+/* A stack of named items separated by hairlines. */
+.items > * + * { border-top: 0.7pt solid var(--rule); padding-top: var(--s2); margin-top: var(--s2); }
+.items p { margin: 0; font-size: 8.1pt; line-height: 1.3; }
+
+.checks { list-style: none; padding: 0; margin: 0 0 0.06in; }
+.checks li { position: relative; padding-left: 0.135in; margin-bottom: 0.03in; font-size: 8.1pt; line-height: 1.33; }
+.checks li:last-child { margin-bottom: 0; }
+.checks li::before {
+  content: ""; position: absolute; left: 0.015in; top: 0.055in;
+  width: 0.045in; height: 0.045in; border-radius: 50%; background: var(--green);
+}
+.checks b { font-family: var(--sans); font-weight: 600; font-size: 8.4pt; color: var(--soil); }
+
+/* One QR per panel, with one deliberate exception: the community panel carries
+   the free community at the top and the donate ask at its foot. Two codes are a
+   problem when a phone can see both in one frame; those two sit about six
+   inches apart at opposite ends of an 8.5in panel, which is far enough that it
+   cannot. Do not add a third, and do not move these together.
+   The frame colour is the panel's own accent token. */
+.qr { display: flex; align-items: center; gap: 0.12in; }
+.qr img { width: 1.15in; height: 1.15in; display: block; }
+.qr .t {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 9pt;
+  line-height: 1.16;
+  color: var(--soil);
+}
+.qr .d { font-size: 7.4pt; line-height: 1.28; color: var(--ink-soft); margin-top: 0.035in; }
+.qr .h { font-family: var(--sans); font-style: italic; font-size: 7pt; color: var(--ink-faint); margin-top: 0.035in; }
+/* No rule above a code. There used to be one in each panel's accent, and it
+   was doing nothing a margin does not do: the code block is already a white
+   tile against the panel, which is all the separation it needs. */
+/* Code on the right, words on the left. Used on the community panel, where
+   the code sits under the photograph rather than at the foot. */
+.qr--flip { flex-direction: row-reverse; }
+
+/* Every other code is the last thing on its panel, so nothing here ever spaced
+   what comes AFTER one. The community panel has a code near the top, and the
+   paragraph under it was running straight into the white tile with no gap at
+   all: a paragraph has no top margin, and the code block had no bottom one. */
+.qr + * { margin-top: var(--s4); }
+/* And the same gap above it, so a code sitting mid-panel is evenly set rather
+   than crowding whatever is over it. Where a code is last on its panel this
+   only takes a little off the spacer, which was going to be blank anyway. */
+* + .qr { margin-top: var(--s4); }
+/* Except after a spacer, which has already done the separating. */
+.spacer + .qr { margin-top: 0; }
+
+/* The legal block, ratified wording, verbatim. */
+.legal { font-size: 6.8pt; line-height: 1.35; color: var(--ink-soft); }
+.legal .addr { font-family: var(--display); font-weight: 600; font-size: 7.6pt; color: var(--soil); line-height: 1.3; margin-bottom: 0.045in; }
+
+/* The closing line. Montserrat, because it is a statement and not a sentence,
+   set lighter than a heading so it does not compete with one. */
+.tagline {
+  margin: var(--s3) 0 0;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 10pt;
+  line-height: 1.3;
+  letter-spacing: -0.004em;
+  color: var(--soil);
+}
+
+/* Farmers trifold: the cover's subheadline, under "Grow your own biology."
+   About half the headline's 20pt and in Food Web Green, so the two do not
+   compete. Everything above this line is the first trifold's stylesheet. */
+h2.subhead { font-size: 10.5pt; color: var(--green); line-height: 1.2; }
+
+/* Farmers trifold: the closing green field on the back carries the contact
+   line, the legal card and a QR code, 0.18in more than the first trifold's
+   back did. Both fields grow together, so the green still meets across the
+   fold at one height. */
+:root { --foot-h: 2.98in; }
+
+
+/* Farmers trifold: the back carries a two-line subheading, the body, the
+   community code and the icon row above its green foot. The gaps around the
+   code step down one place on the existing scale (s4 to s3, s3 to s2) on this
+   panel only, so the foot meets the cover's at one height across the fold. */
+.panel[data-panel="6"] * + .qr,
+.panel[data-panel="6"] .qr + * { margin-top: var(--s3); }
+.panel[data-panel="6"] .qr + .pillars { margin-top: var(--s2); }
+
+/* Farmers trifold: On your farm lost the second sentence of its box and was
+   left with a third of an inch of white at its foot. Its list and box text
+   step up so the panel fills, as the Why Biology flap does. */
+.panel[data-panel="4"] .checks li { font-size: 9pt; }
+.panel[data-panel="4"] .checks b  { font-size: 9.2pt; }
+.panel[data-panel="4"] .pull      { font-size: 9.8pt; }
+
+/* Farmers trifold: the Why Biology flap's body text, sized so its three
+   paragraphs and the Our story box fill the panel down to the webinar code
+   (0.18in above it at 8.8pt). The box reads in the same type as the paragraphs
+   above it, and sits the same distance below them. */
+:root { --flap-body: 8.8pt; }
+/* (the box)
+   type as the paragraphs above it, and sits the same distance below them. */
+.panel[data-panel="3"] .card { margin-top: var(--s2); }
+.panel[data-panel="3"] .card .pull { font-size: var(--flap-body); line-height: 1.38; letter-spacing: 0; }
+.panel[data-panel="3"] > p { font-size: var(--flap-body); }

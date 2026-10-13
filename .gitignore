@@ -28,3 +28,18 @@ npm-debug.log*
 # Crawl output (generated, large)
 docs/crawl/
 package*
+
+# Generated asset bundles (the GIFs themselves live in exports/gifs/)
+exports/*.zip
+
+# Download cache for tools/asset-inventory.py
+_dev/asset-inventory-cache/
+_dev/asset-inventory-cache.log
+
+# Supplied originals that no page uses (they stay in Google Drive). Files the build
+# needs are committed explicitly and stay tracked.
+img/new-2026-10/R5A_*
+img/new-2026-10/*.HEIC
+img/new-2026-10/workshop-2025-veranda-1.jpg
+img/new-2026-10/AF8A43C7-*
+img/new-2026-10/*.heic

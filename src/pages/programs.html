@@ -1,0 +1,95 @@
+---
+path: /programs/
+title: Learn: programs and Online Courses
+description: Online Courses, workshops and certifications from the Soil Food Web School, from the free webinar and Foundation Courses to Advanced Programs. Find the path that fits you.
+source: staging
+bugs: 3, 5, 10, 22, 25, 33
+notes: Was /programs-overview/; menu label "Learn". Foundation Course 1 now links to school.soilfoodweb.com/courses/foundation-course-1 (staging had a typo, "couse"); the Permaculture Design Certification card pointed at localhost on staging and now links to school.soilfoodweb.com/courses/permaculture-design-certification. The two quotes from "Country" are removed; John Gehl's stays. From the Ad Grant checklist: the guarantee banner moves into the FAQ, whose refund answer now uses the Terms section 3 wording (staging's said "or have already attended the live aspects"); "near instantly" and "transforms what's possible on your land" are cut from two course cards; "microscopy" reads "microscope" in the equipment answer.
+nav: /programs/
+---
+<section class="hero">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Learn with us</p>
+      <h1>Learn to work with the life in your soil</h1>
+      <p class="lead">Whether you're growing in your backyard raised beds or advising farmers who care for thousand-acre farms, there's a path for you. Choose from self-paced or group classes, online or in person. Every program is grounded in decades of research and practice and designed to deliver practical skills and insights.</p>
+      <div class="actions"><a class="btn" href="#path">Choose your path</a><a class="btn btn--ghost" href="https://webinar.soilfoodweb.com">Start with a free webinar</a></div>
+    </div>
+    <div class="hero__media">{{photo file="IMG_3536.heic" name="instructor-teaching-workshop-group" alt="A man in a purple T-shirt teaching a seated group in a bright room with a high wooden ceiling" eager}}</div>
+  </div>
+</section>
+
+<section class="band" id="how-programs-connect">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The path</p>
+      <h2>How the programs connect</h2>
+      <p>Start free, build the foundation, then choose your modules.</p>
+    </div>
+    {{pathway}}
+  </div>
+</section>
+
+<section class="band band--cream" id="path">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Choose your path</p>
+      <h2>What brings you to the soil food web?</h2>
+    </div>
+    {{courses_grid}}
+  </div>
+</section>
+
+
+<section class="band classroom-row" aria-label="In the classroom">
+  <div class="wrap">
+    <ul class="classroom">
+      <li>{{photo file="microscopy-class-projector.jpg" alt="A full classroom of students at long tables facing a projected slide, microscopes on the tables" card sizes="(min-width: 64em) 26rem, 100vw"}}</li>
+      <li>{{photo file="card-classroom-microscope-notebook.jpg" alt="A mentor holds open a notebook of hand-drawn soil organisms beside a student at a microscope" card sizes="(min-width: 64em) 26rem, 100vw"}}</li>
+      <li>{{photo file="ribbon-microscopy-classroom-costa-rica.jpg" alt="Students and mentors at microscopes in a classroom with orange walls" card sizes="(min-width: 64em) 26rem, 100vw"}}</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From our students</p>
+      <h2>People like you, further down the path</h2>
+    </div>
+    <ul class="grid grid--3">
+      <li><blockquote class="quote"><p>"There's nobody like her in the world! I don't want to listen to anybody else because nobody else knows what she knows!"</p><footer><strong>John Gehl</strong>Wisconsin, USA &middot; Foundation Courses</footer></blockquote></li>
+    </ul>
+    <p class="todo" style="margin-top:1.5rem">Two more student quotes with name, country and program, used with permission. Stephanie McDaniel supplies them from course feedback.</p>
+  </div>
+</section>
+
+<section class="band band--cream">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Questions</p>
+      <h2>Before you ask</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Do I need a science background?</summary><div><p>No. The courses are designed for people with no relevant experience. And for advanced courses, you'll gain all the knowledge you need here while completing prerequisites which are clearly defined for each path.</p></div></details>
+      <details><summary>I can't afford the courses. Are there options?</summary><div><p>We never want insurmountable financial limitations to get in the way of soil regeneration. We are always accepting applications and selections occur on an ongoing basis as we procure funds from donors and other resources. Selection committees place a priority on applicants in under-resourced regions. If you believe you qualify, see the <a href="/scholarship/">Scholarships page</a>.</p></div></details>
+      <details open><summary>What if it's not for me?</summary><div><p>Every course carries our 30-day money-back guarantee. Unless a program page states otherwise, you may request a full refund within 30 days of registration provided you have not accessed a substantial portion of the course content. Live in-person events may also have unique limitations. Please see individual program pages for specific details, and the <a href="/terms/#refunds">refund policy</a> in our Terms.</p></div></details>
+      <details><summary>Are there any costs above and beyond the listed program enrollment fees?</summary><div><p>Sometimes you will, but often you won't. Depending on the program you choose, you may need to procure equipment (ex: For Microscopy you will need access to the right type of microscope, slides, sampling equipment etc.). Each program page provides information about the equipment requirements.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tight">
+  <div class="wrap">
+    <div class="notice"><p><strong>Financial barriers shouldn't keep anyone from caring for the Earth.</strong> Scholarships and payment options are growing.</p><a class="btn" href="/scholarship/">Explore scholarships</a></div>
+    {{funding}}
+  </div>
+</section>
+
+<section class="band band--photo band--ending" style="--pos:50% 70%">
+  {{photo file="ending-programs-barn-feedstock-wild-ken-hill.jpg" alt="A heap of fresh green feedstock in a barn, wide doors open onto green fields" sizes="100vw"}}
+  <div class="wrap">
+    <h2>Learn by doing, with mentors beside you</h2>
+    <div class="actions"><a class="btn btn--white" href="/workshops/">See upcoming workshops</a></div>
+  </div>
+</section>

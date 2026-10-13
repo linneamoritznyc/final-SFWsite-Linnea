@@ -1,1092 +1,721 @@
-/* Soil Food Web Foundation — site.js
-   Vanilla JS, no dependencies. Three jobs:
-   1. Overlay menu: open, close, focus trap, Escape, body scroll lock.
-   2. Accordion inside the overlay: one section open at a time.
-   3. Root line: one hairline path drawn by scroll position (reversible).
-   Everything degrades: without JS the header links still work, the overlay
-   markup is hidden, and reduced-motion users get static states. */
+/* Soil Food Web Foundation: site.js
+   One small script, no libraries. Each block checks for its own markup and
+   does nothing when the page does not have it. */
 
+/* 1. Review mode: ?review highlights draft text ---------------------------- */
 (function () {
   "use strict";
+  if (/[?&]review\b/.test(location.search)) document.documentElement.classList.add("is-review");
+})();
 
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* ---------- 1. Overlay ---------- */
-  var overlay = document.getElementById("overlay");
-  var openBtn = document.querySelector("[data-menu-open]");
-  var closeBtn = overlay && overlay.querySelector("[data-menu-close]");
-  var lastFocus = null;
-
-  function focusables(root) {
-    return Array.prototype.slice.call(
-      root.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])')
-    ).filter(function (el) { return el.offsetParent !== null; });
+/* 2. Off-canvas menu ---------------------------------------------------------- */
+(function () {
+  "use strict";
+  var btn = document.querySelector("[data-menu-open]");
+  var ocm = document.getElementById("ocm");
+  if (!btn || !ocm) return;
+  var last = null;
+  function open() {
+    last = document.activeElement;
+    ocm.hidden = false;
+    requestAnimationFrame(function () { ocm.classList.add("is-open"); });
+    document.body.classList.add("menu-open");
+    btn.setAttribute("aria-expanded", "true");
+    var c = ocm.querySelector("[data-menu-close]");
+    if (c) c.focus();
   }
-
-  function openMenu() {
-    if (!overlay) return;
-    lastFocus = document.activeElement;
-    overlay.setAttribute("data-open", "true");
-    overlay.removeAttribute("aria-hidden");
-    openBtn.setAttribute("aria-expanded", "true");
-    document.body.classList.add("is-locked");
-    window.setTimeout(function () { closeBtn.focus(); }, reduceMotion ? 0 : 60);
+  function close() {
+    ocm.classList.remove("is-open");
+    document.body.classList.remove("menu-open");
+    btn.setAttribute("aria-expanded", "false");
+    setTimeout(function () { ocm.hidden = true; }, 320);
+    if (last) last.focus();
   }
+  btn.addEventListener("click", open);
+  ocm.addEventListener("click", function (e) {
+    if (e.target.closest("[data-menu-close]") || e.target.classList.contains("ocm__scrim")) close();
+    else if (e.target.closest("a")) close();
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && ocm.classList.contains("is-open")) close(); });
+})();
 
-  function closeMenu() {
-    if (!overlay) return;
-    overlay.setAttribute("data-open", "false");
-    overlay.setAttribute("aria-hidden", "true");
-    openBtn.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("is-locked");
-    if (lastFocus) lastFocus.focus();
-  }
-
-  if (overlay && openBtn && closeBtn) {
-    overlay.setAttribute("aria-hidden", "true");
-    openBtn.addEventListener("click", openMenu);
-    closeBtn.addEventListener("click", closeMenu);
-
-    // Close on any link click inside the overlay.
-    overlay.addEventListener("click", function (e) {
-      var a = e.target.closest("a[href]");
-      if (a) closeMenu();
-    });
-
-    document.addEventListener("keydown", function (e) {
-      if (overlay.getAttribute("data-open") !== "true") return;
-      if (e.key === "Escape") { e.preventDefault(); closeMenu(); return; }
-      if (e.key === "Tab") {
-        var items = focusables(overlay);
-        if (!items.length) return;
-        var first = items[0], last = items[items.length - 1];
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-      }
-    });
-  }
-
-  /* ---------- 2. Accordion ---------- */
-  var accordions = document.querySelectorAll("[data-accordion]");
-  Array.prototype.forEach.call(accordions, function (acc) {
-    var items = acc.querySelectorAll("[data-acc-item]");
-    Array.prototype.forEach.call(items, function (item) {
-      var btn = item.querySelector("[data-acc-btn]");
-      var panel = item.querySelector("[data-acc-panel]");
-      if (!btn || !panel) return;
-      btn.setAttribute("aria-expanded", item.getAttribute("data-open") === "true" ? "true" : "false");
-      btn.addEventListener("click", function () {
-        var isOpen = item.getAttribute("data-open") === "true";
-        Array.prototype.forEach.call(items, function (other) {
-          other.setAttribute("data-open", "false");
-          var ob = other.querySelector("[data-acc-btn]");
-          if (ob) ob.setAttribute("aria-expanded", "false");
-        });
-        if (!isOpen) { item.setAttribute("data-open", "true"); btn.setAttribute("aria-expanded", "true"); }
+/* 3. Desktop dropdowns: click and keyboard as well as hover ------------------ */
+(function () {
+  "use strict";
+  var tops = document.querySelectorAll(".nav__top");
+  Array.prototype.forEach.call(tops, function (b) {
+    b.addEventListener("click", function () {
+      var li = b.parentNode, isOpen = li.classList.toggle("open");
+      b.setAttribute("aria-expanded", String(isOpen));
+      Array.prototype.forEach.call(tops, function (o) {
+        if (o !== b) { o.parentNode.classList.remove("open"); o.setAttribute("aria-expanded", "false"); }
       });
     });
   });
-
-  /* ---------- 3. Root line drawn by scroll ---------- */
-  // Markup: <svg class="root-line" data-root-line><path pathLength="1" d="..."/></svg>
-  // inside a position:relative container. The path draws from 0 to 1 as the
-  // container scrolls through the viewport, and un-draws on the way back up.
-  var lines = document.querySelectorAll("[data-root-line]");
-  if (lines.length && !reduceMotion) {
-    var ticking = false;
-    function update() {
-      var vh = window.innerHeight;
-      Array.prototype.forEach.call(lines, function (svg) {
-        var box = svg.parentElement.getBoundingClientRect();
-        var total = box.height + vh * 0.5;
-        var passed = vh * 0.85 - box.top;
-        var t = Math.max(0, Math.min(1, passed / total));
-        svg.style.setProperty("--draw", t.toFixed(3));
-      });
-      ticking = false;
-    }
-    window.addEventListener("scroll", function () {
-      if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
-    }, { passive: true });
-    window.addEventListener("resize", update);
-    update();
-  }
-
-  /* ---------- 4. Filter chips (index pages) ---------- */
-  // <ul class="chips" data-filter-for="#list"> with <button class="chip" data-filter="all|kind">
-  // Items in the list carry data-kind. "all" shows everything. No pagination anywhere.
-  // More than one group may point at the same list: an item shows only when
-  // every group agrees. A group tests data-kind unless data-filter-attr names
-  // another attribute, so Publications filters by collection and by decade.
-  // Children carrying none of those attributes (the column header row) are
-  // chrome: never hidden, never counted.
-  // An attribute may hold several space-separated values, and the item shows
-  // if any one of them is the pressed key. That is what lets the community
-  // log carry data-when="year month" on a post from this month and answer to
-  // both "This year" and "This month". A single value is one token, so every
-  // list that had one keeps behaving exactly as it did.
-  function holds(item, attr, key) {
-    var v = item.getAttribute(attr);
-    return (" " + (v || "") + " ").indexOf(" " + key + " ") > -1;
-  }
-  var byList = [];
-  Array.prototype.forEach.call(document.querySelectorAll("[data-filter-for]"), function (group) {
-    var sel = group.getAttribute("data-filter-for");
-    var found = null;
-    byList.forEach(function (b) { if (b.sel === sel) found = b; });
-    if (!found) {
-      var list = document.querySelector(sel);
-      if (!list) return;
-      found = { sel: sel, list: list, groups: [] };
-      byList.push(found);
-    }
-    found.groups.push(group);
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav")) Array.prototype.forEach.call(tops, function (o) { o.parentNode.classList.remove("open"); o.setAttribute("aria-expanded", "false"); });
   });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") Array.prototype.forEach.call(tops, function (o) { o.parentNode.classList.remove("open"); o.setAttribute("aria-expanded", "false"); });
+  });
+})();
 
-  byList.forEach(function (b) {
-    var attrs = b.groups.map(function (g) { return g.getAttribute("data-filter-attr") || "data-kind"; });
-    var items = Array.prototype.filter.call(b.list.children, function (item) {
-      for (var i = 0; i < attrs.length; i++) { if (item.hasAttribute(attrs[i])) return true; }
-      return false;
+/* 4. Course scroller arrows ------------------------------------------------------ */
+(function () {
+  "use strict";
+  Array.prototype.forEach.call(document.querySelectorAll("[data-scroller]"), function (wrap) {
+    var list = wrap.querySelector(".scroller");
+    Array.prototype.forEach.call(wrap.querySelectorAll("[data-scroll]"), function (b) {
+      b.addEventListener("click", function () {
+        list.scrollBy({ left: Number(b.getAttribute("data-scroll")) * list.clientWidth * 0.8, behavior: "smooth" });
+      });
     });
+  });
+})();
 
+/* 5. Filterable lists: chips, search box, topic select ----------------------------
+   Container [data-filter]; items [data-item] carry data-group (chip key),
+   data-topics (space separated) and data-text (lowercase search text). */
+(function () {
+  "use strict";
+  Array.prototype.forEach.call(document.querySelectorAll("[data-filter]"), function (root) {
+    var items = root.querySelectorAll("[data-item]");
+    var chips = root.querySelectorAll("[data-chip]");
+    var q = root.querySelector("[data-q]");
+    var topic = root.querySelector("[data-topic]");
+    var count = root.querySelector("[data-count]");
+    var empty = root.querySelector("[data-empty]");
+    var groups = root.querySelectorAll("[data-group-block]");
+    var state = { chip: "", q: "", topic: "" };
     function apply() {
-      var shown = 0;
-      items.forEach(function (item) {
-        var show = true;
-        b.groups.forEach(function (group, i) {
-          if (!show) return;
-          var on = group.querySelector('[data-filter][aria-pressed="true"]');
-          var key = on ? on.getAttribute("data-filter") : "all";
-          // "all" on the ITEM, not just on the chip: a row that answers every
-          // filter rather than one of them. The volunteer page's "Something
-          // else" card is one, because no amount of time rules it out.
-          if (key !== "all" && !holds(item, attrs[i], "all")
-              && !holds(item, attrs[i], key)) show = false;
-        });
-        item.hidden = !show;
-        if (show) shown++;
+      var n = 0;
+      Array.prototype.forEach.call(items, function (it) {
+        var ok = (!state.chip || (" " + it.getAttribute("data-group") + " ").indexOf(" " + state.chip + " ") > -1) &&
+                 (!state.topic || (" " + (it.getAttribute("data-topics") || "") + " ").indexOf(" " + state.topic + " ") > -1) &&
+                 (!state.q || (it.getAttribute("data-text") || it.textContent.toLowerCase()).indexOf(state.q) > -1);
+        it.hidden = !ok;
+        if (ok) n++;
       });
-      b.groups.forEach(function (group) {
-        var status = group.querySelector("[data-filter-status]");
-        if (status) status.textContent = shown + " shown";
-      });
-      // A filter that matches nothing says so, and says what to do about it,
-      // rather than leaving a blank page under the chips.
-      var empty = b.list.querySelector("[data-filter-empty]");
-      if (empty) empty.hidden = shown !== 0;
+      Array.prototype.forEach.call(groups, function (g) { g.hidden = !g.querySelector("[data-item]:not([hidden])"); });
+      if (count) count.textContent = n + (n === 1 ? " " + (count.getAttribute("data-one") || "result") : " " + (count.getAttribute("data-many") || "results"));
+      if (empty) empty.hidden = n > 0;
     }
-
-    b.groups.forEach(function (group) {
-      var chips = group.querySelectorAll("[data-filter]");
-      Array.prototype.forEach.call(chips, function (chip) {
-        chip.addEventListener("click", function () {
-          Array.prototype.forEach.call(chips, function (c) {
-            c.setAttribute("aria-pressed", c === chip ? "true" : "false");
-          });
-          apply();
-        });
+    Array.prototype.forEach.call(chips, function (c) {
+      c.addEventListener("click", function () {
+        state.chip = c.getAttribute("data-chip");
+        Array.prototype.forEach.call(chips, function (o) { o.setAttribute("aria-pressed", String(o === c)); });
+        apply();
       });
     });
-
+    // Hover or focus a path chip: the matching programs lift, the rest step back.
+    function preview(key) {
+      root.classList.toggle("is-previewing", !!key);
+      Array.prototype.forEach.call(items, function (it) {
+        it.classList.toggle("is-match", !!key && (" " + it.getAttribute("data-group") + " ").indexOf(" " + key + " ") > -1);
+      });
+    }
+    Array.prototype.forEach.call(chips, function (c) {
+      var key = c.getAttribute("data-chip");
+      if (key === "all") return;
+      function on() { if (c.getAttribute("aria-pressed") !== "true") preview(key); }
+      function off() { preview(""); }
+      c.addEventListener("mouseenter", on); c.addEventListener("focus", on);
+      c.addEventListener("mouseleave", off); c.addEventListener("blur", off); c.addEventListener("click", off);
+    });
+    if (q) q.addEventListener("input", function () { state.q = q.value.trim().toLowerCase(); apply(); });
+    if (topic) topic.addEventListener("change", function () { state.topic = topic.value; apply(); });
+    var form = root.querySelector("form");
+    if (form) form.addEventListener("submit", function (e) { e.preventDefault(); });
+    var hash = location.hash.replace("#", "");
+    Array.prototype.forEach.call(chips, function (c) { if (hash && c.getAttribute("data-chip") === hash) c.click(); });
     apply();
   });
 })();
 
-/* ---------- 5. Pathway diagram (Learn) ---------- */
-// <div data-pathway> with <button data-pathway-btn aria-controls="id"> and a
-// panel by that id. One panel open at a time; hover opens too, tap toggles.
-(function () {
-  var roots = document.querySelectorAll("[data-pathway]");
-  Array.prototype.forEach.call(roots, function (root) {
-    var btns = root.querySelectorAll("[data-pathway-btn]");
-    function closeAll() {
-      Array.prototype.forEach.call(btns, function (b) {
-        b.setAttribute("aria-expanded", "false");
-        var p = document.getElementById(b.getAttribute("aria-controls"));
-        if (p) p.hidden = true;
-      });
-    }
-    Array.prototype.forEach.call(btns, function (b) {
-      var panel = document.getElementById(b.getAttribute("aria-controls"));
-      if (!panel) return;
-      function open() { closeAll(); b.setAttribute("aria-expanded", "true"); panel.hidden = false; }
-      b.addEventListener("click", function () {
-        var isOpen = b.getAttribute("aria-expanded") === "true";
-        closeAll();
-        if (!isOpen) { b.setAttribute("aria-expanded", "true"); panel.hidden = false; }
-      });
-      b.addEventListener("mouseenter", open);
-      b.addEventListener("focus", open);
-    });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeAll(); });
-  });
-})();
-
-/* ---------- 5b. Role picker (Learn) ---------- */
-(function () {
-  var picker = document.querySelector("[data-role-picker]");
-  if (!picker) return;
-  var items = picker.querySelectorAll("[data-role]");
-  var allCourses = document.querySelectorAll("[data-role-courses]");
-
-  function show(role) {
-    Array.prototype.forEach.call(items, function (el) {
-      el.classList.toggle("is-active", el.getAttribute("data-role") === role);
-    });
-    Array.prototype.forEach.call(allCourses, function (el) {
-      el.classList.toggle("is-visible", el.getAttribute("data-role-courses") === role);
-    });
-  }
-  function hideAll() {
-    Array.prototype.forEach.call(items, function (el) { el.classList.remove("is-active"); });
-    Array.prototype.forEach.call(allCourses, function (el) { el.classList.remove("is-visible"); });
-  }
-
-  Array.prototype.forEach.call(items, function (item) {
-    var role = item.getAttribute("data-role");
-    var btn = item.querySelector("button");
-    btn.addEventListener("mouseenter", function () { show(role); });
-    btn.addEventListener("focus", function () { show(role); });
-    btn.addEventListener("click", function () {
-      var wasActive = item.classList.contains("is-active");
-      if (wasActive) { hideAll(); } else { show(role); }
-    });
-  });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") hideAll(); });
-})();
-
-/* ---------- 6. Calendar today marker ---------- */
-// The site is static, so "today" cannot be baked into the HTML or it goes stale.
-// <div data-cal data-cal-start="YYYY-MM-DD" data-cal-end="YYYY-MM-DD"> with a
-// [data-cal-today] span inside .cal__grid. Hidden when today is out of range.
-(function () {
-  var cals = document.querySelectorAll("[data-cal]");
-  Array.prototype.forEach.call(cals, function (cal) {
-    var marker = cal.querySelector("[data-cal-today]");
-    if (!marker) return;
-    var start = new Date(cal.getAttribute("data-cal-start") + "T00:00:00");
-    var end = new Date(cal.getAttribute("data-cal-end") + "T00:00:00");
-    var now = new Date(); now.setHours(0, 0, 0, 0);
-    if (isNaN(start) || isNaN(end) || now < start || now > end) return;
-    var span = (end - start) + 86400000;
-    marker.style.left = ((now - start) / span * 100).toFixed(3) + "%";
-    marker.hidden = false;
-    var sr = document.createElement("span");
-    sr.className = "visually-hidden";
-    sr.textContent = "Today, " + now.toDateString() + ".";
-    marker.appendChild(sr);
-  });
-})();
-
-/* ---------- 7. Production notes ---------- */
-// .todo blocks are hidden from visitors by CSS. ?notes=1 on any URL sets
-// data-notes on <html>, which reveals every placeholder and prints the
-// instruction held on each empty image slot's data-empty attribute.
-(function () {
-  try {
-    var p = new URLSearchParams(window.location.search).get("notes");
-    if (p === "1" || p === "true") document.documentElement.setAttribute("data-notes", "");
-  } catch (e) { /* no URLSearchParams: notes stay hidden, which is the safe default */ }
-})();
-
-/* ---------- 8. Microscopy loops ---------- */
-// Every <video data-loop> on the site is the Foundation's own brightfield
-// footage. Three rules, in this order:
-//   1. Nothing downloads until it is near the viewport. The markup carries
-//      data-src rather than src, so a page with a clip below the fold costs
-//      nothing until the reader goes there.
-//   2. A clip plays only while it is on screen. Off screen it pauses, so a
-//      long page never has more than one or two decoding at once.
-//   3. Reduced motion means reduced motion. The clip loads and shows its
-//      first frame, and never runs.
-(function () {
-  var vids = document.querySelectorAll("video[data-loop]");
-  if (!vids.length) return;
-  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  function load(v) {
-    if (v.dataset.loaded) return;
-    v.dataset.loaded = "1";
-    (v.dataset.src || "").split(",").forEach(function (src) {
-      src = src.trim();
-      if (!src) return;
-      var s = document.createElement("source");
-      s.src = src;
-      s.type = src.slice(-5) === ".webm" ? "video/webm" : "video/mp4";
-      v.appendChild(s);
-    });
-    // data-start seeds the playhead, so several clips of the same reel on one
-    // page are several moments rather than several copies of one.
-    if (v.dataset.start) {
-      v.addEventListener("loadedmetadata", function () {
-        try { v.currentTime = parseFloat(v.dataset.start) || 0; } catch (e) { /* not seekable */ }
-      }, { once: true });
-    }
-    v.load();
-  }
-
-  if (!("IntersectionObserver" in window)) {
-    // No observer: load everything and let the browser decide. Correctness
-    // over thrift on browsers this old.
-    Array.prototype.forEach.call(vids, function (v) { load(v); if (!still) v.play().catch(function () {}); });
-    return;
-  }
-
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      var v = en.target;
-      if (!en.isIntersecting) { v.pause(); return; }
-      load(v);
-      if (!still && !v.hasAttribute("data-scrub")) v.play().catch(function () {});
-    });
-  }, { rootMargin: "200px 0px" });
-
-  Array.prototype.forEach.call(vids, function (v) { io.observe(v); });
-})();
-
-/* ---------- 9. The rack ---------- */
-// <div class="rack"> holding a <video data-loop data-scrub>. Scroll position
-// through the block drives the playhead and the focus together: sharp as the
-// block passes the middle of the window, soft at either end. The organism
-// moves when the reader moves. Study 14 from /motion.
-//
-// Reduced motion turns it into an ordinary still frame, because the whole
-// point of it is motion tied to scrolling.
-(function () {
-  var racks = document.querySelectorAll(".rack video[data-scrub]");
-  if (!racks.length) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  var ticking = false;
-  function update() {
-    ticking = false;
-    Array.prototype.forEach.call(racks, function (v) {
-      var box = v.closest(".rack");
-      var r = box.getBoundingClientRect();
-      if (r.bottom < -200 || r.top > window.innerHeight + 200) return;
-      var p = (window.innerHeight - r.top) / (window.innerHeight + r.height);
-      p = p < 0 ? 0 : p > 1 ? 1 : p;
-      var d = v.duration;
-      if (d && isFinite(d)) { try { v.currentTime = p * d * 0.999; } catch (e) { /* not seekable yet */ } }
-      // sharp across the middle half of the pass, soft only at the extremes
-      var focus = Math.max(0, (Math.abs(p - 0.5) * 2 - 0.45) / 0.55);
-      v.style.filter = "brightness(.8) contrast(6.5) saturate(.42) blur(" + (focus * focus * 3.2).toFixed(2) + "px)";
-      var m = box.querySelector(".rack__meter i");
-      if (m) m.style.width = (p * 100).toFixed(1) + "%";
-    });
-  }
-  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  Array.prototype.forEach.call(racks, function (v) {
-    v.addEventListener("loadedmetadata", update, { once: true });
-  });
-  update();
-})();
-
-/* ---------- 10. The reveal ---------- */
-// Photographs and plates rise a little and fade as they arrive, once.
-//
-// The stylesheet hides nothing. This hides only what is ALREADY BELOW THE
-// FOLD, so a page with no JavaScript shows everything, and so does a
-// screenshot, a thumbnail and a print. Anything on screen at load is left
-// exactly as it is, which is why there is no flash.
-//
-// Reduced motion skips the whole thing rather than shortening it.
-(function () {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  if (!("IntersectionObserver" in window)) return;
-
-  var SEL = ".shot, .slides > li, .ledger > li, .doors > li, .cards > .card," +
-            " .step, .banner, .filmstrip, .scope, .plate";
-  // A page, or a region of one, may ask to be left still. The Wild Ken Hill
-  // story does: the looping clips are the only motion wanted on it, and a
-  // photograph fading up on the way past would be a second kind.
-  var els = Array.prototype.filter.call(document.querySelectorAll(SEL), function (el) {
-    return !el.closest("[data-still]");
-  });
-  if (!els.length) return;
-
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (!en.isIntersecting) return;
-      en.target.classList.add("rise-in");
-      en.target.classList.remove("rise");
-      io.unobserve(en.target);            // once, then never again
-    });
-  }, { rootMargin: "0px 0px -8% 0px" });
-
-  els.forEach(function (el) {
-    // only pre-hide what the reader cannot see yet
-    if (el.getBoundingClientRect().top > window.innerHeight) {
-      el.classList.add("rise");
-      io.observe(el);
-    }
-  });
-})();
-
-/* ---------- 11. The theatre ---------- */
-// One player that stays on the page.
-//
-// The old playlist reloaded the whole of WordPress for every video and then
-// booted a new Vimeo player from zero, which is why it felt slow and why
-// autoplay into the next video was impossible. Here the player is created
-// once, on the first click, and every video after that is a loadVideo() call
-// on the player that is already running. The URL changes with pushState, so
-// links and the back button still work, and nothing reloads.
-//
-// Nothing third-party loads until someone presses play. Until then the stage
-// is a poster and a button, so the page costs nothing to arrive at. This is
-// the facade pattern, and it is the single biggest speed difference between
-// this and either a Vimeo or a YouTube embed dropped straight into a page:
-// the platform's script is the weight, not the platform.
-//
-// The private hash travels in the data, never in the URL. Unlisted videos
-// need it to play, and every way the old page had of losing it, dropping it
-// from a link, pasting it inside the id, arriving with no query string at
-// all, is a way of breaking the player. content/videos.json holds it and
-// tools/playlist.py checks it against Vimeo before it is committed.
-//
-// If the platform script does not load, the stage becomes a plain link to
-// the video. The content stays reachable.
+/* 5b. Publications: search, four dropdowns and a sort, combined with AND -----------
+   State lives in the query string (?topic=compost&region=europe&q=tea), so a
+   filtered view can be shared as a link and the back button steps through it.
+   The page renders the full list grouped by collection, oldest first; without
+   this script that is what a reader gets, and the filter bar stays hidden. */
 (function () {
   "use strict";
+  var form = document.querySelector("[data-pubs-filter]");
+  var root = document.querySelector("[data-pubs]");
+  if (!form || !root || !window.URLSearchParams) return;
+  var FIELDS = ["q", "collection", "topic", "study", "region", "sort"];
+  var FILTERS = ["collection", "topic", "study", "region"];
+  var items = Array.prototype.slice.call(root.querySelectorAll(".pub"));
+  var groups = Array.prototype.slice.call(root.querySelectorAll("[data-pubs-group]"));
+  var flat = root.querySelector("[data-pubs-flat]");
+  var empty = root.querySelector("[data-pubs-empty]");
+  var bar = document.querySelector("[data-pubs-bar]");
+  var status = document.querySelector("[data-pubs-status]");
+  var clears = document.querySelectorAll("[data-pubs-clear]");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var root = document.querySelector("[data-theatre]");
-  if (!root) return;
-  var holder = root.querySelector("[data-theatre-data]");
-  var list = [];
-  try { list = JSON.parse(holder.textContent); } catch (err) { return; }
-  if (!list.length) return;
-
-  var frame  = root.querySelector("[data-frame]");
-  var poster = root.querySelector("[data-poster]");
-  var nowT   = root.querySelector("[data-now-title]");
-  var nowS   = root.querySelector("[data-now-sub]");
-  var live   = root.querySelector("[data-live]");
-  var next   = root.querySelector("[data-next]");
-  var nextT  = root.querySelector("[data-next-title]");
-  var nextN  = root.querySelector("[data-next-count]");
-  var check  = root.querySelector("[data-check]");
-  var buttons = Array.prototype.slice.call(root.querySelectorAll("[data-i]"));
-
-  var COUNTDOWN = 8;        // seconds before the next video starts
-  var STREAK_LIMIT = 3;     // videos in a row unattended before we ask
-  var player = null, loading = null, timer = null, i = 0, streak = 0;
-
-  function slugIndex(slug) {
-    for (var n = 0; n < list.length; n++) { if (list[n].slug === slug) return n; }
-    return -1;
+  // Accents folded, so "Ostrom" finds "Öström" and the other way round.
+  function fold(s) {
+    s = String(s).toLowerCase();
+    return s.normalize ? s.normalize("NFD").replace(/[̀-ͯ]/g, "") : s;
   }
+  // What the search reads: title, authors and citation, summary, useful for,
+  // topics and year. Not the labels, so "summary" does not match everything.
+  items.forEach(function (it) {
+    var parts = [it.getAttribute("data-year")];
+    Array.prototype.forEach.call(it.querySelectorAll(".pub__title, .entry__line, [data-s], .chip--tag"),
+      function (el) { parts.push(el.textContent); });
+    it._text = fold(parts.join(" "));
+    it._home = it.parentNode;
+  });
 
-  /* -- the platform script, fetched once and only on demand -- */
-  function api() {
-    if (window.Vimeo && window.Vimeo.Player) return Promise.resolve();
-    if (loading) return loading;
-    loading = new Promise(function (resolve, reject) {
-      var s = document.createElement("script");
-      s.src = "https://player.vimeo.com/api/player.js";
-      s.async = true;
-      s.onload = resolve;
-      s.onerror = function () { loading = null; reject(new Error("player.js")); };
-      document.head.appendChild(s);
+  function read() {
+    var p = new URLSearchParams(location.search), s = {};
+    FIELDS.forEach(function (k) { s[k] = p.get(k) || ""; });
+    return s;
+  }
+  function toControls(s) {
+    FIELDS.forEach(function (k) {
+      var el = form.elements[k];
+      el.value = s[k];
+      if (el.value !== s[k]) { el.value = ""; s[k] = ""; }   // a value from an old link that no longer exists
     });
-    return loading;
+  }
+  function fromControls() {
+    var s = {};
+    FIELDS.forEach(function (k) { s[k] = form.elements[k].value; });
+    return s;
+  }
+  function write(s, push) {
+    var p = new URLSearchParams();
+    FIELDS.forEach(function (k) { if (s[k].trim()) p.set(k, s[k].trim()); });
+    var qs = p.toString();
+    var url = location.pathname + (qs ? "?" + qs : "") + location.hash;
+    if (url === location.pathname + location.search + location.hash) return;
+    history[push ? "pushState" : "replaceState"](null, "", url);
+  }
+  function holds(it, k, v) {
+    return (" " + (it.getAttribute("data-p-" + k) || "") + " ").indexOf(" " + v + " ") > -1;
   }
 
-  // If Vimeo's control script will not load, the video still plays here, in
-  // an ordinary iframe that needs no script at all. What is lost is the
-  // autoplay chain and the still-watching check, not the video. Nothing ever
-  // sends the visitor off to vimeo.com.
-  function fallback() {
-    var v = list[i];
-    player = null;
-    root.setAttribute("data-fallback", "true");
-    frame.hidden = false;
-    frame.innerHTML = "";
-    var f = document.createElement("iframe");
-    f.src = "https://player.vimeo.com/video/" + encodeURIComponent(v.id) +
-            "?h=" + encodeURIComponent(v.hash) +
-            "&autoplay=1&dnt=1&title=0&byline=0&portrait=0";
-    f.title = v.title;
-    f.allow = "autoplay; fullscreen; picture-in-picture";
-    f.setAttribute("allowfullscreen", "");
-    f.setAttribute("frameborder", "0");
-    frame.appendChild(f);
-    if (poster) poster.hidden = true;
-    if (live) live.textContent = "Now playing: " + v.title;
-  }
-
-  function boot() {
-    var v = list[i];
-    return api().then(function () {
-      frame.hidden = false;
-      player = new window.Vimeo.Player(frame, {
-        id: Number(v.id),
-        h: v.hash,              // the private hash, from the data file
-        autoplay: true,         // allowed: we are inside the click that asked
-        dnt: true,              // no Vimeo tracking cookies
-        title: false, byline: false, portrait: false,
-        responsive: true
-      });
-      // The poster's job is over the moment the player exists. Waiting for
-      // the play event would leave the poster sitting on top of a video that
-      // has already started when autoplay is allowed, and on top of Vimeo's
-      // own play button when it is not.
-      if (poster) poster.hidden = true;
-      player.on("ended", ended);
-      // A pause or a scrub is a person, so the unattended count starts over.
-      player.on("pause", awake);
-      player.on("seeked", awake);
-    })["catch"](fallback);
-  }
-
-  /* -- selecting, with or without playing -- */
-  function select(n, opts) {
-    opts = opts || {};
-    i = ((n % list.length) + list.length) % list.length;
-    var v = list[i];
-
-    buttons.forEach(function (b, n2) {
-      var on = n2 === i;
-      b.setAttribute("aria-current", on ? "true" : "false");
-      b.parentNode.setAttribute("data-active", on ? "true" : "false");
+  function apply(s) {
+    var words = fold(s.q).split(/\s+/).filter(Boolean);
+    var shown = 0;
+    items.forEach(function (it) {
+      var ok = true;
+      FILTERS.forEach(function (k) { if (ok && s[k] && !holds(it, k, s[k])) ok = false; });
+      for (var i = 0; ok && i < words.length; i++) if (it._text.indexOf(words[i]) < 0) ok = false;
+      it.hidden = !ok;
+      if (ok) shown++;
     });
-    if (nowT) nowT.textContent = v.title;
-    if (nowS) nowS.textContent = v.subtitle || "";
-    if (poster) {
-      var im = poster.querySelector("img");
-      if (im && v.thumb) im.src = v.thumb;
-    }
-    if (!opts.silent) {
-      history.pushState({ v: v.slug }, "", "?v=" + encodeURIComponent(v.slug));
-    }
-
-    if (!opts.play) return;
-    if (live) live.textContent = "Now playing: " + v.title;
-    if (player) {
-      player.loadVideo({ id: Number(v.id), h: v.hash })
-        .then(function () { return player.play(); })["catch"](fallback);
-      if (poster) poster.hidden = true;
-    } else {
-      boot();
-    }
+    // Oldest first keeps the collection headings; newest first is one flat
+    // list. data-i is each card's place in the default order.
+    var newest = s.sort === "newest";
+    items.slice().sort(function (a, b) {
+      var d = newest ? b.getAttribute("data-year") - a.getAttribute("data-year") : 0;
+      return d || a.getAttribute("data-i") - b.getAttribute("data-i");
+    }).forEach(function (it) { (newest ? flat : it._home).appendChild(it); });
+    flat.hidden = !newest || shown === 0;
+    groups.forEach(function (ul) {
+      var head = root.querySelector('[data-pubs-head="' + ul.getAttribute("data-pubs-group") + '"]');
+      var any = !newest && !!ul.querySelector(".pub:not([hidden])");
+      ul.hidden = !any; head.hidden = !any;
+    });
+    var filtered = !!(s.q.trim() || s.collection || s.topic || s.study || s.region);
+    status.textContent = "Showing " + shown + " of " + items.length + " publications";
+    Array.prototype.forEach.call(clears, function (b) { b.hidden = !filtered; });
+    empty.hidden = shown !== 0;
   }
 
-  /* -- what happens when one finishes -- */
-  function ended() {
-    if (i + 1 >= list.length) { stop(); if (poster) poster.hidden = false; return; }
-    streak += 1;
-    if (streak >= STREAK_LIMIT) { ask(); return; }
-    countdown();
-  }
+  function update(push) { var s = fromControls(); write(s, push); apply(s); }
 
-  function countdown() {
-    var left = COUNTDOWN;
-    nextT.textContent = list[i + 1].title;
-    nextN.textContent = left;
-    next.hidden = false;
-    var go = next.querySelector("[data-next-go]");
-    if (go) go.focus();
-    clearInterval(timer);
-    timer = setInterval(function () {
-      left -= 1;
-      nextN.textContent = left;
-      if (left <= 0) { stop(); select(i + 1, { play: true }); }
-    }, 1000);
-  }
-
-  // Three in a row with nobody touching anything: stop and ask, the way a
-  // streaming service does, rather than playing to an empty room.
-  function ask() {
-    stop();
-    check.hidden = false;
-    var go = check.querySelector("[data-check-go]");
-    if (go) go.focus();
-  }
-
-  function stop() {
-    clearInterval(timer);
-    timer = null;
-    if (next) next.hidden = true;
-    if (check) check.hidden = true;
-  }
-
-  function awake() { streak = 0; }
-
-  /* -- wiring -- */
-  buttons.forEach(function (b, n) {
-    b.addEventListener("click", function () { awake(); stop(); select(n, { play: true }); });
+  var timer;
+  form.elements.q.addEventListener("input", function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () { update(false); }, 200);
   });
-  if (poster) poster.addEventListener("click", function () { awake(); select(i, { play: true }); });
+  // One history step per search, not per keystroke.
+  form.elements.q.addEventListener("change", function () { update(true); });
+  FIELDS.slice(1).forEach(function (k) {
+    form.elements[k].addEventListener("change", function () { update(true); });
+  });
+  form.addEventListener("submit", function (e) { e.preventDefault(); update(true); });
 
-  root.addEventListener("click", function (ev) {
-    var t = ev.target.closest ? ev.target.closest("[data-next-go],[data-next-cancel],[data-check-go]") : null;
-    if (!t) return;
-    if (t.hasAttribute("data-next-cancel")) { stop(); return; }
-    awake();
-    stop();
-    select(i + 1, { play: true });
+  Array.prototype.forEach.call(clears, function (b) {
+    b.addEventListener("click", function () {
+      ["q"].concat(FILTERS).forEach(function (k) { form.elements[k].value = ""; });
+      update(true);
+      form.elements.q.focus();
+    });
   });
 
-  document.addEventListener("keydown", function (ev) {
-    if (ev.key === "Escape" && timer) stop();
+  // A topic chip on a card sets the Topic filter to that tag.
+  root.addEventListener("click", function (e) {
+    var chip = e.target.closest ? e.target.closest("a[data-tag]") : null;
+    if (!chip || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    e.preventDefault();
+    form.elements.topic.value = chip.getAttribute("data-tag");
+    update(true);
+    form.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
+    form.elements.topic.focus({ preventScroll: true });
   });
-  document.addEventListener("pointerdown", awake, { passive: true });
 
-  window.addEventListener("popstate", function () {
-    var want = slugIndex(new URLSearchParams(location.search).get("v") || "");
-    if (want < 0 || want === i) return;
-    stop();
-    select(want, { silent: true, play: !!player });
-  });
+  window.addEventListener("popstate", function () { var s = read(); toControls(s); apply(s); });
 
-  // Arriving with ?v=slug selects that video and shows its poster. It does
-  // not start playing: browsers block autoplay with sound before a click,
-  // and a muted autostart is worse than a poster.
-  var start = slugIndex(new URLSearchParams(location.search).get("v") || "");
-  select(start < 0 ? 0 : start, { silent: true });
+  form.hidden = false;
+  bar.hidden = false;
+  var start = read();
+  toControls(start);
+  apply(start);
 })();
 
-/* ---------- 12. Films from the field ----------
-   Every case-study still is a facade. Nothing is fetched from Vimeo until a
-   visitor presses play; then the button is swapped for the player, in place,
-   and focus moves into it so a keyboard user lands where the video is. The
-   privacy hash rides on the button, because these videos are unlisted and
-   the player refuses them without it. */
-(function () {
-  var strip = document.querySelectorAll("[data-film]");
-  if (!strip.length) return;
-  Array.prototype.forEach.call(strip, function (btn) {
-    btn.addEventListener("click", function () {
-      var frame = document.createElement("iframe");
-      frame.src = btn.getAttribute("data-film") + "&autoplay=1";
-      frame.title = btn.getAttribute("aria-label") || "Video";
-      frame.allow = "autoplay; fullscreen; picture-in-picture";
-      frame.setAttribute("allowfullscreen", "");
-      btn.parentNode.replaceChild(frame, btn);
-      frame.focus();
-    });
-  });
-})();
-
-/* ---------- 13. Toggle chips (the volunteer form) ----------
-   The filter chips in job 4 are a radio group: one on at a time, and they
-   hide things. These are the other kind: a handful of chips where any number
-   can be on at once, and they answer a question rather than filtering a list.
-
-   Two extras, both of them things a plain toggle cannot do on its own:
-
-   1. A chip with data-reveals="#id" shows that element while it is pressed,
-      and moves focus into the field inside it, so "Other" opens a box and
-      the caret is already in it.
-   2. The group writes its pressed labels into the hidden input named by
-      data-chip-out. Without that the answer never leaves the page: a button
-      is not a form control, and the form here is a plain submission with no
-      script behind it.  */
+/* 6. Contact form (mockup): required fields, then a thank-you ---------------------- */
 (function () {
   "use strict";
-  var groups = document.querySelectorAll("[data-chips]");
-  Array.prototype.forEach.call(groups, function (group) {
-    var chips = group.querySelectorAll('[aria-pressed]');
-    var out = group.getAttribute("data-chip-out");
-    var field = out ? document.querySelector(out) : null;
-
-    function collect() {
-      if (!field) return;
-      var on = [];
-      Array.prototype.forEach.call(chips, function (c) {
-        if (c.getAttribute("aria-pressed") === "true") on.push(c.textContent.trim());
-      });
-      field.value = on.join(", ");
-    }
-
-    Array.prototype.forEach.call(chips, function (chip) {
-      chip.addEventListener("click", function () {
-        var on = chip.getAttribute("aria-pressed") !== "true";
-        chip.setAttribute("aria-pressed", on ? "true" : "false");
-        var sel = chip.getAttribute("data-reveals");
-        if (sel) {
-          var panel = document.querySelector(sel);
-          if (panel) {
-            panel.hidden = !on;
-            if (on) {
-              var f = panel.querySelector("input, textarea, select");
-              if (f) f.focus();
-            }
-          }
-        }
-        collect();
-      });
+  var form = document.querySelector("[data-contact-form]");
+  if (!form) return;
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var first = null;
+    Array.prototype.forEach.call(form.querySelectorAll("[required]"), function (f) {
+      var field = f.closest(".field"), err = field.querySelector(".field__error");
+      var bad = !f.value.trim() || (f.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim()));
+      field.classList.toggle("has-error", bad);
+      f.setAttribute("aria-invalid", String(bad));
+      if (err) err.hidden = !bad;
+      if (bad && !first) first = f;
     });
-    collect();
+    if (first) { first.focus(); return; }
+    var done = document.querySelector("[data-contact-done]");
+    form.hidden = true;
+    done.hidden = false;
+    done.focus();
   });
 })();
 
-/* ---------- 14. The background loop ----------
-   A silent clip running under a band of type, with the poster image showing
-   until it is worth fetching one and instead of it when it is not.
-
-   Three rules, and the order matters:
-   1. Reduced motion means the poster and nothing else. The video element is
-      removed rather than paused, so nothing is fetched and nothing can start.
-   2. Nothing downloads until the band is near the viewport, and the clip
-      pauses again the moment it leaves. data-src rather than src, the same
-      way job 8 does it.
-   3. It can be stopped. Motion that starts by itself and runs for more than
-      five seconds needs a control (WCAG 2.2.2), so the pause button is
-      written in here, beside the clip it controls, rather than sitting in
-      the markup over a poster on a machine that will never play anything. */
+/* 7. Copy email button ----------------------------------------------------------- */
 (function () {
   "use strict";
-  var holders = document.querySelectorAll("[data-loopbg]");
-  if (!holders.length) return;
-  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  Array.prototype.forEach.call(holders, function (holder) {
-    var v = holder.querySelector("video");
-    if (!v) return;
-    if (still || !("IntersectionObserver" in window)) { v.parentNode.removeChild(v); return; }
-
-    var band = holder.closest(".loopbg") || holder.parentNode;
-    var loaded = false, wanted = true;
-
-    function load() {
-      if (loaded) return;
-      loaded = true;
-      (v.getAttribute("data-src") || "").split(",").forEach(function (src) {
-        src = src.trim();
-        if (!src) return;
-        var s = document.createElement("source");
-        s.src = src;
-        s.type = src.slice(-5) === ".webm" ? "video/webm" : "video/mp4";
-        v.appendChild(s);
-      });
-      v.load();
-    }
-
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "loopbg__pause";
-    btn.hidden = true;
-    btn.textContent = "Pause the background clip";
-    btn.addEventListener("click", function () {
-      wanted = !wanted;
-      btn.textContent = wanted ? "Pause the background clip" : "Play the background clip";
-      if (wanted) { v.play().catch(function () {}); } else { v.pause(); }
+  Array.prototype.forEach.call(document.querySelectorAll("[data-copy]"), function (b) {
+    var label = b.textContent;
+    b.addEventListener("click", function () {
+      var text = b.getAttribute("data-copy");
+      var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = label; }, 2000); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, done);
+      else done();
     });
-    band.appendChild(btn);
-
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) { v.pause(); return; }
-        load();
-        if (wanted) {
-          v.play().then(function () { btn.hidden = false; }).catch(function () {});
-        }
-      });
-    }, { rootMargin: "200px 0px" });
-    io.observe(band);
   });
 })();
 
-/* ---------- 15. Before and after ----------
-   Two photographs of the same ground on two dates, one on top of the other,
-   and a handle that decides how much of the top one you see.
-
-   The handle is a range input rather than a draggable div, because a div
-   cannot be reached with a keyboard, cannot be read by a screen reader, and
-   has no value to announce. A range has all three for free, and pointer
-   dragging is what a range already does. The slider only moves the clip: if
-   the script never runs, the "after" photograph is simply shown whole, which
-   is the more useful of the two to be left with. */
+/* 8. Newsletter (mockup): marks the form subscribed ------------------------------- */
 (function () {
   "use strict";
-  var figs = document.querySelectorAll("[data-compare]");
-  Array.prototype.forEach.call(figs, function (fig) {
-    var range = fig.querySelector('input[type="range"]');
-    if (!range) return;
-    function draw() { fig.style.setProperty("--split", range.value + "%"); }
-    range.addEventListener("input", draw);
-    range.addEventListener("change", draw);
-    draw();
-  });
-})();
-
-/* ---------- 16. A file that has not arrived yet ----------
-   The Wild Ken Hill photographs and clips are referenced at their final paths
-   before the real files are uploaded to public/assets/community/. Until they
-   land, a missing one has to fail quietly: no broken-image icon, no shift in
-   the layout, and the slot still saying what belongs in it. The image is
-   replaced in place by a toned box carrying its own alt text, which is the
-   description that was written for it, so a sighted visitor reads what a
-   screen-reader user would have heard. Capture phase, because the error event
-   on an image does not bubble. */
-(function () {
-  // On a live page an empty slot goes away rather than standing there as a
-  // dashed box: a visitor should see a finished page, not the production
-  // schedule. Add ?notes=1, the way every other placeholder on this site is
-  // read, and the box comes back with the description of what belongs in it.
-  var notes = document.documentElement.hasAttribute("data-notes");
-
-  function box(text) {
-    var p = document.createElement("p");
-    p.className = "media-missing";
-    p.textContent = text;
-    return p;
-  }
-
-  function retire(el, text) {
-    if (!el.parentNode) return;
-    if (notes) { el.parentNode.replaceChild(box(text), el); return; }
-    // The feature block is the exception. Its photograph is one half of a
-    // two-part object, and the empty half is a cream field beside the green
-    // panel, which still reads as a design rather than as a hole.
-    if (el.closest(".latest__img")) { el.parentNode.removeChild(el); return; }
-    // The list item first, then the figure. Asking closest() for both at once
-    // returns the figure every time, because the figure is the nearer ancestor,
-    // and an empty list item would be left holding a gap in the grid.
-    var slot = el.closest(".reel > li, .pair > li, .post__pics > li") || el.closest("figure") || el;
-    slot.hidden = true;
-  }
-
-  // A list of photographs with every photograph gone is an empty list with
-  // spacing around it. Take the list with them.
-  function tidy() {
-    Array.prototype.forEach.call(document.querySelectorAll(".post__pics, .pair, .reel"), function (ul) {
-      var kids = Array.prototype.slice.call(ul.children);
-      if (kids.length && kids.every(function (li) { return li.hidden; })) ul.hidden = true;
-    });
-  }
-
-  function dropImage(el) {
-    if (el.getAttribute("data-failed") === "true" || !el.parentNode) return;
-    el.setAttribute("data-failed", "true");
-    retire(el, el.alt || "Photograph to come");
-    // Here rather than only in the sweep: a lazy photograph below the fold
-    // does not try to load until it is scrolled to, long after load fired.
-    tidy();
-  }
-
-  document.addEventListener("error", function (e) {
-    var el = e.target;
-    if (!el || !el.hasAttribute || !el.hasAttribute("data-optional")) return;
-
-    if (el.tagName === "IMG") { dropImage(el); return; }
-
-    var v = null;
-    if (el.tagName === "VIDEO") v = el;
-    else if (el.tagName === "SOURCE" && el.parentNode && el.parentNode.tagName === "VIDEO") v = el.parentNode;
-    if (!v) return;
-
-    // One <source> failing only means that codec is missing; the browser
-    // moves on to the next. Wait until the element has run out of sources,
-    // and check on the next tick, because networkState is not settled at the
-    // moment the last source's error fires.
-    window.setTimeout(function () {
-      if (v.getAttribute("data-failed") === "true") return;
-      if (v.networkState !== v.NETWORK_NO_SOURCE) return;
-      v.setAttribute("data-failed", "true");
-      var text = v.getAttribute("aria-label") || "Clip to come";
-      function drop() {
-        if (!v.parentNode) return;
-        // The play button belongs to a clip. With no clip behind it there is
-        // nothing to press, so it goes with the video rather than sitting on
-        // the box that says the file has not arrived.
-        var go = v.parentNode.querySelector(".clip__go");
-        if (go) go.parentNode.removeChild(go);
-        retire(v, text);
-        tidy();
-      }
-      // A poster that does load is a perfectly good still, so keep it and
-      // only fall back to text when there is nothing at all to show.
-      if (v.poster) {
-        var probe = new Image();
-        probe.onerror = drop;
-        probe.src = v.poster;
-      } else {
-        drop();
-      }
-    }, 0);
-  }, true);
-
-  // site.js is the last thing on the page, so an image that failed while the
-  // document was still parsing fired its error before this listener existed.
-  // Sweep for those once: complete with no intrinsic width is a broken image.
-  function sweep() {
-    Array.prototype.forEach.call(document.querySelectorAll("img[data-optional]"), function (im) {
-      if (im.complete && im.naturalWidth === 0) dropImage(im);
-    });
-    tidy();
-  }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", sweep);
-  else sweep();
-  window.addEventListener("load", sweep);
-})();
-
-/* ---------- 17. The reel: short silent clips cut to circles ----------
-   The one piece of motion on the site. Autoplay is never written into the
-   markup, so with JavaScript off every clip sits on its poster behind a play
-   button and nothing moves on its own.
-
-   With JavaScript on and motion allowed, an IntersectionObserver plays a clip
-   while it is on screen and pauses it the moment it leaves, which is what
-   keeps a page of four of them cheap on a phone. Pressing a clip pauses or
-   resumes it by hand, and a hand-paused clip is left alone by the observer.
-
-   Where the visitor has asked for reduced motion, nothing autoplays: the
-   poster and the play button stay, and pressing one plays that clip and only
-   that clip. The preference is watched, so turning it on mid-visit stops
-   every clip without a reload. */
-(function () {
-  var clips = document.querySelectorAll("[data-clip]");
-  if (!clips.length) return;
-
-  var mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var list = Array.prototype.slice.call(clips).map(function (v) {
-    return { v: v, go: v.parentNode.querySelector(".clip__go"), onScreen: false, byHand: false };
-  });
-
-  // The button is never taken away while a clip is playing. Content that moves
-  // on its own has to be stoppable, so the control stays in the page and stays
-  // in the tab order; it just fades out of the way, and comes back on hover or
-  // focus, carrying a pause mark instead of a play mark.
-  function mark(c, playing) {
-    if (!c.go) return;
-    var name = c.v.getAttribute("aria-label") || "clip";
-    c.go.setAttribute("aria-label", (playing ? "Pause the clip, " : "Play the clip, ") + name);
-    c.go.setAttribute("data-state", playing ? "playing" : "paused");
-  }
-
-  function play(c) {
-    var p = c.v.play();
-    // Autoplay can still be refused (a phone on low power, a browser policy).
-    // A refusal is not an error to report: leave the poster and the button.
-    if (p && p.catch) p.catch(function () { mark(c, false); });
-    mark(c, true);
-  }
-
-  function pause(c) {
-    c.v.pause();
-    mark(c, false);
-  }
-
-  function sync() {
-    list.forEach(function (c) {
-      if (mq.matches) { pause(c); c.byHand = false; return; }
-      if (c.byHand) return;
-      if (c.onScreen) play(c); else pause(c);
-    });
-  }
-
-  list.forEach(function (c) {
-    if (!c.go) return;
-    c.go.hidden = false;
-    mark(c, false);
-    c.go.addEventListener("click", function () {
-      if (c.v.paused) { c.byHand = true; play(c); }
-      else { c.byHand = true; pause(c); }
-    });
-  });
-
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        var c = null;
-        list.forEach(function (x) { if (x.v === entry.target) c = x; });
-        if (!c) return;
-        c.onScreen = entry.isIntersecting;
-        if (!entry.isIntersecting) c.byHand = false;   // off screen, start clean
-      });
-      sync();
-    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.25 });
-    list.forEach(function (c) { io.observe(c.v); });
-  } else {
-    list.forEach(function (c) { c.onScreen = true; });
-    sync();
-  }
-
-  if (mq.addEventListener) mq.addEventListener("change", sync);
-  else if (mq.addListener) mq.addListener(sync);
-
-  sync();
-})();
-
-/* ---------- 15. Rotating images [data-rotate] ---------- */
-(function () {
-  "use strict";
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  var imgs = document.querySelectorAll("[data-rotate]");
-  if (!imgs.length) return;
-  imgs.forEach(function (img) {
-    var srcs = img.getAttribute("data-rotate").split(",");
-    if (srcs.length < 2) return;
-    var idx = 0;
-    img.style.transition = "opacity .6s ease";
-    setInterval(function () {
-      img.style.opacity = "0";
-      setTimeout(function () {
-        idx = (idx + 1) % srcs.length;
-        img.src = srcs[idx];
-        img.style.opacity = "1";
-      }, 600);
-    }, 4000);
-  });
-})();
-
-/* ---------- 18. Newsletter submission ---------- */
-(function () {
-  "use strict";
-  var forms = document.querySelectorAll("[data-newsletter]");
-  if (!forms.length) return;
-
-  function handle(form) {
+  Array.prototype.forEach.call(document.querySelectorAll("[data-newsletter]"), function (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var input = form.querySelector('input[type="email"]');
-      if (!input || !input.value) return;
+      if (!input || !input.value) { if (input) input.focus(); return; }
       var btn = form.querySelector('button[type="submit"]');
       if (btn) { btn.disabled = true; btn.textContent = "Subscribed"; }
       input.disabled = true;
-      try { sessionStorage.setItem("sfw-subscribed", "1"); } catch (ex) {}
     });
-  }
-  Array.prototype.forEach.call(forms, handle);
+  });
 })();
 
-/* ---------- 19. Newsletter nudge (slide-in) ---------- */
+/* 9. Header "Subscribe" link: focus the footer newsletter field -------------------- */
 (function () {
   "use strict";
-  var nudge = document.getElementById("nudge");
-  if (!nudge) return;
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#newsletter"]'), function (a) {
+    a.addEventListener("click", function () {
+      var i = document.getElementById("newsletter-email");
+      if (i) setTimeout(function () { i.focus({ preventScroll: true }); }, 400);
+    });
+  });
+})();
 
-  try { if (sessionStorage.getItem("sfw-nudge-dismissed") || sessionStorage.getItem("sfw-subscribed")) return; }
-  catch (e) {}
+/* 10. Video facade: swap the thumbnail for the player on click ------------------ */
+(function () {
+  "use strict";
+  Array.prototype.forEach.call(document.querySelectorAll("[data-embed]"), function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var f = document.createElement("iframe");
+      f.src = a.getAttribute("data-embed") + (a.getAttribute("data-embed").indexOf("?") > -1 ? "&" : "?") + "autoplay=1";
+      f.title = a.getAttribute("data-title") || "Video";
+      f.allow = "autoplay; fullscreen; picture-in-picture";
+      f.setAttribute("allowfullscreen", "");
+      var wrap = document.createElement("div");
+      wrap.className = "embed";
+      wrap.appendChild(f);
+      a.parentNode.replaceChild(wrap, a);
+      f.focus();
+    });
+  });
+})();
 
-  var closeBtn = nudge.querySelector(".nudge__close");
-  var shown = false;
+// Workshops: country and year filters (same behaviour as the staging plugin).
+(function () {
+  var root = document.querySelector("[data-sfw-workshops]");
+  if (!root) return;
+  var country = "", year = "", chips = root.querySelectorAll("[data-sfw-country]"), sel = root.querySelector("[data-sfw-year]");
+  function apply() {
+    var n = { upcoming: 0, past: 0 };
+    root.querySelectorAll("[data-sfw-workshop-card]").forEach(function (c) {
+      var show = (!country || c.dataset.country === country) && (!year || c.dataset.year === year);
+      c.classList.toggle("is-hidden", !show);
+      if (show) n[c.dataset.bucket]++;
+    });
+    ["upcoming", "past"].forEach(function (b) {
+      var m = root.querySelector("[data-sfw-empty-" + b + "]");
+      if (m) { m.hidden = n[b] > 0; m.classList.toggle("is-hidden", n[b] > 0); }
+    });
+  }
+  chips.forEach(function (b) {
+    b.setAttribute("aria-pressed", b.classList.contains("is-active"));
+    b.addEventListener("click", function () {
+      country = b.dataset.sfwCountry;
+      chips.forEach(function (x) { x.classList.toggle("is-active", x === b); x.setAttribute("aria-pressed", x === b); });
+      apply();
+    });
+  });
+  if (sel) sel.addEventListener("change", function () { year = sel.value; apply(); });
+  // map pins: pick that country's chip, then scroll to the list
+  root.querySelectorAll("[data-sfw-pin]").forEach(function (p) {
+    p.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      var c = root.querySelector('[data-sfw-country="' + p.dataset.sfwPin + '"]');
+      if (c) c.click();
+      root.querySelectorAll("[data-sfw-pin]").forEach(function (x) { x.classList.toggle("is-on", x === p); });
+      var t = document.getElementById("workshop-list"); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+  chips.forEach(function (b) { b.addEventListener("click", function () { root.querySelectorAll("[data-sfw-pin]").forEach(function (x) { x.classList.toggle("is-on", x.dataset.sfwPin === b.dataset.sfwCountry); }); }); });
+})();
 
-  function dismiss() {
-    nudge.setAttribute("data-visible", "false");
-    try { sessionStorage.setItem("sfw-nudge-dismissed", "1"); } catch (ex) {}
+// Workshop photo galleries: open a photo larger, arrows move, Escape closes.
+(function () {
+  var g = document.querySelector("[data-ws-gallery]");
+  if (!g || !window.HTMLDialogElement) return;
+  var imgs = Array.prototype.slice.call(g.querySelectorAll("img")), i = 0;
+  var d = document.createElement("dialog");
+  d.className = "ws-lightbox";
+  d.innerHTML = '<img alt=""><p></p><button type="button" data-prev aria-label="Previous photo">&#8249;</button><button type="button" data-next aria-label="Next photo">&#8250;</button><button type="button" data-close aria-label="Close">&times;</button>';
+  document.body.appendChild(d);
+  var big = d.querySelector("img"), cap = d.querySelector("p");
+  function largest(im) {
+    var s = (im.getAttribute("srcset") || "").split(",").map(function (x) { return x.trim().split(" "); });
+    s.sort(function (a, b) { return parseInt(b[1] || 0, 10) - parseInt(a[1] || 0, 10); });
+    return s.length && s[0][0] ? s[0][0] : im.currentSrc || im.src;
+  }
+  function show(k) { i = (k + imgs.length) % imgs.length; big.src = largest(imgs[i]); big.alt = imgs[i].alt; var li = imgs[i].closest("li"); cap.textContent = (li && li.dataset.caption) || imgs[i].alt; }
+  imgs.forEach(function (im, k) {
+    im.tabIndex = 0;
+    im.setAttribute("role", "button");
+    im.addEventListener("click", function () { show(k); d.showModal(); });
+    im.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); show(k); d.showModal(); } });
+  });
+  d.querySelector("[data-prev]").addEventListener("click", function () { show(i - 1); });
+  d.querySelector("[data-next]").addEventListener("click", function () { show(i + 1); });
+  d.querySelector("[data-close]").addEventListener("click", function () { d.close(); });
+  d.addEventListener("click", function (ev) { if (ev.target === d) d.close(); });
+  d.addEventListener("keydown", function (ev) { if (ev.key === "ArrowLeft") show(i - 1); else if (ev.key === "ArrowRight") show(i + 1); });
+})();
+
+/* Programme plate: hovering or focusing a circle shows its course in the panel and dims the rest. */
+(function () {
+  document.querySelectorAll("[data-pp]").forEach(function (w) {
+    var svg = w.querySelector("svg"), k = w.querySelector(".pp-detail__k"), n = w.querySelector(".pp-detail__n"), l = w.querySelector(".pp-detail__l");
+    var d0 = [k.textContent, n.textContent, l.textContent];
+    function on(a) {
+      svg.querySelectorAll("a.is-on").forEach(function (x) { x.classList.remove("is-on"); });
+      if (!a) { svg.classList.remove("is-dim"); k.textContent = d0[0]; n.textContent = d0[1]; l.textContent = d0[2]; return; }
+      a.classList.add("is-on"); svg.classList.add("is-dim");
+      k.textContent = a.dataset.ppKicker || ""; n.textContent = a.dataset.ppName || ""; l.textContent = a.dataset.ppLine || "";
+    }
+    svg.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("mouseenter", function () { on(a); });
+      a.addEventListener("focus", function () { on(a); });
+    });
+    svg.addEventListener("mouseleave", function () { on(null); });
+  });
+})();
+
+/* About timeline: grow the hypha line and mark each year as the reader reaches it. */
+(function () {
+  "use strict";
+  var lines = document.querySelectorAll(".timeline");
+  if (!lines.length || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+  document.documentElement.classList.add("js-grow");
+  function draw() {
+    var mark = window.innerHeight * 0.62;
+    Array.prototype.forEach.call(lines, function (tl) {
+      var r = tl.getBoundingClientRect();
+      tl.style.setProperty("--grow", String(Math.max(0, Math.min(1, (mark - r.top) / r.height))));
+      Array.prototype.forEach.call(tl.children, function (li) {
+        li.classList.toggle("is-reached", li.getBoundingClientRect().top + 12 < mark);
+      });
+    });
+  }
+  var ticking = false;
+  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; draw(); }); } }, { passive: true });
+  window.addEventListener("resize", draw);
+  draw();
+})();
+
+/* Things that rise into place once, when they first come into view. */
+(function () {
+  "use strict";
+  var els = document.querySelectorAll("[data-rise]");
+  if (!els.length || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.documentElement.classList.add("js-rise");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+  }, { threshold: 0.25 });
+  Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+})();
+
+/* Publications, research map: papers joined to their topics and co-authors, laid out by a small force simulation. */
+(function () {
+  "use strict";
+  var root = document.querySelector("[data-research-map]");
+  if (!root) return;
+  var D = JSON.parse(root.querySelector("[data-rm-data]").textContent);
+  var svg = root.querySelector("[data-rm-svg]"), panel = root.querySelector("[data-rm-panel]"), NS = "http://www.w3.org/2000/svg";
+  var FC = {}; D.facets.forEach(function (f, i) { FC[f] = "var(--f" + i + ")"; });
+  var state = { set: "elaine", people: true, facets: {}, q: "", sel: null };
+  D.facets.forEach(function (f) { state.facets[f] = true; });
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var W = 1000, H = 760, view = { x: 0, y: 0, k: 1 }, nodes = [], links = [], byId = {}, g, gl, gn, alpha = 1, raf = 0;
+  var pos = {}; // keep positions between rebuilds
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function el(n, a) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; }
+
+  function build() {
+    var facetOf = {}; D.topics.forEach(function (t) { facetOf[t.name] = t.facet; });
+    var papers = D.papers.filter(function (p) { return (state.set === "all" || p.c === "elaine") && p.topics.some(function (t) { return state.facets[facetOf[t]]; }); });
+    var used = {}, deg = {};
+    nodes = []; links = []; byId = {};
+    papers.forEach(function (p) {
+      var n = { id: p.id, kind: "paper", p: p, r: 4 };
+      nodes.push(n);
+      p.topics.forEach(function (t) { if (!state.facets[facetOf[t]]) return; links.push({ s: p.id, t: "t:" + t }); used["t:" + t] = 1; deg["t:" + t] = (deg["t:" + t] || 0) + 1; });
+      if (state.people) p.names.forEach(function (a) { if (D.people.some(function (x) { return x.name === a; })) { links.push({ s: p.id, t: "a:" + a }); used["a:" + a] = 1; deg["a:" + a] = (deg["a:" + a] || 0) + 1; } });
+    });
+    D.topics.forEach(function (t) { if (used[t.id]) nodes.push({ id: t.id, kind: "topic", t: t, r: 8 + Math.sqrt(deg[t.id]) * 3.2 }); });
+    if (state.people) D.people.forEach(function (a) { if (used[a.id]) nodes.push({ id: a.id, kind: "person", a: a, r: 6 + Math.sqrt(deg[a.id]) * 2 }); });
+    nodes.forEach(function (n) {
+      byId[n.id] = n; var o = pos[n.id], ang = Math.random() * 6.283, rad = n.kind === "paper" ? 120 : 300;
+      if (n.kind === "topic") { ang = (D.facets.indexOf(n.t.facet) + Math.random() * .8) / D.facets.length * 6.283; }
+      n.x = o ? o.x : W / 2 + Math.cos(ang) * rad * 1.5 * (0.6 + Math.random() * .5); n.y = o ? o.y : H / 2 + Math.sin(ang) * rad * .55 * (0.6 + Math.random() * .5); n.vx = 0; n.vy = 0;
+      n.nb = [];
+    });
+    links = links.filter(function (l) { return byId[l.s] && byId[l.t]; });
+    links.forEach(function (l) { l.a = byId[l.s]; l.b = byId[l.t]; l.a.nb.push(l.b); l.b.nb.push(l.a); });
+    state.sel = null; svg.classList.remove("is-focus"); panel.innerHTML = panel.dataset.intro || panel.innerHTML; draw(); alpha = 1; fitted = false; if (reduce) { for (var i = 0; i < 300; i++) tick(); paint(); fitted = true; fit(); } else kick();
+    list();
   }
 
-  closeBtn.addEventListener("click", dismiss);
+  function draw() {
+    var bx = svg.getBoundingClientRect(); if (bx.width) H = Math.round(W * bx.height / bx.width);
+    svg.innerHTML = ""; svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    g = el("g", {}); gl = el("g", {}); gn = el("g", {}); g.appendChild(gl); g.appendChild(gn); svg.appendChild(g);
+    links.forEach(function (l) { l.el = el("line", {}); gl.appendChild(l.el); });
+    nodes.sort(function (a, b) { return (a.kind === "paper") - (b.kind === "paper"); }).reverse();
+    nodes.forEach(function (n) {
+      var e = el("g", { "class": "n n--" + n.kind + (n.kind === "paper" && n.p.c !== "elaine" ? " is-field" : "") });
+      if (n.kind === "paper") e.appendChild(el("circle", { r: 9, "class": "hit" }));
+      var c = el("circle", { r: n.r });
+      if (n.kind === "topic") c.setAttribute("style", "fill:" + FC[n.t.facet]);
+      e.appendChild(c);
+      if (n.kind !== "paper") {
+        e.setAttribute("tabindex", "0"); e.setAttribute("role", "button");
+        e.setAttribute("aria-label", n.kind === "topic" ? n.t.name + ", topic" : n.a.name + ", colleague");
+        var tx = el("text", { y: n.r + 13, "text-anchor": "middle" }); tx.textContent = n.kind === "topic" ? n.t.name : n.a.name; e.appendChild(tx);
+      } else { var ti = el("title", {}); ti.textContent = n.p.t + " (" + n.p.y + ")"; e.appendChild(ti); }
+      n.el = e; gn.appendChild(e);
+      e.addEventListener("mouseenter", function () { hot(n); tipShow(n); });
+      e.addEventListener("mousemove", tipMove);
+      e.addEventListener("mouseleave", function () { hot(state.sel ? byId[state.sel] : null); tip.hidden = true; });
+      e.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(n); } });
+      e.addEventListener("focus", function () { hot(n); });
+      e.addEventListener("pointerdown", function (ev) { dragN = n; ev.stopPropagation(); start(ev); });
+    });
+    applyView(); paint(); search();
+  }
 
-  nudge.querySelector("[data-newsletter]").addEventListener("submit", function () {
-    setTimeout(dismiss, 800);
+  function tick() {
+    var i, j, a, b, dx, dy, d2, d, f, k = alpha;
+    for (i = 0; i < nodes.length; i++) for (j = i + 1; j < nodes.length; j++) {
+      a = nodes[i]; b = nodes[j]; dx = b.x - a.x; dy = b.y - a.y; d2 = dx * dx + dy * dy || .01;
+      if (d2 > 160000) continue;
+      f = (a.kind === "paper" && b.kind === "paper" ? 140 : a.kind !== "paper" && b.kind !== "paper" ? 5200 : 700) * k / d2; d = Math.sqrt(d2);
+      a.vx -= dx / d * f; a.vy -= dy / d * f; b.vx += dx / d * f; b.vy += dy / d * f;
+      var m = a.r + b.r + 3; if (d < m) { var o = (m - d) / d * .5; a.x -= dx * o; a.y -= dy * o; b.x += dx * o; b.y += dy * o; }
+    }
+    links.forEach(function (l) {
+      a = l.a; b = l.b; dx = b.x - a.x; dy = b.y - a.y; d = Math.sqrt(dx * dx + dy * dy) || 1;
+      var len = l.b.kind === "person" ? 95 : 80, s = (d - len) / d * .03 * k;
+      a.vx += dx * s; a.vy += dy * s; b.vx -= dx * s * .35; b.vy -= dy * s * .35;
+    });
+    nodes.forEach(function (n) {
+      var gr = n.nb.length < 2 ? 4 : 1; n.vx += (W / 2 - n.x) * .0006 * k * gr; n.vy += (H / 2 - n.y) * .0032 * k * gr;
+      if (n === dragN) { n.vx = n.vy = 0; return; }
+      n.vx *= .82; n.vy *= .82; n.x += n.vx; n.y += n.vy;
+    });
+    alpha *= .985;
+  }
+  function paint() {
+    links.forEach(function (l) { l.el.setAttribute("x1", l.a.x.toFixed(1)); l.el.setAttribute("y1", l.a.y.toFixed(1)); l.el.setAttribute("x2", l.b.x.toFixed(1)); l.el.setAttribute("y2", l.b.y.toFixed(1)); });
+    nodes.forEach(function (n) { n.el.setAttribute("transform", "translate(" + n.x.toFixed(1) + "," + n.y.toFixed(1) + ")"); pos[n.id] = { x: n.x, y: n.y }; });
+  }
+  function fit() {
+    if (!nodes.length) return;
+    var xs = nodes.map(function (n) { return n.x; }).sort(function (a, b) { return a - b; }), ys = nodes.map(function (n) { return n.y; }).sort(function (a, b) { return a - b; });
+    var q = function (a, f) { return a[Math.max(0, Math.min(a.length - 1, Math.round(f * (a.length - 1))))]; };
+    var x0 = q(xs, .02) - 40, x1 = q(xs, .98) + 40, y0 = q(ys, .02) - 30, y1 = q(ys, .98) + 40;
+    var k = Math.min(2.2, Math.min((W - 60) / (x1 - x0), (H - 60) / (y1 - y0)));
+    view = { k: k, x: W / 2 - (x0 + x1) / 2 * k, y: H / 2 - (y0 + y1) / 2 * k }; applyView();
+  }
+  var fitted = false;
+  function loop() { tick(); paint(); if (!fitted && alpha < .25) { fitted = true; fit(); } if (alpha > .02) raf = requestAnimationFrame(loop); else { raf = 0; if (fitted === true) { fitted = 2; fit(); } } }
+  function kick() { alpha = Math.max(alpha, .3); if (!raf) raf = requestAnimationFrame(loop); }
+
+  function hot(n) {
+    svg.classList.toggle("is-focus", !!n);
+    nodes.forEach(function (m) { m.el.classList.remove("is-hot"); });
+    links.forEach(function (l) { l.el.classList.remove("is-hot"); });
+    if (!n) return;
+    n.el.classList.add("is-hot");
+    links.forEach(function (l) { if (l.a === n || l.b === n) { l.el.classList.add("is-hot"); l.a.el.classList.add("is-hot"); l.b.el.classList.add("is-hot"); } });
+  }
+
+  function papersOf(n) { return n.nb.filter(function (m) { return m.kind === "paper"; }).map(function (m) { return m.p; }).sort(function (a, b) { return a.y - b.y; }); }
+  function plist(ps) { return "<ul>" + ps.map(function (p) { return '<li><a href="' + esc(p.href) + '">' + esc(p.t) + "</a> <span>" + p.y + "</span></li>"; }).join("") + "</ul>"; }
+  function related(n, kind) {
+    var c = {}; n.nb.forEach(function (p) { p.nb.forEach(function (m) { if (m !== n && m.kind === kind) c[m.id] = (c[m.id] || 0) + 1; }); });
+    return Object.keys(c).sort(function (a, b) { return c[b] - c[a]; }).slice(0, 6).map(function (id) { return '<button type="button" class="linkish" data-rm-go="' + esc(id) + '">' + esc(byId[id].kind === "topic" ? byId[id].t.name : byId[id].a.name) + "</button> <span>(" + c[id] + ")</span>"; }).join(", ");
+  }
+  function select(n) {
+    if (state.sel && byId[state.sel]) byId[state.sel].el.classList.remove("is-sel");
+    state.sel = n ? n.id : null; hot(n);
+    if (!n) return;
+    n.el.classList.add("is-sel");
+    var h;
+    if (n.kind === "topic") {
+      var ps = papersOf(n);
+      h = '<p class="rm-panel__k">' + esc(n.t.facet) + '</p><h3 class="rm-panel__h">' + esc(n.t.name) + "</h3>" + (n.t.def ? "<p>" + esc(n.t.def.charAt(0).toUpperCase() + n.t.def.slice(1)) + "</p>" : "") +
+        '<p class="meta">' + ps.length + " paper" + (ps.length === 1 ? "" : "s") + (ps.length ? ", " + ps[0].y + " to " + ps[ps.length - 1].y : "") + "</p>" +
+        "<p><strong>Often studied with:</strong> " + related(n, "topic") + "</p>" + plist(ps);
+    } else if (n.kind === "person") {
+      var qs = papersOf(n);
+      h = '<p class="rm-panel__k">Colleague</p><h3 class="rm-panel__h">' + esc(n.a.name) + "</h3>" +
+        '<p class="meta">' + n.a.n + " papers with Dr. Ingham" + (qs.length ? ", " + qs[0].y + " to " + qs[qs.length - 1].y : "") + "</p>" +
+        "<p><strong>Topics together:</strong> " + related(n, "topic") + "</p>" + plist(qs);
+    } else {
+      var p = n.p;
+      h = '<p class="rm-panel__k">' + esc(p.type) + " &middot; " + p.y + '</p><h3 class="rm-panel__h"><a href="' + esc(p.href) + '">' + esc(p.t) + "</a></h3>" +
+        '<p class="meta">' + esc(p.authors) + (p.cite ? ". " + esc(p.cite) : "") + "</p><p>" + esc(p.s) + "</p>" +
+        (p.u ? "<p><strong>Useful for:</strong> " + esc(p.u) + "</p>" : "") +
+        "<p><strong>Threads:</strong> " + n.nb.map(function (m) { return '<button type="button" class="linkish" data-rm-go="' + esc(m.id) + '">' + esc(m.kind === "topic" ? m.t.name : m.a.name) + "</button>"; }).join(", ") + "</p>";
+    }
+    panel.innerHTML = h;
+  }
+  panel.addEventListener("click", function (ev) { var b = ev.target.closest("[data-rm-go]"); if (b && byId[b.dataset.rmGo]) { select(byId[b.dataset.rmGo]); centre(byId[b.dataset.rmGo]); } });
+
+  var tip = root.querySelector("[data-rm-tip]"), stage = root.querySelector(".rm-stage");
+  function tipShow(n) {
+    var h;
+    if (n.kind === "paper") h = "<b>" + esc(n.p.t) + "</b><span>" + n.p.y + " &middot; " + esc(n.p.type) + " &middot; " + n.nb.filter(function (m) { return m.kind === "topic"; }).map(function (m) { return esc(m.t.name); }).join(", ") + "</span>";
+    else if (n.kind === "topic") h = "<b>" + esc(n.t.name) + "</b><span>" + esc(n.t.facet) + " &middot; " + papersOf(n).length + " papers</span>";
+    else h = "<b>" + esc(n.a.name) + "</b><span>" + n.a.n + " papers with Dr. Ingham</span>";
+    tip.innerHTML = h; tip.hidden = false;
+  }
+  function tipMove(ev) { var r = stage.getBoundingClientRect(), x = ev.clientX - r.left + 14, y = ev.clientY - r.top + 14; var sw = svg.getBoundingClientRect().width; if (x > sw - 290) x -= 300; if (x < 4) x = 4; tip.style.left = x + "px"; tip.style.top = y + "px"; }
+  function centre(n) { view.x = W / 2 - n.x * view.k; view.y = H / 2 - n.y * view.k; applyView(); }
+  function applyView() { if (g) g.setAttribute("transform", "translate(" + view.x + "," + view.y + ") scale(" + view.k + ")"); }
+  root.querySelectorAll("[data-rm-zoom]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var z = parseFloat(b.dataset.rmZoom);
+      if (!z) { fit(); return; } else { var k2 = Math.max(.5, Math.min(4, view.k * z)); view.x = W / 2 - (W / 2 - view.x) * k2 / view.k; view.y = H / 2 - (H / 2 - view.y) * k2 / view.k; view.k = k2; }
+      applyView();
+    });
   });
 
-  function check() {
-    if (shown) return;
-    var scrolled = window.scrollY || window.pageYOffset || 0;
-    var total = document.documentElement.scrollHeight - window.innerHeight;
-    if (total > 0 && scrolled / total >= 0.6) {
-      shown = true;
-      nudge.setAttribute("data-visible", "true");
-    }
-  }
+  // drag nodes, pan the background
+  var dragN = null, panning = false, moved = false, last = null;
+  function pt(ev) { var r = svg.getBoundingClientRect(); return { x: (ev.clientX - r.left) / r.width * W, y: (ev.clientY - r.top) / r.height * H }; }
+  function start(ev) { last = pt(ev); moved = false; svg.setPointerCapture && svg.setPointerCapture(ev.pointerId); svg.classList.add("is-dragging"); }
+  svg.addEventListener("pointerdown", function (ev) { if (dragN) return; panning = true; start(ev); });
+  svg.addEventListener("pointermove", function (ev) {
+    if (!last) return; var p = pt(ev), dx = p.x - last.x, dy = p.y - last.y; if (Math.abs(dx) + Math.abs(dy) > 2) moved = true; last = p;
+    if (dragN) { dragN.x += dx / view.k; dragN.y += dy / view.k; kick(); if (reduce) paint(); }
+    else if (panning) { view.x += dx; view.y += dy; applyView(); }
+  });
+  function end() { if (dragN && !moved) select(dragN); if (!dragN && panning && !moved) { select(null); panel.innerHTML = panel.dataset.intro; } dragN = null; panning = false; last = null; svg.classList.remove("is-dragging"); setTimeout(function () { moved = false; }, 0); }
+  svg.addEventListener("pointerup", end); svg.addEventListener("pointercancel", end);
+  svg.addEventListener("wheel", function (ev) { if (!ev.ctrlKey && !ev.metaKey) return; ev.preventDefault(); var p = pt(ev), k2 = Math.max(.5, Math.min(4, view.k * (ev.deltaY < 0 ? 1.12 : .89))); view.x = p.x - (p.x - view.x) * k2 / view.k; view.y = p.y - (p.y - view.y) * k2 / view.k; view.k = k2; applyView(); }, { passive: false });
+  panel.dataset.intro = panel.innerHTML;
 
-  window.addEventListener("scroll", check, { passive: true });
+  // controls
+  root.querySelectorAll('[data-rm-set="all"]').forEach(function (b) { b.addEventListener("click", function () { state.set = state.set === "all" ? "elaine" : "all"; b.classList.toggle("is-active", state.set === "all"); b.setAttribute("aria-pressed", state.set === "all"); build(); }); });
+  root.querySelectorAll("[data-rm-layer]").forEach(function (b) { b.addEventListener("click", function () { state.people = !state.people; b.classList.toggle("is-active", state.people); b.setAttribute("aria-pressed", state.people); build(); }); });
+  root.querySelectorAll("[data-rm-facet]").forEach(function (b) { b.addEventListener("click", function () { var on = !b.classList.contains("is-active"); b.classList.toggle("is-active", on); b.setAttribute("aria-pressed", on); state.facets[b.dataset.rmFacet] = on; build(); }); });
+  root.querySelector("[data-rm-jump]").addEventListener("click", function (ev) { var b = ev.target.closest("[data-rm-go]"); if (!b) return; var n = byId[b.dataset.rmGo]; if (!n) return; select(n); centre(n); root.querySelectorAll("[data-rm-jump] .chip").forEach(function (x) { x.classList.toggle("is-active", x === b); }); });
+  var q = root.querySelector("[data-rm-q]");
+  function search() {
+    var s = (q.value || "").trim().toLowerCase(); state.q = s;
+    if (!s) { if (!state.sel) hot(null); return; }
+    svg.classList.add("is-focus");
+    nodes.forEach(function (n) { var txt = n.kind === "topic" ? n.t.name : n.kind === "person" ? n.a.name : n.p.t + " " + n.p.authors; n.el.classList.toggle("is-hot", txt.toLowerCase().indexOf(s) > -1); });
+    links.forEach(function (l) { l.el.classList.toggle("is-hot", l.a.el.classList.contains("is-hot") || l.b.el.classList.contains("is-hot")); });
+  }
+  q.addEventListener("input", search);
+  q.addEventListener("keydown", function (ev) { if (ev.key === "Enter") { var n = nodes.filter(function (m) { return m.el.classList.contains("is-hot"); }).sort(function (a, b) { return (a.kind === "paper") - (b.kind === "paper"); })[0]; if (n) { select(n); centre(n); } } });
+
+  function list() {
+    var box = root.querySelector("[data-rm-list]"), h = "";
+    D.facets.forEach(function (f) {
+      var ts = nodes.filter(function (n) { return n.kind === "topic" && n.t.facet === f; });
+      if (!ts.length) return;
+      h += "<h3>" + esc(f) + "</h3><ul>" + ts.map(function (n) { return '<li><button type="button" class="linkish" data-rm-go="' + esc(n.id) + '">' + esc(n.t.name) + "</button> (" + papersOf(n).length + ")</li>"; }).join("") + "</ul>";
+    });
+    var ps = nodes.filter(function (n) { return n.kind === "person"; });
+    if (ps.length) h += "<h3>Colleagues</h3><ul>" + ps.map(function (n) { return '<li><button type="button" class="linkish" data-rm-go="' + esc(n.id) + '">' + esc(n.a.name) + "</button> (" + n.a.n + ")</li>"; }).join("") + "</ul>";
+    box.innerHTML = h;
+  }
+  root.querySelector("[data-rm-list]").addEventListener("click", function (ev) { var b = ev.target.closest("[data-rm-go]"); if (b && byId[b.dataset.rmGo]) { select(byId[b.dataset.rmGo]); centre(byId[b.dataset.rmGo]); panel.scrollIntoView({ block: "nearest", behavior: "smooth" }); } });
+  build();
+})();
+
+/* Practitioner map: a bubble per country. Choosing one filters the directory list below;
+   hovering a practitioner's card lights up their country. */
+(function () {
+  "use strict";
+  var map = document.querySelector("[data-pmap]");
+  if (!map) return;
+  var root = map.closest("[data-filter]");
+  var select = root && root.querySelector("[data-topic]");
+  if (!select) return;
+  var dots = map.querySelectorAll("[data-country]");
+  function mark() {
+    Array.prototype.forEach.call(dots, function (d) { d.setAttribute("aria-pressed", String(d.getAttribute("data-country") === select.value)); });
+    map.classList.toggle("has-pick", !!select.value);
+  }
+  function pick(d) {
+    var c = d.getAttribute("data-country");
+    select.value = select.value === c ? "" : c;
+    select.dispatchEvent(new Event("change"));
+    mark();
+  }
+  Array.prototype.forEach.call(dots, function (d) {
+    d.addEventListener("click", function () { pick(d); });
+    d.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(d); } });
+  });
+  select.addEventListener("change", mark);
+  root.addEventListener("mouseover", function (e) {
+    var li = e.target.closest && e.target.closest("[data-item]");
+    var c = li ? li.getAttribute("data-topics") : "";
+    Array.prototype.forEach.call(dots, function (d) { d.classList.toggle("is-hot", !!c && d.getAttribute("data-country") === c); });
+  });
+  mark();
 })();

@@ -1,0 +1,229 @@
+<!doctype html>
+<!-- Soil Food Web Foundation trifold for farmers, inside sheet: Practice, On your farm, Learn.
+     The first trifold's sheet, panels, fold, bleed, grid, type and styles
+     ("Trifold Design/"), with the farmers copy.
+     Render with: node "trifold-farmers/build/render.js" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Farmers trifold, inside spread</title>
+<link rel="stylesheet" href="trifold.css">
+</head>
+<body>
+<!-- The site's icon set, inlined. <use href="#id"> only reaches a symbol in
+     the same document, and the renderer opens these files directly. Kept in
+     step with the copy at the top of every page in the site root. -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-web" viewBox="0 0 24 24"><circle cx="5" cy="6" r="1.4"/><circle cx="18" cy="5" r="1.4"/><circle cx="12" cy="12" r="1.6"/><circle cx="5" cy="18" r="1.4"/><circle cx="19" cy="17" r="1.4"/><path d="M6.3 6.7 10.8 10.9M16.7 5.8 13.2 10.6M6.2 17.2 10.7 13.2M17.7 16.2 13.4 13.1M5 7.4v9.2M18 6.4l1 9.2"/></symbol>
+  <symbol id="i-cycle" viewBox="0 0 24 24"><path d="M12 2v9c0 3-2 5-4 7M12 11c0 3 2 5 4 7M12 6c-2 0-3 1-4 3M12 8c2 0 3 1 4 2.5"/><path d="M4 14c-1.5 2.5-1 5.5 1.2 7.3M20 14c1.5 2.5 1 5.5-1.2 7.3M5.2 21.3H3.4M5.2 21.3v-1.8M18.8 21.3h1.8M18.8 21.3v-1.8"/></symbol>
+  <symbol id="i-aggregate" viewBox="0 0 24 24"><path d="M7 5.5 10.5 4 13 7 11 10 7.5 9.5zM14 8.5 18 8l2 3.5-2.5 3-3-1zM5 12 8.5 12.5 9.5 16 6.5 18.5 3.5 16zM11 15l3.5-1 2.5 3-1.5 3.5-3.5-.5z"/><path d="M9.5 9.5 12 13.5M13.5 11.5l.5 2.5M9.5 13.5l1.5 1.5"/></symbol>
+  <symbol id="i-weed" viewBox="0 0 24 24"><path d="M12 21V9M12 13c-3 0-5-2-6-5 3 0 5 1.5 6 5zM12 11c3 0 5-2 6-5-3 0-5 1.5-6 5z"/><path d="M4 16.5h16M6 19.5h12"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 21c-4-2-7-5-7-10V6l7-3 7 3v5c0 5-3 8-7 10z"/><path d="M12 21V11M12 11c-2.5 0-4-1.5-4.5-4 2.5 0 4 1.5 4.5 4zM12 13.5c2.5 0 4-1.5 4.5-4-2.5 0-4 1.5-4.5 4z"/></symbol>
+  <symbol id="i-carbon" viewBox="0 0 24 24"><path d="M12 2v10M9 9l3 3 3-3"/><path d="M3 15h18M3 18.5h18M3 22h18"/></symbol>
+  <symbol id="i-microscope" viewBox="0 0 24 24"><path d="M9 3l5 2-4 9-5-2zM8 13l-1 2M13 5l1.5 1M6 21h13M9 21c-1.5-1-2-2.5-2-4M19 21c0-4-3-7-7-7"/></symbol>
+  <symbol id="i-compost" viewBox="0 0 24 24"><path d="M3 20c2-6 6-10 9-10s7 4 9 10z"/><path d="M9 7c0-1.5 1-2 1-3.5M12 6c0-1.5 1-2 1-3.5M15 7c0-1.5 1-2 1-3.5"/><path d="M8 16h8M10 18.5h4"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9c-.7 1.2.2 2.7 1.6 2.7h10.8c1.4 0 2.3-1.5 1.6-2.7l-5-9V3"/><path d="M7 16h10M12.5 12.5v.01M10 14.5v.01"/></symbol>
+  <symbol id="i-field" viewBox="0 0 24 24"><path d="M3 8h18v13H3zM3 14.5h18M12 8v13"/><path d="M7.5 21v-4M7.5 18c-1.5 0-2.5-1-3-2.5 1.5 0 2.5.8 3 2.5zM16.5 12v-3M16.5 10.5c1.5 0 2.5-1 3-2.5-1.5 0-2.5.8-3 2.5z"/></symbol>
+  <symbol id="i-practicum" viewBox="0 0 24 24"><path d="M3 3h7.5v7.5H3zM13.5 3H21v7.5h-7.5zM3 13.5h7.5V21H3zM13.5 13.5H21V21h-7.5z"/></symbol>
+  <symbol id="i-webinar" viewBox="0 0 24 24"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/><path d="M9 12l3-4 3 4"/></symbol>
+  <symbol id="i-workshop" viewBox="0 0 24 24"><path d="M12 22c-4-5-7-8.5-7-12.5a7 7 0 0 1 14 0C19 13.5 16 17 12 22z"/><path d="M9 9.5c0-1.5 1.5-3 3-3s3 1.5 3 3M12 6.5V4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M3 5h18v16H3zM3 9.5h18M8 3v4M16 3v4"/><path d="M7 13h2M11 13h2M15 13h2M7 17h2M11 17h2"/></symbol>
+  <symbol id="i-document" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 15.5h7M9 19h5"/></symbol>
+  <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></symbol>
+  <symbol id="i-scholarship" viewBox="0 0 24 24"><path d="M2 9l10-4 10 4-10 4z"/><path d="M6 11v5c2 2 10 2 12 0v-5M22 9v6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6.5h18M3 12h18M3 17.5h18"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M14 7l5 5-5 5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13M7 11l5 5 5-5M4 21h16"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 13v7H4V6h7"/></symbol>
+  <symbol id="i-translate" viewBox="0 0 24 24"><path d="M3 6h7.5M6.75 4v2M4.6 6c.5 3.6 2.4 6.2 5.4 7.8M8.9 6c-.5 3.2-2.2 5.8-4.9 7.4"/><path d="M12.6 20.5 16.6 11l4 9.5M14 18h5.2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 8.5h4l1.6-2.5h6.8L17 8.5h4v11H3z"/><circle cx="12" cy="13.8" r="3.6"/><path d="M18.4 10.6h.01"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24"><path d="M2.5 10.5h19v2.6h-19zM5.2 13.1V20M18.8 13.1V20"/><path d="M8.4 10.5V8.2h3.4v2.3M14 10.5c0-1.4.8-2.2.8-3.4"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.6c-3.4-2.2-7.4-5.2-7.4-9.4A3.9 3.9 0 0 1 12 9.1a3.9 3.9 0 0 1 7.4 2.1c0 4.2-4 7.2-7.4 9.4z"/><path d="M12 9.1V5.4M12 5.4c-1.4 0-2.2-.7-2.6-2 1.7 0 2.4.7 2.6 2zM12 6.6c1.4 0 2.2-.7 2.6-2-1.7 0-2.4.7-2.6 2z"/></symbol>
+  <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.6a2.6 2.6 0 0 1 5.1.7c0 1.7-2.5 2.2-2.5 3.9M12 17.3v.4"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="10" cy="14" r="6.6"/><path d="M3.4 14h13.2"/><path d="M10 7.4c2 1.9 3 4.1 3 6.6s-1 4.7-3 6.6c-2-1.9-3-4.1-3-6.6s1-4.7 3-6.6z"/><path d="M14.6 9.4c0-3.4 2.7-6.2 6.2-6.2 0 3.4-2.7 6.2-6.2 6.2z"/></symbol>
+  <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M6.8 3.4h10.4M6.8 20.6h10.4"/><path d="M8 3.4v3.3c0 2 1.6 3.7 4 5.3 2.4-1.6 4-3.3 4-5.3V3.4"/><path d="M8 20.6v-3.3c0-2 1.6-3.7 4-5.3 2.4 1.6 4 3.3 4 5.3v3.3"/></symbol>
+  <symbol id="i-dig" viewBox="0 0 24 24"><path d="M2.6 19.6h18.8"/><path d="M7.6 19.6c.6-2.6 2.4-4 5.2-4"/><path d="M3.9 7.9a2.9 2.9 0 0 1 0-4.1 2.9 2.9 0 0 1 4.1 0l2.1 2.1"/><path d="M5.6 8.9 4.2 7.5"/><path d="M9.3 9.1l2.4-2.4"/><path d="M8.1 10.3 6 8.2"/><path d="M11.2 8l5.6 5.6c.9.9.9 2.3 0 3.2l-1.3 1.3-7.5-7.5 1.3-1.3c.9-.9 2.3-.9 3.2 0z"/></symbol>
+</svg>
+<div class="sheet" id="sheet">
+  <div class="spread">
+
+    <!-- ================= INSIDE LEFT, PRACTICE ================= -->
+    <section class="panel panel--wide panel--first panel--field panel--field--legacy" data-panel="2">
+
+      <div class="banner">
+        <p class="eyebrow eyebrow--legacy">Practice</p>
+        <h2>Growers are implementing this at every scale.</h2>
+      </div>
+
+      <figure class="figure figure--full figure--fade">
+        <img src="/img/erc-rancho-cacachilas-agro.jpg" alt="" style="object-position:50% 58%; clip-path: polygon(0% 0%, 100% 0%, 100.00% 87.87%, 98.44% 87.69%, 96.88% 87.51%, 95.31% 87.32%, 93.75% 87.14%, 92.19% 86.95%, 90.62% 86.77%, 89.06% 86.58%, 87.50% 86.39%, 85.94% 86.20%, 84.38% 86.01%, 82.81% 85.82%, 81.25% 85.63%, 79.69% 85.43%, 78.12% 85.24%, 76.56% 85.05%, 75.00% 84.85%, 73.44% 84.66%, 71.88% 84.46%, 70.31% 84.26%, 68.75% 84.06%, 67.19% 83.87%, 65.62% 83.67%, 64.06% 83.47%, 62.50% 83.27%, 60.94% 83.07%, 59.38% 82.87%, 57.81% 82.66%, 56.25% 82.46%, 54.69% 82.26%, 53.12% 82.05%, 51.56% 81.85%, 50.00% 81.65%, 48.44% 81.44%, 46.88% 81.24%, 45.31% 81.03%, 43.75% 80.82%, 42.19% 80.62%, 40.62% 80.41%, 39.06% 80.20%, 37.50% 79.99%, 35.94% 79.79%, 34.38% 79.58%, 32.81% 79.37%, 31.25% 79.16%, 29.69% 78.95%, 28.12% 78.74%, 26.56% 78.53%, 25.00% 78.32%, 23.44% 78.11%, 21.88% 77.90%, 20.31% 77.69%, 18.75% 77.47%, 17.19% 77.26%, 15.62% 77.05%, 14.06% 76.84%, 12.50% 76.63%, 10.94% 76.42%, 9.38% 76.20%, 7.81% 75.99%, 6.25% 75.78%, 4.69% 75.57%, 3.12% 75.35%, 1.56% 75.14%, 0.00% 75.00%)">
+        <figcaption class="caption">Agroecology plots at Rancho Cacachilas.</figcaption>
+      </figure>
+
+      <p class="lede">Growers like you are cutting inputs and improving soil, and
+        documenting it.</p>
+
+      <p>The basic methodology is universal; the application is based upon
+        locally-sourced materials. Whether you tend a rooftop container or a
+        thousand-acre farm, the principle is the same.</p>
+
+      <p>Nick Padwick farms in Norfolk, England. Roberto Silva farms in Piura,
+        Peru. Jenn Sirp grows in California.</p>
+
+      <figure class="figure figure--trio">
+        <img src="/img/ctpfw-student-moving-compost-1.jpg" alt="" style="object-position:50% 45%">
+        <img src="/img/erc-panchmana-treeplanting-fb-img-1666270907385.jpg" alt="" style="object-position:50% 55%">
+        <img src="/img/garden-vegetable-beds.jpg" alt="" style="object-position:50% 55%">
+      </figure>
+
+      <div class="card">
+        <div class="hd"><svg class="icon" aria-hidden="true"><use href="#i-person"/></svg><h3>Find a trained professional near you</h3></div>
+        <p>Our graduates who complete their certifications to become
+          consultants and lab-technicians are listed in our online directory.
+          Hire an earned title, not a claim.</p>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="qr">
+        <img src="qr/case-studies-purple.svg" alt="">
+        <div>
+          <div class="t">Watch a case study from your crop or region.</div>
+          <div class="d">Hear growers explain in their own words how the Soil
+            Food Web Approach changed their operations through reducing inputs,
+            creating better outputs and improving their bottom lines.</div>
+          <div class="h">sfw.one/brochure-casestudies</div>
+        </div>
+      </div>
+
+      <p class="caption">Results shown are from individual sites in specific
+        contexts; outcomes vary with climate, crop and management.</p>
+
+    </section>
+
+    <!-- ================= INSIDE MIDDLE, ON YOUR FARM ================= -->
+    <section class="panel panel--wide" data-panel="4">
+
+      <div class="banner">
+        <p class="eyebrow">On your farm</p>
+        <h2>We start with<br>your soil.</h2>
+      </div>
+
+      <figure class="figure figure--full figure--fade">
+        <img src="/img/Test tubes with sample_.jpg" alt="" style="object-position:50% 50%; clip-path: polygon(0% 0%, 100% 0%, 100.00% 96.87%, 98.44% 96.77%, 96.88% 96.66%, 95.31% 96.56%, 93.75% 96.46%, 92.19% 96.35%, 90.62% 96.24%, 89.06% 96.14%, 87.50% 96.03%, 85.94% 95.91%, 84.38% 95.80%, 82.81% 95.69%, 81.25% 95.57%, 79.69% 95.46%, 78.12% 95.34%, 76.56% 95.22%, 75.00% 95.10%, 73.44% 94.97%, 71.88% 94.85%, 70.31% 94.73%, 68.75% 94.60%, 67.19% 94.47%, 65.62% 94.34%, 64.06% 94.21%, 62.50% 94.08%, 60.94% 93.95%, 59.38% 93.81%, 57.81% 93.68%, 56.25% 93.54%, 54.69% 93.40%, 53.12% 93.26%, 51.56% 93.12%, 50.00% 92.98%, 48.44% 92.84%, 46.88% 92.70%, 45.31% 92.55%, 43.75% 92.41%, 42.19% 92.26%, 40.62% 92.11%, 39.06% 91.96%, 37.50% 91.81%, 35.94% 91.66%, 34.38% 91.50%, 32.81% 91.35%, 31.25% 91.19%, 29.69% 91.04%, 28.12% 90.88%, 26.56% 90.72%, 25.00% 90.56%, 23.44% 90.40%, 21.88% 90.24%, 20.31% 90.08%, 18.75% 89.91%, 17.19% 89.75%, 15.62% 89.58%, 14.06% 89.42%, 12.50% 89.25%, 10.94% 89.08%, 9.38% 88.91%, 7.81% 88.74%, 6.25% 88.57%, 4.69% 88.40%, 3.12% 88.22%, 1.56% 88.05%, 0.00% 87.87%)">
+        <figcaption class="caption">Soil samples beside the microscope.</figcaption>
+      </figure>
+
+      <p class="lede">The steps are the same at every scale: look at the biology
+        under a microscope, add what is missing to rebalance the microbial
+        content, then measure again to confirm microbial counts are going in the
+        expected directions.</p>
+
+      <h3>What we test before we recommend</h3>
+      <ul class="checks">
+        <li class="ico"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg>
+          <div><b>Diagnostic first.</b> Every recommendation starts with a
+          biological analysis under a microscope.</div></li>
+        <li class="ico"><svg class="icon" aria-hidden="true"><use href="#i-microscope"/></svg>
+          <div><b>Measurable.</b> We provide a relative count of various
+          microbes present in your soil or compost sample.</div></li>
+        <li class="ico"><svg class="icon" aria-hidden="true"><use href="#i-field"/></svg>
+          <div><b>Adaptation and retrofitting.</b> We help you convert your
+          current operations to the Soil Food Web Approach, at any
+          scale.</div></li>
+      </ul>
+
+      <figure class="figure figure--band">
+        <img src="/img/uploads/testate-amoeba-40x.jpg" alt="">
+        <figcaption class="caption">Testate amoeba, 40x objective. Photograph:
+          Joy Kaluf. A microbial count names what is present in the sample and
+          their relative numbers: bacteria, fungi, protozoa, nematodes and
+          microarthropods.</figcaption>
+      </figure>
+
+      <h3>What healthy soil biology does</h3>
+      <div class="pillars">
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-cycle"/></svg><div class="l">Cycles<br>nutrients</div></div>
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-aggregate"/></svg><div class="l">Creates<br>soil<br>structure</div></div>
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-weed"/></svg><div class="l">Inhibits<br>weed<br>pressure</div></div>
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-shield"/></svg><div class="l">Reduces<br>pests and<br>disease</div></div>
+      </div>
+
+      <div class="card">
+        <p class="pull">The approach is designed to dramatically reduce
+          dependence on chemical inputs.</p>
+      </div>
+
+      <div class="spacer"></div>
+
+    </section>
+
+    <!-- ================= INSIDE RIGHT, LEARN (tuck-in) ================= -->
+    <section class="panel panel--tuck panel--last panel--cream" data-panel="5">
+
+      <div class="banner">
+        <p class="eyebrow">Learn</p>
+        <h2>Learn to grow your own soil biology.</h2>
+      </div>
+
+      <figure class="figure figure--full figure--fade">
+        <img src="/img/uploads/Loida Teaching 3.JPG" alt="" style="object-position:50% 22%; clip-path: polygon(0% 0%, 100% 0%, 100.00% 100.00%, 98.44% 100.00%, 96.88% 100.00%, 95.31% 99.99%, 93.75% 99.99%, 92.19% 99.98%, 90.62% 99.97%, 89.06% 99.97%, 87.50% 99.95%, 85.94% 99.94%, 84.38% 99.93%, 82.81% 99.91%, 81.25% 99.89%, 79.69% 99.87%, 78.12% 99.85%, 76.56% 99.83%, 75.00% 99.81%, 73.44% 99.78%, 71.88% 99.75%, 70.31% 99.73%, 68.75% 99.70%, 67.19% 99.66%, 65.62% 99.63%, 64.06% 99.60%, 62.50% 99.56%, 60.94% 99.52%, 59.38% 99.48%, 57.81% 99.44%, 56.25% 99.40%, 54.69% 99.35%, 53.12% 99.31%, 51.56% 99.26%, 50.00% 99.21%, 48.44% 99.16%, 46.88% 99.11%, 45.31% 99.06%, 43.75% 99.00%, 42.19% 98.95%, 40.62% 98.89%, 39.06% 98.83%, 37.50% 98.77%, 35.94% 98.71%, 34.38% 98.64%, 32.81% 98.58%, 31.25% 98.51%, 29.69% 98.44%, 28.12% 98.37%, 26.56% 98.30%, 25.00% 98.23%, 23.44% 98.15%, 21.88% 98.08%, 20.31% 98.00%, 18.75% 97.92%, 17.19% 97.84%, 15.62% 97.76%, 14.06% 97.68%, 12.50% 97.59%, 10.94% 97.51%, 9.38% 97.42%, 7.81% 97.33%, 6.25% 97.24%, 4.69% 97.15%, 3.12% 97.06%, 1.56% 96.96%, 0.00% 96.87%)">
+        <figcaption class="caption">A mentor teaching on working land.</figcaption>
+      </figure>
+
+      <p class="lede">Everyone starts with the Foundation Courses. Where you go
+        next depends on whether you want to apply your skills to your own land
+        or help other farmers improve their soils.</p>
+
+      <div class="items">
+        <div>
+          <div class="hd"><svg class="icon" aria-hidden="true"><use href="#i-document"/></svg><h3>Start learning</h3></div>
+          <p>The Foundation Courses give you the biological literacy to
+            understand what is actually happening in your soil, why it matters,
+            and what you can do about it. They are online, self-paced, take
+            about 150 hours to complete, and are a prerequisite to any Advanced
+            Program.</p>
+        </div>
+        <div>
+          <div class="hd"><svg class="icon" aria-hidden="true"><use href="#i-microscope"/></svg><h3>Go professional</h3></div>
+          <p>Learn the practical application of the theory you learned in the
+            Foundation Courses through mentor-led Advanced Programs on Soil
+            Microscopy, BioComplete&trade; Compost Production, and Biological
+            Liquid Amendments and Field Trial.</p>
+        </div>
+        <div>
+          <div class="hd"><svg class="icon" aria-hidden="true"><use href="#i-hourglass"/></svg><h3>Learn in person</h3></div>
+          <p>Accelerator Workshops are immersive, two-week, hands-on intensives
+            where you produce BioComplete&trade; compost and biological liquid
+            amendments live, hosted with a partner on their land. Gain a year's
+            worth of hands-on experience in one immersive workshop.</p>
+        </div>
+        <div>
+          <div class="hd"><svg class="icon" aria-hidden="true"><use href="#i-person"/></svg><h3>Where it leads</h3></div>
+          <p>Careers in soil biology analysis as SFW Lab-Technicians, and
+            working with farmers and land stewards to implement the Soil Food
+            Web Approach as SFW Consultants.</p>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="qr">
+        <img src="qr/scholarship-green.svg" alt="">
+        <div>
+          <div class="t">Apply for a scholarship</div>
+          <div class="d">Cost shouldn't keep anyone from healing soil.
+            Scholarships prioritize applicants in <span style="white-space:nowrap">under-resourced</span>
+            regions.</div>
+          <div class="h">sfw.one/brochure-scholarship</div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</div>
+</body>
+</html>

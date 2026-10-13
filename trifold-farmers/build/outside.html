@@ -1,0 +1,229 @@
+<!doctype html>
+<!-- Soil Food Web Foundation trifold for farmers, outside sheet: first flap, back, cover.
+     The first trifold's sheet, panels, fold, bleed, grid, type and styles
+     ("Trifold Design/"), with the farmers copy.
+     Render with: node "trifold-farmers/build/render.js" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Farmers trifold, outside spread</title>
+<link rel="stylesheet" href="trifold.css">
+</head>
+<body>
+<!-- The site's icon set, inlined. <use href="#id"> only reaches a symbol in
+     the same document, and the renderer opens these files directly. Kept in
+     step with the copy at the top of every page in the site root. -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-web" viewBox="0 0 24 24"><circle cx="5" cy="6" r="1.4"/><circle cx="18" cy="5" r="1.4"/><circle cx="12" cy="12" r="1.6"/><circle cx="5" cy="18" r="1.4"/><circle cx="19" cy="17" r="1.4"/><path d="M6.3 6.7 10.8 10.9M16.7 5.8 13.2 10.6M6.2 17.2 10.7 13.2M17.7 16.2 13.4 13.1M5 7.4v9.2M18 6.4l1 9.2"/></symbol>
+  <symbol id="i-cycle" viewBox="0 0 24 24"><path d="M12 2v9c0 3-2 5-4 7M12 11c0 3 2 5 4 7M12 6c-2 0-3 1-4 3M12 8c2 0 3 1 4 2.5"/><path d="M4 14c-1.5 2.5-1 5.5 1.2 7.3M20 14c1.5 2.5 1 5.5-1.2 7.3M5.2 21.3H3.4M5.2 21.3v-1.8M18.8 21.3h1.8M18.8 21.3v-1.8"/></symbol>
+  <symbol id="i-aggregate" viewBox="0 0 24 24"><path d="M7 5.5 10.5 4 13 7 11 10 7.5 9.5zM14 8.5 18 8l2 3.5-2.5 3-3-1zM5 12 8.5 12.5 9.5 16 6.5 18.5 3.5 16zM11 15l3.5-1 2.5 3-1.5 3.5-3.5-.5z"/><path d="M9.5 9.5 12 13.5M13.5 11.5l.5 2.5M9.5 13.5l1.5 1.5"/></symbol>
+  <symbol id="i-weed" viewBox="0 0 24 24"><path d="M12 21V9M12 13c-3 0-5-2-6-5 3 0 5 1.5 6 5zM12 11c3 0 5-2 6-5-3 0-5 1.5-6 5z"/><path d="M4 16.5h16M6 19.5h12"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 21c-4-2-7-5-7-10V6l7-3 7 3v5c0 5-3 8-7 10z"/><path d="M12 21V11M12 11c-2.5 0-4-1.5-4.5-4 2.5 0 4 1.5 4.5 4zM12 13.5c2.5 0 4-1.5 4.5-4-2.5 0-4 1.5-4.5 4z"/></symbol>
+  <symbol id="i-carbon" viewBox="0 0 24 24"><path d="M12 2v10M9 9l3 3 3-3"/><path d="M3 15h18M3 18.5h18M3 22h18"/></symbol>
+  <symbol id="i-microscope" viewBox="0 0 24 24"><path d="M9 3l5 2-4 9-5-2zM8 13l-1 2M13 5l1.5 1M6 21h13M9 21c-1.5-1-2-2.5-2-4M19 21c0-4-3-7-7-7"/></symbol>
+  <symbol id="i-compost" viewBox="0 0 24 24"><path d="M3 20c2-6 6-10 9-10s7 4 9 10z"/><path d="M9 7c0-1.5 1-2 1-3.5M12 6c0-1.5 1-2 1-3.5M15 7c0-1.5 1-2 1-3.5"/><path d="M8 16h8M10 18.5h4"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9c-.7 1.2.2 2.7 1.6 2.7h10.8c1.4 0 2.3-1.5 1.6-2.7l-5-9V3"/><path d="M7 16h10M12.5 12.5v.01M10 14.5v.01"/></symbol>
+  <symbol id="i-field" viewBox="0 0 24 24"><path d="M3 8h18v13H3zM3 14.5h18M12 8v13"/><path d="M7.5 21v-4M7.5 18c-1.5 0-2.5-1-3-2.5 1.5 0 2.5.8 3 2.5zM16.5 12v-3M16.5 10.5c1.5 0 2.5-1 3-2.5-1.5 0-2.5.8-3 2.5z"/></symbol>
+  <symbol id="i-practicum" viewBox="0 0 24 24"><path d="M3 3h7.5v7.5H3zM13.5 3H21v7.5h-7.5zM3 13.5h7.5V21H3zM13.5 13.5H21V21h-7.5z"/></symbol>
+  <symbol id="i-webinar" viewBox="0 0 24 24"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/><path d="M9 12l3-4 3 4"/></symbol>
+  <symbol id="i-workshop" viewBox="0 0 24 24"><path d="M12 22c-4-5-7-8.5-7-12.5a7 7 0 0 1 14 0C19 13.5 16 17 12 22z"/><path d="M9 9.5c0-1.5 1.5-3 3-3s3 1.5 3 3M12 6.5V4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M3 5h18v16H3zM3 9.5h18M8 3v4M16 3v4"/><path d="M7 13h2M11 13h2M15 13h2M7 17h2M11 17h2"/></symbol>
+  <symbol id="i-document" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6zM14 2v5h5M9 12h7M9 15.5h7M9 19h5"/></symbol>
+  <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></symbol>
+  <symbol id="i-scholarship" viewBox="0 0 24 24"><path d="M2 9l10-4 10 4-10 4z"/><path d="M6 11v5c2 2 10 2 12 0v-5M22 9v6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6.5h18M3 12h18M3 17.5h18"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M14 7l5 5-5 5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13M7 11l5 5 5-5M4 21h16"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 13v7H4V6h7"/></symbol>
+  <symbol id="i-translate" viewBox="0 0 24 24"><path d="M3 6h7.5M6.75 4v2M4.6 6c.5 3.6 2.4 6.2 5.4 7.8M8.9 6c-.5 3.2-2.2 5.8-4.9 7.4"/><path d="M12.6 20.5 16.6 11l4 9.5M14 18h5.2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 8.5h4l1.6-2.5h6.8L17 8.5h4v11H3z"/><circle cx="12" cy="13.8" r="3.6"/><path d="M18.4 10.6h.01"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24"><path d="M2.5 10.5h19v2.6h-19zM5.2 13.1V20M18.8 13.1V20"/><path d="M8.4 10.5V8.2h3.4v2.3M14 10.5c0-1.4.8-2.2.8-3.4"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.6c-3.4-2.2-7.4-5.2-7.4-9.4A3.9 3.9 0 0 1 12 9.1a3.9 3.9 0 0 1 7.4 2.1c0 4.2-4 7.2-7.4 9.4z"/><path d="M12 9.1V5.4M12 5.4c-1.4 0-2.2-.7-2.6-2 1.7 0 2.4.7 2.6 2zM12 6.6c1.4 0 2.2-.7 2.6-2-1.7 0-2.4.7-2.6 2z"/></symbol>
+  <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.6a2.6 2.6 0 0 1 5.1.7c0 1.7-2.5 2.2-2.5 3.9M12 17.3v.4"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="10" cy="14" r="6.6"/><path d="M3.4 14h13.2"/><path d="M10 7.4c2 1.9 3 4.1 3 6.6s-1 4.7-3 6.6c-2-1.9-3-4.1-3-6.6s1-4.7 3-6.6z"/><path d="M14.6 9.4c0-3.4 2.7-6.2 6.2-6.2 0 3.4-2.7 6.2-6.2 6.2z"/></symbol>
+  <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M6.8 3.4h10.4M6.8 20.6h10.4"/><path d="M8 3.4v3.3c0 2 1.6 3.7 4 5.3 2.4-1.6 4-3.3 4-5.3V3.4"/><path d="M8 20.6v-3.3c0-2 1.6-3.7 4-5.3 2.4 1.6 4 3.3 4 5.3v3.3"/></symbol>
+  <symbol id="i-dig" viewBox="0 0 24 24"><path d="M2.6 19.6h18.8"/><path d="M7.6 19.6c.6-2.6 2.4-4 5.2-4"/><path d="M3.9 7.9a2.9 2.9 0 0 1 0-4.1 2.9 2.9 0 0 1 4.1 0l2.1 2.1"/><path d="M5.6 8.9 4.2 7.5"/><path d="M9.3 9.1l2.4-2.4"/><path d="M8.1 10.3 6 8.2"/><path d="M11.2 8l5.6 5.6c.9.9.9 2.3 0 3.2l-1.3 1.3-7.5-7.5 1.3-1.3c.9-.9 2.3-.9 3.2 0z"/></symbol>
+</svg>
+<div class="sheet" id="sheet">
+  <div class="spread">
+    <!-- Mirrored imposition, as the first trifold: the narrow tuck panel is
+         FIRST here and LAST on the inside, and the cover is last so it lands
+         face up when the sheet is folded. -->
+
+    <!-- ================= FIRST FLAP, WHY BIOLOGY (tuck-in) ================= -->
+    <section class="panel panel--tuck panel--first panel--field panel--field--edu" data-panel="3">
+
+      <div class="banner">
+        <p class="eyebrow eyebrow--edu">Why biology</p>
+        <h2>Feed the organisms that feed your plants.</h2>
+      </div>
+
+      <figure class="figure figure--full figure--fade">
+        <img src="/img/Elaine Flower Shirt Microscope.png" alt="" style="object-position:50% 20%; clip-path: polygon(0% 0%, 100% 0%, 100.00% 87.12%, 98.44% 86.95%, 96.88% 86.77%, 95.31% 86.59%, 93.75% 86.42%, 92.19% 86.24%, 90.62% 86.06%, 89.06% 85.88%, 87.50% 85.70%, 85.94% 85.52%, 84.38% 85.34%, 82.81% 85.16%, 81.25% 84.98%, 79.69% 84.80%, 78.12% 84.62%, 76.56% 84.43%, 75.00% 84.25%, 73.44% 84.06%, 71.88% 83.88%, 70.31% 83.69%, 68.75% 83.50%, 67.19% 83.32%, 65.62% 83.13%, 64.06% 82.94%, 62.50% 82.75%, 60.94% 82.56%, 59.38% 82.37%, 57.81% 82.18%, 56.25% 81.99%, 54.69% 81.80%, 53.12% 81.61%, 51.56% 81.42%, 50.00% 81.22%, 48.44% 81.03%, 46.88% 80.84%, 45.31% 80.65%, 43.75% 80.45%, 42.19% 80.26%, 40.62% 80.06%, 39.06% 79.87%, 37.50% 79.67%, 35.94% 79.48%, 34.38% 79.28%, 32.81% 79.09%, 31.25% 78.89%, 29.69% 78.69%, 28.12% 78.50%, 26.56% 78.30%, 25.00% 78.10%, 23.44% 77.90%, 21.88% 77.71%, 20.31% 77.51%, 18.75% 77.31%, 17.19% 77.11%, 15.62% 76.92%, 14.06% 76.72%, 12.50% 76.52%, 10.94% 76.32%, 9.38% 76.12%, 7.81% 75.92%, 6.25% 75.72%, 4.69% 75.53%, 3.12% 75.33%, 1.56% 75.13%, 0.00% 75.00%)">
+        <figcaption class="caption">Dr. Elaine Ingham at the microscope.</figcaption>
+      </figure>
+
+      <h3>Plants don't feed alone.</h3>
+
+      <p>Bacteria and fungi produce enzymes that break down minerals and
+        organic matter and free the nutrients they contain. When protozoa and
+        nematodes consume those bacteria and fungi, the surplus is released
+        right at the root, in plant-available form.</p>
+
+      <p>Bacteria produce glues that bind soil particles into microaggregates;
+        fungal hyphae weave those into larger macroaggregates. The result
+        behaves like a sponge, holding water, letting air flow in and resisting
+        erosion.</p>
+
+      <p>These microbes are often lost in land that has been chemically managed
+        or compacted. Biologically complete compost is designed to restore
+        them.</p>
+
+      <div class="card card--green">
+        <p class="pull"><b>Our story</b>Dr. Elaine Ingham mapped the Soil Food
+          Web and taught the world to restore it. The Soil Food Web Foundation,
+          established in October 2025, carries her work forward with growers on
+          working land.</p>
+      </div>
+
+      <figure class="figure figure--side">
+        <img src="/img/w/elaine-and-nematode-extraction.jpg" alt="" style="object-position:50% 40%">
+        <figcaption class="caption">Her published record, in full,
+          on our site:<br><span class="url">sfw.one/publications</span></figcaption>
+      </figure>
+
+      <div class="spacer"></div>
+
+      <div class="qr">
+        <img src="qr/webinar-blue.svg" alt="">
+        <div>
+          <div class="t">Watch a free webinar</div>
+          <div class="d">A live hour with an instructor or a practitioner, every
+            month. The easiest first step.</div>
+          <div class="h">sfw.one/brochure-webinar</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= BACK, COMMUNITY ================= -->
+    <section class="panel panel--wide" data-panel="6">
+
+      <div class="banner">
+        <p class="eyebrow">Community</p>
+        <h2>Join a global community of Soil Regenerators.</h2>
+      </div>
+
+      <figure class="figure figure--full figure--fade">
+        <img src="/img/uploads/MAR Group Photo 2.jpg" alt="" style="object-position:50% 52%; clip-path: polygon(0% 0%, 100% 0%, 100.00% 96.43%, 98.44% 96.32%, 96.88% 96.22%, 95.31% 96.11%, 93.75% 96.00%, 92.19% 95.89%, 90.62% 95.77%, 89.06% 95.66%, 87.50% 95.54%, 85.94% 95.42%, 84.38% 95.31%, 82.81% 95.19%, 81.25% 95.06%, 79.69% 94.94%, 78.12% 94.82%, 76.56% 94.69%, 75.00% 94.57%, 73.44% 94.44%, 71.88% 94.31%, 70.31% 94.18%, 68.75% 94.05%, 67.19% 93.91%, 65.62% 93.78%, 64.06% 93.64%, 62.50% 93.51%, 60.94% 93.37%, 59.38% 93.23%, 57.81% 93.09%, 56.25% 92.95%, 54.69% 92.80%, 53.12% 92.66%, 51.56% 92.51%, 50.00% 92.37%, 48.44% 92.22%, 46.88% 92.07%, 45.31% 91.92%, 43.75% 91.77%, 42.19% 91.62%, 40.62% 91.46%, 39.06% 91.31%, 37.50% 91.15%, 35.94% 91.00%, 34.38% 90.84%, 32.81% 90.68%, 31.25% 90.52%, 29.69% 90.36%, 28.12% 90.20%, 26.56% 90.03%, 25.00% 89.87%, 23.44% 89.71%, 21.88% 89.54%, 20.31% 89.37%, 18.75% 89.20%, 17.19% 89.04%, 15.62% 88.87%, 14.06% 88.70%, 12.50% 88.52%, 10.94% 88.35%, 9.38% 88.18%, 7.81% 88.00%, 6.25% 87.83%, 4.69% 87.65%, 3.12% 87.48%, 1.56% 87.30%, 0.00% 87.12%)">
+        <figcaption class="caption">A workshop group around a finished compost pile.</figcaption>
+      </figure>
+
+      <h3>We believe your food is only as nutritious as your soil is alive.</h3>
+
+      <p>Farmers, consultants, gardeners and people who care where their food
+        comes from are part of this community. It's easy to find your place in this
+        movement. Reach out to discover opportunities to join us as a student,
+        volunteer, ambassador, donor and partner. As a nonprofit, the best way
+        to support us is to share our message and resources with people who
+        need them.</p>
+
+      <div class="qr">
+        <img src="qr/community.svg" alt="">
+        <div>
+          <div class="t">Join the free online community</div>
+          <div class="d">Meet other people in the regenerative agricultural
+            space. Get your questions answered by other practitioners of the
+            Soil Food Web Approach who share the desire to restore the world's
+            soils.</div>
+          <div class="h">sfw.one/brochure-community</div>
+        </div>
+      </div>
+
+      <div class="pillars">
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-scholarship"/></svg><div class="l">Study</div></div>
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-person"/></svg><div class="l">Volunteer</div></div>
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-heart"/></svg><div class="l">Donate</div></div>
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-dig"/></svg><div class="l">Host</div></div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="field field--flush field--foot">
+      <div class="card legal">
+        <p class="addr">info@soilfoodweb.com &middot; (503) 809-2349</p>
+        <p class="addr">5441 S Macadam Ave Ste N<br>Portland, Oregon
+          97239<br>soilfoodweb.com</p>
+        <p>Soil Food Web Foundation is a 501(c)(3) nonprofit organization, EIN
+          <span style="white-space:nowrap">39-4439236</span>. The Soil Food Web School is a program of the
+          Foundation.</p>
+      </div>
+
+      <div class="qr">
+        <img src="qr/brochure-website.svg" alt="">
+        <div>
+          <div class="t">Learn more</div>
+          <div class="d">Curious about the Soil Food Web approach? Visit our
+            website to explore our courses, workshops, and free
+            resources.</div>
+          <div class="h">soilfoodweb.com</div>
+        </div>
+      </div>
+      </div>
+
+    </section>
+
+    <!-- ================= COVER ================= -->
+    <section class="panel panel--wide panel--last" data-panel="1">
+
+      <div class="mast banner banner--mast">
+        <img src="/img/sfwlogo-240.png" alt="">
+        <div>
+          <div class="wordmark">Soil Food Web<br>Foundation</div>
+          <div class="sub">A 501(c)(3) nonprofit</div>
+        </div>
+      </div>
+
+      <figure class="figure figure--full figure--fade figure--hero">
+        <img src="/img/handling-loose-soil.jpg" alt="" style="object-position:50% 52%; clip-path: polygon(0% 0%, 100% 0%, 100.00% 100.00%, 98.44% 100.00%, 96.88% 100.00%, 95.31% 99.99%, 93.75% 99.99%, 92.19% 99.98%, 90.62% 99.97%, 89.06% 99.96%, 87.50% 99.95%, 85.94% 99.93%, 84.38% 99.92%, 82.81% 99.90%, 81.25% 99.88%, 79.69% 99.86%, 78.12% 99.83%, 76.56% 99.81%, 75.00% 99.78%, 73.44% 99.75%, 71.88% 99.72%, 70.31% 99.69%, 68.75% 99.65%, 67.19% 99.62%, 65.62% 99.58%, 64.06% 99.54%, 62.50% 99.50%, 60.94% 99.45%, 59.38% 99.41%, 57.81% 99.36%, 56.25% 99.31%, 54.69% 99.26%, 53.12% 99.21%, 51.56% 99.16%, 50.00% 99.10%, 48.44% 99.04%, 46.88% 98.98%, 45.31% 98.92%, 43.75% 98.86%, 42.19% 98.80%, 40.62% 98.73%, 39.06% 98.66%, 37.50% 98.59%, 35.94% 98.52%, 34.38% 98.45%, 32.81% 98.37%, 31.25% 98.30%, 29.69% 98.22%, 28.12% 98.14%, 26.56% 98.06%, 25.00% 97.98%, 23.44% 97.89%, 21.88% 97.81%, 20.31% 97.72%, 18.75% 97.63%, 17.19% 97.54%, 15.62% 97.45%, 14.06% 97.35%, 12.50% 97.26%, 10.94% 97.16%, 9.38% 97.06%, 7.81% 96.96%, 6.25% 96.86%, 4.69% 96.75%, 3.12% 96.65%, 1.56% 96.54%, 0.00% 96.43%)">
+      </figure>
+
+      <h1>Grow your own<br>biology.</h1>
+      <h2 class="subhead">The soil beneath our farms and forests is alive.</h2>
+
+      <p class="lede">A web of bacteria, fungi, protozoa, nematodes and
+        microarthropods feeds plants, builds soil, stores carbon and cleans
+        water <em>when it is intact</em>.</p>
+
+      <p>We train farmers, and the people who work with them, to transition
+        from chemical inputs to biology. You'll learn to test your soil, produce
+        your own BioComplete&trade; compost and liquid amendments, and rebalance
+        the microbial content of your fields. Living soil is the solution, and
+        it is beneath your feet.</p>
+
+      <div class="pillars">
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-scholarship"/></svg><div class="l">Education</div></div>
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-flask"/></svg><div class="l">Research</div></div>
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-weed"/></svg><div class="l">Practice</div></div>
+        <div><svg class="icon icon--lg" aria-hidden="true"><use href="#i-web"/></svg><div class="l">Community</div></div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="field field--flush field--foot">
+        <div class="figures">
+          <div class="row"><div class="n">132+</div><div class="l">Countries in our student and practitioner community</div></div>
+          <div class="row"><div class="n">10,000+</div><div class="l">Individuals enrolled in our programs</div></div>
+          <div class="row"><div class="n">45</div><div class="l">Years of soil biology research behind the method</div></div>
+        </div>
+        <p class="tagline">Healing soil.<br>Feeding humanity.<br>Restoring the living world.</p>
+      </div>
+
+    </section>
+
+  </div>
+</div>
+</body>
+</html>

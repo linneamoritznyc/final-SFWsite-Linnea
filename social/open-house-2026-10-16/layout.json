@@ -1,0 +1,310 @@
+{
+ "w": 1080,
+ "h": 1350,
+ "background": "F4F1EA",
+ "items": [
+  {
+   "type": "image",
+   "name": "microscope-field-circle",
+   "file": "layers/01-microscope-field-circle.png",
+   "x": 139,
+   "y": 369,
+   "w": 803,
+   "h": 803
+  },
+  {
+   "type": "image",
+   "name": "ground-compost",
+   "file": "layers/02-ground-compost.png",
+   "x": 0,
+   "y": 1051,
+   "w": 1080,
+   "h": 299
+  },
+  {
+   "type": "image",
+   "name": "house",
+   "file": "layers/03-house.png",
+   "x": 275,
+   "y": 523,
+   "w": 551,
+   "h": 606
+  },
+  {
+   "type": "image",
+   "name": "sfw-logo-roof",
+   "file": "layers/04-sfw-logo-roof.png",
+   "x": 454,
+   "y": 564,
+   "w": 178,
+   "h": 181
+  },
+  {
+   "type": "image",
+   "name": "doorway-photo",
+   "file": "layers/05-doorway-photo.png",
+   "x": 478,
+   "y": 862,
+   "w": 122,
+   "h": 231
+  },
+  {
+   "type": "image",
+   "name": "door-open",
+   "file": "layers/06-door-open.png",
+   "x": 456,
+   "y": 854,
+   "w": 255,
+   "h": 263
+  },
+  {
+   "type": "image",
+   "name": "window-nematode",
+   "file": "layers/07-window-nematode.png",
+   "x": 365,
+   "y": 770,
+   "w": 120,
+   "h": 123
+  },
+  {
+   "type": "image",
+   "name": "window-arcella",
+   "file": "layers/08-window-arcella.png",
+   "x": 625,
+   "y": 760,
+   "w": 120,
+   "h": 123
+  },
+  {
+   "type": "image",
+   "name": "open-sign",
+   "file": "layers/09-open-sign.png",
+   "x": 492,
+   "y": 806,
+   "w": 95,
+   "h": 47
+  },
+  {
+   "type": "image",
+   "name": "poppies",
+   "file": "layers/10-poppies.png",
+   "x": 250,
+   "y": 860,
+   "w": 159,
+   "h": 239
+  },
+  {
+   "type": "image",
+   "name": "person-kneeling-field",
+   "file": "layers/11-person-kneeling-field.png",
+   "x": 175,
+   "y": 925,
+   "w": 143,
+   "h": 224
+  },
+  {
+   "type": "image",
+   "name": "passion-flower",
+   "file": "layers/12-passion-flower.png",
+   "x": 803,
+   "y": 490,
+   "w": 255,
+   "h": 237
+  },
+  {
+   "type": "image",
+   "name": "orchid",
+   "file": "layers/13-orchid.png",
+   "x": 128,
+   "y": 529,
+   "w": 218,
+   "h": 178
+  },
+  {
+   "type": "image",
+   "name": "clover-right",
+   "file": "layers/14-clover-right.png",
+   "x": 775,
+   "y": 930,
+   "w": 102,
+   "h": 202
+  },
+  {
+   "type": "image",
+   "name": "clover-left",
+   "file": "layers/15-clover-left.png",
+   "x": 311,
+   "y": 962,
+   "w": 84,
+   "h": 167
+  },
+  {
+   "type": "image",
+   "name": "person-misting-pile",
+   "file": "layers/16-person-misting-pile.png",
+   "x": 18,
+   "y": 775,
+   "w": 189,
+   "h": 409
+  },
+  {
+   "type": "image",
+   "name": "person-smelling-compost",
+   "file": "layers/17-person-smelling-compost.png",
+   "x": 831,
+   "y": 795,
+   "w": 249,
+   "h": 399
+  },
+  {
+   "type": "image",
+   "name": "person-manure-fork",
+   "file": "layers/18-person-manure-fork.png",
+   "x": 0,
+   "y": 1064,
+   "w": 388,
+   "h": 286
+  },
+  {
+   "type": "image",
+   "name": "person-crouching-garden",
+   "file": "layers/19-person-crouching-garden.png",
+   "x": 891,
+   "y": 1054,
+   "w": 189,
+   "h": 296
+  },
+  {
+   "type": "image",
+   "name": "sfw-caps",
+   "file": "layers/20-sfw-caps.png",
+   "x": 420,
+   "y": 1140,
+   "w": 216,
+   "h": 127
+  },
+  {
+   "type": "image",
+   "name": "compost-thermometer",
+   "file": "layers/21-compost-thermometer.png",
+   "x": 646,
+   "y": 1189,
+   "w": 148,
+   "h": 150
+  },
+  {
+   "type": "image",
+   "name": "kicker-rule",
+   "file": "layers/22-kicker-rule.png",
+   "x": 70,
+   "y": 100,
+   "w": 941,
+   "h": 2
+  },
+  {
+   "type": "pill",
+   "name": "date-pill",
+   "x": 72,
+   "y": 380,
+   "w": 327,
+   "h": 48,
+   "color": "156826"
+  },
+  {
+   "type": "text",
+   "name": "open-sign-text",
+   "text": "OPEN",
+   "x": 492,
+   "y": 822,
+   "w": 94,
+   "h": 30,
+   "font": "Montserrat",
+   "size": 17,
+   "align": "center",
+   "bold": true,
+   "italic": false,
+   "valign": "middle",
+   "color": "156826"
+  },
+  {
+   "type": "text",
+   "name": "kicker-left",
+   "text": "SOIL FOOD WEB FOUNDATION",
+   "x": 70,
+   "y": 58,
+   "w": 520,
+   "h": 34,
+   "font": "Montserrat",
+   "size": 21,
+   "align": "left",
+   "bold": true,
+   "italic": false,
+   "valign": "top",
+   "color": "22371F"
+  },
+  {
+   "type": "text",
+   "name": "kicker-right",
+   "text": "TURNING ONE",
+   "x": 710,
+   "y": 58,
+   "w": 300,
+   "h": 34,
+   "font": "Montserrat",
+   "size": 21,
+   "align": "right",
+   "bold": true,
+   "italic": false,
+   "valign": "top",
+   "color": "22371F"
+  },
+  {
+   "type": "text",
+   "name": "headline",
+   "text": "Open House",
+   "x": 64,
+   "y": 118,
+   "w": 900,
+   "h": 200,
+   "font": "EB Garamond",
+   "size": 168,
+   "align": "left",
+   "bold": false,
+   "italic": true,
+   "valign": "top",
+   "color": "22371F"
+  },
+  {
+   "type": "text",
+   "name": "subline",
+   "text": "Come celebrate our first year",
+   "x": 72,
+   "y": 318,
+   "w": 700,
+   "h": 52,
+   "font": "EB Garamond",
+   "size": 38,
+   "align": "left",
+   "bold": false,
+   "italic": false,
+   "valign": "top",
+   "color": "4F3433"
+  },
+  {
+   "type": "text",
+   "name": "date",
+   "text": "FRIDAY, OCTOBER 16",
+   "x": 72,
+   "y": 380,
+   "w": 327,
+   "h": 48,
+   "font": "Montserrat",
+   "size": 26,
+   "align": "center",
+   "bold": true,
+   "italic": false,
+   "valign": "middle",
+   "color": "F4F1EA"
+  }
+ ]
+}

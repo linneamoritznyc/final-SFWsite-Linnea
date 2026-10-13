@@ -101,15 +101,7 @@ repository from any of them, and none are referenced by the page.
 No stand-in file, author or licence is recorded below, because recording one without having fetched
 and checked the file would be inventing a citation. The table is laid out and empty on purpose.
 
-`tools/pd-assets.py` is in the repo and does the work in one pass where the network allows it. Run it
-locally, never against Google Drive and never against any Foundation account:
-
-```
-python3 tools/pd-assets.py --list                 # what it would fetch, and from where
-python3 tools/pd-assets.py --fetch --out img/pd   # into the repo only
-```
-It writes `img/pd/CREDITS.json` with the source URL, the author and the licence for every file it
-saves, and refuses to save a file whose licence it cannot read.
+The Foundation decided on 5 October 2026 not to use openly licensed stand-ins (USDA NRCS and similar) on the site.
 
 ### Where to look, and what the licence means before you take anything
 
