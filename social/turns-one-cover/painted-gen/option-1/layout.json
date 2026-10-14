@@ -1,0 +1,48 @@
+[
+ {
+  "type": "image",
+  "name": "painting",
+  "file": "layers/01-painting.jpg",
+  "x": 0,
+  "y": 0,
+  "w": 1080,
+  "h": 1350
+ },
+ {
+  "type": "image",
+  "name": "logo",
+  "file": "layers/02-logo.png",
+  "x": 420,
+  "y": 180,
+  "w": 100,
+  "h": 87
+ },
+ {
+  "type": "text",
+  "name": "headline",
+  "text": "Today we turn 1",
+  "x": 200,
+  "y": 330,
+  "w": 540,
+  "h": 260,
+  "size": 112,
+  "italic": true,
+  "color": "#22371F",
+  "align": "center",
+  "weight": 500
+ },
+ {
+  "type": "text",
+  "name": "small-line",
+  "text": "One year as a 501(c)(3) nonprofit.",
+  "x": 200,
+  "y": 580,
+  "w": 540,
+  "h": 60,
+  "size": 32,
+  "italic": false,
+  "color": "#4F3433",
+  "align": "center",
+  "weight": 400
+ }
+]

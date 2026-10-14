@@ -1,0 +1,426 @@
+[
+ {
+  "type": "image",
+  "name": "background",
+  "file": "layers/01-background.jpg",
+  "x": 0,
+  "y": 0,
+  "w": 1080,
+  "h": 1350
+ },
+ {
+  "type": "image",
+  "name": "halo",
+  "file": "layers/02-halo.png",
+  "x": 320,
+  "y": 230,
+  "w": 760,
+  "h": 1060
+ },
+ {
+  "type": "image",
+  "name": "photo-mentor-microscopes-shadow",
+  "file": "layers/03-photo-mentor-microscopes-shadow.png",
+  "x": 434,
+  "y": 364,
+  "w": 532,
+  "h": 752
+ },
+ {
+  "type": "image",
+  "name": "photo-mentor-microscopes",
+  "file": "layers/04-photo-mentor-microscopes.png",
+  "x": 500,
+  "y": 430,
+  "w": 400,
+  "h": 620
+ },
+ {
+  "type": "image",
+  "name": "flower-orchid-shadow",
+  "file": "layers/05-flower-orchid-shadow.png",
+  "x": 300,
+  "y": 274,
+  "w": 441,
+  "h": 392
+ },
+ {
+  "type": "image",
+  "name": "flower-orchid",
+  "file": "layers/06-flower-orchid.png",
+  "x": 366,
+  "y": 340,
+  "w": 309,
+  "h": 260
+ },
+ {
+  "type": "image",
+  "name": "flower-foxglove-shadow",
+  "file": "layers/07-flower-foxglove-shadow.png",
+  "x": 814,
+  "y": 298,
+  "w": 266,
+  "h": 524
+ },
+ {
+  "type": "image",
+  "name": "flower-foxglove",
+  "file": "layers/08-flower-foxglove.png",
+  "x": 880,
+  "y": 364,
+  "w": 159,
+  "h": 392
+ },
+ {
+  "type": "image",
+  "name": "photo-high-five-compost-shadow",
+  "file": "layers/09-photo-high-five-compost-shadow.png",
+  "x": 4,
+  "y": 454,
+  "w": 532,
+  "h": 402
+ },
+ {
+  "type": "image",
+  "name": "photo-high-five-compost",
+  "file": "layers/10-photo-high-five-compost.png",
+  "x": 70,
+  "y": 520,
+  "w": 400,
+  "h": 270
+ },
+ {
+  "type": "image",
+  "name": "photo-hands-in-compost-shadow",
+  "file": "layers/11-photo-hands-in-compost-shadow.png",
+  "x": 224,
+  "y": 764,
+  "w": 362,
+  "h": 362
+ },
+ {
+  "type": "image",
+  "name": "photo-hands-in-compost",
+  "file": "layers/12-photo-hands-in-compost.png",
+  "x": 290,
+  "y": 830,
+  "w": 230,
+  "h": 230
+ },
+ {
+  "type": "image",
+  "name": "photo-poppy-field-group-shadow",
+  "file": "layers/13-photo-poppy-field-group-shadow.png",
+  "x": 0,
+  "y": 794,
+  "w": 456,
+  "h": 362
+ },
+ {
+  "type": "image",
+  "name": "photo-poppy-field-group",
+  "file": "layers/14-photo-poppy-field-group.png",
+  "x": 60,
+  "y": 860,
+  "w": 330,
+  "h": 230
+ },
+ {
+  "type": "image",
+  "name": "photo-laughing-at-microscope-shadow",
+  "file": "layers/15-photo-laughing-at-microscope-shadow.png",
+  "x": 574,
+  "y": 934,
+  "w": 392,
+  "h": 416
+ },
+ {
+  "type": "image",
+  "name": "photo-laughing-at-microscope",
+  "file": "layers/16-photo-laughing-at-microscope.png",
+  "x": 640,
+  "y": 1000,
+  "w": 260,
+  "h": 300
+ },
+ {
+  "type": "image",
+  "name": "flower-hibiscus-shadow",
+  "file": "layers/17-flower-hibiscus-shadow.png",
+  "x": 818,
+  "y": 1028,
+  "w": 262,
+  "h": 322
+ },
+ {
+  "type": "image",
+  "name": "flower-hibiscus",
+  "file": "layers/18-flower-hibiscus.png",
+  "x": 884,
+  "y": 1094,
+  "w": 191,
+  "h": 212
+ },
+ {
+  "type": "image",
+  "name": "flower-marigold-shadow",
+  "file": "layers/19-flower-marigold-shadow.png",
+  "x": 158,
+  "y": 1023,
+  "w": 263,
+  "h": 327
+ },
+ {
+  "type": "image",
+  "name": "flower-marigold",
+  "file": "layers/20-flower-marigold.png",
+  "x": 224,
+  "y": 1089,
+  "w": 131,
+  "h": 202
+ },
+ {
+  "type": "image",
+  "name": "flower-jasmine-shadow",
+  "file": "layers/21-flower-jasmine-shadow.png",
+  "x": 354,
+  "y": 729,
+  "w": 331,
+  "h": 282
+ },
+ {
+  "type": "image",
+  "name": "flower-jasmine",
+  "file": "layers/22-flower-jasmine.png",
+  "x": 420,
+  "y": 795,
+  "w": 199,
+  "h": 150
+ },
+ {
+  "type": "image",
+  "name": "flower-poppy-shadow",
+  "file": "layers/23-flower-poppy-shadow.png",
+  "x": 411,
+  "y": 1038,
+  "w": 268,
+  "h": 312
+ },
+ {
+  "type": "image",
+  "name": "flower-poppy",
+  "file": "layers/24-flower-poppy.png",
+  "x": 477,
+  "y": 1104,
+  "w": 136,
+  "h": 246
+ },
+ {
+  "type": "image",
+  "name": "candle-glow",
+  "file": "layers/25-candle-glow.png",
+  "x": 770,
+  "y": 110,
+  "w": 260,
+  "h": 260
+ },
+ {
+  "type": "image",
+  "name": "candle-shadow",
+  "file": "layers/26-candle-shadow.png",
+  "x": 804,
+  "y": 142,
+  "w": 192,
+  "h": 376
+ },
+ {
+  "type": "image",
+  "name": "candle",
+  "file": "layers/27-candle.png",
+  "x": 852,
+  "y": 190,
+  "w": 96,
+  "h": 280
+ },
+ {
+  "type": "image",
+  "name": "confetti-1-shadow",
+  "file": "layers/28-confetti-1-shadow.png",
+  "x": 872,
+  "y": 293,
+  "w": 84,
+  "h": 90
+ },
+ {
+  "type": "image",
+  "name": "confetti-1",
+  "file": "layers/29-confetti-1.png",
+  "x": 902,
+  "y": 323,
+  "w": 24,
+  "h": 30
+ },
+ {
+  "type": "image",
+  "name": "confetti-2-shadow",
+  "file": "layers/30-confetti-2-shadow.png",
+  "x": 894,
+  "y": 85,
+  "w": 78,
+  "h": 88
+ },
+ {
+  "type": "image",
+  "name": "confetti-2",
+  "file": "layers/31-confetti-2.png",
+  "x": 924,
+  "y": 115,
+  "w": 18,
+  "h": 28
+ },
+ {
+  "type": "image",
+  "name": "confetti-3-shadow",
+  "file": "layers/32-confetti-3-shadow.png",
+  "x": 988,
+  "y": 246,
+  "w": 78,
+  "h": 78
+ },
+ {
+  "type": "image",
+  "name": "confetti-3",
+  "file": "layers/33-confetti-3.png",
+  "x": 1018,
+  "y": 276,
+  "w": 18,
+  "h": 18
+ },
+ {
+  "type": "image",
+  "name": "confetti-4-shadow",
+  "file": "layers/34-confetti-4-shadow.png",
+  "x": 919,
+  "y": 55,
+  "w": 76,
+  "h": 76
+ },
+ {
+  "type": "image",
+  "name": "confetti-4",
+  "file": "layers/35-confetti-4.png",
+  "x": 949,
+  "y": 85,
+  "w": 16,
+  "h": 16
+ },
+ {
+  "type": "image",
+  "name": "confetti-5-shadow",
+  "file": "layers/36-confetti-5-shadow.png",
+  "x": 637,
+  "y": 214,
+  "w": 90,
+  "h": 78
+ },
+ {
+  "type": "image",
+  "name": "confetti-5",
+  "file": "layers/37-confetti-5.png",
+  "x": 667,
+  "y": 244,
+  "w": 30,
+  "h": 18
+ },
+ {
+  "type": "image",
+  "name": "confetti-6-shadow",
+  "file": "layers/38-confetti-6-shadow.png",
+  "x": 783,
+  "y": 47,
+  "w": 80,
+  "h": 80
+ },
+ {
+  "type": "image",
+  "name": "confetti-6",
+  "file": "layers/39-confetti-6.png",
+  "x": 813,
+  "y": 77,
+  "w": 20,
+  "h": 20
+ },
+ {
+  "type": "image",
+  "name": "confetti-7-shadow",
+  "file": "layers/40-confetti-7-shadow.png",
+  "x": 825,
+  "y": 291,
+  "w": 80,
+  "h": 80
+ },
+ {
+  "type": "image",
+  "name": "confetti-7",
+  "file": "layers/41-confetti-7.png",
+  "x": 855,
+  "y": 321,
+  "w": 20,
+  "h": 20
+ },
+ {
+  "type": "image",
+  "name": "confetti-8-shadow",
+  "file": "layers/42-confetti-8-shadow.png",
+  "x": 605,
+  "y": 42,
+  "w": 88,
+  "h": 90
+ },
+ {
+  "type": "image",
+  "name": "confetti-8",
+  "file": "layers/43-confetti-8.png",
+  "x": 635,
+  "y": 72,
+  "w": 28,
+  "h": 30
+ },
+ {
+  "type": "text",
+  "name": "headline",
+  "text": "Today we turn 1",
+  "x": 70,
+  "y": 120,
+  "w": 520,
+  "h": 300,
+  "size": 120,
+  "italic": true,
+  "color": "#22371F",
+  "align": "left",
+  "weight": 500
+ },
+ {
+  "type": "text",
+  "name": "small-line",
+  "text": "One year as a 501(c)(3) nonprofit.",
+  "x": 74,
+  "y": 400,
+  "w": 520,
+  "h": 60,
+  "size": 34,
+  "italic": false,
+  "color": "#156826",
+  "align": "left",
+  "weight": 400
+ },
+ {
+  "type": "image",
+  "name": "logo",
+  "file": "layers/46-logo.png",
+  "x": 70,
+  "y": 1195,
+  "w": 110,
+  "h": 95
+ }
+]
