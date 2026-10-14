@@ -442,3 +442,7 @@ The card is photo 1, cut to 3:2 from the top. Not used: the compost, microscopy,
 The June 2026 page gets a 20-photo gallery from the SFW Drive folder "PICTURES - June 2026 - Student Access" (shared by Stephanie on 12 October), picked from the catalog's picks for that folder. The list is in docs/sfw-image-catalog.md. The two header photos stay. The June 2026 download and both spreadsheets now include the gallery (23 images).
 
 Note: scratchpad generator ws-site.py still holds the 11 October copy. Do not regenerate the workshop pages with it; the 13 October final texts and the merged galleries live in src/pages.
+
+## February 2026 gallery: 20 more photos (14 October)
+
+Linnea got a second set of Santa Fe photos, the shared folder "Photos-Feb26-CTPAW" (47 files, 23 Feb to 7 Mar 2026), and copied it into her Drive. 20 picks join the February 2026 gallery, which now has 42 photos; they are mixed into the page order by subject (the ranch, the classroom, feedstock, the hoop houses, extraction, evenings), and the caps and the certificate still close it. None of them repeats a photo on the site (checked with ORB matching against img/new and the workshop images). Originals: img/new-2026-10/santa-fe-2026-26 to -45, 1600 px, no EXIF. Each has a row in docs/image-log-additions.csv, the catalog rows are in docs/sfw-image-catalog.md, and the February 2026 download and both spreadsheets now list all 48 images (gallery files renumbered in page order).
