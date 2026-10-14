@@ -1,0 +1,128 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-02-logo.png",
+    "x": 858,
+    "y": 56,
+    "w": 150,
+    "h": 150
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 90,
+    "y": 230,
+    "w": 900,
+    "h": 300,
+    "size": 92,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.05,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#F3D27A",
+      false
+     ]
+    ],
+    "x": 92,
+    "y": 550,
+    "w": 900,
+    "h": 60,
+    "size": 50,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "norfolk-common-poppy",
+    "file": "layers/s1-05-norfolk-common-poppy.png",
+    "x": 0,
+    "y": 872,
+    "w": 243,
+    "h": 478
+   },
+   {
+    "type": "image",
+    "name": "tamil-nadu-marigold",
+    "file": "layers/s1-06-tamil-nadu-marigold.png",
+    "x": 149,
+    "y": 1002,
+    "w": 242,
+    "h": 348
+   },
+   {
+    "type": "image",
+    "name": "santa-fe-indian-paintbrush",
+    "file": "layers/s1-07-santa-fe-indian-paintbrush.png",
+    "x": 299,
+    "y": 846,
+    "w": 282,
+    "h": 504
+   },
+   {
+    "type": "image",
+    "name": "costa-rica-hibiscus",
+    "file": "layers/s1-08-costa-rica-hibiscus.png",
+    "x": 474,
+    "y": 1076,
+    "w": 272,
+    "h": 274
+   },
+   {
+    "type": "image",
+    "name": "santa-fe-chamisa",
+    "file": "layers/s1-09-santa-fe-chamisa.png",
+    "x": 584,
+    "y": 938,
+    "w": 351,
+    "h": 412
+   },
+   {
+    "type": "image",
+    "name": "costa-rica-heliconia",
+    "file": "layers/s1-10-costa-rica-heliconia.png",
+    "x": 778,
+    "y": 798,
+    "w": 284,
+    "h": 552
+   },
+   {
+    "type": "image",
+    "name": "norfolk-cornflower",
+    "file": "layers/s1-11-norfolk-cornflower.png",
+    "x": 912,
+    "y": 932,
+    "w": 168,
+    "h": 418
+   }
+  ]
+ }
+]

@@ -10,7 +10,8 @@ from pptx.enum.text import PP_ALIGN
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H, E = 1080, 1350, 914400 / 108
-SETS = [("sunny-1", "Sunny 1: poppy field, Wild Ken Hill"), ("sunny-2", "Sunny 2: cover crops, Capri"),
+SETS = [("more-a", "More A: poppy field"), ("more-b", "More B: low sun"), ("more-c", "More C: flower frame"),
+        ("more-d", "More D: golden sunrise"), ("sunny-1", "Sunny 1: poppy field, Wild Ken Hill"), ("sunny-2", "Sunny 2: cover crops, Capri"),
         ("sunny-3", "Sunny 3: morning sun, flowers"),
         ("rules-1", "Text-post rules 1: cracked to alive"), ("rules-3", "Text-post rules 3: soil in the letters"),
         ("concept-1", "Concept 1: cracked to alive"), ("concept-3", "Concept 3: soil in the letters"),

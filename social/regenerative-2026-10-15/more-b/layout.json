@@ -1,0 +1,92 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-02-logo.png",
+    "x": 848,
+    "y": 56,
+    "w": 160,
+    "h": 139
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#22371F",
+      false
+     ]
+    ],
+    "x": 90,
+    "y": 330,
+    "w": 900,
+    "h": 300,
+    "size": 92,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.05,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#22371F",
+      false
+     ]
+    ],
+    "x": 92,
+    "y": 650,
+    "w": 900,
+    "h": 60,
+    "size": 50,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "costa-rica-heliconia",
+    "file": "layers/s1-05-costa-rica-heliconia.png",
+    "x": 694,
+    "y": 670,
+    "w": 333,
+    "h": 680
+   },
+   {
+    "type": "image",
+    "name": "norfolk-common-poppy",
+    "file": "layers/s1-06-norfolk-common-poppy.png",
+    "x": 33,
+    "y": 846,
+    "w": 294,
+    "h": 504
+   },
+   {
+    "type": "image",
+    "name": "tamil-nadu-marigold",
+    "file": "layers/s1-07-tamil-nadu-marigold.png",
+    "x": 276,
+    "y": 994,
+    "w": 248,
+    "h": 356
+   }
+  ]
+ }
+]

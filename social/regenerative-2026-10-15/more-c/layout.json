@@ -1,0 +1,137 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "top-santa-fe-indian-paintbrush",
+    "file": "layers/s1-02-top-santa-fe-indian-paintbrush.png",
+    "x": 0,
+    "y": 0,
+    "w": 244,
+    "h": 350
+   },
+   {
+    "type": "image",
+    "name": "top-tamil-nadu-jasmine",
+    "file": "layers/s1-03-top-tamil-nadu-jasmine.png",
+    "x": 146,
+    "y": 0,
+    "w": 367,
+    "h": 250
+   },
+   {
+    "type": "image",
+    "name": "top-norfolk-cornflower",
+    "file": "layers/s1-04-top-norfolk-cornflower.png",
+    "x": 458,
+    "y": 0,
+    "w": 205,
+    "h": 314
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-05-logo.png",
+    "x": 848,
+    "y": 56,
+    "w": 160,
+    "h": 139
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "What does Regenerative actually mean?",
+      "#22371F",
+      false
+     ]
+    ],
+    "x": 90,
+    "y": 430,
+    "w": 900,
+    "h": 300,
+    "size": 88,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.05,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "And who gets to decide?",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 92,
+    "y": 740,
+    "w": 900,
+    "h": 60,
+    "size": 48,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "bottom-costa-rica-hibiscus",
+    "file": "layers/s1-08-bottom-costa-rica-hibiscus.png",
+    "x": 0,
+    "y": 1056,
+    "w": 291,
+    "h": 294
+   },
+   {
+    "type": "image",
+    "name": "bottom-santa-fe-chamisa",
+    "file": "layers/s1-09-bottom-santa-fe-chamisa.png",
+    "x": 235,
+    "y": 1010,
+    "w": 290,
+    "h": 340
+   },
+   {
+    "type": "image",
+    "name": "bottom-tamil-nadu-marigold",
+    "file": "layers/s1-10-bottom-tamil-nadu-marigold.png",
+    "x": 486,
+    "y": 1040,
+    "w": 227,
+    "h": 310
+   },
+   {
+    "type": "image",
+    "name": "bottom-norfolk-common-poppy",
+    "file": "layers/s1-11-bottom-norfolk-common-poppy.png",
+    "x": 688,
+    "y": 956,
+    "w": 224,
+    "h": 394
+   },
+   {
+    "type": "image",
+    "name": "bottom-costa-rica-torch-ginger",
+    "file": "layers/s1-12-bottom-costa-rica-torch-ginger.png",
+    "x": 846,
+    "y": 946,
+    "w": 234,
+    "h": 404
+   }
+  ]
+ }
+]
