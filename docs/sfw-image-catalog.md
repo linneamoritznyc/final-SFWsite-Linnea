@@ -1984,3 +1984,58 @@ Workshop: Accelerator Workshop June 2026, Wild Ken Hill, Norfolk, UK, 15 to 26 J
 
 Left out: the pizza van (already on the June 2025 page), the fisheye frames (IMG_20260615_080232, IMG_20260619_131510), the wrapped microscope, the tank fittings, near-repeat frames of each burst, and all videos.
 
+## Folder (shared with Linnea): Photos-Feb26-CTPAW
+
+Workshop: Accelerator Workshop February 2026, Synergia Ranch, Santa Fe, New Mexico, 23 Feb to 6 Mar 2026. Shared with Linnea on 14 Oct 2026; copied to her Drive folder 2026-02\_NM-Workshop\_Synergia Ranch › Photos-Feb26-CTPAW. Rows written from Drive screenshots; file names are cut off after the time, most end in .jpg. These are a different set from the 2026-02\_NM-Workshop\_Synergia Ranch folder above, so none of them is on the site yet.
+
+| File | What it shows | Workshop / date |
+| :---- | :---- | :---- |
+| 20260223\_062716 | Dining room with wooden tables and carved chairs, a cactus painting on the wall, blue string lights along the ceiling | Santa Fe, 23 Feb 2026 |
+| 20260223\_105535 | Mostly blue sky, hoop houses and people's heads along the bottom | Santa Fe, 23 Feb 2026 Not for the website: missed frame |
+| 20260223\_110218 | Inside a hoop house frame: bare ground, blue drums along one side | Santa Fe, 23 Feb 2026 |
+| 20260223\_142244 | Three men smiling in front of the shade-cloth hoop houses, blue sky | Santa Fe, 23 Feb 2026 **Pick for the gallery** |
+| 20260223\_160230 | Bearded man in a green cap and a woman looking closely at something in the classroom, others behind | Santa Fe, 23 Feb 2026 **Pick for the gallery** |
+| 20260224\_094610 | Long compost windrow in the high desert, bare trees and blue mountains behind | Santa Fe, 24 Feb 2026 **Pick for the gallery** (the setting) |
+| 20260224\_095512 | Blue drums lying along the side of a hoop house, a wooden post in front | Santa Fe, 24 Feb 2026 |
+| 20260224\_100431 | Blue drums tipped on their sides, spilling feedstock, close-up | Santa Fe, 24 Feb 2026 |
+| 20260224\_104217 | Students forking feedstock on a tarp, a woman in a red vest seen from behind | Santa Fe, 24 Feb 2026 |
+| 20260224\_113435 | Man in a cowboy hat lifting a blue drum, hoop house behind | Santa Fe, 24 Feb 2026 **Pick for the gallery** |
+| 20260224\_113921 | Group standing inside a hoop house frame, wooden end wall behind | Santa Fe, 24 Feb 2026 |
+| 20260224\_134430 | Young man in a cap holding a blue drum inside a hoop house, buckets around | Santa Fe, 24 Feb 2026 **Pick for the gallery** |
+| 20260225\_075942 | Cholla cactus in dry grass, hills and blue sky behind | Santa Fe, 25 Feb 2026 **Pick for the gallery** (the setting) |
+| 20260225\_081235 | Two women pulling a black tarp over a pile, sheds behind | Santa Fe, 25 Feb 2026 |
+| 20260225\_085308 | Open palm with a tiny dark organism on it, close-up | Santa Fe, 25 Feb 2026 **Pick for the gallery** (detail) |
+| 20260225\_131350 | Woman in a plaid shirt holding up a pipette and sample tube in the classroom, red flower painting behind | Santa Fe, 25 Feb 2026 **Pick for the gallery** |
+| 20260226\_063356 | Dawn sky over dark hills | Santa Fe, 26 Feb 2026 |
+| 20260226\_104904 | Class crowded and crouching around blue buckets, seen from above | Santa Fe, 26 Feb 2026 **Pick for the gallery** |
+| 20260226\_154501 | Hoop houses on a slope, people walking between them | Santa Fe, 26 Feb 2026 |
+| 20260227\_091904 | Man tossing hay inside a hoop house, dust in the air, hay bales in front | Santa Fe, 27 Feb 2026 **Pick for the gallery** |
+| 20260228\_180324 | Orange and purple sunset clouds over a dark horizon | Santa Fe, 28 Feb 2026 |
+| 20260228\_181034 | Smiling woman in headphones at a laptop, patterned blanket in front | Santa Fe, 28 Feb 2026 |
+| 20260301\_080609 | Man in a plaid shirt beside a pile half covered in a tarp, inside a hoop house | Santa Fe, 1 Mar 2026 |
+| 20260301\_082907 | Man lifting a wire cage off a compost pile inside a hoop house | Santa Fe, 1 Mar 2026 **Pick for the gallery** |
+| 20260302\_082655 | People at a livestock pen with a blue bucket, strong sun flare | Santa Fe, 2 Mar 2026 |
+| 20260302\_112724 | Students at rows of metal carts outdoors, a geodesic dome and bare trees behind | Santa Fe, 2 Mar 2026 **Pick for the gallery** |
+| 20260302\_132918 (video) | Students carrying blue buckets across open desert ground, mountains behind | Santa Fe, 2 Mar 2026 |
+| 20260302\_133122 | Men with blue drums beside the hoop houses, one in a cowboy hat | Santa Fe, 2 Mar 2026 |
+| 20260302\_195515 | Painted tiles with yellow flowers and green borders, close-up | Santa Fe, 2 Mar 2026 **Pick for the gallery** (detail) |
+| 20260303\_180611 | Sunset: orange clouds over dark mountain silhouettes | Santa Fe, 3 Mar 2026 **Pick for the gallery** (the best sunset) |
+| 20260304\_062409 | Old wooden wagon wheels in dry scrub, bare trees behind | Santa Fe, 4 Mar 2026 **Pick for the gallery** |
+| 20260304\_062628 | Dawn over the desert, flat horizon | Santa Fe, 4 Mar 2026 |
+| 20260304\_122454 | A man and a woman at a birthday cake with candles, flowers on the table | Santa Fe, 4 Mar 2026 |
+| 20260304\_122459 | Woman blowing out candles on a birthday cake | Santa Fe, 4 Mar 2026 **Pick for the gallery** |
+| 20260304\_131111 | White funnel stands with yellow tubes on a table by a window (extraction set-up) | Santa Fe, 4 Mar 2026 |
+| 20260304\_132628 | Same funnel stands, a man in green leaning in | Santa Fe, 4 Mar 2026 |
+| 20260304\_132644 | Man in green pouring from a blue bucket at the funnel stands, others watching | Santa Fe, 4 Mar 2026 **Pick for the gallery** |
+| 20260304\_132727 | Room full of students around the funnel stands, flower painting on the wall | Santa Fe, 4 Mar 2026 |
+| 20260304\_133122 | Curly hair in the foreground, older man in a cap at the funnel stands | Santa Fe, 4 Mar 2026 |
+| 20260304\_161051 | Woman in sunglasses kneeling at a wire bin, pulling out material, blue bucket | Santa Fe, 4 Mar 2026 **Pick for the gallery** |
+| 20260305\_091748 | Wide sky with white clouds over desert grassland and blue mountains | Santa Fe, 5 Mar 2026 |
+| 20260305\_163142 | Smiling woman in a purple hoodie and pink gloves at a pipe, man in a cap behind | Santa Fe, 5 Mar 2026 **Pick for the gallery** |
+| 20260305\_163319 | Woman kneeling by a blue tarp with a bucket, hills behind | Santa Fe, 5 Mar 2026 |
+| 20260305\_184003 | The class at a long dinner table with plates of food, white room with paintings | Santa Fe, 5 Mar 2026 **Pick for the gallery** |
+| 20260306\_062513 | Dark clouds with an orange sunrise band | Santa Fe, 6 Mar 2026 |
+| 20260306\_083228 | Blue sky, a low cloud over the plain | Santa Fe, 6 Mar 2026 |
+| 20260307\_063814 | Morning light on scrub and distant mountains, pale sky | Santa Fe, 7 Mar 2026 (after the workshop) |
+
+**Feb 2026 picks from this folder (20):** 20260223\_142244, 20260223\_160230, 20260224\_094610, 20260224\_113435, 20260224\_134430, 20260225\_075942, 20260225\_085308, 20260225\_131350, 20260226\_104904, 20260227\_091904, 20260301\_082907, 20260302\_112724, 20260302\_195515, 20260303\_180611, 20260304\_062409, 20260304\_122459, 20260304\_132644, 20260304\_161051, 20260305\_163142, 20260305\_184003. All 20 are now in the February 2026 gallery (santa-fe-2026-26 to -45).
