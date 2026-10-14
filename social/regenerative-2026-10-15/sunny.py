@@ -5,7 +5,7 @@ import os
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from concepts import Single, grain, cover
-from variants import W, H, DEEP, GREEN, CREAM, rgb, cut, NEW, FLOW, HEAD, SMALL1
+from variants import W, H, DEEP, GREEN, CREAM, rgb, cut, NEW, FLOW, HEAD, SMALL1, logo_img
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 WHITE = "#FFFFFF"
@@ -56,6 +56,7 @@ yy = np.mgrid[0:H, 0:W][0].astype(np.float32)[..., None] / H
 top, mid, low = np.array([255, 214, 140], np.float32), np.array([255, 236, 200], np.float32), np.array([250, 246, 232], np.float32)
 sky = np.where(yy < .45, top * (1 - yy / .45) + mid * (yy / .45), mid * (1 - (yy - .45) / .55) + low * ((yy - .45) / .55))
 d.bg(s, grain(sunlight(Image.fromarray(sky.astype(np.uint8)), W - 200, 160, 420, .9), 4, 7))
+d.img(s, "logo", logo_img(180), W - 72 - 180, 64)
 d.text(s, "headline", [(HEAD, DEEP, False)], M, 330, W - 2 * M, 300, 92, lh=1.05)
 d.text(s, "small-line", [(SMALL1, GREEN, False)], M + 2, 650, W - 2 * M, 60, 50, font="Source Sans 3", weight=600)
 meadow = [("cornflower", "norfolk-common-poppy.png", 520, 90, -8), ("marigold", "tamil-nadu-marigold.png", 380, 250, 5),

@@ -12,6 +12,15 @@
     "h": 1350
    },
    {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-02-logo.png",
+    "x": 828,
+    "y": 64,
+    "w": 180,
+    "h": 156
+   },
+   {
     "type": "text",
     "name": "headline",
     "runs": [
@@ -54,7 +63,7 @@
    {
     "type": "image",
     "name": "flower-cornflower",
-    "file": "layers/s1-04-flower-cornflower.png",
+    "file": "layers/s1-05-flower-cornflower.png",
     "x": 0,
     "y": 830,
     "w": 246,
@@ -63,7 +72,7 @@
    {
     "type": "image",
     "name": "flower-marigold",
-    "file": "layers/s1-05-flower-marigold.png",
+    "file": "layers/s1-06-flower-marigold.png",
     "x": 122,
     "y": 982,
     "w": 256,
@@ -72,7 +81,7 @@
    {
     "type": "image",
     "name": "flower-paintbrush",
-    "file": "layers/s1-06-flower-paintbrush.png",
+    "file": "layers/s1-07-flower-paintbrush.png",
     "x": 248,
     "y": 806,
     "w": 304,
@@ -81,7 +90,7 @@
    {
     "type": "image",
     "name": "flower-hibiscus",
-    "file": "layers/s1-07-flower-hibiscus.png",
+    "file": "layers/s1-08-flower-hibiscus.png",
     "x": 414,
     "y": 1054,
     "w": 291,
@@ -90,7 +99,7 @@
    {
     "type": "image",
     "name": "flower-chamisa",
-    "file": "layers/s1-08-flower-chamisa.png",
+    "file": "layers/s1-09-flower-chamisa.png",
     "x": 517,
     "y": 916,
     "w": 366,
@@ -99,7 +108,7 @@
    {
     "type": "image",
     "name": "flower-heliconia",
-    "file": "layers/s1-09-flower-heliconia.png",
+    "file": "layers/s1-10-flower-heliconia.png",
     "x": 708,
     "y": 756,
     "w": 304,
@@ -108,7 +117,7 @@
    {
     "type": "image",
     "name": "flower-cornflower-2",
-    "file": "layers/s1-10-flower-cornflower-2.png",
+    "file": "layers/s1-11-flower-cornflower-2.png",
     "x": 850,
     "y": 890,
     "w": 230,
