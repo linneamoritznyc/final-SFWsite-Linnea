@@ -463,3 +463,5 @@ Picked on visual quality from the image catalog; every new photo was checked aga
 - Kept: the hero, the ciliate card, the seedling photo and the woman with the manure fork.
 
 15 October, later: Linnea kept the original three card images and the five people sitting together, removed the teaching band and the sample photo, and swapped the hands-in-compost photo for three people at one microscope. The closing band heading now sits up in the sky.
+
+Then: the "Every pair of hands" row is back to the 14 October photos (seedling, field planting, field walk).
