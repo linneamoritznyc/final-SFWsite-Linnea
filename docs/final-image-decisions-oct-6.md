@@ -450,3 +450,14 @@ Linnea got a second set of Santa Fe photos, the shared folder "Photos-Feb26-CTPA
 ## Volunteer page footer (15 October)
 
 The Volunteer page ends with a full-width photo band like About, Contact and Donate: 20250304_130728.heic from the 2025-03 Armonía folder (students with buckets around a heap of feedstock on a blue tarp). Not used anywhere else on the site. Heading from the copy deck ("Our volunteer network is just taking root."), button back to the form.
+
+## Volunteer page photo pass (15 October, Linnea)
+
+Picked on visual quality from the image catalog; every new photo was checked against every image on the site so none is a repeat.
+- "Start in the next ten minutes": the Global Soil Solutions graphic is now three people at one microscope (June 2025, IMG_2542); the Instagram screenshot is now fungal hyphae seen down a workshop microscope (June 2025, IMG_20250624_135155).
+- New full-width band between the role cards and "Every pair of hands": a woman explaining a tall pile to the class (March 2025).
+- "Every pair of hands": the field planting photo is now hands holding dark compost (Brevity Media R5A_4016); the field-walk photo is now a team building a pile (March 2025).
+- "Questions people ask first": the five people on the hay bale are now a team waving behind their finished pile (March 2025).
+- Under "How it works": a woman holding a sample tube to the light (March 2025, 20250312_083929).
+- Closing band: Linnea's Santa Fe sky photo (20260305_091748). The previous closing photo (20250304_130728) turned out to be already in the March 2025 gallery.
+- Kept: the hero, the ciliate card, the seedling photo and the woman with the manure fork.
