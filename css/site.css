@@ -1877,4 +1877,6 @@ h2 { line-height: 1.18; }
 .vol-faq { background: linear-gradient(180deg, #fff 0%, var(--cream) 100%); }
 .vol-join { background: linear-gradient(180deg, var(--cream) 0%, #e9f0e6 100%); }
 .vol-hero .wrap { width: 100%; }
-@media (min-width: 48em) { 
+@media (min-width: 48em) { /* Closing band with the words up in the sky (Volunteer): text at the top, shade from the top. */
+.band--photo.band--ending.band--ending-top { padding-block: clamp(3rem, 2rem + 3vw, 5rem) clamp(9rem, 5rem + 14vw, 17rem); }
+.band--photo.band--ending.band--ending-top::before { background: linear-gradient(rgba(20, 28, 18, .5), rgba(20, 28, 18, 0) 60%); }

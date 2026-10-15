@@ -458,6 +458,8 @@ Picked on visual quality from the image catalog; every new photo was checked aga
 - New full-width band between the role cards and "Every pair of hands": a woman explaining a tall pile to the class (March 2025).
 - "Every pair of hands": the field planting photo is now hands holding dark compost (Brevity Media R5A_4016); the field-walk photo is now a team building a pile (March 2025).
 - "Questions people ask first": the five people on the hay bale are now a team waving behind their finished pile (March 2025).
-- Under "How it works": a woman holding a sample tube to the light (March 2025, 20250312_083929).
+- Under "How it works": no photo (Linnea removed the sample photo).
 - Closing band: Linnea's Santa Fe sky photo (20260305_091748). The previous closing photo (20250304_130728) turned out to be already in the March 2025 gallery.
 - Kept: the hero, the ciliate card, the seedling photo and the woman with the manure fork.
+
+15 October, later: Linnea kept the original three card images and the five people sitting together, removed the teaching band and the sample photo, and swapped the hands-in-compost photo for three people at one microscope. The closing band heading now sits up in the sky.
