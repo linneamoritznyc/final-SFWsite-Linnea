@@ -446,3 +446,7 @@ Note: scratchpad generator ws-site.py still holds the 11 October copy. Do not re
 ## February 2026 gallery: 20 more photos (14 October)
 
 Linnea got a second set of Santa Fe photos, the shared folder "Photos-Feb26-CTPAW" (47 files, 23 Feb to 7 Mar 2026), and copied it into her Drive. 20 picks join the February 2026 gallery, which now has 42 photos; they are mixed into the page order by subject (the ranch, the classroom, feedstock, the hoop houses, extraction, evenings), and the caps and the certificate still close it. None of them repeats a photo on the site (checked with ORB matching against img/new and the workshop images). Originals: img/new-2026-10/santa-fe-2026-26 to -45, 1600 px, no EXIF. Each has a row in docs/image-log-additions.csv, the catalog rows are in docs/sfw-image-catalog.md, and the February 2026 download and both spreadsheets now list all 48 images (gallery files renumbered in page order).
+
+## Volunteer page footer (15 October)
+
+The Volunteer page ends with a full-width photo band like About, Contact and Donate: 20250304_130728.heic from the 2025-03 Armonía folder (students with buckets around a heap of feedstock on a blue tarp). Not used anywhere else on the site. Heading from the copy deck ("Our volunteer network is just taking root."), button back to the form.

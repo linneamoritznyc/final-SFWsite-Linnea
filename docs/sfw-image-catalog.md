@@ -1329,7 +1329,7 @@ Workshop: Accelerator Workshop March 2025, Armonía Agricultura Orgánica, Hered
 | 20250305\_135430.h… | Woman in a yellow top bent over a microscope, mentor standing behind | Costa Rica Mar 2025 |
 | 20250305\_135355.jpg | Students at microscopes seen from behind, whiteboard and prints | Costa Rica Mar 2025 |
 | 20250305\_092900.h… | Projected slide "Physical Characteristics: Surface Area to Volume Ratio" with a table and color bars | Costa Rica Mar 2025 |
-| 20250304\_130728.h… | Students with buckets around a low heap of feedstock on a blue tarp in the green shed | Costa Rica Mar 2025 **Pick for past workshop page** (building day) |
+| 20250304\_130728.h… | Students with buckets around a low heap of feedstock on a blue tarp in the green shed | Costa Rica Mar 2025 **Chosen: Volunteer page, bottom banner (15 Oct 2026).** |
 | 20250304\_130724.h… | Students filling a wire mesh bin with feedstock, man with gloves in front | Costa Rica Mar 2025 |
 | 20250304\_101505.h… | Two men crouching on the floor holding a long probe thermometer into a white jug of water (calibrating thermometers) | Costa Rica Mar 2025 **Pick for past workshop page** (calibrating thermometers, a nice detail of teaching) |
 | 20250304\_130733.h…, \_132056.h…, \_131959.heic | Students building piles in wire mesh bins under the covered shed, buckets and hoses | Costa Rica Mar 2025 |
