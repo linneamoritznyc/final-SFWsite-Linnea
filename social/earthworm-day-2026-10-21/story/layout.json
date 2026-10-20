@@ -1,0 +1,275 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/f1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1920
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "text": "Is World Earthworm Day even a thing?",
+    "x": 84,
+    "y": 330,
+    "w": 912,
+    "h": 500,
+    "size": 110,
+    "color": "#22371F",
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.04,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "soil",
+    "file": "layers/f1-03-soil.png",
+    "x": 0,
+    "y": 1280,
+    "w": 1080,
+    "h": 640
+   },
+   {
+    "type": "image",
+    "name": "worm-epigeic",
+    "file": "layers/f1-04-worm-epigeic.png",
+    "x": 66,
+    "y": 1165,
+    "w": 329,
+    "h": 365
+   },
+   {
+    "type": "image",
+    "name": "worm-endogeic",
+    "file": "layers/f1-05-worm-endogeic.png",
+    "x": 353,
+    "y": 1097,
+    "w": 414,
+    "h": 433
+   },
+   {
+    "type": "image",
+    "name": "worm-anecic",
+    "file": "layers/f1-06-worm-anecic.png",
+    "x": 634,
+    "y": 1003,
+    "w": 446,
+    "h": 527
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/f1-07-logo.png",
+    "x": 846,
+    "y": 1570,
+    "w": 150,
+    "h": 130
+   }
+  ]
+ },
+ {
+  "n": 2,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/f2-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1920
+   },
+   {
+    "type": "text",
+    "name": "yes",
+    "text": "Yes, it's real.",
+    "x": 84,
+    "y": 300,
+    "w": 912,
+    "h": 140,
+    "size": 104,
+    "color": "#156826",
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.0,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "story",
+    "text": "In 2016 the Earthworm Society of Britain nominated 21 October as World Earthworm Day, and they chose October to honor Charles Darwin, since his book on worms was published that month.",
+    "x": 84,
+    "y": 470,
+    "w": 912,
+    "h": 560,
+    "size": 50,
+    "color": "#4F3433",
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.3,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "soil",
+    "file": "layers/f2-04-soil.png",
+    "x": 0,
+    "y": 1400,
+    "w": 1080,
+    "h": 520
+   },
+   {
+    "type": "image",
+    "name": "worm-anecic",
+    "file": "layers/f2-05-worm-anecic.png",
+    "x": 590,
+    "y": 1119,
+    "w": 490,
+    "h": 591
+   },
+   {
+    "type": "image",
+    "name": "lamp-beam",
+    "file": "layers/f2-06-lamp-beam.png",
+    "x": 250,
+    "y": 1049,
+    "w": 450,
+    "h": 264
+   }
+  ]
+ },
+ {
+  "n": 3,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/f3-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1920
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "text": "Which earthworm are you today?",
+    "x": 84,
+    "y": 250,
+    "w": 912,
+    "h": 260,
+    "size": 92,
+    "color": "#22371F",
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.04,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "panel-epigeic",
+    "file": "layers/f3-03-panel-epigeic.png",
+    "x": 34,
+    "y": 450,
+    "w": 1012,
+    "h": 400
+   },
+   {
+    "type": "text",
+    "name": "label-epigeic",
+    "text": "Epigeic. Lives in the leaf litter and eats fast.",
+    "x": 120,
+    "y": 540,
+    "w": 520,
+    "h": 230,
+    "size": 40,
+    "color": "#F4F1EA",
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.22,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "worm-epigeic",
+    "file": "layers/f3-05-worm-epigeic.png",
+    "x": 718,
+    "y": 522,
+    "w": 288,
+    "h": 314
+   },
+   {
+    "type": "image",
+    "name": "panel-endogeic",
+    "file": "layers/f3-06-panel-endogeic.png",
+    "x": 34,
+    "y": 778,
+    "w": 1012,
+    "h": 400
+   },
+   {
+    "type": "text",
+    "name": "label-endogeic",
+    "text": "Endogeic. Stays in the topsoil and eats its way through it.",
+    "x": 120,
+    "y": 868,
+    "w": 520,
+    "h": 230,
+    "size": 40,
+    "color": "#F4F1EA",
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.22,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "worm-endogeic",
+    "file": "layers/f3-08-worm-endogeic.png",
+    "x": 680,
+    "y": 825,
+    "w": 326,
+    "h": 339
+   },
+   {
+    "type": "image",
+    "name": "panel-anecic",
+    "file": "layers/f3-09-panel-anecic.png",
+    "x": 34,
+    "y": 1106,
+    "w": 1012,
+    "h": 400
+   },
+   {
+    "type": "text",
+    "name": "label-anecic",
+    "text": "Anecic. Digs deep vertical burrows and comes up at night.",
+    "x": 120,
+    "y": 1196,
+    "w": 520,
+    "h": 230,
+    "size": 40,
+    "color": "#F4F1EA",
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.22,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "worm-anecic",
+    "file": "layers/f3-11-worm-anecic.png",
+    "x": 647,
+    "y": 1110,
+    "w": 359,
+    "h": 382
+   }
+  ]
+ }
+]
