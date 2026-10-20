@@ -1,0 +1,65 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-02-logo.png",
+    "x": 870,
+    "y": 64,
+    "w": 138,
+    "h": 138
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "How do worms work their magic?",
+      "#F4F1EA",
+      false
+     ]
+    ],
+    "x": 84,
+    "y": 1010,
+    "w": 912,
+    "h": 200,
+    "size": 80,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.04,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "World Earthworm Day, 21 October",
+      "#E6C77A",
+      false
+     ]
+    ],
+    "x": 88,
+    "y": 1200,
+    "w": 800,
+    "h": 60,
+    "size": 42,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   }
+  ]
+ }
+]
