@@ -1,0 +1,137 @@
+[
+ {
+  "n": 1,
+  "items": [
+   {
+    "type": "image",
+    "name": "background",
+    "file": "layers/s1-01-background.jpg",
+    "x": 0,
+    "y": 0,
+    "w": 1080,
+    "h": 1350
+   },
+   {
+    "type": "image",
+    "name": "logo",
+    "file": "layers/s1-02-logo.png",
+    "x": 838,
+    "y": 60,
+    "w": 170,
+    "h": 147
+   },
+   {
+    "type": "text",
+    "name": "headline",
+    "runs": [
+     [
+      "How do worms work their magic?",
+      "#22371F",
+      false
+     ]
+    ],
+    "x": 90,
+    "y": 150,
+    "w": 820,
+    "h": 300,
+    "size": 84,
+    "font": "Montserrat",
+    "weight": 700,
+    "lh": 1.05,
+    "align": "left"
+   },
+   {
+    "type": "text",
+    "name": "small-line",
+    "runs": [
+     [
+      "World Earthworm Day, 21 October",
+      "#156826",
+      false
+     ]
+    ],
+    "x": 92,
+    "y": 345,
+    "w": 900,
+    "h": 60,
+    "size": 46,
+    "font": "Source Sans 3",
+    "weight": 600,
+    "lh": 1.1,
+    "align": "left"
+   },
+   {
+    "type": "image",
+    "name": "soil-cross-section",
+    "file": "layers/s1-05-soil-cross-section.png",
+    "x": 0,
+    "y": 780,
+    "w": 1080,
+    "h": 570
+   },
+   {
+    "type": "image",
+    "name": "cover-crop-1",
+    "file": "layers/s1-06-cover-crop-1.png",
+    "x": 82,
+    "y": 646,
+    "w": 76,
+    "h": 156
+   },
+   {
+    "type": "image",
+    "name": "cover-crop-2",
+    "file": "layers/s1-07-cover-crop-2.png",
+    "x": 418,
+    "y": 678,
+    "w": 63,
+    "h": 124
+   },
+   {
+    "type": "image",
+    "name": "cover-crop-3",
+    "file": "layers/s1-08-cover-crop-3.png",
+    "x": 650,
+    "y": 638,
+    "w": 79,
+    "h": 164
+   },
+   {
+    "type": "image",
+    "name": "cover-crop-4",
+    "file": "layers/s1-09-cover-crop-4.png",
+    "x": 955,
+    "y": 666,
+    "w": 70,
+    "h": 136
+   },
+   {
+    "type": "image",
+    "name": "flower-norfolk-common-poppy",
+    "file": "layers/s1-10-flower-norfolk-common-poppy.png",
+    "x": 238,
+    "y": 570,
+    "w": 125,
+    "h": 230
+   },
+   {
+    "type": "image",
+    "name": "flower-tamil-nadu-marigold",
+    "file": "layers/s1-11-flower-tamil-nadu-marigold.png",
+    "x": 796,
+    "y": 600,
+    "w": 129,
+    "h": 200
+   },
+   {
+    "type": "image",
+    "name": "earthworm",
+    "file": "layers/s1-12-earthworm.png",
+    "x": 457,
+    "y": 1000,
+    "w": 206,
+    "h": 250
+   }
+  ]
+ }
+]
