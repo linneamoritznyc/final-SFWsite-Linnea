@@ -75,34 +75,45 @@ def fit(name, top, box_bottom=1530, w_max=960, x0=60):
     return img(f'{HERE}/cut/{name}.png', x, top - bb[1] * sc, im.width * sc)
 
 FR = [
- (['Is World Earthworm Day even a thing?',
-   'It is! In 2016 the Earthworm Society of Britain picked 21 October, to honour Charles Darwin. His book on worms came out in October 1881, after more than 40 years of studying them.'],
-  'g1-jar-a', 'Jar with party worm'),
  (['Darwin wanted to know if worms can hear. His son played the bassoon at them, Darwin whistled and shouted, and his wife played the piano right next to their pots. The worms didn’t react at all.',
    'Then he put the pots on top of the piano. One note, and the worms shot back into their burrows. Worms have no ears. They feel music through the ground with their whole body.'],
   'g4-piano-c', 'Piano with pot and diving worm'),
- (['Dr. Elaine Ingham, who founded our school, taught that worms are part of the soil food web.',
-   'When a worm eats a fallen leaf, it also eats the bacteria and fungi growing on it. They broke the leaf down first. The worm passes those nutrients on in a form plant roots can take up, and lines its tunnels with slime full of nutrients and microbes.',
+ (['Dr. Elaine Ingham, who founded our school, taught that worms are part of the soil food web.'],
+  'g5-web-a', 'Soil food web'),
+ (['When a worm eats a fallen leaf, it also eats the bacteria and fungi growing on it. They broke the leaf down first. The worm passes those nutrients on in a form plant roots can take up, and lines its tunnels with slime full of nutrients and microbes.',
    'So when you find worms, the life under them is doing well too.'],
   'g6-bite-b', 'Worm biting a leaf, magnified'),
 ]
+# 1: the approved party-hat jar sitting on the bottom edge, logo beside it on white
+cutout('f1-jar-t3')
+texts, end = stack(['Is World Earthworm Day even a thing?',
+                    'It is! In 2016 the Earthworm Society of Britain picked 21 October, to honour Charles Darwin. His book on worms came out in October 1881, after more than 40 years of studying them.'])
+F.append(dict(pics=[('Jar with party worm', img(f'{HERE}/cut/f1-jar-t3.png', 40, 1920 - 880 * 1184 / 864, 880))], arrows=[], texts=texts))
 for paras, name, label in FR:
     cutout(name)
     texts, end = stack(paras)
     F.append(dict(pics=[(label, fit(name, end + 50))], arrows=[], texts=texts))
-# 4: three jars, a description under each, empty space for the poll sticker
-cutout('f5-jars-t1')
-texts, end = stack(['Which worm are you today?'], 56)
-a = fit('f5-jars-t1', end + 50, box_bottom=end + 50 + 560, w_max=1040, x0=20)
+# 4 and 5: the approved end frames from the 9-frame version, unchanged (50 px text at y 290)
+def old_text(text):
+    return T(60, 290, 960, text, 50, lh=1.4, align='center', color='#4a3b36')
+cutout('f4-jar-t2'); cutout('f5-jars-t1')
+t8 = old_text('Worms are still doing the same work in your garden. There are three kinds.')
+top8 = 290 + n_lines(t8) * 50 * 1.4 + 40
+a = img(f'{HERE}/cut/f4-jar-t2.png', -30, top8 - 40, 690)
+L = dict(kind='label', weight=400, lh=1.2)
+ly = [top8 + 30, top8 + 470, top8 + 760]
+F.append(dict(pics=[('Jar with three worms', a)],
+              arrows=[((688, ly[0] + 22), at(a, 440, 380), -0.15),
+                      ((688, ly[1] + 22), at(a, 250, 700), 0.15),
+                      ((688, ly[2] + 22), at(a, 560, 900), -0.1)],
+              texts=[t8,
+                     T(700, ly[0], 360, '<b>The Composter</b> (epigeic). Small and red. Lives in the leaves and turns them into compost.', 32, **L),
+                     T(700, ly[1], 360, '<b>The Mixer</b> (endogeic). Pale. Eats its way through the topsoil.', 32, **L),
+                     T(700, ly[2], 360, '<b>The Engineer</b> (anecic). Big and dark-headed. Digs deep tunnels and pulls leaves down at night.', 32, **L)]))
+a = img(f'{HERE}/cut/f5-jars-t1.png', -40, 470, 1160)
 cx = [at(a, x, 0)[0] for x in (255, 680, 1090)]
-jb = at(a, 0, 715)[1]
-D = [('The Composter', 'small and red, lives in the leaves and turns them into compost'),
-     ('The Mixer', 'pale, eats its way through the topsoil'),
-     ('The Engineer', 'big and dark-headed, digs deep tunnels and pulls leaves down at night')]
-for c, (n, d) in zip(cx, D):
-    x = min(max(c - 170, 12), 1068 - 340)
-    texts.append(T(x, jb + 24, 340, f'<b>{n}:</b> {d}', 31, lh=1.28, align='center', color=INK))
-F.append(dict(pics=[('Three party jars', a)], arrows=[], texts=texts))
+F.append(dict(pics=[('Three party jars', a)], arrows=[],
+              texts=[old_text('Which worm are you today?')] + [T(c - 180, 1110, 360, n, 44, 'title', align='center') for c, n in zip(cx, ['The Composter', 'The Mixer', 'The Engineer'])]))
 
 def render(h, png, transp=False):
     hp = png.replace('.png', '.html'); open(hp, 'w').write(h)
