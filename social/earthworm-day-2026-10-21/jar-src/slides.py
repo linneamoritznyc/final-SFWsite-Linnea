@@ -148,7 +148,7 @@ def s3():
     texts = [T(70, 68, 940, 'Worms on the sidewalk<br>after heavy rain', 66, 'title'),
              T(72, 232, 520, 'Lots of worms on the sidewalk after rain can mean water is sitting in your soil and filling their burrows.', 29, lh=1.36),
              T(60, 1118, 330, 'Water fills<br>the burrows', 28, 'label'),
-             T(440, 1118, 280, 'No oxygen:<br>time to escape', 28, 'label'),
+             T(440, 1118, 280, 'Burrows<br>flooded', 28, 'label'),
              T(760, 1118, 280, 'Compaction<br>layer', 28, 'label', align='right'),
              T(72, 1240, 760, 'This often signals your soil needs better structure and more organic matter.', 26, color=C['green'], weight=600, lh=1.3)]
     return a, texts

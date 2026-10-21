@@ -18,7 +18,7 @@ s1 = json.load(open(f'{HERE}/layers/s1.json'))
 specs.append(dict(name='s1', pics=[('Jar', 'layers/jar.png'), ('Worm casts', 'layers/casts.png')] +
                   [(f'Worm {i}', f'layers/worm{i}.png') for i in (1, 2, 3)], arrows=s1['arrows'], texts=s1['texts']))
 
-for n in range(2, 8):
+for n in range(2, 9):
     name = f's{n}'
     worms, arrows = [], []
     slides.worm = lambda *a, **k: (worms.append(lib.worm(*a, **k)), '')[1]
