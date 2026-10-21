@@ -46,47 +46,50 @@ def at(p, rx, ry):  # raw image coords -> slide coords
     return (round(p['x'] + rx * p['sx']), round(p['y'] + ry * p['sx']))
 
 F = []
+def H(text, size=104, y=270):
+    return T(40, y, 1000, text, size, 'title', lh=1.04, align='center')
 # 1
-p, _ = cutout('f1-jar-t3', fade_bottom=260)
-a = img(p, 150, 500, 800)
+p, _ = cutout('f1-jar-t3', fade_bottom=300)
+a = img(p, 0, 500, 1080)
 F.append(dict(pics=[('Jar with party worm', a)], arrows=[],
-              texts=[T(70, 270, 940, 'Is World Earthworm Day even a thing?', 84, 'title', lh=1.05)]))
+              texts=[H('Is World Earthworm Day even a thing?')]))
 # 2
 p, _ = cutout('f2-book-t1')
-a = img(p, 40, 640, 1000)
+a = img(p, -60, 760, 1200)
 F.append(dict(pics=[('Book with worm', a)], arrows=[],
-              texts=[T(70, 270, 940, 'Yes! Since 2016.', 84, 'title'),
-                     T(72, 400, 930, 'The Earthworm Society of Britain picked 21 October to honour Charles Darwin. His book on worms came out in October 1881.', 34, lh=1.38)]))
+              texts=[H('Yes! Since 2016.', 112),
+                     T(70, 430, 940, 'The Earthworm Society of Britain picked 21 October to honour Charles Darwin. His book on worms came out in October 1881.', 42, lh=1.36, align='center')]))
 # 3
 p, _ = cutout('f3-piano-t1')
-a = img(p, 40, 440, 1000)
-book = img(f'{HERE}/cut/f2-book-t1.png', 40, 1150, 340)
+a = img(p, 40, 500, 1000)
+book = img(f'{HERE}/cut/f2-book-t1.png', 20, 1250, 420)
 F.append(dict(pics=[('Piano with pots', a), ('Small book', book)],
-              arrows=[((560, 455), at(a, 590, 250), 0.2),
-                      ((830, 1165), at(a, 880, 330), -0.2),
-                      ((470, 1300), at(book, 1060, 300), 0.25)],
-              texts=[T(70, 270, 940, 'Darwin was obsessed', 84, 'title'),
-                     T(590, 395, 450, 'He played the piano to his worms', 32, 'label'),
-                     T(590, 1180, 450, 'He tested how they pull leaves underground with paper triangles', 32, 'label'),
-                     T(490, 1340, 520, 'His worm book outsold <i>Origin of Species</i> at his publisher’s 1881 sale', 32, 'label')]))
+              arrows=[((560, 470), at(a, 590, 250), 0.2),
+                      ((660, 1225), at(a, 880, 330), -0.2),
+                      ((470, 1395), at(book, 1050, 330), 0.25)],
+              texts=[H('Darwin was obsessed'),
+                     T(590, 420, 460, 'He played the piano to his worms', 38, 'label'),
+                     T(680, 1160, 380, 'He tested how they pull leaves underground with paper triangles', 34, 'label'),
+                     T(490, 1355, 560, 'His worm book outsold <i>Origin of Species</i> at his publisher’s 1881 sale', 34, 'label')]))
 # 4
 p, _ = cutout('f4-jar-t2')
-a = img(p, 10, 400, 640)
+a = img(p, -20, 390, 740)
+L = dict(kind='label', weight=400, lh=1.2)
 F.append(dict(pics=[('Jar with three worms', a)],
-              arrows=[((630, 470), at(a, 440, 380), -0.15),
-                      ((630, 880), at(a, 250, 700), 0.15),
-                      ((630, 1230), at(a, 560, 900), 0.2)],
-              texts=[T(70, 270, 940, 'Meet the three worms', 84, 'title'),
-                     T(650, 410, 410, '<b>The Composter</b> (epigeic). Small and red. Lives in the leaves and turns them into compost.', 31, 'label', weight=400, lh=1.22),
-                     T(650, 840, 410, '<b>The Mixer</b> (endogeic). Pale. Eats its way through the topsoil.', 31, 'label', weight=400, lh=1.22),
-                     T(650, 1180, 410, '<b>The Engineer</b> (anecic). Big and dark-headed. Digs deep tunnels and pulls leaves down at night.', 31, 'label', weight=400, lh=1.22)]))
+              arrows=[((690, 470), at(a, 440, 380), -0.15),
+                      ((690, 900), at(a, 250, 700), 0.15),
+                      ((688, 1222), at(a, 560, 900), -0.1)],
+              texts=[H('Meet the three worms', 96),
+                     T(700, 420, 360, '<b>The Composter</b> (epigeic). Small and red. Lives in the leaves and turns them into compost.', 34, **L),
+                     T(700, 860, 360, '<b>The Mixer</b> (endogeic). Pale. Eats its way through the topsoil.', 34, **L),
+                     T(700, 1200, 360, '<b>The Engineer</b> (anecic). Big and dark-headed. Digs deep tunnels and pulls leaves down at night.', 34, **L)]))
 # 5
 p, _ = cutout('f5-jars-t1')
-a = img(p, 20, 440, 1040)
+a = img(p, -40, 520, 1160)
 cx = [at(a, x, 0)[0] for x in (255, 680, 1090)]
 F.append(dict(pics=[('Three party jars', a)], arrows=[],
-              texts=[T(70, 270, 940, 'Which worm are you today?', 84, 'title', lh=1.05)] +
-                    [T(c - 170, 1060, 340, n, 38, 'title', align='center') for c, n in zip(cx, ['The Composter', 'The Mixer', 'The Engineer'])]))
+              texts=[H('Which worm are you today?')] +
+                    [T(c - 180, 1150, 360, n, 44, 'title', align='center') for c, n in zip(cx, ['The Composter', 'The Mixer', 'The Engineer'])]))
 
 def render(h, png, transp=False):
     hp = png.replace('.png', '.html'); open(hp, 'w').write(h)
