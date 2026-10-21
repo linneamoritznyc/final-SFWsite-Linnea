@@ -11,11 +11,15 @@ OUT = '/home/user/final-sfwsite-linnea/social/earthworm-day-2026-10-21/21-10-202
 E = lambda px: Emu(int(round(px * 9525)))
 INK = RGBColor(0x4F, 0x34, 0x33)
 NOTES = {
- 'frame1': 'Fonts: Fredoka (headings, labels) and Montserrat (body), free on Google Fonts and in Canva.',
- 'frame2': 'Sources: Earthworm Society of Britain https://www.earthwormsoc.org.uk/worldwormday ; Darwin\'s cast measurements via Darwin Online https://darwin-online.org.uk/converted/Ancillary/reviews/1881_Earthworms_A1333.html',
- 'frame3': 'Sources: Nautilus https://nautil.us/why-darwin-admired-the-humble-earthworm-361515 ; Darwin Correspondence Project letter 13460 https://www.darwinproject.ac.uk/view/letters/DCP-LETT-13460',
- 'frame4': 'Sources: Bouché 1977 (ecological groups); Colorado State Extension: https://extension.colostate.edu/resource/earthworms',
- 'frame5': 'Leave y = 1250 to 1500 empty for the poll sticker: The Composter / The Mixer / The Engineer.',
+ 'frame1': 'Fonts: Montserrat (story text) and Fredoka (labels), free on Google Fonts and in Canva.',
+ 'frame2': 'Source: Earthworm Society of Britain https://www.earthwormsoc.org.uk/worldwormday',
+ 'frame3': 'Source: Darwin Online https://darwin-online.org.uk/converted/Ancillary/reviews/1881_Earthworms_A1333.html',
+ 'frame4': 'Source: Nautilus https://nautil.us/why-darwin-admired-the-humble-earthworm-361515',
+ 'frame5': 'Source: Nautilus https://nautil.us/why-darwin-admired-the-humble-earthworm-361515',
+ 'frame6': 'Source: Nautilus https://nautil.us/why-darwin-admired-the-humble-earthworm-361515',
+ 'frame7': 'Source: Darwin Correspondence Project letter 13460 https://www.darwinproject.ac.uk/view/letters/DCP-LETT-13460',
+ 'frame8': 'Sources: Bouch\u00e9 1977; Colorado State Extension https://extension.colostate.edu/resource/earthworms',
+ 'frame9': 'Leave y = 1250 to 1500 empty for the poll sticker: The Composter / The Mixer / The Engineer.',
 }
 specs = json.load(open('layers/specs.json'))
 LINES = json.loads(subprocess.run(['node', f'{EW}/lines.js'] + [s['html'] for s in specs], capture_output=True, text=True, check=True).stdout)
