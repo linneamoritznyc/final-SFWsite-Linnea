@@ -146,7 +146,7 @@ def s3():
     a.append(arrow((560, 1112), (480, 700), 0.15))
     a.append(arrow((160, 1112), (180, 690), -0.15))
     texts = [T(70, 68, 940, 'Worms on the sidewalk<br>after heavy rain', 66, 'title'),
-             T(72, 232, 520, 'When rainwater hits a compaction layer and backs up into their burrows, earthworms cannot tolerate a lack of oxygen and escape.', 29, lh=1.36),
+             T(72, 232, 520, 'Lots of worms on the sidewalk after rain can mean water is sitting in your soil and filling their burrows.', 29, lh=1.36),
              T(60, 1118, 330, 'Water fills<br>the burrows', 28, 'label'),
              T(440, 1118, 280, 'No oxygen:<br>time to escape', 28, 'label'),
              T(760, 1118, 280, 'Compaction<br>layer', 28, 'label', align='right'),
@@ -208,8 +208,7 @@ def s4():
         a.append(f'<circle cx="{cx[2] + R.uniform(-55,55):.0f}" cy="{base - 200 - R.uniform(0,60):.0f}" r="{R.uniform(5,10):.0f}" fill="none" stroke="{C["blue"]}" stroke-width="2" opacity="0.7" filter="url(#pen)"/>')
     texts = [T(70, 64, 940, 'What about worm bins?', 36, 'kicker'),
              T(70, 112, 940, 'Handfuls of small, crumbly casts', 64, 'title'),
-             T(600, 330, 420, 'Worm casts can carry biodiversity as high as levels found in biological thermophilic compost.', 29, lh=1.36),
-             T(600, 560, 420, 'You can make vermicompost year-round indoors.', 29, lh=1.36, weight=600, color=C['green']),
+             T(600, 470, 420, 'You can make vermicompost year-round indoors.', 29, lh=1.36, weight=600, color=C['green']),
              T(cx[0]-150, base + 22, 300, 'Direct<br>compost', 30, 'label', align='center'),
              T(cx[1]-150, base + 22, 300, 'An inoculant<br>for piles', 30, 'label', align='center'),
              T(cx[2]-150, base + 22, 300, 'Teas and<br>extracts', 30, 'label', align='center')]
@@ -344,8 +343,8 @@ def s7():
     a.append(arrow((940, 1120), (790, 970), 0.2))
     a.append(arrow((560, 1225), (650, 1050), -0.2))
     texts = [T(70, 64, 940, 'Fun fact', 36, 'kicker'),
-             T(70, 112, 960, 'Worms don’t have the enzymes to decompose leaves', 56, 'title'),
-             T(72, 290, 940, 'Instead, they take a bite and feed on the bacteria, fungi, protozoa, and nematodes living on the surface of those “foods.”', 29, lh=1.36),
+             T(70, 112, 960, 'Worms lean on microbes to break down leaves', 56, 'title'),
+             T(72, 290, 940, 'They take a bite and feed on the bacteria, fungi, protozoa and nematodes living on the surface of those foods.', 29, lh=1.36),
              T(860, 440, 200, 'Bacteria', 30, 'label'),
              T(870, 1125, 180, 'Protozoa', 30, 'label'),
              T(450, 1230, 220, 'Nematodes', 30, 'label'),
@@ -372,5 +371,5 @@ def s8():
     a.append(worm([(560, 1060), (565, 990), (590, 945), (630, 930)], 22))
     texts = [T(70, 68, 940, 'Leave the leaves<br>where they land', 66, 'title'),
              T(72, 232, 920, 'Worms are part of the soil food web, working alongside the microbes. That makes the fallen leaves in your yard their dinner table.', 30, lh=1.36),
-             T(72, 420, 920, 'Where was the last place you spotted a worm? Tell us in the comments!', 34, 'title', weight=500, color=C['green'], lh=1.2)]
+             T(72, 420, 920, 'Next time you rake, leave a corner of leaves for the worms.', 34, 'title', weight=500, color=C['green'], lh=1.2)]
     return a, texts
