@@ -46,67 +46,63 @@ def at(p, rx, ry):  # raw image coords -> slide coords
     return (round(p['x'] + rx * p['sx']), round(p['y'] + ry * p['sx']))
 
 F = []
-TEXT_Y, SIZE, LH = 290, 50, 1.4
-def story_text(text, y=TEXT_Y):
-    return T(60, y, 960, text, SIZE, lh=LH, align='center', color='#4a3b36')
+TEXT_Y, SIZE, LH, PGAP = 280, 42, 1.36, 26
 
-def n_lines(text):
-    """Line count from a real Chromium render, so the picture always starts below the text."""
+def para(text, y, size=SIZE):
+    return T(60, y, 960, text, size, lh=LH, align='center', color=INK)
+
+def n_lines(t):
+    """Line count from a real Chromium render."""
     probe = f'{HERE}/out/_probe.html'
-    open(probe, 'w').write(html([], [], [story_text(text)], logo=False))
+    open(probe, 'w').write(html([], [], [t], logo=False))
     out = json.loads(subprocess.run(['node', f'{EW}/lines.js', probe], capture_output=True, text=True, check=True).stdout)
     return len(out[probe][0])
 
-def below(text, name, box_bottom=1540, w_max=960, x0=60, gap=70):
-    """Fit a painting into the space under the text, centred."""
-    top = TEXT_Y + n_lines(text) * SIZE * LH + gap
+def stack(paras, size=SIZE):
+    """One text box per paragraph, stacked from TEXT_Y. Returns boxes and the y where the text ends."""
+    y, out = TEXT_Y, []
+    for p in paras:
+        t = para(p, y, size); out.append(t)
+        y += n_lines(t) * size * LH + PGAP
+    return out, y - PGAP
+
+def fit(name, top, box_bottom=1530, w_max=960, x0=60):
+    """Fit a whole painting (bottom edge included) into the box under the text, centred."""
     im = Image.open(f'{HERE}/cut/{name}.png'); bb = im.getbbox()
     cw, ch = bb[2] - bb[0], bb[3] - bb[1]
     sc = min(w_max / cw, (box_bottom - top) / ch)
-    w = im.width * sc
     x = x0 + (w_max - cw * sc) / 2 - bb[0] * sc
-    y = top - bb[1] * sc
-    return img(f'{HERE}/cut/{name}.png', x, y, w)
+    return img(f'{HERE}/cut/{name}.png', x, top - bb[1] * sc, im.width * sc)
 
-TX = [
- 'Is World Earthworm Day even a thing?',
- 'It is! In 2016 the Earthworm Society of Britain picked 21 October, to honour Charles Darwin. His book on worms came out in October 1881.',
- 'Darwin studied worms for over 40 years. At one point he wanted to know if they can hear.',
- 'So his son played the bassoon at them. Darwin whistled and shouted. His wife played the piano loudly right next to their pots. The worms didn’t react at all.',
- 'Then he put the pots on top of the piano. One note, and the worms shot back into their burrows. They felt the music through the wood.',
- 'He also left about 300 paper triangles by their burrows, to see how worms drag leaves underground. Most went in pointed end first, just like leaves.',
- 'People loved it. At his publisher’s sale that November, the worm book sold 3,500 copies. <i>Origin of Species</i> sold 600.',
- 'Worms are still doing the same work in your garden. There are three kinds.',
- 'Which worm are you today?',
+FR = [
+ (['Is World Earthworm Day even a thing?',
+   'It is! In 2016 the Earthworm Society of Britain picked 21 October, to honour Charles Darwin. His book on worms came out in October 1881, after more than 40 years of studying them.'],
+  'g1-jar-a', 'Jar with party worm'),
+ (['Darwin wanted to know if worms can hear. His son played the bassoon at them, Darwin whistled and shouted, and his wife played the piano right next to their pots. The worms didn’t react at all.',
+   'Then he put the pots on top of the piano. One note, and the worms shot back into their burrows. Worms have no ears. They feel music through the ground with their whole body.'],
+  'g4-piano-c', 'Piano with pot and diving worm'),
+ (['Dr. Elaine Ingham, who founded our school, taught that worms are part of the soil food web.',
+   'When a worm eats a fallen leaf, it also eats the bacteria and fungi growing on it. They broke the leaf down first. The worm passes those nutrients on in a form plant roots can take up, and lines its tunnels with slime full of nutrients and microbes.',
+   'So when you find worms, the life under them is doing well too.'],
+  'g6-bite-b', 'Worm biting a leaf, magnified'),
 ]
-for name in ['f1-jar-t3', 'f2-book-t1', 'f3-note-b', 'f4-stool-a', 'f3-piano-keys-k2', 'f6-triangles-a', 'f7-books-a', 'f4-jar-t2', 'f5-jars-t1']:
+for paras, name, label in FR:
     cutout(name)
-# 1: jar sits on the bottom edge (no fade), logo beside it on white
-a = img(f'{HERE}/cut/f1-jar-t3.png', 40, 1920 - 880 * 1184 / 864, 880)
-F.append(dict(pics=[('Jar with party worm', a)], arrows=[], texts=[story_text(TX[0])]))
-# 2 to 7: painting under the text
-for k, (name, label) in enumerate([('f2-book-t1', 'Open book with worm'), ('f3-note-b', 'Worm and music note'),
-                                   ('f4-stool-a', 'Piano with pots on a stool'), ('f3-piano-keys-k2', 'Pots on the piano'),
-                                   ('f6-triangles-a', 'Paper triangle pulled into a burrow'), ('f7-books-a', 'Stack of old books')], start=1):
-    F.append(dict(pics=[(label, below(TX[k], name))], arrows=[], texts=[story_text(TX[k])]))
-# 8: the three-worm jar with its labels
-top8 = TEXT_Y + n_lines(TX[7]) * SIZE * LH + 40
-a = img(f'{HERE}/cut/f4-jar-t2.png', -30, top8 - 40, 690)
-L = dict(kind='label', weight=400, lh=1.2)
-ly = [top8 + 30, top8 + 470, top8 + 760]
-F.append(dict(pics=[('Jar with three worms', a)],
-              arrows=[((688, ly[0] + 22), at(a, 440, 380), -0.15),
-                      ((688, ly[1] + 22), at(a, 250, 700), 0.15),
-                      ((688, ly[2] + 22), at(a, 560, 900), -0.1)],
-              texts=[story_text(TX[7]),
-                     T(700, ly[0], 360, '<b>The Composter</b> (epigeic). Small and red. Lives in the leaves and turns them into compost.', 32, **L),
-                     T(700, ly[1], 360, '<b>The Mixer</b> (endogeic). Pale. Eats its way through the topsoil.', 32, **L),
-                     T(700, ly[2], 360, '<b>The Engineer</b> (anecic). Big and dark-headed. Digs deep tunnels and pulls leaves down at night.', 32, **L)]))
-# 9: three jars, names, poll space 1250 to 1500
-a = img(f'{HERE}/cut/f5-jars-t1.png', -40, 470, 1160)
+    texts, end = stack(paras)
+    F.append(dict(pics=[(label, fit(name, end + 50))], arrows=[], texts=texts))
+# 4: three jars, a description under each, empty space for the poll sticker
+cutout('f5-jars-t1')
+texts, end = stack(['Which worm are you today?'], 56)
+a = fit('f5-jars-t1', end + 50, box_bottom=end + 50 + 560, w_max=1040, x0=20)
 cx = [at(a, x, 0)[0] for x in (255, 680, 1090)]
-F.append(dict(pics=[('Three party jars', a)], arrows=[],
-              texts=[story_text(TX[8])] + [T(c - 180, 1110, 360, n, 44, 'title', align='center') for c, n in zip(cx, ['The Composter', 'The Mixer', 'The Engineer'])]))
+jb = at(a, 0, 715)[1]
+D = [('The Composter', 'small and red, lives in the leaves and turns them into compost'),
+     ('The Mixer', 'pale, eats its way through the topsoil'),
+     ('The Engineer', 'big and dark-headed, digs deep tunnels and pulls leaves down at night')]
+for c, (n, d) in zip(cx, D):
+    x = min(max(c - 170, 12), 1068 - 340)
+    texts.append(T(x, jb + 24, 340, f'<b>{n}:</b> {d}', 31, lh=1.28, align='center', color=INK))
+F.append(dict(pics=[('Three party jars', a)], arrows=[], texts=texts))
 
 def render(h, png, transp=False):
     hp = png.replace('.png', '.html'); open(hp, 'w').write(h)

@@ -10,17 +10,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); EW = os.path.dirname(HERE); o
 OUT = '/home/user/final-sfwsite-linnea/social/earthworm-day-2026-10-21/21-10-2026-wed-ig-story-earthworm.pptx'
 E = lambda px: Emu(int(round(px * 9525)))
 INK = RGBColor(0x4F, 0x34, 0x33)
-NOTES = {
- 'frame1': 'Fonts: Montserrat (story text) and Fredoka (labels), free on Google Fonts and in Canva.',
- 'frame2': 'Source: Earthworm Society of Britain https://www.earthwormsoc.org.uk/worldwormday',
- 'frame3': 'Source: Darwin Online https://darwin-online.org.uk/converted/Ancillary/reviews/1881_Earthworms_A1333.html',
- 'frame4': 'Source: Nautilus https://nautil.us/why-darwin-admired-the-humble-earthworm-361515',
- 'frame5': 'Source: Nautilus https://nautil.us/why-darwin-admired-the-humble-earthworm-361515',
- 'frame6': 'Source: Nautilus https://nautil.us/why-darwin-admired-the-humble-earthworm-361515',
- 'frame7': 'Source: Darwin Correspondence Project letter 13460 https://www.darwinproject.ac.uk/view/letters/DCP-LETT-13460',
- 'frame8': 'Sources: Bouch\u00e9 1977; Colorado State Extension https://extension.colostate.edu/resource/earthworms',
- 'frame9': 'Leave y = 1250 to 1500 empty for the poll sticker: The Composter / The Mixer / The Engineer.',
-}
+NOTES = {'frame1': 'Source: https://www.earthwormsoc.org.uk/worldwormday  (Fonts: Montserrat, free on Google Fonts and in Canva.)', 'frame2': 'Sources: https://nautil.us/why-darwin-admired-the-humble-earthworm-361515 ; http://darwin-online.org.uk/', 'frame3': 'Sources: https://www.echocommunity.org/en/resources/58d05ca9-030c-42fa-98fa-746d4dc9bc2f ; https://crsa.cnr.berkeley.edu/wp-content/uploads/2021/08/Soil-Biology-Primer.pdf', 'frame4': 'Source: https://extension.colostate.edu/resource/earthworms  (Leave the empty space under the jars for the poll sticker.)'}
 specs = json.load(open('layers/specs.json'))
 LINES = json.loads(subprocess.run(['node', f'{EW}/lines.js'] + [s['html'] for s in specs], capture_output=True, text=True, check=True).stdout)
 prs = Presentation(); prs.slide_width, prs.slide_height = E(1080), E(1920)
@@ -56,7 +46,7 @@ for spec in specs:
         marks = [(b, 'b') for b in bolds] + [(i, 'i') for i in itals]
         for li, l in enumerate(lines):
             p = tf.paragraphs[0] if li == 0 else tf.add_paragraph()
-            p.line_spacing = t['lh']; p.alignment = al
+            p.line_spacing = Pt(t['size'] * t['lh'] * 0.75); p.alignment = al  # exact, matches the PNG
             segs = [(l, '')]
             for phrase, kind in marks:
                 for word in phrase.split(' '):  # phrases can wrap across lines: mark word by word
