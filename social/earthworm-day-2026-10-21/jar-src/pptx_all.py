@@ -10,8 +10,13 @@ HERE = os.path.dirname(os.path.abspath(__file__)); os.chdir(HERE)
 OUT = '/home/user/final-sfwsite-linnea/social/earthworm-day-2026-10-21/21-10-2026-wed-ig-earthworm-jar.pptx'
 E = lambda px: Emu(int(round(px * 9525)))
 INK = RGBColor(0x4F, 0x34, 0x33)
+import subprocess
+HTML = {'s1': f'{HERE}/s1.html', **{f's{i}': f'{HERE}/out/s{i}.html' for i in range(2, 9)}}
+specs = json.load(open('layers/specs.json'))
+LINES = json.loads(subprocess.run(['node', f'{HERE}/lines.js'] + [HTML[sp['name']] for sp in specs], capture_output=True, text=True, check=True).stdout)
 prs = Presentation(); prs.slide_width, prs.slide_height = E(1080), E(1350)
-for spec in json.load(open('layers/specs.json')):
+for spec in specs:
+    rendered = LINES[HTML[spec['name']]]
     sl = prs.slides.add_slide(prs.slide_layouts[6])
     bg = sl.background.fill; bg.solid(); bg.fore_color.rgb = RGBColor(255, 255, 255)
     for name, path in spec['pics']:
@@ -27,10 +32,12 @@ for spec in json.load(open('layers/specs.json')):
         sh = fb.convert_to_shape(); sh.name = f'Arrow {n+1}'
         sh.fill.background(); sh.line.color.rgb = INK; sh.line.width = Pt(2)
         ln = sh.line._get_or_add_ln(); etree.SubElement(ln, qn('a:tailEnd'), type='triangle', w='med', len='med')
-    for t in spec['texts']:
+    for ti, t in enumerate(spec['texts']):
         t.setdefault('lh', 1.25); t.setdefault('weight', 500); t.setdefault('family', 'body'); t.setdefault('color', '#5b4c46'); t.setdefault('align', 'left')
-        lines = re.split(r'<br\s*/?>', t['text'])
-        tb = sl.shapes.add_textbox(E(t['x']), E(t['y'] - 4), E(t['w'] + 30), E(t['size'] * t['lh'] * len(lines) + 10))
+        lines = rendered[ti]  # exact line breaks as rendered, so Canva/PowerPoint never re-wrap
+        pad = 80
+        bx = {'left': t['x'], 'center': t['x'] - pad / 2, 'right': t['x'] - pad}[t['align']]
+        tb = sl.shapes.add_textbox(E(bx), E(t['y'] - 4), E(t['w'] + pad), E(t['size'] * t['lh'] * len(lines) + 10))
         tb.name = re.sub('<[^>]+>', ' ', t['text'])[:40]
         tf = tb.text_frame; tf.word_wrap = True; tf.vertical_anchor = MSO_ANCHOR.TOP
         tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = 0
