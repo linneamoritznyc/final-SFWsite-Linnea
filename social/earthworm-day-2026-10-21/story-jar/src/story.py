@@ -26,7 +26,7 @@ def img(path, x, y, w):
     im = Image.open(path); h = w * im.height / im.width
     return dict(path=path, x=x, y=y, w=w, h=h, sx=w / im.width)
 
-def html(pics, arrows, texts, logo=True, bg='#ffffff', only=None):
+def html(pics, arrows, texts, logo=True, bg='#ffffff', only=None, logo_xy=(890, 1560)):
     tx = []
     for t in texts:
         fam = {'title': "'Fredoka'", 'body': "'Montserrat'"}[t.get('family', 'body')]
@@ -34,7 +34,7 @@ def html(pics, arrows, texts, logo=True, bg='#ffffff', only=None):
                   f'font-weight:{t.get("weight",500)};color:{t.get("color","#5b4c46")};text-align:{t.get("align","left")};line-height:{t.get("lh",1.25)}">{t["text"]}</div>')
     ims = ''.join(f'<img src="{p["path"]}" style="position:absolute;left:{p["x"]}px;top:{p["y"]}px;width:{p["w"]}px">' for p in pics)
     arr = ''.join(arrow(*a) for a in arrows)
-    lg = f'<img src="{EW}/logo.png" style="position:absolute;left:890px;top:1560px;width:150px">' if logo else ''
+    lg = f'<img src="{EW}/logo.png" style="position:absolute;left:{logo_xy[0]}px;top:{logo_xy[1]}px;width:150px">' if logo else ''
     return f'''<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{{font-family:'Fredoka';src:url('{EW}/fonts/Fredoka.ttf');font-weight:300 700}}
 @font-face{{font-family:'Montserrat';src:url('{lib.REPO_FONTS}/montserrat-latin-variable.woff2');font-weight:100 900}}
@@ -49,10 +49,10 @@ F = []
 def H(text, size=104, y=270):
     return T(40, y, 1000, text, size, 'title', lh=1.04, align='center')
 # 1
-p, _ = cutout('f1-jar-t3', fade_bottom=300)
-a = img(p, 0, 500, 1080)
+p, _ = cutout('f1-jar-t3')
+a = img(p, 60, 1920 - 860 * 1184 / 864, 860)   # bottom of the painting sits on the frame edge, no fade
 F.append(dict(pics=[('Jar with party worm', a)], arrows=[],
-              texts=[H('Is World Earthworm Day even a thing?')]))
+              texts=[H('Is World Earthworm Day even a thing?', y=400)]))
 # 2
 p, _ = cutout('f2-book-t1')
 a = img(p, -60, 760, 1200)
@@ -61,16 +61,14 @@ F.append(dict(pics=[('Book with worm', a)], arrows=[],
                      T(70, 430, 940, 'The Earthworm Society of Britain picked 21 October to honour Charles Darwin. His book on worms came out in October 1881.', 42, lh=1.36, align='center')]))
 # 3
 p, _ = cutout('f3-piano-t1')
-a = img(p, 40, 500, 1000)
-book = img(f'{HERE}/cut/f2-book-t1.png', 20, 1250, 420)
-F.append(dict(pics=[('Piano with pots', a), ('Small book', book)],
-              arrows=[((560, 470), at(a, 590, 250), 0.2),
-                      ((660, 1225), at(a, 880, 330), -0.2),
-                      ((470, 1395), at(book, 1050, 330), 0.25)],
+a = img(p, 0, 700, 1080)
+notes = dict(path=f'{HERE}/cut/notes.png', x=0, y=0, w=1080, h=1920, sx=1)
+F.append(dict(pics=[('Piano with pots', a), ('Music notes', notes)],
+              arrows=[((600, 470), at(a, 590, 250), 0.2),
+                      ((640, 1425), at(a, 880, 335), -0.15)],
               texts=[H('Darwin was obsessed'),
-                     T(590, 420, 460, 'He played the piano to his worms', 38, 'label'),
-                     T(680, 1160, 380, 'He tested how they pull leaves underground with paper triangles', 34, 'label'),
-                     T(490, 1355, 560, 'His worm book outsold <i>Origin of Species</i> at his publisher’s 1881 sale', 34, 'label')]))
+                     T(620, 420, 430, 'He played the piano to his worms', 38, 'label'),
+                     T(660, 1395, 400, 'He tested how they pull leaves underground with paper triangles', 32, 'label')]))
 # 4
 p, _ = cutout('f4-jar-t2')
 a = img(p, -20, 390, 740)
@@ -98,8 +96,8 @@ def render(h, png, transp=False):
 specs = []
 for i, f in enumerate(F, 1):
     pics = [p for _, p in f['pics']]
-    render(html(pics, f['arrows'], f['texts']), f'{HERE}/out/frame{i}.png')
+    render(html(pics, f['arrows'], f['texts'], logo_xy=f.get('logo', (890, 1560))), f'{HERE}/out/frame{i}.png')
     specs.append(dict(name=f'frame{i}', html=f'{HERE}/out/frame{i}.html',
                       pics=[(n, p['path'], p['x'], p['y'], p['w'], p['h']) for n, p in f['pics']],
-                      arrows=f['arrows'], texts=f['texts']))
+                      arrows=f['arrows'], texts=f['texts'], logo=f.get('logo', (890, 1560))))
 json.dump(specs, open(f'{HERE}/layers/specs.json', 'w'))
