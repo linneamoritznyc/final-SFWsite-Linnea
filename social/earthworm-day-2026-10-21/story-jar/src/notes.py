@@ -27,11 +27,14 @@ def notes_svg():
             (360, 560, 1.5, -8, 'b'), (120, 520, 1.4, 12, 'e'), (540, 560, 1.2, -14, 'e'),
             (250, 470, 1.25, 6, 'e'), (480, 450, 1.1, 18, 'e')]
     for i, (x, y, s, r, k) in enumerate(spec):
+        y = 470 + (y - 450) * 0.62   # keep the notes between the heading and the pots
         out.append((eighth if k == 'e' else beamed)(x, y, s, r, 1 + i % 12))
     # two soft sound swirls
+    out.append('<g transform="translate(0,470) scale(1,0.62) translate(0,-450)">')
     out.append(line('M330,930 C260,880 330,820 260,770 C200,720 270,650 210,600', INK, 2, 0.45))
     out.append(line('M190,930 C150,880 210,840 160,790', INK, 2, 0.45))
     out.append(line('M470,920 C440,870 500,830 460,780', INK, 2, 0.45))
+    out.append('</g>')
     return ''.join(out)
 
 if __name__ == '__main__':

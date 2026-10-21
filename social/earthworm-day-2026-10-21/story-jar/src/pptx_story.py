@@ -12,8 +12,8 @@ E = lambda px: Emu(int(round(px * 9525)))
 INK = RGBColor(0x4F, 0x34, 0x33)
 NOTES = {
  'frame1': 'Fonts: Fredoka (headings, labels) and Montserrat (body), free on Google Fonts and in Canva.',
- 'frame2': 'Source: Earthworm Society of Britain, World Worm Day: https://www.earthwormsoc.org.uk/worldwormday',
- 'frame3': 'Sources: Darwin Correspondence Project, letter 13460 (3,500 copies of Worms vs 600 of Origin at the 1881 sale): https://www.darwinproject.ac.uk/view/letters/DCP-LETT-13460 ; Nautilus on the piano and paper triangle experiments: https://nautil.us/why-darwin-admired-the-humble-earthworm-361515',
+ 'frame2': 'Sources: Earthworm Society of Britain https://www.earthwormsoc.org.uk/worldwormday ; Darwin\'s cast measurements via Darwin Online https://darwin-online.org.uk/converted/Ancillary/reviews/1881_Earthworms_A1333.html',
+ 'frame3': 'Sources: Nautilus https://nautil.us/why-darwin-admired-the-humble-earthworm-361515 ; Darwin Correspondence Project letter 13460 https://www.darwinproject.ac.uk/view/letters/DCP-LETT-13460',
  'frame4': 'Sources: Bouché 1977 (ecological groups); Colorado State Extension: https://extension.colostate.edu/resource/earthworms',
  'frame5': 'Leave y = 1250 to 1500 empty for the poll sticker: The Composter / The Mixer / The Engineer.',
 }

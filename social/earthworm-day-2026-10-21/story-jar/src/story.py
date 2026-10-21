@@ -55,20 +55,27 @@ F.append(dict(pics=[('Jar with party worm', a)], arrows=[],
               texts=[H('Is World Earthworm Day even a thing?', y=400)]))
 # 2
 p, _ = cutout('f2-book-t1')
-a = img(p, -60, 760, 1200)
+a = img(p, 110, 1000, 860)
+B2 = dict(lh=1.36, align='center')
 F.append(dict(pics=[('Book with worm', a)], arrows=[],
               texts=[H('Yes! Since 2016.', 112),
-                     T(70, 430, 940, 'The Earthworm Society of Britain picked 21 October to honour Charles Darwin. His book on worms came out in October 1881.', 42, lh=1.36, align='center')]))
+                     T(60, 420, 960, 'The Earthworm Society of Britain picked 21 October to honour Charles Darwin. His book on worms came out in October 1881.', 38, **B2),
+                     T(60, 620, 960, 'Darwin studied worms for over 40 years. The worm book was his last, published a year before he died.', 38, **B2),
+                     T(60, 820, 960, 'He weighed the casts worms left on the ground and found they bring up 7 to 18 tons of soil per acre every year.', 38, **B2)]))
 # 3
-p, _ = cutout('f3-piano-t1')
-a = img(p, 0, 700, 1080)
+p, _ = cutout('f3-piano-keys-k2')
+a = img(p, 90, 600, 900)
 notes = dict(path=f'{HERE}/cut/notes.png', x=0, y=0, w=1080, h=1920, sx=1)
-F.append(dict(pics=[('Piano with pots', a), ('Music notes', notes)],
-              arrows=[((600, 470), at(a, 590, 250), 0.2),
-                      ((640, 1425), at(a, 880, 335), -0.15)],
+book = img(f'{HERE}/cut/f2-book-t1.png', 40, 1390, 300)
+LB = dict(kind='label', weight=500, lh=1.2)
+F.append(dict(pics=[('Piano with pots', a), ('Music notes', notes), ('Small book', book)],
+              arrows=[((600, 450), at(a, 590, 255), 0.2),
+                      ((650, 1235), at(a, 870, 330), -0.15),
+                      ((250, 1338), (215, 1448), 0.25)],
               texts=[H('Darwin was obsessed'),
-                     T(620, 420, 430, 'He played the piano to his worms', 38, 'label'),
-                     T(660, 1395, 400, 'He tested how they pull leaves underground with paper triangles', 32, 'label')]))
+                     T(620, 400, 430, 'Loud music didn’t bother them. But with their pots on the piano, one struck note sent them diving into their burrows. Worms feel vibrations.', 28, **LB),
+                     T(660, 1200, 400, 'He scattered about 300 paper triangles near their burrows. Most were pulled in by the pointed end, the same way they pull leaves in tip first.', 28, **LB),
+                     T(60, 1200, 520, 'At his publisher’s November 1881 sale, the worm book sold 3,500 copies. <i>Origin of Species</i> sold 600.', 28, **LB)]))
 # 4
 p, _ = cutout('f4-jar-t2')
 a = img(p, -20, 390, 740)
