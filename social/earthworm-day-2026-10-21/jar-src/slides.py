@@ -226,7 +226,7 @@ def s5():
     side = f'M{x1},{y0} L{x1+D[0]},{y0+D[1]} L{x1+D[0]-18},{y1+D[1]} L{x1-20},{y1} Z'
     opening = f'M{x0},{y0} L{x0+D[0]},{y0+D[1]} L{x1+D[0]},{y0+D[1]} L{x1},{y0} Z'
     # lid leaning behind
-    lid = f'M{x0+D[0]+10},{y0+D[1]} L{x0+D[0]+80},{y0+D[1]-250} L{x1+D[0]+60},{y0+D[1]-250} L{x1+D[0]},{y0+D[1]} Z'
+    lid = f'M{x0+D[0]+10},{y0+D[1]} L{x0+D[0]+60},{y0+D[1]-130} L{x1+D[0]+40},{y0+D[1]-130} L{x1+D[0]},{y0+D[1]} Z'
     a.append(wash(lid, '#7f9aa6', 2, 0.9) + line(lid, INK, 2.4))
     a.append(wash(opening, C['soil2'], 3, 1))
     # food heap inside: green scraps
@@ -248,11 +248,6 @@ def s5():
     a.append(worm([(820, y0 - 20), (845, y0 + 6), (856, y0 + 70), (840, y0 + 150), (860, y0 + 220)], 17))
     # one already escaped on the floor
     a.append(worm([(300, 1170), (240, 1150), (180, 1170), (120, 1160)], 16, band=False))
-    # thermometer
-    a.append(wash('M970,370 L1000,370 L1000,520 L970,520 Z', '#ffffff', 2, 1))
-    a.append(line('M970,520 L970,385 Q985,360 1000,385 L1000,520', INK, 2.4))
-    a.append(blob(985, 540, 24, 24, '#d65a3a', 6, 1) + line('M985,520 L985,410', '#d65a3a', 9))
-    a.append(f'<circle cx="985" cy="540" r="24" fill="none" stroke="{INK}" stroke-width="2.4" filter="url(#pen)"/>')
     texts = [T(70, 68, 940, 'Worms climbing out<br>of the worm bin?', 66, 'title'),
              T(72, 250, 330, 'Low oxygen or too much heat from fresh, high-nitrogen food added in high quantities is sending them looking for an exit.', 29, lh=1.36),
              T(72, 760, 300, 'Slow down the feeding and let them cool off.', 36, 'title', color=C['green'], lh=1.1)]
@@ -264,7 +259,7 @@ def s6():
     a = []
     # snowflakes
     for k in range(16):
-        x, y = R.uniform(80, 1000), R.uniform(470, 640)
+        x, y = R.uniform(80, 1000), R.uniform(390, 600)
         s = R.uniform(8, 18)
         flake = ''.join(f'M{x - math.cos(t)*s:.1f},{y - math.sin(t)*s:.1f} L{x + math.cos(t)*s:.1f},{y + math.sin(t)*s:.1f} ' for t in (0, math.pi/3, 2*math.pi/3))
         a.append(line(flake, C['blue'], 2.2, 0.7))
@@ -321,7 +316,8 @@ def s7():
             x += R.uniform(15, 45); y -= R.uniform(10, 40); pts.append((x, y))
             if j in (2, 4):
                 inner.append(line(f'M{x:.0f},{y:.0f} l{R.uniform(-40,40):.0f},{R.uniform(-40,-10):.0f}', '#ffffff', 2.6, 0.95))
-        inner.append(line(smooth(pts), '#ffffff', 2.6, 0.95))
+        inner.append(line(smooth(pts), INK, 5, 0.35))
+        inner.append(line(smooth(pts), '#ffffff', 3, 1))
     # bacteria: tiny rods and dots
     for k in range(60):
         x, y = R.uniform(LX - 140, LX + 260), R.uniform(LY - 260, LY - 60)
@@ -343,18 +339,17 @@ def s7():
     a.append(f'<circle cx="{LX}" cy="{LY}" r="{LR-9}" fill="none" stroke="#fff" stroke-width="3" opacity="0.7"/>')
     a.append(line(f'M{LX-LR*0.66:.0f},{LY+LR*0.72:.0f} L{LX-LR*0.66-70:.0f},{LY+LR*0.72+70:.0f}', INK, 0.1))  # anchor
     # labels around the lens
-    a.append(arrow((150, 600), (480, 755), 0.15))
+    a.append(arrow((150, 600), (520, 880), 0.15))
     a.append(arrow((950, 485), (800, 600), -0.2))
-    a.append(arrow((1010, 1180), (780, 960), 0.2))
+    a.append(arrow((940, 1120), (790, 970), 0.2))
     a.append(arrow((560, 1225), (650, 1050), -0.2))
     texts = [T(70, 64, 940, 'Fun fact', 36, 'kicker'),
              T(70, 112, 960, 'Worms don’t have the enzymes to decompose leaves', 56, 'title'),
              T(72, 290, 940, 'Instead, they take a bite and feed on the bacteria, fungi, protozoa, and nematodes living on the surface of those “foods.”', 29, lh=1.36),
-             T(70, 560, 220, 'Protozoa', 30, 'label'),
              T(860, 440, 200, 'Bacteria', 30, 'label'),
-             T(870, 1185, 180, 'Protozoa', 30, 'label'),
+             T(870, 1125, 180, 'Protozoa', 30, 'label'),
              T(450, 1230, 220, 'Nematodes', 30, 'label'),
-             T(70, 480, 220, 'Fungi', 30, 'label')]
+             T(70, 560, 220, 'Fungi', 30, 'label')]
     return a, texts
 
 def s8():

@@ -81,7 +81,7 @@ def _sample(pts, n=200):
     out.append(pts[-1])
     return out
 
-def worm(pts, w=20, fill='#ffffff', band=True, segs=True, line=2.6, ink=INK, band_color=None):
+def worm(pts, w=20, fill='#c98a7e', band=True, segs=True, line=2.6, ink=INK, band_color='#9c5248'):
     """Simple white worm with a brown outline, like the worksheet reference."""
     d = smooth(pts)
     g = [f'<path d="{d}" fill="none" stroke="{ink}" stroke-width="{w+line*2}" stroke-linecap="round" stroke-linejoin="round"/>',
